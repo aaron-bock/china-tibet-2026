@@ -187,6 +187,45 @@ select.f.m-ground{color:var(--jade); background:var(--jade-wash)}
 .row.skipped{opacity:.5}
 .row.skipped .f.strong, .row.skipped .f.big{text-decoration:line-through; text-decoration-color:var(--faint)}
 
+/* read-only state chip on the packing reference; the taps live on Own or buy */
+.mark{display:inline-flex; gap:6px; align-items:center; align-self:flex-start;
+  font-family:var(--f-mono); font-size:9.5px; letter-spacing:.09em; text-transform:uppercase; font-weight:600}
+.mark .m{padding:4px 7px; border-radius:3px; border:1px solid var(--line); color:var(--faint); background:var(--surface)}
+.mark .m[data-v="own"]{color:var(--jade); border-color:var(--jade); background:var(--jade-wash)}
+.mark .m[data-v="buy"]{color:var(--saffron); border-color:var(--saffron); background:var(--saffron-wash)}
+.mark .m[data-v="skip"]{color:var(--soft); border-color:var(--soft); background:var(--raise)}
+.mark .b{color:var(--cinnabar); font-size:12px}
+
+/* ---------- Own or buy: one line per item, grouped by category ---------- */
+.tri-group{margin-bottom:24px}
+.tri-head{display:flex; gap:12px; align-items:baseline; justify-content:space-between;
+  flex-wrap:wrap; padding:0 2px 7px; border-bottom:2px solid var(--line)}
+.tri-name{font-family:var(--f-mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; font-weight:600}
+.tri-sum{font-family:var(--f-mono); font-size:10.5px; color:var(--faint); font-variant-numeric:tabular-nums}
+.tri-sum b{color:var(--saffron); font-weight:600}
+.tri-rows{display:flex; flex-direction:column}
+.tri-row{display:grid; grid-template-columns:126px 24px minmax(0,1fr); gap:12px;
+  align-items:center; padding:7px 2px; border-bottom:1px solid var(--hair)}
+.tri-row:last-child{border-bottom:0}
+.tri-row .it{font-size:13.5px; min-width:0; overflow-wrap:anywhere}
+.tri-row.is-own .it{color:var(--soft); text-decoration:line-through; text-decoration-color:var(--jade)}
+.tri-row.is-skip{opacity:.45}
+.tri-row.is-skip .it{text-decoration:line-through; text-decoration-color:var(--faint)}
+.tri-row.is-must .it{font-weight:600}
+.bang{
+  width:24px; height:24px; padding:0; border:1px solid var(--line); border-radius:3px;
+  background:var(--surface); color:var(--faint);
+  font-family:var(--f-mono); font-size:12px; font-weight:700; line-height:1
+}
+.bang:hover{border-color:var(--soft); color:var(--ink)}
+.bang[aria-pressed="true"]{background:var(--cinnabar-wash); border-color:var(--cinnabar); color:var(--cinnabar)}
+@media (max-width:520px){
+  .tri-row{grid-template-columns:126px 24px; grid-template-areas:"it it" "prep bang"; gap:7px 12px; padding:10px 2px}
+  .tri-row .it{grid-area:it}
+  .tri-row .prep{grid-area:prep}
+  .tri-row .bang{grid-area:bang}
+}
+
 .filters{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:18px}
 .filters button{
   font-family:var(--f-mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase;
@@ -262,7 +301,7 @@ footer.foot{border-top:1px solid var(--line); padding-block:20px 40px; color:var
 .g-tasks{grid-template-columns:minmax(0,1fr) 150px 96px 184px}
 .g-money{grid-template-columns:minmax(0,1fr) 192px 96px}
 .g-apps{grid-template-columns:minmax(0,1fr) 150px 96px}
-.g-packing{grid-template-columns:minmax(0,1fr) 130px 122px 118px 126px}
+.g-packing{grid-template-columns:minmax(0,1fr) 150px 104px}
 .g-kit{grid-template-columns:minmax(0,1fr) 140px}
 .g-people{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr)}
 .g-reference{grid-template-columns:minmax(0,1fr) minmax(0,188px) 120px}
@@ -432,16 +471,18 @@ var SCHEMA=[
       {k:"detail",l:"Detail", type:"area", ph:"Detail"}
     ]},
   { id:"packing", doc:"packing", label:"Packing", state:"prep",
-    note:"Two questions per line, and they are not the same one. OWN / BUY / SKIP is where the item stands \u2014 the stripe and the tallies follow it. CAN\u2019T FORGET is what it costs you to get that item wrong, and it stays put whatever you decide.",
+    note:"The reference: which bag each thing rides in, which legs it is for, and why it earns the space. Deciding what you own and what you still have to buy happens on \u201cOwn or buy\u201d \u2014 the state shown here is that same state, read-only.",
     fields:[
       {k:"item",  l:"Item",   cls:"strong", ph:"Item"},
-      {k:"own",   l:"Where it stands", type:"prep"},
-      {k:"prio",  l:"Priority", type:"flag", on:"must", onLabel:"Can\u2019t forget"},
-      {k:"group", l:"Group",  cls:"mono",   ph:"Category"},
       {k:"bag",   l:"Bag",    cls:"mono",   ph:"Which bag"},
+      {k:"own",   l:"State",  type:"mark"},
       {k:"zone",  l:"Legs",   cls:"mono",   wide:true, ph:"Which legs"},
       {k:"detail",l:"Why",    type:"area",  ph:"Why"}
     ]},
+  { id:"triage", doc:"packing", label:"Own or buy", state:"prep", view:"triage",
+    countFn:function(){ return prepCounts().todo; },
+    note:"Every item on one line, grouped by category, so the shopping list is a glance rather than a read. Tap OWN, BUY or SKIP; \u201c!\u201d marks the ones you cannot forget. Same records as Packing \u2014 a tap here shows up there, and the buys land in the shopping-list export.",
+    fields:[]},
   { id:"people", doc:"people", label:"People",
     note:"Four travelling companions, one consultant in Beijing who works on WhatsApp, and two people worth calling.",
     fields:[
@@ -524,7 +565,7 @@ function field(sec,row,f){
   var cell=el("div","cell"+(wide?" w-all":""));
   var id=sec.id+"-"+row.id+"-"+f.k;
   var lab=el("label",null,f.l);
-  if(f.type!=="prep" && f.type!=="flag") lab.htmlFor=id;
+  if(f.type!=="prep" && f.type!=="flag" && f.type!=="mark") lab.htmlFor=id;
   cell.appendChild(lab);
   var node;
   if(f.type==="prep"){
@@ -538,6 +579,14 @@ function field(sec,row,f){
       b.setAttribute("aria-label", o[1]+": "+(row[sec.fields[0].k]||""));
       node.appendChild(b);
     });
+    node.id=id;
+    cell.appendChild(node);
+    return cell;
+  }
+  if(f.type==="mark"){
+    node=el("div","mark");
+    node.appendChild(markChip(row[f.k]));
+    if(row.prio==="must") node.appendChild(el("span","b","!"));
     node.id=id;
     cell.appendChild(node);
     return cell;
@@ -719,6 +768,12 @@ function prepCounts(){
   });
   return c;
 }
+function markChip(v){
+  v=v||"";
+  var c=el("span","m", v==="own"?"Own":v==="buy"?"Buy":v==="skip"?"Skip":"\u2014");
+  c.dataset.v=v;
+  return c;
+}
 function packMatch(r){
   if(packFilter==="all") return true;
   if(packFilter==="todo") return !r.own;
@@ -754,6 +809,128 @@ function prepFilter(){
   return box;
 }
 
+/* ---------- Own or buy: the quick reference ---------- */
+function triageGroups(){
+  var order=[], by={};
+  items("packing").forEach(function(r){
+    var g=r.group||"Other";
+    if(!by[g]){ by[g]=[]; order.push(g); }
+    by[g].push(r);
+  });
+  return order.map(function(g){ return {name:g, rows:by[g]}; });
+}
+function triageSums(){
+  var by={};
+  items("packing").forEach(function(r){
+    var g=r.group||"Other";
+    var c=by[g] || (by[g]={buy:0,own:0,skip:0,todo:0,all:0});
+    c.all++;
+    if(r.own==="buy") c.buy++;
+    else if(r.own==="own") c.own++;
+    else if(r.own==="skip") c.skip++;
+    else c.todo++;
+  });
+  return by;
+}
+function sumNode(c){
+  var sum=el("div","tri-sum");
+  if(c.buy) sum.appendChild(el("b",null,c.buy+" to buy"));
+  sum.appendChild(document.createTextNode(
+    (c.buy?" \u00b7 ":"")+c.own+" own \u00b7 "+c.todo+" undecided \u00b7 "+c.all+" items"));
+  return sum;
+}
+function triageRow(r){
+  var cls="tri-row";
+  if(r.own==="own") cls+=" is-own";
+  if(r.own==="skip") cls+=" is-skip";
+  if(r.prio==="must") cls+=" is-must";
+  var row=el("div",cls); row.dataset.rid=r.id;
+  var prep=el("div","prep");
+  prep.setAttribute("role","group");
+  prep.setAttribute("aria-label","Own, buy or skip: "+(r.item||"this item"));
+  [["own","Own"],["buy","Buy"],["skip","Skip"]].forEach(function(o){
+    var b=el("button",null,o[1]); b.type="button";
+    b.dataset.prep=o[0]; b.dataset.doc="packing"; b.dataset.rid=r.id;
+    b.setAttribute("aria-pressed", String((r.own||"")===o[0]));
+    b.setAttribute("aria-label", o[1]+": "+(r.item||""));
+    prep.appendChild(b);
+  });
+  row.appendChild(prep);
+  var bang=el("button","bang","!"); bang.type="button";
+  bang.dataset.flag="prio"; bang.dataset.on="must";
+  bang.dataset.doc="packing"; bang.dataset.rid=r.id;
+  bang.setAttribute("aria-pressed", String(r.prio==="must"));
+  bang.setAttribute("aria-label","Can\u2019t forget: "+(r.item||""));
+  bang.title="Can\u2019t forget";
+  row.appendChild(bang);
+  row.appendChild(el("div","it",r.item||""));
+  return row;
+}
+function triageView(){
+  var box=el("div"), any=false, sums=triageSums();
+  triageGroups().forEach(function(gr){
+    var shown=gr.rows.filter(packMatch);
+    if(!shown.length) return;
+    any=true;
+    var blk=el("div","tri-group"); blk.dataset.group=gr.name;
+    var hd=el("div","tri-head");
+    hd.appendChild(el("div","tri-name",gr.name));
+    hd.appendChild(sumNode(sums[gr.name]));
+    blk.appendChild(hd);
+    var rows=el("div","tri-rows");
+    shown.forEach(function(r){ rows.appendChild(triageRow(r)); });
+    blk.appendChild(rows);
+    box.appendChild(blk);
+  });
+  if(!any) box.appendChild(el("p","p-note","Nothing matches that filter."));
+  return box;
+}
+
+/* One record, two tabs. After a tap, bring every on-screen copy of that row
+   into line rather than re-rendering 154 rows twice and losing the scroll. */
+function syncRow(rid){
+  var r=items("packing").filter(function(x){return x.id===rid;})[0];
+  if(!r) return;
+  var own=r.own||"", must=r.prio==="must";
+  document.querySelectorAll('#panel-triage .tri-row[data-rid="'+rid+'"]').forEach(function(row){
+    row.classList.toggle("is-own", own==="own");
+    row.classList.toggle("is-skip", own==="skip");
+    row.classList.toggle("is-must", must);
+    row.querySelectorAll("[data-prep]").forEach(function(b){
+      b.setAttribute("aria-pressed", String(b.dataset.prep===own));
+    });
+    var bg=row.querySelector(".bang");
+    if(bg) bg.setAttribute("aria-pressed", String(must));
+  });
+  document.querySelectorAll('#panel-packing .row[data-rid="'+rid+'"]').forEach(function(row){
+    var m=row.querySelector(".mark");
+    if(m){
+      var chip=m.querySelector(".m");
+      if(chip) chip.replaceWith(markChip(own));
+      var b=m.querySelector(".b");
+      if(must && !b) m.appendChild(el("span","b","!"));
+      if(!must && b) b.remove();
+    }
+    var stp=row.querySelector(".stripe");
+    if(stp && stp.hasAttribute("data-triage")) stp.dataset.triage=own;
+    row.classList.toggle("owned", own==="own");
+    row.classList.toggle("skipped", own==="skip");
+    row.classList.toggle("must", must);
+  });
+}
+function refreshTriage(){
+  var tl=document.querySelector("#panel-triage .tiles");
+  if(tl) tl.replaceWith(prepTally());
+  var fl=document.querySelector("#panel-triage .filters");
+  if(fl) fl.replaceWith(prepFilter());
+  var sums=triageSums();
+  document.querySelectorAll("#panel-triage .tri-group").forEach(function(blk){
+    var c=sums[blk.dataset.group]; if(!c) return;
+    var old=blk.querySelector(".tri-sum");
+    if(old) old.replaceWith(sumNode(c));
+  });
+}
+
 /* ---------- render ---------- */
 function tabsRender(){
   var box=$("#tabs"); box.textContent="";
@@ -762,7 +939,7 @@ function tabsRender(){
     b.setAttribute("role","tab"); b.setAttribute("aria-selected",String(s.id===active));
     b.setAttribute("aria-controls","panel-"+s.id);
     b.appendChild(document.createTextNode(s.label));
-    var n=items(s.doc).length;
+    var n = s.countFn ? s.countFn() : items(s.doc).length;
     if(n) b.appendChild(el("span","c",String(n)));
     box.appendChild(b);
   });
@@ -783,9 +960,14 @@ function render(force){
     if(sec.id==="tibet"){
       var th=el("div"); th.innerHTML=tourProfile(); p.appendChild(th.firstChild);
     }
-    if(sec.doc==="packing"){ p.appendChild(prepTally()); p.appendChild(prepFilter()); }
+    if(sec.view==="triage"){
+      p.appendChild(prepTally());
+      p.appendChild(prepFilter());
+      p.appendChild(triageView());
+      main.appendChild(p);
+      return;
+    }
     var rows=el("div","rows"), list=items(sec.doc);
-    if(sec.doc==="packing") list=list.filter(packMatch);
     if(!list.length){
       var e=el("div","row"); e.appendChild(el("span","stripe"));
       var b=el("div","row-body"); b.appendChild(el("div","cell empty","Nothing here yet."));
@@ -829,13 +1011,10 @@ document.addEventListener("click",function(e){
       if(r.id!==frid) return r;
       var c=Object.assign({},r); c[fkey]=fnext; return c;
     })};
-    t.setAttribute("aria-pressed", String(fnext===fon));
-    var frow=t.closest(".row");
-    if(frow) frow.classList.toggle("must", fnext===fon);
-    var ffl=document.querySelector("#panel-packing .filters");
-    if(ffl) ffl.replaceWith(prepFilter());
-    queue(fdoc);
+    syncRow(frid);
+    refreshTriage();
     if(packFilter==="key") render(true);
+    queue(fdoc);
     return;
   }
   if(t.dataset.prep){
@@ -845,20 +1024,8 @@ document.addEventListener("click",function(e){
     store[pdoc]={items:items(pdoc).map(function(r){
       return r.id===prid ? Object.assign({},r,{own:next}) : r;
     })};
-    var prow=t.closest(".row");
-    if(prow){
-      prow.classList.toggle("owned", next==="own");
-      prow.classList.toggle("skipped", next==="skip");
-      var pstripe=prow.querySelector(".stripe");
-      if(pstripe && pstripe.hasAttribute("data-triage")) pstripe.dataset.triage=next;
-      prow.querySelectorAll("[data-prep]").forEach(function(b){
-        b.setAttribute("aria-pressed", String(b.dataset.prep===next));
-      });
-    }
-    var tl=document.querySelector("#panel-packing .tiles");
-    if(tl) tl.replaceWith(prepTally());
-    var fl=document.querySelector("#panel-packing .filters");
-    if(fl) fl.replaceWith(prepFilter());
+    syncRow(prid);
+    refreshTriage();
     if(packFilter!=="all") render(true);
     queue(pdoc);
     return;
@@ -866,7 +1033,8 @@ document.addEventListener("click",function(e){
   if(t.dataset.filter){
     packFilter=t.dataset.filter;
     render(true);
-    document.getElementById("panel-packing").scrollIntoView({block:"start",behavior:"smooth"});
+    var tp=document.getElementById("panel-triage");
+    if(tp) tp.scrollIntoView({block:"start",behavior:"smooth"});
     return;
   }
   if(t.dataset.go){
@@ -936,7 +1104,7 @@ document.addEventListener("input",function(e){
 /* ---------- exports ---------- */
 function plain(){
   var out={meta:store.meta||{}};
-  SCHEMA.forEach(function(s){ out[s.doc]=items(s.doc); });
+  SCHEMA.forEach(function(s){ if(!s.view) out[s.doc]=items(s.doc); });
   return out;
 }
 function mdBody(){
@@ -960,13 +1128,19 @@ function mdBody(){
     }
   }
   SCHEMA.forEach(function(sec){
+    if(sec.view) return;
     var list=items(sec.doc); if(!list.length) return;
     L.push(""); L.push("## "+sec.label); L.push("");
     list.forEach(function(r){
       var head=[], body=[];
+      if(sec.state==="prep"){
+        head.push("["+(r.own?String(r.own).toUpperCase():"UNDECIDED")+"]");
+        if(r.prio==="must") head.push("[CAN\u2019T FORGET]");
+      }
       sec.fields.forEach(function(f){
         var v=r[f.k]; if(!v) return;
         if(f.type==="area"){ body.push(v); return; }
+        if(f.type==="mark") return;
         if(f.type==="flag"){ if(v===f.on) head.push("["+f.onLabel.toUpperCase()+"]"); return; }
         if(f.type==="status"||f.type==="mode"||f.type==="prep"){ head.push("["+String(v).toUpperCase()+"]"); return; }
         head.push(v);
@@ -1046,6 +1220,7 @@ function htmlBody(){
     });
   }
   SCHEMA.forEach(function(sec){
+    if(sec.view) return;
     var list=items(sec.doc); if(!list.length) return;
     p.push('<h2>'+esc(sec.label)+'</h2>');
     p.push('<p class="note">'+esc(sec.note)+'</p>');
@@ -1063,11 +1238,12 @@ function htmlBody(){
         var v=r[f.k]; if(!v) return;
         if(f.type==="area"){ areas.push(v); return; }
         if(f.type==="status") return;
-        if(f.type==="prep") return;
+        if(f.type==="prep" || f.type==="mark") return;
         if(f.type==="flag"){ if(v===f.on) meta.push(f.onLabel.toUpperCase()); return; }
         if(!title){ title=v; return; }
         meta.push(v);
       });
+      if(triage && r.prio==="must") meta.unshift("CAN\u2019T FORGET");
       p.push('<div class="e '+esc(st)+'">');
       p.push('<h3>'+esc(title)+'</h3>');
       if(meta.length) p.push('<div class="meta">'+esc(meta.join("  ·  "))+'</div>');

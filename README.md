@@ -22,21 +22,27 @@ Two inline altitude profiles, because altitude is the real risk on this trip: th
 railway from Xi'an at 400 m to Lhasa at 3,650 m, and the tour's day-by-day high point through the
 5,200 m tent night at base camp and 5,248 m at Gyatso La.
 
-Packing is 154 items, each with the bag it rides in, the legs it is for and why. It runs on two
-axes that are deliberately **not** the same control:
+The 154 packing items are one record set behind **two tabs that read the same `trip/packing`
+document**, because they answer different questions:
 
-- **Own / Buy / Skip** — where the item stands. This is packing's state, so the row stripe, the
-  four tallies and the filter chips all follow it; *Buying* is the shopping list.
-- **Can't forget** — a single flag for how much it costs to get that item wrong. Stored as
-  `prio: "must"` on 52 of the 154, and it stays put whatever you decide about owning it.
+- **Packing** is the reference — item, which bag it rides in, which legs it is for, and why it
+  earns the space. The triage state shows here as a read-only chip; the taps live next door.
+- **Own or buy** is the decision tool — every item on one line, grouped by its category, with the
+  three-way **Own / Buy / Skip** control, a `!` for the can't-forget items, and a per-category
+  count that leads with *N to buy*. No prose, no bag columns: it exists to be scanned.
 
-They started out as one field: packing reused the shared `status` select, whose only two values
-here were `action` and `pending`, so a priority rendered in the same saffron-and-cinnabar
-vocabulary that means *not confirmed* and *needs you* everywhere else — and every row looked
-alarming. Sections now declare `state:"prep"` when their state axis isn't `status`, and the
-stripe reads `data-triage` instead of `data-status`. Not every section has to be shaped the same
-way: Tibet tour lost its State column entirely, since all eight rows said `confirmed` and the
-column carried no information.
+A tap on either tab updates the other in place (`syncRow`, keyed on the row id) rather than
+re-rendering 308 rows and throwing away the scroll position. Sections declare `view:"triage"` to
+get the grouped renderer instead of the generic row grid, and `state:"prep"` when their state
+axis is Own/Buy/Skip rather than `status`; exports skip any section with a `view` so the shared
+document is emitted once.
+
+Priority is deliberately a second, independent axis. It started out fused to the state: packing
+reused the shared `status` select, whose only two values here were `action` and `pending`, so a
+priority rendered in the same saffron-and-cinnabar vocabulary that means *not confirmed* and
+*needs you* everywhere else — and every row looked alarming. It is now `prio: "must"` on 52 of
+the 154, set independently of the triage. Tibet tour lost its State column in the same pass,
+since all eight rows said `confirmed` and the column carried no information.
 
 The **Download** button exports the current state five ways via the artifact `downloads`
 capability:
