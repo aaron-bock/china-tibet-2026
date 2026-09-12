@@ -1,0 +1,14 @@
+{
+  "items": [
+    { "id": "m1", "item": "Zelle from Jeff Margolin", "amount": "+$1,000.00", "status": "confirmed", "detail": "Received 26 Jul 2026, confirmation 5733643293, into the Ally spending account ending 9770. Shared-cost float for the trip - reconcile against the tour invoice when it arrives." },
+    { "id": "m2", "item": "DL 500 / DL 899 · ATL-LAX-ATL", "amount": "$522.80", "status": "confirmed", "detail": "Paid in full with eCredit 0062428040008 on Amex ending 3009. Base fare $457.67 plus $65.13 in US taxes and fees." },
+    { "id": "m3", "item": "KE 012 / KE 141 · LAX-ICN-XIY", "amount": "not on file", "status": "pending", "detail": "Korean Air booking FAFD77, ticketed 27 Jul. The fare was in the PDF receipt attached to the e-ticket email, not in the message body." },
+    { "id": "m4", "item": "MU 2336 · Lhasa-Shanghai", "amount": "30,000 miles + CNY 170", "status": "confirmed", "detail": "SkyMiles award. CNY 50 China airport fee plus CNY 120 carrier surcharge on Amex ending 3009. Ticket 0062429113492." },
+    { "id": "m5", "item": "DL 38 · Pudong-LAX", "amount": "CNY 4,653", "status": "confirmed", "detail": "Base CNY 2,080 plus CNY 2,573 in taxes and surcharges - CNY 2,200 of that is the carrier-imposed international surcharge. Amex ending 3009. Ticket 0062450696002." },
+    { "id": "m6", "item": "The Westin Xi'an · 29 Sep-1 Oct", "amount": "CNY 1,707.02", "status": "pending", "detail": "CNY 1,464 room plus CNY 243.02 service. CNY 732 prepayment charged 27 Sep; balance at checkout." },
+    { "id": "m7", "item": "The Westin Xi'an · 1-2 Oct", "amount": "0 points", "status": "pending", "detail": "Amex Brilliant anniversary free-night award, up to 85K points. Cancel free until 17 Sep - see the open item about the train overlap." },
+    { "id": "m8", "item": "Xi'an-Lhasa soft sleeper", "amount": "approx CNY 1,235", "status": "action", "detail": "Not booked. The CNY 1,235 figure is James's soft-sleeper price for Z322 out of Chengdu; the Xi'an fare will differ. Hard sleeper was CNY 778." },
+    { "id": "m9", "item": "Tibet tour · Asia Odyssey Travel", "amount": "not on file", "status": "action", "detail": "No quote, deposit or balance date anywhere in the email record. Ask James for it in writing." },
+    { "id": "m10", "item": "Travel insurance", "amount": "not purchased", "status": "action", "detail": "Check existing card coverage first - trip interruption and, more importantly, medical evacuation from the plateau." }
+  ]
+}

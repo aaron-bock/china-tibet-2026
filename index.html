@@ -1,0 +1,804 @@
+<title>China &amp; Tibet 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,600&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#E7EAF0; --surface:#FBFCFD; --raise:#F2F4F8;
+  --ink:#171D29; --soft:#5C677D; --faint:#8B95A8;
+  --line:#CDD4E0; --hair:#DDE2EB;
+  --lapis:#24499A; --lapis-wash:#DFE5F5;
+  --cinnabar:#B03A29; --cinnabar-wash:#F6E1DC;
+  --saffron:#A8700A; --saffron-wash:#F7EBD3;
+  --jade:#1F7561; --jade-wash:#DCEBE6;
+  --on-accent:#FFFFFF;
+  --shadow:0 1px 2px rgba(23,29,41,.06), 0 6px 20px -12px rgba(23,29,41,.22);
+  --f-disp:"Bodoni Moda",Georgia,"Times New Roman",serif;
+  --f-body:"Public Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#0F131B; --surface:#181D28; --raise:#1F2532;
+    --ink:#E4E8F1; --soft:#929DB4; --faint:#6F7A90;
+    --line:#2A313F; --hair:#232A37;
+    --lapis:#86A5EE; --lapis-wash:#1B2540;
+    --cinnabar:#EC7E6B; --cinnabar-wash:#361F1C;
+    --saffron:#DCA53C; --saffron-wash:#332714;
+    --jade:#4CB79C; --jade-wash:#142E2A;
+    --on-accent:#0F131B;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 6px 20px -12px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0F131B; --surface:#181D28; --raise:#1F2532;
+  --ink:#E4E8F1; --soft:#929DB4; --faint:#6F7A90;
+  --line:#2A313F; --hair:#232A37;
+  --lapis:#86A5EE; --lapis-wash:#1B2540;
+  --cinnabar:#EC7E6B; --cinnabar-wash:#361F1C;
+  --saffron:#DCA53C; --saffron-wash:#332714;
+  --jade:#4CB79C; --jade-wash:#142E2A;
+  --on-accent:#0F131B;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 6px 20px -12px rgba(0,0,0,.6);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:var(--f-body); font-size:15px; line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1020px; margin:0 auto; padding-inline:20px}
+h1,h2,h3{text-wrap:balance; margin:0}
+
+/* ---------- masthead ---------- */
+header.mast{border-bottom:1px solid var(--line); background:var(--surface)}
+.mast-in{display:flex; flex-wrap:wrap; gap:20px 28px; align-items:flex-end; justify-content:space-between; padding-block:26px 22px}
+.brand{min-width:0}
+.eyebrow{
+  font-family:var(--f-mono); font-size:10.5px; font-weight:500; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--faint); margin:0 0 6px
+}
+h1.title{font-family:var(--f-disp); font-weight:600; font-size:clamp(30px,6vw,46px); line-height:1.02; letter-spacing:-.015em}
+h1.title .yr{color:var(--faint); font-weight:400}
+.byline{margin:9px 0 0; color:var(--soft); font-size:13.5px}
+.byline b{color:var(--ink); font-weight:600}
+
+.mast-side{display:flex; gap:26px; align-items:flex-end; flex-wrap:wrap}
+.count{text-align:right}
+.count .n{font-family:var(--f-mono); font-size:34px; font-weight:600; line-height:1; letter-spacing:-.03em; font-variant-numeric:tabular-nums; display:block}
+.count .u{font-family:var(--f-mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--faint)}
+.tools{display:flex; gap:8px; align-items:center}
+
+button{font-family:inherit; font-size:13px; cursor:pointer}
+.btn{
+  border:1px solid var(--line); background:var(--raise); color:var(--ink);
+  border-radius:7px; padding:8px 13px; font-weight:500; transition:border-color .12s, background .12s
+}
+.btn:hover{border-color:var(--soft)}
+.btn.primary{background:var(--lapis); border-color:var(--lapis); color:var(--on-accent)}
+.btn.primary:hover{filter:brightness(1.08)}
+.btn.icon{padding:8px 10px; font-family:var(--f-mono)}
+:focus-visible{outline:2px solid var(--lapis); outline-offset:2px; border-radius:4px}
+
+/* ---------- alert ---------- */
+.alert{
+  margin-block:18px 0; border:1px solid var(--line); border-left:3px solid var(--cinnabar);
+  background:var(--surface); border-radius:4px; padding:14px 16px; display:flex; gap:14px; flex-wrap:wrap; align-items:baseline
+}
+.alert .hd{font-family:var(--f-mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--cinnabar); font-weight:600; white-space:nowrap}
+.alert .bd{flex:1 1 320px; min-width:0; font-size:13.5px; color:var(--soft)}
+.alert .bd b{color:var(--ink); font-weight:600}
+
+/* ---------- nav ---------- */
+nav.tabs{position:sticky; top:0; z-index:20; background:var(--ground); border-bottom:1px solid var(--line); margin-top:22px}
+.tabs-in{display:flex; gap:2px; overflow-x:auto; scrollbar-width:none}
+.tabs-in::-webkit-scrollbar{display:none}
+.tab{
+  border:0; background:none; color:var(--soft); padding:11px 13px 10px; white-space:nowrap;
+  font-size:13px; font-weight:500; border-bottom:2px solid transparent; margin-bottom:-1px
+}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected="true"]{color:var(--ink); border-bottom-color:var(--lapis); font-weight:600}
+.tab .c{font-family:var(--f-mono); font-size:10.5px; color:var(--faint); margin-left:5px; font-variant-numeric:tabular-nums}
+.tab[aria-selected="true"] .c{color:var(--lapis)}
+
+/* ---------- panels ---------- */
+main{padding-block:28px 90px}
+.panel[hidden]{display:none!important}
+.p-head{display:flex; gap:16px; align-items:baseline; justify-content:space-between; flex-wrap:wrap; margin-bottom:4px}
+h2.p-title{font-family:var(--f-disp); font-size:25px; font-weight:600; letter-spacing:-.01em}
+.p-note{color:var(--soft); font-size:13.5px; max-width:64ch; margin:0 0 20px}
+
+/* ---------- rows ---------- */
+.rows{display:flex; flex-direction:column; gap:1px; background:var(--hair); border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
+.row{display:flex; background:var(--surface)}
+.row:hover{background:var(--raise)}
+.stripe{flex:0 0 3px; align-self:stretch; background:var(--faint)}
+.stripe[data-status="confirmed"]{background:var(--jade)}
+.stripe[data-status="pending"]{background:var(--saffron)}
+.stripe[data-status="action"]{background:var(--cinnabar)}
+.stripe[data-status="done"]{background:var(--line)}
+.row-body{flex:1 1 auto; min-width:0; padding:13px 14px 14px; display:grid; gap:8px 14px}
+.row.done .row-body{opacity:.52}
+.cell{min-width:0; display:flex; flex-direction:column; gap:2px}
+.cell > label{font-family:var(--f-mono); font-size:9.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--faint)}
+.cell.empty{color:var(--faint); font-style:italic; font-size:13.5px}
+.row-kill{
+  flex:0 0 auto; align-self:flex-start; border:0; background:none; color:var(--faint);
+  font-family:var(--f-mono); font-size:16px; line-height:1; padding:13px 12px 8px; opacity:0; transition:opacity .12s
+}
+.row:hover .row-kill, .row-kill:focus-visible{opacity:1}
+.row-kill:hover{color:var(--cinnabar)}
+
+/* inputs that read as text until touched */
+.f{
+  font-family:inherit; font-size:14px; color:var(--ink); background:transparent;
+  border:1px solid transparent; border-radius:5px; padding:3px 5px; margin:-3px -5px;
+  width:100%; min-width:0; transition:border-color .12s, background .12s
+}
+.f:hover{border-color:var(--hair)}
+.f:focus{outline:none; border-color:var(--lapis); background:var(--ground)}
+.f::placeholder{color:var(--faint); font-style:italic}
+.f.mono{font-family:var(--f-mono); font-size:12.5px; font-variant-numeric:tabular-nums}
+.f.strong{font-weight:600}
+.f.big{font-family:var(--f-disp); font-size:17px; font-weight:600; letter-spacing:-.005em}
+textarea.f{resize:vertical; min-height:2.9em; line-height:1.5; font-size:13.5px; color:var(--soft)}
+select.f{
+  cursor:pointer; -webkit-appearance:none; appearance:none;
+  font-family:var(--f-mono); font-size:10px; letter-spacing:.11em; text-transform:uppercase;
+  font-weight:600; padding:4px 7px; margin:0; width:auto; max-width:100%; border-radius:3px
+}
+select.f.st-confirmed{color:var(--jade); background:var(--jade-wash)}
+select.f.st-pending{color:var(--saffron); background:var(--saffron-wash)}
+select.f.st-action{color:var(--cinnabar); background:var(--cinnabar-wash)}
+select.f.st-done{color:var(--faint); background:var(--raise)}
+select.f.m-air{color:var(--lapis); background:var(--lapis-wash)}
+select.f.m-rail{color:var(--saffron); background:var(--saffron-wash)}
+select.f.m-ground{color:var(--jade); background:var(--jade-wash)}
+
+.add{margin-top:14px; border:1px dashed var(--line); background:none; color:var(--soft); width:100%; padding:10px; border-radius:7px; font-weight:500}
+.add:hover{border-color:var(--lapis); color:var(--lapis)}
+
+/* ---------- summary tiles ---------- */
+.tiles{display:grid; grid-template-columns:repeat(auto-fit,minmax(148px,1fr)); gap:1px; background:var(--hair); border:1px solid var(--line); border-radius:6px; overflow:hidden; margin-bottom:26px}
+.tile{background:var(--surface); padding:14px 15px}
+.tile .k{font-family:var(--f-mono); font-size:9.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--faint)}
+.tile .v{font-family:var(--f-mono); font-size:21px; font-weight:600; line-height:1.25; margin-top:3px; font-variant-numeric:tabular-nums; letter-spacing:-.02em}
+.tile .s{font-size:12px; color:var(--soft); margin-top:1px}
+
+/* ---------- elevation ---------- */
+figure.elev{margin:0 0 26px; border:1px solid var(--line); border-radius:6px; background:var(--surface); padding:16px 16px 12px; box-shadow:var(--shadow)}
+figure.elev figcaption{font-size:12.5px; color:var(--soft); margin-top:10px; max-width:70ch}
+figure.elev figcaption b{color:var(--ink); font-weight:600}
+.elev-hd{font-family:var(--f-mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--faint); margin-bottom:10px}
+.elev svg{display:block; width:100%; height:auto; max-width:100%}
+.elev .grid{stroke:var(--hair); stroke-width:1}
+.elev .axis{font-family:var(--f-mono); font-size:9px; fill:var(--faint)}
+.elev .area{fill:var(--saffron-wash); stroke:none}
+.elev .route{fill:none; stroke:var(--saffron); stroke-width:2; stroke-linejoin:round}
+.elev .stn{fill:var(--surface); stroke:var(--saffron); stroke-width:1.6}
+.elev .stn.peak{fill:var(--cinnabar); stroke:var(--cinnabar)}
+.elev .sname{font-family:var(--f-body); font-size:10.5px; fill:var(--soft); stroke:none}
+.elev .salt{font-family:var(--f-mono); font-size:9px; fill:var(--faint); stroke:none}
+.elev .peaklab{font-family:var(--f-mono); font-size:10px; font-weight:600; fill:var(--cinnabar); stroke:none}
+
+/* ---------- export sheet ---------- */
+.sheet{position:fixed; inset:0; z-index:60; display:flex; align-items:center; justify-content:center; padding:20px; background:rgba(15,19,27,.5)}
+.sheet[hidden]{display:none!important}
+.sheet-card{background:var(--surface); border:1px solid var(--line); border-radius:10px; max-width:430px; width:100%; padding:22px; box-shadow:0 24px 60px -20px rgba(0,0,0,.5)}
+.sheet-card h3{font-family:var(--f-disp); font-size:21px; font-weight:600; margin-bottom:4px}
+.sheet-card p.lede{color:var(--soft); font-size:13px; margin:0 0 16px}
+.dl{display:flex; flex-direction:column; gap:7px}
+.dl button{
+  display:flex; gap:12px; align-items:baseline; text-align:left; width:100%;
+  border:1px solid var(--line); background:var(--raise); border-radius:7px; padding:11px 13px; color:var(--ink)
+}
+.dl button:hover{border-color:var(--lapis)}
+.dl .ext{font-family:var(--f-mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--lapis); font-weight:600; flex:0 0 42px}
+.dl .lbl{flex:1; min-width:0}
+.dl .lbl b{display:block; font-weight:600; font-size:13.5px}
+.dl .lbl span{display:block; color:var(--soft); font-size:12px; line-height:1.45}
+.sheet-foot{display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top:16px}
+.sheet-msg{font-size:12px; color:var(--soft); min-height:1.3em; flex:1}
+
+/* ---------- save state ---------- */
+.saver{font-family:var(--f-mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--faint); white-space:nowrap}
+.saver[data-s="saving"]{color:var(--saffron)}
+.saver[data-s="saved"]{color:var(--jade)}
+.saver[data-s="error"], .saver[data-s="off"]{color:var(--cinnabar)}
+
+.boot{padding:60px 0; text-align:center; color:var(--soft)}
+.boot b{display:block; font-family:var(--f-disp); font-size:20px; color:var(--ink); margin-bottom:6px; font-weight:600}
+
+footer.foot{border-top:1px solid var(--line); padding-block:20px 40px; color:var(--faint); font-size:12px}
+
+/* ---------- column templates ---------- */
+.g-segments{grid-template-columns:118px minmax(0,1.4fr) minmax(0,1.4fr) 92px}
+.g-stays{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) 92px}
+.g-days{grid-template-columns:136px minmax(0,1fr) 92px}
+.g-tasks{grid-template-columns:minmax(0,1fr) 116px 92px 116px}
+.g-people{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr)}
+.g-money{grid-template-columns:minmax(0,1fr) 156px 92px}
+.g-packing{grid-template-columns:minmax(0,1fr) 128px 92px}
+.g-reference{grid-template-columns:minmax(0,1fr) minmax(0,164px) 116px}
+.g-notes{grid-template-columns:minmax(0,1fr) 148px}
+.row-body .w-all{grid-column:1/-1}
+
+@media (max-width:720px){
+  .row-body{grid-template-columns:minmax(0,1fr)!important}
+  .mast-in{align-items:flex-start}
+  .mast-side{width:100%; justify-content:space-between; align-items:center; gap:14px}
+  .count{text-align:left}
+  h2.p-title{font-size:22px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important; animation:none!important}}
+@media print{
+  nav.tabs,.tools,.add,.row-kill,footer.foot,.alert{display:none!important}
+  .panel[hidden]{display:block!important}
+  .row{break-inside:avoid}
+}
+</style>
+
+<header class="mast">
+  <div class="wrap mast-in">
+    <div class="brand">
+      <p class="eyebrow">Trip dossier &middot; Asia Odyssey AOT-BJ-James-50674</p>
+      <h1 class="title">China &amp; Tibet <span class="yr">2026</span></h1>
+      <p class="byline"><b id="mTraveler">&nbsp;</b> <span id="mDates"></span></p>
+    </div>
+    <div class="mast-side">
+      <div class="count">
+        <span class="n" id="cN">&mdash;</span>
+        <span class="u" id="cU">days to wheels up</span>
+      </div>
+      <div class="tools">
+        <span class="saver" id="saver" data-s="idle"></span>
+        <button class="btn icon" id="theme" title="Switch theme" aria-label="Switch theme">&#9681;</button>
+        <button class="btn primary" id="openExport">Download</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="alert" id="alert" hidden>
+    <span class="hd">Needs you</span>
+    <span class="bd" id="alertBody"></span>
+  </div>
+</div>
+
+<nav class="tabs"><div class="wrap tabs-in" id="tabs" role="tablist"></div></nav>
+
+<main class="wrap" id="main">
+  <div class="boot"><b>Opening your trip&hellip;</b>Loading itinerary, bookings and open items.</div>
+</main>
+
+<footer class="wrap foot">
+  Built from the Travel/Everest thread in Gmail and the shared reference sheet in Drive. Edits save for everyone who opens this page.
+</footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheet-card">
+    <h3 id="sheetTitle">Take it with you</h3>
+    <p class="lede">Snapshots of everything on this page, exactly as it stands now.</p>
+    <div class="dl">
+      <button type="button" data-fmt="html"><span class="ext">html</span><span class="lbl"><b>Full dossier</b><span>Every section on one printable page. Works offline.</span></span></button>
+      <button type="button" data-fmt="md"><span class="ext">md</span><span class="lbl"><b>Markdown</b><span>Plain text for Notes, Obsidian or a phone.</span></span></button>
+      <button type="button" data-fmt="csv"><span class="ext">csv</span><span class="lbl"><b>Costs &amp; payments</b><span>The money table as a spreadsheet.</span></span></button>
+      <button type="button" data-fmt="json"><span class="ext">json</span><span class="lbl"><b>Data backup</b><span>Raw records, exactly as stored.</span></span></button>
+    </div>
+    <div class="sheet-foot">
+      <span class="sheet-msg" id="sheetMsg"></span>
+      <button class="btn" id="closeExport">Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+"use strict";
+var DEPART="2026-09-22", RETURN="2026-10-16";
+var STATUS=["confirmed","pending","action","done"], MODES=["air","rail","ground"];
+
+var SCHEMA=[
+  { id:"itinerary", doc:"days", label:"Itinerary",
+    note:"Day by day, Atlanta to Atlanta. The Tibet week stays a placeholder until Asia Odyssey sends the written plan.",
+    fields:[
+      {k:"date",  l:"Date",  cls:"mono strong", ph:"Day"},
+      {k:"title", l:"Where", cls:"big",         ph:"What happens"},
+      {k:"status",l:"State", type:"status"},
+      {k:"detail",l:"Notes", type:"area",       ph:"Notes"}
+    ]},
+  { id:"travel", doc:"segments", label:"Flights & rail",
+    note:"Seven legs — four Delta, two Korean Air, one China Eastern award — plus the overnight train onto the plateau.",
+    fields:[
+      {k:"code",  l:"Service", cls:"mono strong", ph:"Flight"},
+      {k:"from",  l:"From",    cls:"",            ph:"Origin"},
+      {k:"to",    l:"To",      cls:"",            ph:"Destination"},
+      {k:"mode",  l:"Mode",    type:"mode"},
+      {k:"depart",l:"Departs", cls:"mono",        ph:"Departure"},
+      {k:"arrive",l:"Arrives", cls:"mono",        ph:"Arrival"},
+      {k:"conf",  l:"Ref",     cls:"mono",        ph:"Locator"},
+      {k:"status",l:"State",   type:"status"},
+      {k:"detail",l:"Detail",  type:"area",       ph:"Fare, seat, ticket number"}
+    ]},
+  { id:"stays", doc:"stays", label:"Stays",
+    note:"Three Xi'an nights are booked and the Tibet nights sit inside the tour. Los Angeles and Shanghai are still open.",
+    fields:[
+      {k:"name",    l:"Hotel",     cls:"big",   ph:"Property"},
+      {k:"place",   l:"City",      cls:"",      ph:"City"},
+      {k:"status",  l:"State",     type:"status"},
+      {k:"checkin", l:"Check in",  cls:"mono",  ph:"Arrive"},
+      {k:"checkout",l:"Check out", cls:"mono",  ph:"Depart"},
+      {k:"conf",    l:"Ref",       cls:"mono",  ph:"Confirmation"},
+      {k:"detail",  l:"Detail",    type:"area", ph:"Rate, cancellation, address"}
+    ]},
+  { id:"open", doc:"tasks", label:"Open items",
+    note:"What is unresolved, roughly in the order it will hurt. The train and the passport name are the two that can end the Tibet leg.",
+    fields:[
+      {k:"title", l:"Item",  cls:"big",   ph:"What needs doing"},
+      {k:"owner", l:"Who",   cls:"mono",  ph:"Owner"},
+      {k:"status",l:"State", type:"status"},
+      {k:"due",   l:"When",  cls:"mono",  ph:"Deadline"},
+      {k:"detail",l:"Why",   type:"area", ph:"Context"}
+    ]},
+  { id:"people", doc:"people", label:"People",
+    note:"Four travelling companions, one consultant in Beijing, and two people worth calling before you go.",
+    fields:[
+      {k:"name",   l:"Name",  cls:"big",   ph:"Name"},
+      {k:"role",   l:"Role",  cls:"",      ph:"Role"},
+      {k:"contact",l:"Reach", cls:"mono",  wide:true, ph:"Phone, email, WeChat"},
+      {k:"detail", l:"Notes", type:"area", ph:"Notes"}
+    ]},
+  { id:"money", doc:"money", label:"Money",
+    note:"What is paid, what is owed, and the two figures nobody has put in writing yet.",
+    fields:[
+      {k:"item",  l:"Line",   cls:"strong", ph:"What"},
+      {k:"amount",l:"Amount", cls:"mono",   ph:"Amount"},
+      {k:"status",l:"State",  type:"status"},
+      {k:"detail",l:"Detail", type:"area",  ph:"Detail"}
+    ]},
+  { id:"packing", doc:"packing", label:"Packing",
+    note:"Built for the plateau and a 34-hour train, not for a beach. A starting list — edit it down.",
+    fields:[
+      {k:"item",  l:"Item",  cls:"strong", ph:"Item"},
+      {k:"group", l:"Group", cls:"mono",   ph:"Category"},
+      {k:"status",l:"State", type:"status"},
+      {k:"detail",l:"Why",   type:"area",  ph:"Why"}
+    ]},
+  { id:"reference", doc:"reference", label:"Reference",
+    note:"Consulates, card lines and every booking locator in one place — the page to print and fold into a passport.",
+    fields:[
+      {k:"name",  l:"What",   cls:"strong", ph:"Name"},
+      {k:"value", l:"Number", cls:"mono",   ph:"Number"},
+      {k:"group", l:"Kind",   cls:"mono",   ph:"Category"},
+      {k:"detail",l:"Notes",  type:"area",  ph:"Notes"}
+    ]},
+  { id:"notes", doc:"notes", label:"Recommendations",
+    note:"Mostly Sandra Rothbard's, from three weeks in Shanghai and Xi'an, plus Kamana's Zhangjiajie idea.",
+    fields:[
+      {k:"name",  l:"Thing", cls:"big",   ph:"What"},
+      {k:"place", l:"Where", cls:"mono",  ph:"Where"},
+      {k:"detail",l:"Notes", type:"area", ph:"Notes"}
+    ]}
+];
+
+var store={}, db=null, dl=null, active=SCHEMA[0].id, booted=false;
+var pending={}, flushTimer=null;
+
+function $(s){return document.querySelector(s);}
+function el(t,c,x){var n=document.createElement(t); if(c)n.className=c; if(x!=null)n.textContent=x; return n;}
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){
+  return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+function items(d){var o=store[d]; return (o&&Array.isArray(o.items))?o.items:[];}
+function secFor(doc){for(var i=0;i<SCHEMA.length;i++){if(SCHEMA[i].doc===doc)return SCHEMA[i];} return null;}
+function nid(){return "x"+Date.now().toString(36)+Math.random().toString(36).slice(2,6);}
+
+/* ---------- countdown ---------- */
+function clock(){
+  var t=new Date(), today=new Date(t.getFullYear(),t.getMonth(),t.getDate());
+  var d=new Date(DEPART+"T00:00:00"), r=new Date(RETURN+"T00:00:00");
+  var dd=Math.round((d-today)/864e5), rr=Math.round((r-today)/864e5);
+  if(dd>0){ $("#cN").textContent=dd; $("#cU").textContent=(dd===1?"day":"days")+" to wheels up"; }
+  else if(rr>=0){ $("#cN").textContent=String(1-dd); $("#cU").textContent="day of the trip"; }
+  else { $("#cN").textContent="✓"; $("#cU").textContent="trip complete"; }
+}
+
+/* ---------- saving ---------- */
+function saver(s,msg){
+  var n=$("#saver"); n.dataset.s=s;
+  n.textContent = msg!=null ? msg :
+    (s==="saving"?"Saving":s==="saved"?"Saved":s==="error"?"Not saved":"");
+  if(s==="saved") setTimeout(function(){ if(n.dataset.s==="saved") saver("idle",""); },1800);
+}
+function queue(doc){
+  if(!db){ saver("off","Not saved"); return; }
+  pending[doc]=true; saver("saving");
+  clearTimeout(flushTimer); flushTimer=setTimeout(flush,650);
+}
+function flush(){
+  if(!db) return;
+  var docs=Object.keys(pending); pending={};
+  if(!docs.length) return;
+  Promise.all(docs.map(function(d){
+    var body = d==="meta" ? (store.meta||{}) : {items:items(d)};
+    return db.doc("trip/"+d).set(body);
+  })).then(function(){ saver("saved"); })
+    .catch(function(e){ saver("error",(e&&e.code==="revoked")?"Read only":"Not saved"); });
+}
+
+/* ---------- row building ---------- */
+function field(sec,row,f){
+  var wide = f.wide || f.type==="area";
+  var cell=el("div","cell"+(wide?" w-all":""));
+  var id=sec.id+"-"+row.id+"-"+f.k;
+  var lab=el("label",null,f.l); lab.htmlFor=id; cell.appendChild(lab);
+  var node;
+  if(f.type==="status" || f.type==="mode"){
+    var opts = f.type==="status"?STATUS:MODES;
+    node=el("select","f");
+    opts.forEach(function(o){
+      var op=el("option",null,o.charAt(0).toUpperCase()+o.slice(1)); op.value=o; node.appendChild(op);
+    });
+    node.value = opts.indexOf(row[f.k])>=0 ? row[f.k] : opts[f.type==="status"?1:0];
+    node.className = "f " + (f.type==="status"?"st-":"m-") + node.value;
+  } else if(f.type==="area"){
+    node=el("textarea","f"); node.rows=2; node.value=row[f.k]||"";
+  } else {
+    node=el("input","f"+(f.cls?" "+f.cls:"")); node.type="text"; node.value=row[f.k]||"";
+  }
+  node.id=id;
+  if(f.ph) node.placeholder=f.ph;
+  node.dataset.doc=sec.doc; node.dataset.rid=row.id; node.dataset.key=f.k;
+  cell.appendChild(node);
+  return cell;
+}
+function rowNode(sec,row){
+  var r=el("div","row"+(row.status==="done"?" done":"")); r.dataset.rid=row.id;
+  var st=el("span","stripe"); st.dataset.status=row.status||"pending"; r.appendChild(st);
+  var body=el("div","row-body g-"+sec.doc);
+  sec.fields.forEach(function(f){ body.appendChild(field(sec,row,f)); });
+  r.appendChild(body);
+  var k=el("button","row-kill","×");
+  k.type="button"; k.title="Remove"; k.setAttribute("aria-label","Remove this entry");
+  k.dataset.kill=row.id; k.dataset.doc=sec.doc;
+  r.appendChild(k);
+  return r;
+}
+
+/* ---------- elevation profile ---------- */
+var STATIONS=[
+  {n:"Xi'an",    x:52,    y:159.8, m:400,  show:1, peak:0},
+  {n:"Lanzhou",  x:200.3, y:131.3, m:1520, show:0, peak:0},
+  {n:"Xining",   x:247.6, y:112.1, m:2275, show:1, peak:0},
+  {n:"Golmud",   x:428.6, y:98.0,  m:2829, show:1, peak:0},
+  {n:"Tanggula", x:544.6, y:40.9,  m:5072, show:1, peak:1},
+  {n:"Nagqu",    x:581.9, y:55.1,  m:4513, show:0, peak:0},
+  {n:"Lhasa",    x:662,   y:76.9,  m:3656, show:1, peak:0}
+];
+function elevation(){
+  var pts=STATIONS.map(function(s){return s.x+","+s.y;}).join(" ");
+  var g="";
+  [[170,"0"],[119.1,"2,000"],[68.2,"4,000"]].forEach(function(t){
+    g+='<line class="grid" x1="52" y1="'+t[0]+'" x2="670" y2="'+t[0]+'"/>'+
+       '<text class="axis" x="46" y="'+(t[0]+3.4)+'" text-anchor="end">'+t[1]+'</text>';
+  });
+  var marks="";
+  STATIONS.forEach(function(s){
+    marks+='<circle class="stn'+(s.peak?" peak":"")+'" cx="'+s.x+'" cy="'+s.y+'" r="'+(s.peak?3.4:2.4)+'"/>';
+    if(s.show){
+      var a = s.x<80?"start":(s.x>640?"end":"middle");
+      marks+='<text class="sname" x="'+s.x+'" y="187" text-anchor="'+a+'">'+esc(s.n)+'</text>'+
+             '<text class="salt" x="'+s.x+'" y="198" text-anchor="'+a+'">'+s.m.toLocaleString()+' m</text>';
+    }
+  });
+  return '<figure class="elev">'+
+    '<div class="elev-hd">Qinghai–Tibet railway · Xi’an to Lhasa · 2,781 km</div>'+
+    '<svg viewBox="0 0 700 205" role="img" aria-label="Elevation profile of the Xi’an to Lhasa railway: 400 metres at Xi’an, rising through Xining and Golmud to 5,072 metres at Tanggula Pass, then settling at 3,656 metres in Lhasa.">'+
+    g+
+    '<polygon class="area" points="52,170 '+pts+' 662,170"/>'+
+    '<polyline class="route" points="'+pts+'"/>'+
+    '<text class="peaklab" x="544.6" y="29" text-anchor="middle">Tanggula Pass 5,072 m</text>'+
+    marks+
+    '</svg>'+
+    '<figcaption>Roughly <b>34 hours</b> in a four-berth soft sleeper. Carriages run oxygen-enriched above Golmud, but Lhasa still sits at <b>3,656 m</b> — keep the first day there empty. <b>This leg is not ticketed yet.</b></figcaption>'+
+    '</figure>';
+}
+
+/* ---------- summary tiles ---------- */
+function tiles(){
+  var segs=items("segments"), stays=items("stays"), tk=items("tasks"), mny=items("money");
+  var openTasks=tk.filter(function(t){return t.status==="action";}).length;
+  var unconf=segs.filter(function(s){return s.status!=="confirmed";}).length;
+  var openStays=stays.filter(function(s){return s.status==="action";}).length;
+  var openMoney=mny.filter(function(m){return m.status==="action";}).length;
+  var data=[
+    {k:"Open items",  v:openTasks, s:openTasks?"need a decision":"all clear"},
+    {k:"Legs",        v:segs.length, s:unconf?unconf+" not confirmed":"all confirmed"},
+    {k:"Stays open",  v:openStays, s:openStays?"nothing booked":"all covered"},
+    {k:"Costs unset", v:openMoney, s:openMoney?"no figure on file":"all priced"}
+  ];
+  var w=el("div","tiles");
+  data.forEach(function(x){
+    var t=el("div","tile");
+    t.appendChild(el("div","k",x.k));
+    t.appendChild(el("div","v",String(x.v)));
+    t.appendChild(el("div","s",x.s));
+    w.appendChild(t);
+  });
+  return w;
+}
+
+/* ---------- render ---------- */
+function tabsRender(){
+  var box=$("#tabs"); box.textContent="";
+  SCHEMA.forEach(function(s){
+    var b=el("button","tab"); b.type="button"; b.dataset.go=s.id;
+    b.setAttribute("role","tab"); b.setAttribute("aria-selected",String(s.id===active));
+    b.setAttribute("aria-controls","panel-"+s.id);
+    b.appendChild(document.createTextNode(s.label));
+    var n=items(s.doc).length;
+    if(n) b.appendChild(el("span","c",String(n)));
+    box.appendChild(b);
+  });
+}
+function render(){
+  var main=$("#main");
+  if(booted && document.activeElement && main.contains(document.activeElement)) return;
+  main.textContent="";
+  SCHEMA.forEach(function(sec){
+    var p=el("section","panel"); p.id="panel-"+sec.id; p.dataset.sec=sec.id;
+    p.setAttribute("role","tabpanel"); p.hidden = sec.id!==active;
+    var h=el("div","p-head"); h.appendChild(el("h2","p-title",sec.label)); p.appendChild(h);
+    p.appendChild(el("p","p-note",sec.note));
+    if(sec.id==="itinerary") p.appendChild(tiles());
+    if(sec.id==="travel"){
+      var holder=el("div"); holder.innerHTML=elevation(); p.appendChild(holder.firstChild);
+    }
+    var rows=el("div","rows"), list=items(sec.doc);
+    if(!list.length){
+      var e=el("div","row"); e.appendChild(el("span","stripe"));
+      var b=el("div","row-body"); b.appendChild(el("div","cell empty","Nothing here yet."));
+      e.appendChild(b); rows.appendChild(e);
+    }
+    list.forEach(function(r){ rows.appendChild(rowNode(sec,r)); });
+    p.appendChild(rows);
+    var add=el("button","add","+ Add to "+sec.label.toLowerCase());
+    add.type="button"; add.dataset.add=sec.doc;
+    p.appendChild(add);
+    main.appendChild(p);
+  });
+  tabsRender(); head(); booted=true;
+}
+function head(){
+  var m=store.meta||{};
+  $("#mTraveler").textContent=m.traveler||"";
+  $("#mDates").textContent="· 22 Sep – 16 Oct 2026"+(m.groupSize?" · "+m.groupSize:"");
+  var tk=items("tasks").filter(function(t){return t.status==="action";});
+  var a=$("#alert");
+  if(tk.length){
+    a.hidden=false;
+    var top=tk.slice(0,2).map(function(t){return "<b>"+esc(t.title)+"</b>";}).join(" &nbsp;·&nbsp; ");
+    $("#alertBody").innerHTML=top+(tk.length>2?" &nbsp;·&nbsp; and "+(tk.length-2)+" more under Open items.":"");
+  } else { a.hidden=true; }
+}
+function refreshTiles(){
+  var t=document.querySelector("#panel-itinerary .tiles");
+  if(t) t.replaceWith(tiles());
+}
+
+/* ---------- events ---------- */
+document.addEventListener("click",function(e){
+  var t=e.target.closest("[data-go],[data-add],[data-kill],[data-fmt],#openExport,#closeExport,#theme");
+  if(!t) return;
+  if(t.dataset.go){
+    active=t.dataset.go;
+    document.querySelectorAll(".panel").forEach(function(p){ p.hidden=p.dataset.sec!==active; });
+    document.querySelectorAll(".tab").forEach(function(b){ b.setAttribute("aria-selected",String(b.dataset.go===active)); });
+    window.scrollTo({top:0,behavior:"smooth"});
+    return;
+  }
+  if(t.dataset.add){
+    var d=t.dataset.add, sec=secFor(d);
+    if(!sec) return;
+    var row={id:nid()};
+    sec.fields.forEach(function(f){
+      row[f.k] = f.type==="status" ? "pending" : (f.type==="mode" ? "air" : "");
+    });
+    store[d]={items:items(d).concat([row])};
+    queue(d); booted=false; render();
+    var first=document.querySelector('#panel-'+sec.id+' .row[data-rid="'+row.id+'"] .f');
+    if(first) first.focus();
+    return;
+  }
+  if(t.dataset.kill){
+    var doc=t.dataset.doc, rid=t.dataset.kill;
+    store[doc]={items:items(doc).filter(function(r){return r.id!==rid;})};
+    queue(doc); booted=false; render();
+    return;
+  }
+  if(t.id==="theme"){
+    var cur=document.documentElement.getAttribute("data-theme");
+    var dark = cur ? cur==="dark" : window.matchMedia("(prefers-color-scheme:dark)").matches;
+    var next = dark?"light":"dark";
+    document.documentElement.setAttribute("data-theme",next);
+    try{ localStorage.setItem("ct26-theme",next); }catch(_){}
+    return;
+  }
+  if(t.id==="openExport"){ $("#sheet").hidden=false; $("#sheetMsg").textContent=""; $("#closeExport").focus(); return; }
+  if(t.id==="closeExport"){ $("#sheet").hidden=true; return; }
+  if(t.dataset.fmt){ doExport(t.dataset.fmt); return; }
+});
+$("#sheet").addEventListener("click",function(e){ if(e.target===this) this.hidden=true; });
+document.addEventListener("keydown",function(e){ if(e.key==="Escape" && !$("#sheet").hidden) $("#sheet").hidden=true; });
+
+document.addEventListener("input",function(e){
+  var n=e.target;
+  if(!n.dataset || !n.dataset.doc || !n.dataset.rid) return;
+  var doc=n.dataset.doc, rid=n.dataset.rid, key=n.dataset.key, val=n.value;
+  store[doc]={items:items(doc).map(function(r){
+    if(r.id!==rid) return r;
+    var copy=Object.assign({},r); copy[key]=val; return copy;
+  })};
+  if(key==="status"){
+    var row=n.closest(".row");
+    if(row){
+      row.querySelector(".stripe").dataset.status=val;
+      row.classList.toggle("done",val==="done");
+    }
+    n.className="f st-"+val;
+    head(); refreshTiles();
+  }
+  if(key==="mode"){ n.className="f m-"+val; }
+  queue(doc);
+});
+
+/* ---------- exports ---------- */
+function plain(){
+  var out={meta:store.meta||{}};
+  SCHEMA.forEach(function(s){ out[s.doc]=items(s.doc); });
+  return out;
+}
+function mdBody(){
+  var m=store.meta||{}, L=[];
+  L.push("# "+(m.title||"China & Tibet")+" "+(m.year||""));
+  L.push("");
+  L.push("**"+(m.traveler||"")+"** · 22 Sep – 16 Oct 2026"+(m.groupSize?" · "+m.groupSize:""));
+  if(m.operator||m.customerId){ L.push(""); L.push((m.operator||"")+(m.customerId?" — "+m.customerId:"")); }
+  if(m.summary){ L.push(""); L.push(m.summary); }
+  SCHEMA.forEach(function(sec){
+    var list=items(sec.doc); if(!list.length) return;
+    L.push(""); L.push("## "+sec.label); L.push("");
+    list.forEach(function(r){
+      var head=[], body=[];
+      sec.fields.forEach(function(f){
+        var v=r[f.k]; if(!v) return;
+        if(f.type==="area"){ body.push(v); return; }
+        if(f.k==="status"||f.k==="mode"){ head.push("["+String(v).toUpperCase()+"]"); return; }
+        head.push(v);
+      });
+      L.push("- "+head.join(" · "));
+      body.forEach(function(b){ L.push("  "+b); });
+    });
+  });
+  L.push(""); L.push("_Exported "+new Date().toLocaleString()+"._");
+  return L.join("\n");
+}
+function csvBody(){
+  function q(v){ return '"'+String(v==null?"":v).replace(/"/g,'""')+'"'; }
+  var rows=[["Line","Amount","State","Detail"].map(q).join(",")];
+  items("money").forEach(function(r){
+    rows.push([r.item,r.amount,r.status,r.detail].map(q).join(","));
+  });
+  return rows.join("\r\n");
+}
+function htmlBody(){
+  var m=store.meta||{}, p=[];
+  var css='*{box-sizing:border-box}'+
+  'body{margin:0 auto;padding:34px 22px 70px;max-width:860px;background:#fff;color:#171D29;'+
+  'font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}'+
+  'h1{font:600 34px/1.05 Georgia,"Times New Roman",serif;margin:0 0 8px;letter-spacing:-.01em}'+
+  'h2{font:600 21px/1.2 Georgia,"Times New Roman",serif;margin:38px 0 4px;padding-bottom:7px;border-bottom:1px solid #CDD4E0}'+
+  '.sub{color:#5C677D;font-size:13.5px;margin:0 0 3px}'+
+  '.summ{color:#3C465A;font-size:13.5px;margin:14px 0 0;max-width:66ch}'+
+  '.note{color:#8B95A8;font-size:12.5px;margin:7px 0 16px;max-width:66ch}'+
+  '.e{border-left:3px solid #CDD4E0;padding:10px 0 10px 14px;margin:12px 0;page-break-inside:avoid}'+
+  '.e.confirmed{border-color:#1F7561}.e.pending{border-color:#A8700A}.e.action{border-color:#B03A29}'+
+  '.e.done{border-color:#CDD4E0;opacity:.6}'+
+  '.e h3{margin:0;font-size:15.5px;font-weight:600}'+
+  '.e .meta{font:12px/1.55 ui-monospace,Menlo,monospace;color:#5C677D;margin-top:4px}'+
+  '.e .st{font:600 9.5px/1 ui-monospace,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase;'+
+  'display:inline-block;margin-top:7px;padding:3px 6px;border-radius:3px;background:#EEF1F6;color:#5C677D}'+
+  '.e.action .st{background:#F6E1DC;color:#B03A29}.e.pending .st{background:#F7EBD3;color:#A8700A}'+
+  '.e.confirmed .st{background:#DCEBE6;color:#1F7561}'+
+  '.e p{margin:8px 0 0;color:#3C465A;font-size:13.5px}'+
+  'footer{margin-top:46px;padding-top:14px;border-top:1px solid #CDD4E0;color:#8B95A8;font-size:11.5px}'+
+  '@media print{body{padding:0}h2{page-break-after:avoid}}';
+  p.push('<!doctype html><html lang="en"><head><meta charset="utf-8">');
+  p.push('<meta name="viewport" content="width=device-width,initial-scale=1">');
+  p.push('<title>'+esc((m.title||"China & Tibet")+" "+(m.year||""))+' — Dossier</title>');
+  p.push('<style>'+css+'</style></head><body>');
+  p.push('<h1>'+esc((m.title||"China & Tibet")+" "+(m.year||""))+'</h1>');
+  p.push('<p class="sub"><strong>'+esc(m.traveler||"")+'</strong> &middot; 22 Sep &ndash; 16 Oct 2026'+(m.groupSize?' &middot; '+esc(m.groupSize):'')+'</p>');
+  if(m.operator||m.customerId) p.push('<p class="sub">'+esc(m.operator||"")+(m.customerId?' &middot; '+esc(m.customerId):'')+'</p>');
+  if(m.summary) p.push('<p class="summ">'+esc(m.summary)+'</p>');
+  SCHEMA.forEach(function(sec){
+    var list=items(sec.doc); if(!list.length) return;
+    p.push('<h2>'+esc(sec.label)+'</h2>');
+    p.push('<p class="note">'+esc(sec.note)+'</p>');
+    list.forEach(function(r){
+      var st=r.status||"", meta=[], areas=[], title="";
+      sec.fields.forEach(function(f){
+        var v=r[f.k]; if(!v) return;
+        if(f.type==="area"){ areas.push(v); return; }
+        if(f.k==="status") return;
+        if(!title){ title=v; return; }
+        meta.push(v);
+      });
+      p.push('<div class="e '+esc(st)+'">');
+      p.push('<h3>'+esc(title)+'</h3>');
+      if(meta.length) p.push('<div class="meta">'+esc(meta.join("  ·  "))+'</div>');
+      if(st) p.push('<span class="st">'+esc(st)+'</span>');
+      areas.forEach(function(a){ p.push('<p>'+esc(a)+'</p>'); });
+      p.push('</div>');
+    });
+  });
+  p.push('<footer>Exported '+esc(new Date().toLocaleString())+' from the China &amp; Tibet 2026 trip dossier.</footer>');
+  p.push('</body></html>');
+  return p.join("");
+}
+function doExport(fmt){
+  var msg=$("#sheetMsg");
+  var map={
+    html:["china-tibet-2026-dossier.html",htmlBody],
+    md:["china-tibet-2026.md",mdBody],
+    csv:["china-tibet-2026-costs.csv",csvBody],
+    json:["china-tibet-2026.json",function(){return JSON.stringify(plain(),null,2);}]
+  };
+  var spec=map[fmt]; if(!spec) return;
+  if(!dl){ msg.textContent="Downloads are not available in this view."; return; }
+  var data;
+  try{ data=spec[1](); }
+  catch(err){ msg.textContent="Could not build that file."; return; }
+  msg.textContent="Preparing "+spec[0]+"…";
+  dl.save({filename:spec[0],data:data}).then(function(){
+    msg.textContent="Saved "+spec[0]+".";
+  }).catch(function(e){
+    var c=e&&e.code;
+    msg.textContent =
+      c==="declined" ? "Cancelled — nothing saved." :
+      c==="rate_limited" ? "Another save is still open. Try again in a moment." :
+      c==="too_large" ? "Too big for the destination you picked." :
+      "Could not save that file.";
+  });
+}
+
+/* ---------- boot ---------- */
+try{ var th=localStorage.getItem("ct26-theme"); if(th==="dark"||th==="light") document.documentElement.setAttribute("data-theme",th); }catch(_){}
+clock(); setInterval(clock,9e5);
+
+function noData(){
+  $("#main").innerHTML='<div class="boot"><b>Trip data unavailable here</b>'+
+    'Open this page from your Claude artifacts to load and edit the dossier.</div>';
+  saver("off","No sync");
+}
+if(window.claude && typeof window.claude.use==="function"){
+  window.claude.use("downloads").then(function(d){ dl=d; }).catch(function(){});
+  window.claude.use("db").then(function(d){
+    if(!d){ noData(); return; }
+    db=d;
+    d.collection("trip").onSnapshot(function(snap){
+      snap.docs.forEach(function(doc){ store[doc.id]=doc.data()||{}; });
+      if(snap.empty && !booted){
+        $("#main").innerHTML='<div class="boot"><b>Nothing stored yet</b>'+
+          'The trip records have not been written to this page.</div>';
+        return;
+      }
+      render();
+    },function(e){
+      saver("error",(e&&e.code==="revoked")?"Read only":"Sync lost");
+    });
+  }).catch(function(){ noData(); });
+} else { noData(); }
+})();
+</script>

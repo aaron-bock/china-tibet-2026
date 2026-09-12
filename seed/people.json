@@ -1,0 +1,17 @@
+{
+  "items": [
+    {
+      "id": "p1",
+      "name": "James Guo (Mrs.)",
+      "role": "Senior Travel Consultant, Asia Odyssey Travel",
+      "contact": "james@asiaodysseytravel.com · +86 17726404023 (mobile & WhatsApp) · WeChat Asiaodyssey06",
+      "detail": "Books the Tibet tour, the Lhasa hotels and the train. Working hours 09:30-18:30 GMT+8. Put customer ID AOT-BJ-James-50674 in every subject line. asiaodysseytravel.com"
+    },
+    { "id": "p2", "name": "Kamana Mathur", "role": "Trip organiser", "contact": "kamana2016@icloud.com", "detail": "Runs the group correspondence with James. Flying DCA-SEA-ICN-Chengdu on Alaska and Asiana, into Chengdu Tianfu 23:00 on 24 Sep. Out of Lhasa 10 Oct 13:20 on CA4126/CA709 to Seoul, booking PZC6M0. Wants a soft sleeper too." },
+    { "id": "p3", "name": "Jeffrey Margolin", "role": "Travelling companion", "contact": "jamenv3d@gmail.com", "detail": "Sent $1,000 by Zelle on 26 Jul, confirmation 5733643293. May be on the same Lhasa-Seoul flight as Kamana." },
+    { "id": "p4", "name": "Anissa McFarland", "role": "Travelling companion", "contact": "annbobmcf@gmail.com", "detail": "Her friend Amor considered joining but could not get the other China bookings, so is not on the Tibet tour." },
+    { "id": "p5", "name": "Alka Garg", "role": "Travelling companion", "contact": "ahgarg@gmail.com · alka.garg@ineos.com", "detail": "Set up the group planning calls. Travelling with Anissa." },
+    { "id": "p6", "name": "Sandra Rothbard", "role": "China recommendations", "contact": "sandra.rothbard@gmail.com", "detail": "Spent July 2017 in Shanghai and Xi'an. Blog: walltowall2017.wordpress.com" },
+    { "id": "p7", "name": "Todd Wong", "role": "Quanjude roast duck contact", "contact": "+86 13524338834", "detail": "Introduced through Sandra's old boss Bob Isaacson. Worth calling ahead - roast duck is much better with a group." }
+  ]
+}

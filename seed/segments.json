@@ -1,0 +1,88 @@
+{
+  "items": [
+    {
+      "id": "s1",
+      "mode": "air",
+      "code": "DL 500",
+      "from": "ATL Atlanta",
+      "to": "LAX Los Angeles",
+      "depart": "Tue 22 Sep · 18:00",
+      "arrive": "Tue 22 Sep · 19:41",
+      "conf": "G3LX5Q",
+      "status": "confirmed",
+      "detail": "Delta Main Classic (V). Seat 23C. Ticket 0062429706820. $522.80 total for the ATL-LAX-ATL pair, paid with eCredit 0062428040008 on Amex ending 3009. First checked bag free."
+    },
+    {
+      "id": "s2",
+      "mode": "air",
+      "code": "KE 012",
+      "from": "LAX Los Angeles",
+      "to": "ICN Seoul Incheon",
+      "depart": "Sun 27 Sep · 23:50",
+      "arrive": "Tue 29 Sep · 04:40",
+      "conf": "FAFD77",
+      "status": "confirmed",
+      "detail": "Korean Air, Economy. One free checked piece. Crosses the date line - two calendar days in the air. No seat assigned yet."
+    },
+    {
+      "id": "s3",
+      "mode": "air",
+      "code": "KE 141",
+      "from": "ICN Seoul Incheon",
+      "to": "XIY Xi'an Xianyang",
+      "depart": "Tue 29 Sep · 09:10",
+      "arrive": "Tue 29 Sep · 11:30",
+      "conf": "FAFD77",
+      "status": "confirmed",
+      "detail": "Korean Air, Economy. One free checked piece. 4h30m connection at Incheon. No seat assigned yet."
+    },
+    {
+      "id": "s4",
+      "mode": "rail",
+      "code": "Z165 / Z265",
+      "from": "Xi'an",
+      "to": "LXA Lhasa",
+      "depart": "Thu 1 Oct",
+      "arrive": "Fri 2 Oct",
+      "conf": "not ticketed",
+      "status": "action",
+      "detail": "Soft sleeper requested from James on 27 Jul. Asia Odyssey books Tibet trains only about 15 days out - roughly 15 Sep - and nothing has come back yet. The group's option was Z322 Chengdu-Lhasa departing 30 Sep 20:46, arriving 2 Oct 07:24 (soft sleeper CNY 1,235, hard sleeper CNY 778); Aaron declined that and asked to join from Xi'an instead."
+    },
+    {
+      "id": "s5",
+      "mode": "air",
+      "code": "MU 2336",
+      "from": "LXA Lhasa",
+      "to": "SHA Shanghai Hongqiao",
+      "depart": "Sat 10 Oct · 15:30",
+      "arrive": "Sat 10 Oct · 21:50",
+      "conf": "GBDPCB",
+      "status": "confirmed",
+      "detail": "China Eastern, booked as a Delta SkyMiles award: 30,000 miles + CNY 170. Ticket 0062429113492. Changes planes at Xi'an (XIY). Lands at Hongqiao, not Pudong. No seat assigned yet."
+    },
+    {
+      "id": "s6",
+      "mode": "air",
+      "code": "DL 38",
+      "from": "PVG Shanghai Pudong",
+      "to": "LAX Los Angeles",
+      "depart": "Thu 15 Oct · 18:25",
+      "arrive": "Thu 15 Oct · 15:24",
+      "conf": "JP5E6A",
+      "status": "confirmed",
+      "detail": "Delta Main Classic (T). Seat 39A. Ticket 0062450696002. CNY 4,653 on Amex ending 3009. Arrives the same calendar day it left. Departs Pudong - the inbound from Lhasa lands at Hongqiao."
+    },
+    {
+      "id": "s7",
+      "mode": "air",
+      "code": "DL 899",
+      "from": "LAX Los Angeles",
+      "to": "ATL Atlanta",
+      "depart": "Thu 15 Oct · 22:50",
+      "arrive": "Fri 16 Oct · 06:07",
+      "conf": "G3LX5Q",
+      "status": "confirmed",
+      "detail": "Delta Main Classic (X). Same ticket as the outbound ATL-LAX. 7h26m to clear customs at LAX and re-check - tight-ish for an international arrival, but workable."
+    }
+  ]
+}

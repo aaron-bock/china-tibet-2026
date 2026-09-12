@@ -1,0 +1,21 @@
+{
+  "items": [
+    { "id": "r1", "name": "U.S. Embassy Beijing", "value": "+86 10 8531 3000", "group": "Consular", "detail": "55 Anjialou Road, Sanyuanqiao, Chaoyang District, Beijing 100016" },
+    { "id": "r2", "name": "U.S. Consulate Shanghai", "value": "+86 21 6433 6880", "group": "Consular", "detail": "1469 Huai Hai Zhong Road, near Wulumuqi Nan Lu, Shanghai 200031. Nearest post for the Shanghai days." },
+    { "id": "r3", "name": "U.S. Consulate Chengdu", "value": "+86 28 8558 3992", "group": "Consular", "detail": "No. 4 Lingshiguan Road, Chengdu, Sichuan 610041. Open 08:00-17:00. consularchengdu@state.gov. This is the post that covers Tibet." },
+    { "id": "r4", "name": "U.S. Consulate Guangzhou", "value": "+86 20 3814 5775", "group": "Consular", "detail": "Huajiu Road, Tianhe District, Guangzhou, Guangdong 510620. Open 08:30-23:00." },
+    { "id": "r5", "name": "State Dept Overseas Citizens Services", "value": "+1 202 501 4444", "group": "Consular", "detail": "24-hour line from abroad for lost passports, arrests, medical emergencies." },
+    { "id": "r6", "name": "Consulate General of China, Atlanta", "value": "info@chinaatlanta.org", "group": "Consular", "detail": "Handling the visa application. Confirmation was sent 27 Jul." },
+    { "id": "r7", "name": "American Express", "value": "+1 336 393 1111", "group": "Cards", "detail": "Card ending 3009 carries most of the trip." },
+    { "id": "r8", "name": "Chase Sapphire Reserve", "value": "+1 614 776 7050", "group": "Cards", "detail": "Check its trip-interruption and medical-evacuation coverage." },
+    { "id": "r9", "name": "Wells Fargo", "value": "+1 925 825 7600", "group": "Cards", "detail": "" },
+    { "id": "r10", "name": "HSBC", "value": "+1 716 841 7212", "group": "Cards", "detail": "Call collect from abroad. ATM withdrawals capped at $500 a day and six ATM visits a month before the account reclassifies." },
+    { "id": "r11", "name": "Delta SkyMiles", "value": "2147550335", "group": "Loyalty", "detail": "Silver Medallion. 334,231 miles as of 31 Aug 2026." },
+    { "id": "r12", "name": "Marriott Bonvoy", "value": "Platinum Elite", "group": "Loyalty", "detail": "104,983 points. Lounge access, room upgrade and a 1,000-point welcome gift at the Westin." },
+    { "id": "r13", "name": "Asia Odyssey customer ID", "value": "AOT-BJ-James-50674", "group": "Booking refs", "detail": "Put this in the subject line of every email to James." },
+    { "id": "r14", "name": "Korean Air", "value": "FAFD77", "group": "Booking refs", "detail": "LAX-ICN-XIY, both legs." },
+    { "id": "r15", "name": "Delta domestic", "value": "G3LX5Q", "group": "Booking refs", "detail": "ATL-LAX on 22 Sep and LAX-ATL on 15 Oct." },
+    { "id": "r16", "name": "Delta transpacific", "value": "JP5E6A", "group": "Booking refs", "detail": "DL 38, Pudong-LAX, 15 Oct." },
+    { "id": "r17", "name": "China Eastern award", "value": "GBDPCB", "group": "Booking refs", "detail": "MU 2336, Lhasa-Shanghai, 10 Oct." }
+  ]
+}

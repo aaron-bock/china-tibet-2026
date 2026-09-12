@@ -1,0 +1,54 @@
+{
+  "items": [
+    {
+      "id": "h0",
+      "place": "Los Angeles",
+      "name": "Not booked",
+      "checkin": "Tue 22 Sep",
+      "checkout": "Sun 27 Sep",
+      "conf": "",
+      "status": "action",
+      "detail": "Five nights in LA between the Atlanta flight and the Korean Air departure. Nothing on file."
+    },
+    {
+      "id": "h1",
+      "place": "Xi'an",
+      "name": "The Westin Xi'an",
+      "checkin": "Tue 29 Sep · 15:00",
+      "checkout": "Thu 1 Oct · 12:00",
+      "conf": "84579041",
+      "status": "confirmed",
+      "detail": "Westin Studio, 1 King, non-smoking. CNY 1,464 room + CNY 243.02 service = CNY 1,707.02. Prepayment of CNY 732 charged 27 Sep; free cancellation until 23:59 on 28 Sep. 66 Ci En Road, Qu Jiang New District, Xi'an, Shaanxi 710061. +86-29-65686568. Free entry to the hotel's Xi'an Qujiang Museum of Fine Arts and free Hanfu wearing; complimentary parking; Platinum Elite lounge access."
+    },
+    {
+      "id": "h2",
+      "place": "Xi'an",
+      "name": "The Westin Xi'an - award night",
+      "checkin": "Thu 1 Oct · 15:00",
+      "checkout": "Fri 2 Oct · 12:00",
+      "conf": "84582237",
+      "status": "action",
+      "detail": "Westin Studio, 1 King. Free Night Award up to 85K points from the Amex Brilliant anniversary - 0 points redeemed. Free cancellation until 23:59 on 17 Sep. This night overlaps the overnight train to Lhasa departing 1 Oct: if the train is confirmed, cancel this before the 17 Sep deadline."
+    },
+    {
+      "id": "h3",
+      "place": "Lhasa & Tibet",
+      "name": "Arranged by Asia Odyssey Travel",
+      "checkin": "Fri 2 Oct",
+      "checkout": "Sat 10 Oct",
+      "conf": "AOT-BJ-James-50674",
+      "status": "pending",
+      "detail": "Included in the Tibet tour. Hotel names, standards and the night-by-night plan have not been sent through yet - ask James for the written itinerary."
+    },
+    {
+      "id": "h4",
+      "place": "Shanghai",
+      "name": "Not booked",
+      "checkin": "Sat 10 Oct",
+      "checkout": "Thu 15 Oct",
+      "conf": "",
+      "status": "action",
+      "detail": "Five nights in Shanghai between the Lhasa arrival at Hongqiao and the Pudong departure. Nothing on file."
+    }
+  ]
+}

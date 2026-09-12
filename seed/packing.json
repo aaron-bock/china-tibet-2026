@@ -1,0 +1,27 @@
+{
+  "items": [
+    { "id": "k1", "item": "Passport", "group": "Documents", "status": "action", "detail": "Must be valid at least six months past 16 Oct. Currently with the Chinese consulate in Atlanta for the visa." },
+    { "id": "k2", "item": "Chinese visa", "group": "Documents", "status": "action", "detail": "In process. Confirm with info@chinaatlanta.org." },
+    { "id": "k3", "item": "Tibet Travel Permit - paper original", "group": "Documents", "status": "action", "detail": "No permit, no boarding for Lhasa. Normally handed over at the last hotel before Tibet, so most likely The Westin Xi'an." },
+    { "id": "k4", "item": "Printed copies of every confirmation", "group": "Documents", "status": "pending", "detail": "Use the Dossier export from this page. Phones die and Chinese stations often want paper." },
+    { "id": "k5", "item": "Altitude medication", "group": "Health", "status": "action", "detail": "Talk to a doctor about acetazolamide. Lhasa is 3,656 m and the train crosses Tanggula Pass at 5,072 m." },
+    { "id": "k6", "item": "Electrolyte powder", "group": "Health", "status": "pending", "detail": "Hydration is the cheapest altitude insurance." },
+    { "id": "k7", "item": "High-SPF sunscreen and lip balm", "group": "Health", "status": "pending", "detail": "UV on the plateau is brutal even when the air is cold." },
+    { "id": "k8", "item": "Sunglasses", "group": "Health", "status": "pending", "detail": "Dark lenses - glacier-grade if you have them." },
+    { "id": "k9", "item": "Down jacket", "group": "Clothing", "status": "pending", "detail": "Lhasa in October runs roughly 18C by day and freezing at night." },
+    { "id": "k10", "item": "Thermal base layers", "group": "Clothing", "status": "pending", "detail": "Two sets - one to wear, one dry." },
+    { "id": "k11", "item": "Warm hat and gloves", "group": "Clothing", "status": "pending", "detail": "" },
+    { "id": "k12", "item": "Slippers for the train", "group": "Clothing", "status": "pending", "detail": "Standard practice in a soft sleeper." },
+    { "id": "k13", "item": "VPN installed and tested", "group": "Tech", "status": "action", "detail": "Install and verify it works before leaving. Setting one up from inside China is much harder." },
+    { "id": "k14", "item": "WeChat and Alipay set up", "group": "Tech", "status": "action", "detail": "Link a foreign card and test a payment. Cash and foreign cards are near-useless with small vendors." },
+    { "id": "k15", "item": "eSIM or roaming plan", "group": "Tech", "status": "pending", "detail": "A Hong Kong or international eSIM routes around the firewall on data." },
+    { "id": "k16", "item": "Power bank", "group": "Tech", "status": "pending", "detail": "Under 100 Wh to stay airline-legal. The train legs are long and outlets are shared." },
+    { "id": "k17", "item": "Type A/I plug adapter", "group": "Tech", "status": "pending", "detail": "China runs 220V; sockets take both flat A and angled I pins." },
+    { "id": "k18", "item": "Cash in renminbi", "group": "Money", "status": "pending", "detail": "For temple donations, small stalls and anywhere the apps fail." },
+    { "id": "k19", "item": "Thermos", "group": "Train", "status": "pending", "detail": "Every Chinese train car has a boiling-water dispenser. This is how you eat well on a 34-hour ride." },
+    { "id": "k20", "item": "Snacks for the train", "group": "Train", "status": "pending", "detail": "Instant noodles, nuts, fruit. The dining car is fine but limited." },
+    { "id": "k21", "item": "Earplugs and eye mask", "group": "Train", "status": "pending", "detail": "Soft sleeper is a four-berth compartment with strangers." },
+    { "id": "k22", "item": "Tissues and hand sanitiser", "group": "Train", "status": "pending", "detail": "Public restrooms rarely supply either." },
+    { "id": "k23", "item": "Water bottle with filter", "group": "Health", "status": "pending", "detail": "Sandra got sick in Xi'an - possibly from the water. Worth the caution." }
+  ]
+}
