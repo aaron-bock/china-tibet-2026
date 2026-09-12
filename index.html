@@ -139,7 +139,7 @@ h2.p-title{font-family:var(--f-disp); font-size:25px; font-weight:600; letter-sp
 .f:hover{border-color:var(--hair)}
 .f:focus{outline:none; border-color:var(--lapis); background:var(--ground)}
 .f::placeholder{color:var(--faint); font-style:italic}
-.f.mono{font-family:var(--f-mono); font-size:12.5px; font-variant-numeric:tabular-nums}
+.f.mono{font-family:var(--f-mono); font-size:12px; font-variant-numeric:tabular-nums}
 .f.strong{font-weight:600}
 .f.big{font-family:var(--f-disp); font-size:17px; font-weight:600; letter-spacing:-.005em}
 textarea.f{resize:vertical; min-height:2.9em; line-height:1.5; font-size:13.5px; color:var(--soft)}
@@ -213,14 +213,14 @@ figure.elev figcaption b{color:var(--ink); font-weight:600}
 footer.foot{border-top:1px solid var(--line); padding-block:20px 40px; color:var(--faint); font-size:12px}
 
 /* ---------- column templates ---------- */
-.g-segments{grid-template-columns:118px minmax(0,1.4fr) minmax(0,1.4fr) 92px}
-.g-stays{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) 92px}
-.g-days{grid-template-columns:136px minmax(0,1fr) 92px}
-.g-tasks{grid-template-columns:minmax(0,1fr) 116px 92px 116px}
+.g-segments{grid-template-columns:166px minmax(0,1.3fr) minmax(0,1.3fr) 96px}
+.g-stays{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) 96px}
+.g-days{grid-template-columns:182px minmax(0,1fr) 96px}
+.g-tasks{grid-template-columns:minmax(0,1fr) 150px 96px 184px}
 .g-people{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr)}
-.g-money{grid-template-columns:minmax(0,1fr) 156px 92px}
-.g-packing{grid-template-columns:minmax(0,1fr) 128px 92px}
-.g-reference{grid-template-columns:minmax(0,1fr) minmax(0,164px) 116px}
+.g-money{grid-template-columns:minmax(0,1fr) 192px 96px}
+.g-packing{grid-template-columns:minmax(0,1fr) 134px 96px}
+.g-reference{grid-template-columns:minmax(0,1fr) minmax(0,188px) 120px}
 .g-notes{grid-template-columns:minmax(0,1fr) 148px}
 .row-body .w-all{grid-column:1/-1}
 
@@ -446,6 +446,7 @@ function field(sec,row,f){
     node=el("textarea","f"); node.rows=2; node.value=row[f.k]||"";
   } else {
     node=el("input","f"+(f.cls?" "+f.cls:"")); node.type="text"; node.value=row[f.k]||"";
+    if(row[f.k]) node.title=row[f.k];
   }
   node.id=id;
   if(f.ph) node.placeholder=f.ph;
