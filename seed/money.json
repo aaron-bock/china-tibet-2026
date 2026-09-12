@@ -1,20 +1,116 @@
 {
   "items": [
-    { "id": "m1", "item": "Tibet tour · Asia Odyssey 8-day EBC", "amount": "receipt issued 13 Aug", "status": "confirmed", "detail": "Booked, party of five, customer ID AOT-BJ-James-50674. Sharing a twin with Jeff avoids the RMB 2,100 single supplement, which falls to Kamana or Alka instead." },
-    { "id": "m2", "item": "KE 012 / KE 141 · LAX–ICN–XIY", "amount": "ticketed", "status": "confirmed", "detail": "Korean Air booking FAFD77, economy, one checked bag." },
-    { "id": "m3", "item": "Z165 · Xi'an–Lhasa soft sleeper", "amount": "via Asia Odyssey", "status": "confirmed", "detail": "Confirmed with James on 16 August. Billed through the tour rather than separately." },
-    { "id": "m4", "item": "MU 2336 · Lhasa–Shanghai", "amount": "30,000 miles + Y170", "status": "confirmed", "detail": "China Eastern on Delta miles. Confirmation GBDPCB." },
-    { "id": "m5", "item": "DL 38 · Pudong–LAX", "amount": "Y4,653", "status": "confirmed", "detail": "Delta Main, confirmation JP5E6A, ticket 0062450696002." },
-    { "id": "m6", "item": "DL 899 · LAX–Atlanta", "amount": "separate SoCal ticket", "status": "confirmed", "detail": "Seat 28A, confirmation G3LX5Q — the return half of the Trybal SoCal round trip, not a China purchase." },
-    { "id": "m7", "item": "The Westin Xi'an · 2 nights", "amount": "Y1,707.02", "status": "confirmed", "detail": "~$240 all in. Y732 prepayment charged 27 Sep, balance at checkout." },
-    { "id": "m8", "item": "The Westin Xi'an · award night", "amount": "0 — 85k award", "status": "confirmed", "detail": "Amex Brilliant free-night award, taxes included, nothing to pay." },
-    { "id": "m9", "item": "Shanghai · 5 nights", "amount": "~Y2,495", "status": "action", "detail": "Courtyard ITRZ at ~Y499/night. Not booked." },
-    { "id": "m10", "item": "Shanghai Disneyland tickets", "amount": "~Y1,300–1,750", "status": "action", "detail": "Three park days ~Y1,300 bought well; four including the Sunday ~Y1,750, plus ~Y179 if you add Early Park Entry. Buy 11–16 Sep." },
-    { "id": "m11", "item": "Terracotta Warriors", "amount": "Y120", "status": "pending", "detail": "Reserve 24 Sep at bmy.com.cn." },
-    { "id": "m12", "item": "Shaanxi History Museum", "amount": "free, ticketed", "status": "pending", "detail": "The separate Tang murals hall is a paid Y270 ticket and a different booking — skip unless you especially want it." },
-    { "id": "m13", "item": "Xi'an city wall bike", "amount": "Y45 + Y200 deposit", "status": "pending", "detail": "Y45 for three hours, then Y5 per extra ten minutes. Deposit is Y100 in older sources and Y200 in newer ones, so have Y200 free." },
-    { "id": "m14", "item": "Power bank, bought in Xi'an", "amount": "Y100–200", "status": "action", "detail": "Must carry a moulded 3C mark or it's confiscated at Lhasa. Xiaomi, Baseus or UGREEN." },
-    { "id": "m15", "item": "Hongqiao → Disney taxi, 10 Oct", "amount": "Y180–250", "status": "pending", "detail": "Unavoidable: you land 21:50, bags clear ~22:20, and the last Line 11 with a change at Jiangsu Road goes ~22:30–23:00. ~50 km, 60–70 min. One-off, first night only." },
-    { "id": "m16", "item": "Xi'an metro and incidentals", "amount": "~Y25", "status": "pending", "detail": "Airport to hotel ~Y7–8 on Lines 14 and 4; Terracotta round trip ~Y9. Fares come off the ride code inside Alipay." }
+    {
+      "id": "m1",
+      "item": "Tibet tour · Asia Odyssey 8-day EBC",
+      "amount": "receipt issued 13 Aug",
+      "status": "confirmed",
+      "detail": "Booked, party of five, customer ID AOT-BJ-James-50674. Sharing a twin with Jeff avoids the RMB 2,100 single supplement, which falls to Kamana or Alka instead."
+    },
+    {
+      "id": "m2",
+      "item": "KE 012 / KE 141 · LAX–ICN–XIY",
+      "amount": "ticketed",
+      "status": "confirmed",
+      "detail": "Korean Air booking FAFD77, economy, one checked bag."
+    },
+    {
+      "id": "m3",
+      "item": "Z165 · Xi'an–Lhasa soft sleeper",
+      "amount": "via Asia Odyssey",
+      "status": "confirmed",
+      "detail": "Confirmed with James on 16 August. Billed through the tour rather than separately."
+    },
+    {
+      "id": "m4",
+      "item": "MU 2336 · Lhasa–Shanghai",
+      "amount": "30,000 miles + ¥170",
+      "status": "confirmed",
+      "detail": "China Eastern on Delta miles. Confirmation GBDPCB."
+    },
+    {
+      "id": "m5",
+      "item": "DL 38 · Pudong–LAX",
+      "amount": "¥4,653",
+      "status": "confirmed",
+      "detail": "Delta Main, confirmation JP5E6A, ticket 0062450696002."
+    },
+    {
+      "id": "m6",
+      "item": "DL 899 · LAX–Atlanta",
+      "amount": "separate SoCal ticket",
+      "status": "confirmed",
+      "detail": "Seat 28A, confirmation G3LX5Q — the return half of the Trybal SoCal round trip, not a China purchase."
+    },
+    {
+      "id": "m7",
+      "item": "The Westin Xi'an · 2 nights",
+      "amount": "¥1,707.02",
+      "status": "confirmed",
+      "detail": "~$240 all in. ¥732 prepayment charged 27 Sep, balance at checkout."
+    },
+    {
+      "id": "m8",
+      "item": "The Westin Xi'an · award night",
+      "amount": "0 — 85k award",
+      "status": "confirmed",
+      "detail": "Amex Brilliant free-night award, taxes included, nothing to pay."
+    },
+    {
+      "id": "m9",
+      "item": "Shanghai · 5 nights, 10–15 Oct",
+      "amount": "~¥2,000–3,500",
+      "status": "action",
+      "detail": "Not booked — the last open bed. All five Disney-side at the Courtyard ITRZ is ~¥2,495 at ~¥499/night, plus a ¥180–250 Didi on arrival night because the last Line 11 train has gone by the time you clear Hongqiao. Split stay is one downtown night (¥300–500 at an Atour or Ji, or ¥1,500–2,500 at the Fairmont Peace) plus four at the Courtyard (~¥2,000), which cancels most of that taxi and puts you at the museum door on the Sunday. Going Ji or Atour on the park side instead would bring the whole five nights to ~¥1,300, at the cost of Platinum breakfast and an English-speaking front desk. Only the Courtyard figure is a verified live rate (Marriott, 10 Sep, your dates)."
+    },
+    {
+      "id": "m10",
+      "item": "Shanghai Disneyland — 3 dated tickets (+1 optional)",
+      "amount": "~¥1,200–1,700",
+      "status": "action",
+      "detail": "Mon 12, Tue 13, Wed 14 Oct. Cheapest route is a 2-Day ticket plus a 1-Day Early Bird, ~¥1,200 (~$170) against ¥1,449 buying singles at the gate. The optional Thursday morning adds a full 1-Day at ¥449–499, taking it to ~¥1,650–1,700. Dated tickets, not an annual pass — decided. No Premier Access budgeted: on three post-Golden-Week weekdays you shouldn't need it."
+    },
+    {
+      "id": "m11",
+      "item": "Terracotta Warriors",
+      "amount": "¥120",
+      "status": "pending",
+      "detail": "Reserve 24 Sep at bmy.com.cn."
+    },
+    {
+      "id": "m12",
+      "item": "Shaanxi History Museum",
+      "amount": "free, ticketed",
+      "status": "pending",
+      "detail": "The separate Tang murals hall is a paid ¥270 ticket and a different booking — skip unless you especially want it."
+    },
+    {
+      "id": "m13",
+      "item": "Xi'an city wall bike",
+      "amount": "¥45 + ¥200 deposit",
+      "status": "pending",
+      "detail": "¥45 for three hours, then ¥5 per extra ten minutes. Deposit is ¥100 in older sources and ¥200 in newer ones, so have ¥200 free."
+    },
+    {
+      "id": "m14",
+      "item": "Power bank, bought in Xi'an",
+      "amount": "¥100–200",
+      "status": "action",
+      "detail": "Must carry a moulded 3C mark or it's confiscated at Lhasa. Xiaomi, Baseus or UGREEN."
+    },
+    {
+      "id": "m15",
+      "item": "Hongqiao → Disney taxi, 10 Oct",
+      "amount": "¥180–250",
+      "status": "pending",
+      "detail": "Unavoidable: you land 21:50, bags clear ~22:20, and the last Line 11 with a change at Jiangsu Road goes ~22:30–23:00. ~50 km, 60–70 min. One-off, first night only."
+    },
+    {
+      "id": "m16",
+      "item": "Xi'an metro and incidentals",
+      "amount": "~¥25",
+      "status": "pending",
+      "detail": "Airport to hotel ~¥7–8 on Lines 14 and 4; Terracotta round trip ~¥9. Fares come off the ride code inside Alipay."
+    }
   ]
 }

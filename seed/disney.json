@@ -1,15 +1,81 @@
 {
   "items": [
-    { "id": "y1", "item": "The verdict: dated tickets, not an annual pass", "price": "~Y1,300", "status": "action", "detail": "Pearl breaks even at about 3.6 visits and Diamond needs roughly eleven. At three park days tickets win by Y299; at four including Sunday they win by ~Y348 because Pearl is weekdays-only and can't cover the Sunday at all. The only shape where Pearl wins is four all-weekday days, and only by ~Y125 — which the ticket-only add-on pricing then takes back. Buy dated tickets unless you know you'll spend ~Y1,500 on tenth-anniversary merchandise, or you're coming back inside a year." },
-    { "id": "y2", "item": "Plan B — three park days plus a city day (recommended)", "price": "~Y1,300", "status": "pending", "detail": "City day Sunday 11 Oct, park Monday 12 – Wednesday 14, optional half-day Thursday 15 (+Y475, making it ~Y1,724). Every park day is a cheap weekday, the city gets a real day rather than scraps, and the Sunday crowd is somebody else's problem." },
-    { "id": "y3", "item": "Plan A — four park days", "price": "~Y1,750 + ~Y179", "status": "pending", "detail": "Sunday 11 through Wednesday 14. The Sunday is the one day worth adding Early Park Entry to — weekend crowds, and the only weekend day you'd see. Trade-off: you will not see Shanghai. Given Peter Pan's Flight here is widely held to be the best version in the world and it's the tenth-anniversary year, that may be exactly the right trade." },
-    { "id": "y4", "item": "Expected prices for your dates", "price": "Y475–499", "status": "pending", "detail": "Observed October ladder: Y475 base for ordinary Tue/Wed, Y499 Sun/Mon/Thu, Y539 Fridays, Y599 Saturdays, Y629–659 pre-holiday 26–30 Sep, Y719–799 during Golden Week 1–5 Oct, then straight back to Y475 on 8 Oct. Your window sits in the calm right after the storm: expect Y499 for Sun 11 and Mon 12, Y475 for Tue 13 and Wed 14." },
-    { "id": "y5", "item": "1-Day Early Bird", "price": "Y425–449", "status": "pending", "detail": "Book 10+ days ahead and it saves Y50; the Y445 variant at 30 days adds a Y30 dining coupon. Your buy window IS 30 days, so this is free money if you book the day a date opens." },
-    { "id": "y6", "item": "2-Day Ticket", "price": "Y749–855", "status": "pending", "detail": "About 10% off two separate 1-days, currently Y749 on a limited-time promo, Y798 as an Early Bird 2-Day. The best way to buy consecutive days." },
-    { "id": "y7", "item": "1-Day + two Premier Access", "price": "from Y655", "status": "pending", "detail": "Buy one get one free. One pairing is TRON + Peter Pan, the other Zootopia + Winnie the Pooh — about Y180 for two skips against Y140–180 each à la carte. The interesting bundle, largely because of Peter Pan." },
-    { "id": "y8", "item": "1-Day + Early Park Entry", "price": "from Y654", "status": "pending", "detail": "Up to an hour before public opening, ~Y179 premium over a base ticket. This is the resort-hotel perk sold separately — which is why five nights at Toy Story to get it once makes no sense for a solo traveller." },
-    { "id": "y9", "item": "10th Anniversary Package", "price": "Y1,213", "status": "pending", "detail": "Reserved viewing for three new shows plus a Y100 F&B coupon. Steep, but it's the anniversary year and the shows are the reason. The celebration runs all year as 'With You, It's Magic+': new castle show The Heart of Magic, an updated Mickey's Storybook Express parade, and an anniversary finale added to ILLUMINATE!" },
-    { "id": "y10", "item": "Buying as a foreigner", "price": "—", "status": "pending", "detail": "Every ticket is real-name registered: buy with your passport number and carry that passport. Official site, app, WeChat account or the official Fliggy store — foreign Visa and Mastercard work. Klook or Trip.com are the fallback for admission only if the official checkout throws the Chinese-SMS wall; check the partner is on Disney's own channels page. Premier Access is sold through the four official channels only, no reseller. Foreign passport holders must activate an annual pass in person at Main Entrance Guest Services — another reason not to buy one." },
-    { "id": "y11", "item": "In the park: rope drop is the whole game", "price": "—", "status": "pending", "detail": "First hour: Zootopia: Hot Pursuit, then TRON Lightcycle Power Run — the two that build 60–90 minute lines by mid-morning and stay there. Second: Pirates of the Caribbean – Battle for the Sunken Treasure, the single best thing in the park and not close, then Soaring Over the Horizon. Plan around Peter Pan's Flight rather than dropping into it. On post-Golden-Week weekdays you shouldn't need Premier Access at all — walk in, read the standby boards, buy a single pass only if a wait crosses an hour. ILLUMINATE closes the park and the metro floods immediately; from the Courtyard you can just walk." }
+    {
+      "id": "y2",
+      "item": "The plan: city Sunday, park Mon–Wed, optional Thursday morning",
+      "price": "3 days + option",
+      "status": "confirmed",
+      "detail": "Sun 11 Oct is the city day. Park Mon 12, Tue 13, Wed 14 — all weekday pricing on the emptiest days of the autumn, immediately after Golden Week. Thu 15 is an optional morning: gates 08:30, out by 15:00, taxi to Pudong for DL38 at 18:25. You do NOT need a ticket for Sunday 11 October, which is the one day the park is fullest and the one day the museums are open — that is the whole point of the shape."
+    },
+    {
+      "id": "y3",
+      "item": "What to buy, and roughly what it costs",
+      "price": "~¥1,200–1,300",
+      "status": "action",
+      "detail": "Cheapest legitimate route for Mon–Wed is a 2-Day ticket over two consecutive days plus a 1-Day Early Bird for the third: about ¥749 + ¥449 = ~¥1,200, against ¥1,449 buying three singles at the gate (¥499 Mon + ¥475 Tue + ¥475 Wed). Adding the Thursday morning costs one more day at ¥449–499 — it is a full 1-Day ticket either way, there is no half-day product. The ¥749 2-Day was a limited-time promo observed on 9 September; if it has lapsed, three Early Bird singles at ~¥449 each is ~¥1,347. Buy whichever is cheaper on the day."
+    },
+    {
+      "id": "y4",
+      "item": "Expected prices for your dates",
+      "price": "¥475–499",
+      "status": "pending",
+      "detail": "Observed October ladder: ¥475 base for ordinary Tue/Wed, ¥499 Sun/Mon/Thu, ¥539 Fridays, ¥599 Saturdays, ¥629–659 pre-holiday 26–30 Sep, ¥719–799 during Golden Week 1–5 Oct, then straight back to ¥475 on 8 Oct. For your dates that means ¥499 Mon 12, ¥475 Tue 13, ¥475 Wed 14, ¥499 Thu 15. Saturday 10 October is a national make-up workday, so the country is at work the day you land."
+    },
+    {
+      "id": "y1",
+      "item": "Decided: dated tickets, not an annual pass",
+      "price": "settled",
+      "status": "done",
+      "detail": "Your call, and the arithmetic backs it. Pearl breaks even at about 3.6 visits and is weekdays-only; at three park days tickets win by roughly ¥299, and the only shape where Pearl wins is four all-weekday days by about ¥125 — which the ticket-only add-on pricing takes straight back, since Early Bird, the 2-Day and every bundle are dated-ticket products a pass holder cannot buy. Nothing left to decide here."
+    },
+    {
+      "id": "y5",
+      "item": "1-Day Early Bird",
+      "price": "¥425–449",
+      "status": "pending",
+      "detail": "Book 10+ days ahead and it saves ¥50; the ¥445 variant at 30 days adds a ¥30 dining coupon. Your buy window IS 30 days, so this is free money if you book the day a date opens."
+    },
+    {
+      "id": "y6",
+      "item": "2-Day Ticket",
+      "price": "¥749–855",
+      "status": "pending",
+      "detail": "About 10% off two separate 1-days, currently ¥749 on a limited-time promo, ¥798 as an Early Bird 2-Day. The best way to buy consecutive days."
+    },
+    {
+      "id": "y7",
+      "item": "1-Day + two Premier Access",
+      "price": "from ¥655",
+      "status": "pending",
+      "detail": "Buy one get one free. One pairing is TRON + Peter Pan, the other Zootopia + Winnie the Pooh — about ¥180 for two skips against ¥140–180 each à la carte. The interesting bundle, largely because of Peter Pan."
+    },
+    {
+      "id": "y8",
+      "item": "Early Park Entry — skip it",
+      "price": "from ¥654",
+      "status": "done",
+      "detail": "Up to an hour before public opening, ~¥179 on top of a base ticket, and it is the perk Disney's two own hotels give their guests. Worth it on a weekend or a holiday; not on three post-Golden-Week weekdays, which are the quietest days of the season. If you find yourself wanting it, buy the ¥654 ticket-plus-early-entry bundle for one day rather than paying a resort-hotel rate for five nights to get it once."
+    },
+    {
+      "id": "y9",
+      "item": "10th Anniversary Package",
+      "price": "¥1,213",
+      "status": "pending",
+      "detail": "Reserved viewing for three new shows plus a ¥100 F&B coupon. Steep, but it's the anniversary year and the shows are the reason. The celebration runs all year as 'With You, It's Magic+': new castle show The Heart of Magic, an updated Mickey's Storybook Express parade, and an anniversary finale added to ILLUMINATE!"
+    },
+    {
+      "id": "y10",
+      "item": "Buying as a foreigner",
+      "price": "—",
+      "status": "pending",
+      "detail": "Every ticket is real-name registered: buy with your passport number and carry that passport. Official site, app, WeChat account or the official Fliggy store — foreign Visa and Mastercard work. Klook or Trip.com are the fallback for admission only if the official checkout throws the Chinese-SMS wall; check the partner is on Disney's own channels page. Premier Access is sold through the four official channels only, no reseller. Foreign passport holders must activate an annual pass in person at Main Entrance Guest Services — another reason not to buy one."
+    },
+    {
+      "id": "y11",
+      "item": "In the park: rope drop is the whole game",
+      "price": "—",
+      "status": "pending",
+      "detail": "First hour: Zootopia: Hot Pursuit, then TRON Lightcycle Power Run — the two that build 60–90 minute lines by mid-morning and stay there. Second: Pirates of the Caribbean – Battle for the Sunken Treasure, the single best thing in the park and not close, then Soaring Over the Horizon. Plan around Peter Pan's Flight rather than dropping into it. On post-Golden-Week weekdays you shouldn't need Premier Access at all — walk in, read the standby boards, buy a single pass only if a wait crosses an hour. ILLUMINATE closes the park and the metro floods immediately; from the Courtyard you can just walk."
+    }
   ]
 }
