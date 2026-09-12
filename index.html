@@ -143,7 +143,7 @@ h2.p-title{font-family:var(--f-disp); font-size:25px; font-weight:600; letter-sp
 .f.strong{font-weight:600}
 .f.big{font-family:var(--f-disp); font-size:17px; font-weight:600; letter-spacing:-.005em}
 .f.cn{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",sans-serif; font-size:19px; font-weight:500; letter-spacing:.02em}
-textarea.f{resize:vertical; min-height:2.9em; line-height:1.5; font-size:13.5px; color:var(--soft)}
+textarea.f{resize:vertical; min-height:1.5em; line-height:1.62; font-size:13.5px; color:var(--soft); overflow:hidden; white-space:pre-wrap}
 select.f{
   cursor:pointer; -webkit-appearance:none; appearance:none;
   font-family:var(--f-mono); font-size:10px; letter-spacing:.11em; text-transform:uppercase;
@@ -241,6 +241,7 @@ footer.foot{border-top:1px solid var(--line); padding-block:20px 40px; color:var
   nav.tabs,.tools,.add,.row-kill,footer.foot,.alert{display:none!important}
   .panel[hidden]{display:block!important}
   .row{break-inside:avoid}
+  textarea.f{height:auto!important; overflow:visible}
 }
 </style>
 
@@ -606,6 +607,17 @@ function tiles(){
   return w;
 }
 
+/* ---------- keep notes fields at their content height ---------- */
+function grow(t){
+  if(!t) return;
+  t.style.height="auto";
+  var h=t.scrollHeight;
+  if(h>0) t.style.height=(h+2)+"px";
+}
+function growAll(root){
+  (root||document).querySelectorAll("textarea.f").forEach(grow);
+}
+
 /* ---------- render ---------- */
 function tabsRender(){
   var box=$("#tabs"); box.textContent="";
@@ -648,7 +660,7 @@ function render(){
     p.appendChild(add);
     main.appendChild(p);
   });
-  tabsRender(); head(); booted=true;
+  tabsRender(); head(); growAll(document.getElementById("panel-"+active)); booted=true;
 }
 function head(){
   var m=store.meta||{};
@@ -675,6 +687,7 @@ document.addEventListener("click",function(e){
     active=t.dataset.go;
     document.querySelectorAll(".panel").forEach(function(p){ p.hidden=p.dataset.sec!==active; });
     document.querySelectorAll(".tab").forEach(function(b){ b.setAttribute("aria-selected",String(b.dataset.go===active)); });
+    growAll(document.getElementById("panel-"+active));
     window.scrollTo({top:0,behavior:"smooth"});
     return;
   }
@@ -730,6 +743,7 @@ document.addEventListener("input",function(e){
     head(); refreshTiles();
   }
   if(key==="mode"){ n.className="f m-"+val; }
+  if(n.tagName==="TEXTAREA") grow(n);
   queue(doc);
 });
 
