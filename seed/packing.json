@@ -7,7 +7,8 @@
    "status": "action",
    "bag": "Away",
    "zone": "All legs",
-   "detail": "Closed, not expanded. The TSA combination lock and the compression pads are built in, and it ships with a drawstring laundry bag — so that's one thing off the list."
+   "detail": "Closed, not expanded. The TSA combination lock and the compression pads are built in, and it ships with a drawstring laundry bag — so that's one thing off the list.",
+   "own": "own"
   },
   {
    "id": "pk002",
@@ -16,7 +17,8 @@
    "status": "action",
    "bag": "Talon 44",
    "zone": "All legs",
-   "detail": "At 72 cm tall it is over Korean Air's 55 × 40 × 20 cm cabin size on paper, but it's soft and compresses; the binding limit is the 10 kg you're allowed across the carry-on and personal item together. Cinch the compression straps and don't let it look like a trekking pack at the gate."
+   "detail": "At 72 cm tall it is over Korean Air's 55 × 40 × 20 cm cabin size on paper, but it's soft and compresses; the binding limit is the 10 kg you're allowed across the carry-on and personal item together. Cinch the compression straps and don't let it look like a trekking pack at the gate.",
+   "own": "own"
   },
   {
    "id": "pk003",
@@ -52,7 +54,8 @@
    "status": "pending",
    "bag": "Away → Talon 44",
    "zone": "All legs",
-   "detail": "Long johns, heavy socks, base layer, hat, gloves, warmers, wipes. At Shigatse you lift one cube out of the Away into the Talon and you're packed for base camp."
+   "detail": "Long johns, heavy socks, base layer, hat, gloves, warmers, wipes. At Shigatse you lift one cube out of the Away into the Talon and you're packed for base camp.",
+   "own": "own"
   },
   {
    "id": "pk007",
@@ -340,7 +343,8 @@
    "status": "action",
    "bag": "Sling",
    "zone": "Tibet · EBC night",
-   "detail": "Start it on the schedule they give you, not when you feel bad — which means it has to be on you, not in the hold."
+   "detail": "Start it on the schedule they give you, not when you feel bad — which means it has to be on you, not in the hold.",
+   "own": "own"
   },
   {
    "id": "pk039",
@@ -403,7 +407,8 @@
    "status": "action",
    "bag": "Talon 44",
    "zone": "All legs",
-   "detail": "The full course in the Talon, a duplicate set in the Away, and a copy of the prescription in both."
+   "detail": "The full course in the Talon, a duplicate set in the Away, and a copy of the prescription in both.",
+   "own": "own"
   },
   {
    "id": "pk046",

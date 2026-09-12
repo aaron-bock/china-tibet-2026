@@ -3,6 +3,13 @@ name: sandra-blog-2017
 description: Sandra Rothbard's "Wall to Wall – Summer 2017" travel blog — what it covers, how to get into it, and the full 70-entry index. Read before researching anything about her China route.
 type: reference
 ---
+
+> **Provenance only — not current.** As of 2026-09-12 the single source of truth for
+> this trip is the China & Tibet 2026 dossier:
+> <https://claude.ai/code/artifact/eccc0f6c-dc3a-4c08-8381-905dee78f9ff>
+> This note is kept because it explains *why* the decisions below were made. Where it
+> and the app disagree, the app is right. Do not plan from this file.
+
 Aaron's friend Sandra Rothbard blogged her summer 2017 Israel → Hong Kong → China → Cambodia trip at https://walltowall2017.wordpress.com/ — 70 entries, 10 May to 25 July 2017. All 70 were read in full on 2026-09-09; the distilled content lives in [[sandra-china-tips]] and the 2026-specific crossover in [[sandra-2026-crossover]].
 
 **The blog is PRIVATE.** WebFetch, curl and the WordPress public API all fail. She locked it partway through the trip (post "Blog to become private", 26 June 2017) and approved followers only.

@@ -3,6 +3,13 @@ name: xian-shanghai-decisions
 description: Pointer to the master trip document, plus the decisions and deadlines behind it. Read before booking anything for Xi'an or Shanghai.
 type: reference
 ---
+
+> **Provenance only — not current.** As of 2026-09-12 the single source of truth for
+> this trip is the China & Tibet 2026 dossier:
+> <https://claude.ai/code/artifact/eccc0f6c-dc3a-4c08-8381-905dee78f9ff>
+> This note is kept because it explains *why* the decisions below were made. Where it
+> and the app disagree, the app is right. Do not plan from this file.
+
 **The master document is `China-Tibet Master Itinerary 2026.html`** in the project folder, published as the artifact "Itinerary". It merges what used to be three separate documents. The old "Xi'an to Everest Base Camp", "Xi'an to Disneytown" and "Xi'an, Wall to Warriors" were archived on 2026-09-10 — files moved to `Archive/`, artifacts left in place with an archived banner. Don't plan from them.
 
 All prices pulled live on 2026-09-09 from Shanghai Disney Resort's official store/rules pages and Marriott's booking engine for the actual dates. On 2026-09-10 the whole master was audited against the project notes and every Sandra-2017-derived operational detail re-verified — see [[sandra-2026-crossover]] for what changed.

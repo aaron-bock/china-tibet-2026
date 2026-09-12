@@ -3,6 +3,13 @@ name: apps-and-services
 description: The app, wallet and connectivity setup for the China/Tibet trip — what to install, what breaks behind the firewall, and the pre-departure deadlines. Read before booking or installing anything, and before the 2 Oct off-grid stretch.
 type: reference
 ---
+
+> **Provenance only — not current.** As of 2026-09-12 the single source of truth for
+> this trip is the China & Tibet 2026 dossier:
+> <https://claude.ai/code/artifact/eccc0f6c-dc3a-4c08-8381-905dee78f9ff>
+> This note is kept because it explains *why* the decisions below were made. Where it
+> and the app disagree, the app is right. Do not plan from this file.
+
 Researched 2026-09-10 against current sources. Full write-up lives in `China-Tibet Apps & Services 2026.html` in the project folder and as a Claude artifact.
 
 ## The organising fact

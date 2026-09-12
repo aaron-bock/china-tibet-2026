@@ -157,6 +157,30 @@ select.f.m-air{color:var(--lapis); background:var(--lapis-wash)}
 select.f.m-rail{color:var(--saffron); background:var(--saffron-wash)}
 select.f.m-ground{color:var(--jade); background:var(--jade-wash)}
 
+.prep{display:flex; gap:3px; align-self:flex-start}
+.prep button{
+  font-family:var(--f-mono); font-size:9.5px; letter-spacing:.09em; text-transform:uppercase;
+  font-weight:600; padding:5px 0; width:38px; border:1px solid var(--line);
+  background:var(--surface); color:var(--faint); border-radius:3px; line-height:1.1
+}
+.prep button:hover{border-color:var(--soft); color:var(--ink)}
+.prep button[aria-pressed="true"][data-prep="own"]{background:var(--jade-wash); border-color:var(--jade); color:var(--jade)}
+.prep button[aria-pressed="true"][data-prep="buy"]{background:var(--saffron-wash); border-color:var(--saffron); color:var(--saffron)}
+.prep button[aria-pressed="true"][data-prep="skip"]{background:var(--raise); border-color:var(--soft); color:var(--soft)}
+.row.owned .f.strong, .row.owned .f.big{text-decoration:line-through; text-decoration-color:var(--jade); color:var(--soft)}
+.row.skipped{opacity:.5}
+.row.skipped .f.strong, .row.skipped .f.big{text-decoration:line-through; text-decoration-color:var(--faint)}
+
+.filters{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:18px}
+.filters button{
+  font-family:var(--f-mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase;
+  border:1px solid var(--line); background:var(--surface); color:var(--soft);
+  border-radius:999px; padding:6px 12px; font-weight:500
+}
+.filters button:hover{border-color:var(--soft); color:var(--ink)}
+.filters button[aria-pressed="true"]{background:var(--ink); border-color:var(--ink); color:var(--ground); font-weight:600}
+.filters button .n{opacity:.6; margin-left:5px; font-variant-numeric:tabular-nums}
+
 .add{margin-top:14px; border:1px dashed var(--line); background:none; color:var(--soft); width:100%; padding:10px; border-radius:7px; font-weight:500}
 .add:hover{border-color:var(--lapis); color:var(--lapis)}
 
@@ -222,7 +246,7 @@ footer.foot{border-top:1px solid var(--line); padding-block:20px 40px; color:var
 .g-tasks{grid-template-columns:minmax(0,1fr) 150px 96px 184px}
 .g-money{grid-template-columns:minmax(0,1fr) 192px 96px}
 .g-apps{grid-template-columns:minmax(0,1fr) 150px 96px}
-.g-packing{grid-template-columns:minmax(0,1fr) 150px 132px 96px}
+.g-packing{grid-template-columns:minmax(0,1fr) 120px 128px 94px 130px}
 .g-kit{grid-template-columns:minmax(0,1fr) 140px}
 .g-people{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr)}
 .g-reference{grid-template-columns:minmax(0,1fr) minmax(0,188px) 120px}
@@ -291,6 +315,7 @@ footer.foot{border-top:1px solid var(--line); padding-block:20px 40px; color:var
     <div class="dl">
       <button type="button" data-fmt="html"><span class="ext">html</span><span class="lbl"><b>Full dossier</b><span>Every section on one printable page. Works offline.</span></span></button>
       <button type="button" data-fmt="md"><span class="ext">md</span><span class="lbl"><b>Markdown</b><span>Plain text for Notes, Obsidian or a phone.</span></span></button>
+      <button type="button" data-fmt="shop"><span class="ext">csv</span><span class="lbl"><b>Shopping list</b><span>Everything you marked Buy, split into before-you-leave and in-China.</span></span></button>
       <button type="button" data-fmt="csv"><span class="ext">csv</span><span class="lbl"><b>Costs &amp; payments</b><span>The money table as a spreadsheet.</span></span></button>
       <button type="button" data-fmt="json"><span class="ext">json</span><span class="lbl"><b>Data backup</b><span>Raw records, exactly as stored.</span></span></button>
     </div>
@@ -392,12 +417,13 @@ var SCHEMA=[
       {k:"detail",l:"Detail", type:"area", ph:"Detail"}
     ]},
   { id:"packing", doc:"packing", label:"Packing",
-    note:"The full list from the Packing List page \u2014 every item with the bag it rides in, the legs it is for, and why it is on the list. Red means it is one of the ones you cannot forget.",
+    note:"Every item with the bag it rides in, the legs it is for, and why. Tap OWN, BUY or SKIP on each line \u2014 the buys collect under the Buying filter, and red means it is one you cannot forget.",
     fields:[
       {k:"item",  l:"Item",   cls:"strong", ph:"Item"},
       {k:"group", l:"Group",  cls:"mono",   ph:"Category"},
       {k:"bag",   l:"Bag",    cls:"mono",   ph:"Which bag"},
       {k:"status",l:"State",  type:"status"},
+      {k:"own",   l:"Have it?", type:"prep"},
       {k:"zone",  l:"Legs",   cls:"mono",   wide:true, ph:"Which legs"},
       {k:"detail",l:"Why",    type:"area",  ph:"Why"}
     ]},
@@ -433,7 +459,7 @@ var SCHEMA=[
     ]}
 ];
 
-var store={}, db=null, dl=null, active=SCHEMA[0].id, booted=false;
+var store={}, db=null, dl=null, active=SCHEMA[0].id, booted=false, packFilter="all";
 var pending={}, flushTimer=null;
 
 function $(s){return document.querySelector(s);}
@@ -482,8 +508,23 @@ function field(sec,row,f){
   var wide = f.wide || f.type==="area";
   var cell=el("div","cell"+(wide?" w-all":""));
   var id=sec.id+"-"+row.id+"-"+f.k;
-  var lab=el("label",null,f.l); lab.htmlFor=id; cell.appendChild(lab);
+  var lab=el("label",null,f.l); if(f.type!=="prep") lab.htmlFor=id; cell.appendChild(lab);
   var node;
+  if(f.type==="prep"){
+    node=el("div","prep");
+    node.setAttribute("role","group");
+    node.setAttribute("aria-label","Own, buy or skip: "+(row[sec.fields[0].k]||"this item"));
+    [["own","Own"],["buy","Buy"],["skip","Skip"]].forEach(function(o){
+      var b=el("button",null,o[1]); b.type="button";
+      b.dataset.prep=o[0]; b.dataset.doc=sec.doc; b.dataset.rid=row.id;
+      b.setAttribute("aria-pressed", String(row[f.k]===o[0]));
+      b.setAttribute("aria-label", o[1]+": "+(row[sec.fields[0].k]||""));
+      node.appendChild(b);
+    });
+    node.id=id;
+    cell.appendChild(node);
+    return cell;
+  }
   if(f.type==="status" || f.type==="mode"){
     var opts = f.type==="status"?STATUS:MODES;
     node=el("select","f");
@@ -505,7 +546,7 @@ function field(sec,row,f){
   return cell;
 }
 function rowNode(sec,row){
-  var r=el("div","row"+(row.status==="done"?" done":"")); r.dataset.rid=row.id;
+  var r=el("div","row"+(row.status==="done"?" done":"")+(row.own==="own"?" owned":"")+(row.own==="skip"?" skipped":"")); r.dataset.rid=row.id;
   var st=el("span","stripe"); st.dataset.status=row.status||"pending"; r.appendChild(st);
   var body=el("div","row-body g-"+sec.doc);
   sec.fields.forEach(function(f){ body.appendChild(field(sec,row,f)); });
@@ -629,6 +670,53 @@ function growAll(root){
   (root||document).querySelectorAll("textarea.f").forEach(grow);
 }
 
+/* ---------- own / buy / skip ---------- */
+function prepCounts(){
+  var c={own:0,buy:0,skip:0,todo:0,all:0};
+  items("packing").forEach(function(r){
+    c.all++;
+    if(r.own==="own") c.own++;
+    else if(r.own==="buy") c.buy++;
+    else if(r.own==="skip") c.skip++;
+    else c.todo++;
+  });
+  return c;
+}
+function packMatch(r){
+  if(packFilter==="all") return true;
+  if(packFilter==="todo") return !r.own;
+  if(packFilter==="key") return r.status==="action" && r.own!=="skip";
+  return r.own===packFilter;
+}
+function prepTally(){
+  var c=prepCounts(), w=el("div","tiles");
+  [{k:"Own",v:c.own,s:"already have it"},
+   {k:"Buy",v:c.buy,s:"on the shopping list"},
+   {k:"Undecided",v:c.todo,s:c.todo?"still to triage":"all decided"},
+   {k:"Skipped",v:c.skip,s:"not taking"}].forEach(function(x){
+    var t=el("div","tile");
+    t.appendChild(el("div","k",x.k));
+    t.appendChild(el("div","v",String(x.v)));
+    t.appendChild(el("div","s",x.s));
+    w.appendChild(t);
+  });
+  return w;
+}
+function prepFilter(){
+  var c=prepCounts(), box=el("div","filters");
+  box.setAttribute("role","group");
+  box.setAttribute("aria-label","Filter the packing list");
+  [["all","Everything",c.all],["todo","Undecided",c.todo],["buy","Buying",c.buy],
+   ["own","Own",c.own],["key","Can't forget",items("packing").filter(function(r){return r.status==="action"&&r.own!=="skip";}).length],
+   ["skip","Skipped",c.skip]].forEach(function(o){
+    var b=el("button",null,o[1]); b.type="button"; b.dataset.filter=o[0];
+    b.setAttribute("aria-pressed", String(packFilter===o[0]));
+    b.appendChild(el("span","n",String(o[2])));
+    box.appendChild(b);
+  });
+  return box;
+}
+
 /* ---------- render ---------- */
 function tabsRender(){
   var box=$("#tabs"); box.textContent="";
@@ -642,9 +730,9 @@ function tabsRender(){
     box.appendChild(b);
   });
 }
-function render(){
+function render(force){
   var main=$("#main");
-  if(booted && document.activeElement && main.contains(document.activeElement)) return;
+  if(!force && booted && document.activeElement && main.contains(document.activeElement)) return;
   main.textContent="";
   SCHEMA.forEach(function(sec){
     var p=el("section","panel"); p.id="panel-"+sec.id; p.dataset.sec=sec.id;
@@ -658,7 +746,9 @@ function render(){
     if(sec.id==="tibet"){
       var th=el("div"); th.innerHTML=tourProfile(); p.appendChild(th.firstChild);
     }
+    if(sec.doc==="packing"){ p.appendChild(prepTally()); p.appendChild(prepFilter()); }
     var rows=el("div","rows"), list=items(sec.doc);
+    if(sec.doc==="packing") list=list.filter(packMatch);
     if(!list.length){
       var e=el("div","row"); e.appendChild(el("span","stripe"));
       var b=el("div","row-body"); b.appendChild(el("div","cell empty","Nothing here yet."));
@@ -692,8 +782,37 @@ function refreshTiles(){
 
 /* ---------- events ---------- */
 document.addEventListener("click",function(e){
-  var t=e.target.closest("[data-go],[data-add],[data-kill],[data-fmt],#openExport,#closeExport,#theme");
+  var t=e.target.closest("[data-prep],[data-filter],[data-go],[data-add],[data-kill],[data-fmt],#openExport,#closeExport,#theme");
   if(!t) return;
+  if(t.dataset.prep){
+    var pdoc=t.dataset.doc, prid=t.dataset.rid, want=t.dataset.prep;
+    var cur=(items(pdoc).filter(function(r){return r.id===prid;})[0]||{}).own||"";
+    var next = cur===want ? "" : want;
+    store[pdoc]={items:items(pdoc).map(function(r){
+      return r.id===prid ? Object.assign({},r,{own:next}) : r;
+    })};
+    var prow=t.closest(".row");
+    if(prow){
+      prow.classList.toggle("owned", next==="own");
+      prow.classList.toggle("skipped", next==="skip");
+      prow.querySelectorAll("[data-prep]").forEach(function(b){
+        b.setAttribute("aria-pressed", String(b.dataset.prep===next));
+      });
+    }
+    var tl=document.querySelector("#panel-packing .tiles");
+    if(tl) tl.replaceWith(prepTally());
+    var fl=document.querySelector("#panel-packing .filters");
+    if(fl) fl.replaceWith(prepFilter());
+    if(packFilter!=="all") render(true);
+    queue(pdoc);
+    return;
+  }
+  if(t.dataset.filter){
+    packFilter=t.dataset.filter;
+    render(true);
+    document.getElementById("panel-packing").scrollIntoView({block:"start",behavior:"smooth"});
+    return;
+  }
   if(t.dataset.go){
     active=t.dataset.go;
     document.querySelectorAll(".panel").forEach(function(p){ p.hidden=p.dataset.sec!==active; });
@@ -710,7 +829,7 @@ document.addEventListener("click",function(e){
       row[f.k] = f.type==="status" ? "pending" : (f.type==="mode" ? "air" : "");
     });
     store[d]={items:items(d).concat([row])};
-    queue(d); booted=false; render();
+    queue(d); render(true);
     var first=document.querySelector('#panel-'+sec.id+' .row[data-rid="'+row.id+'"] .f');
     if(first) first.focus();
     return;
@@ -718,7 +837,7 @@ document.addEventListener("click",function(e){
   if(t.dataset.kill){
     var doc=t.dataset.doc, rid=t.dataset.kill;
     store[doc]={items:items(doc).filter(function(r){return r.id!==rid;})};
-    queue(doc); booted=false; render();
+    queue(doc); render(true);
     return;
   }
   if(t.id==="theme"){
@@ -771,6 +890,19 @@ function mdBody(){
   L.push("**"+(m.traveler||"")+"** · "+(m.dateRange||"")+(m.length?" · "+m.length:"")+(m.groupSize?" · "+m.groupSize:""));
   if(m.operator||m.customerId){ L.push(""); L.push((m.operator||"")+(m.customerId?" — "+m.customerId:"")); }
   if(m.summary){ L.push(""); L.push(m.summary); }
+  var sl=shopList();
+  if(sl.buy.length){
+    L.push(""); L.push("## Shopping list"); L.push("");
+    if(sl.here.length){
+      L.push("### Before you leave"); L.push("");
+      sl.here.forEach(function(r){ L.push("- [ ] "+r.item+(r.detail?" \u2014 "+r.detail:"")); });
+      L.push("");
+    }
+    if(sl.there.length){
+      L.push("### In China"); L.push("");
+      sl.there.forEach(function(r){ L.push("- [ ] "+r.item+(r.detail?" \u2014 "+r.detail:"")); });
+    }
+  }
   SCHEMA.forEach(function(sec){
     var list=items(sec.doc); if(!list.length) return;
     L.push(""); L.push("## "+sec.label); L.push("");
@@ -779,7 +911,7 @@ function mdBody(){
       sec.fields.forEach(function(f){
         var v=r[f.k]; if(!v) return;
         if(f.type==="area"){ body.push(v); return; }
-        if(f.k==="status"||f.k==="mode"){ head.push("["+String(v).toUpperCase()+"]"); return; }
+        if(f.k==="status"||f.k==="mode"||f.type==="prep"){ head.push("["+String(v).toUpperCase()+"]"); return; }
         head.push(v);
       });
       L.push("- "+head.join(" · "));
@@ -788,6 +920,21 @@ function mdBody(){
   });
   L.push(""); L.push("_Exported "+new Date().toLocaleString()+"._");
   return L.join("\n");
+}
+function shopList(){
+  var buy=items("packing").filter(function(r){return r.own==="buy";});
+  var here=buy.filter(function(r){return r.group!=="Buy in China" && r.bag!=="Buy there";});
+  var there=buy.filter(function(r){return r.group==="Buy in China" || r.bag==="Buy there";});
+  return {buy:buy, here:here, there:there};
+}
+function shopCsv(){
+  function q(v){ return '"'+String(v==null?"":v).replace(/"/g,'""')+'"'; }
+  var sl=shopList();
+  var rows=[["Where","Item","Group","Bag","Legs","Why"].map(q).join(",")];
+  sl.here.forEach(function(r){ rows.push(["Before you leave",r.item,r.group,r.bag,r.zone,r.detail].map(q).join(",")); });
+  sl.there.forEach(function(r){ rows.push(["In China",r.item,r.group,r.bag,r.zone,r.detail].map(q).join(",")); });
+  if(!sl.buy.length) rows.push([q("Nothing marked Buy yet"),"","","","",""].join(","));
+  return rows.join("\r\n");
 }
 function csvBody(){
   function q(v){ return '"'+String(v==null?"":v).replace(/"/g,'""')+'"'; }
@@ -827,6 +974,19 @@ function htmlBody(){
   p.push('<p class="sub"><strong>'+esc(m.traveler||"")+'</strong>'+(m.dateRange?' &middot; '+esc(m.dateRange):'')+(m.length?' &middot; '+esc(m.length):'')+(m.groupSize?' &middot; '+esc(m.groupSize):'')+'</p>');
   if(m.operator||m.customerId) p.push('<p class="sub">'+esc(m.operator||"")+(m.customerId?' &middot; '+esc(m.customerId):'')+'</p>');
   if(m.summary) p.push('<p class="summ">'+esc(m.summary)+'</p>');
+  var sl=shopList();
+  if(sl.buy.length){
+    p.push('<h2>Shopping list</h2>');
+    p.push('<p class="note">'+sl.buy.length+' items marked Buy. '+sl.here.length+' before you leave, '+sl.there.length+' in China.</p>');
+    [["Before you leave",sl.here],["In China",sl.there]].forEach(function(pair){
+      if(!pair[1].length) return;
+      p.push('<div class="e pending"><h3>'+esc(pair[0])+'</h3>');
+      pair[1].forEach(function(r){
+        p.push('<p><strong>&#9744; '+esc(r.item)+'</strong>'+(r.detail?' &mdash; '+esc(r.detail):'')+'</p>');
+      });
+      p.push('</div>');
+    });
+  }
   SCHEMA.forEach(function(sec){
     var list=items(sec.doc); if(!list.length) return;
     p.push('<h2>'+esc(sec.label)+'</h2>');
@@ -837,6 +997,7 @@ function htmlBody(){
         var v=r[f.k]; if(!v) return;
         if(f.type==="area"){ areas.push(v); return; }
         if(f.k==="status") return;
+        if(f.type==="prep"){ meta.push(String(v).toUpperCase()); return; }
         if(!title){ title=v; return; }
         meta.push(v);
       });
@@ -858,6 +1019,7 @@ function doExport(fmt){
     html:["china-tibet-2026-dossier.html",htmlBody],
     md:["china-tibet-2026.md",mdBody],
     csv:["china-tibet-2026-costs.csv",csvBody],
+    shop:["china-tibet-2026-shopping.csv",shopCsv],
     json:["china-tibet-2026.json",function(){return JSON.stringify(plain(),null,2);}]
   };
   var spec=map[fmt]; if(!spec) return;

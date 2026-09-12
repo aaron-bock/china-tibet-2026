@@ -1,71 +1,88 @@
 # Project memory — China-Tibet Trip 2026
 
-Synced copy of this project's memory notes, kept in the iCloud folder so they
-travel to any computer. If you are Claude reading this on a new machine, read
-these files before working on the trip.
+**Read this first, and read all of it, before touching anything about this trip.**
 
-## The documents (in the folder above this one, `Trip Kit`)
+Everything below changed on 2026-09-12. If you are Claude on a new machine and
+you find an older copy of this file in the iCloud folder, this one wins.
 
-- **`Itinerary.html`** — the master document. Flights, hotels,
-  day-by-day, the Xi'an map, the Disneyland ticketing analysis, bookings, contacts.
-  Published as the artifact "Itinerary". **Plan from this one.**
-- `Prep-Checklist.html` — the pre-departure tool: every item on one tappable line with
-  Own / Buy / skip, a shopping list that fills from the Buy taps, a separate buy-in-China
-  list, and the outstanding errands. Phone-sized; state saved in the page. Artifact
-  "Own It or Buy It". **Use this one before departure; the packing list is for packing day.**
-- `Packing-List.html` — four bags across four climates, filterable,
-  with the tick state saved in the page. Artifact "Packing List".
-- `Apps-and-Services.html` — connectivity, wallets, maps, email, what breaks
-  behind the firewall. Artifact "China Trip Phone Kit".
-- `Sandra-2017.html` — the 2017 blog material that bears on this route, every item tagged
-  still true / superseded / untested, with the 2026 correction alongside each superseded one.
-  Artifact "Sandra's 2017 Notes".
-- `index.html` — the front door: the five documents, what is still due, and how to take
-  the folder offline. Start here.
-- `Archive/` — three superseded documents (the original itinerary, the Xi'an & Shanghai
-  plan, the standalone Xi'an map), merged into the master on 2026-09-10 and banner-marked.
-  They sit **one level up, outside `Trip Kit`**, deliberately: a record of what changed,
-  not something to plan from.
+## There is now one document, and it is the only one
 
-Renamed 2026-09-10 at Aaron's request: the itinerary artifact was "Xi'an, Everest,
-Disneytown" and the packing list was "Sea Level to 5,200 m". Both now carry plain
-functional names in the tab, the gallery and the page heading. The URLs did not change.
+**The China & Tibet 2026 dossier** — <https://claude.ai/code/artifact/eccc0f6c-dc3a-4c08-8381-905dee78f9ff>
 
-## The notes
+That page is the single source of truth for this trip. Aaron's instruction, verbatim:
+*"This will be the true source of info going forward."* It is editable in place, it
+saves as you type, and it exports itself (HTML, Markdown, costs CSV, shopping CSV,
+JSON) for taking offline before departure.
 
-- [Itinerary sources](itinerary_sources.md) — where every trip fact came from, and what
-  the WhatsApp-vs-email discrepancy was.
-- [Xi'an & Shanghai decisions](xian_shanghai_decisions.md) — what's booked, what's open,
-  the Golden Week constraints and the Disneyland annual-pass verdict.
-- [Apps and services](apps_and_services.md) — the eSIM/VPN/Alipay setup, the Gmail-to-iCloud
-  workaround, and the pre-departure deadlines, plus the museum booking channels.
-- [Sandra's 2017 blog](sandra_blog_2017.md) — the private "Wall to Wall" blog: route,
-  full 70-entry index, and how to get back into it.
-- [Sandra's China tips](sandra_china_tips.md) — logistics, trains, health, scams and
-  city-by-city notes distilled from all 70 entries.
-- [Sandra → 2026 crossover](sandra_2026_crossover.md) — only the parts of her trip that
-  bear on Aaron's actual route, **with the 2017 details that have gone stale corrected
-  against 2026 sources.** This note is the source `Sandra-2017.html` was built from;
-  read the note when planning, hand Aaron the page.
+Fourteen sections: Itinerary, Travel, Tibet tour, Stays, Disney, Open items, Money,
+Apps, Kit, Packing, People, Reference, Phrases, Notes. Packing carries the
+Own / Buy / Skip triage per item, with a Buying filter that becomes the shopping list.
 
-All of these are also published as docs in the "China-Tibet Trip 2026" Claude Project,
-so they are visible from claude.ai as well as from this folder.
+The source lives in the GitHub repo **aaron-bock/china-tibet-2026** on branch
+`claude/china-trip-planner-3dq17s`: `index.html` is the page, `seed/*.json` is the
+first-run data, `tools/` holds the extractors that built the seeds from the old pages.
+
+### The app's data does not live in the repo
+
+The live, edited state lives in the artifact's runtime `db` (`trip/*` documents), not
+in `seed/*.json`. The seeds only populate an empty database on first run. So:
+
+- **Never** "restore" the app by re-seeding — that would overwrite Aaron's edits.
+- Editing `seed/*.json` changes nothing for a database that already exists.
+- The repo copy will not work as a static page anywhere (GitHub Pages included),
+  because there is no `db` outside the artifact runtime. Don't offer it as a mirror.
+- To change the app, edit the page and republish it to the same artifact URL.
+
+## All six old Trip Kit pages are archived
+
+Archived 2026-09-12, each with a banner at the top pointing at the dossier. They are a
+record of what changed, not something to plan from — and nothing in them should be
+copied forward without checking it against the app first.
+
+| Page | Artifact |
+|---|---|
+| China-Tibet Trip Kit (front door) | `65e30345-b6b5-4438-aee4-f7034f64bb14` |
+| Itinerary (was the master document) | `db0a3465-f329-47b2-a0d9-1300d2d79d90` |
+| Packing List | `34674237-5194-4538-8249-c385789e9677` |
+| Own It or Buy It (prep checklist) | `c6bf9cba-c0f1-470b-8ec6-3d69702ccae0` |
+| China Trip Phone Kit (apps & services) | `ac2f1858-d9b6-456a-a881-d44ee391ec57` |
+| Sandra's 2017 Notes | `84f80d00-6586-4783-92f6-c75ebdb9be46` |
+
+Three earlier documents (`e30ce61e`, `0e766031`, `8b2e8b41` — the original itinerary,
+the Xi'an & Shanghai plan, the standalone Xi'an map) were archived on 2026-09-10 and
+still point at the Itinerary, which is itself now archived. One extra hop, not a
+dead end.
+
+**Not archivable from here, and still outstanding:** the files in the iCloud `Trip Kit`
+folder and the docs in the "China-Tibet Trip 2026" Claude Project. Those need Aaron.
+Until he does it, a future session can still stumble on a stale copy — hence the
+"this one wins" line at the top.
+
+## Notes kept for provenance only
+
+`itinerary_sources.md`, `xian_shanghai_decisions.md`, `apps_and_services.md`,
+`sandra_blog_2017.md`, `sandra_china_tips.md`, `sandra_2026_crossover.md`.
+
+They explain *why* facts are what they are, and they are worth reading when a decision
+needs re-litigating. They are **not** current: where a note and the app disagree, the
+app is right. Do not hand these to Aaron as deliverables and do not plan from them.
 
 ## Standing cautions
 
+- **The real plan lives in WhatsApp, not email.** This is the one that has already
+  cost a rebuild: a version assembled from Gmail and Drive had the trip starting
+  22 September (that's the separate Trybal SoCal trip), treated the Z165 as unticketed
+  when James had confirmed it on 16 August for 2 Oct 09:27, read the Westin award
+  night as a conflict, and missed the Disneyland ticket window entirely.
 - **Sandra's blog is from 2017.** Her warnings held; her logistics largely didn't.
-  Anything operational taken from it must be re-checked before it goes in a deliverable.
-  `Sandra-2017.html` and the crossover note both mark exactly what changed.
-- The real plan lives in WhatsApp, not email.
+  Anything operational from it must be re-checked before it goes in a deliverable.
+- **Do not copy the STEP credentials out of the shared Drive sheet
+  ("Important Info In China").** They are someone else's login. Deliberately excluded
+  from the app and from the repo; the app's Reference section instead says to enrol at
+  step.state.gov under Aaron's own account.
+- **The repo is public and carries live booking data** — airline record locators, a
+  ticket number, Westin confirmations, an e-mail list, a phone number, a SkyMiles
+  number, the permit delivery address. Flagged to Aaron on 2026-09-12; he has not yet
+  said whether to make it private. Assume it is still public.
 
-All 70 blog entries re-read in full on 2026-09-09 via Claude in Chrome.
-Sandra-derived facts re-verified against current sources on 2026-09-10.
-Last synced from project memory: 2026-09-10.
-Folder restructured into `Trip Kit` on 2026-09-10; the six pages cross-link by relative
-path, so the whole folder works copied to local storage with no connection.
-
-Added 2026-09-11: `Prep-Checklist.html`, split out of the packing list because that page is
-good for packing and bad for shopping. It carries no reasoning — the packing list keeps
-that — so if an item changes there, change it here too. Sourced the same day: China's 3C
-power-bank rule (CAAC, since 2025-06-28) means US power banks are confiscated on mainland
-domestic flights, so both pages now say buy them in Xi'an.
+Last rewritten: 2026-09-12, when the app became authoritative.
