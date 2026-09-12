@@ -2,66 +2,115 @@
   "items": [
     {
       "id": "t1",
-      "title": "Chase James on the Xi'an to Lhasa train",
+      "title": "Buy every Shanghai Disneyland ticket — window is open now",
       "owner": "Aaron",
-      "due": "now",
+      "due": "11–16 Sep",
       "status": "action",
-      "detail": "Soft sleeper on Z165 or Z265 departing Xi'an 1 Oct was requested on 27 Jul. Asia Odyssey books Tibet trains about 15 days out - that window opened around 15 Sep. No ticket or confirmation on file. This is the single highest-risk item: without it there is no way into Lhasa on the 1st, and the whole Tibet leg shifts."
+      "detail": "The park sells on a rolling 30-day window that advances one day at a time, so your five October dates surface one per morning across 11–16 September. You board the Z165 on 2 October and are off-grid until the 10th — there is no scenario where you buy park tickets afterwards. Don't compute the exact day; open the calendar each morning from the 11th and buy whatever new October date has appeared. Buying the morning a date opens also catches the 30-day Early Bird fare, which is free money."
     },
     {
       "id": "t2",
-      "title": "Correct the name on the Asia Odyssey traveller list",
+      "title": "Book Shanghai — five nights, 10–15 Oct",
       "owner": "Aaron",
-      "due": "before permits are filed",
+      "due": "this week",
       "status": "action",
-      "detail": "James's traveller list reads 'Mr. Aaron Rock'. The passport reads BOCK. Tibet Travel Permits and Chinese rail tickets are both checked against the passport, so a wrong surname means being refused at the station or the Lhasa gate. Reply to AOT-BJ-James-50674 and get the corrected list back in writing."
+      "detail": "The largest open block on the trip. Courtyard by Marriott Shanghai ITRZ at ~Y499/night, 900 m from the park gate, Line 11 terminus. See Stays for the full comparison and why the park side wins."
     },
     {
       "id": "t3",
-      "title": "Confirm the Tibet Travel Permit is in hand",
-      "owner": "James Guo / Aaron",
-      "due": "by 25 Sep",
+      "title": "Set up the phone and the wallet",
+      "owner": "Aaron",
+      "due": "before 27 Sep",
       "status": "action",
-      "detail": "Foreign nationals cannot board a train or flight to Lhasa without the permit, and it is normally issued as a paper original delivered to the last hotel before Tibet - which for Aaron means The Westin Xi'an. Confirm AOT has the passport and visa scans they need, ask when it will be issued, and where it will be delivered. Nothing about the permit appears in the email record."
+      "detail": "Four things that cannot be done from inside China, in the order they bite: install the travel eSIM profile and the VPN before you fly; get Alipay verified against your passport by about the 24th, because review takes one to three business days and unverified caps are low; and tell the card issuer to expect international purchases and to allow 3D Secure, which is the commonest reason a wallet refuses to bind."
     },
     {
       "id": "t4",
-      "title": "Confirm the Chinese visa and get the passport back",
+      "title": "Reserve the Terracotta Warriors for 30 Sep",
       "owner": "Aaron",
-      "due": "now",
+      "due": "24 Sep",
       "status": "action",
-      "detail": "Visa application confirmation was emailed to info@chinaatlanta.org (Consulate General of China in Atlanta) on 27 Jul asking them to confirm receipt and next steps. No reply is on file. Departure is weeks away and the permit application depends on the visa."
+      "detail": "Seven days out including the booking day, so 30 September opens on the 24th. bmy.com.cn or the museum's own WeChat account — both take a passport directly and the gate scanners read it. Not through an OTA: the museum stated in June it has never authorised a third-party platform, and the on-site ticket windows are gone entirely. For holidays it has lately released the whole block at once about a week out, so watch for a National Day notice from around the 20th."
     },
     {
       "id": "t5",
-      "title": "Decide on the Westin award night for 1 Oct",
+      "title": "Reserve the Shaanxi History Museum for 1 Oct",
       "owner": "Aaron",
-      "due": "17 Sep",
+      "due": "26 Sep, 05:00 Atlanta",
       "status": "action",
-      "detail": "Confirmation 84582237 holds 1-2 Oct at The Westin Xi'an on a free-night award, but the overnight train leaves Xi'an on the 1st. Free cancellation ends 23:59 on 17 Sep. Keep it only as a hedge against the train falling through - otherwise cancel and get the award night back."
+      "detail": "Free but ticketed, released five days ahead at 17:00 China time sharp against a daily quota — 05:00 in Atlanta. Book at sxhm.com, the WeChat mini-programme, or the WeChat account (陕西历史博物馆); the website route is newer and easiest with a passport. Prefilling your details is not the same as submitting. Extended hours through 14 Nov, 08:30–19:00, no weekly closure, so a failed morning slot can be retried for an evening one."
     },
     {
       "id": "t6",
-      "title": "Get the Tibet tour cost and payment schedule in writing",
+      "title": "Get the tour dates in writing from James",
       "owner": "Aaron",
       "due": "before departure",
       "status": "action",
-      "detail": "No tour price, deposit or balance-due date appears anywhere in the email record - the figures were sent as image attachments. Ask James for a written quote and payment schedule. Jeff has already sent $1,000 by Zelle, so money is moving without a paper trail."
+      "detail": "The last loose thread. Day 1 through Day 8 is inferred, not stated: your train gets in the afternoon of the 3rd, everyone flies out on the 10th, and the others arrive on the 2nd with the extra pre-tour night he offered. It fits, but nobody has written the dates down — worth one line while you have his attention. One message from him dated 17 August could not be decrypted in the browser."
     },
     {
       "id": "t7",
-      "title": "Confirm private versus group tour",
-      "owner": "James Guo",
-      "due": "before departure",
-      "status": "pending",
-      "detail": "Amor dropped out, leaving five travellers. James said he needed to check with the Tibet department whether the group could still be upgraded to a private tour at that size. No answer on file."
+      "title": "Pin the Tibet permit delivery to 30 Sep or earlier",
+      "owner": "Aaron / James",
+      "due": "by 30 Sep",
+      "status": "action",
+      "detail": "James has confirmed delivery to the Westin. Courier networks slow to a crawl over Golden Week (1–7 Oct), and the permit is the one item on this trip with no fallback. Delivery address: 西安威斯汀大酒店，西安市曲江新区慈恩路66号. Confirm on 1 Oct that it has physically arrived."
     },
-    { "id": "t8", "title": "Book Shanghai lodging, 10-15 Oct", "owner": "Aaron", "due": "soon", "status": "action", "detail": "Five nights. Arriving Hongqiao late on the 10th, so somewhere easy to reach that night." },
-    { "id": "t9", "title": "Book Los Angeles lodging, 22-27 Sep", "owner": "Aaron", "due": "now", "status": "action", "detail": "Five nights, starting a week from the 22nd. Nothing booked." },
-    { "id": "t10", "title": "Note the Hongqiao / Pudong split", "owner": "Aaron", "due": "10 Oct", "status": "pending", "detail": "MU 2336 lands at Shanghai Hongqiao; DL 38 leaves from Pudong. Different airports, about 50 km apart. Five days between them so it is not a connection risk, just a transfer to plan." },
-    { "id": "t11", "title": "Enrol in STEP under your own account", "owner": "Aaron", "due": "before departure", "status": "action", "detail": "The shared reference sheet carries someone else's State Department STEP login. Register at step.state.gov with your own account so the Chengdu and Shanghai consulates can reach you." },
-    { "id": "t12", "title": "Sort travel insurance", "owner": "Aaron", "due": "before departure", "status": "action", "detail": "Nothing on file. Worth checking what the Amex Platinum or Chase Sapphire Reserve already covers for trip interruption and medical evacuation - evacuation matters at 3,656 m." },
-    { "id": "t13", "title": "Decide on the Zhangjiajie pre-tour", "owner": "Aaron", "due": "soon", "status": "pending", "detail": "Kamana floated a 3-day private Zhangjiajie trip - the Avatar mountains and Tianmen, with stay and meals - as a pre-Tibet add-on, and said Amor could join. Aaron's Xi'an dates leave no room for it as planned." },
-    { "id": "t14", "title": "Pick seats on the Korean Air and China Eastern legs", "owner": "Aaron", "due": "soon", "status": "pending", "detail": "KE 012, KE 141 and MU 2336 all show no seat assigned. KE 012 is an 11-hour overnight, so worth doing early." }
+    {
+      "id": "t8",
+      "title": "Ask the Westin to link the two reservations",
+      "owner": "Aaron",
+      "due": "before 29 Sep",
+      "status": "action",
+      "detail": "84579041 and 84582237 are back-to-back. Unlinked, you risk being moved rooms on the morning of the 1st."
+    },
+    {
+      "id": "t9",
+      "title": "Grab the Urban Planning Exhibition Center slot from Lhasa",
+      "owner": "Aaron",
+      "due": "4 Oct",
+      "status": "pending",
+      "detail": "Its booking window opens seven days out, which for Sunday the 11th means 4 October — while you are somewhere between Shigatse and base camp. Take it from Lhasa if you have signal; otherwise book the moment you land on the Saturday night and accept that a Sunday slot may be gone. Free, timed, via the WeChat mini-programme, 09:00–17:00, last entry 16:00, closed Wednesdays."
+    },
+    {
+      "id": "t10",
+      "title": "Buy a power bank in Xi'an",
+      "owner": "Aaron",
+      "due": "30 Sep – 1 Oct",
+      "status": "action",
+      "detail": "Since 28 June 2025 the CAAC requires a moulded 3C mark on any power bank taken on a mainland domestic flight. No US-market unit carries one, and lithium can't go in the hold — so an uncertified one is confiscated at Lhasa on the way to Shanghai. Buy Xiaomi, Baseus or UGREEN in Xi'an, ~Y100–200. You need it for thirty hours on a Z-service with no reliable power."
+    },
+    {
+      "id": "t11",
+      "title": "Take everything offline before leaving Xi'an",
+      "owner": "Aaron",
+      "due": "1 Oct",
+      "status": "action",
+      "detail": "Coverage falls away outside the Lhasa valley — assume nothing on the Yamdrok/Shigatse road days or at EBC. Offline copies of: the Tibet permit, passport, insurance, hotel confirmations, the Drive 'Important Info In China' sheet (Drive is blocked without offshore data), and offline map packs for Shaanxi, Shanghai and Tibet. Download the Google Translate offline Chinese pack — camera translation on menus works offline."
+    },
+    {
+      "id": "t12",
+      "title": "Check whether Pit 2's south side has reopened",
+      "owner": "Aaron",
+      "due": "before 30 Sep",
+      "status": "pending",
+      "detail": "A works notice dated 4 September runs about a month from the 5th, which lands right on your visit to the Terracotta Warriors."
+    },
+    {
+      "id": "t13",
+      "title": "Confirm October park hours and the 11–14 Oct prices",
+      "owner": "Aaron",
+      "due": "when the window opens",
+      "status": "pending",
+      "detail": "October park hours still aren't published — the official calendar returns 'unable to provide time' for those dates. Plan against 08:30–20:00, which is what the site shows for the current window. Exact prices for 11–14 October don't exist yet either; expect Y499 Sun/Mon and Y475 Tue/Wed, the shape the same weekdays carry a month earlier."
+    },
+    {
+      "id": "t14",
+      "title": "Finish registering the Shanghai Disney Resort app in Shanghai",
+      "owner": "Aaron",
+      "due": "10 Oct",
+      "status": "pending",
+      "detail": "Install before you leave, but expect to finish registration on a local network from the Courtyard rather than from home — it leans on SMS verification that foreign numbers handle unevenly. It is the only route to Disney Premier Access in-park."
+    }
   ]
 }

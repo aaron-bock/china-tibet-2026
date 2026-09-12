@@ -1,0 +1,1408 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Itinerary</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --ground: #F1F2F4;
+    --surface: #FFFFFF;
+    --surface-sunk: #E7E9ED;
+    --ink: #14181F;
+    --ink-soft: #4C5462;
+    --ink-faint: #7A8496;
+    --rule: #D6DAE1;
+    --rule-strong: #B9C0CB;
+    --lapis: #1D4E89;
+    --lapis-wash: #E4ECF6;
+    --saffron: #A85F12;
+    --saffron-wash: #F7EBDA;
+    --jade: #1B6E59;
+    --jade-wash: #DFEDE8;
+    --alarm: #A32118;
+    --alarm-wash: #F8E3E1;
+
+    --land: #E9EBEF;
+    --wall: #A85F12;
+    --wall-fill: #F3E6D4;
+    --line1: #1D4E89;
+    --line2: #A32118;
+    --line4: #1B6E59;
+
+    --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+    --body: "Newsreader", Georgia, "Times New Roman", serif;
+    --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #0F1319;
+      --surface: #171C24;
+      --surface-sunk: #10151C;
+      --ink: #E9ECF1;
+      --ink-soft: #A6AFBE;
+      --ink-faint: #7C8798;
+      --rule: #2A313C;
+      --rule-strong: #3B444F;
+      --lapis: #7FA9DC;
+      --lapis-wash: #17263A;
+      --saffron: #D89A4E;
+      --saffron-wash: #2E2114;
+      --jade: #62B69C;
+      --jade-wash: #10241E;
+      --alarm: #E88178;
+      --alarm-wash: #2E1614;
+
+      --land: #1B212A;
+      --wall: #D89A4E;
+      --wall-fill: #241B10;
+      --line1: #7FA9DC;
+      --line2: #E88178;
+      --line4: #62B69C;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ground: #0F1319;
+    --surface: #171C24;
+    --surface-sunk: #10151C;
+    --ink: #E9ECF1;
+    --ink-soft: #A6AFBE;
+    --ink-faint: #7C8798;
+    --rule: #2A313C;
+    --rule-strong: #3B444F;
+    --lapis: #7FA9DC;
+    --lapis-wash: #17263A;
+    --saffron: #D89A4E;
+    --saffron-wash: #2E2114;
+    --jade: #62B69C;
+    --jade-wash: #10241E;
+    --alarm: #E88178;
+    --alarm-wash: #2E1614;
+
+    --land: #1B212A;
+    --wall: #D89A4E;
+    --wall-fill: #241B10;
+    --line1: #7FA9DC;
+    --line2: #E88178;
+    --line4: #62B69C;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.55;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.75rem;
+  }
+
+  .masthead { display: flex; flex-direction: column; gap: 0.9rem; }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  h1 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(2.1rem, 5.5vw, 3.1rem);
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .standfirst {
+    margin: 0;
+    max-width: 42rem;
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+  }
+
+  .route-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+  }
+  .route-leg {
+    flex: 1 1 8rem;
+    background: var(--surface);
+    padding: 0.7rem 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .route-leg .place {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: -0.01em;
+  }
+  .route-leg .span {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.1rem; }
+
+  h2 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.35rem;
+    letter-spacing: -0.015em;
+    margin: 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  h3 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0;
+  }
+
+  p { margin: 0; }
+
+  .items { display: flex; flex-direction: column; }
+
+  .item {
+    display: grid;
+    grid-template-columns: 5.5rem 1fr;
+    gap: 0 1rem;
+    padding: 0.95rem 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+  .item:first-child { border-top: 1px solid var(--rule); }
+
+  .flag {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.35rem;
+    border-radius: 2px;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .flag.now { background: var(--alarm-wash); color: var(--alarm); }
+  .flag.soon { background: var(--saffron-wash); color: var(--saffron); }
+  .flag.open { background: var(--surface-sunk); color: var(--ink-soft); }
+  .flag.done { background: var(--jade-wash); color: var(--jade); }
+
+  .item-body { display: flex; flex-direction: column; gap: 0.25rem; }
+  .item-title { font-family: var(--display); font-weight: 600; font-size: 1rem; }
+  .item-note { color: var(--ink-soft); font-size: 0.94rem; }
+  .item-note strong { color: var(--ink); font-weight: 500; }
+
+  .leg-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-top: 0.4rem;
+  }
+  .leg-head .leg-name { font-family: var(--display); font-weight: 600; font-size: 1.02rem; }
+  .leg-head .leg-dates {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .day {
+    display: grid;
+    grid-template-columns: 5.5rem 1fr;
+    gap: 0 1.15rem;
+    padding: 0.9rem 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  .day-date {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    line-height: 1.35;
+    color: var(--ink-soft);
+    font-variant-numeric: tabular-nums;
+    padding-top: 0.15rem;
+  }
+  .day-date .dow { display: block; color: var(--ink-faint); font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; }
+  .day-date .tour-day {
+    display: block;
+    margin-top: 0.3rem;
+    color: var(--lapis);
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .day-body { display: flex; flex-direction: column; gap: 0.55rem; }
+
+  .entry { display: flex; flex-direction: column; gap: 0.2rem; }
+  .entry-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem; }
+  .entry-title {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 0.99rem;
+    letter-spacing: -0.005em;
+  }
+  .entry-detail { color: var(--ink-soft); font-size: 0.93rem; }
+  .entry-detail .code, .times {
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .times { color: var(--ink); display: block; }
+  .entry-detail .code { color: var(--lapis); }
+
+  .chip {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    padding: 0.15rem 0.4rem;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  .chip.ok { background: var(--jade-wash); color: var(--jade); }
+  .chip.pending { background: var(--saffron-wash); color: var(--saffron); }
+  .chip.gap { background: var(--alarm-wash); color: var(--alarm); }
+  .chip.info { background: var(--lapis-wash); color: var(--lapis); }
+
+  .alt {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.02em;
+  }
+
+  .aside {
+    border-left: 2px solid var(--rule-strong);
+    padding-left: 0.75rem;
+    color: var(--ink-faint);
+    font-size: 0.88rem;
+    font-style: italic;
+  }
+
+
+
+  /* --- imported from the Xi'an & Shanghai plan --- */
+  h4 { font-family: var(--mono); font-weight: 600; font-size: 0.72rem; letter-spacing: 0.12em;
+       text-transform: uppercase; color: var(--ink-faint); margin: 0; }
+  h3.subhead { font-family: var(--display); font-weight: 600; font-size: 1.08rem;
+       letter-spacing: -0.005em; text-transform: none; color: var(--ink); }
+  p { max-width: 46rem; }
+  section > p { color: var(--ink-soft); }
+  .day-body p { color: var(--ink-soft); font-size: 0.93rem; }
+  strong { font-weight: 600; color: var(--ink); }
+  em { font-style: italic; }
+  ul { margin: 0; padding-left: 1.15rem; display: flex; flex-direction: column; gap: 0.4rem;
+       max-width: 46rem; color: var(--ink-soft); }
+  li::marker { color: var(--ink-faint); }
+  .num { font-family: var(--mono); font-variant-numeric: tabular-nums; font-size: 0.94em; }
+
+  .note { border: 1px solid var(--rule); border-left: 3px solid var(--saffron);
+          background: var(--saffron-wash); padding: 0.95rem 1.1rem;
+          display: flex; flex-direction: column; gap: 0.4rem; }
+  .note.warn { border-left-color: var(--alarm); background: var(--alarm-wash); }
+  .note.good { border-left-color: var(--jade); background: var(--jade-wash); }
+  .note.flat { border-left-color: var(--rule-strong); background: var(--surface-sunk); }
+  .note p, .note ul { max-width: 44rem; color: var(--ink); }
+  .note h4 { color: var(--ink-soft); }
+
+  .tablewrap { overflow-x: auto; border: 1px solid var(--rule); background: var(--surface); }
+  .tablewrap table { font-size: 0.92rem; min-width: 34rem; }
+  .tablewrap th, .tablewrap td { text-align: left; padding: 0.6rem 0.85rem;
+       border-bottom: 1px solid var(--rule); vertical-align: top; color: var(--ink-soft); }
+  .tablewrap thead th { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.1em;
+       text-transform: uppercase; color: var(--ink-faint); font-weight: 500;
+       background: var(--surface-sunk); white-space: nowrap; }
+  .tablewrap tbody tr:last-child td { border-bottom: none; }
+  .tablewrap td.n { font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .tablewrap tr.pick td { background: var(--jade-wash); }
+  .tablewrap tr.pick td:first-child { box-shadow: inset 3px 0 0 var(--jade); }
+  .tablewrap .hotel { font-weight: 600; color: var(--ink); }
+  .sub { display: block; color: var(--ink-faint); font-size: 0.86em; font-family: var(--body); }
+
+  .shplan { padding: 1rem 0; border-top: 1px solid var(--rule); display: flex; flex-direction: column; gap: 0.9rem; }
+  .daylist { display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--rule); }
+  .daylist .day { border-top: none; border-bottom: 1px solid var(--rule); }
+
+  .tag { display: inline-block; font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em;
+         text-transform: uppercase; padding: 0.15rem 0.45rem; border: 1px solid var(--rule-strong);
+         color: var(--ink-soft); margin-right: 0.35rem; }
+  .tag.park { border-color: var(--lapis); color: var(--lapis); background: var(--lapis-wash); }
+  .tag.city { border-color: var(--saffron); color: var(--saffron); background: var(--saffron-wash); }
+  .tag.move { border-color: var(--jade); color: var(--jade); background: var(--jade-wash); }
+  .tag.hot { border-color: var(--alarm); color: var(--alarm); background: var(--alarm-wash); }
+
+  .options { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1rem; }
+  .option { background: var(--surface); border: 1px solid var(--rule); padding: 1.1rem 1.2rem;
+            display: flex; flex-direction: column; gap: 0.65rem; }
+  .option.on { border-color: var(--jade); border-width: 2px; }
+  .option .price { font-family: var(--mono); font-size: 1.35rem; font-weight: 600;
+                   font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+  .option .price small { font-size: 0.62em; font-weight: 400; color: var(--ink-faint); letter-spacing: 0; }
+  .option ul { font-size: 0.9rem; gap: 0.28rem; }
+
+  .clock { display: flex; flex-direction: column; gap: 0; }
+  .tick { display: grid; grid-template-columns: 6.5rem 1fr; gap: 1rem; padding: 0.75rem 0;
+          border-bottom: 1px solid var(--rule); align-items: baseline; }
+  .tick:first-child { border-top: 1px solid var(--rule); }
+  .tick .date { font-family: var(--mono); font-size: 0.78rem; font-weight: 600;
+                color: var(--lapis); white-space: nowrap; }
+  .tick .act { font-size: 0.96rem; color: var(--ink-soft); }
+  .tick.crit .date { color: var(--alarm); }
+
+  .stack { display: flex; flex-direction: column; gap: 0.8rem; }
+  .cnlist { border: 1px solid var(--rule); background: var(--surface); }
+  .cnrow { display: grid; grid-template-columns: 1fr auto; gap: 0.5rem 1rem;
+           padding: 0.55rem 1.1rem; border-bottom: 1px solid var(--rule); align-items: baseline; }
+  .cnrow:last-child { border-bottom: none; }
+  .cnrow .en { color: var(--ink-soft); font-size: 0.9rem; }
+  .cnrow .cn { font-size: 1.12rem; color: var(--ink); font-weight: 500; }
+
+  /* Xi'an map */
+  .mapfig { display: flex; flex-direction: column; gap: 0.5rem; }
+  .mapframe { background: var(--surface); border: 1px solid var(--rule); padding: 0.6rem; overflow-x: auto; }
+  .mapframe svg { display: block; width: 100%; height: auto; min-width: 26rem; }
+  .maplegend { display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; font-family: var(--mono); font-size: 0.66rem; color: var(--ink-soft); letter-spacing: 0.02em; }
+  .maplegend span { display: inline-flex; align-items: center; gap: 0.35rem; }
+  .maplegend i { width: 14px; height: 4px; flex: 0 0 auto; }
+  .maplegend i.wallkey { height: 9px; background: var(--wall-fill); border: 1.5px solid var(--wall); }
+  .mapnote { color: var(--ink-faint); font-size: 0.83rem; font-style: italic; }
+
+  .lbl, .lbl-sm, .lbl-cn, .lbl-hotel, .lbl-key, .lbl-dist {
+    paint-order: stroke fill; stroke: var(--land); stroke-width: 3.5px; stroke-linejoin: round;
+  }
+  .lbl { font-family: var(--body); font-size: 12px; fill: var(--ink); }
+  .lbl-sm { font-family: var(--body); font-size: 10.5px; fill: var(--ink-soft); }
+  .lbl-cn { font-family: var(--body); font-size: 10.5px; fill: var(--ink-faint); }
+  .lbl-hotel { font-family: var(--display); font-size: 12.5px; font-weight: 600; fill: var(--ink); }
+  .lbl-key { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.08em; fill: var(--ink-faint); text-transform: uppercase; }
+  .lbl-dist { font-family: var(--mono); font-size: 10px; fill: var(--ink-faint); font-variant-numeric: tabular-nums; }
+
+  @media (max-width: 34rem) { .mapframe svg { min-width: 22rem; } }
+
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.9rem; min-width: 34rem; }
+  th {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 0.7rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    text-align: left;
+    padding: 0 0.75rem 0.5rem 0;
+    border-bottom: 1px solid var(--rule-strong);
+    white-space: nowrap;
+  }
+  td {
+    padding: 0.6rem 0.75rem 0.6rem 0;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+    color: var(--ink-soft);
+  }
+  td:first-child { color: var(--ink); }
+  td.num { font-family: var(--mono); font-variant-numeric: tabular-nums; font-size: 0.82rem; }
+  td .ref { font-family: var(--mono); font-size: 0.82rem; color: var(--lapis); letter-spacing: 0.02em; }
+
+  .cols {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1.25rem 2rem;
+  }
+
+  .block { display: flex; flex-direction: column; gap: 0.55rem; }
+
+  .kv { display: flex; flex-direction: column; gap: 0.1rem; padding: 0.5rem 0; border-bottom: 1px solid var(--rule); }
+  .kv:first-of-type { border-top: 1px solid var(--rule); }
+  .kv .k { font-family: var(--display); font-weight: 600; font-size: 0.95rem; }
+  .kv .v { color: var(--ink-soft); font-size: 0.9rem; }
+  .kv .v .mono { font-family: var(--mono); font-size: 0.8rem; }
+
+  a { color: var(--lapis); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:focus-visible { outline: 2px solid var(--lapis); outline-offset: 2px; border-radius: 2px; }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1rem;
+    color: var(--ink-faint);
+    font-size: 0.83rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  @media (max-width: 34rem) {
+    .item { grid-template-columns: 1fr; gap: 0.4rem; }
+    .flag { justify-self: start; }
+    .day { grid-template-columns: 1fr; gap: 0.45rem; }
+    .day-date .dow { display: inline; margin-left: 0.4rem; }
+    .day-date .tour-day { display: inline; margin-left: 0.6rem; }
+  }
+
+  /* --- trip kit nav (shared across the four pages) --- */
+  .kitnav{display:flex;flex-wrap:wrap;align-items:baseline;gap:.3rem 1.15rem;
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.66rem;
+    letter-spacing:.12em;text-transform:uppercase;
+    padding-bottom:.7rem;margin-bottom:.4rem;
+    border-bottom:1px solid color-mix(in srgb, currentColor 16%, transparent);}
+  .kitnav .kitnav-label{opacity:.45;margin-right:.15rem}
+  .kitnav a{color:inherit;opacity:.7;text-decoration:none;
+    border-bottom:1px solid color-mix(in srgb, currentColor 32%, transparent);padding-bottom:1px}
+  .kitnav a:hover{opacity:1}
+  .kitnav a:focus-visible{outline:2px solid currentColor;outline-offset:3px;border-radius:2px}
+  .kitnav .here{opacity:1;font-weight:600}
+</style>
+</head>
+<body>
+
+<div class="page">
+      <nav class="kitnav" aria-label="Trip kit">
+      <span class="kitnav-label">Trip kit</span>
+      <a href="https://claude.ai/code/artifact/65e30345-b6b5-4438-aee4-f7034f64bb14" data-kit="index.html">Index</a>
+      <span class="here" aria-current="page">Itinerary</span>
+      <a href="https://claude.ai/code/artifact/34674237-5194-4538-8249-c385789e9677" data-kit="Packing-List.html">Packing list</a>
+      <a href="https://claude.ai/code/artifact/ac2f1858-d9b6-456a-a881-d44ee391ec57" data-kit="Apps-and-Services.html">Apps &amp; services</a>
+      <a href="https://claude.ai/code/artifact/84f80d00-6586-4783-92f6-c75ebdb9be46" data-kit="Sandra-2017.html">Sandra's notes</a>
+      </nav>
+
+
+  <header class="masthead">
+    <span class="eyebrow">Aaron Bock · 27 Sep – 16 Oct 2026 · 20 days · master document</span>
+    <h1>Itinerary</h1>
+    <p class="standfirst">Everything from the LAX gate on the 27th to the wheels down in Atlanta on the 16th — what's booked, what still isn't, the dates that can't slip, and the Shanghai Disneyland ticketing worked all the way through. This replaces the separate trip itinerary and the Xi'an &amp; Shanghai plan, both archived on 10 September.</p>
+    <div class="route-strip">
+      <div class="route-leg"><span class="place">Los Angeles</span><span class="span">27 Sep</span></div>
+      <div class="route-leg"><span class="place">Seoul</span><span class="span">29 Sep · transit</span></div>
+      <div class="route-leg"><span class="place">Xi'an</span><span class="span">29 Sep – 2 Oct</span></div>
+      <div class="route-leg"><span class="place">Tibet · EBC</span><span class="span">3 – 10 Oct</span></div>
+      <div class="route-leg"><span class="place">Shanghai</span><span class="span">10 – 15 Oct</span></div>
+    </div>
+  </header>
+
+  <section>
+    <h2>What still needs doing</h2>
+    <p class="standfirst">Departure is 17 days out and James is squared away — he has the visa and the hotel, and the Tibet permit is confirmed for delivery. What's left is one hard deadline, one open booking and a fortnight of admin: the Disneyland ticket window opens tomorrow and closes while you're still at home, Shanghai has nowhere to sleep, and the phone and the wallet have to be working before you board — none of that can be fixed from behind the firewall.</p>
+    <div class="items">
+
+      <div class="item">
+        <span class="flag now">11–16 Sep</span>
+        <div class="item-body">
+          <span class="item-title">Buy every Shanghai Disneyland ticket</span>
+          <span class="item-note">The park sells tickets on a rolling <strong>30-day window</strong>, and you board the Z165 on 2 October. Buy every park date in this fortnight — there is no second chance. Dated tickets, not an annual pass; the reasoning is in <em>Shanghai Disneyland</em> below.</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="flag soon">This week</span>
+        <div class="item-body">
+          <span class="item-title">Book Shanghai — five nights, 10 to 15 Oct</span>
+          <span class="item-note">Still the largest open block. The Courtyard by Marriott Shanghai ITRZ at about <span class="code">¥499</span> a night is 900 m from the park gate and on the Line 11 terminus, so the city stays a one-seat ride. See <em>Where you're staying</em>.</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="flag soon">Before 27 Sep</span>
+        <div class="item-body">
+          <span class="item-title">Set up the phone and the wallet while you still can</span>
+          <span class="item-note">Four things that cannot be done from inside China, in the order they bite: install the <strong>travel eSIM</strong> profile and the <strong>VPN</strong> before you fly; get <strong>Alipay</strong> verified against your passport by about the 24th, because review takes one to three business days and the unverified caps are low; and tell the card issuer to expect international purchases and to allow 3D Secure, which is the commonest reason a wallet refuses to bind. The detail is in <em>China-Tibet Apps &amp; Services 2026</em>.</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="flag soon">24 Sep</span>
+        <div class="item-body">
+          <span class="item-title">Reserve the Terracotta Warriors, then the museum</span>
+          <span class="item-note">Both are timed-entry and both sell out. Terracotta releases 7 days out <em>including</em> the day itself, so 30 September opens on <strong>24 September</strong> — but for holidays the museum drops the whole block at once instead, so watch for a National Day notice from about the 20th. The <strong>Shaanxi History Museum</strong> releases free tickets 5 days ahead at 17:00 China time, on its own website as well as its WeChat account — easier than the WeChat-only route older guides describe.</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="flag soon">Confirm</span>
+        <div class="item-body">
+          <span class="item-title">That the tour runs 3–10 October</span>
+          <span class="item-note">The last loose thread with James. Day 1 through Day 8 is inferred, not stated: your train gets in the afternoon of the 3rd, everyone flies out on the 10th, and the others arrive on the 2nd with the extra pre-tour night he offered. It fits, but nobody has written the dates down — worth one line while you have his attention.</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="flag done">Settled</span>
+        <div class="item-body">
+          <span class="item-title">James, the permit, the visa, the train and Xi'an</span>
+          <span class="item-note"><strong>James has the visa scans and the hotel, and has confirmed the Tibet permit will be delivered.</strong> That closes the chain that everything else was waiting on. Visa in hand. Train Z165 confirmed with James on 16 August — no paper ticket, you board with the passport. Sharing a twin with Jeff; the RMB 2,100 single supplement goes to Kamana or Alka. Xi'an booked at the Westin on 10 September. No positioning flight to book either — you're already in Los Angeles from the 22nd on the Trybal SoCal trip, and the return half of that ticket (<span class="code">G3LX5Q</span>, Delta 899) is your ride home on the 15th.</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Dates that bind</h2>
+    <div class="clock">
+      <div class="tick crit"><div class="date">11–16 Sep</div><div class="act">Your five October park dates come on sale one per morning as the calendar rolls forward. Check it daily and buy each date the morning it appears — that also catches the 30-day Early Bird fare.</div></div>
+      <div class="tick"><div class="date">17 Sep</div><div class="act">Last free cancellation on the Westin award night.</div></div>
+      <div class="tick"><div class="date">24 Sep</div><div class="act">Terracotta Warriors reservations open for 30 September. Alipay verification wants submitting by now too.</div></div>
+      <div class="tick"><div class="date">26 Sep</div><div class="act">Shaanxi History Museum releases 1 October tickets, 17:00 China time — 05:00 in Atlanta.</div></div>
+      <div class="tick"><div class="date">27 Sep</div><div class="act">¥732 Westin prepayment charged; cash nights free to cancel until the 28th. Last day to install the eSIM and the VPN.</div></div>
+      <div class="tick crit"><div class="date">2 Oct</div><div class="act">Z165 leaves Xi'an Railway Station at 09:27. Off-grid until the 10th.</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Where you're staying</h2>
+    <h3 class="subhead">Xi'an — booked</h3>
+<div class="note good">
+      <h4>The Westin Xi'an · 66 Ci En Road, Qu Jiang New District · +86-29-65686568</h4>
+      <p>Westin Studio, one king, non-smoking, check-in 15:00 and check-out 12:00. Booked as two back-to-back reservations, so <strong>ask the front desk to link them</strong> — otherwise you risk being moved rooms on the morning of the 1st.</p>
+      <ul>
+        <li><span class="num">84579041</span> — Tue 29 Sep to Thu 1 Oct, two nights. <span class="num">¥1,464</span> plus a <span class="num">¥243.02</span> service charge, <span class="num">¥1,707.02</span> all in (~$240). A <span class="num">¥732</span> prepayment is charged on 27 September; free to cancel until 11:59 pm on the 28th.</li>
+        <li><span class="num">84582237</span> — Thu 1 Oct to Fri 2 Oct, one night on the <strong>85k Amex Brilliant free-night award</strong>, taxes included, nothing to pay. Free to cancel until 11:59 pm on <strong>17 September</strong>.</li>
+      </ul>
+      <p>Platinum on both: welcome gift of 1,000 points or food and beverage, lounge access, and a room upgrade subject to availability. The hotel also throws in free entry to its own Xi'an Qujiang Museum of Fine Arts and free Hanfu wear during the stay.</p>
+    </div>
+
+    <p>Check-out at noon on the 2nd against a 09:27 train is no constraint — you'll be gone before breakfast ends. Dayanta station is on the doorstep and Line 4 runs straight to Xi'an Railway Station with no changes, which was the whole argument for this hotel.</p>
+
+    
+    <h3 class="subhead">Shanghai — still to book</h3>
+<p>You land at Hongqiao at 21:50 on Saturday 10 October and fly out of Pudong at 18:25 on the 15th. You want one base and the metro. With three or four park days out of five nights, that base should be beside the park, not downtown — the arithmetic isn't close.</p>
+
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>Hotel</th><th>Cash/night</th><th>To the park</th><th>Read</th></tr>
+        </thead>
+        <tbody>
+          <tr class="pick">
+            <td><span class="hotel">Courtyard Shanghai ITRZ</span><span class="sub">On Disney Avenue · Line 11</span></td>
+            <td class="n">¥499<span class="sub">≈ $70</span></td>
+            <td class="n">900 m</td>
+            <td>Ten-minute walk to the gate, free shuttle if you book it with the concierge, and Disney Resort is the Line 11 terminus so the city is still one seat away. Platinum turns its paid breakfast into a free one.</td>
+          </tr>
+          <tr>
+            <td><span class="hotel">Four Points Shanghai ITRZ</span></td>
+            <td class="n">¥485</td>
+            <td class="n">4 mi</td>
+            <td>Marginally cheaper, meaningfully further. No reason to choose it over the Courtyard.</td>
+          </tr>
+          <tr>
+            <td><span class="hotel">Shanghai Marriott Kangqiao</span></td>
+            <td class="n">¥1,012</td>
+            <td class="n">2.8 mi</td>
+            <td>Free Disney shuttle and a proper Platinum lounge, at double the price. Shuttle-dependent, which cuts against travelling on your own clock.</td>
+          </tr>
+          <tr>
+            <td><span class="hotel">Toy Story Hotel</span><span class="sub">Disney-owned · not Bonvoy</span></td>
+            <td class="n">¥1,200–2,000<span class="sub">indicative</span></td>
+            <td class="n">8 min walk</td>
+            <td>Early Park Entry, a quiet Disneytown gate, hotel-guest merchandise access. But no Bonvoy points, no Platinum breakfast, and see below on why the perk is cheaper to just buy.</td>
+          </tr>
+          <tr>
+            <td><span class="hotel">Shanghai Disneyland Hotel</span><span class="sub">Disney-owned · not Bonvoy</span></td>
+            <td class="n">¥2,000–3,500<span class="sub">indicative</span></td>
+            <td class="n">10–15 min</td>
+            <td>Art-nouveau flagship, character breakfast, ferry across the lake. A lovely hotel and an indefensible one for a solo traveller who isn't a foodie.</td>
+          </tr>
+          <tr>
+            <td><span class="hotel">Courtyard Shanghai Central</span><span class="sub">Downtown · 5-line metro hub</span></td>
+            <td class="n">¥754</td>
+            <td class="n">~60 min</td>
+            <td>The best downtown option if you flip the plan and make the city the point. Next to Shanghai Railway Station, so Suzhou is easy.</td>
+          </tr>
+          <tr>
+            <td><span class="hotel">Renaissance Yu Garden</span></td>
+            <td class="n">¥895</td>
+            <td class="n">~60 min</td>
+            <td>Best-placed downtown hotel for the Bund and Yu Gardens, at a fair price.</td>
+          </tr>
+          <tr>
+            <td><span class="hotel">Fairfield Shanghai Jingan</span></td>
+            <td class="n">¥424</td>
+            <td class="n">~65 min</td>
+            <td>The cheapest downtown bed with a real brand behind it. Walking distance to Line 1.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note good">
+      <h4>Why the park side wins</h4>
+      <p>Four park days from a downtown base is roughly <span class="num">400 minutes</span> of metro. The same four days from the Courtyard, plus one downtown day, is about <span class="num">120</span>. At three park days it's <span class="num">300</span> against <span class="num">240</span> — still the park side, and by then it's also ¥255–400 a night cheaper.</p>
+      <p>It also fixes the departure. Pudong is a 25-minute taxi from the Disney area against an hour from People's Square, which matters more than it sounds on the day you fly home.</p>
+    </div>
+
+    <div class="note warn">
+      <h4>One taxi you can't avoid</h4>
+      <p>Landing at Hongqiao at 21:50 means clearing bags around 22:20, and the trip to Disney needs a change at Jiangsu Road with the last Line 11 train around 22:30–23:00. You will not make it. Budget a Didi or taxi — roughly 50 km, 60–70 minutes, <span class="num">¥180–250</span>. One-off, on the first night only, and still cheaper than five nights of the price difference downtown.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Day by day</h2>
+
+    <div class="leg-head">
+      <span class="leg-name">Getting there</span>
+      <span class="leg-dates">27 – 29 Sep</span>
+    </div>
+
+    <div class="day">
+      <div class="day-date">27 Sep<span class="dow">Sun</span></div>
+      <div class="day-body">
+        <div class="entry">
+          <div class="entry-head"><span class="entry-title">KE 012 · Los Angeles → Seoul Incheon</span><span class="chip ok">Ticketed</span></div>
+          <span class="times">23:50 LAX → 04:40 ICN (+2)</span>
+          <span class="entry-detail">Korean Air, economy, 1 checked bag. Booking <span class="code">FAFD77</span>.</span>
+        </div>
+        <div class="entry">
+          <div class="entry-head"><span class="entry-title">Already in Los Angeles</span><span class="chip ok">Nothing to book</span></div>
+          <span class="entry-detail">You've been in California since the 22nd on the Trybal trip, tracked separately. No positioning flight to buy — just get yourself to the international terminal.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day-date">29 Sep<span class="dow">Tue</span></div>
+      <div class="day-body">
+        <div class="entry">
+          <div class="entry-head"><span class="entry-title">KE 141 · Seoul Incheon → Xi'an</span><span class="chip ok">Ticketed</span></div>
+          <span class="times">09:10 ICN → 11:30 XIY</span>
+          <span class="entry-detail">Same booking, <span class="code">FAFD77</span>. Four and a half hours on the ground at Incheon.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="leg-head">
+      <span class="leg-name">Xi'an</span>
+      <span class="leg-dates">29 Sep – 2 Oct · 3 nights</span>
+    </div>
+
+    <div class="day">
+      <div class="day-date">29 Sep – 1 Oct<span class="dow">Tue–Thu</span></div>
+      <div class="day-body">
+        <div class="entry">
+          <div class="entry-head"><span class="entry-title">The Westin Xi'an · 3 nights</span><span class="chip ok">Booked</span></div>
+          <span class="entry-detail">66 Ci En Road, opposite the Big Wild Goose Pagoda, Dayanta station on Lines 3 and 4. The permit gets couriered here. Confirmation numbers, rates and cancellation dates are under <em>Where you're staying</em>.</span>
+        </div>
+        <div class="entry">
+          <div class="entry-head"><span class="entry-title">The others are in Chengdu</span><span class="chip info">Note</span></div>
+          <span class="entry-detail">Kamana lands there 24 September and they take the Chengdu train on the 30th. You're solo in Xi'an for all three days.</span>
+        </div>
+        <div class="aside">Bottled water for everything here, including brushing your teeth, and no ice. Sandra was rigorous about exactly that until she trusted a hostel water cooler in this city, and it cost her the better part of five days — the Terracotta Warriors among them. In 2026 the same five days would cost you the permit handoff, the Z165 and the tour.</div>
+      </div>
+    </div>
+
+
+    <div class="day">
+      <div class="day-date">Xi'an<span class="dow">on the ground</span></div>
+      <div class="day-body">
+        <div class="mapfig">
+          <div class="mapframe">
+          <svg viewBox="-95 -30 800 800" role="img" aria-label="Map of central Xi'an showing the Ming city wall, the three candidate Marriott hotels, the Bell Tower, Muslim Quarter, Big Wild Goose Pagoda, Shaanxi History Museum, Xi'an Railway Station and metro lines 1, 2 and 4.">
+          <rect x="-95" y="-30" width="800" height="800" fill="var(--land)"></rect>
+
+          <!-- metro line 1 -->
+          <polyline points="-95,183 286.7,183 391.4,187 705,181" fill="none" stroke="var(--line1)" stroke-width="4.5" stroke-linecap="round"></polyline>
+          <!-- metro line 2 -->
+          <polyline points="290.6,-30 286.7,187.2 289.9,233.1 298.4,336.9 294.5,561.6 296.1,770" fill="none" stroke="var(--line2)" stroke-width="4.5" stroke-linecap="round"></polyline>
+          <!-- metro line 4 -->
+          <polyline points="465,-30 465,88.9 391.4,187.2 393.7,336.9 426.2,477.3 453.4,613.1 462,700" fill="none" stroke="var(--line4)" stroke-width="4.5" stroke-linecap="round"></polyline>
+
+          <!-- city wall, to scale -->
+          <rect x="127.9" y="104.8" width="354.2" height="229.3" fill="var(--wall-fill)" fill-opacity="0.55" stroke="var(--wall)" stroke-width="5"></rect>
+          <text class="lbl-key" x="305" y="125" text-anchor="middle" fill="var(--wall)">Ming city wall · 13.7 km around</text>
+
+          <!-- muslim quarter district -->
+          <rect x="238" y="176" width="40" height="34" rx="3" fill="var(--saffron)" fill-opacity="0.22" stroke="var(--saffron)" stroke-width="1" stroke-dasharray="3 3"></rect>
+
+          <!-- gates -->
+          <g fill="var(--wall)">
+          <rect x="269.6" y="100.8" width="8" height="8"></rect>
+          <rect x="295.2" y="330.1" width="8" height="8"></rect>
+          <rect x="123.9" y="220.6" width="8" height="8"></rect>
+          <rect x="478.1" y="204.7" width="8" height="8"></rect>
+          </g>
+          <text class="lbl-sm" x="273.6" y="94" text-anchor="middle">North Gate 安远门</text>
+          <text class="lbl-sm" x="119" y="224" text-anchor="end">West Gate</text>
+          <text class="lbl-sm" x="492" y="200">East Gate</text>
+
+          <!-- metro stations -->
+          <g>
+          <circle cx="286.7" cy="187.2" r="5" fill="var(--surface)" stroke="var(--ink)" stroke-width="2"></circle>
+          <text class="lbl-sm" x="286.7" y="207" text-anchor="middle">Beidajie ①②</text>
+
+          <circle cx="391.4" cy="187.2" r="5" fill="var(--surface)" stroke="var(--ink)" stroke-width="2"></circle>
+          <text class="lbl-sm" x="401" y="176">Wulukou ①④</text>
+
+          <circle cx="298.4" cy="336.9" r="5" fill="var(--surface)" stroke="var(--ink)" stroke-width="2"></circle>
+          <text class="lbl-sm" x="310" y="334">South Gate · Yongningmen ②</text>
+          <text class="lbl-cn" x="310" y="348">永宁门 — city wall bike rental</text>
+
+          <circle cx="294.5" cy="561.6" r="5" fill="var(--surface)" stroke="var(--ink)" stroke-width="2"></circle>
+          <text class="lbl-sm" x="285" y="565" text-anchor="end">Xiaozhai ②③</text>
+
+          <circle cx="453.4" cy="613.1" r="5" fill="var(--surface)" stroke="var(--ink)" stroke-width="2"></circle>
+          <text class="lbl-sm" x="463" y="604">Dayanta ③④</text>
+          </g>
+
+          <!-- railway station -->
+          <circle cx="465" cy="88.9" r="8.5" fill="var(--line4)" stroke="var(--surface)" stroke-width="2.5"></circle>
+          <text class="lbl-hotel" x="478" y="80">Xi'an Railway Station</text>
+          <text class="lbl-cn" x="478" y="94">西安站 · Z165 departs 09:27, 2 Oct</text>
+
+          <!-- POIs -->
+          <g>
+          <circle cx="288.3" cy="233.1" r="5.5" fill="var(--ink)"></circle>
+          <text class="lbl" x="298" y="230">Bell Tower</text>
+          <text class="lbl-cn" x="298" y="243">钟楼</text>
+
+          <circle cx="267.4" cy="220" r="4" fill="var(--ink-soft)"></circle>
+          <text class="lbl-sm" x="259" y="223" text-anchor="end">Drum Tower</text>
+
+          <circle cx="248" cy="193.7" r="4" fill="var(--ink-soft)"></circle>
+          <text class="lbl-sm" x="234" y="182" text-anchor="end">Muslim Quarter</text>
+          <text class="lbl-sm" x="234" y="197" text-anchor="end">Great Mosque</text>
+
+          <circle cx="251.9" cy="381.9" r="4.5" fill="var(--ink-soft)"></circle>
+          <text class="lbl-sm" x="262" y="378">Small Wild Goose Pagoda</text>
+          <text class="lbl-cn" x="262" y="391">小雁塔 + Xi'an Museum · free, quiet</text>
+
+          <circle cx="364.2" cy="597.1" r="5.5" fill="var(--ink)"></circle>
+          <text class="lbl" x="355" y="594" text-anchor="end">Shaanxi History Museum</text>
+          <text class="lbl-cn" x="355" y="607" text-anchor="end">陕西历史博物馆 · book 5 days out</text>
+
+          <circle cx="457.2" cy="630.8" r="5.5" fill="var(--ink)"></circle>
+          <text class="lbl" x="467" y="636">Big Wild Goose Pagoda</text>
+          <text class="lbl-cn" x="467" y="649">大雁塔</text>
+          </g>
+
+          <!-- the booked hotel -->
+          <g>
+          <circle cx="426.2" cy="645.8" r="10" fill="var(--jade)" stroke="var(--surface)" stroke-width="2.5"></circle>
+          <text class="lbl-hotel" x="415" y="649" text-anchor="end">The Westin Xi'an</text>
+          <text class="lbl-sm" x="415" y="663" text-anchor="end">66 Ci'en Road · 29 Sep – 2 Oct</text>
+          </g>
+
+          <!-- the journey that matters -->
+          <g>
+          <text class="lbl-sm" x="442" y="462" fill="var(--line4)">Fri 2 Oct, 08:00</text>
+          <text class="lbl-sm" x="442" y="476">Dayanta → Xi'an Railway Station</text>
+          <text class="lbl-sm" x="442" y="490">one Line 4 ride, no changes</text>
+          </g>
+
+          <!-- scale bar -->
+          <g>
+          <line x1="-80" y1="740" x2="88.4" y2="740" stroke="var(--ink-soft)" stroke-width="2"></line>
+          <line x1="-80" y1="735" x2="-80" y2="745" stroke="var(--ink-soft)" stroke-width="2"></line>
+          <line x1="88.4" y1="735" x2="88.4" y2="745" stroke="var(--ink-soft)" stroke-width="2"></line>
+          <text class="lbl-dist" x="96" y="744">2 km</text>
+          </g>
+          <text class="lbl-key" x="700" y="744" text-anchor="end">North is up</text>
+          </svg>
+          </div>
+          <div class="maplegend">
+            <span><i style="background:var(--jade);height:9px;width:9px;border-radius:50%"></i>The Westin</span>
+            <span><i style="background:var(--line1)"></i>Line 1</span>
+            <span><i style="background:var(--line2)"></i>Line 2 · Bell Tower</span>
+            <span><i style="background:var(--line4)"></i>Line 4 · hotel to station</span>
+            <span><i class="wallkey"></i>Ming city wall, 13.7 km around</span>
+          </div>
+          <p class="mapnote">Drawn to scale from real coordinates. The Terracotta Warriors are 33 km east and Xianyang Airport 27 km northwest, both off this frame.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="note warn">
+      <h4>Golden Week starts on 1 October, in the middle of your stay</h4>
+      <p>The 2026 National Day holiday runs <strong>1–7 October</strong>, seven consecutive rest days, and it is the single worst week of the Chinese year to be at a famous monument. Your 29 September and 30 September are ordinary working days; 1 October is Day One of the stampede.</p>
+      <p>Two consequences. <strong>The Terracotta Warriors have to happen on Wednesday 30 September</strong>, not the 1st. And now that James has confirmed delivery, <strong>pin the date to 30 September or earlier</strong> — courier networks slow to a crawl over the holiday, and the permit is the one item on this trip with no fallback.</p>
+    </div>
+
+<div class="daylist">
+      <div class="day">
+          <div class="day-date">Tue 29 Sep<span class="tour-day">Arrival</span></div>
+        <div class="day-body">
+          <p><span class="tag move">Landing</span> KE141 touches down at XIY Terminal 5 at 11:30. Budget an hour for immigration and bags — China takes fingerprints on arrival. <strong>Don't buy a Chinese SIM at the airport.</strong> That was the right answer in 2017 and it is the wrong one now: a local SIM sits inside the firewall, which would kill WhatsApp — and WhatsApp is the only channel James actually uses. The travel eSIM you installed at home routes through a foreign carrier, so messaging, mail and maps simply work. A local SIM is worth considering only for the Tibet leg, for rural coverage, and only if the guide arranges it.</p>
+          <p>All international flights use T5, and T5 has its own metro station on <strong>Line 14</strong>. Take it to Xi'an North — about half an hour, ¥7–8 — then <strong>Line 4 straight down to Dayanta</strong>, which puts you at the hotel door. One change, no walking transfer. The fare comes off the ride code inside Alipay; there is no separate transit app in either city. The nonstop airport coach to the Bell Tower leaves from exit 512 on T5's first floor, ¥25, 70–90 minutes — the metro wins.</p>
+          <p><span class="tag city">Afternoon</span> Drop bags, then the <strong>city wall bike ride</strong> — Sandra's Xi'an standout and the right thing to do on a jet-lagged first afternoon because it asks nothing of you but pedalling. ¥45 for three hours, then ¥5 per extra ten minutes; the deposit is ¥100 in older sources and ¥200 in newer ones, so have ¥200 free. Six rental stations, 13.7 km around, two to three hours for the loop. Return to any station until 20:00; after that everything goes back to South Gate, which stays open until 22:00 with evening returns due by 21:30. <em>Check both brakes before you ride off — Sandra's had one.</em></p>
+          <p><span class="tag city">Evening</span> Muslim Quarter after dark. The other easy win, and a short walk from the wall's north side.</p>
+        </div>
+      </div>
+
+      <div class="day">
+          <div class="day-date">Wed 30 Sep<span class="tour-day">Terracotta day</span></div>
+        <div class="day-body">
+          <p><span class="tag park">All day</span> <strong>Terracotta Warriors</strong>, and it must be today. From Dayanta it is <strong>Line 3 to Tonghuamen, Line 1 to Fangzhicheng, Line 9 to Huaqingchi</strong>, exit C, then bus 613 or 602 for the last few minutes. Two changes, about ¥9 all in, and nearer two hours than the ninety minutes it looks on the map — Fangzhicheng is on Lines 1, 6 and 9, not on Line 3 or 4, so the transfer has to happen at Tonghuamen first. Tickets ¥120, and the museum runs <strong>08:30 to 17:00</strong>, not into the evening. This is a morning start.</p>
+          <p>Reserve ahead, and reserve in the right place. The window is <strong>7 days including the day you book</strong>, so 30 September opens on the 24th — though for holidays the museum has lately released the whole block at once about a week out, so watch for a National Day notice from around the 20th. Book at <span class="code">bmy.com.cn</span> or through the museum's own WeChat account: both take a passport directly, and the gate scanners read it. <strong>Not through an OTA</strong> — the museum stated in June that it has never authorised a third-party platform. The on-site ticket windows are gone entirely; passport holders now collect at the general service counter rather than buying there, so turning up without a booking is not a plan. Three pits, still being excavated, nothing air-conditioned, which matters far less in October than it did in Sandra's July. One live caveat: <strong>Pit 2 has been half-closed for works since 5 September</strong> under a notice running about a month, so check whether the south side has reopened before you set out.</p>
+          <p><span class="tag city">Evening</span> Back by Line 9/4. If there's anything left in you, the Big Wild Goose Pagoda north square fountain show is a five-minute walk from the Westin.</p>
+        </div>
+      </div>
+
+      <div class="day">
+          <div class="day-date">Thu 1 Oct<span class="tour-day">Golden Week day 1</span></div>
+        <div class="day-body">
+          <p><span class="tag hot">Crowd day</span> Do not put anything ticketed or famous here. The right move is a slow local day near the hotel.</p>
+          <p><strong>Shaanxi History Museum</strong> is a 15-minute walk from the Westin and free. The queue that defeated Sandra twice in 2017 no longer exists — walking up is not a thing you can do at all now. It is free but ticketed, released <strong>5 days ahead at 17:00 sharp</strong> against a daily quota, so the only question is whether you win the release. Book at <span class="code">sxhm.com</span>, the WeChat mini-programme, or the WeChat account (陕西历史博物馆); the website route is the newer one and the easiest with a passport, and prefilling your details is not the same as submitting. Your slot is <strong>26 September at 17:00 China time — 05:00 in Atlanta</strong>. Two things in your favour: through 14 November the museum is running extended hours, <strong>08:30 to 19:00 with last entry at 18:00 and no weekly closing day at all</strong>, so a failed morning booking can be retried for an evening slot. If it still fails, the Small Wild Goose Pagoda and the Xi'an Museum nearby are free, quiet and never sell out. The separate Tang murals hall is a paid ticket (¥270) and a different booking; skip it unless you especially want it.</p>
+          <p><span class="tag move">Housekeeping</span> Confirm the permit has physically arrived. Repack for a 30-hour train: power bank, earplugs, eye mask, bottled water, cup noodles, and something to eat that isn't cup noodles. Assume no reliable power on a Z-service. The power bank has to be one you bought in Xi'an, not one you flew in — China requires a moulded 3C mark that no US-market battery carries, and lithium can't go in the hold either, so an uncertified one is confiscated at Lhasa on the way to Shanghai. The packing list has the rest.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="leg-head">
+      <span class="leg-name">Onto the plateau</span>
+      <span class="leg-dates">2 – 3 Oct</span>
+    </div>
+
+    <div class="day">
+      <div class="day-date">2 Oct<span class="dow">Fri</span></div>
+      <div class="day-body">
+        <div class="entry">
+          <div class="entry-head"><span class="entry-title">Z165 · Xi'an → Lhasa</span><span class="chip ok">Confirmed</span></div>
+          <span class="times">09:27 Xi'an → 15:36 Lhasa (+1)</span>
+          <span class="entry-detail">Soft sleeper, confirmed with James on 16 August. <strong>No physical ticket</strong> — board with your passport. Thirty hours up the Qinghai–Tibet railway.</span>
+        </div>
+        <div class="entry">
+          <div class="entry-head"><span class="entry-title">Getting to the platform</span><span class="chip pending">Leave by 08:00</span></div>
+<p><span class="tag move">Departure</span> <strong>Xi'an Railway Station</strong> — 西安站, No. 44 Huancheng North Road, just outside the northeast corner of the wall. Not Xi'an North, which is the high-speed station and the wrong one. From the Westin it is a single <strong>Line 4</strong> ride from Dayanta, no changes.</p>
+          <p>Leave the hotel by 08:00. Airport-style security at the station, sometimes twice, and water gets scanned with a special reader. Doors open around 20 minutes before departure and the scrum is for luggage space, so be early. No paper ticket — you board on the passport, and a photo or the number alone will not do.</p>
+          <p>Z165 originates in Shanghai and runs Xi'an 09:27 → Lhasa 15:36 the following afternoon, soft sleeper, four bunks behind a door that closes. Expect other passengers to treat your lower berth as the room's sofa during the day.</p>
+        </div>
+        <div class="entry">
+          <div class="entry-head"><span class="entry-title">The group reaches Lhasa</span><span class="chip info">Note</span></div>
+          <span class="entry-detail">They arrive 07:24 on Z322 from Chengdu and take an extra pre-tour night in Lhasa. You're a day behind them, arriving as the tour proper begins.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="leg-head">
+      <span class="leg-name">Tibet — Asia Odyssey 8-day Everest Base Camp tour</span>
+      <span class="leg-dates">3 – 10 Oct · party of five</span>
+    </div>
+
+    <div class="day">
+      <div class="day-date">3 Oct<span class="dow">Sat</span><span class="tour-day">Day 1</span></div>
+      <div class="day-body">
+        <div class="entry">
+          <div class="entry-head"><span class="entry-title">Arrive Lhasa · acclimatise</span></div>
+          <span class="entry-detail">Station pickup, hotel check-in, and a deliberately empty afternoon. <span class="alt">Lhasa 3,650 m</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day-date">4 Oct<span class="dow">Sun</span><span class="tour-day">Day 2</span></div>
+      <div class="day-body">
+        <div class="entry">
+          <div class="entry-head"><span class="entry-title">Lhasa · handicrafts and Sera</span></div>
+          <span class="entry-detail">Traditional Handicraft Art Center — incense and calligraphy — then Sera Monastery for the afternoon monk debates.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day-date">5 Oct<span class="dow">Mon</span><span class="tour-day">Day 3</span></div>
+      <div class="day-body">
+        <div class="entry">
+          <div class="entry-head"><span class="entry-title">Potala Palace and Jokhang Temple</span></div>
+          <span class="entry-detail">Plus Barkhor Street. Tibetan–Nepalese dinner included this evening.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day-date">6 Oct<span class="dow">Tue</span><span class="tour-day">Day 4</span></div>
+      <div class="day-body">
+        <div class="entry">
+          <div class="entry-head"><span class="entry-title">Lhasa → Shigatse via Yamdrok Lake</span></div>
+          <span class="entry-detail">370 km, about seven hours. Hot pot lunch at the lake, then the Karola Glacier. <span class="alt">Karola 5,012 m · Shigatse 3,850 m</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day-date">7 Oct<span class="dow">Wed</span><span class="tour-day">Day 5</span></div>
+      <div class="day-body">
+        <div class="entry">
+          <div class="entry-head"><span class="entry-title">Shigatse → Everest Base Camp</span><span class="chip info">Tent night</span></div>
+          <span class="entry-detail">340 km over Gyawu La Pass, past Rongbuk Monastery, then the eco-bus up to base camp. Sleeping in the tent camp. <span class="alt">Gyawu La 5,210 m · Rongbuk 5,154 m · EBC 5,200 m</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day-date">8 Oct<span class="dow">Thu</span><span class="tour-day">Day 6</span></div>
+      <div class="day-body">
+        <div class="entry">
+          <div class="entry-head"><span class="entry-title">Everest morning, then back to Shigatse</span></div>
+          <span class="entry-detail">Time at base camp first thing, then the drive back over Gyatso La. <span class="alt">Gyatso La 5,248 m</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day-date">9 Oct<span class="dow">Fri</span><span class="tour-day">Day 7</span></div>
+      <div class="day-body">
+        <div class="entry">
+          <div class="entry-head"><span class="entry-title">Tashilhunpo Monastery, then Lhasa</span></div>
+          <span class="entry-detail">270 km back, roughly five hours. Last night in Lhasa.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="leg-head">
+      <span class="leg-name">Shanghai</span>
+      <span class="leg-dates">10 – 15 Oct · 5 nights</span>
+    </div>
+
+    <div class="day">
+      <div class="day-date">10 Oct<span class="dow">Sat</span><span class="tour-day">Day 8</span></div>
+      <div class="day-body">
+        <div class="entry">
+          <div class="entry-head"><span class="entry-title">Checkout and transfer</span></div>
+          <span class="entry-detail">Tour ends with the shared transfer to Lhasa Gonggar airport.</span>
+        </div>
+        <div class="entry">
+          <div class="entry-head"><span class="entry-title">MU 2336 · Lhasa → Shanghai Hongqiao</span><span class="chip ok">Ticketed</span></div>
+          <span class="times">15:30 LXA → 21:50 SHA · via Xi'an</span>
+          <span class="entry-detail">China Eastern on Delta miles. Confirmation <span class="code">GBDPCB</span> · 30,000 miles + ¥170.</span>
+        </div>
+        <div class="entry">
+          <div class="entry-head"><span class="entry-title">The others leave for Seoul</span><span class="chip info">Note</span></div>
+          <span class="entry-detail">Kamana flies Lhasa 13:20 → Seoul on Air China (<span class="code">PZC6M0</span>), Jeff possibly alongside her. You're solo from here.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="shplan">
+    <p>Monday closures are the usual rule for Chinese museums but not a universal one, and the two places you'd actually want in Shanghai both break it: the Urban Planning Exhibition Center closes <strong>Wednesdays</strong>, and the Propaganda Poster Art Centre opens daily. Monday 12 October is a park day in both plans anyway, so nothing turns on it — but don't plan a Wednesday city day.</p>
+
+    <h3 class="subhead">Plan A — four park days</h3>
+    <div class="daylist">
+      <div class="day">
+          <div class="day-date">Sat 10 Oct<span class="tour-day">Arrival</span></div>
+        <div class="day-body"><p><span class="tag move">Late</span> MU2336 lands Hongqiao 21:50. Taxi east. Sleep.</p></div>
+      </div>
+      <div class="day">
+          <div class="day-date">Sun 11 Oct<span class="tour-day">Park</span></div>
+        <div class="day-body"><p><span class="tag park">Busiest day</span> The one day worth adding the <strong>Early Park Entry pass</strong> to. Weekend crowds, and the only weekend day you'll see.</p></div>
+      </div>
+      <div class="day">
+          <div class="day-date">Mon 12 – Wed 14<span class="tour-day">Park</span></div>
+        <div class="day-body"><p><span class="tag park">Three weekdays</span> Base-tier pricing, post-holiday emptiness, long enough to do the park properly and then re-ride the things you liked.</p></div>
+      </div>
+      <div class="day">
+          <div class="day-date">Thu 15 Oct<span class="tour-day">Home</span></div>
+        <div class="day-body"><p><span class="tag move">Departure</span> Disneytown in the morning, bags at the hotel, taxi to Pudong around 15:00 for DL38 at 18:25.</p></div>
+      </div>
+    </div>
+    <p style="color:var(--ink-soft)"><strong>Cost:</strong> ~¥1,750 in tickets plus ~¥179 for early entry — and dated tickets are the only way to buy this shape, since the Sunday is outside every annual pass except Jade and Diamond. <strong>Trade-off:</strong> you will not see Shanghai. Given Peter Pan's Flight here is widely held to be the best version in the world and it's the resort's tenth-anniversary year, that may be exactly the right trade.</p>
+
+    <h3 class="subhead">Plan B — three park days, one city day <span class="tag city">recommended</span></h3>
+    <div class="daylist">
+      <div class="day">
+          <div class="day-date">Sat 10 Oct<span class="tour-day">Arrival</span></div>
+        <div class="day-body"><p><span class="tag move">Late</span> As above.</p></div>
+      </div>
+      <div class="day">
+          <div class="day-date">Sun 11 Oct<span class="tour-day">Shanghai</span></div>
+        <div class="day-body">
+          <p><span class="tag city">City day</span> Put the city on the day the park is fullest and the museums are open. Line 11 to Jiangsu Road, then Line 2 in.</p>
+          <p>Sandra's ranking, and it's a good one — with two addresses updated since she wrote it. The <strong>Urban Planning Exhibition Center</strong> at People's Square first: it closed for a long renovation after her visit and reopened in 2022, now free but on a timed booking through its WeChat mini-programme, 09:00–17:00 with last entry at 16:00, shut Wednesdays. Its booking window opens seven days out, which for Sunday the 11th means <strong>4 October — while you're somewhere between Shigatse and base camp</strong>. Grab it from Lhasa if you have signal; otherwise book it the moment you land on the Saturday night and accept that a Sunday slot may be gone. Then the <strong>Propaganda Poster Art Centre</strong> — no longer the apartment-block basement she found, having moved in 2019 to the seventh floor of 726 Yan'an West Road, ¥25, 10:00–17:00, still barely signposted. It's a nine-minute walk from Jiangsu Road, which is on your own Line 11. Then the Bund for the Art Deco and the live jazz, and Yu Gardens and the bird-and-cricket market if there's daylight left. Skip the Railway Museum.</p>
+          <p><strong>The tea ceremony scam lives at Yu Gardens and she fell for it.</strong> The tell is someone asking you to take a photo <em>of them</em>; locals who approach Westerners want to be <em>in</em> the picture. If a friendly stranger steers the conversation toward tea, walk away mid-sentence.</p>
+        </div>
+      </div>
+      <div class="day">
+          <div class="day-date">Mon 12 – Wed 14<span class="tour-day">Park</span></div>
+        <div class="day-body"><p><span class="tag park">Three weekdays</span> Every day at base or near-base pricing, on the emptiest days of the season.</p></div>
+      </div>
+      <div class="day">
+          <div class="day-date">Thu 15 Oct<span class="tour-day">Home</span></div>
+        <div class="day-body"><p><span class="tag move">Departure</span> Optional fourth half-day in the park — gates at 08:30, out by 15:00, taxi to Pudong. Adds one ¥475 ticket and turns Plan B into three and a half park days without touching the shape of the trip.</p></div>
+      </div>
+    </div>
+    <p style="color:var(--ink-soft)"><strong>Cost:</strong> ~¥1,300 in tickets, or ~¥1,724 with the Thursday morning. This is the version I'd book: every park day is a cheap weekday, the city gets a real day rather than scraps, and the Sunday crowd is somebody else's problem.</p>
+
+    <div class="note flat">
+      <h4>The Suzhou question</h4>
+      <p>Thirty minutes from Shanghai Railway Station or Hongqiao, trains every few minutes, passport is enough to board. Sandra rated the <strong>Suzhou Silk Museum</strong> among the best museums she saw anywhere in China, and Suzhou Railway Station puts you near the Humble Administrator's Garden and the Suzhou Museum. It's the obvious day trip — but it doesn't fit either plan without displacing a park day, and from a Disney-side hotel it's a 90-minute journey before you've started. Take it only if you drop to two park days.</p>
+    </div>
+    </div>
+
+    <div class="day">
+      <div class="day-date">15 Oct<span class="dow">Thu</span></div>
+      <div class="day-body">
+        <div class="entry">
+          <div class="entry-head"><span class="entry-title">DL 38 · Shanghai Pudong → Los Angeles</span><span class="chip ok">Ticketed</span></div>
+          <span class="times">18:25 PVG → 15:24 LAX (same day)</span>
+          <span class="entry-detail">Delta Main, confirmation <span class="code">JP5E6A</span>, ticket 0062450696002. Departs <strong>Pudong</strong>, not the Hongqiao you arrive into.</span>
+        </div>
+        <div class="entry">
+          <div class="entry-head"><span class="entry-title">DL 899 · Los Angeles → Atlanta</span><span class="chip ok">Ticketed</span></div>
+          <span class="times">22:50 LAX → 06:07 ATL (+1, Fri 16 Oct)</span>
+          <span class="entry-detail">Seat 28A, confirmation <span class="code">G3LX5Q</span> — the return half of the separate SoCal round trip, not the China ticket. <strong>Seven and a half hours at LAX</strong> between the two, which sounds generous but they're separate tickets: you collect the bag, clear customs and immigration, re-check it and possibly change terminals. Comfortable, not automatic.</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section>
+    <h2>Shanghai Disneyland: how the ticketing actually works</h2>
+    <p>This is the part worth reading slowly, because three separate mechanisms interact and only one of them is obvious.</p>
+
+    <h3 class="subhead">1. The sales window is 30 days, and that's the binding constraint</h3>
+    <p>When the official calendar was pulled on 9 September, the furthest date on sale was <strong>8 October</strong> and no further. That is a hard rolling window that advances one day at a time, and everything about your plan follows from it: your five October dates become purchasable across <strong>11 to 16 September</strong>, and you leave for Tibet on 2 October. There is no scenario where you buy park tickets after you board the train.</p>
+    <div class="note warn">
+      <p>Don't trust the arithmetic to be exact. A 29- versus 30-day horizon shifts every date by one, and an off-by-one is exactly how you'd lose a day. <strong>Open the calendar each morning from the 11th and buy whatever new October date has appeared.</strong> By the 16th all five will have come and gone, with a fortnight still in hand before you fly.</p>
+    </div>
+
+    <h4>Observed price ladder, October 2026</h4>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Dates</th><th>Price</th><th>What that tier is</th></tr></thead>
+        <tbody>
+          <tr><td>Tue / Wed, ordinary weeks</td><td class="n">¥475</td><td>Base. The cheapest the park ever is.</td></tr>
+          <tr><td>Sun / Mon / Thu</td><td class="n">¥499</td><td>Regular weekday.</td></tr>
+          <tr><td>Fridays</td><td class="n">¥539</td><td>Shoulder.</td></tr>
+          <tr><td>Saturdays</td><td class="n">¥599</td><td>Peak weekend.</td></tr>
+          <tr><td>26–30 Sep</td><td class="n">¥629–659</td><td>Pre-holiday surge.</td></tr>
+          <tr><td>1–5 Oct</td><td class="n">¥719–799</td><td>Golden Week. The annual maximum.</td></tr>
+          <tr><td>8 Oct</td><td class="n">¥475</td><td>Collapses straight back to base the moment the holiday ends.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Your window sits in the calm right after the storm. Expect <span class="num">¥499</span> for Sunday 11 and Monday 12, <span class="num">¥475</span> for Tuesday 13 and Wednesday 14 — the same shape the identical weekdays carry a month earlier. And <strong>Saturday 10 October is a designated national make-up workday</strong>, which is a small gift: the country is at work the day you land.</p>
+
+    <h3 class="subhead">2. Real-name ticketing, and buying as a foreigner</h3>
+    <ul>
+      <li>Every ticket is registered to a person. Buy with your <strong>passport number</strong> and carry that passport; you enter by scanning the ticket.</li>
+      <li>Buy through the official site, app, WeChat account, or the official Fliggy store. Foreign Visa and Mastercard work. Disney explicitly warns that anything sold elsewhere is unauthorised.</li>
+      <li><strong>If the official checkout fights you, an authorised reseller is the fallback for admission.</strong> Disney's own channels page lists "official travel partners" alongside its direct channels — Klook and Trip.com among them — and they take international cards without the Chinese-SMS wall the official flow sometimes throws at a foreign number. Check the partner is on that list, and try official first, since Early Bird and bundle pricing exist only there. Either way the ticket is issued against your passport number and you link it to the app afterwards.</li>
+      <li><strong>Disney Premier Access is sold through four channels only</strong> — official website, official app, official WeChat, official Fliggy. Nowhere else, and no reseller.</li>
+      <li>Install the Shanghai Disney Resort app before you leave, but expect to finish registering it <em>in Shanghai</em>: it leans on SMS verification that foreign numbers handle unevenly, and it goes more smoothly on a local network from the hotel than from Atlanta. Bind a card to Alipay too — some in-park self-order terminals reject foreign cards outright.</li>
+    </ul>
+
+    <h3 class="subhead">3. The products, priced today</h3>
+    <div class="options">
+      <div class="option on">
+        <h3 class="subhead">1-Day Early Bird</h3>
+        <div class="price">¥425–449 <small>/ day</small></div>
+        <ul>
+          <li>Book 10+ days ahead, saves ¥50</li>
+          <li>¥445 variant at 30 days ahead adds a ¥30 dining coupon</li>
+          <li>Your buy window <em>is</em> 30 days, so this is free money if you book the day a date opens</li>
+        </ul>
+      </div>
+      <div class="option on">
+        <h3 class="subhead">2-Day Ticket</h3>
+        <div class="price">¥749–855 <small>/ two days</small></div>
+        <ul>
+          <li>~10% off two separate 1-days</li>
+          <li>Currently ¥749 on a limited-time promo</li>
+          <li>Early Bird 2-Day at ¥798</li>
+          <li>Best way to buy consecutive days</li>
+        </ul>
+      </div>
+      <div class="option">
+        <h3 class="subhead">1-Day + Early Park Entry</h3>
+        <div class="price">¥654 <small>from</small></div>
+        <ul>
+          <li>Up to one hour before public opening</li>
+          <li>~¥179 premium over a base ticket</li>
+          <li>This is the resort-hotel perk, sold separately</li>
+        </ul>
+      </div>
+      <div class="option">
+        <h3 class="subhead">1-Day + two Premier Access</h3>
+        <div class="price">¥655 <small>from</small></div>
+        <ul>
+          <li>Buy one, get one free</li>
+          <li>One pairing is <strong>TRON + Peter Pan</strong></li>
+          <li>The other is Zootopia + Winnie the Pooh</li>
+          <li>~¥180 for two skips vs ¥140–180 each à la carte</li>
+        </ul>
+      </div>
+      <div class="option">
+        <h3 class="subhead">Dream Day Package</h3>
+        <div class="price">¥870 <small>from</small></div>
+        <ul>
+          <li>1-Day plus a Premier Access set</li>
+          <li>Only worth it on a genuinely busy day</li>
+        </ul>
+      </div>
+      <div class="option">
+        <h3 class="subhead">10th Anniversary Package</h3>
+        <div class="price">¥1,213</div>
+        <ul>
+          <li>Reserved viewing for three new shows</li>
+          <li>¥100 food and beverage coupon</li>
+          <li>Steep, but it's the anniversary year and the shows are the reason</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note">
+      <h4>On Premier Access generally</h4>
+      <p>Single-attraction passes run <span class="num">¥140–180</span> and are bought in-app on the day. Advance bundles run roughly <span class="num">¥395</span> for three attractions up to <span class="num">¥2,485</span> for fifteen with early entry and reserved show viewing, and prices move daily. On post-Golden-Week weekdays you should not need any of it. Walk in, see what the standby boards say, and buy a single pass for TRON or Zootopia only if the wait crosses an hour. <em>Bundle pricing here comes from a third-party guide — confirm in the app.</em></p>
+    </div>
+
+    <h2>The annual pass question</h2>
+    <p>You asked for this properly, so here it is properly. Shanghai Disneyland sells three passes. These are today's live prices from the official store, not a secondary source.</p>
+
+    <div class="options">
+      <div class="option">
+        <h3 class="subhead">Pearl</h3>
+        <div class="price">¥1,599 <small>≈ $225</small></div>
+        <ul>
+          <li>Minimum <strong>210</strong> reservation days a year</li>
+          <li>Reservation required, subject to quota</li>
+          <li>1× ¥100-off-¥500 table service coupon per week</li>
+          <li>5× ¥20-off-¥100 quick service coupons per week</li>
+        </ul>
+      </div>
+      <div class="option">
+        <h3 class="subhead">Jade</h3>
+        <div class="price">¥2,849 <small>≈ $401</small></div>
+        <ul>
+          <li>Minimum <strong>330</strong> reservation days</li>
+          <li>Reservation still required</li>
+          <li>6× ~20%-off dining coupons per week</li>
+          <li>2× ¥40-off-¥200 merchandise coupons per week</li>
+        </ul>
+      </div>
+      <div class="option">
+        <h3 class="subhead">Diamond</h3>
+        <div class="price">¥4,699 <small>≈ $662</small></div>
+        <ul>
+          <li><strong>365 days, no reservation at all</strong></li>
+          <li>12 Early Park Entry passes a year</li>
+          <li>5× ~20%-off merchandise coupons per week</li>
+          <li>Parking discount, free stroller</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="subhead">What Pearl actually includes — and what it doesn't</h3>
+    <p>The official benefits schedule has exactly five numbered sections. Pearl appears in three of them. Coupons are issued every Monday at 00:00 for that natural week and expire the following Monday, so a visitor gets <strong>one week's allocation, once</strong> — not a per-day drip.</p>
+
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Benefit</th><th>Pearl gets</th><th>Max value in one week</th></tr></thead>
+        <tbody>
+          <tr><td>Table-service dining<span class="sub">In-park and the two resort hotels</span></td><td>1 × “¥100 off ¥500” per week</td><td class="n">¥100</td></tr>
+          <tr><td>Quick service and snacks</td><td>5 × “¥20 off ¥100” per week, stackable up to five in one transaction</td><td class="n">¥100</td></tr>
+          <tr class="pick"><td>Merchandise, percentage<span class="sub">Designated Disney stores, not vending carts</span></td><td>2 × ~20% off per week, cap ¥1,000 discount per transaction</td><td class="n">¥200+</td></tr>
+          <tr><td>Merchandise, price-break</td><td>1 × “¥30 off ¥200” per week — can't be combined with the 20% coupon in the same transaction</td><td class="n">¥30</td></tr>
+          <tr><td>Disneytown tenants</td><td>Third-party offers at LEGO, Pandora, Skechers, Casetify, Blue Frog, Ippudo, Paper Stone and ~20 others. Terms set by each tenant, not Disney.</td><td class="n">unspecified</td></tr>
+          <tr><td>Birthday month</td><td>Free ¥118 cake on a ¥280 quick-service spend, or ¥298 cake on ¥1,000 table service</td><td class="n">¥118–298</td></tr>
+          <tr><td>Occasional extras</td><td>AP Days, AP Restaurant Month, surprise coupons, 10th-birthday exclusive set</td><td class="n">unpredictable</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note warn">
+      <h4>The four things people assume a pass includes, and it doesn't</h4>
+      <ul>
+        <li><strong>Early Park Entry is Diamond-only.</strong> It's benefit section 5, tagged [Diamond Annual Pass], 12 passes a year. Pearl and Jade get none — and there is no standalone Early Park Entry product in the store, only the <em>1-Day Ticket + Early Park Entry Pass</em> bundle. So a Pearl holder may have no route to early entry at all.</li>
+        <li><strong>No Disney Premier Access discount, at any tier.</strong> DPA isn't mentioned anywhere in the benefits schedule. A pass holder pays the same ¥140–180 per attraction as anyone else.</li>
+        <li><strong>No discount on hotel rooms.</strong> The dining coupons are usable <em>at restaurants inside</em> the two resort hotels. Room rates aren't a pass benefit.</li>
+        <li><strong>No discount on tickets, packages or show seating</strong> — and pass holders can't buy the ticket bundles at all, since those are sold as dated tickets.</li>
+      </ul>
+    </div>
+
+    <h3 class="subhead">The break-even</h3>
+    <p>Using the expected gate prices for your dates, and the cheapest legitimate way to buy them (Early Bird singles and 2-Day tickets combined):</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Park days</th><th>Tickets, at the gate</th><th>Tickets, bought well</th><th>Pearl at ¥1,599</th><th>Verdict</th></tr></thead>
+        <tbody>
+          <tr><td>3 days <span class="sub">Mon–Wed</span></td><td class="n">¥1,449</td><td class="n">~¥1,300</td><td class="n">+¥299</td><td>Tickets win comfortably</td></tr>
+          <tr><td>4 days <span class="sub">Sun–Wed</span></td><td class="n">¥1,948</td><td class="n">~¥1,750</td><td class="n">+¥348</td><td>Pearl can't be used on the Sunday — you'd buy that day separately on top of the pass. Tickets win.</td></tr>
+          <tr class="pick"><td>4 days <span class="sub">Mon–Thu, all weekdays</span></td><td class="n">¥1,924</td><td class="n">~¥1,724</td><td class="n">−¥125</td><td>The only shape where the pass wins, and only just</td></tr>
+          <tr><td>Jade or Diamond, any</td><td class="n">—</td><td class="n">—</td><td class="n">+¥1,100 to +¥3,400</td><td>Never close</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Pearl breaks even at about <strong>3.6 visits</strong>. Diamond needs roughly <strong>eleven</strong>. So the only pass in the conversation is Pearl, and only if you commit to four days.</p>
+
+    <div class="note flat">
+      <h4>To be explicit: those figures are admission only</h4>
+      <p>Both columns above are gate price for entry, nothing else. No early entry, no Premier Access, no food, no souvenirs. That makes it a fair like-for-like comparison — but the add-ons don't sit neutrally between the two options, and they tilt in opposite directions.</p>
+      <p><strong>Against the pass:</strong> the cheap add-on pricing only exists as <em>ticket bundles</em>. Early Bird at ¥425–445, <em>1-Day + Early Park Entry</em> at ¥654, <em>1-Day + two Premier Access</em> at ¥655, the ¥1,213 anniversary package with reserved show viewing and a ¥100 dining coupon — every one of those is a dated-ticket product a pass holder cannot buy. Going the pass route means paying à la carte for anything you add, and possibly not being able to add early entry at all.</p>
+      <p><strong>For the pass:</strong> one week of coupons, worth ¥0 if you buy nothing and up to ~¥430 if you spend hard. That's the only lever that can move this.</p>
+    </div>
+
+    <div class="note">
+      <h4>How much would you have to spend for the coupons to matter?</h4>
+      <p>The dining coupons are weak for you — you'd need a ¥500 single table-service bill to touch the ¥100 one, and realistic quick-service eating across four days (~¥90 a day) redeems maybe three ¥20 coupons. Call it <span class="num">¥60</span>.</p>
+      <p><strong>Merchandise is the real variable.</strong> Two 20%-off coupons a week, capped at ¥1,000 discount each. Spend ¥500 on souvenirs across two transactions and that's ¥100 back; spend ¥1,000 and it's ¥200. On a tenth-anniversary trip, to a park with a Star Wars Launch Bay and the best Peter Pan's Flight in the world, that is not a hypothetical.</p>
+      <p>So the thresholds, on top of the ¥125 the pass already wins by on an all-weekday four-day plan:</p>
+      <ul>
+        <li><strong>Four weekday park days:</strong> pass is ahead by ¥125 before you buy anything. Any merch spend widens it.</li>
+        <li><strong>Three park days:</strong> pass starts ¥299 behind. You'd need roughly <span class="num">¥1,500</span> (~$210) of merchandise to claw that back through the 20% coupons. Unlikely.</li>
+        <li><strong>Any plan including Sunday 11 Oct:</strong> the pass can't cover the day, so it loses regardless.</li>
+      </ul>
+    </div>
+
+    <div class="note warn">
+      <h4>Four reasons Pearl still isn't worth ¥125</h4>
+      <ul>
+        <li><strong>Sunday 11 October is out. Pearl is a weekdays-only pass.</strong> Disney's English launch coverage put it plainly — Pearl holders "have access to Shanghai Disneyland on weekdays only" — and the Chinese consumer guides say the same thing: 屏蔽了周末和节假日, weekends and public holidays blocked, roughly 200-odd weekday entry days a year. That kills the Sunday outright. Either you buy an extra ¥499 ticket on top of the ¥1,599 pass, or the four-day case collapses into the three-day case where the pass loses by ¥299. <em>The live October calendar sits behind the app and WeChat mini-program, so this is launch-era reporting on the same pass tier rather than your exact dates — but two independent sources agree and the official page's 210-day minimum is consistent with it.</em></li>
+        <li><strong>You must activate it in person.</strong> Mainland guests activate in the app; everyone else — passports included — has to activate at Main Entrance Guest Services with the order number. That's your first morning spent in a queue instead of at rope drop.</li>
+        <li><strong>Every visit needs a reservation, and quota can run out.</strong> You can hold three at a time in a 90-day window; unactivated, you can only pre-book your <em>first</em> visit. So you'd be booking days three and four from a hotel in Lhasa or a train on the Qinghai plateau, through a system that is Chinese-first.</li>
+        <li><strong>It doesn't solve a problem you have.</strong> The pass's genuine advantage is a 90-day reservation window against the ticket's 30-day one — useful if you were fighting for scarce dates. You are visiting on ordinary weekdays immediately after a national holiday, the emptiest days of the autumn.</li>
+      </ul>
+      <p><strong>Buy dated tickets</strong> — unless you already know you'll spend real money on tenth-anniversary merchandise <em>and</em> you settle on four weekday park days, in which case Pearl is defensible on the coupons alone. The other thing that flips it is a return trip: the pass runs 365 days starting 15 days after purchase, so buying now covers you through late September 2027. If Shanghai is on the cards again inside that year, Pearl becomes obviously right.</p>
+    </div>
+
+    <div class="note flat">
+      <h4>And the resort hotels, on the same logic</h4>
+      <p>The headline perk is Early Park Entry — up to an hour before opening, through the quieter Disneytown gate, one entry per registered guest per hotel night. As a solo traveller you get exactly one, which is exactly what the <strong>¥654 ticket-plus-Early-Entry product</strong> gives you for a ~¥179 premium. Five nights at Toy Story instead of the Courtyard costs somewhere north of ¥3,500 extra to obtain a benefit you can buy four times over, while giving up Bonvoy points and your Platinum breakfast. <em>Sources differ on whether the hotel benefit is 30 minutes or a full hour; the purchased pass is documented at up to one hour.</em></p>
+    </div>
+
+    <h2>In the park</h2>
+    <div class="stack">
+      <p>Eight lands. Rope drop is the whole game even on a quiet day, because the two newest headliners absorb crowds first.</p>
+      <ul>
+        <li><strong>First hour:</strong> <em>Zootopia: Hot Pursuit</em>, then <em>TRON Lightcycle Power Run</em>. These are the two that build 60–90 minute lines by mid-morning and stay there. Everything else can wait.</li>
+        <li><strong>Second:</strong> <em>Pirates of the Caribbean — Battle for the Sunken Treasure</em>, which is the single best thing in the park and not close, then <em>Soaring Over the Horizon</em>. Both are clear on your dates as things stand — the resort's current notices put Soaring's maintenance on 16 September and Zootopia's on 9 October, before you arrive — but new ones post continually, so check the app on the morning.</li>
+        <li><strong>Peter Pan's Flight</strong> — worth planning around rather than dropping into. This is the version other parks wish they had, and it's half the reason the ¥655 buy-one-get-one Premier Access pairing is the interesting bundle.</li>
+        <li><strong>Tenth anniversary:</strong> the celebration runs all year under "With You, It's Magic+". New castle stage show <em>The Heart of Magic</em>, an updated <em>Mickey's Storybook Express</em> parade, and an anniversary finale added to <em>ILLUMINATE! A Nighttime Celebration</em> with new music and projections. October also carries the Halloween season.</li>
+        <li><strong>Nights:</strong> ILLUMINATE closes the park. The metro floods immediately afterwards — either leave straight into it or wait 20–30 minutes. From the Courtyard you can simply walk, which is most of the argument for staying there.</li>
+      </ul>
+      <p><em>Park hours for October still aren't published — the official calendar returns nothing for those dates, rechecked on 10 September. The site is currently showing <strong>08:30 to 20:00</strong> for days in the present window, which is the number to plan against until the real one posts.</em></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Point at this</h2>
+    <p>Taxi drivers and ticket windows will not read pinyin. These are the names worth having on your phone.</p>
+    <div class="cnlist">
+      <div class="cnrow"><span class="en">Xi'an Railway Station — <em>not</em> Xi'an North</span><span class="cn">西安站</span></div>
+      <div class="cnrow"><span class="en">Xi'an North Railway Station (the wrong one)</span><span class="cn">西安北站</span></div>
+      <div class="cnrow"><span class="en">Your hotel — the Westin, 66 Ci'en Road</span><span class="cn">西安威斯汀大酒店 · 慈恩路66号</span></div>
+      <div class="cnrow"><span class="en">Terracotta Warriors museum</span><span class="cn">秦始皇帝陵博物院</span></div>
+      <div class="cnrow"><span class="en">Shaanxi History Museum</span><span class="cn">陕西历史博物馆</span></div>
+      <div class="cnrow"><span class="en">Big Wild Goose Pagoda</span><span class="cn">大雁塔</span></div>
+      <div class="cnrow"><span class="en">Bell Tower</span><span class="cn">钟楼</span></div>
+      <div class="cnrow"><span class="en">South Gate, for the wall bike rental</span><span class="cn">永宁门</span></div>
+      <div class="cnrow"><span class="en">Muslim Quarter</span><span class="cn">回民街</span></div>
+      <div class="cnrow"><span class="en">Xianyang Airport Terminal 5</span><span class="cn">咸阳机场 T5航站楼</span></div>
+      <div class="cnrow"><span class="en">Shanghai Disneyland</span><span class="cn">上海迪士尼乐园</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Bookings on file</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Date</th><th>Segment</th><th>Carrier / service</th><th>Reference</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="num">27 Sep</td><td>LAX → ICN</td><td>Korean Air KE012</td><td><span class="ref">FAFD77</span></td><td>Ticketed</td></tr>
+          <tr><td class="num">29 Sep</td><td>ICN → XIY</td><td>Korean Air KE141</td><td><span class="ref">FAFD77</span></td><td>Ticketed</td></tr>
+          <tr><td class="num">29 Sep</td><td>Xi'an, 2 nights</td><td>The Westin Xi'an</td><td><span class="ref">84579041</span></td><td>Booked · ¥1,707 all in</td></tr>
+          <tr><td class="num">1 Oct</td><td>Xi'an, 1 night</td><td>The Westin Xi'an</td><td><span class="ref">84582237</span></td><td>Booked · free-night award</td></tr>
+          <tr><td class="num">2 Oct</td><td>Xi'an → Lhasa</td><td>Train Z165, soft sleeper</td><td>via Asia Odyssey</td><td>Confirmed</td></tr>
+          <tr><td class="num">3–10 Oct</td><td>Tibet, 8-day EBC tour</td><td>Asia Odyssey Travel</td><td><span class="ref">AOT-BJ-James-50674</span></td><td>Booked · receipt issued 13 Aug</td></tr>
+          <tr><td class="num">10 Oct</td><td>LXA → SHA</td><td>China Eastern MU2336</td><td><span class="ref">GBDPCB</span></td><td>Ticketed</td></tr>
+          <tr><td class="num">10 Oct</td><td>Shanghai, 5 nights</td><td>Courtyard ITRZ suggested</td><td>—</td><td>Not booked</td></tr>
+          <tr><td class="num">11–15 Oct</td><td>Shanghai Disneyland, 3–4 days</td><td>Dated tickets, not a pass</td><td>—</td><td>Buy 11–16 Sep</td></tr>
+          <tr><td class="num">15 Oct</td><td>PVG → LAX</td><td>Delta DL38</td><td><span class="ref">JP5E6A</span></td><td>Ticketed</td></tr>
+          <tr><td class="num">15 Oct</td><td>LAX → ATL</td><td>Delta DL899 · seat 28A</td><td><span class="ref">G3LX5Q</span></td><td>Ticketed · separate SoCal ticket</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Who's coming, and who to call</h2>
+    <div class="cols">
+
+      <div class="block">
+        <h3>The group</h3>
+        <div class="kv"><span class="k">Jeff Margolin</span><span class="v">Sharing a twin room with you — two separate beds, confirmed with James. Likely on Kamana's Lhasa–Seoul flight out.</span></div>
+        <div class="kv"><span class="k">Kamana Mathur</span><span class="v">Organiser and main line to James. Chengdu 24 Sep, Chengdu–Lhasa train 30 Sep, Seoul 10 Oct. She or Alka takes the single room.</span></div>
+        <div class="kv"><span class="k">Alka Garg</span><span class="v">Set up the group planning calls. Had visa trouble in July; James sent an invitation letter on the 30th.</span></div>
+        <div class="kv"><span class="k">Anissa McFarland</span><span class="v">Also hit repeated visa rejections in July and got an invitation letter. Her friend Amor dropped out, leaving five.</span></div>
+      </div>
+
+      <div class="block">
+        <h3>Numbers worth having offline</h3>
+        <div class="kv"><span class="k">James Guo · Asia Odyssey</span><span class="v"><span class="mono">+86 177 2640 4023</span> (WhatsApp) · WeChat Asiaodyssey06 · james@asiaodysseytravel.com · works 09:30–18:30 China time</span></div>
+        <div class="kv"><span class="k">US Consulate, Chengdu</span><span class="v"><span class="mono">+86 28 8558 3992</span> · nearest post to Tibet</span></div>
+        <div class="kv"><span class="k">US Consulate, Shanghai</span><span class="v"><span class="mono">+86 21 6433 6880</span> · 1469 Huai Hai Zhong Rd</span></div>
+        <div class="kv"><span class="k">US Embassy, Beijing</span><span class="v"><span class="mono">+86 10 8531 3000</span> · 55 Anjialou Rd</span></div>
+        <div class="kv"><span class="k">Overseas Citizens Services</span><span class="v"><span class="mono">+1 202 501 4444</span></span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>What I couldn't pin down</h2>
+    <ul>
+      <li><strong>Exact prices for 11–14 October.</strong> They don't exist yet — the dates aren't on sale. The figures above are the same weekdays priced a month earlier, which is how this calendar has behaved all quarter, but check on the day the window opens.</li>
+      <li><strong>The Pearl calendar for your exact dates.</strong> Answered as far as the public web allows: Pearl is weekdays-only, so Sunday 11 October is blocked. The date-by-date calendar itself is published only in the official app, the WeChat official account and the annual pass WeChat mini-program — the website's own calendar link is a pointer to those, and the reservation portal is behind a login. If you want it confirmed for 12–15 October specifically, it's a two-minute check in the app.</li>
+      <li><strong>October park hours.</strong> Checked the official park-hours calendar directly — October dates return "unable to provide time". Not published yet.</li>
+      <li><strong>Live rates for the Disney-owned hotels</strong> on your dates. Their booking flow wouldn't return prices for 10–15 October; the ranges shown are indicative from a current guide.</li>
+      <li><strong>The Terracotta Warriors' National Day arrangements.</strong> For May Day this year the museum abandoned the rolling 7-day window, opened the whole holiday block at once a week out, raised the daily cap and extended hours to 20:00. A comparable National Day notice is likely and had not been published as of 10 September. It doesn't affect your Wednesday the 30th, which is an ordinary working day — but watch for it from about the 20th in case the release timing moves.</li>
+      <li><strong>Whether Pit 2's south side reopens.</strong> The works notice dated 4 September runs "about a month" from the 5th, which lands right on your visit.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>Built from Gmail (Asia Odyssey thread AOT-BJ-James-50674, the airline and Marriott confirmations, the group's May–July planning mail), the WhatsApp group "Everest Base Camp Oct 2026" and the direct thread with James, the published Asia Odyssey 8-day Everest Base Camp itinerary, and the Google Drive "Important Info In China" sheet. Shanghai Disneyland prices and rules were pulled live from the resort's official store and rules pages on 9 September 2026; Marriott rates from its booking engine for the actual dates. Xi'an and Shanghai colour draws on Sandra's 2017 blog notes in this project — and on 10 September every operational detail taken from them was re-checked against current sources, because nine years had moved several of them. What changed: the Terracotta metro route and hours, its booking channel and the loss of its ticket windows; the Shaanxi History Museum's reservation system, its website route and its suspended Monday closure; the city wall's rental terms; the Propaganda Poster Art Centre's 2019 move; the Urban Planning Exhibition Center's renovation and Wednesday closure; and the SIM advice, which is now the opposite of what it was.</p>
+    <p>Tour day numbers are matched to calendar dates by inference, not from a schedule James has sent. One message from him, dated 17 August, could not be decrypted in the browser. The maps are drawn to scale from real coordinates; metro lines are simplified to their useful shape and station positions are approximate.</p>
+    <p><strong>Master document, assembled 10 September 2026 and reviewed against the full project notes the same day.</strong> The Trybal SoCal trip that puts you in Los Angeles from 22 September is tracked separately; only its return leg appears here, because it is how you get home. Supersedes "Xi'an to Everest Base Camp" and "Xi'an to Disneytown", both archived the same day.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
+
+<script>
+  // Online these point at the published pages; opened from the Trip Kit folder they
+  // point at the sibling files, so the set navigates with no connection.
+  if (location.protocol === "file:") {
+    document.querySelectorAll("a[data-kit]").forEach(function (a) {
+      a.setAttribute("href", a.getAttribute("data-kit"));
+    });
+  }
+</script>

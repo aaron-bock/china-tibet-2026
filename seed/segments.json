@@ -3,18 +3,6 @@
     {
       "id": "s1",
       "mode": "air",
-      "code": "DL 500",
-      "from": "ATL Atlanta",
-      "to": "LAX Los Angeles",
-      "depart": "Tue 22 Sep · 18:00",
-      "arrive": "Tue 22 Sep · 19:41",
-      "conf": "G3LX5Q",
-      "status": "confirmed",
-      "detail": "Delta Main Classic (V). Seat 23C. Ticket 0062429706820. $522.80 total for the ATL-LAX-ATL pair, paid with eCredit 0062428040008 on Amex ending 3009. First checked bag free."
-    },
-    {
-      "id": "s2",
-      "mode": "air",
       "code": "KE 012",
       "from": "LAX Los Angeles",
       "to": "ICN Seoul Incheon",
@@ -22,46 +10,46 @@
       "arrive": "Tue 29 Sep · 04:40",
       "conf": "FAFD77",
       "status": "confirmed",
-      "detail": "Korean Air, Economy. One free checked piece. Crosses the date line - two calendar days in the air. No seat assigned yet."
+      "detail": "Korean Air, economy, one checked bag. Already in California since the 22nd on the Trybal SoCal trip (tracked separately) - no positioning flight to buy, just get to the international terminal."
     },
     {
-      "id": "s3",
+      "id": "s2",
       "mode": "air",
       "code": "KE 141",
       "from": "ICN Seoul Incheon",
-      "to": "XIY Xi'an Xianyang",
+      "to": "XIY Xi'an Xianyang T5",
       "depart": "Tue 29 Sep · 09:10",
       "arrive": "Tue 29 Sep · 11:30",
       "conf": "FAFD77",
       "status": "confirmed",
-      "detail": "Korean Air, Economy. One free checked piece. 4h30m connection at Incheon. No seat assigned yet."
+      "detail": "Same booking. Four and a half hours on the ground at Incheon. All international flights use T5, which has its own Line 14 metro station: Line 14 to Xi'an North, then Line 4 to Dayanta and the hotel door. One change, ~30 min, Y7-8. Budget an hour for immigration - China takes fingerprints on arrival."
+    },
+    {
+      "id": "s3",
+      "mode": "rail",
+      "code": "Z165",
+      "from": "Xi'an Railway Station",
+      "to": "LXA Lhasa",
+      "depart": "Fri 2 Oct · 09:27",
+      "arrive": "Sat 3 Oct · 15:36",
+      "conf": "via Asia Odyssey",
+      "status": "confirmed",
+      "detail": "Soft sleeper, confirmed with James on 16 August. No physical ticket - board by laying the passport on the gate scanner; a photo or the number alone will not do. Thirty hours up the Qinghai-Tibet railway. Sharing a twin with Jeff, so the RMB 2,100 single supplement goes to Kamana or Alka. Depart from Xi'an Railway Station (西安站, No. 44 Huancheng North Road) - NOT Xi'an North, which is the high-speed station. Single Line 4 ride from Dayanta. Leave the hotel by 08:00: airport-style security, sometimes twice, water scanned with a special reader, and the scrum at the doors is for luggage space."
     },
     {
       "id": "s4",
-      "mode": "rail",
-      "code": "Z165 / Z265",
-      "from": "Xi'an",
-      "to": "LXA Lhasa",
-      "depart": "Thu 1 Oct",
-      "arrive": "Fri 2 Oct",
-      "conf": "not ticketed",
-      "status": "action",
-      "detail": "Soft sleeper requested from James on 27 Jul. Asia Odyssey books Tibet trains only about 15 days out - roughly 15 Sep - and nothing has come back yet. The group's option was Z322 Chengdu-Lhasa departing 30 Sep 20:46, arriving 2 Oct 07:24 (soft sleeper CNY 1,235, hard sleeper CNY 778); Aaron declined that and asked to join from Xi'an instead."
-    },
-    {
-      "id": "s5",
       "mode": "air",
       "code": "MU 2336",
-      "from": "LXA Lhasa",
+      "from": "LXA Lhasa Gonggar",
       "to": "SHA Shanghai Hongqiao",
       "depart": "Sat 10 Oct · 15:30",
       "arrive": "Sat 10 Oct · 21:50",
       "conf": "GBDPCB",
       "status": "confirmed",
-      "detail": "China Eastern, booked as a Delta SkyMiles award: 30,000 miles + CNY 170. Ticket 0062429113492. Changes planes at Xi'an (XIY). Lands at Hongqiao, not Pudong. No seat assigned yet."
+      "detail": "China Eastern on Delta miles: 30,000 miles + Y170. Changes planes at Xi'an. Lands at Hongqiao, not Pudong. Tour ends with the shared transfer to Gonggar. Bags clear around 22:20 and the last Line 11 is ~22:30-23:00 with a change at Jiangsu Road - you will not make it, so budget a Didi: ~50 km, 60-70 min, Y180-250."
     },
     {
-      "id": "s6",
+      "id": "s5",
       "mode": "air",
       "code": "DL 38",
       "from": "PVG Shanghai Pudong",
@@ -70,10 +58,10 @@
       "arrive": "Thu 15 Oct · 15:24",
       "conf": "JP5E6A",
       "status": "confirmed",
-      "detail": "Delta Main Classic (T). Seat 39A. Ticket 0062450696002. CNY 4,653 on Amex ending 3009. Arrives the same calendar day it left. Departs Pudong - the inbound from Lhasa lands at Hongqiao."
+      "detail": "Delta Main. Ticket 0062450696002. Y4,653. Departs Pudong, not the Hongqiao you arrive into - Pudong is a 25-minute taxi from the Disney area against an hour from People's Square. Taxi around 15:00."
     },
     {
-      "id": "s7",
+      "id": "s6",
       "mode": "air",
       "code": "DL 899",
       "from": "LAX Los Angeles",
@@ -82,7 +70,7 @@
       "arrive": "Fri 16 Oct · 06:07",
       "conf": "G3LX5Q",
       "status": "confirmed",
-      "detail": "Delta Main Classic (X). Same ticket as the outbound ATL-LAX. 7h26m to clear customs at LAX and re-check - tight-ish for an international arrival, but workable."
+      "detail": "Seat 28A. The return half of the separate SoCal round trip, not the China ticket. Seven and a half hours at LAX between the two, which sounds generous but they are separate tickets: collect the bag, clear customs and immigration, re-check it and possibly change terminals. Comfortable, not automatic."
     }
   ]
 }

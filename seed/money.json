@@ -1,14 +1,20 @@
 {
   "items": [
-    { "id": "m1", "item": "Zelle from Jeff Margolin", "amount": "+$1,000.00", "status": "confirmed", "detail": "Received 26 Jul 2026, confirmation 5733643293, into the Ally spending account ending 9770. Shared-cost float for the trip - reconcile against the tour invoice when it arrives." },
-    { "id": "m2", "item": "DL 500 / DL 899 · ATL-LAX-ATL", "amount": "$522.80", "status": "confirmed", "detail": "Paid in full with eCredit 0062428040008 on Amex ending 3009. Base fare $457.67 plus $65.13 in US taxes and fees." },
-    { "id": "m3", "item": "KE 012 / KE 141 · LAX-ICN-XIY", "amount": "not on file", "status": "pending", "detail": "Korean Air booking FAFD77, ticketed 27 Jul. The fare was in the PDF receipt attached to the e-ticket email, not in the message body." },
-    { "id": "m4", "item": "MU 2336 · Lhasa-Shanghai", "amount": "30,000 miles + CNY 170", "status": "confirmed", "detail": "SkyMiles award. CNY 50 China airport fee plus CNY 120 carrier surcharge on Amex ending 3009. Ticket 0062429113492." },
-    { "id": "m5", "item": "DL 38 · Pudong-LAX", "amount": "CNY 4,653", "status": "confirmed", "detail": "Base CNY 2,080 plus CNY 2,573 in taxes and surcharges - CNY 2,200 of that is the carrier-imposed international surcharge. Amex ending 3009. Ticket 0062450696002." },
-    { "id": "m6", "item": "The Westin Xi'an · 29 Sep-1 Oct", "amount": "CNY 1,707.02", "status": "pending", "detail": "CNY 1,464 room plus CNY 243.02 service. CNY 732 prepayment charged 27 Sep; balance at checkout." },
-    { "id": "m7", "item": "The Westin Xi'an · 1-2 Oct", "amount": "0 points", "status": "pending", "detail": "Amex Brilliant anniversary free-night award, up to 85K points. Cancel free until 17 Sep - see the open item about the train overlap." },
-    { "id": "m8", "item": "Xi'an-Lhasa soft sleeper", "amount": "approx CNY 1,235", "status": "action", "detail": "Not booked. The CNY 1,235 figure is James's soft-sleeper price for Z322 out of Chengdu; the Xi'an fare will differ. Hard sleeper was CNY 778." },
-    { "id": "m9", "item": "Tibet tour · Asia Odyssey Travel", "amount": "not on file", "status": "action", "detail": "No quote, deposit or balance date anywhere in the email record. Ask James for it in writing." },
-    { "id": "m10", "item": "Travel insurance", "amount": "not purchased", "status": "action", "detail": "Check existing card coverage first - trip interruption and, more importantly, medical evacuation from the plateau." }
+    { "id": "m1", "item": "Tibet tour · Asia Odyssey 8-day EBC", "amount": "receipt issued 13 Aug", "status": "confirmed", "detail": "Booked, party of five, customer ID AOT-BJ-James-50674. Sharing a twin with Jeff avoids the RMB 2,100 single supplement, which falls to Kamana or Alka instead." },
+    { "id": "m2", "item": "KE 012 / KE 141 · LAX–ICN–XIY", "amount": "ticketed", "status": "confirmed", "detail": "Korean Air booking FAFD77, economy, one checked bag." },
+    { "id": "m3", "item": "Z165 · Xi'an–Lhasa soft sleeper", "amount": "via Asia Odyssey", "status": "confirmed", "detail": "Confirmed with James on 16 August. Billed through the tour rather than separately." },
+    { "id": "m4", "item": "MU 2336 · Lhasa–Shanghai", "amount": "30,000 miles + Y170", "status": "confirmed", "detail": "China Eastern on Delta miles. Confirmation GBDPCB." },
+    { "id": "m5", "item": "DL 38 · Pudong–LAX", "amount": "Y4,653", "status": "confirmed", "detail": "Delta Main, confirmation JP5E6A, ticket 0062450696002." },
+    { "id": "m6", "item": "DL 899 · LAX–Atlanta", "amount": "separate SoCal ticket", "status": "confirmed", "detail": "Seat 28A, confirmation G3LX5Q — the return half of the Trybal SoCal round trip, not a China purchase." },
+    { "id": "m7", "item": "The Westin Xi'an · 2 nights", "amount": "Y1,707.02", "status": "confirmed", "detail": "~$240 all in. Y732 prepayment charged 27 Sep, balance at checkout." },
+    { "id": "m8", "item": "The Westin Xi'an · award night", "amount": "0 — 85k award", "status": "confirmed", "detail": "Amex Brilliant free-night award, taxes included, nothing to pay." },
+    { "id": "m9", "item": "Shanghai · 5 nights", "amount": "~Y2,495", "status": "action", "detail": "Courtyard ITRZ at ~Y499/night. Not booked." },
+    { "id": "m10", "item": "Shanghai Disneyland tickets", "amount": "~Y1,300–1,750", "status": "action", "detail": "Three park days ~Y1,300 bought well; four including the Sunday ~Y1,750, plus ~Y179 if you add Early Park Entry. Buy 11–16 Sep." },
+    { "id": "m11", "item": "Terracotta Warriors", "amount": "Y120", "status": "pending", "detail": "Reserve 24 Sep at bmy.com.cn." },
+    { "id": "m12", "item": "Shaanxi History Museum", "amount": "free, ticketed", "status": "pending", "detail": "The separate Tang murals hall is a paid Y270 ticket and a different booking — skip unless you especially want it." },
+    { "id": "m13", "item": "Xi'an city wall bike", "amount": "Y45 + Y200 deposit", "status": "pending", "detail": "Y45 for three hours, then Y5 per extra ten minutes. Deposit is Y100 in older sources and Y200 in newer ones, so have Y200 free." },
+    { "id": "m14", "item": "Power bank, bought in Xi'an", "amount": "Y100–200", "status": "action", "detail": "Must carry a moulded 3C mark or it's confiscated at Lhasa. Xiaomi, Baseus or UGREEN." },
+    { "id": "m15", "item": "Hongqiao → Disney taxi, 10 Oct", "amount": "Y180–250", "status": "pending", "detail": "Unavoidable: you land 21:50, bags clear ~22:20, and the last Line 11 with a change at Jiangsu Road goes ~22:30–23:00. ~50 km, 60–70 min. One-off, first night only." },
+    { "id": "m16", "item": "Xi'an metro and incidentals", "amount": "~Y25", "status": "pending", "detail": "Airport to hotel ~Y7–8 on Lines 14 and 4; Terracotta round trip ~Y9. Fares come off the ride code inside Alipay." }
   ]
 }

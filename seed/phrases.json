@@ -1,0 +1,15 @@
+{
+  "items": [
+    { "id": "z1", "en": "Xi'an Railway Station — the one you want", "cn": "西安站", "detail": "No. 44 Huancheng North Road, just outside the northeast corner of the wall. Line 4 from Dayanta, no changes." },
+    { "id": "z2", "en": "Xi'an North Railway Station — the WRONG one", "cn": "西安北站", "detail": "The high-speed station. Showing a driver this instead of 西安站 loses you the Z165." },
+    { "id": "z3", "en": "The Westin Xi'an, 66 Ci'en Road", "cn": "西安威斯汀大酒店 · 慈恩路66号", "detail": "Full permit delivery address: 西安威斯汀大酒店，西安市曲江新区慈恩路66号" },
+    { "id": "z4", "en": "Terracotta Warriors museum", "cn": "秦始皇帝陵博物院", "detail": "33 km east of the city." },
+    { "id": "z5", "en": "Shaanxi History Museum", "cn": "陕西历史博物馆", "detail": "15-minute walk from the Westin. Also the WeChat account name to search." },
+    { "id": "z6", "en": "Big Wild Goose Pagoda", "cn": "大雁塔", "detail": "Opposite the hotel. Fountain show in the north square." },
+    { "id": "z7", "en": "Bell Tower", "cn": "钟楼", "detail": "Line 2. The airport coach terminates near here." },
+    { "id": "z8", "en": "South Gate — city wall bike rental", "cn": "永宁门", "detail": "Open until 22:00; after 20:00 all bikes must come back here, evening returns due by 21:30." },
+    { "id": "z9", "en": "Muslim Quarter", "cn": "回民街", "detail": "Short walk from the wall's north side. Go after dark." },
+    { "id": "z10", "en": "Xianyang Airport Terminal 5", "cn": "咸阳机场 T5航站楼", "detail": "All international flights. Its own Line 14 metro station." },
+    { "id": "z11", "en": "Shanghai Disneyland", "cn": "上海迪士尼乐园", "detail": "Line 11 terminus, Disney Resort station." }
+  ]
+}

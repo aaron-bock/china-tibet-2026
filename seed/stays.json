@@ -1,54 +1,74 @@
 {
   "items": [
     {
-      "id": "h0",
-      "place": "Los Angeles",
-      "name": "Not booked",
-      "checkin": "Tue 22 Sep",
-      "checkout": "Sun 27 Sep",
-      "conf": "",
-      "status": "action",
-      "detail": "Five nights in LA between the Atlanta flight and the Korean Air departure. Nothing on file."
-    },
-    {
       "id": "h1",
-      "place": "Xi'an",
       "name": "The Westin Xi'an",
+      "place": "Xi'an · 2 nights",
       "checkin": "Tue 29 Sep · 15:00",
       "checkout": "Thu 1 Oct · 12:00",
       "conf": "84579041",
       "status": "confirmed",
-      "detail": "Westin Studio, 1 King, non-smoking. CNY 1,464 room + CNY 243.02 service = CNY 1,707.02. Prepayment of CNY 732 charged 27 Sep; free cancellation until 23:59 on 28 Sep. 66 Ci En Road, Qu Jiang New District, Xi'an, Shaanxi 710061. +86-29-65686568. Free entry to the hotel's Xi'an Qujiang Museum of Fine Arts and free Hanfu wearing; complimentary parking; Platinum Elite lounge access."
+      "detail": "Westin Studio, one king, non-smoking. Y1,464 + Y243.02 service = Y1,707.02 all in (~$240). Y732 prepayment charged 27 Sep; free to cancel until 23:59 on the 28th. 66 Ci En Road, Qu Jiang New District, +86-29-65686568 — opposite the Big Wild Goose Pagoda, Dayanta station on Lines 3 and 4. Line 4 runs straight to Xi'an Railway Station with no changes, which was the whole argument for this hotel."
     },
     {
       "id": "h2",
-      "place": "Xi'an",
-      "name": "The Westin Xi'an - award night",
+      "name": "The Westin Xi'an · award night",
+      "place": "Xi'an · 1 night",
       "checkin": "Thu 1 Oct · 15:00",
       "checkout": "Fri 2 Oct · 12:00",
       "conf": "84582237",
-      "status": "action",
-      "detail": "Westin Studio, 1 King. Free Night Award up to 85K points from the Amex Brilliant anniversary - 0 points redeemed. Free cancellation until 23:59 on 17 Sep. This night overlaps the overnight train to Lhasa departing 1 Oct: if the train is confirmed, cancel this before the 17 Sep deadline."
+      "status": "confirmed",
+      "detail": "One night on the 85k Amex Brilliant free-night award, taxes included, nothing to pay. Free to cancel until 23:59 on 17 Sep — but you need this night: the Z165 leaves at 09:27 on the 2nd. Ask the front desk to LINK the two reservations so you aren't moved rooms on the morning of the 1st. Platinum on both: 1,000-point welcome gift or F&B, lounge access, upgrade subject to availability, plus free entry to the hotel's own Xi'an Qujiang Museum of Fine Arts and free Hanfu wear."
     },
     {
       "id": "h3",
-      "place": "Lhasa & Tibet",
-      "name": "Arranged by Asia Odyssey Travel",
-      "checkin": "Fri 2 Oct",
+      "name": "Tibet tour hotels",
+      "place": "Lhasa, Shigatse, EBC · 7 nights",
+      "checkin": "Sat 3 Oct",
       "checkout": "Sat 10 Oct",
       "conf": "AOT-BJ-James-50674",
-      "status": "pending",
-      "detail": "Included in the Tibet tour. Hotel names, standards and the night-by-night plan have not been sent through yet - ask James for the written itinerary."
+      "status": "confirmed",
+      "detail": "Included in the Asia Odyssey tour. Sharing a twin with Jeff — two separate beds, confirmed with James — so the RMB 2,100 single supplement falls to Kamana or Alka. Night of the 7th is the tent camp at base camp, 5,200 m."
     },
     {
       "id": "h4",
-      "place": "Shanghai",
-      "name": "Not booked",
+      "name": "Courtyard by Marriott Shanghai ITRZ",
+      "place": "Shanghai · 5 nights — RECOMMENDED",
       "checkin": "Sat 10 Oct",
       "checkout": "Thu 15 Oct",
       "conf": "",
       "status": "action",
-      "detail": "Five nights in Shanghai between the Lhasa arrival at Hongqiao and the Pudong departure. Nothing on file."
+      "detail": "~Y499/night (~$70). On Disney Avenue, 900 m from the gate — a ten-minute walk, free shuttle if you book it with the concierge, and Disney Resort is the Line 11 terminus so the city stays one seat away. Platinum turns its paid breakfast into a free one. Four park days from downtown is ~400 minutes of metro; the same four from here plus a city day is ~120. Pudong is 25 minutes by taxi against an hour from People's Square. This is the largest open block on the trip."
+    },
+    {
+      "id": "h5",
+      "name": "Four Points Shanghai ITRZ",
+      "place": "Shanghai · alternative",
+      "checkin": "",
+      "checkout": "",
+      "conf": "",
+      "status": "pending",
+      "detail": "Y485/night, 4 miles out. Marginally cheaper, meaningfully further. No reason to choose it over the Courtyard."
+    },
+    {
+      "id": "h6",
+      "name": "Shanghai Marriott Kangqiao",
+      "place": "Shanghai · alternative",
+      "checkin": "",
+      "checkout": "",
+      "conf": "",
+      "status": "pending",
+      "detail": "Y1,012/night, 2.8 miles. Free Disney shuttle and a proper Platinum lounge at double the price, but shuttle-dependent, which cuts against travelling on your own clock."
+    },
+    {
+      "id": "h7",
+      "name": "Renaissance Yu Garden",
+      "place": "Shanghai · downtown alternative",
+      "checkin": "",
+      "checkout": "",
+      "conf": "",
+      "status": "pending",
+      "detail": "Y895/night, ~60 min to the park. Best-placed downtown hotel for the Bund and Yu Gardens at a fair price — only right if you flip the plan and make the city the point. Courtyard Shanghai Central is Y754 next to Shanghai Railway Station (easy Suzhou); Fairfield Jingan is the cheapest real brand at Y424."
     }
   ]
 }
