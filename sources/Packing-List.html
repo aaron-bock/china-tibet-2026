@@ -1,0 +1,801 @@
+<title>Packing List</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;600;700&family=Spectral:ital,wght@0,400;0,500;1,400&family=Roboto+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --ground:#EDEFF2; --surface:#FFFFFF; --sunk:#E2E6EB;
+  --ink:#14181C; --ink-soft:#4F5862; --ink-faint:#7C8794;
+  --rule:#D3D9E0; --rule-strong:#B2BBC5;
+  --z-xian:#A2661A; --z-xian-w:#F5EADA;
+  --z-train:#586574; --z-train-w:#E5E8EC;
+  --z-tibet:#2A5790; --z-tibet-w:#E1E9F4;
+  --z-ebc:#0F5F7C; --z-ebc-w:#DCEBF0;
+  --z-sh:#33755C; --z-sh-w:#DFEDE7;
+  --z-dis:#6C4A9C; --z-dis-w:#EBE4F5;
+  --z-all:#6A6560; --z-all-w:#EAE7E4;
+  --b-away:#28477A; --b-away-w:#DFE7F3;
+  --b-talon:#4B565F; --b-talon-w:#E4E7EA;
+  --b-day:#0D6068; --b-day-w:#DAEBED;
+  --b-sling:#9A5A17; --b-sling-w:#F5E8D8;
+  --b-wear:#2F6B53; --b-wear-w:#DEEBE5;
+  --b-buy:#654492; --b-buy-w:#EAE3F4;
+  --done:#2C7551; --done-w:#DEEDE4;
+  --alert:#A3301E; --alert-w:#F7E2DE;
+  --display:"Chivo","Helvetica Neue",Arial,sans-serif;
+  --body:"Spectral",Georgia,"Times New Roman",serif;
+  --mono:"Roboto Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#0E1217; --surface:#161B22; --sunk:#10151B;
+    --ink:#E8ECF1; --ink-soft:#A3ADBA; --ink-faint:#78838F;
+    --rule:#272E37; --rule-strong:#39424D;
+    --z-xian:#D39A50; --z-xian-w:#2C2114;
+    --z-train:#94A2B2; --z-train-w:#1E242B;
+    --z-tibet:#7BA6DB; --z-tibet-w:#15243A;
+    --z-ebc:#5FB2CC; --z-ebc-w:#0F2831;
+    --z-sh:#66B392; --z-sh-w:#10251D;
+    --z-dis:#B196DD; --z-dis-w:#241B34;
+    --z-all:#A69F98; --z-all-w:#22201E;
+    --b-away:#8FB2E4; --b-away-w:#16243A;
+    --b-talon:#A7B4C0; --b-talon-w:#1F252B;
+    --b-day:#57B7BF; --b-day-w:#0D2629;
+    --b-sling:#D9A15C; --b-sling-w:#2B2013;
+    --b-wear:#6FBB98; --b-wear-w:#11261D;
+    --b-buy:#B79FE0; --b-buy-w:#231B33;
+    --done:#5BAE83; --done-w:#11251B;
+    --alert:#E08072; --alert-w:#2D1512;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0E1217; --surface:#161B22; --sunk:#10151B;
+  --ink:#E8ECF1; --ink-soft:#A3ADBA; --ink-faint:#78838F;
+  --rule:#272E37; --rule-strong:#39424D;
+  --z-xian:#D39A50; --z-xian-w:#2C2114;
+  --z-train:#94A2B2; --z-train-w:#1E242B;
+  --z-tibet:#7BA6DB; --z-tibet-w:#15243A;
+  --z-ebc:#5FB2CC; --z-ebc-w:#0F2831;
+  --z-sh:#66B392; --z-sh-w:#10251D;
+  --z-dis:#B196DD; --z-dis-w:#241B34;
+  --z-all:#A69F98; --z-all-w:#22201E;
+  --b-away:#8FB2E4; --b-away-w:#16243A;
+  --b-talon:#A7B4C0; --b-talon-w:#1F252B;
+  --b-day:#57B7BF; --b-day-w:#0D2629;
+  --b-sling:#D9A15C; --b-sling-w:#2B2013;
+  --b-wear:#6FBB98; --b-wear-w:#11261D;
+  --b-buy:#B79FE0; --b-buy-w:#231B33;
+  --done:#5BAE83; --done-w:#11251B;
+  --alert:#E08072; --alert-w:#2D1512;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);font-size:16.5px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.page{max-width:64rem;margin:0 auto;padding:2.25rem 1.1rem 5rem;display:flex;flex-direction:column;gap:2rem}
+.eyebrow{font-family:var(--mono);font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-faint)}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(2rem,5.5vw,3rem);line-height:1.02;letter-spacing:-.025em;margin:.55rem 0 0;text-wrap:balance}
+.standfirst{margin:.75rem 0 0;max-width:44rem;color:var(--ink-soft);font-size:1.02rem}
+.bagstrip{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:3px;overflow:hidden;margin-top:1.6rem}
+.bg{background:var(--surface);padding:.85rem .9rem;display:flex;flex-direction:column;gap:.3rem;border-top:3px solid var(--bc)}
+.bg .bg-name{font-family:var(--display);font-weight:600;font-size:.97rem;color:var(--bc);letter-spacing:-.01em}
+.bg .bg-spec{font-family:var(--mono);font-size:.66rem;color:var(--ink-faint);font-variant-numeric:tabular-nums;line-height:1.45}
+.bg .bg-role{font-size:.85rem;color:var(--ink-soft);line-height:1.4}
+.climate{display:grid;grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:3px;overflow:hidden;margin-top:1.1rem}
+.cl{background:var(--surface);padding:.8rem .85rem;display:flex;flex-direction:column;gap:.28rem;border-top:3px solid var(--zc)}
+.cl .cl-name{font-family:var(--display);font-weight:600;font-size:.95rem;color:var(--zc);letter-spacing:-.01em}
+.cl .cl-when{font-family:var(--mono);font-size:.68rem;color:var(--ink-faint);font-variant-numeric:tabular-nums}
+.cl .cl-temp{font-family:var(--mono);font-size:.8rem;font-variant-numeric:tabular-nums;color:var(--ink);line-height:1.4}
+.cl .cl-note{font-size:.83rem;color:var(--ink-soft);line-height:1.35}
+.strip-lab{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin-top:1.6rem;display:block}
+.bar{position:sticky;top:0;z-index:20;background:var(--ground);padding:.75rem 0 .7rem;border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:.6rem}
+.filters{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center}
+button.f{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;padding:.36rem .6rem;border:1px solid var(--rule-strong);background:var(--surface);color:var(--ink-soft);border-radius:2px;cursor:pointer}
+button.f:hover{border-color:var(--ink-faint)}
+button.f[aria-pressed="true"]{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+button.f:focus-visible{outline:2px solid var(--z-tibet);outline-offset:2px}
+.meter{display:flex;align-items:center;gap:.7rem}
+.track{flex:1;height:5px;background:var(--sunk);border-radius:3px;overflow:hidden}
+.fill{height:100%;width:0;background:var(--done);transition:width .25s ease}
+.count{font-family:var(--mono);font-size:.72rem;color:var(--ink-faint);font-variant-numeric:tabular-nums;white-space:nowrap}
+.sync{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);white-space:nowrap;min-width:4.2rem;text-align:right}
+section{display:flex;flex-direction:column;gap:.15rem}
+h2{font-family:var(--display);font-weight:600;font-size:1.22rem;letter-spacing:-.02em;margin:1.5rem 0 .1rem;padding-bottom:.45rem;border-bottom:2px solid var(--ink);display:flex;align-items:baseline;justify-content:space-between;gap:1rem}
+h2 .sec-count{font-family:var(--mono);font-size:.68rem;font-weight:400;color:var(--ink-faint);font-variant-numeric:tabular-nums;letter-spacing:.05em}
+.sec-intro{color:var(--ink-soft);font-size:.93rem;margin:.65rem 0 .3rem;max-width:44rem}
+.row{display:grid;grid-template-columns:1.5rem 1fr auto;gap:.1rem .75rem;padding:.6rem 0;border-bottom:1px solid var(--rule);align-items:start}
+.row.on .name,.row.on .note{opacity:.45}
+.row.on .name{text-decoration:line-through}
+input[type=checkbox]{appearance:none;width:1.05rem;height:1.05rem;margin:.24rem 0 0;border:1.5px solid var(--rule-strong);border-radius:2px;background:var(--surface);cursor:pointer;display:grid;place-content:center}
+input[type=checkbox]:checked{background:var(--done);border-color:var(--done)}
+input[type=checkbox]:checked::after{content:"";width:.5rem;height:.28rem;border-left:2px solid var(--surface);border-bottom:2px solid var(--surface);transform:rotate(-45deg) translate(1px,-1px)}
+input[type=checkbox]:focus-visible{outline:2px solid var(--z-tibet);outline-offset:2px}
+.name{font-family:var(--display);font-weight:600;font-size:.95rem;letter-spacing:-.005em;cursor:pointer}
+.note{grid-column:2;color:var(--ink-soft);font-size:.89rem;line-height:1.42;margin-top:.1rem}
+.zones{display:flex;gap:.25rem;flex-wrap:wrap;justify-content:flex-end;padding-top:.18rem}
+.z{font-family:var(--mono);font-size:.58rem;letter-spacing:.09em;text-transform:uppercase;padding:.16rem .34rem;border-radius:2px;white-space:nowrap}
+.z-XIAN{background:var(--z-xian-w);color:var(--z-xian)}
+.z-TRAIN{background:var(--z-train-w);color:var(--z-train)}
+.z-TIBET{background:var(--z-tibet-w);color:var(--z-tibet)}
+.z-EBC{background:var(--z-ebc-w);color:var(--z-ebc);font-weight:500}
+.z-SHANGHAI{background:var(--z-sh-w);color:var(--z-sh)}
+.z-DISNEY{background:var(--z-dis-w);color:var(--z-dis)}
+.z-ALL{background:var(--z-all-w);color:var(--z-all)}
+.b{font-family:var(--mono);font-size:.58rem;letter-spacing:.09em;text-transform:uppercase;padding:.16rem .34rem;border-radius:2px;white-space:nowrap;font-weight:500}
+.b-AWAY{background:var(--b-away-w);color:var(--b-away)}
+.b-TALON{background:var(--b-talon-w);color:var(--b-talon)}
+.b-DAY{background:var(--b-day-w);color:var(--b-day)}
+.b-SLING{background:var(--b-sling-w);color:var(--b-sling)}
+.b-WEAR{background:var(--b-wear-w);color:var(--b-wear)}
+.b-BUY{background:var(--b-buy-w);color:var(--b-buy)}
+.mv{font-family:var(--mono);font-size:.58rem;letter-spacing:.06em;padding:.16rem .34rem;border-radius:2px;white-space:nowrap;background:transparent;color:var(--ink-faint);border:1px dashed var(--rule-strong)}
+.cat-chip{font-family:var(--mono);font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;padding:.16rem .34rem;border-radius:2px;background:var(--sunk);color:var(--ink-faint)}
+.lab{font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin-right:.15rem}
+.sep{width:1px;align-self:stretch;background:var(--rule);margin:0 .35rem}
+.flag{font-family:var(--mono);font-size:.58rem;letter-spacing:.09em;text-transform:uppercase;padding:.16rem .34rem;border-radius:2px;background:var(--alert-w);color:var(--alert)}
+.callout{border-left:3px solid var(--z-ebc);background:var(--surface);padding:.95rem 1.05rem;display:flex;flex-direction:column;gap:.5rem;margin:.75rem 0 .4rem}
+.callout.warn{border-left-color:var(--alert)}
+.callout h3{font-family:var(--display);font-weight:600;font-size:.98rem;margin:0;letter-spacing:-.01em}
+.callout p{margin:0;font-size:.91rem;color:var(--ink-soft)}
+.callout ol,.callout ul{margin:.1rem 0;padding-left:1.15rem;font-size:.91rem;color:var(--ink-soft);display:flex;flex-direction:column;gap:.4rem}
+.callout li strong{color:var(--ink);font-family:var(--display);font-weight:600;font-size:.92rem}
+.picks{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:3px;overflow:hidden;margin:.35rem 0 .2rem}
+.pick{background:var(--surface);padding:.8rem .85rem;display:flex;flex-direction:column;gap:.3rem}
+.pick .pk-rank{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.pick.best .pk-rank{color:var(--done)}
+.pick .pk-name{font-family:var(--display);font-weight:600;font-size:.95rem;letter-spacing:-.01em}
+.pick a.pk-name{color:var(--ink);text-decoration:underline;text-decoration-color:var(--rule-strong);text-underline-offset:3px;text-decoration-thickness:1px}
+.pick a.pk-name:hover{text-decoration-color:currentColor}
+.pick a.pk-name:focus-visible{outline:2px solid var(--z-tibet);outline-offset:2px;border-radius:2px}
+.pick .pk-spec{font-family:var(--mono);font-size:.65rem;color:var(--ink-faint);font-variant-numeric:tabular-nums}
+.pick .pk-why{font-size:.85rem;color:var(--ink-soft);line-height:1.4}
+.empty{padding:2rem 0;color:var(--ink-faint);font-style:italic;font-size:.93rem}
+footer{border-top:1px solid var(--rule);margin-top:2.5rem;padding-top:1rem;color:var(--ink-faint);font-size:.8rem;display:flex;flex-direction:column;gap:.45rem}
+footer a{color:var(--z-tibet)}
+@media (max-width:36rem){
+  .row{grid-template-columns:1.5rem 1fr;}
+  .zones{grid-column:2;justify-content:flex-start;padding-top:.3rem}
+  h2{font-size:1.1rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+  /* --- trip kit nav (shared across the four pages) --- */
+  .kitnav{display:flex;flex-wrap:wrap;align-items:baseline;gap:.3rem 1.15rem;
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.66rem;
+    letter-spacing:.12em;text-transform:uppercase;
+    padding-bottom:.7rem;margin-bottom:.4rem;
+    border-bottom:1px solid color-mix(in srgb, currentColor 16%, transparent);}
+  .kitnav .kitnav-label{opacity:.45;margin-right:.15rem}
+  .kitnav a{color:inherit;opacity:.7;text-decoration:none;
+    border-bottom:1px solid color-mix(in srgb, currentColor 32%, transparent);padding-bottom:1px}
+  .kitnav a:hover{opacity:1}
+  .kitnav a:focus-visible{outline:2px solid currentColor;outline-offset:3px;border-radius:2px}
+  .kitnav .here{opacity:1;font-weight:600}
+</style>
+
+<div class="page">
+      <nav class="kitnav" aria-label="Trip kit">
+      <span class="kitnav-label">Trip kit</span>
+      <a href="https://claude.ai/code/artifact/65e30345-b6b5-4438-aee4-f7034f64bb14" data-kit="index.html">Index</a>
+      <a href="https://claude.ai/code/artifact/db0a3465-f329-47b2-a0d9-1300d2d79d90" data-kit="Itinerary.html">Itinerary</a>
+      <span class="here" aria-current="page">Packing list</span>
+      <a href="https://claude.ai/code/artifact/ac2f1858-d9b6-456a-a881-d44ee391ec57" data-kit="Apps-and-Services.html">Apps &amp; services</a>
+      <a href="https://claude.ai/code/artifact/84f80d00-6586-4783-92f6-c75ebdb9be46" data-kit="Sandra-2017.html">Sandra's notes</a>
+      </nav>
+
+  <header>
+    <span class="eyebrow">Aaron Bock · 27 Sep – 15 Oct 2026 · four bags</span>
+    <h1>Packing List</h1>
+    <p class="standfirst">Nineteen days across four climates, packed into four bags that keep changing jobs: the Away gets checked and mostly sits in hotel rooms, the Talon flies as your carry-on and then becomes your base camp bag, an Osprey daypack works the cities and the park, and a sling holds the things that must never leave you. Group the list by bag to pack it, by leg to check it. Ticks save across your devices.</p>
+    <span class="strip-lab">The four bags</span>
+    <div class="bagstrip" id="bagstrip"></div>
+    <span class="strip-lab">The four climates</span>
+    <div class="climate" id="climate"></div>
+  </header>
+
+  <div class="bar">
+    <div class="filters" id="grouping"></div>
+    <div class="filters" id="filters"></div>
+    <div class="meter">
+      <div class="track"><div class="fill" id="fill"></div></div>
+      <span class="count" id="count">0 / 0</span>
+      <span class="sync" id="sync"></span>
+    </div>
+  </div>
+
+  <main id="list"></main>
+
+  <footer>
+    <p>Climate figures are October norms: Xi'an 50–68&nbsp;°F (10–20&nbsp;°C) with rain; Lhasa 63–73&nbsp;°F (17–23&nbsp;°C) day, 41–55&nbsp;°F (5–13&nbsp;°C) night; Everest Base Camp up to 50&nbsp;°F (10&nbsp;°C) by day falling to about 21&nbsp;°F (−6&nbsp;°C) at night, with strong wind and severe UV. The EBC tent camp is dismantled at the end of October — your 7 October night is inside the window.</p>
+    <p>Bag specs from Away and Osprey. Allowances: Korean Air economy US–Asia, 2 × 23&nbsp;kg checked at 158&nbsp;cm linear, cabin 10&nbsp;kg across both pieces; China Eastern domestic economy, 20&nbsp;kg checked at 100 × 60 × 40&nbsp;cm; China Railway, 20&nbsp;kg and 160&nbsp;cm linear per adult. Confirm the China Eastern sector against your actual ticket — a through-fare may carry the international allowance instead.</p>
+    <p>Built against the Asia Odyssey 8-day itinerary, the Z165 booking, and Sandra's 2017 China notes — with the connectivity, ticketing and shopping advice re-checked against current sources on 10 September 2026, because several of her 2017 recommendations no longer hold. Reconciled with the master itinerary the same day.</p>
+  </footer>
+</div>
+
+<script id="packed-state" type="application/json">[]</script>
+<script>
+const ORIGINAL = "<!doctype html>\n" + document.documentElement.outerHTML;
+
+const BAGS = [
+  {k:"AWAY", name:"Away The Large", spec:"Checked · 104 L · 29 × 20.5 × 12.5 in · 12.1 lb empty",
+   role:"Everything you don't need until a hotel room. It goes into the hold, onto the cabin floor of the Z165, and into the tour van — and it stays behind in Shigatse on base camp night."},
+  {k:"TALON", name:"Osprey Talon 44 (S/M)", spec:"Carry-on · 44 L · 72 × 31 × 34 cm · 1.57 kg",
+   role:"Your cabin bag on every flight, your bunk bag for thirty hours on the train, and — the reason it earns its place — your overnight bag at 5,200 m."},
+  {k:"DAY", name:"Osprey daypack", spec:"Personal item · pick the 20–26 L one",
+   role:"The city bag: the Xi'an wall, Lhasa monasteries, and full days at Shanghai Disneyland. It folds flat into the Talon on the base camp leg."},
+  {k:"SLING", name:"REI Ruckpack Waistpack", spec:"On you · 3 L · 6.6 oz · worn crossbody",
+   role:"Passport, permit, phone, cash, meds, a small power bank. Worn on the front, never checked, never handed over. If everything else went missing you would still be fine."}
+];
+
+const CLIMATE = [
+  {k:"XIAN",  name:"Xi'an",             when:"29 Sep – 2 Oct · 400 m",   temp:"50–68 °F · 10–20 °C",  note:"Mild autumn, a fair chance of rain. Golden Week starts 1 Oct — expect crowds everywhere."},
+  {k:"TRAIN", name:"Z165 soft sleeper", when:"2 – 3 Oct · to 5,072 m",   temp:"heated cabin", note:"Thirty hours. Dry air, piped oxygen at the berths, boiling water in every carriage."},
+  {k:"TIBET", name:"Lhasa & Shigatse",  when:"3 – 10 Oct · 3,650–3,850 m", temp:"68/41 °F · 20/5 °C", note:"Dry and bright by day, near freezing after dark. UV is the real hazard, not the cold."},
+  {k:"EBC",   name:"Everest Base Camp", when:"7 Oct · 5,200 m",          temp:"50/21 °F · 10/−6 °C", note:"One tent night. Wind, no shower, no power, pit toilets, yak-dung stove."},
+  {k:"SHANGHAI",name:"Shanghai & Disney",  when:"10 – 15 Oct · sea level",  temp:"72/59 °F · 22/15 °C", note:"Mild and drying out, and after Golden Week. City clothes plus several long days on your feet at the park."}
+];
+
+const SECTIONS = [
+  {t:"Before you fly", special:"PREP", intro:"Not gear, but the things that make the gear useful. The permit chain is closed now — what is left is the ticket window, the Shanghai bed, and the phone-and-wallet setup that cannot be done from inside China.", items:[
+    {n:"Buy every Shanghai Disneyland park date", z:["DISNEY"], crit:1, note:"The hard deadline. The sales calendar rolls forward a day at a time, so your five October dates surface one per morning between 11 and 16 September — check it daily and buy each as it appears. You board the Z165 on 2 October and are off-grid until the 10th, so there is no second chance."},
+    {n:"Install the travel eSIM and the VPN", z:["ALL"], crit:1, note:"Neither can be obtained inside China. The eSIM is the one that matters: it routes through a foreign carrier, which is what keeps WhatsApp working, and WhatsApp is the only channel James uses."},
+    {n:"Get Alipay verified against your passport", z:["ALL"], crit:1, note:"Submit by about 24 September — review takes one to three business days and the unverified limits are low. Alipay also carries the metro ride code in both Xi'an and Shanghai."},
+    {n:"Book Shanghai, 10–15 Oct", z:["SHANGHAI"], note:"The last unbooked bed. Courtyard by Marriott Shanghai ITRZ, ~¥499, ten minutes from the park gate on the Line 11 terminus."},
+    {n:"Wear-test the Waistpack for a full day, loaded", z:["ALL"], crit:1, note:"Put the real sling contents in it — passport, permit, phone, meds, wipes, power bank, sunglasses — and wear it out for a day. The open question is the sunglasses: 2 in of depth means a hard case won't go, so decide now whether they ride bare, in a soft pouch, or on your face. Return the 7 L Sling inside REI's window."},
+    {n:"Confirm the checked allowance on the China Eastern sector", z:["ALL"], crit:1, note:"Domestic Chinese economy is normally 20 kg, not the 23 kg Korean Air gives you. If GBDPCB is ticketed as part of the international journey it may inherit the higher allowance — ask James, because 3 kg decides what comes."},
+    {n:"Do a full pack and weigh the Away at home", z:["ALL"], crit:1, note:"Twice: once at 23 kg for Korean Air, once at 20 kg for the train and the domestic flight. The second number is the one that counts."},
+    {n:"Install and test a VPN — two of them", z:["ALL"], note:"It must work before you land. Installing one from inside China is much harder."},
+    {n:"Set up WeChat and fund the wallets", z:["ALL"], note:"Cash is a backup in China now, not the default. Do this at home. Tell the card issuer to expect international purchases and to allow 3D Secure — that refusal is the commonest reason a wallet won't bind."},
+    {n:"Download offline maps, Pleco, and the Google Translate Chinese pack", z:["ALL"], note:"Organic Maps — the maintained successor to the maps.me Sandra used. Add Amap in English for live transit. She credits offline GPS with rescuing her repeatedly."},
+    {n:"Download 30 hours of entertainment", z:["TRAIN"], note:"Podcasts, films, books. Assume no usable data from Xi'an to Lhasa."},
+    {n:"Tell your banks and card issuers the dates", z:["ALL"], note:"Include China and Korea. A frozen card in Shigatse is a bad afternoon."},
+    {n:"Ask your doctor about altitude medication", z:["EBC"], crit:1, note:"You go from 400 m to 5,200 m in nine days with almost no acclimatisation buffer. Worth a conversation about acetazolamide, an anti-nausea option, and an antibiotic for traveller's diarrhoea."},
+    {n:"Check that your travel insurance covers 5,200 m", z:["EBC"], note:"Many policies cap altitude or exclude evacuation. Confirm both in writing."},
+    {n:"Leave copies of everything with someone at home", z:["ALL"], note:"Passport, visa, itinerary, insurance, card numbers."},
+    {n:"Book dated Shanghai Disneyland tickets under your passport", z:["DISNEY"], crit:1, note:"Tickets are tied to the passport you carry to the gate. Buy from the official site, app, WeChat account or Fliggy store first — the Early Bird and bundle prices exist only there. If the checkout rejects your card or demands a Chinese SMS code, Klook and Trip.com are on Disney's official travel-partner list and are the fallback. Weekdays 12–15 Oct will be quieter than your first weekend."},
+    {n:"Install the Shanghai Disney Resort app and log in at home", z:["DISNEY"], note:"Logging in at the gate is how people lose their first hour. Expect to finish registration in Shanghai rather than Atlanta — it leans on SMS verification that foreign numbers handle unevenly, and it goes better on a local network. It needs live data all day; screenshots of QR codes are not accepted."},
+    {n:"Pick a Shanghai hotel on Metro Line 11", z:["SHANGHAI","DISNEY"], note:"Line 11 runs straight to Disney Resort station, and you still arrive at Hongqiao and leave from Pudong."},
+    {n:"Break in the boots", z:["TIBET"], note:"Now, not on the Gyawu La."},
+    {n:"Plan a day-one shopping run in Xi'an", z:["XIAN"], crit:1, note:"Power banks, slides, thermos, wipes and train food — one afternoon at a supermarket and an electronics shop covers the whole \"Buy it in China\" list before the Z165 leaves on the 2nd. Golden Week starts 1 October, so do it on the 29th or 30th."}
+  ]},
+
+  {t:"The four bags", intro:"Three you own, one you don't yet. The Away is a big, rigid, 5.5 kg-empty case that will spend most of the trip sitting still; the Talon is the bag that actually goes places. Everything below is organised around that split.",
+   cal:[
+    {h:"20 kg is the real ceiling, not 23", warn:1, p:"Korean Air gives you two free checked bags at 23 kg and 158 cm linear. But the Z165 allows 20 kg and 160 cm per adult, and China Eastern's domestic economy allowance is 20 kg. The Away Large measures 157.5 cm linear closed — half a centimetre inside the airline limit, and over it the moment you use the expansion zipper. So: never expand it, and pack to 20 kg. Empty it is already 5.5 kg, which leaves about 14.5 kg of contents. That single number is why the parka and the sleeping bag are on the rent-in-Lhasa list."},
+    {h:"The Away is a bad fit for the soft sleeper — plan for it", p:"A soft sleeper cabin stores luggage in two places: a shelf above the door about 40 cm high, and the gap under each lower berth about 30 cm high. Both top out at a 28-inch case. Yours is 29 inches long and 12.5 inches (32 cm) deep, so it will not go under a berth and is marginal above the door. Assume it ends up on the cabin floor between the berths, and take Sandra's advice seriously: board a good thirty minutes early, because you are competing for floor space, not shelf space."},
+    {h:"Korean Air gives you a second free checked bag", p:"You are only using one. That's your relief valve: if the Away is over 20 kg on the way out, or you buy more than expected in Lhasa and Shanghai, the packable duffel goes in the hold as bag two on the way home at no cost."}
+   ],
+   picks:{h:"The crossbody — you bought three, and the middle one wins", p:"You covered the whole ladder: 1.5 L, 3 L, 7 L. Size it by what actually has to ride in it — passport, the folded Tibet permit, phone, cash and cards, the medication you take on a schedule, wipes, sanitiser, a small power bank, lip balm and wraparound sunglasses. The sunglasses drive the bulk, and that list comes to roughly three litres, which is exactly where the Ruckpack Waistpack sits. Depth matters as much as volume: at 2 in the Waistpack lies flat against you, which is what makes a front-worn bag bearable in a Golden Week crowd.", list:[
+    {rank:"Keep this one", name:"REI Co-op Ruckpack Waistpack", spec:"3 L · 6.6 oz · $44.95 · 10.5 × 6.5 × 2 in", url:"https://www.rei.com/product/235577/rei-co-op-ruckpack-waistpack", why:"The size the load analysis pointed at, and the crossbody strap is properly engineered — the waistbelt has a centre dual-adjust buckle that doubles as a crossbody strap, symmetrical for either shoulder, XS–4XL. That's the failure mode the Osprey waist pack had, solved. Three interior organiser sleeves suit documents, and there's a front zip pocket with key clip plus a back pocket for the passport.", best:1},
+    {rank:"Keep as the second bag", name:"Arc'teryx Mantis 1 Waist Pack", spec:"1.5 L · 5.8 oz · $40 · 8.7 × 6.3 × 2.4 in", url:"https://www.rei.com/product/187115/arcteryx-mantis-1-waistpack", why:"Too small to be the only bag — reviewers say it fills fast and the narrow strap webbing twists over a long day. But it's the right size for the flat under-clothes pouch on transit days, and it's the better choice on a park day when the daypack is already carrying everything. Note it's 1.5 L, not the 1 L the tag implies."},
+    {rank:"Send this one back", name:"REI Co-op Ruckpack Sling", spec:"7 L · 12.5 oz · $59.95 · 11.75 × 8 × 3 in", url:"https://www.rei.com/product/235580/rei-co-op-ruckpack-sling", why:"Bigger than the 6 L you already called too big, and nearly double the weight of the other two. It's a small daypack wearing a sling's clothes — tablet sleeve, compression straps, lash loops. Too big to wear on your front all day, too small to replace the Osprey daypack at Disney. It's the awkward middle."}
+   ]},
+   items:[
+    {n:"Away The Large — checked, packed to 20 kg", z:["ALL"], b:"AWAY", crit:1, note:"Closed, not expanded. The TSA combination lock and the compression pads are built in, and it ships with a drawstring laundry bag — so that's one thing off the list."},
+    {n:"Osprey Talon 44 — carry-on, kept light", z:["ALL"], b:"TALON", crit:1, note:"At 72 cm tall it is over Korean Air's 55 × 40 × 20 cm cabin size on paper, but it's soft and compresses; the binding limit is the 10 kg you're allowed across the carry-on and personal item together. Cinch the compression straps and don't let it look like a trekking pack at the gate."},
+    {n:"Pick which Osprey daypack comes", z:["ALL"], b:"DAY", crit:1, note:"20–26 litres is the sweet spot — big enough for a poncho, a layer, water and snacks at Disney, small enough to pass the park's bag screening and to fold into the Talon for base camp. Anything over 30 L duplicates the Talon and costs you cabin weight."},
+    {n:"REI Ruckpack Waistpack, worn crossbody", z:["XIAN","TIBET","SHANGHAI","DISNEY"], b:"SLING", crit:1, note:"See the picks above. Worn on the front and zipped in every crowd. Shanghai is where Sandra got scammed."},
+    {n:"Luggage scale", z:["ALL"], b:"TALON", crit:1, note:"Under 50 g and it decides whether you pay excess in Lhasa. Weigh the Away before every flight, not just at home."},
+    {n:"Packing cubes — one is the EBC cube", z:["ALL"], b:"AWAY", mv:"TALON", note:"Long johns, heavy socks, base layer, hat, gloves, warmers, wipes. At Shigatse you lift one cube out of the Away into the Talon and you're packed for base camp."},
+    {n:"Raincover for the Talon", z:["TIBET","EBC"], b:"TALON", note:"Osprey doesn't include one with the Talon 44. It is less about rain than about plateau dust and the pack riding on a roof rack for 340 km."},
+    {n:"Compression sack for the puffy", z:["EBC"], b:"TALON", note:"Reclaims a surprising amount of space in a 44 L pack that has to hold a night's kit."},
+    {n:"Dry bags and ziplocks", z:["TIBET"], b:"AWAY", note:"Plateau dust gets into everything. Also keeps electronics dry on the passes."},
+    {n:"Small padlock and a short cable", z:["TRAIN"], b:"TALON", note:"The Away has its own TSA lock; the Talon has nothing. The soft sleeper cabin locks, but the bags in it don't."},
+    {n:"Detergent sheets", z:["ALL"], b:"AWAY", note:"Nineteen days out of one bag means sink washing at least twice. The Away's own laundry bag holds the dirty half."},
+    {n:"Luggage tags with your phone number", z:["ALL"], b:"AWAY", note:"Domestic Chinese flights check bags against your ticket at the carousel."}
+  ]},
+
+  {t:"How the bags change shape", special:"FLOW", intro:"The same four bags, repacked six times. This is the sequence to have in your head.",
+   cal:[
+    {h:"The six repacks", p:"", ol:[
+     ["ATL → LAX → ICN → Xi'an","Away checked through. Talon in the cabin, under 7 kg. Daypack as the personal item — the two together must come in under 10 kg. Sling worn on your body, which nobody counts. Boots, hardshell and watch on you."],
+     ["Xi'an, three nights","Away opens once in the hotel room and stays there. Daypack and sling do the wall, the Terracotta Army and the Muslim Quarter."],
+     ["Z165, thirty hours","This is the repack that matters. Everything for thirty hours goes into the Talon, which comes up onto the bunk: sleepwear, sandals, toothbrush, wipes, food, mug, power bank, earplugs. The Away goes on the cabin floor and you do not open it again until Lhasa."],
+     ["Lhasa, three nights","Away in the hotel. Daypack for the monasteries. Rent or buy the parka and, if you want it, the sleeping bag here — around Barkhor, before the tour leaves for Shigatse."],
+     ["Shigatse → base camp","The Away stays behind. The Talon becomes the overnight bag: the EBC cube, the parka, the sleeping kit, everything electronic fully charged. The daypack folds flat inside it. Sling stays on you."],
+     ["Lhasa → Shanghai, then Disney","The 20 kg domestic limit bites here — weigh the Away before you leave the hotel. If the Talon has to be checked on that sector, move the power banks and the medication into the sling first; lithium cannot go in the hold. In Shanghai the daypack is the park bag and the sling is what you keep on for TRON."]
+    ]}
+   ], items:[]},
+
+  {t:"Buy it in China, not at home", intro:"Everything here is cheaper, easier or better in China than in Atlanta, and every kilo you don't carry is a kilo against your 20 kg ceiling. In one case it isn't a preference at all — your American power bank is not legal on a Chinese domestic flight.",
+   cal:[
+    {h:"Your power bank will be confiscated at Lhasa airport", warn:1, p:"Since 28 June 2025 the CAAC requires every power bank on a mainland domestic flight to carry a visible 3C (CCC) mark moulded into the case. Foreign-market batteries don't have it — an Anker or Belkin sold in the US carries no 3C mark even when it was manufactured in China. Security physically inspects the case, and a missing mark means confiscation with no appeal and no return. Your Lhasa–Shanghai sector is a domestic flight, and enforcement has been spreading to international departures from Pudong and Beijing too. Trains and hotels don't care — but you can't put a battery in the hold in China either, so there is no way to get an uncertified one past Lhasa. Leave yours at home and buy Chinese: Xiaomi, Baseus and UGREEN are in every supermarket and electronics shop at roughly ¥100–200. A 20,000 mAh unit is about 74 Wh, comfortably under the 100 Wh cap."},
+    {h:"Bring these anyway — don't plan to buy them there", p:"High-SPF sport sunscreen (Chinese sun care skews toward whitening formulas and the SPF 50 sport tubes are harder to find and pricier); deodorant or antiperspirant, which is genuinely scarce in Chinese shops; your prescriptions in labelled bottles; category 3 or 4 wraparound sunglasses; and your broken-in boots. Same for anything you'd need in the first twenty-four hours, before you've found a shop — carry one packet of wipes and a day of medication from home even though you'll restock cheaply."}
+   ],
+   items:[
+    {n:"A 3C-certified power bank, 20,000 mAh", z:["ALL"], b:"BUY", crit:1, note:"First-day errand in Xi'an. Check for the oval three-C logo printed on the case itself, not the box. Buy two while you're there — the big one for the train and base camp, a small one for the sling."},
+    {n:"Shower shoes or slides", z:["TRAIN","EBC"], b:"BUY", crit:1, note:"¥20–30 at any supermarket, Miniso or department store. Buy them on day one: you need them in the train corridor on 2 October and again for the base camp toilet at 3 a.m."},
+    {n:"Insulated thermos", z:["TRAIN","TIBET"], b:"BUY", note:"Boiling water is free in every train carriage, station and hotel corridor in China, and a thermos is what turns that into coffee, noodles and a hot bottle in your sleeping bag. Buy before boarding the Z165."},
+    {n:"Wet wipes, tissues and face masks in bulk", z:["ALL"], b:"BUY", crit:1, note:"Pennies at any convenience store, and you will get through far more than you'd think. Carry one packet from Atlanta for the first day and restock properly in Xi'an."},
+    {n:"Shampoo, body wash, toothpaste, laundry detergent", z:["ALL"], b:"BUY", note:"Buying these in a Xi'an supermarket sidesteps the 100 ml carry-on liquid rule entirely and saves a kilo of checked weight. Hotels supply the basics; this is for the top-ups and for base camp."},
+    {n:"Portable oxygen cans", z:["TIBET","EBC"], b:"BUY", note:"Sold in every Lhasa pharmacy and tourist shop for ¥30–60. Buy-there by necessity — you cannot fly with a pressurised canister. The train has piped oxygen at the berths and your guide carries supplies, so treat these as reassurance rather than a plan."},
+    {n:"Heavy down parka — rent or buy around Barkhor", z:["EBC"], b:"BUY", crit:1, note:"Your packable puffy is not enough at 21 °F (−6 °C) with wind, and a real parka is 1.5–2 kg of a 14.5 kg budget. The rental shops around Barkhor exist for exactly this trade. The single easiest kilo to save."},
+    {n:"Sleeping bag rated to 14 °F (−10 °C) — rent in Lhasa", z:["EBC"], b:"BUY", note:"Optional; the camp quilts do work. But carrying your own from Atlanta costs another 1.5 kg, and Lhasa rents them by the day. James can arrange it with the tour."},
+    {n:"Trekking poles — rent in Lhasa", z:["TIBET","EBC"], b:"BUY", note:"Not currently on your list, and worth a thought for the walk in at base camp. Rented alongside the sleeping bag rather than checked from Atlanta."},
+    {n:"Batteries for the headlamp", z:["EBC"], b:"BUY", note:"AA and AAA are sold everywhere. Bring one set in the headlamp, buy the spares."},
+    {n:"Snacks and train food", z:["TRAIN","TIBET"], b:"BUY", note:"A Xi'an supermarket the night before beats the station shops on both price and range, and beats anything you'd carry from home. Instant noodles, nuts, dried fruit, chocolate."},
+    {n:"A cheap holdall for the way home", z:["SHANGHAI"], b:"BUY", note:"¥50 in a Lhasa or Shanghai market, and it rides home as your free second checked bag on Korean Air."}
+  ]},
+
+  {t:"Documents and money", intro:"Almost all of this lives in the sling, because the sling is the bag that never leaves you. Your passport is doing double duty — it is also your train ticket and your Disney ticket.", items:[
+    {n:"Passport with the Chinese visa", z:["ALL"], b:"SLING", crit:1, note:"Z165 has no paper ticket: you board on the passport. Also your Disney admission, every hotel check-in, and station security."},
+    {n:"Tibet Travel Permit — the original", z:["TIBET"], b:"SLING", crit:1, note:"Checked to board the train and again at road checkpoints. Photograph it the moment James delivers it."},
+    {n:"Printed flights, hotels and tour receipt", z:["ALL"], b:"TALON", note:"FAFD77, GBDPCB, JP5E6A, AOT-BJ-James-50674. Paper survives a dead phone."},
+    {n:"Offline digital copies of every document", z:["ALL"], b:"SLING", note:"On the phone in a folder that works with no signal, plus emailed to yourself."},
+    {n:"Two credit cards and one debit card", z:["ALL"], b:"SLING", note:"One card lives in the Talon instead, so a lost sling isn't a lost trip. Foreign cards still fail at plenty of Chinese terminals."},
+    {n:"Chinese cash drawn before you leave Lhasa", z:["TIBET"], b:"SLING", crit:1, note:"ATMs thin out past Shigatse and there are none at base camp. Small notes."},
+    {n:"Tips for the guide and driver", z:["TIBET"], b:"TALON", note:"A few hundred RMB across the eight days, in cash, in an envelope, separate from your spending money."},
+    {n:"A USD emergency reserve", z:["ALL"], b:"AWAY", note:"Two or three hundred, buried in the checked bag, kept separately from everything else."},
+    {n:"Four passport photos", z:["ALL"], b:"TALON", note:"Permits, and whatever else asks."},
+    {n:"Insurance policy number and the assistance line", z:["ALL"], b:"SLING", note:"On paper. The number you need is the one you can't look up."},
+    {n:"A written contacts card", z:["ALL"], b:"SLING", note:"James +86 177 2640 4023; Chengdu consulate +86 28 8558 3992 (nearest post to Tibet); Shanghai +86 21 6433 6880; Overseas Citizens Services +1 202 501 4444."},
+    {n:"Hotel names and addresses written in Chinese", z:["XIAN","SHANGHAI"], b:"SLING", note:"Hand it to the taxi driver. Screenshot each one as well."},
+    {n:"Arc'teryx Mantis 1, worn under your jacket", z:["ALL"], b:"WEAR", note:"At 1.5 L and 2.4 in deep it doubles as the flat pouch for the passport and permit on the two transit days where losing them ends the trip. The Waistpack does the job the rest of the time."}
+  ]},
+
+  {t:"Altitude and the medical kit", intro:"The single most important section, and the one that splits across bags most carefully: anything on a schedule goes in the sling, the working kit in the Talon, bulk and duplicates in the Away. Nothing medical goes only in the checked bag.", items:[
+    {n:"Altitude medication, if your doctor prescribes it", z:["TIBET","EBC"], b:"SLING", crit:1, note:"Start it on the schedule they give you, not when you feel bad — which means it has to be on you, not in the hold."},
+    {n:"Pulse oximeter", z:["EBC"], b:"TALON", note:"Tiny, cheap, and turns \"I feel off\" into a number you can act on."},
+    {n:"Ibuprofen and acetaminophen", z:["ALL"], b:"TALON", note:"A working supply in the Talon, the rest of the box in the Away. Altitude headache is near-universal."},
+    {n:"Anti-nausea tablets", z:["EBC"], b:"TALON", note:"Nausea and appetite loss are the most common complaints at base camp."},
+    {n:"Motion sickness tablets", z:["TIBET"], b:"SLING", note:"Seven hours to Shigatse and 340 km over three passes above 5,000 m. You need these in the van, not in the pack in the boot."},
+    {n:"Loperamide and oral rehydration salts", z:["ALL"], b:"TALON", crit:1, note:"Sandra lost four days in Xi'an to food poisoning. Assume it will happen once, and keep two sachets in the sling."},
+    {n:"Electrolyte tablets or powder", z:["TIBET","EBC"], b:"TALON", note:"You need three to four litres a day up there and plain water won't keep up."},
+    {n:"Your prescriptions, in labelled bottles", z:["ALL"], b:"TALON", crit:1, note:"The full course in the Talon, a duplicate set in the Away, and a copy of the prescription in both."},
+    {n:"Throat lozenges and cough drops", z:["TIBET","EBC"], b:"SLING", note:"The dry plateau air shreds throats within a couple of days."},
+    {n:"Saline nasal spray and nasal gel", z:["TIBET","EBC"], b:"TALON", note:"Nosebleeds at altitude are routine and unpleasant in a shared room."},
+    {n:"Sunscreen SPF 50 — large tube checked, small tube on you", z:["TIBET","EBC"], b:"AWAY", crit:1, note:"The big tube is over 100 ml so it has to go in the Away; carry a 50 ml one in the sling. UV at 5,200 m burns skin you didn't know was exposed — under the chin, inside the nose, ears."},
+    {n:"Lip balm with SPF, two of them", z:["TIBET","EBC"], b:"SLING", note:"One in the sling, the spare in the Away. You will lose one, and cracked lips at altitude take the whole trip to heal."},
+    {n:"Eye drops", z:["TIBET","EBC"], b:"SLING", note:"Dust, wind and dry air, all at once."},
+    {n:"Blister kit — Compeed, moleskin, tape", z:["TIBET","DISNEY"], b:"DAY", note:"In the day bag, not the hotel. Before the hot spot becomes a blister."},
+    {n:"Small first aid: plasters, antiseptic wipes, tweezers", z:["ALL"], b:"TALON", note:"Nothing elaborate. The guide carries a kit too."},
+    {n:"Hand sanitiser, several small bottles", z:["ALL"], b:"SLING", note:"One in the sling, one in the daypack, one in the Talon, one in a coat pocket."},
+    {n:"Antibacterial wipes", z:["ALL"], b:"DAY", note:"Train tables, hotel remotes, your hands before every meal."},
+    {n:"Melatonin", z:["ALL"], b:"TALON", note:"Twelve hours of time change on the way out. Do not take a sleeping pill at altitude, though."},
+    {n:"A multivitamin", z:["ALL"], b:"AWAY", note:"Sandra's diet in China ran to noodles, rice and pork, and she felt the gap."}
+  ]},
+
+  {t:"Clothing — the layering system", intro:"A base that manages sweat, a mid that traps heat, a shell that stops wind. At base camp you wear all three at once, in bed — which is why the warm layers live in the Away but are tagged to move into the Talon at Shigatse. Fly in the bulkiest pieces: every kilo on your body is a kilo not counted against 20.", items:[
+    {n:"Merino base layer tops ×2", z:["TIBET","EBC"], b:"AWAY", mv:"TALON", note:"Keep one clean and unworn for the base camp night."},
+    {n:"Merino long johns ×2", z:["EBC"], b:"AWAY", mv:"TALON", crit:1, note:"You sleep in these at EBC. Wool, not cotton."},
+    {n:"Grid fleece or midweight fleece", z:["TIBET","EBC"], b:"AWAY", mv:"TALON", note:"The layer you'll live in for a week."},
+    {n:"Packable down or synthetic puffy", z:["TIBET","EBC"], b:"TALON", crit:1, note:"Lives in the carry-on so it's never lost and never counted: Lhasa evenings, every pass stop, and under the shell at base camp."},
+    {n:"Hardshell jacket, waterproof and windproof, hooded", z:["ALL"], b:"WEAR", crit:1, note:"Wear it on the plane. Wind at the passes is the real problem, not rain, and it covers Xi'an showers too."},
+    {n:"Light waterproof overtrousers", z:["EBC"], b:"AWAY", mv:"TALON", note:"Pack small, worth their weight standing around at 5,200 m."},
+    {n:"Trekking trousers ×2, one warmer", z:["TIBET","EBC"], b:"AWAY", note:"Softshell for the plateau days, lighter for Lhasa."},
+    {n:"Jeans or casual trousers ×1", z:["XIAN","SHANGHAI"], b:"AWAY", note:"For the cities, where technical clothing looks odd."},
+    {n:"T-shirts and casual shirts ×4", z:["XIAN","SHANGHAI"], b:"AWAY", note:"Quick-dry ones earn their place — you'll do sink laundry."},
+    {n:"One collared shirt and a smarter layer", z:["SHANGHAI"], b:"AWAY", note:"Five nights in Shanghai with dinners you haven't planned yet."},
+    {n:"Underwear ×8–10, quick-dry", z:["ALL"], b:"AWAY", note:"Two pairs live in the Talon so a delayed bag isn't a crisis. Cotton stays wet; merino or synthetic."},
+    {n:"Hiking socks ×5", z:["TIBET"], b:"AWAY", note:"Wool or synthetic, no cotton."},
+    {n:"Heavy wool socks ×2", z:["EBC"], b:"AWAY", mv:"TALON", crit:1, note:"One dry pair reserved for sleeping. Cold feet keep you awake all night."},
+    {n:"Warm hat covering the ears", z:["TIBET","EBC"], b:"TALON", crit:1, note:"You lose most of your heat here and you'll sleep in it at base camp."},
+    {n:"Brimmed sun hat", z:["TIBET"], b:"DAY", note:"Clipped to the outside of the daypack. The plateau sun is relentless at midday even when the air is cold."},
+    {n:"Buff or neck gaiter ×2", z:["TIBET","EBC"], b:"SLING", note:"One in the sling, one in the Away. Sun on the neck, dust on the roads, wind on the face — the most useful small thing you'll carry."},
+    {n:"Liner gloves and insulated gloves", z:["EBC"], b:"TALON", crit:1, note:"Liners let you work a camera without bare hands at 21 °F (−6 °C)."},
+    {n:"Sunglasses, category 3 or 4, wraparound", z:["TIBET","EBC"], b:"SLING", crit:1, note:"On you, spare pair in the Away. Glare off snow at 5,200 m is genuinely damaging."},
+    {n:"Sleepwear", z:["TRAIN","TIBET"], b:"TALON", note:"In the carry-on, because the first night you need it is on the train, thirty hours before you next see the Away. Four-berth cabin with strangers, then a twin room with Jeff."},
+    {n:"Swimsuit", z:["XIAN","SHANGHAI"], b:"AWAY", note:"City hotel pools. Weighs nothing."},
+    {n:"Light jacket for Shanghai", z:["SHANGHAI"], b:"AWAY", note:"72 °F (22 °C) days, 59 °F (15 °C) nights. The hardshell also does this job if you'd rather save the space."}
+  ]},
+
+  {t:"Footwear", intro:"Three pairs. You fly in the heaviest, one pair rides in the carry-on, and only the city shoes get checked.", items:[
+    {n:"Waterproof hiking boots or sturdy trail shoes", z:["TIBET","EBC"], b:"WEAR", crit:1, note:"Wear them on the plane. Never check the shoes you can't replace, and they're the heaviest single thing you own."},
+    {n:"City walking shoes", z:["XIAN","SHANGHAI","DISNEY"], b:"AWAY", note:"The Xi'an wall and several 20,000-step days at Disney. Rotating between these and the boots is the best thing you can do for your feet."},
+    {n:"Slides for the train corridor and the tent", z:["TRAIN","EBC"], b:"TALON", crit:1, note:"Don't fly a pair of rubber slides across the Pacific — buy them in Xi'an on day one; see \"Buy it in China\". Then they live in the Talon, because you need them in the train corridor before you ever open the Away."},
+    {n:"Warm insoles or a spare pair", z:["EBC"], b:"AWAY", mv:"TALON", note:"Cheap insurance against cold feet on the plateau."}
+  ]},
+
+  {t:"Electronics and power", intro:"Two rules decide where these go. Lithium never travels in the hold, so every battery is in a bag that stays with you. And base camp has no outlets, so anything you rely on that night arrives charged and sleeps in your bag.", items:[
+    {n:"Phone, plus your old phone as a backup", z:["ALL"], b:"SLING", note:"A second handset covers theft, loss, and a Chinese SIM in one device. Keep them in different bags."},
+    {n:"20,000 mAh power bank", z:["TRAIN","EBC"], b:"TALON", crit:1, note:"Bought in Xi'an, not brought — your American one is not legal on the Lhasa–Shanghai flight; see \"Buy it in China\". It then lives in the Talon: carry-on only, never checked, because lithium in the hold is banned outright in China."},
+    {n:"A second, smaller power bank", z:["EBC","DISNEY"], b:"SLING", note:"Also bought there. It lives in the sling deliberately: if the Talon gets gate-checked on a domestic sector you still have a battery, and it's the one you want in your pocket at Disney."},
+    {n:"Multi-port charger and three cables", z:["ALL"], b:"TALON", note:"Cables fail. Bring the spare."},
+    {n:"Plug adapters ×2 — types A, C and I", z:["ALL"], b:"TALON", note:"One in the Talon, one in the Away. Chinese sockets vary by building age."},
+    {n:"Headlamp and spare batteries", z:["EBC"], b:"TALON", crit:1, note:"There is no lighting at the base camp toilets. A phone torch works until the phone dies."},
+    {n:"Camera, spare batteries, memory cards", z:["ALL"], b:"DAY", note:"Cold flattens camera batteries — spares in an inside pocket, and in your sleeping bag overnight. If you'd rather have it to hand all day, that's the argument for the Peak Design sling."},
+    {n:"Earplugs and eye mask", z:["TRAIN","EBC"], b:"TALON", crit:1, note:"Thirty hours in a four-berth cabin, then a thin-walled tent camp."},
+    {n:"Headphones, including a wired pair", z:["TRAIN"], b:"SLING", note:"Wired ones don't need charging on a thirty-hour train."},
+    {n:"Kindle or a paperback", z:["TRAIN"], b:"TALON", note:"Avoid a printed guidebook to Tibet — political content gets confiscated at checkpoints. Download it instead."},
+    {n:"Watch or a small alarm clock", z:["EBC"], b:"WEAR", note:"For the base camp sunrise, when your phone may be flat."},
+    {n:"Travel eSIM, installed before you fly", z:["ALL"], b:"SLING", crit:1, note:"Sandra credits a Chinese SIM three separate times with saving her trip — but that advice has inverted since 2017. A local SIM now sits inside the firewall and would kill WhatsApp, which is how James reaches you. Install a travel eSIM at home instead: it routes through a foreign carrier, so WhatsApp, mail and maps just work. A local SIM is worth it only for rural Tibet coverage, and only if the guide arranges it."}
+  ]},
+
+  {t:"Toiletries and washing", intro:"There is no shower at base camp and the Shigatse hot water is unreliable. Plan to be clean by other means for about 48 hours — and note that anything over 100 ml has to ride in the Away.", items:[
+    {n:"Toothbrush, toothpaste, floss", z:["ALL"], b:"TALON", note:"A travel set in the Talon for the train, the full one in the Away. Brush with bottled water. Every time."},
+    {n:"Heavy moisturiser and hand cream", z:["TIBET","EBC"], b:"AWAY", note:"Big tub checked, a small tube in the sling. The plateau is bone dry and your hands will crack."},
+    {n:"No-rinse body wipes", z:["EBC"], b:"AWAY", mv:"TALON", crit:1, note:"This is your shower on 7 October."},
+    {n:"Wet wipes and tissue packets", z:["ALL"], b:"SLING", crit:1, note:"Pocket-level, always. Squat toilets rarely supply paper, and base camp has pit toilets. Sandra repeats this more than any other tip."},
+    {n:"Quick-dry travel towel", z:["EBC"], b:"AWAY", mv:"TALON", note:"The camp provides nothing."},
+    {n:"Deodorant, soap, shampoo", z:["ALL"], b:"AWAY", note:"Hotels supply these; camps don't."},
+    {n:"Razor and nail clippers", z:["ALL"], b:"AWAY", note:"Clippers in the checked bag — they will be taken off you at security otherwise."},
+    {n:"Glasses, plus contacts and solution", z:["TIBET","EBC"], b:"TALON", crit:1, note:"Bring the glasses even if you never wear them — dust and dry air make lenses miserable above 4,000 m."},
+    {n:"Face masks", z:["ALL"], b:"SLING", note:"Road dust on the plateau, and still normal in Chinese cities."}
+  ]},
+
+  {t:"Thirty hours on the Z165", intro:"Xi'an 09:27 on 2 October to Lhasa 15:36 on the 3rd. The Away goes on the cabin floor and stays shut; everything below is in the Talon, up on the bunk with you. The slow climb is doing your acclimatisation for you — an advantage over the group, who flew more of it. Piped oxygen appears at the berths as you gain height; use it if you feel rough.", items:[
+    {n:"Passport in the sling, not the pack", z:["TRAIN"], b:"SLING", crit:1, note:"It is the ticket. There is no paper one, and it gets checked at the gate, on board and at the Lhasa exit."},
+    {n:"Food for thirty hours", z:["TRAIN"], b:"TALON", crit:1, note:"The dining car is limited and shuts early. Instant noodles, bars, nuts, dried fruit, chocolate."},
+    {n:"Thermos, for the carriage water dispenser", z:["TRAIN","TIBET"], b:"TALON", note:"Every carriage has a boiling-water dispenser and this is how everyone eats and drinks on Chinese trains. Buy it in Xi'an before you board rather than carrying one from home."},
+    {n:"Two litres of bottled water, bought before boarding", z:["TRAIN"], b:"BUY", note:"Station security scans liquids with a special reader — expect it and don't be surprised."},
+    {n:"Instant coffee or tea sachets", z:["TRAIN"], b:"TALON", note:"Given the hot water, a real quality-of-life item."},
+    {n:"Neck pillow", z:["TRAIN"], b:"TALON", note:"Clip it to the outside of the pack. The berths are flat but short."},
+    {n:"Board at least thirty minutes early", z:["TRAIN"], b:"", crit:1, note:"With a 29-inch case this matters more for you than for most: it won't fit under the berth or reliably above the door, so you are competing for cabin floor space, and that competition starts before the doors open."},
+    {n:"Something to give your cabin-mates", z:["TRAIN"], b:"TALON", note:"Snacks or a small gift. Thirty hours is a long time to be the silent foreigner."}
+  ]},
+
+  {t:"The base camp night", intro:"At Shigatse on the 6th, the Away stays in the hotel and the Talon becomes the only bag that matters. Pull the EBC cube across, add the parka and the sleeping kit, fold the daypack flat inside. One night at 5,200 m in a tent heated by a yak-dung stove: quilts provided, no power, no shower, pit toilets.", items:[
+    {n:"Sleeping bag liner, silk or fleece", z:["EBC"], b:"TALON", crit:1, note:"The camp quilts are heavy and warm but not always clean. The liner adds a few degrees too, and weighs almost nothing."},
+    {n:"Chemical hand and toe warmers, six pairs", z:["EBC"], b:"TALON", crit:1, note:"Two in the boots, two in the gloves, two in the sleeping bag. Cheap, weightless, transformative."},
+    {n:"A wide-mouth bottle you can fill with boiling water", z:["EBC"], b:"TALON", note:"Fill it at the stove and put it in the bottom of your sleeping bag. Best trick there is."},
+    {n:"Everything electronic, fully charged", z:["EBC"], b:"TALON", crit:1, note:"No outlets. Sleep with the phone, camera batteries and power bank inside the bag — cold drains them overnight."},
+    {n:"Your own snacks and water for the night", z:["EBC"], b:"TALON", note:"The camp sells very little and your appetite will be poor. Eat anyway; calories are what keep you warm."},
+    {n:"Toilet paper and hand sanitiser in a pocket", z:["EBC"], b:"SLING", note:"Pit toilets, no lighting, no supplies. In a pocket, not in a bag in the tent."},
+    {n:"Skip the shower, the alcohol and the sleeping pill", z:["EBC"], b:"", crit:1, note:"All three make altitude worse. A bad night's sleep at 5,200 m is normal and not a reason to medicate."},
+    {n:"Get up for sunrise", z:["EBC"], b:"", note:"October gives the clearest skies of the year on the north face. It is why the tour runs now."}
+  ]},
+
+  {t:"Food, water and the stomach", intro:"The part of this trip most likely to go wrong is also the most preventable. Sandra used bottled water for everything until she trusted a hostel water cooler in Xi'an, and lost four days.", items:[
+    {n:"Bottled water only — including for brushing your teeth", z:["ALL"], b:"BUY", crit:1, note:"No exceptions, no coolers, no ice."},
+    {n:"Water purification tablets or a filter bottle", z:["EBC"], b:"TALON", note:"A backup for the plateau, where buying bottled water gets harder and pricier."},
+    {n:"Snacks you actually like", z:["TIBET","EBC"], b:"TALON", crit:1, note:"Appetite collapses at altitude. Bring things you'll eat when you don't want to eat — and pack them where you can reach them, not in the Away."},
+    {n:"Instant oatmeal and soup sachets", z:["TRAIN","EBC"], b:"TALON", note:"Hot water is available almost everywhere in China."},
+    {n:"Chopsticks or a spork of your own", z:["TRAIN"], b:"TALON", note:"Optional, but station chopsticks are sanitised and reused."}
+  ]},
+
+  {t:"Small things that make China easier", intro:"Cheap, light, and each one solves a problem Sandra actually hit.", items:[
+    {n:"Small gifts from home", z:["ALL"], b:"AWAY", note:"Postcards of Atlanta, pins, small candy — a few in the Talon for the train, the rest in the Away. Sandra handed out NYC postcards and says it landed every single time."},
+    {n:"Umbrella — buy it there", z:["XIAN","SHANGHAI"], b:"BUY", note:"For sun as much as rain; Sandra carried one daily. ¥20–40 at any convenience store, and it then lives in the daypack."},
+    {n:"Small notes for monastery offerings and photo fees", z:["TIBET"], b:"SLING", note:"Many monasteries charge for photography and some ban it outright. Ask first, always."},
+    {n:"Modest clothes for the monasteries", z:["TIBET"], b:"AWAY", note:"Long trousers, covered shoulders, hat off indoors. Potala, Jokhang, Sera and Tashilhunpo are all working religious sites."},
+    {n:"Notebook and pen", z:["ALL"], b:"SLING", note:"Landing cards, hotel names, and the phone numbers you'll need when the phone is dead."},
+    {n:"Duct tape wrapped round a pen, and a few zip ties", z:["ALL"], b:"TALON", note:"Repairs a bag strap, a boot, a tent zip."},
+    {n:"Printed copy of the itinerary", z:["ALL"], b:"TALON", note:"Including James's number and the tour reference."}
+  ]},
+
+  {t:"Shanghai Disneyland", intro:"Several days of your five Shanghai nights, 72 °F (22 °C) afternoons and 59 °F (15 °C) mornings, and — usefully — after Golden Week has cleared out. Two bags only: the daypack goes through screening, the sling stays on you. The Away does not leave the hotel.", items:[
+    {n:"Your physical passport, every park day", z:["DISNEY"], b:"SLING", crit:1, note:"The ticket is linked to the passport it was booked under and the named holder has to be present at entry. A photo or screenshot will not get you through."},
+    {n:"A working data connection all day", z:["DISNEY"], b:"SLING", crit:1, note:"Wait times, mobile ordering, show times and any Premier Access all live in the app, and QR codes must be live rather than screenshotted. This is the day your eSIM stops being a convenience."},
+    {n:"Power bank and cable in the day bag", z:["DISNEY"], b:"DAY", crit:1, note:"A full day of the app, the camera and the maps will flatten a phone by mid-afternoon, and a dead phone means no tickets and no way home."},
+    {n:"WeChat Pay or Alipay, funded", z:["DISNEY"], b:"SLING", note:"The resort is effectively cashless. Keep a small amount of cash as a fallback anyway."},
+    {n:"Decide on Disney Premier Access before you go", z:["DISNEY"], b:"", note:"Sold only through the official channels and locked to one named guest — you cannot buy it for someone else or hand it over."},
+    {n:"Rotate your shoes between park days", z:["DISNEY"], b:"AWAY", crit:1, note:"Multiple days at 20,000-plus steps. City shoes one day, boots or trail shoes the next — you already have both with you."},
+    {n:"Blister plasters in your pocket, not the hotel", z:["DISNEY"], b:"SLING", note:"Same kit as the Tibet section, but you want it on you."},
+    {n:"Spare socks in the day bag", z:["DISNEY"], b:"DAY", note:"Rain, water rides, and eight hours of walking."},
+    {n:"Packable rain poncho", z:["DISNEY"], b:"DAY", note:"Cheaper than buying one in the park, and Roaring Rapids will genuinely soak you."},
+    {n:"A layer you can take off and stuff in the bag", z:["DISNEY"], b:"DAY", note:"59 °F (15 °C) at rope drop, 72 °F (22 °C) by lunch, cool again for the fireworks."},
+    {n:"Refillable water bottle", z:["DISNEY"], b:"DAY", note:"There are refill points, and you will drink more than you expect on a warm day."},
+    {n:"Your own snacks", z:["DISNEY"], b:"DAY", note:"Outside food for personal consumption is allowed — no glass containers and nothing strong-smelling. It saves both queueing and money."},
+    {n:"Take the daypack, leave the Talon at the hotel", z:["DISNEY"], b:"DAY", crit:1, note:"This is exactly why the daypack stays under 26 L. Bulky bags, selfie sticks, large tripods and spray cans are turned away at screening."},
+    {n:"Sling for the coasters", z:["DISNEY"], b:"SLING", note:"TRON Lightcycle Power Run is ridden motorbike-style, face down — everything loose has to be stowed before you board, so a zipped sling you can wear tight beats loose pockets."},
+    {n:"Phone strap or lanyard", z:["DISNEY"], b:"SLING", note:"For the same reason."},
+    {n:"Sunscreen and a cap", z:["DISNEY"], b:"DAY", note:"The queues are long and a lot of them are unshaded, even in October."},
+    {n:"Arrive before opening, and leave before the fireworks end", z:["DISNEY"], b:"", note:"The rope-drop hour is worth two afternoon hours, and the post-fireworks crush at the gates and on Line 11 is the worst twenty minutes of the day."},
+    {n:"Pin trading pins, if you fancy it", z:["DISNEY"], b:"DAY", note:"Entirely optional, but cast members trade readily and it is a good way into conversation."}
+  ]},
+
+  {t:"Leave at home", special:"LEAVE", intro:"Tibet has rules that are enforced at road checkpoints, not at the border. Getting one of these wrong can cost you the permit and the tour.", items:[
+    {n:"No drone", z:["TIBET"], crit:1, note:"Confiscated in Tibet. Don't bring it as far as the airport."},
+    {n:"No Tibetan flag, Dalai Lama images, or political literature", z:["TIBET"], crit:1, note:"Checked for, confiscated, and it can end your permit. This includes guidebooks with political chapters."},
+    {n:"No American power banks at all", z:["ALL"], crit:1, note:"Not a weight call — a legal one. Without a 3C mark moulded into the case they are confiscated at Chinese domestic security with no appeal, and China bans lithium in the hold, so there is no way around it. Buy Chinese ones in Xi'an. The 100 Wh cap still applies on top of that."},
+    {n:"Don't use the Away's expansion zipper", z:["ALL"], crit:1, note:"Closed it is 157.5 cm linear, half a centimetre inside Korean Air's 158 cm. Expanded it is oversize, and oversize on a Chinese domestic sector is an argument you will lose in Lhasa."},
+    {n:"No new, unworn boots", z:["TIBET"], note:"You've got a week of walking at altitude."},
+    {n:"No jewellery or valuables you'd mind losing", z:["ALL"], note:"Nineteen days, ten beds, one tent."}
+  ]}
+];
+
+const ZONE_LABEL = {ALL:"All",XIAN:"Xi'an",TRAIN:"Train",TIBET:"Tibet",EBC:"EBC night",SHANGHAI:"Shanghai",DISNEY:"Disney"};
+const BAG_LABEL = {AWAY:"Away",TALON:"Talon 44",DAY:"Daypack",SLING:"Sling",WEAR:"On you",BUY:"Buy there"};
+const BAG_ORDER = ["SLING","DAY","TALON","AWAY","WEAR","BUY"];
+const BAG_TITLE = {
+  SLING:"The sling — on you", DAY:"The Osprey daypack — personal item", TALON:"The Osprey Talon 44 — carry-on",
+  AWAY:"The Away Large — checked", WEAR:"Worn, not packed", BUY:"Buy or rent it there"
+};
+const BAG_INTRO = {
+  SLING:"Three litres worn on the front, two inches deep. Documents, money, phone, the medication you take on a schedule, one power bank. Nothing here is replaceable and nothing here gets checked.",
+  DAY:"20–26 litres. The bag for a day out: Xi'an, the monasteries, and the park. It folds flat inside the Talon for base camp.",
+  TALON:"44 litres, 1.57 kg empty. Everything you need before you next open the Away — thirty hours on the train, and one night at 5,200 m. All lithium lives here or in the sling.",
+  AWAY:"104 litres, 5.5 kg empty, packed to 20 kg total. Clothes, bulk toiletries, duplicates, and everything over 100 ml. It opens in hotel rooms and nowhere else.",
+  WEAR:"On your body through every airport. The heaviest things you own, and the ones you cannot afford to have go missing.",
+  BUY:"Cheaper, lighter or easier to get in China than to carry from Atlanta — in the parka's case roughly two kilos of your checked allowance, and in the power bank's case the only version that will survive Lhasa airport security."
+};
+const LEG_ORDER = ["PREP","XIAN","TRAIN","TIBET","EBC","SHANGHAI","DISNEY","ALL","LEAVE"];
+const LEG_TITLE = {
+  PREP:"Before you fly", XIAN:"Xi'an", TRAIN:"The Z165", TIBET:"Tibet",
+  EBC:"The base camp night", SHANGHAI:"Shanghai", DISNEY:"Shanghai Disneyland",
+  ALL:"Carried the whole way", LEAVE:"Leave at home"
+};
+const LEG_INTRO = {
+  XIAN:"Three nights at 400 m, 50–68 °F (10–20 °C) with a fair chance of rain, in the middle of Golden Week.",
+  TRAIN:"Thirty hours from Xi'an to Lhasa in a four-berth soft sleeper, climbing to 5,072 m at the Tanggula Pass.",
+  TIBET:"Lhasa, Yamdrok, Shigatse and three passes above 5,000 m. Bright days, near-freezing nights, punishing UV.",
+  SHANGHAI:"Five nights at sea level, 72 °F (22 °C) and drying out, after the holiday crowds have gone.",
+  ALL:"In the bag from Atlanta to Atlanta, used on every leg."
+};
+const KEY = "packing-ebc-2026";
+
+function slug(s){return s.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,60);}
+
+let packed = new Set();
+try{
+  const seed = document.getElementById("packed-state");
+  if(seed) JSON.parse(seed.textContent||"[]").forEach(x=>packed.add(x));
+}catch(e){}
+try{
+  const local = JSON.parse(localStorage.getItem(KEY)||"null");
+  if(Array.isArray(local)) local.forEach(x=>packed.add(x));
+}catch(e){}
+
+let filter = "ALL", hidePacked = false, groupBy = "bag", artifactApi = null, timer = null;
+
+const bagEl = document.getElementById("bagstrip");
+BAGS.forEach(b=>{
+  const d = document.createElement("div");
+  d.className = "bg";
+  d.style.setProperty("--bc", "var(--b-" + b.k.toLowerCase() + ")");
+  d.innerHTML = '<span class="bg-name"></span><span class="bg-spec"></span><span class="bg-role"></span>';
+  d.querySelector(".bg-name").textContent = b.name;
+  d.querySelector(".bg-spec").textContent = b.spec;
+  d.querySelector(".bg-role").textContent = b.role;
+  bagEl.appendChild(d);
+});
+
+const climateEl = document.getElementById("climate");
+CLIMATE.forEach(c=>{
+  const d = document.createElement("div");
+  d.className = "cl";
+  d.style.setProperty("--zc", "var(--z-" + (c.k==="SHANGHAI"?"sh":c.k.toLowerCase()) + ")");
+  d.innerHTML = '<span class="cl-name"></span><span class="cl-when"></span><span class="cl-temp"></span><span class="cl-note"></span>';
+  d.querySelector(".cl-name").textContent = c.name;
+  d.querySelector(".cl-when").textContent = c.when;
+  d.querySelector(".cl-temp").textContent = c.temp;
+  d.querySelector(".cl-note").textContent = c.note;
+  climateEl.appendChild(d);
+});
+
+const groupEl = document.getElementById("grouping");
+const gl = document.createElement("span"); gl.className="lab"; gl.textContent="Group by"; groupEl.appendChild(gl);
+[["bag","Bag"],["cat","Category"],["leg","Leg of the trip"]].forEach(([k,label])=>{
+  const b=document.createElement("button"); b.className="f"; b.textContent=label; b.dataset.group=k;
+  b.setAttribute("aria-pressed", String(k===groupBy));
+  b.addEventListener("click",()=>{
+    groupBy=k;
+    groupEl.querySelectorAll("button[data-group]").forEach(x=>x.setAttribute("aria-pressed",String(x.dataset.group===k)));
+    render();
+  });
+  groupEl.appendChild(b);
+});
+
+const filtersEl = document.getElementById("filters");
+const fl = document.createElement("span"); fl.className="lab"; fl.textContent="Show"; filtersEl.appendChild(fl);
+["ALL","XIAN","TRAIN","TIBET","EBC","SHANGHAI","DISNEY"].forEach(z=>{
+  const b = document.createElement("button");
+  b.className = "f"; b.textContent = ZONE_LABEL[z]; b.dataset.zone = z;
+  b.setAttribute("aria-pressed", z===filter ? "true" : "false");
+  b.addEventListener("click",()=>{filter=z;syncFilters();render();});
+  filtersEl.appendChild(b);
+});
+const sep = document.createElement("span"); sep.className="sep"; filtersEl.appendChild(sep);
+const hideBtn = document.createElement("button");
+hideBtn.className="f"; hideBtn.textContent="Hide packed"; hideBtn.setAttribute("aria-pressed","false");
+hideBtn.addEventListener("click",()=>{hidePacked=!hidePacked;hideBtn.setAttribute("aria-pressed",String(hidePacked));render();});
+filtersEl.appendChild(hideBtn);
+
+function syncFilters(){
+  filtersEl.querySelectorAll("button[data-zone]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.zone===filter)));
+}
+
+SECTIONS.forEach(s=>s.items.forEach(i=>{i.id = slug(s.t)+"--"+slug(i.n); i.cat = s.t; i.special = s.special || null;}));
+const ALL_ITEMS = SECTIONS.flatMap(s=>s.items);
+
+function visible(item, group){
+  const exempt = group && group.always;
+  if(filter!=="ALL" && !exempt && !item.z.includes(filter)) return false;
+  if(hidePacked && packed.has(item.id)) return false;
+  return true;
+}
+
+function buildGroups(){
+  if(groupBy === "bag"){
+    const groups = BAG_ORDER.map(bag=>({
+      key:bag, title:BAG_TITLE[bag], intro:BAG_INTRO[bag],
+      all: ALL_ITEMS.filter(i=>!i.special && (i.b===bag || i.mv===bag)),
+      chips:"zones", tone:bag
+    })).filter(g=>g.all.length);
+    const buySec = SECTIONS.find(x=>x.t==="Buy it in China, not at home");
+    const buyGroup = groups.find(g=>g.key==="BUY");
+    if(buySec && buyGroup) buyGroup.cal = buySec.cal;
+    ["PREP","LEAVE"].forEach(sp=>{
+      const sec = SECTIONS.find(x=>x.special===sp);
+      if(sec) groups.push({key:sp, title:sec.t, intro:sec.intro, cal:sec.cal, all:sec.items, chips:"zones"});
+    });
+    const loose = ALL_ITEMS.filter(i=>!i.special && !i.b && !i.mv);
+    if(loose.length) groups.splice(groups.length-1, 0, {
+      key:"NOBAG", title:"Nothing to pack — just do it", intro:"Habits and decisions rather than objects. They matter as much as the gear.",
+      all:loose, chips:"zones"
+    });
+    const flowSec = SECTIONS.find(x=>x.special==="FLOW");
+    if(flowSec) groups.unshift({key:"FLOW", title:flowSec.t, intro:flowSec.intro, cal:flowSec.cal, all:[], chips:"zones"});
+    const bagsSec = SECTIONS.find(x=>x.t==="The four bags");
+    if(bagsSec) groups.unshift({key:"BAGSTRAT", title:bagsSec.t, intro:bagsSec.intro, cal:bagsSec.cal, picks:bagsSec.picks, all:[], chips:"zones"});
+    return groups;
+  }
+  if(groupBy === "cat"){
+    const groups = SECTIONS.map(sec=>({key:sec.t, title:sec.t, intro:sec.intro, cal:sec.cal, picks:sec.picks, all:sec.items, chips:"both"}));
+    if(filter !== "ALL"){
+      groups.push({
+        key:"Carried the whole way",
+        title:"Carried the whole way",
+        intro:"Not specific to this leg — these are in the bag from Atlanta to Atlanta, so you have them here too.",
+        all: ALL_ITEMS.filter(i=>!i.special && i.z.includes("ALL")),
+        chips:"cat", always:true
+      });
+    }
+    return groups.filter(g=>g.all.length || g.cal || g.picks);
+  }
+  return LEG_ORDER.map(leg=>{
+    let all;
+    if(leg==="PREP" || leg==="LEAVE"){
+      const sec = SECTIONS.find(x=>x.special===leg);
+      all = sec ? sec.items : [];
+      return {key:leg, title:LEG_TITLE[leg], intro:sec && sec.intro, all, chips:"zones"};
+    }
+    all = ALL_ITEMS.filter(i=>!i.special && i.z.includes(leg));
+    return {key:leg, title:LEG_TITLE[leg], intro:LEG_INTRO[leg], all, chips:"catbag", always:(leg==="ALL")};
+  }).filter(g=>g.all.length);
+}
+
+const listEl = document.getElementById("list");
+
+function chip(cls, text){ const s=document.createElement("span"); s.className=cls; s.textContent=text; return s; }
+
+function renderCallouts(sec, g){
+  (g.cal||[]).forEach(c=>{
+    const box = document.createElement("div");
+    box.className = "callout" + (c.warn ? " warn" : "");
+    const h = document.createElement("h3"); h.textContent = c.h; box.appendChild(h);
+    if(c.p){ const p=document.createElement("p"); p.textContent=c.p; box.appendChild(p); }
+    if(c.ol){
+      const ol = document.createElement("ol");
+      c.ol.forEach(([label,body])=>{
+        const li = document.createElement("li");
+        const st = document.createElement("strong"); st.textContent = label + " — ";
+        li.appendChild(st); li.appendChild(document.createTextNode(body));
+        ol.appendChild(li);
+      });
+      box.appendChild(ol);
+    }
+    sec.appendChild(box);
+  });
+  if(g.picks){
+    const box = document.createElement("div");
+    box.className = "callout";
+    const h = document.createElement("h3"); h.textContent = g.picks.h; box.appendChild(h);
+    const p = document.createElement("p"); p.textContent = g.picks.p; box.appendChild(p);
+    const grid = document.createElement("div"); grid.className = "picks";
+    g.picks.list.forEach(pk=>{
+      const d = document.createElement("div");
+      d.className = "pick" + (pk.best ? " best" : "");
+      d.appendChild(chip("pk-rank", pk.rank));
+      if(pk.url){
+        const a = document.createElement("a");
+        a.className = "pk-name"; a.href = pk.url; a.target = "_blank"; a.rel = "noopener noreferrer";
+        a.textContent = pk.name;
+        d.appendChild(a);
+      } else {
+        d.appendChild(chip("pk-name", pk.name));
+      }
+      d.appendChild(chip("pk-spec", pk.spec));
+      d.appendChild(chip("pk-why", pk.why));
+      grid.appendChild(d);
+    });
+    box.appendChild(grid);
+    sec.appendChild(box);
+  }
+}
+
+function render(){
+  listEl.textContent = "";
+  let shown = 0;
+  buildGroups().forEach(g=>{
+    const items = g.all.filter(i=>visible(i,g));
+    if(!items.length && !g.cal && !g.picks) return;
+    shown += items.length;
+    const sec = document.createElement("section");
+    const h = document.createElement("h2");
+    const scope = g.all.filter(i=>visible(i,g) || packed.has(i.id));
+    const done = scope.filter(i=>packed.has(i.id)).length;
+    h.innerHTML = '<span></span><span class="sec-count"></span>';
+    h.firstChild.textContent = g.title;
+    h.lastChild.textContent = scope.length ? (done + " / " + scope.length) : "";
+    if(g.tone) h.style.borderBottomColor = "var(--b-" + g.tone.toLowerCase() + ")";
+    sec.appendChild(h);
+    if(g.intro){
+      const p = document.createElement("p");
+      p.className="sec-intro"; p.textContent = g.intro;
+      sec.appendChild(p);
+    }
+    renderCallouts(sec, g);
+    items.forEach(i=>{
+      const row = document.createElement("div");
+      row.className = "row" + (packed.has(i.id)?" on":"");
+      const cb = document.createElement("input");
+      cb.type="checkbox"; cb.id = slug(g.key) + "--" + i.id; cb.checked = packed.has(i.id);
+      cb.addEventListener("change",()=>{
+        if(cb.checked) packed.add(i.id); else packed.delete(i.id);
+        save(); render();
+      });
+      const lab = document.createElement("label");
+      lab.className="name"; lab.setAttribute("for", cb.id); lab.textContent = i.n;
+      const tags = document.createElement("div");
+      tags.className="zones";
+      if(i.crit) tags.appendChild(chip("flag","Key"));
+      const wantBag = (g.chips === "both" || g.chips === "catbag");
+      if(wantBag && i.b) tags.appendChild(chip("b b-"+i.b, BAG_LABEL[i.b]));
+      if(i.mv && (wantBag || g.key !== i.mv)) tags.appendChild(chip("mv","→ " + BAG_LABEL[i.mv] + " at Shigatse"));
+      if(g.chips === "cat" || g.chips === "catbag"){
+        tags.appendChild(chip("cat-chip", i.cat));
+      } else {
+        i.z.forEach(z=>tags.appendChild(chip("z z-"+z, ZONE_LABEL[z])));
+      }
+      row.appendChild(cb); row.appendChild(lab); row.appendChild(tags);
+      if(i.note){ const n=document.createElement("p"); n.className="note"; n.textContent=i.note; row.appendChild(n); }
+      sec.appendChild(row);
+    });
+    listEl.appendChild(sec);
+  });
+  if(!shown){
+    const e = document.createElement("p");
+    e.className="empty";
+    e.textContent = "Nothing left in this view — everything here is packed.";
+    listEl.appendChild(e);
+  }
+  const total = ALL_ITEMS.length, done = ALL_ITEMS.filter(i=>packed.has(i.id)).length;
+  document.getElementById("fill").style.width = (total? (done/total*100):0) + "%";
+  document.getElementById("count").textContent = done + " / " + total;
+}
+
+function save(){
+  try{ localStorage.setItem(KEY, JSON.stringify([...packed])); }catch(e){}
+  if(!artifactApi) return;
+  setSync("Saving");
+  clearTimeout(timer);
+  timer = setTimeout(push, 2000);
+}
+
+function setSync(t){ document.getElementById("sync").textContent = t; }
+
+async function push(){
+  if(!artifactApi) return;
+  const tag = '<script id="packed-state" type="application/json">' + JSON.stringify([...packed]) + '<\/script>';
+  let html;
+  if(/id="packed-state"/.test(ORIGINAL)){
+    html = ORIGINAL.replace(/<script id="packed-state"[\s\S]*?<\/script>/, tag);
+  } else {
+    html = ORIGINAL.replace(/<\/body>/i, tag + "</body>");
+  }
+  try{
+    await artifactApi.publish(html);
+    setSync("Saved");
+  }catch(e){
+    setSync(e && e.code === "conflict" ? "" : "Local only");
+  }
+}
+
+render();
+
+(async ()=>{
+  try{
+    artifactApi = await claude.use("artifact");
+    if(artifactApi) setSync("Saved");
+  }catch(e){ artifactApi = null; }
+})();
+</script>
+
+<script>
+  // Online these point at the published pages; opened from the Trip Kit folder they
+  // point at the sibling files, so the set navigates with no connection.
+  if (location.protocol === "file:") {
+    document.querySelectorAll("a[data-kit]").forEach(function (a) {
+      a.setAttribute("href", a.getAttribute("data-kit"));
+    });
+  }
+</script>

@@ -222,7 +222,8 @@ footer.foot{border-top:1px solid var(--line); padding-block:20px 40px; color:var
 .g-tasks{grid-template-columns:minmax(0,1fr) 150px 96px 184px}
 .g-money{grid-template-columns:minmax(0,1fr) 192px 96px}
 .g-apps{grid-template-columns:minmax(0,1fr) 150px 96px}
-.g-packing{grid-template-columns:minmax(0,1fr) 134px 96px}
+.g-packing{grid-template-columns:minmax(0,1fr) 150px 132px 96px}
+.g-kit{grid-template-columns:minmax(0,1fr) 140px}
 .g-people{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr)}
 .g-reference{grid-template-columns:minmax(0,1fr) minmax(0,188px) 120px}
 .g-phrases{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
@@ -382,13 +383,23 @@ var SCHEMA=[
       {k:"status",l:"State",  type:"status"},
       {k:"detail",l:"Detail", type:"area",  ph:"Detail"}
     ]},
-  { id:"packing", doc:"packing", label:"Packing",
-    note:"Only the train-and-altitude essentials the master itinerary calls out. The full four-bag list lives on the Packing List page and the shopping side on the Prep Checklist.",
+  { id:"kit", doc:"kit", label:"Bags & weather",
+    note:"Four bags, the six times they get repacked, and the five climates the trip crosses. Everything in Packing is organised around this split.",
     fields:[
-      {k:"item",  l:"Item",  cls:"strong", ph:"Item"},
-      {k:"group", l:"Group", cls:"mono",   ph:"Category"},
-      {k:"status",l:"State", type:"status"},
-      {k:"detail",l:"Why",   type:"area",  ph:"Why"}
+      {k:"name",  l:"What",   cls:"big",   ph:"Name"},
+      {k:"kind",  l:"Kind",   cls:"mono",  ph:"Kind"},
+      {k:"spec",  l:"Spec",   cls:"mono",  wide:true, ph:"Spec"},
+      {k:"detail",l:"Detail", type:"area", ph:"Detail"}
+    ]},
+  { id:"packing", doc:"packing", label:"Packing",
+    note:"The full list from the Packing List page \u2014 every item with the bag it rides in, the legs it is for, and why it is on the list. Red means it is one of the ones you cannot forget.",
+    fields:[
+      {k:"item",  l:"Item",   cls:"strong", ph:"Item"},
+      {k:"group", l:"Group",  cls:"mono",   ph:"Category"},
+      {k:"bag",   l:"Bag",    cls:"mono",   ph:"Which bag"},
+      {k:"status",l:"State",  type:"status"},
+      {k:"zone",  l:"Legs",   cls:"mono",   wide:true, ph:"Which legs"},
+      {k:"detail",l:"Why",    type:"area",  ph:"Why"}
     ]},
   { id:"people", doc:"people", label:"People",
     note:"Four travelling companions, one consultant in Beijing who works on WhatsApp, and two people worth calling.",

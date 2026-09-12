@@ -1,116 +1,228 @@
 {
-  "items": [
-    {
-      "id": "t1",
-      "title": "Buy every Shanghai Disneyland ticket — window is open now",
-      "owner": "Aaron",
-      "due": "11–16 Sep",
-      "status": "action",
-      "detail": "The park sells on a rolling 30-day window that advances one day at a time, so your five October dates surface one per morning across 11–16 September. You board the Z165 on 2 October and are off-grid until the 10th — there is no scenario where you buy park tickets afterwards. Don't compute the exact day; open the calendar each morning from the 11th and buy whatever new October date has appeared. Buying the morning a date opens also catches the 30-day Early Bird fare, which is free money."
-    },
-    {
-      "id": "t2",
-      "title": "Book Shanghai — five nights, 10–15 Oct",
-      "owner": "Aaron",
-      "due": "this week",
-      "status": "action",
-      "detail": "The largest open block on the trip. Courtyard by Marriott Shanghai ITRZ at ~Y499/night, 900 m from the park gate, Line 11 terminus. See Stays for the full comparison and why the park side wins."
-    },
-    {
-      "id": "t3",
-      "title": "Set up the phone and the wallet",
-      "owner": "Aaron",
-      "due": "before 27 Sep",
-      "status": "action",
-      "detail": "Four things that cannot be done from inside China, in the order they bite: install the travel eSIM profile and the VPN before you fly; get Alipay verified against your passport by about the 24th, because review takes one to three business days and unverified caps are low; and tell the card issuer to expect international purchases and to allow 3D Secure, which is the commonest reason a wallet refuses to bind."
-    },
-    {
-      "id": "t4",
-      "title": "Reserve the Terracotta Warriors for 30 Sep",
-      "owner": "Aaron",
-      "due": "24 Sep",
-      "status": "action",
-      "detail": "Seven days out including the booking day, so 30 September opens on the 24th. bmy.com.cn or the museum's own WeChat account — both take a passport directly and the gate scanners read it. Not through an OTA: the museum stated in June it has never authorised a third-party platform, and the on-site ticket windows are gone entirely. For holidays it has lately released the whole block at once about a week out, so watch for a National Day notice from around the 20th."
-    },
-    {
-      "id": "t5",
-      "title": "Reserve the Shaanxi History Museum for 1 Oct",
-      "owner": "Aaron",
-      "due": "26 Sep, 05:00 Atlanta",
-      "status": "action",
-      "detail": "Free but ticketed, released five days ahead at 17:00 China time sharp against a daily quota — 05:00 in Atlanta. Book at sxhm.com, the WeChat mini-programme, or the WeChat account (陕西历史博物馆); the website route is newer and easiest with a passport. Prefilling your details is not the same as submitting. Extended hours through 14 Nov, 08:30–19:00, no weekly closure, so a failed morning slot can be retried for an evening one."
-    },
-    {
-      "id": "t6",
-      "title": "Get the tour dates in writing from James",
-      "owner": "Aaron",
-      "due": "before departure",
-      "status": "action",
-      "detail": "The last loose thread. Day 1 through Day 8 is inferred, not stated: your train gets in the afternoon of the 3rd, everyone flies out on the 10th, and the others arrive on the 2nd with the extra pre-tour night he offered. It fits, but nobody has written the dates down — worth one line while you have his attention. One message from him dated 17 August could not be decrypted in the browser."
-    },
-    {
-      "id": "t7",
-      "title": "Pin the Tibet permit delivery to 30 Sep or earlier",
-      "owner": "Aaron / James",
-      "due": "by 30 Sep",
-      "status": "action",
-      "detail": "James has confirmed delivery to the Westin. Courier networks slow to a crawl over Golden Week (1–7 Oct), and the permit is the one item on this trip with no fallback. Delivery address: 西安威斯汀大酒店，西安市曲江新区慈恩路66号. Confirm on 1 Oct that it has physically arrived."
-    },
-    {
-      "id": "t8",
-      "title": "Ask the Westin to link the two reservations",
-      "owner": "Aaron",
-      "due": "before 29 Sep",
-      "status": "action",
-      "detail": "84579041 and 84582237 are back-to-back. Unlinked, you risk being moved rooms on the morning of the 1st."
-    },
-    {
-      "id": "t9",
-      "title": "Grab the Urban Planning Exhibition Center slot from Lhasa",
-      "owner": "Aaron",
-      "due": "4 Oct",
-      "status": "pending",
-      "detail": "Its booking window opens seven days out, which for Sunday the 11th means 4 October — while you are somewhere between Shigatse and base camp. Take it from Lhasa if you have signal; otherwise book the moment you land on the Saturday night and accept that a Sunday slot may be gone. Free, timed, via the WeChat mini-programme, 09:00–17:00, last entry 16:00, closed Wednesdays."
-    },
-    {
-      "id": "t10",
-      "title": "Buy a power bank in Xi'an",
-      "owner": "Aaron",
-      "due": "30 Sep – 1 Oct",
-      "status": "action",
-      "detail": "Since 28 June 2025 the CAAC requires a moulded 3C mark on any power bank taken on a mainland domestic flight. No US-market unit carries one, and lithium can't go in the hold — so an uncertified one is confiscated at Lhasa on the way to Shanghai. Buy Xiaomi, Baseus or UGREEN in Xi'an, ~Y100–200. You need it for thirty hours on a Z-service with no reliable power."
-    },
-    {
-      "id": "t11",
-      "title": "Take everything offline before leaving Xi'an",
-      "owner": "Aaron",
-      "due": "1 Oct",
-      "status": "action",
-      "detail": "Coverage falls away outside the Lhasa valley — assume nothing on the Yamdrok/Shigatse road days or at EBC. Offline copies of: the Tibet permit, passport, insurance, hotel confirmations, the Drive 'Important Info In China' sheet (Drive is blocked without offshore data), and offline map packs for Shaanxi, Shanghai and Tibet. Download the Google Translate offline Chinese pack — camera translation on menus works offline."
-    },
-    {
-      "id": "t12",
-      "title": "Check whether Pit 2's south side has reopened",
-      "owner": "Aaron",
-      "due": "before 30 Sep",
-      "status": "pending",
-      "detail": "A works notice dated 4 September runs about a month from the 5th, which lands right on your visit to the Terracotta Warriors."
-    },
-    {
-      "id": "t13",
-      "title": "Confirm October park hours and the 11–14 Oct prices",
-      "owner": "Aaron",
-      "due": "when the window opens",
-      "status": "pending",
-      "detail": "October park hours still aren't published — the official calendar returns 'unable to provide time' for those dates. Plan against 08:30–20:00, which is what the site shows for the current window. Exact prices for 11–14 October don't exist yet either; expect Y499 Sun/Mon and Y475 Tue/Wed, the shape the same weekdays carry a month earlier."
-    },
-    {
-      "id": "t14",
-      "title": "Finish registering the Shanghai Disney Resort app in Shanghai",
-      "owner": "Aaron",
-      "due": "10 Oct",
-      "status": "pending",
-      "detail": "Install before you leave, but expect to finish registration on a local network from the Courtyard rather than from home — it leans on SMS verification that foreign numbers handle unevenly. It is the only route to Disney Premier Access in-park."
-    }
-  ]
+ "items": [
+  {
+   "id": "tk001",
+   "title": "Buy every Shanghai Disneyland park date",
+   "owner": "Aaron",
+   "status": "action",
+   "due": "11-16 Sep",
+   "detail": "The hard deadline. The sales calendar rolls forward a day at a time, so your five October dates surface one per morning between 11 and 16 September — check it daily and buy each as it appears. You board the Z165 on 2 October and are off-grid until the 10th, so there is no second chance."
+  },
+  {
+   "id": "tk002",
+   "title": "Install the travel eSIM and the VPN",
+   "owner": "Aaron",
+   "status": "action",
+   "due": "by 27 Sep",
+   "detail": "Neither can be obtained inside China. The eSIM is the one that matters: it routes through a foreign carrier, which is what keeps WhatsApp working, and WhatsApp is the only channel James uses."
+  },
+  {
+   "id": "tk003",
+   "title": "Get Alipay verified against your passport",
+   "owner": "Aaron",
+   "status": "action",
+   "due": "by 24 Sep",
+   "detail": "Submit by about 24 September — review takes one to three business days and the unverified limits are low. Alipay also carries the metro ride code in both Xi'an and Shanghai."
+  },
+  {
+   "id": "tk004",
+   "title": "Book Shanghai, 10–15 Oct",
+   "owner": "Aaron",
+   "status": "pending",
+   "due": "this week",
+   "detail": "The last unbooked bed. Courtyard by Marriott Shanghai ITRZ, ~¥499, ten minutes from the park gate on the Line 11 terminus."
+  },
+  {
+   "id": "tk005",
+   "title": "Wear-test the Waistpack for a full day, loaded",
+   "owner": "Aaron",
+   "status": "action",
+   "due": "before packing",
+   "detail": "Put the real sling contents in it — passport, permit, phone, meds, wipes, power bank, sunglasses — and wear it out for a day. The open question is the sunglasses: 2 in of depth means a hard case won't go, so decide now whether they ride bare, in a soft pouch, or on your face. Return the 7 L Sling inside REI's window."
+  },
+  {
+   "id": "tk006",
+   "title": "Confirm the checked allowance on the China Eastern sector",
+   "owner": "Aaron",
+   "status": "action",
+   "due": "before packing",
+   "detail": "Domestic Chinese economy is normally 20 kg, not the 23 kg Korean Air gives you. If GBDPCB is ticketed as part of the international journey it may inherit the higher allowance — ask James, because 3 kg decides what comes."
+  },
+  {
+   "id": "tk007",
+   "title": "Do a full pack and weigh the Away at home",
+   "owner": "Aaron",
+   "status": "action",
+   "due": "before packing",
+   "detail": "Twice: once at 23 kg for Korean Air, once at 20 kg for the train and the domestic flight. The second number is the one that counts."
+  },
+  {
+   "id": "tk008",
+   "title": "Install and test a VPN — two of them",
+   "owner": "Aaron",
+   "status": "pending",
+   "due": "by 27 Sep",
+   "detail": "It must work before you land. Installing one from inside China is much harder."
+  },
+  {
+   "id": "tk009",
+   "title": "Set up WeChat and fund the wallets",
+   "owner": "Aaron",
+   "status": "pending",
+   "due": "before 27 Sep",
+   "detail": "Cash is a backup in China now, not the default. Do this at home. Tell the card issuer to expect international purchases and to allow 3D Secure — that refusal is the commonest reason a wallet won't bind."
+  },
+  {
+   "id": "tk010",
+   "title": "Download offline maps, Pleco, and the Google Translate Chinese pack",
+   "owner": "Aaron",
+   "status": "pending",
+   "due": "before 27 Sep",
+   "detail": "Organic Maps — the maintained successor to the maps.me Sandra used. Add Amap in English for live transit. She credits offline GPS with rescuing her repeatedly."
+  },
+  {
+   "id": "tk011",
+   "title": "Download 30 hours of entertainment",
+   "owner": "Aaron",
+   "status": "pending",
+   "due": "by 1 Oct",
+   "detail": "Podcasts, films, books. Assume no usable data from Xi'an to Lhasa."
+  },
+  {
+   "id": "tk012",
+   "title": "Tell your banks and card issuers the dates",
+   "owner": "Aaron",
+   "status": "pending",
+   "due": "before 27 Sep",
+   "detail": "Include China and Korea. A frozen card in Shigatse is a bad afternoon."
+  },
+  {
+   "id": "tk013",
+   "title": "Ask your doctor about altitude medication",
+   "owner": "Aaron",
+   "status": "action",
+   "due": "now",
+   "detail": "You go from 400 m to 5,200 m in nine days with almost no acclimatisation buffer. Worth a conversation about acetazolamide, an anti-nausea option, and an antibiotic for traveller's diarrhoea."
+  },
+  {
+   "id": "tk014",
+   "title": "Check that your travel insurance covers 5,200 m",
+   "owner": "Aaron",
+   "status": "pending",
+   "due": "before 27 Sep",
+   "detail": "Many policies cap altitude or exclude evacuation. Confirm both in writing."
+  },
+  {
+   "id": "tk015",
+   "title": "Leave copies of everything with someone at home",
+   "owner": "Aaron",
+   "status": "pending",
+   "due": "before 27 Sep",
+   "detail": "Passport, visa, itinerary, insurance, card numbers."
+  },
+  {
+   "id": "tk016",
+   "title": "Book dated Shanghai Disneyland tickets under your passport",
+   "owner": "Aaron",
+   "status": "action",
+   "due": "11-16 Sep",
+   "detail": "Tickets are tied to the passport you carry to the gate. Buy from the official site, app, WeChat account or Fliggy store first — the Early Bird and bundle prices exist only there. If the checkout rejects your card or demands a Chinese SMS code, Klook and Trip.com are on Disney's official travel-partner list and are the fallback. Weekdays 12–15 Oct will be quieter than your first weekend."
+  },
+  {
+   "id": "tk017",
+   "title": "Install the Shanghai Disney Resort app and log in at home",
+   "owner": "Aaron",
+   "status": "pending",
+   "due": "before 27 Sep",
+   "detail": "Logging in at the gate is how people lose their first hour. Expect to finish registration in Shanghai rather than Atlanta — it leans on SMS verification that foreign numbers handle unevenly, and it goes better on a local network. It needs live data all day; screenshots of QR codes are not accepted."
+  },
+  {
+   "id": "tk018",
+   "title": "Pick a Shanghai hotel on Metro Line 11",
+   "owner": "Aaron",
+   "status": "pending",
+   "due": "this week",
+   "detail": "Line 11 runs straight to Disney Resort station, and you still arrive at Hongqiao and leave from Pudong."
+  },
+  {
+   "id": "tk019",
+   "title": "Break in the boots",
+   "owner": "Aaron",
+   "status": "pending",
+   "due": "now",
+   "detail": "Now, not on the Gyawu La."
+  },
+  {
+   "id": "tk020",
+   "title": "Plan a day-one shopping run in Xi'an",
+   "owner": "Aaron",
+   "status": "action",
+   "due": "29-30 Sep",
+   "detail": "Power banks, slides, thermos, wipes and train food — one afternoon at a supermarket and an electronics shop covers the whole \"Buy it in China\" list before the Z165 leaves on the 2nd. Golden Week starts 1 October, so do it on the 29th or 30th."
+  },
+  {
+   "id": "tk021",
+   "title": "Reserve the Terracotta Warriors for 30 Sep",
+   "owner": "Aaron",
+   "due": "24 Sep",
+   "status": "action",
+   "detail": "Seven days out including the booking day, so 30 September opens on the 24th. bmy.com.cn or the museum's own WeChat account — both take a passport directly and the gate scanners read it. Not through an OTA: the museum stated in June it has never authorised a third-party platform, and the on-site ticket windows are gone entirely. For holidays it has lately released the whole block at once about a week out, so watch for a National Day notice from around the 20th."
+  },
+  {
+   "id": "tk022",
+   "title": "Reserve the Shaanxi History Museum for 1 Oct",
+   "owner": "Aaron",
+   "due": "26 Sep, 05:00 Atlanta",
+   "status": "action",
+   "detail": "Free but ticketed, released five days ahead at 17:00 China time sharp against a daily quota — 05:00 in Atlanta. Book at sxhm.com, the WeChat mini-programme, or the WeChat account (陕西历史博物馆); the website route is newer and easiest with a passport. Prefilling your details is not the same as submitting. Extended hours through 14 Nov, 08:30–19:00, no weekly closure, so a failed morning slot can be retried for an evening one."
+  },
+  {
+   "id": "tk023",
+   "title": "Get the tour dates in writing from James",
+   "owner": "Aaron",
+   "due": "before departure",
+   "status": "action",
+   "detail": "The last loose thread. Day 1 through Day 8 is inferred, not stated: your train gets in the afternoon of the 3rd, everyone flies out on the 10th, and the others arrive on the 2nd with the extra pre-tour night he offered. It fits, but nobody has written the dates down — worth one line while you have his attention. One message from him dated 17 August could not be decrypted in the browser."
+  },
+  {
+   "id": "tk024",
+   "title": "Pin the Tibet permit delivery to 30 Sep or earlier",
+   "owner": "Aaron / James",
+   "due": "by 30 Sep",
+   "status": "action",
+   "detail": "James has confirmed delivery to the Westin. Courier networks slow to a crawl over Golden Week (1–7 Oct), and the permit is the one item on this trip with no fallback. Delivery address: 西安威斯汀大酒店，西安市曲江新区慈恩路66号. Confirm on 1 Oct that it has physically arrived."
+  },
+  {
+   "id": "tk025",
+   "title": "Ask the Westin to link the two reservations",
+   "owner": "Aaron",
+   "due": "before 29 Sep",
+   "status": "action",
+   "detail": "84579041 and 84582237 are back-to-back. Unlinked, you risk being moved rooms on the morning of the 1st."
+  },
+  {
+   "id": "tk026",
+   "title": "Grab the Urban Planning Exhibition Center slot from Lhasa",
+   "owner": "Aaron",
+   "due": "4 Oct",
+   "status": "pending",
+   "detail": "Its booking window opens seven days out, which for Sunday the 11th means 4 October — while you are somewhere between Shigatse and base camp. Take it from Lhasa if you have signal; otherwise book the moment you land on the Saturday night and accept that a Sunday slot may be gone. Free, timed, via the WeChat mini-programme, 09:00–17:00, last entry 16:00, closed Wednesdays."
+  },
+  {
+   "id": "tk027",
+   "title": "Check whether Pit 2's south side has reopened",
+   "owner": "Aaron",
+   "due": "before 30 Sep",
+   "status": "pending",
+   "detail": "A works notice dated 4 September runs about a month from the 5th, which lands right on your visit to the Terracotta Warriors."
+  },
+  {
+   "id": "tk028",
+   "title": "Confirm October park hours and the 11–14 Oct prices",
+   "owner": "Aaron",
+   "due": "when the window opens",
+   "status": "pending",
+   "detail": "October park hours still aren't published — the official calendar returns 'unable to provide time' for those dates. Plan against 08:30–20:00, which is what the site shows for the current window. Exact prices for 11–14 October don't exist yet either; expect Y499 Sun/Mon and Y475 Tue/Wed, the shape the same weekdays carry a month earlier."
+  }
+ ]
 }

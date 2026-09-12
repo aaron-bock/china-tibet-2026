@@ -1,0 +1,629 @@
+<title>Own It or Buy It</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Barlow:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --ground:#EAEEE8; --surface:#FFFFFF; --sunk:#DDE3DA; --raise:#F4F7F2;
+  --ink:#161A17; --ink-soft:#576059; --ink-faint:#828C83;
+  --rule:#D2D9CF; --rule-firm:#B3BDB0;
+  --own:#2F6B4F; --own-bg:#DFEDE5; --own-line:#8FC0A8;
+  --buy:#B0511D; --buy-bg:#F7E6DA; --buy-line:#DFA47A;
+  --warn:#8A3324; --warn-bg:#F6E3DF;
+  --head:"Barlow Semi Condensed","Helvetica Neue",Arial,sans-serif;
+  --body:"Barlow","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#0F120F; --surface:#171B17; --sunk:#12160F; --raise:#1E231E;
+    --ink:#E6EBE4; --ink-soft:#9FA99E; --ink-faint:#778176;
+    --rule:#272D26; --rule-firm:#3B443A;
+    --own:#71BE97; --own-bg:#15291F; --own-line:#2F6B4F;
+    --buy:#E28E56; --buy-bg:#2B1A0F; --buy-line:#8A4A1D;
+    --warn:#E0847A; --warn-bg:#2C1613;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0F120F; --surface:#171B17; --sunk:#12160F; --raise:#1E231E;
+  --ink:#E6EBE4; --ink-soft:#9FA99E; --ink-faint:#778176;
+  --rule:#272D26; --rule-firm:#3B443A;
+  --own:#71BE97; --own-bg:#15291F; --own-line:#2F6B4F;
+  --buy:#E28E56; --buy-bg:#2B1A0F; --buy-line:#8A4A1D;
+  --warn:#E0847A; --warn-bg:#2C1613;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.45;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%}
+.wrap{max-width:44rem;margin:0 auto;padding:1.1rem 1rem 5rem}
+header{padding-bottom:.8rem}
+.kicker{font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint)}
+h1{font-family:var(--head);font-weight:700;font-size:2rem;line-height:1;letter-spacing:-.01em;margin:.4rem 0 0}
+.sub{margin:.45rem 0 0;color:var(--ink-soft);font-size:.92rem;max-width:34rem}
+
+.bar{position:sticky;top:0;z-index:30;background:var(--ground);padding:.6rem 0 .55rem;border-bottom:1px solid var(--rule-firm);margin-bottom:.2rem}
+.tally{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:4px;overflow:hidden}
+.ty{background:var(--surface);padding:.42rem .5rem;display:flex;flex-direction:column;align-items:center;gap:.05rem}
+.ty b{font-family:var(--mono);font-weight:500;font-size:1.15rem;font-variant-numeric:tabular-nums;line-height:1.1}
+.ty span{font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.ty.o b{color:var(--own)} .ty.b b{color:var(--buy)}
+.tabs{display:flex;gap:.3rem;margin-top:.5rem}
+.tab{flex:1;font-family:var(--mono);font-size:.66rem;letter-spacing:.07em;text-transform:uppercase;padding:.5rem .2rem;border:1px solid var(--rule-firm);background:var(--surface);color:var(--ink-soft);border-radius:3px;cursor:pointer;min-height:38px}
+.tab[aria-pressed="true"]{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+.tab:focus-visible,.pill:focus-visible,.sh:focus-visible,.xbtn:focus-visible,.addbtn:focus-visible,.mini:focus-visible,input:focus-visible{outline:2px solid var(--buy);outline-offset:2px}
+
+h2{font-family:var(--head);font-weight:600;font-size:1.15rem;letter-spacing:.005em;margin:1.7rem 0 0;padding:0 0 .4rem;border-bottom:2px solid var(--ink);display:flex;align-items:baseline;justify-content:space-between;gap:.6rem}
+h2 em{font-family:var(--mono);font-style:normal;font-size:.66rem;font-weight:400;color:var(--ink-faint);font-variant-numeric:tabular-nums;white-space:nowrap}
+
+.row{display:flex;align-items:center;gap:.5rem;padding:.42rem 0;border-bottom:1px solid var(--rule)}
+.txt{flex:1;min-width:0}
+.nm{font-family:var(--head);font-weight:600;font-size:1rem;line-height:1.2;letter-spacing:.005em}
+.hint{font-size:.78rem;color:var(--ink-soft);line-height:1.3;margin-top:.08rem}
+.key{display:inline-block;font-family:var(--mono);font-size:.55rem;letter-spacing:.1em;color:var(--warn);vertical-align:.18em;margin-left:.3rem}
+.mine{display:inline-block;font-family:var(--mono);font-size:.55rem;letter-spacing:.1em;color:var(--ink-faint);vertical-align:.18em;margin-left:.3rem}
+.seg{display:flex;gap:.25rem;flex:none;align-items:center}
+.pill{font-family:var(--mono);font-size:.63rem;letter-spacing:.07em;text-transform:uppercase;width:3rem;min-height:38px;border:1px solid var(--rule-firm);background:var(--surface);color:var(--ink-faint);border-radius:3px;cursor:pointer;padding:0}
+.pill.on-own{background:var(--own-bg);border-color:var(--own-line);color:var(--own);font-weight:500}
+.pill.on-buy{background:var(--buy-bg);border-color:var(--buy-line);color:var(--buy);font-weight:500}
+.xbtn{width:1.9rem;min-height:38px;border:1px solid transparent;background:none;color:var(--ink-faint);border-radius:3px;cursor:pointer;font-size:1.05rem;line-height:1;padding:0}
+.xbtn:hover{color:var(--warn);border-color:var(--rule-firm)}
+.row.is-own .nm{color:var(--ink-soft);text-decoration:line-through;text-decoration-color:var(--own-line)}
+
+.addwrap{padding:.55rem 0 .1rem}
+.addbtn{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;padding:.45rem .7rem;border:1px dashed var(--rule-firm);background:none;color:var(--ink-soft);border-radius:3px;cursor:pointer;min-height:36px}
+.addbtn:hover{border-color:var(--ink-faint);color:var(--ink)}
+.addform{display:flex;flex-direction:column;gap:.4rem;background:var(--raise);border:1px solid var(--rule-firm);border-radius:4px;padding:.65rem;margin-top:.4rem}
+.addform input{font-family:var(--body);font-size:1rem;padding:.5rem .55rem;border:1px solid var(--rule-firm);border-radius:3px;background:var(--surface);color:var(--ink);min-height:40px;width:100%}
+.addform input::placeholder{color:var(--ink-faint)}
+.addrow{display:flex;gap:.4rem}
+.mini{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;padding:.45rem .8rem;border-radius:3px;cursor:pointer;min-height:38px;border:1px solid var(--rule-firm);background:var(--surface);color:var(--ink-soft)}
+.mini.go{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+
+.shop{background:var(--surface);border:1px solid var(--rule-firm);border-radius:4px;padding:.85rem .9rem;margin-top:1rem}
+.shop h3{font-family:var(--head);font-weight:600;font-size:1rem;margin:0 0 .1rem;display:flex;justify-content:space-between;align-items:baseline;gap:.5rem}
+.shop h3 em{font-family:var(--mono);font-style:normal;font-size:.63rem;font-weight:400;color:var(--ink-faint);font-variant-numeric:tabular-nums}
+.shop + .shop{margin-top:.6rem}
+.shop.china{border-left:3px solid var(--buy)}
+.shop p.lead{margin:.2rem 0 .5rem;font-size:.83rem;color:var(--ink-soft)}
+.empty{font-size:.85rem;color:var(--ink-faint);font-style:italic;padding:.3rem 0}
+.shline{display:flex;align-items:flex-start;gap:.4rem;border-bottom:1px solid var(--rule)}
+.shline:last-of-type{border-bottom:0}
+.sh{display:flex;align-items:flex-start;gap:.6rem;padding:.36rem 0;border:0;flex:1;min-width:0;text-align:left;cursor:pointer;font:inherit;color:inherit;background:none;min-height:38px}
+.tick{width:1.15rem;height:1.15rem;flex:none;margin-top:.16rem;border:1.5px solid var(--rule-firm);border-radius:3px;background:var(--surface);display:grid;place-content:center}
+.sh[aria-pressed="true"] .tick{background:var(--own);border-color:var(--own)}
+.sh[aria-pressed="true"] .tick::after{content:"";width:.46rem;height:.25rem;border-left:2px solid var(--surface);border-bottom:2px solid var(--surface);transform:rotate(-45deg) translate(1px,-1px)}
+.sh[aria-pressed="true"] .sh-nm{text-decoration:line-through;color:var(--ink-faint)}
+.sh-nm{font-family:var(--head);font-weight:600;font-size:.97rem;line-height:1.2}
+.sh-hint{font-size:.77rem;color:var(--ink-soft);line-height:1.3;margin-top:.05rem}
+.sh-where{font-family:var(--mono);font-size:.55rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-faint);margin-left:.35rem}
+
+.skipbox{background:var(--sunk);border:1px solid var(--rule);border-radius:4px;padding:.7rem .8rem;margin-top:.7rem}
+.skiprow{display:flex;align-items:center;gap:.5rem;padding:.3rem 0;border-bottom:1px solid var(--rule)}
+.skiprow:last-child{border-bottom:0}
+.skiprow .sk-nm{flex:1;min-width:0;font-family:var(--head);font-weight:500;font-size:.93rem;color:var(--ink-faint);text-decoration:line-through}
+
+.note{background:var(--warn-bg);border-left:3px solid var(--warn);padding:.7rem .85rem;margin:.9rem 0 0;border-radius:0 3px 3px 0}
+.note b{font-family:var(--head);font-size:.95rem;display:block;margin-bottom:.15rem;color:var(--ink)}
+.note span{font-size:.85rem;color:var(--ink-soft)}
+.leave{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.6rem}
+.lv{font-family:var(--mono);font-size:.64rem;letter-spacing:.04em;padding:.32rem .5rem;border:1px dashed var(--rule-firm);border-radius:3px;color:var(--ink-soft);background:var(--surface)}
+footer{margin-top:2.2rem;padding-top:.9rem;border-top:1px solid var(--rule);font-size:.78rem;color:var(--ink-faint);display:flex;flex-direction:column;gap:.35rem}
+.sync{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase}
+.kitnav{display:flex;flex-wrap:wrap;gap:.3rem;margin:.2rem 0 .1rem}
+.kitnav a{font-family:var(--mono);font-size:.63rem;letter-spacing:.06em;padding:.35rem .55rem;border:1px solid var(--rule-firm);border-radius:3px;color:var(--ink-soft);background:var(--surface);text-decoration:none}
+.kitnav a:hover{color:var(--ink);border-color:var(--ink-faint)}
+.kitnav a:focus-visible{outline:2px solid var(--buy);outline-offset:2px}
+@media (max-width:26rem){
+  .pill{width:2.7rem;font-size:.57rem}
+  h1{font-size:1.7rem}
+  .tab{font-size:.6rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="kicker">China &amp; Tibet · departs 27 Sep</span>
+    <h1>Own It or Buy It</h1>
+    <p class="sub">Tap <b>Own</b> or <b>Buy</b> on each line. Buys collect into the shopping list up top. <b>×</b> drops anything you're not taking — it goes to Skipped at the bottom, not away for good. <b>+ Add</b> at the end of any section puts your own things on the list. Everything saves across your devices.</p>
+  </header>
+
+  <div class="bar">
+    <div class="tally">
+      <div class="ty o"><b id="n-own">0</b><span>Own</span></div>
+      <div class="ty b"><b id="n-buy">0</b><span>Buy</span></div>
+      <div class="ty"><b id="n-left">0</b><span>Undecided</span></div>
+    </div>
+    <div class="tabs" id="tabs"></div>
+  </div>
+
+  <div id="shopping"></div>
+
+  <main id="list"></main>
+
+  <footer>
+    <p>The full reasoning — why each thing is on the list, which bag it rides in, and the weather it's for — lives in the packing list. This page is just the triage.</p>
+    <nav class="kitnav">
+      <a href="https://claude.ai/code/artifact/65e30345-b6b5-4438-aee4-f7034f64bb14" data-kit="index.html">Trip Kit</a>
+      <a href="https://claude.ai/code/artifact/db0a3465-f329-47b2-a0d9-1300d2d79d90" data-kit="Itinerary.html">Itinerary</a>
+      <a href="https://claude.ai/code/artifact/34674237-5194-4538-8249-c385789e9677" data-kit="Packing-List.html">Packing List</a>
+      <a href="https://claude.ai/code/artifact/ac2f1858-d9b6-456a-a881-d44ee391ec57" data-kit="Apps-and-Services.html">Phone Kit</a>
+      <a href="https://claude.ai/code/artifact/84f80d00-6586-4783-92f6-c75ebdb9be46" data-kit="Sandra-2017.html">Sandra's Notes</a>
+    </nav>
+    <p class="sync" id="sync"></p>
+  </footer>
+</div>
+
+<script id="state-seed" type="application/json">{}</script>
+<script>
+const ORIGINAL = "<!doctype html>\n" + document.documentElement.outerHTML;
+
+/* [name, hint, key?] */
+const GEAR = [
+["Clothing", [
+["Merino base layer tops ×2","keep one clean and unworn for base camp"],
+["Merino long johns ×2","you sleep in these at EBC — wool, not cotton",1],
+["Grid or midweight fleece","the layer you live in for a week"],
+["Packable down or synthetic puffy","Lhasa evenings and under the shell at EBC",1],
+["Hardshell jacket","waterproof, windproof, hooded — you fly in it",1],
+["Light waterproof overtrousers","for standing around at 5,200 m"],
+["Trekking trousers ×2","one warmer; long trousers for the monasteries"],
+["Jeans or casual trousers ×1","for the cities"],
+["T-shirts and casual shirts ×4","quick-dry — you'll do sink laundry"],
+["Collared shirt and a smarter layer","five Shanghai nights, unplanned dinners"],
+["Underwear ×8–10","quick-dry; cotton stays wet"],
+["Hiking socks ×5","wool or synthetic"],
+["Heavy wool socks ×2","one dry pair reserved for sleeping",1],
+["Warm hat that covers the ears","you'll sleep in it at base camp",1],
+["Brimmed sun hat","plateau sun at midday"],
+["Buff or neck gaiter ×2","sun, dust and wind — the best small thing you'll carry"],
+["Liner gloves and insulated gloves","liners let you work a camera at 21 °F",1],
+["Sunglasses — cat 3 or 4, wraparound","plus a spare pair",1],
+["Sleepwear","needed on the train, before you next open the Away"],
+["Packable rain poncho","Disney; Roaring Rapids will soak you"],
+["Swimsuit","hotel pools, weighs nothing"],
+["Light jacket for Shanghai","or let the hardshell do it"]
+]],
+["Footwear", [
+["Waterproof hiking boots or trail shoes","wear them on the plane; break them in now",1],
+["City walking shoes","rotate with the boots on park days"],
+["Warm insoles or a spare pair","cheap insurance against cold feet"]
+]],
+["Bags and packing", [
+["Away The Large","checked, packed to 20 kg, never expanded",1],
+["Osprey Talon 44","carry-on, and your base camp bag",1],
+["Osprey daypack, 20–26 L","pick which one comes",1],
+["REI Ruckpack Waistpack","the crossbody — wear-test it loaded",1],
+["Arc'teryx Mantis 1","under-jacket pouch on transit days"],
+["Luggage scale","20 kg is the real ceiling, not 23",1],
+["Packing cubes","dedicate one as the EBC cube"],
+["Raincover for the Talon","Osprey doesn't include one"],
+["Compression sack for the puffy"],
+["Dry bags and ziplocks","plateau dust gets into everything"],
+["Small padlock and a short cable","the Talon has no lock of its own"],
+["Detergent sheets","the Away ships with a laundry bag"],
+["Luggage tags with your phone number"]
+]],
+["Electronics", [
+["Old phone as a backup","covers theft, loss, and a Chinese SIM"],
+["Multi-port charger and three cables","cables fail; bring the spare"],
+["Plug adapters ×2","types A, C and I"],
+["Headlamp","there is no lighting at the EBC toilets",1],
+["Camera, spare batteries, memory cards","cold flattens batteries — sleep with the spares"],
+["Earplugs and eye mask","30 hours in a four-berth cabin",1],
+["Headphones, including a wired pair","wired ones don't need charging"],
+["Kindle or a paperback","no printed Tibet guidebook — checkpoints confiscate them"],
+["Watch or small alarm clock","for EBC sunrise when the phone is flat"],
+["Chinese SIM or eSIM","arrange before you fly",1],
+["Phone strap or lanyard","for TRON"]
+]],
+["Health and medication", [
+["Altitude medication","ask your doctor — start on their schedule",1],
+["Your prescriptions, labelled bottles","double them, split between bags",1],
+["Pulse oximeter","turns \"I feel off\" into a number"],
+["Ibuprofen and acetaminophen","altitude headache is near-universal"],
+["Anti-nausea tablets","the most common EBC complaint"],
+["Motion sickness tablets","340 km of switchbacks over three passes"],
+["Loperamide and rehydration salts","assume it happens once",1],
+["Electrolyte tablets or powder","3–4 litres a day up there"],
+["Throat lozenges and cough drops","the dry air shreds throats"],
+["Saline nasal spray and gel","nosebleeds at altitude are routine"],
+["Sunscreen SPF 50","a big tube plus a 50 ml for the sling — bring it, don't buy it there",1],
+["Lip balm with SPF ×2","you will lose one"],
+["Eye drops","dust, wind and dry air at once"],
+["Blister kit","Compeed, moleskin, tape"],
+["Small first aid kit","plasters, antiseptic wipes, tweezers"],
+["Hand sanitiser, several small bottles","one in every bag"],
+["Antibacterial wipes"],
+["Melatonin","12 hours of time change — no sleeping pills at altitude"],
+["Multivitamin"],
+["Deodorant","genuinely scarce in Chinese shops — bring enough",1]
+]],
+["Toiletries", [
+["Toothbrush, toothpaste, floss","a travel set for the train too"],
+["Heavy moisturiser and hand cream","the plateau is bone dry"],
+["No-rinse body wipes","this is your shower on 7 October",1],
+["Quick-dry travel towel","the camp provides nothing"],
+["Razor and nail clippers","clippers go in the checked bag"],
+["Glasses, contacts and solution","bring the glasses even if you never wear them",1],
+["Face masks","one packet from home for day one"]
+]],
+["Train, base camp and food", [
+["Sleeping bag liner","silk or fleece — the camp quilts aren't always clean",1],
+["Hand and toe warmers ×6 pairs","boots, gloves, sleeping bag. Transformative",1],
+["Wide-mouth bottle for boiling water","fill it at the stove, put it in the bag"],
+["Water purification tablets or filter bottle","backup for the plateau"],
+["Refillable water bottle","Disney has refill points"],
+["Instant coffee or tea sachets","hot water is everywhere in China"],
+["Instant oatmeal and soup sachets"],
+["Snacks you actually like","appetite collapses at altitude",1],
+["Neck pillow","the berths are flat but short"],
+["Chopsticks or a spork","station chopsticks are reused"]
+]],
+["Documents, money and small things", [
+["Passport with the Chinese visa","train ticket, Disney ticket, every hotel check-in",1],
+["Printed flights, hotels and tour receipt","paper survives a dead phone"],
+["Offline digital copies of everything","plus emailed to yourself"],
+["Two credit cards and one debit card","carried in two different places"],
+["USD emergency reserve","two or three hundred, buried in the Away"],
+["Four passport photos","permits and SIM registration"],
+["Insurance policy number and assistance line","on paper"],
+["Written contacts card","James, the consulates, Overseas Citizens Services"],
+["Hotel names and addresses in Chinese","hand it to the taxi driver"],
+["Notebook and pen","for when the phone is dead"],
+["Small gifts from home","Atlanta postcards, pins, candy — Sandra says it lands every time"],
+["Duct tape round a pen, and zip ties","repairs a strap, a boot, a tent zip"],
+["Printed copy of the itinerary"]
+]]
+];
+
+const CHINA = [
+["A 3C-certified power bank, 20,000 mAh","Xi'an, day one. Xiaomi / Baseus / UGREEN, ¥100–200",1],
+["A second, smaller power bank","for the sling and for Disney"],
+["Shower shoes or slides","¥20–30. Day one — you need them on the train",1],
+["Insulated thermos","before you board the Z165"],
+["Wet wipes, tissues and face masks","in bulk, pennies at any convenience store",1],
+["Shampoo, body wash, toothpaste, detergent","sidesteps the 100 ml liquid rule"],
+["Umbrella","¥20–40, for sun as much as rain"],
+["Snacks and train food","a Xi'an supermarket beats the station"],
+["Bottled water","two litres before boarding, and only bottled all trip",1],
+["Heavy down parka","rent or buy around Barkhor, Lhasa — saves 2 kg",1],
+["Sleeping bag to 14 °F (−10 °C)","rent in Lhasa; James can arrange it"],
+["Trekking poles","rent in Lhasa alongside the bag"],
+["Portable oxygen cans","¥30–60 in any Lhasa pharmacy"],
+["Batteries for the headlamp","AA/AAA sold everywhere"],
+["A cheap holdall for the way home","¥50 — your free second checked bag"]
+];
+
+const TASKS = [
+["Send James the visa and passport scans","unanswered since 17 August — blocks the permit",1],
+["Book the Xi'an hotel, send James the name","the permit gets couriered there",1],
+["Book Shanghai and the ATL–LAX positioning flight"],
+["Book dated Disneyland tickets under your passport","official channels only; weekdays 12–15 Oct are quieter",1],
+["Ask your doctor about altitude medication","400 m to 5,200 m in nine days",1],
+["Confirm the China Eastern checked allowance","20 kg or 23 kg decides what comes",1],
+["Do a full pack and weigh the Away","twice: at 23 kg, then at 20 kg",1],
+["Wear-test the Waistpack loaded, for a day","the open question is the sunglasses",1],
+["Plan a day-one shopping run in Xi'an","29th or 30th — Golden Week starts 1 Oct",1],
+["Break in the boots","now, not on the Gyawu La"],
+["Install and test two VPNs","must work before you land"],
+["Set up WeChat and Alipay, funded"],
+["Download offline maps, Pleco, Translate pack"],
+["Download 30 hours of entertainment","no usable data Xi'an to Lhasa"],
+["Install the Disney app and log in at home"],
+["Pick a Shanghai hotel on Metro Line 11"],
+["Tell your banks and card issuers the dates"],
+["Check insurance covers 5,200 m","many policies cap altitude"],
+["Leave copies of everything with someone at home"]
+];
+
+const LEAVE = ["No American power banks","No drone","No Tibetan flag or Dalai Lama images","No political guidebooks","No new, unworn boots","No jewellery you'd mind losing","Don't use the Away's expansion zipper"];
+
+const KEY = "prep-ebc-2026";
+function slug(s){return s.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,54);}
+
+let mark = {}, done = {}, custom = {};
+try{
+  const seed = JSON.parse(document.getElementById("state-seed").textContent||"{}");
+  if(seed && typeof seed==="object"){ mark=seed.mark||{}; done=seed.done||{}; custom=seed.custom||{}; }
+}catch(e){}
+try{
+  const l = JSON.parse(localStorage.getItem(KEY)||"null");
+  if(l && typeof l==="object"){
+    Object.assign(mark, l.mark||{}); Object.assign(done, l.done||{});
+    Object.keys(l.custom||{}).forEach(k=>{
+      const have = new Set((custom[k]||[]).map(x=>x.id));
+      custom[k] = (custom[k]||[]).concat((l.custom[k]||[]).filter(x=>!have.has(x.id)));
+    });
+  }
+}catch(e){}
+
+let view = "all", api = null, timer = null, openForm = null;
+
+GEAR.forEach(([g,items])=>{ items.forEach(it=>{ it.id = "g-"+slug(g)+"-"+slug(it[0]); }); });
+CHINA.forEach(it=>it.id = "c-"+slug(it[0]));
+TASKS.forEach(it=>it.id = "t-"+slug(it[0]));
+
+/* live lists = built-ins + user additions */
+function gearOf(g){ return GEAR.find(x=>x[0]===g)[1].concat(custom[slug(g)]||[]); }
+function chinaAll(){ return CHINA.concat(custom["china"]||[]); }
+function tasksAll(){ return TASKS.concat(custom["tasks"]||[]); }
+function isMine(it){ return !!it.mine; }
+
+const el=(t,c,x)=>{const n=document.createElement(t); if(c)n.className=c; if(x!=null)n.textContent=x; return n;};
+
+function addItem(bucket, name, hint){
+  name = (name||"").trim(); if(!name) return false;
+  hint = (hint||"").trim();
+  const it = [name, hint];
+  it.id = "x-"+bucket+"-"+Date.now().toString(36)+Math.floor(Math.random()*1e4).toString(36);
+  it.mine = true;
+  (custom[bucket] = custom[bucket]||[]).push(it);
+  return true;
+}
+function dropItem(id){
+  Object.keys(custom).forEach(k=>{ custom[k] = custom[k].filter(x=>x.id!==id); });
+  delete mark[id]; delete done[id];
+}
+
+function tallies(){
+  let o=0,b=0,left=0;
+  GEAR.forEach(([g])=>gearOf(g).forEach(it=>{
+    const m = mark[it.id];
+    if(m==="own")o++; else if(m==="buy")b++; else if(m!=="skip")left++;
+  }));
+  return {o,b,left};
+}
+
+const tabsEl = document.getElementById("tabs");
+[["all","Everything"],["todo","Undecided"],["buy","Buying"]].forEach(([k,label])=>{
+  const btn = el("button","tab",label);
+  btn.type="button"; btn.dataset.view=k; btn.id="tab-"+k;
+  btn.setAttribute("aria-pressed", String(k===view));
+  btn.addEventListener("click",()=>{
+    view=k;
+    tabsEl.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",String(x.dataset.view===k)));
+    renderList();
+  });
+  tabsEl.appendChild(btn);
+});
+
+function xButton(label, onClick){
+  const x = el("button","xbtn","×");
+  x.type="button"; x.setAttribute("aria-label", label);
+  x.addEventListener("click", onClick);
+  return x;
+}
+
+function shopLine(it, where, canSkip){
+  const line = el("div","shline");
+  const b = el("button","sh");
+  b.type="button"; b.id="sh-"+it.id;
+  b.setAttribute("aria-pressed", String(!!done[it.id]));
+  b.appendChild(el("span","tick"));
+  const t = el("span","txt");
+  const nm = el("span","sh-nm", it[0]);
+  if(where) nm.appendChild(el("span","sh-where",where));
+  if(isMine(it)) nm.appendChild(el("span","mine","MINE"));
+  t.appendChild(nm);
+  if(it[1]) t.appendChild(el("span","sh-hint",it[1]));
+  b.appendChild(t);
+  b.addEventListener("click",()=>{
+    if(done[it.id]) delete done[it.id]; else done[it.id]=1;
+    save(); renderAll();
+  });
+  line.appendChild(b);
+  if(canSkip) line.appendChild(xButton("Remove: "+it[0], ()=>{
+    if(isMine(it)) dropItem(it.id); else mark[it.id]="skip";
+    save(); renderAll();
+  }));
+  return line;
+}
+
+function addBlock(bucket, label, after){
+  const wrap = el("div","addwrap");
+  if(openForm === bucket){
+    const f = el("div","addform");
+    const n = el("input"); n.id="add-n-"+bucket; n.type="text"; n.placeholder=label; n.autocomplete="off";
+    const h = el("input"); h.id="add-h-"+bucket; h.type="text"; h.placeholder="note — size, quantity, brand (optional)"; h.autocomplete="off";
+    const rowb = el("div","addrow");
+    const go = el("button","mini go","Add"); go.type="button";
+    const cancel = el("button","mini","Cancel"); cancel.type="button";
+    const commit = ()=>{ if(addItem(bucket, n.value, h.value)){ save(); openForm=bucket; renderAll();
+        const nn=document.getElementById("add-n-"+bucket); if(nn){ nn.value=""; const hh=document.getElementById("add-h-"+bucket); if(hh)hh.value=""; nn.focus(); } } };
+    go.addEventListener("click", commit);
+    n.addEventListener("keydown", e=>{ if(e.key==="Enter"){ e.preventDefault(); commit(); } });
+    h.addEventListener("keydown", e=>{ if(e.key==="Enter"){ e.preventDefault(); commit(); } });
+    cancel.addEventListener("click", ()=>{ openForm=null; renderAll(); });
+    rowb.appendChild(go); rowb.appendChild(cancel);
+    f.appendChild(n); f.appendChild(h); f.appendChild(rowb);
+    wrap.appendChild(f);
+  } else {
+    const b = el("button","addbtn","+ Add");
+    b.type="button"; b.id="addbtn-"+bucket;
+    b.addEventListener("click",()=>{ openForm=bucket; renderAll();
+      const nn=document.getElementById("add-n-"+bucket); if(nn) nn.focus(); });
+    wrap.appendChild(b);
+  }
+  after.appendChild(wrap);
+}
+
+function renderShopping(){
+  const host = document.getElementById("shopping");
+  host.textContent = "";
+
+  const picked = [];
+  GEAR.forEach(([g])=>gearOf(g).forEach(it=>{ if(mark[it.id]==="buy") picked.push([it,g]); }));
+
+  const box = el("div","shop");
+  const h = el("h3"); h.appendChild(el("span",null,"Shopping list — before you leave"));
+  h.appendChild(el("em",null, picked.length ? (picked.filter(([i])=>done[i.id]).length+" / "+picked.length) : ""));
+  box.appendChild(h);
+  if(!picked.length) box.appendChild(el("p","empty","Nothing yet. Tap Buy on anything below and it lands here."));
+  else picked.forEach(([it,g])=>box.appendChild(shopLine(it, g, false)));
+  host.appendChild(box);
+
+  const cbox = el("div","shop china");
+  const clist = chinaAll();
+  const ch = el("h3"); ch.appendChild(el("span",null,"Shopping list — in China"));
+  ch.appendChild(el("em",null, clist.filter(i=>!isSkipped(i)&&done[i.id]).length+" / "+clist.filter(i=>!isSkipped(i)).length));
+  cbox.appendChild(ch);
+  cbox.appendChild(el("p","lead","Don't buy these at home. Cheaper there, and the power bank is the only version that will survive Lhasa airport."));
+  clist.filter(i=>!isSkipped(i)).forEach(it=>cbox.appendChild(shopLine(it, null, true)));
+  addBlock("china","Something else to buy in China", cbox);
+
+  const note = el("div","note");
+  note.appendChild(el("b",null,"Leave your American power banks at home"));
+  note.appendChild(el("span",null,"Since June 2025 every power bank on a Chinese domestic flight needs a 3C mark moulded into the case. US-market batteries don't have one, and they're confiscated at security with no appeal — and China bans lithium in the hold, so there's no way around it."));
+  cbox.appendChild(note);
+  host.appendChild(cbox);
+}
+
+function isSkipped(it){ return mark[it.id]==="skip"; }
+
+function renderList(){
+  const host = document.getElementById("list");
+  host.textContent = "";
+
+  GEAR.forEach(([g])=>{
+    const all = gearOf(g).filter(it=>!isSkipped(it));
+    const vis = all.filter(it=>{
+      if(view==="todo") return !mark[it.id];
+      if(view==="buy") return mark[it.id]==="buy";
+      return true;
+    });
+    const h = el("h2");
+    h.appendChild(el("span",null,g));
+    h.appendChild(el("em",null, all.filter(i=>mark[i.id]).length+" / "+all.length));
+    host.appendChild(h);
+    vis.forEach(it=>{
+      const row = el("div","row"+(mark[it.id]==="own"?" is-own":""));
+      const txt = el("div","txt");
+      const nm = el("div","nm", it[0]);
+      if(it[2]) nm.appendChild(el("span","key","KEY"));
+      if(isMine(it)) nm.appendChild(el("span","mine","MINE"));
+      txt.appendChild(nm);
+      if(it[1]) txt.appendChild(el("div","hint",it[1]));
+      row.appendChild(txt);
+      const seg = el("div","seg");
+      [["own","Own"],["buy","Buy"]].forEach(([k,label])=>{
+        const p = el("button","pill"+(mark[it.id]===k?" on-"+k:""), label);
+        p.type="button"; p.id="p-"+k+"-"+it.id;
+        p.setAttribute("aria-pressed", String(mark[it.id]===k));
+        p.setAttribute("aria-label", label+": "+it[0]);
+        p.addEventListener("click",()=>{
+          if(mark[it.id]===k) delete mark[it.id]; else mark[it.id]=k;
+          save(); renderAll();
+        });
+        seg.appendChild(p);
+      });
+      seg.appendChild(xButton("Not taking: "+it[0], ()=>{
+        if(isMine(it)) dropItem(it.id); else mark[it.id]="skip";
+        save(); renderAll();
+      }));
+      row.appendChild(seg);
+      host.appendChild(row);
+    });
+    if(!vis.length) host.appendChild(el("p","empty", view==="todo" ? "All decided." : "Nothing here in this view."));
+    addBlock(slug(g), "Something else for "+g.toLowerCase(), host);
+  });
+
+  const tlist = tasksAll().filter(i=>!isSkipped(i));
+  const th = el("h2");
+  th.appendChild(el("span",null,"Do before you go"));
+  th.appendChild(el("em",null, tlist.filter(i=>done[i.id]).length+" / "+tlist.length));
+  host.appendChild(th);
+  const tbox = el("div","shop");
+  tlist.forEach(it=>tbox.appendChild(shopLine(it, null, true)));
+  addBlock("tasks","Something else to do before you go", tbox);
+  host.appendChild(tbox);
+
+  const skipped = [];
+  GEAR.forEach(([g])=>gearOf(g).forEach(it=>{ if(isSkipped(it)) skipped.push([it,g]); }));
+  chinaAll().forEach(it=>{ if(isSkipped(it)) skipped.push([it,"In China"]); });
+  tasksAll().forEach(it=>{ if(isSkipped(it)) skipped.push([it,"Before you go"]); });
+  if(skipped.length){
+    const sh = el("h2");
+    sh.appendChild(el("span",null,"Skipped"));
+    sh.appendChild(el("em",null, String(skipped.length)));
+    host.appendChild(sh);
+    const sbox = el("div","skipbox");
+    skipped.forEach(([it,g])=>{
+      const r = el("div","skiprow");
+      const nm = el("div","sk-nm", it[0]);
+      nm.appendChild(el("span","sh-where"," "+g));
+      r.appendChild(nm);
+      const back = el("button","mini","Put back"); back.type="button";
+      back.addEventListener("click",()=>{ delete mark[it.id]; save(); renderAll(); });
+      r.appendChild(back);
+      sbox.appendChild(r);
+    });
+    host.appendChild(sbox);
+  }
+
+  const lh = el("h2");
+  lh.appendChild(el("span",null,"Don't pack, don't buy"));
+  host.appendChild(lh);
+  const chips = el("div","leave");
+  LEAVE.forEach(t=>chips.appendChild(el("span","lv",t)));
+  host.appendChild(chips);
+}
+
+function renderAll(){
+  const t = tallies();
+  document.getElementById("n-own").textContent = t.o;
+  document.getElementById("n-buy").textContent = t.b;
+  document.getElementById("n-left").textContent = t.left;
+  renderShopping();
+  renderList();
+}
+
+/* custom items are arrays carrying .id/.mine, which JSON drops — serialise them as plain objects */
+function serialCustom(){
+  const out = {};
+  Object.keys(custom).forEach(k=>{ out[k] = (custom[k]||[]).map(it=>({n:it[0], h:it[1]||"", id:it.id})); });
+  return out;
+}
+
+function save(){
+  try{ localStorage.setItem(KEY, JSON.stringify({mark, done, custom:serialCustom()})); }catch(e){}
+  if(!api) return;
+  setSync("Saving");
+  clearTimeout(timer);
+  timer = setTimeout(push, 1800);
+}
+function setSync(t){ document.getElementById("sync").textContent = t; }
+
+async function push(){
+  if(!api) return;
+  const tag = '<script id="state-seed" type="application/json">'+JSON.stringify({mark, done, custom:serialCustom()})+'<\/script>';
+  const html = ORIGINAL.replace(/<script id="state-seed"[\s\S]*?<\/script>/, tag);
+  try{ await api.publish(html); setSync("Saved"); }
+  catch(e){ setSync(e && e.code === "conflict" ? "" : "Saved on this device"); }
+}
+
+/* stored custom items arrive as plain objects — give them the array shape the renderers expect */
+Object.keys(custom).forEach(k=>{
+  custom[k] = (custom[k]||[]).map(o=>{
+    if(Array.isArray(o) && o.id) return o;
+    const a = [o.n || o[0] || o["0"] || "", o.h || o[1] || o["1"] || ""];
+    a.id = o.id || ("x-"+k+"-"+Math.random().toString(36).slice(2,10));
+    a.mine = true;
+    return a;
+  }).filter(a=>a[0]);
+});
+
+/* the kit lives in two places: published pages, and files in the Trip Kit folder.
+   Opened from the folder, point the nav at the sibling files so it works offline. */
+if(location.protocol === "file:"){
+  document.querySelectorAll("a[data-kit]").forEach(function(a){
+    a.setAttribute("href", a.getAttribute("data-kit"));
+  });
+}
+
+renderAll();
+
+(async ()=>{
+  try{ api = await claude.use("artifact"); if(api) setSync("Saved"); }
+  catch(e){ api = null; }
+})();
+</script>
