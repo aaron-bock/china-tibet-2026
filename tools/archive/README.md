@@ -1,4 +1,6 @@
-# Archive banner
+# Archive tooling
+
+## banner.py
 
 `banner.py` stamps the "Archived" banner onto a saved copy of one of the six old Trip Kit
 artifacts and writes a publishable fragment beside it.
@@ -25,5 +27,25 @@ Two details worth keeping, because both cost a round to find:
   the banner inside `<head>`, where it rendered as nothing. `main()` prefers the **last** inner
   `<body>`, and falls back to the end of the first `</style>` when there is none.
 
-The script is idempotent: it bails if the banner text or the dossier artifact id is already
+## repoint.py
+
+The three documents archived back on 2026-09-10 already had a banner, but it named the
+master document in bold text with no link — and that document ("Xi'an, Everest,
+Disneytown", later renamed "Itinerary") is itself archived now. `repoint.py` rewrites
+just the banner body to link the dossier, leaving the "Archived 10 September 2026"
+heading alone: that date is the historical fact and shouldn't move.
+
+| Page | Artifact | New version |
+|---|---|---|
+| Xi'an to Disneytown | `8b2e8b41-3c6d-4aaa-8b46-28ab3da22683` | 6 |
+| Xi'an to Everest Base Camp | `e30ce61e-259d-478d-83f8-de26123df0c2` | 7 |
+| Xi'an, Wall to Warriors | `0e766031-5e51-432b-a7cb-cff77258d607` | 4 |
+
+A third detail, on top of the two above: prefer `action: "read_file"` on `index.html`
+for the source. That returns the file exactly as uploaded, with no wrapper to strip, so
+the republish is byte-identical apart from the banner swap. `action: "read"` is still
+what satisfies the publish guard — `read_file` does not — so both calls are needed: read
+to be allowed to publish, read_file to get clean bytes.
+
+Both scripts are idempotent: it bails if the banner text or the dossier artifact id is already
 present, so re-running it on an already-archived page is a no-op rather than a double banner.

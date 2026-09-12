@@ -48,10 +48,16 @@ copied forward without checking it against the app first.
 | China Trip Phone Kit (apps & services) | `ac2f1858-d9b6-456a-a881-d44ee391ec57` |
 | Sandra's 2017 Notes | `84f80d00-6586-4783-92f6-c75ebdb9be46` |
 
-Three earlier documents (`e30ce61e`, `0e766031`, `8b2e8b41` — the original itinerary,
-the Xi'an & Shanghai plan, the standalone Xi'an map) were archived on 2026-09-10 and
-still point at the Itinerary, which is itself now archived. One extra hop, not a
-dead end.
+Three earlier documents were archived on 2026-09-10 and their banners re-pointed at the
+dossier on 2026-09-12, so every old page now links straight here:
+
+| Page | Artifact |
+|---|---|
+| Xi'an to Everest Base Camp | `e30ce61e-259d-478d-83f8-de26123df0c2` |
+| Xi'an, Wall to Warriors | `0e766031-5e51-432b-a7cb-cff77258d607` |
+| Xi'an to Disneytown | `8b2e8b41-3c6d-4aaa-8b46-28ab3da22683` |
+
+Nine archived pages in total. None of them is a plan.
 
 **Not archivable from here, and still outstanding:** the files in the iCloud `Trip Kit`
 folder and the docs in the "China-Tibet Trip 2026" Claude Project. Those need Aaron.
