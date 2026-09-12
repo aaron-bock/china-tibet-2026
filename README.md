@@ -22,10 +22,21 @@ Two inline altitude profiles, because altitude is the real risk on this trip: th
 railway from Xi'an at 400 m to Lhasa at 3,650 m, and the tour's day-by-day high point through the
 5,200 m tent night at base camp and 5,248 m at Gyatso La.
 
-Packing is 154 items, each with the bag it rides in, the legs it is for and why, and an
-**Own / Buy / Skip** control per line carried over from the old prep checklist. The tallies and
-the filter chips above the list run off those taps — *Buying* becomes the shopping list, *Key*
-narrows to the items flagged `action` that haven't been skipped.
+Packing is 154 items, each with the bag it rides in, the legs it is for and why. It runs on two
+axes that are deliberately **not** the same control:
+
+- **Own / Buy / Skip** — where the item stands. This is packing's state, so the row stripe, the
+  four tallies and the filter chips all follow it; *Buying* is the shopping list.
+- **Can't forget** — a single flag for how much it costs to get that item wrong. Stored as
+  `prio: "must"` on 52 of the 154, and it stays put whatever you decide about owning it.
+
+They started out as one field: packing reused the shared `status` select, whose only two values
+here were `action` and `pending`, so a priority rendered in the same saffron-and-cinnabar
+vocabulary that means *not confirmed* and *needs you* everywhere else — and every row looked
+alarming. Sections now declare `state:"prep"` when their state axis isn't `status`, and the
+stripe reads `data-triage` instead of `data-status`. Not every section has to be shaped the same
+way: Tibet tour lost its State column entirely, since all eight rows said `confirmed` and the
+column carried no information.
 
 The **Download** button exports the current state five ways via the artifact `downloads`
 capability:

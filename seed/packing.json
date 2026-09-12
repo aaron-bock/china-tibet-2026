@@ -1,1395 +1,1293 @@
 {
- "items": [
-  {
-   "id": "pk001",
-   "item": "Away The Large — checked, packed to 20 kg",
-   "group": "Bags & packing",
-   "status": "action",
-   "bag": "Away",
-   "zone": "All legs",
-   "detail": "Closed, not expanded. The TSA combination lock and the compression pads are built in, and it ships with a drawstring laundry bag — so that's one thing off the list.",
-   "own": "own"
-  },
-  {
-   "id": "pk002",
-   "item": "Osprey Talon 44 — carry-on, kept light",
-   "group": "Bags & packing",
-   "status": "action",
-   "bag": "Talon 44",
-   "zone": "All legs",
-   "detail": "At 72 cm tall it is over Korean Air's 55 × 40 × 20 cm cabin size on paper, but it's soft and compresses; the binding limit is the 10 kg you're allowed across the carry-on and personal item together. Cinch the compression straps and don't let it look like a trekking pack at the gate.",
-   "own": "own"
-  },
-  {
-   "id": "pk003",
-   "item": "Pick which Osprey daypack comes",
-   "group": "Bags & packing",
-   "status": "action",
-   "bag": "Daypack",
-   "zone": "All legs",
-   "detail": "20–26 litres is the sweet spot — big enough for a poncho, a layer, water and snacks at Disney, small enough to pass the park's bag screening and to fold into the Talon for base camp. Anything over 30 L duplicates the Talon and costs you cabin weight."
-  },
-  {
-   "id": "pk004",
-   "item": "REI Ruckpack Waistpack, worn crossbody",
-   "group": "Bags & packing",
-   "status": "action",
-   "bag": "Sling",
-   "zone": "Xi'an · Tibet · Shanghai · Disney",
-   "detail": "See the picks above. Worn on the front and zipped in every crowd. Shanghai is where Sandra got scammed."
-  },
-  {
-   "id": "pk005",
-   "item": "Luggage scale",
-   "group": "Bags & packing",
-   "status": "action",
-   "bag": "Talon 44",
-   "zone": "All legs",
-   "detail": "Under 50 g and it decides whether you pay excess in Lhasa. Weigh the Away before every flight, not just at home."
-  },
-  {
-   "id": "pk006",
-   "item": "Packing cubes — one is the EBC cube",
-   "group": "Bags & packing",
-   "status": "pending",
-   "bag": "Away → Talon 44",
-   "zone": "All legs",
-   "detail": "Long johns, heavy socks, base layer, hat, gloves, warmers, wipes. At Shigatse you lift one cube out of the Away into the Talon and you're packed for base camp.",
-   "own": "own"
-  },
-  {
-   "id": "pk007",
-   "item": "Raincover for the Talon",
-   "group": "Bags & packing",
-   "status": "pending",
-   "bag": "Talon 44",
-   "zone": "Tibet · EBC night",
-   "detail": "Osprey doesn't include one with the Talon 44. It is less about rain than about plateau dust and the pack riding on a roof rack for 340 km."
-  },
-  {
-   "id": "pk008",
-   "item": "Compression sack for the puffy",
-   "group": "Bags & packing",
-   "status": "pending",
-   "bag": "Talon 44",
-   "zone": "EBC night",
-   "detail": "Reclaims a surprising amount of space in a 44 L pack that has to hold a night's kit."
-  },
-  {
-   "id": "pk009",
-   "item": "Dry bags and ziplocks",
-   "group": "Bags & packing",
-   "status": "pending",
-   "bag": "Away",
-   "zone": "Tibet",
-   "detail": "Plateau dust gets into everything. Also keeps electronics dry on the passes."
-  },
-  {
-   "id": "pk010",
-   "item": "Small padlock and a short cable",
-   "group": "Bags & packing",
-   "status": "pending",
-   "bag": "Talon 44",
-   "zone": "Z165",
-   "detail": "The Away has its own TSA lock; the Talon has nothing. The soft sleeper cabin locks, but the bags in it don't."
-  },
-  {
-   "id": "pk011",
-   "item": "Detergent sheets",
-   "group": "Bags & packing",
-   "status": "pending",
-   "bag": "Away",
-   "zone": "All legs",
-   "detail": "Nineteen days out of one bag means sink washing at least twice. The Away's own laundry bag holds the dirty half."
-  },
-  {
-   "id": "pk012",
-   "item": "Luggage tags with your phone number",
-   "group": "Bags & packing",
-   "status": "pending",
-   "bag": "Away",
-   "zone": "All legs",
-   "detail": "Domestic Chinese flights check bags against your ticket at the carousel."
-  },
-  {
-   "id": "pk013",
-   "item": "A 3C-certified power bank, 20,000 mAh",
-   "group": "Buy in China",
-   "status": "action",
-   "bag": "Buy there",
-   "zone": "All legs",
-   "detail": "First-day errand in Xi'an. Check for the oval three-C logo printed on the case itself, not the box. Buy two while you're there — the big one for the train and base camp, a small one for the sling."
-  },
-  {
-   "id": "pk014",
-   "item": "Shower shoes or slides",
-   "group": "Buy in China",
-   "status": "action",
-   "bag": "Buy there",
-   "zone": "Z165 · EBC night",
-   "detail": "¥20–30 at any supermarket, Miniso or department store. Buy them on day one: you need them in the train corridor on 2 October and again for the base camp toilet at 3 a.m."
-  },
-  {
-   "id": "pk015",
-   "item": "Insulated thermos",
-   "group": "Buy in China",
-   "status": "pending",
-   "bag": "Buy there",
-   "zone": "Z165 · Tibet",
-   "detail": "Boiling water is free in every train carriage, station and hotel corridor in China, and a thermos is what turns that into coffee, noodles and a hot bottle in your sleeping bag. Buy before boarding the Z165."
-  },
-  {
-   "id": "pk016",
-   "item": "Wet wipes, tissues and face masks in bulk",
-   "group": "Buy in China",
-   "status": "action",
-   "bag": "Buy there",
-   "zone": "All legs",
-   "detail": "Pennies at any convenience store, and you will get through far more than you'd think. Carry one packet from Atlanta for the first day and restock properly in Xi'an."
-  },
-  {
-   "id": "pk017",
-   "item": "Shampoo, body wash, toothpaste, laundry detergent",
-   "group": "Buy in China",
-   "status": "pending",
-   "bag": "Buy there",
-   "zone": "All legs",
-   "detail": "Buying these in a Xi'an supermarket sidesteps the 100 ml carry-on liquid rule entirely and saves a kilo of checked weight. Hotels supply the basics; this is for the top-ups and for base camp."
-  },
-  {
-   "id": "pk018",
-   "item": "Portable oxygen cans",
-   "group": "Buy in China",
-   "status": "pending",
-   "bag": "Buy there",
-   "zone": "Tibet · EBC night",
-   "detail": "Sold in every Lhasa pharmacy and tourist shop for ¥30–60. Buy-there by necessity — you cannot fly with a pressurised canister. The train has piped oxygen at the berths and your guide carries supplies, so treat these as reassurance rather than a plan."
-  },
-  {
-   "id": "pk019",
-   "item": "Heavy down parka — rent or buy around Barkhor",
-   "group": "Buy in China",
-   "status": "action",
-   "bag": "Buy there",
-   "zone": "EBC night",
-   "detail": "Your packable puffy is not enough at 21 °F (−6 °C) with wind, and a real parka is 1.5–2 kg of a 14.5 kg budget. The rental shops around Barkhor exist for exactly this trade. The single easiest kilo to save."
-  },
-  {
-   "id": "pk020",
-   "item": "Sleeping bag rated to 14 °F (−10 °C) — rent in Lhasa",
-   "group": "Buy in China",
-   "status": "pending",
-   "bag": "Buy there",
-   "zone": "EBC night",
-   "detail": "Optional; the camp quilts do work. But carrying your own from Atlanta costs another 1.5 kg, and Lhasa rents them by the day. James can arrange it with the tour."
-  },
-  {
-   "id": "pk021",
-   "item": "Trekking poles — rent in Lhasa",
-   "group": "Buy in China",
-   "status": "pending",
-   "bag": "Buy there",
-   "zone": "Tibet · EBC night",
-   "detail": "Not currently on your list, and worth a thought for the walk in at base camp. Rented alongside the sleeping bag rather than checked from Atlanta."
-  },
-  {
-   "id": "pk022",
-   "item": "Batteries for the headlamp",
-   "group": "Buy in China",
-   "status": "pending",
-   "bag": "Buy there",
-   "zone": "EBC night",
-   "detail": "AA and AAA are sold everywhere. Bring one set in the headlamp, buy the spares."
-  },
-  {
-   "id": "pk023",
-   "item": "Snacks and train food",
-   "group": "Buy in China",
-   "status": "pending",
-   "bag": "Buy there",
-   "zone": "Z165 · Tibet",
-   "detail": "A Xi'an supermarket the night before beats the station shops on both price and range, and beats anything you'd carry from home. Instant noodles, nuts, dried fruit, chocolate."
-  },
-  {
-   "id": "pk024",
-   "item": "A cheap holdall for the way home",
-   "group": "Buy in China",
-   "status": "pending",
-   "bag": "Buy there",
-   "zone": "Shanghai",
-   "detail": "¥50 in a Lhasa or Shanghai market, and it rides home as your free second checked bag on Korean Air."
-  },
-  {
-   "id": "pk025",
-   "item": "Passport with the Chinese visa",
-   "group": "Documents & money",
-   "status": "action",
-   "bag": "Sling",
-   "zone": "All legs",
-   "detail": "Z165 has no paper ticket: you board on the passport. Also your Disney admission, every hotel check-in, and station security."
-  },
-  {
-   "id": "pk026",
-   "item": "Tibet Travel Permit — the original",
-   "group": "Documents & money",
-   "status": "action",
-   "bag": "Sling",
-   "zone": "Tibet",
-   "detail": "Checked to board the train and again at road checkpoints. Photograph it the moment James delivers it."
-  },
-  {
-   "id": "pk027",
-   "item": "Printed flights, hotels and tour receipt",
-   "group": "Documents & money",
-   "status": "pending",
-   "bag": "Talon 44",
-   "zone": "All legs",
-   "detail": "FAFD77, GBDPCB, JP5E6A, AOT-BJ-James-50674. Paper survives a dead phone."
-  },
-  {
-   "id": "pk028",
-   "item": "Offline digital copies of every document",
-   "group": "Documents & money",
-   "status": "pending",
-   "bag": "Sling",
-   "zone": "All legs",
-   "detail": "On the phone in a folder that works with no signal, plus emailed to yourself."
-  },
-  {
-   "id": "pk029",
-   "item": "Two credit cards and one debit card",
-   "group": "Documents & money",
-   "status": "pending",
-   "bag": "Sling",
-   "zone": "All legs",
-   "detail": "One card lives in the Talon instead, so a lost sling isn't a lost trip. Foreign cards still fail at plenty of Chinese terminals."
-  },
-  {
-   "id": "pk030",
-   "item": "Chinese cash drawn before you leave Lhasa",
-   "group": "Documents & money",
-   "status": "action",
-   "bag": "Sling",
-   "zone": "Tibet",
-   "detail": "ATMs thin out past Shigatse and there are none at base camp. Small notes."
-  },
-  {
-   "id": "pk031",
-   "item": "Tips for the guide and driver",
-   "group": "Documents & money",
-   "status": "pending",
-   "bag": "Talon 44",
-   "zone": "Tibet",
-   "detail": "A few hundred RMB across the eight days, in cash, in an envelope, separate from your spending money."
-  },
-  {
-   "id": "pk032",
-   "item": "A USD emergency reserve",
-   "group": "Documents & money",
-   "status": "pending",
-   "bag": "Away",
-   "zone": "All legs",
-   "detail": "Two or three hundred, buried in the checked bag, kept separately from everything else."
-  },
-  {
-   "id": "pk033",
-   "item": "Four passport photos",
-   "group": "Documents & money",
-   "status": "pending",
-   "bag": "Talon 44",
-   "zone": "All legs",
-   "detail": "Permits, and whatever else asks."
-  },
-  {
-   "id": "pk034",
-   "item": "Insurance policy number and the assistance line",
-   "group": "Documents & money",
-   "status": "pending",
-   "bag": "Sling",
-   "zone": "All legs",
-   "detail": "On paper. The number you need is the one you can't look up."
-  },
-  {
-   "id": "pk035",
-   "item": "A written contacts card",
-   "group": "Documents & money",
-   "status": "pending",
-   "bag": "Sling",
-   "zone": "All legs",
-   "detail": "James +86 177 2640 4023; Chengdu consulate +86 28 8558 3992 (nearest post to Tibet); Shanghai +86 21 6433 6880; Overseas Citizens Services +1 202 501 4444."
-  },
-  {
-   "id": "pk036",
-   "item": "Hotel names and addresses written in Chinese",
-   "group": "Documents & money",
-   "status": "pending",
-   "bag": "Sling",
-   "zone": "Xi'an · Shanghai",
-   "detail": "Hand it to the taxi driver. Screenshot each one as well."
-  },
-  {
-   "id": "pk037",
-   "item": "Arc'teryx Mantis 1, worn under your jacket",
-   "group": "Documents & money",
-   "status": "pending",
-   "bag": "On you",
-   "zone": "All legs",
-   "detail": "At 1.5 L and 2.4 in deep it doubles as the flat pouch for the passport and permit on the two transit days where losing them ends the trip. The Waistpack does the job the rest of the time."
-  },
-  {
-   "id": "pk038",
-   "item": "Altitude medication, if your doctor prescribes it",
-   "group": "Altitude & medical",
-   "status": "action",
-   "bag": "Sling",
-   "zone": "Tibet · EBC night",
-   "detail": "Start it on the schedule they give you, not when you feel bad — which means it has to be on you, not in the hold.",
-   "own": "own"
-  },
-  {
-   "id": "pk039",
-   "item": "Pulse oximeter",
-   "group": "Altitude & medical",
-   "status": "pending",
-   "bag": "Talon 44",
-   "zone": "EBC night",
-   "detail": "Tiny, cheap, and turns \"I feel off\" into a number you can act on."
-  },
-  {
-   "id": "pk040",
-   "item": "Ibuprofen and acetaminophen",
-   "group": "Altitude & medical",
-   "status": "pending",
-   "bag": "Talon 44",
-   "zone": "All legs",
-   "detail": "A working supply in the Talon, the rest of the box in the Away. Altitude headache is near-universal."
-  },
-  {
-   "id": "pk041",
-   "item": "Anti-nausea tablets",
-   "group": "Altitude & medical",
-   "status": "pending",
-   "bag": "Talon 44",
-   "zone": "EBC night",
-   "detail": "Nausea and appetite loss are the most common complaints at base camp."
-  },
-  {
-   "id": "pk042",
-   "item": "Motion sickness tablets",
-   "group": "Altitude & medical",
-   "status": "pending",
-   "bag": "Sling",
-   "zone": "Tibet",
-   "detail": "Seven hours to Shigatse and 340 km over three passes above 5,000 m. You need these in the van, not in the pack in the boot."
-  },
-  {
-   "id": "pk043",
-   "item": "Loperamide and oral rehydration salts",
-   "group": "Altitude & medical",
-   "status": "action",
-   "bag": "Talon 44",
-   "zone": "All legs",
-   "detail": "Sandra lost four days in Xi'an to food poisoning. Assume it will happen once, and keep two sachets in the sling."
-  },
-  {
-   "id": "pk044",
-   "item": "Electrolyte tablets or powder",
-   "group": "Altitude & medical",
-   "status": "pending",
-   "bag": "Talon 44",
-   "zone": "Tibet · EBC night",
-   "detail": "You need three to four litres a day up there and plain water won't keep up."
-  },
-  {
-   "id": "pk045",
-   "item": "Your prescriptions, in labelled bottles",
-   "group": "Altitude & medical",
-   "status": "action",
-   "bag": "Talon 44",
-   "zone": "All legs",
-   "detail": "The full course in the Talon, a duplicate set in the Away, and a copy of the prescription in both.",
-   "own": "own"
-  },
-  {
-   "id": "pk046",
-   "item": "Throat lozenges and cough drops",
-   "group": "Altitude & medical",
-   "status": "pending",
-   "bag": "Sling",
-   "zone": "Tibet · EBC night",
-   "detail": "The dry plateau air shreds throats within a couple of days."
-  },
-  {
-   "id": "pk047",
-   "item": "Saline nasal spray and nasal gel",
-   "group": "Altitude & medical",
-   "status": "pending",
-   "bag": "Talon 44",
-   "zone": "Tibet · EBC night",
-   "detail": "Nosebleeds at altitude are routine and unpleasant in a shared room."
-  },
-  {
-   "id": "pk048",
-   "item": "Sunscreen SPF 50 — large tube checked, small tube on you",
-   "group": "Altitude & medical",
-   "status": "action",
-   "bag": "Away",
-   "zone": "Tibet · EBC night",
-   "detail": "The big tube is over 100 ml so it has to go in the Away; carry a 50 ml one in the sling. UV at 5,200 m burns skin you didn't know was exposed — under the chin, inside the nose, ears."
-  },
-  {
-   "id": "pk049",
-   "item": "Lip balm with SPF, two of them",
-   "group": "Altitude & medical",
-   "status": "pending",
-   "bag": "Sling",
-   "zone": "Tibet · EBC night",
-   "detail": "One in the sling, the spare in the Away. You will lose one, and cracked lips at altitude take the whole trip to heal."
-  },
-  {
-   "id": "pk050",
-   "item": "Eye drops",
-   "group": "Altitude & medical",
-   "status": "pending",
-   "bag": "Sling",
-   "zone": "Tibet · EBC night",
-   "detail": "Dust, wind and dry air, all at once."
-  },
-  {
-   "id": "pk051",
-   "item": "Blister kit — Compeed, moleskin, tape",
-   "group": "Altitude & medical",
-   "status": "pending",
-   "bag": "Daypack",
-   "zone": "Tibet · Disney",
-   "detail": "In the day bag, not the hotel. Before the hot spot becomes a blister."
-  },
-  {
-   "id": "pk052",
-   "item": "Small first aid: plasters, antiseptic wipes, tweezers",
-   "group": "Altitude & medical",
-   "status": "pending",
-   "bag": "Talon 44",
-   "zone": "All legs",
-   "detail": "Nothing elaborate. The guide carries a kit too."
-  },
-  {
-   "id": "pk053",
-   "item": "Hand sanitiser, several small bottles",
-   "group": "Altitude & medical",
-   "status": "pending",
-   "bag": "Sling",
-   "zone": "All legs",
-   "detail": "One in the sling, one in the daypack, one in the Talon, one in a coat pocket."
-  },
-  {
-   "id": "pk054",
-   "item": "Antibacterial wipes",
-   "group": "Altitude & medical",
-   "status": "pending",
-   "bag": "Daypack",
-   "zone": "All legs",
-   "detail": "Train tables, hotel remotes, your hands before every meal."
-  },
-  {
-   "id": "pk055",
-   "item": "Melatonin",
-   "group": "Altitude & medical",
-   "status": "pending",
-   "bag": "Talon 44",
-   "zone": "All legs",
-   "detail": "Twelve hours of time change on the way out. Do not take a sleeping pill at altitude, though."
-  },
-  {
-   "id": "pk056",
-   "item": "A multivitamin",
-   "group": "Altitude & medical",
-   "status": "pending",
-   "bag": "Away",
-   "zone": "All legs",
-   "detail": "Sandra's diet in China ran to noodles, rice and pork, and she felt the gap."
-  },
-  {
-   "id": "pk057",
-   "item": "Merino base layer tops ×2",
-   "group": "Clothing",
-   "status": "pending",
-   "bag": "Away → Talon 44",
-   "zone": "Tibet · EBC night",
-   "detail": "Keep one clean and unworn for the base camp night."
-  },
-  {
-   "id": "pk058",
-   "item": "Merino long johns ×2",
-   "group": "Clothing",
-   "status": "action",
-   "bag": "Away → Talon 44",
-   "zone": "EBC night",
-   "detail": "You sleep in these at EBC. Wool, not cotton."
-  },
-  {
-   "id": "pk059",
-   "item": "Grid fleece or midweight fleece",
-   "group": "Clothing",
-   "status": "pending",
-   "bag": "Away → Talon 44",
-   "zone": "Tibet · EBC night",
-   "detail": "The layer you'll live in for a week."
-  },
-  {
-   "id": "pk060",
-   "item": "Packable down or synthetic puffy",
-   "group": "Clothing",
-   "status": "action",
-   "bag": "Talon 44",
-   "zone": "Tibet · EBC night",
-   "detail": "Lives in the carry-on so it's never lost and never counted: Lhasa evenings, every pass stop, and under the shell at base camp."
-  },
-  {
-   "id": "pk061",
-   "item": "Hardshell jacket, waterproof and windproof, hooded",
-   "group": "Clothing",
-   "status": "action",
-   "bag": "On you",
-   "zone": "All legs",
-   "detail": "Wear it on the plane. Wind at the passes is the real problem, not rain, and it covers Xi'an showers too."
-  },
-  {
-   "id": "pk062",
-   "item": "Light waterproof overtrousers",
-   "group": "Clothing",
-   "status": "pending",
-   "bag": "Away → Talon 44",
-   "zone": "EBC night",
-   "detail": "Pack small, worth their weight standing around at 5,200 m."
-  },
-  {
-   "id": "pk063",
-   "item": "Trekking trousers ×2, one warmer",
-   "group": "Clothing",
-   "status": "pending",
-   "bag": "Away",
-   "zone": "Tibet · EBC night",
-   "detail": "Softshell for the plateau days, lighter for Lhasa."
-  },
-  {
-   "id": "pk064",
-   "item": "Jeans or casual trousers ×1",
-   "group": "Clothing",
-   "status": "pending",
-   "bag": "Away",
-   "zone": "Xi'an · Shanghai",
-   "detail": "For the cities, where technical clothing looks odd."
-  },
-  {
-   "id": "pk065",
-   "item": "T-shirts and casual shirts ×4",
-   "group": "Clothing",
-   "status": "pending",
-   "bag": "Away",
-   "zone": "Xi'an · Shanghai",
-   "detail": "Quick-dry ones earn their place — you'll do sink laundry."
-  },
-  {
-   "id": "pk066",
-   "item": "One collared shirt and a smarter layer",
-   "group": "Clothing",
-   "status": "pending",
-   "bag": "Away",
-   "zone": "Shanghai",
-   "detail": "Five nights in Shanghai with dinners you haven't planned yet."
-  },
-  {
-   "id": "pk067",
-   "item": "Underwear ×8–10, quick-dry",
-   "group": "Clothing",
-   "status": "pending",
-   "bag": "Away",
-   "zone": "All legs",
-   "detail": "Two pairs live in the Talon so a delayed bag isn't a crisis. Cotton stays wet; merino or synthetic."
-  },
-  {
-   "id": "pk068",
-   "item": "Hiking socks ×5",
-   "group": "Clothing",
-   "status": "pending",
-   "bag": "Away",
-   "zone": "Tibet",
-   "detail": "Wool or synthetic, no cotton."
-  },
-  {
-   "id": "pk069",
-   "item": "Heavy wool socks ×2",
-   "group": "Clothing",
-   "status": "action",
-   "bag": "Away → Talon 44",
-   "zone": "EBC night",
-   "detail": "One dry pair reserved for sleeping. Cold feet keep you awake all night."
-  },
-  {
-   "id": "pk070",
-   "item": "Warm hat covering the ears",
-   "group": "Clothing",
-   "status": "action",
-   "bag": "Talon 44",
-   "zone": "Tibet · EBC night",
-   "detail": "You lose most of your heat here and you'll sleep in it at base camp."
-  },
-  {
-   "id": "pk071",
-   "item": "Brimmed sun hat",
-   "group": "Clothing",
-   "status": "pending",
-   "bag": "Daypack",
-   "zone": "Tibet",
-   "detail": "Clipped to the outside of the daypack. The plateau sun is relentless at midday even when the air is cold."
-  },
-  {
-   "id": "pk072",
-   "item": "Buff or neck gaiter ×2",
-   "group": "Clothing",
-   "status": "pending",
-   "bag": "Sling",
-   "zone": "Tibet · EBC night",
-   "detail": "One in the sling, one in the Away. Sun on the neck, dust on the roads, wind on the face — the most useful small thing you'll carry."
-  },
-  {
-   "id": "pk073",
-   "item": "Liner gloves and insulated gloves",
-   "group": "Clothing",
-   "status": "action",
-   "bag": "Talon 44",
-   "zone": "EBC night",
-   "detail": "Liners let you work a camera without bare hands at 21 °F (−6 °C)."
-  },
-  {
-   "id": "pk074",
-   "item": "Sunglasses, category 3 or 4, wraparound",
-   "group": "Clothing",
-   "status": "action",
-   "bag": "Sling",
-   "zone": "Tibet · EBC night",
-   "detail": "On you, spare pair in the Away. Glare off snow at 5,200 m is genuinely damaging."
-  },
-  {
-   "id": "pk075",
-   "item": "Sleepwear",
-   "group": "Clothing",
-   "status": "pending",
-   "bag": "Talon 44",
-   "zone": "Z165 · Tibet",
-   "detail": "In the carry-on, because the first night you need it is on the train, thirty hours before you next see the Away. Four-berth cabin with strangers, then a twin room with Jeff."
-  },
-  {
-   "id": "pk076",
-   "item": "Swimsuit",
-   "group": "Clothing",
-   "status": "pending",
-   "bag": "Away",
-   "zone": "Xi'an · Shanghai",
-   "detail": "City hotel pools. Weighs nothing."
-  },
-  {
-   "id": "pk077",
-   "item": "Light jacket for Shanghai",
-   "group": "Clothing",
-   "status": "pending",
-   "bag": "Away",
-   "zone": "Shanghai",
-   "detail": "72 °F (22 °C) days, 59 °F (15 °C) nights. The hardshell also does this job if you'd rather save the space."
-  },
-  {
-   "id": "pk078",
-   "item": "Waterproof hiking boots or sturdy trail shoes",
-   "group": "Footwear",
-   "status": "action",
-   "bag": "On you",
-   "zone": "Tibet · EBC night",
-   "detail": "Wear them on the plane. Never check the shoes you can't replace, and they're the heaviest single thing you own."
-  },
-  {
-   "id": "pk079",
-   "item": "City walking shoes",
-   "group": "Footwear",
-   "status": "pending",
-   "bag": "Away",
-   "zone": "Xi'an · Shanghai · Disney",
-   "detail": "The Xi'an wall and several 20,000-step days at Disney. Rotating between these and the boots is the best thing you can do for your feet."
-  },
-  {
-   "id": "pk080",
-   "item": "Slides for the train corridor and the tent",
-   "group": "Footwear",
-   "status": "action",
-   "bag": "Talon 44",
-   "zone": "Z165 · EBC night",
-   "detail": "Don't fly a pair of rubber slides across the Pacific — buy them in Xi'an on day one; see \"Buy it in China\". Then they live in the Talon, because you need them in the train corridor before you ever open the Away."
-  },
-  {
-   "id": "pk081",
-   "item": "Warm insoles or a spare pair",
-   "group": "Footwear",
-   "status": "pending",
-   "bag": "Away → Talon 44",
-   "zone": "EBC night",
-   "detail": "Cheap insurance against cold feet on the plateau."
-  },
-  {
-   "id": "pk082",
-   "item": "Phone, plus your old phone as a backup",
-   "group": "Electronics",
-   "status": "pending",
-   "bag": "Sling",
-   "zone": "All legs",
-   "detail": "A second handset covers theft, loss, and a Chinese SIM in one device. Keep them in different bags."
-  },
-  {
-   "id": "pk083",
-   "item": "20,000 mAh power bank",
-   "group": "Electronics",
-   "status": "action",
-   "bag": "Talon 44",
-   "zone": "Z165 · EBC night",
-   "detail": "Bought in Xi'an, not brought — your American one is not legal on the Lhasa–Shanghai flight; see \"Buy it in China\". It then lives in the Talon: carry-on only, never checked, because lithium in the hold is banned outright in China."
-  },
-  {
-   "id": "pk084",
-   "item": "A second, smaller power bank",
-   "group": "Electronics",
-   "status": "pending",
-   "bag": "Sling",
-   "zone": "EBC night · Disney",
-   "detail": "Also bought there. It lives in the sling deliberately: if the Talon gets gate-checked on a domestic sector you still have a battery, and it's the one you want in your pocket at Disney."
-  },
-  {
-   "id": "pk085",
-   "item": "Multi-port charger and three cables",
-   "group": "Electronics",
-   "status": "pending",
-   "bag": "Talon 44",
-   "zone": "All legs",
-   "detail": "Cables fail. Bring the spare."
-  },
-  {
-   "id": "pk086",
-   "item": "Plug adapters ×2 — types A, C and I",
-   "group": "Electronics",
-   "status": "pending",
-   "bag": "Talon 44",
-   "zone": "All legs",
-   "detail": "One in the Talon, one in the Away. Chinese sockets vary by building age."
-  },
-  {
-   "id": "pk087",
-   "item": "Headlamp and spare batteries",
-   "group": "Electronics",
-   "status": "action",
-   "bag": "Talon 44",
-   "zone": "EBC night",
-   "detail": "There is no lighting at the base camp toilets. A phone torch works until the phone dies."
-  },
-  {
-   "id": "pk088",
-   "item": "Camera, spare batteries, memory cards",
-   "group": "Electronics",
-   "status": "pending",
-   "bag": "Daypack",
-   "zone": "All legs",
-   "detail": "Cold flattens camera batteries — spares in an inside pocket, and in your sleeping bag overnight. If you'd rather have it to hand all day, that's the argument for the Peak Design sling."
-  },
-  {
-   "id": "pk089",
-   "item": "Earplugs and eye mask",
-   "group": "Electronics",
-   "status": "action",
-   "bag": "Talon 44",
-   "zone": "Z165 · EBC night",
-   "detail": "Thirty hours in a four-berth cabin, then a thin-walled tent camp."
-  },
-  {
-   "id": "pk090",
-   "item": "Headphones, including a wired pair",
-   "group": "Electronics",
-   "status": "pending",
-   "bag": "Sling",
-   "zone": "Z165",
-   "detail": "Wired ones don't need charging on a thirty-hour train."
-  },
-  {
-   "id": "pk091",
-   "item": "Kindle or a paperback",
-   "group": "Electronics",
-   "status": "pending",
-   "bag": "Talon 44",
-   "zone": "Z165",
-   "detail": "Avoid a printed guidebook to Tibet — political content gets confiscated at checkpoints. Download it instead."
-  },
-  {
-   "id": "pk092",
-   "item": "Watch or a small alarm clock",
-   "group": "Electronics",
-   "status": "pending",
-   "bag": "On you",
-   "zone": "EBC night",
-   "detail": "For the base camp sunrise, when your phone may be flat."
-  },
-  {
-   "id": "pk093",
-   "item": "Travel eSIM, installed before you fly",
-   "group": "Electronics",
-   "status": "action",
-   "bag": "Sling",
-   "zone": "All legs",
-   "detail": "Sandra credits a Chinese SIM three separate times with saving her trip — but that advice has inverted since 2017. A local SIM now sits inside the firewall and would kill WhatsApp, which is how James reaches you. Install a travel eSIM at home instead: it routes through a foreign carrier, so WhatsApp, mail and maps just work. A local SIM is worth it only for rural Tibet coverage, and only if the guide arranges it."
-  },
-  {
-   "id": "pk094",
-   "item": "Toothbrush, toothpaste, floss",
-   "group": "Toiletries",
-   "status": "pending",
-   "bag": "Talon 44",
-   "zone": "All legs",
-   "detail": "A travel set in the Talon for the train, the full one in the Away. Brush with bottled water. Every time."
-  },
-  {
-   "id": "pk095",
-   "item": "Heavy moisturiser and hand cream",
-   "group": "Toiletries",
-   "status": "pending",
-   "bag": "Away",
-   "zone": "Tibet · EBC night",
-   "detail": "Big tub checked, a small tube in the sling. The plateau is bone dry and your hands will crack."
-  },
-  {
-   "id": "pk096",
-   "item": "No-rinse body wipes",
-   "group": "Toiletries",
-   "status": "action",
-   "bag": "Away → Talon 44",
-   "zone": "EBC night",
-   "detail": "This is your shower on 7 October."
-  },
-  {
-   "id": "pk097",
-   "item": "Wet wipes and tissue packets",
-   "group": "Toiletries",
-   "status": "action",
-   "bag": "Sling",
-   "zone": "All legs",
-   "detail": "Pocket-level, always. Squat toilets rarely supply paper, and base camp has pit toilets. Sandra repeats this more than any other tip."
-  },
-  {
-   "id": "pk098",
-   "item": "Quick-dry travel towel",
-   "group": "Toiletries",
-   "status": "pending",
-   "bag": "Away → Talon 44",
-   "zone": "EBC night",
-   "detail": "The camp provides nothing."
-  },
-  {
-   "id": "pk099",
-   "item": "Deodorant, soap, shampoo",
-   "group": "Toiletries",
-   "status": "pending",
-   "bag": "Away",
-   "zone": "All legs",
-   "detail": "Hotels supply these; camps don't."
-  },
-  {
-   "id": "pk100",
-   "item": "Razor and nail clippers",
-   "group": "Toiletries",
-   "status": "pending",
-   "bag": "Away",
-   "zone": "All legs",
-   "detail": "Clippers in the checked bag — they will be taken off you at security otherwise."
-  },
-  {
-   "id": "pk101",
-   "item": "Glasses, plus contacts and solution",
-   "group": "Toiletries",
-   "status": "action",
-   "bag": "Talon 44",
-   "zone": "Tibet · EBC night",
-   "detail": "Bring the glasses even if you never wear them — dust and dry air make lenses miserable above 4,000 m."
-  },
-  {
-   "id": "pk102",
-   "item": "Face masks",
-   "group": "Toiletries",
-   "status": "pending",
-   "bag": "Sling",
-   "zone": "All legs",
-   "detail": "Road dust on the plateau, and still normal in Chinese cities."
-  },
-  {
-   "id": "pk103",
-   "item": "Passport in the sling, not the pack",
-   "group": "On the Z165",
-   "status": "action",
-   "bag": "Sling",
-   "zone": "Z165",
-   "detail": "It is the ticket. There is no paper one, and it gets checked at the gate, on board and at the Lhasa exit."
-  },
-  {
-   "id": "pk104",
-   "item": "Food for thirty hours",
-   "group": "On the Z165",
-   "status": "action",
-   "bag": "Talon 44",
-   "zone": "Z165",
-   "detail": "The dining car is limited and shuts early. Instant noodles, bars, nuts, dried fruit, chocolate."
-  },
-  {
-   "id": "pk105",
-   "item": "Thermos, for the carriage water dispenser",
-   "group": "On the Z165",
-   "status": "pending",
-   "bag": "Talon 44",
-   "zone": "Z165 · Tibet",
-   "detail": "Every carriage has a boiling-water dispenser and this is how everyone eats and drinks on Chinese trains. Buy it in Xi'an before you board rather than carrying one from home."
-  },
-  {
-   "id": "pk106",
-   "item": "Two litres of bottled water, bought before boarding",
-   "group": "On the Z165",
-   "status": "pending",
-   "bag": "Buy there",
-   "zone": "Z165",
-   "detail": "Station security scans liquids with a special reader — expect it and don't be surprised."
-  },
-  {
-   "id": "pk107",
-   "item": "Instant coffee or tea sachets",
-   "group": "On the Z165",
-   "status": "pending",
-   "bag": "Talon 44",
-   "zone": "Z165",
-   "detail": "Given the hot water, a real quality-of-life item."
-  },
-  {
-   "id": "pk108",
-   "item": "Neck pillow",
-   "group": "On the Z165",
-   "status": "pending",
-   "bag": "Talon 44",
-   "zone": "Z165",
-   "detail": "Clip it to the outside of the pack. The berths are flat but short."
-  },
-  {
-   "id": "pk109",
-   "item": "Board at least thirty minutes early",
-   "group": "On the Z165",
-   "status": "action",
-   "bag": "",
-   "zone": "Z165",
-   "detail": "With a 29-inch case this matters more for you than for most: it won't fit under the berth or reliably above the door, so you are competing for cabin floor space, and that competition starts before the doors open."
-  },
-  {
-   "id": "pk110",
-   "item": "Something to give your cabin-mates",
-   "group": "On the Z165",
-   "status": "pending",
-   "bag": "Talon 44",
-   "zone": "Z165",
-   "detail": "Snacks or a small gift. Thirty hours is a long time to be the silent foreigner."
-  },
-  {
-   "id": "pk111",
-   "item": "Sleeping bag liner, silk or fleece",
-   "group": "Base camp night",
-   "status": "action",
-   "bag": "Talon 44",
-   "zone": "EBC night",
-   "detail": "The camp quilts are heavy and warm but not always clean. The liner adds a few degrees too, and weighs almost nothing."
-  },
-  {
-   "id": "pk112",
-   "item": "Chemical hand and toe warmers, six pairs",
-   "group": "Base camp night",
-   "status": "action",
-   "bag": "Talon 44",
-   "zone": "EBC night",
-   "detail": "Two in the boots, two in the gloves, two in the sleeping bag. Cheap, weightless, transformative."
-  },
-  {
-   "id": "pk113",
-   "item": "A wide-mouth bottle you can fill with boiling water",
-   "group": "Base camp night",
-   "status": "pending",
-   "bag": "Talon 44",
-   "zone": "EBC night",
-   "detail": "Fill it at the stove and put it in the bottom of your sleeping bag. Best trick there is."
-  },
-  {
-   "id": "pk114",
-   "item": "Everything electronic, fully charged",
-   "group": "Base camp night",
-   "status": "action",
-   "bag": "Talon 44",
-   "zone": "EBC night",
-   "detail": "No outlets. Sleep with the phone, camera batteries and power bank inside the bag — cold drains them overnight."
-  },
-  {
-   "id": "pk115",
-   "item": "Your own snacks and water for the night",
-   "group": "Base camp night",
-   "status": "pending",
-   "bag": "Talon 44",
-   "zone": "EBC night",
-   "detail": "The camp sells very little and your appetite will be poor. Eat anyway; calories are what keep you warm."
-  },
-  {
-   "id": "pk116",
-   "item": "Toilet paper and hand sanitiser in a pocket",
-   "group": "Base camp night",
-   "status": "pending",
-   "bag": "Sling",
-   "zone": "EBC night",
-   "detail": "Pit toilets, no lighting, no supplies. In a pocket, not in a bag in the tent."
-  },
-  {
-   "id": "pk117",
-   "item": "Skip the shower, the alcohol and the sleeping pill",
-   "group": "Base camp night",
-   "status": "action",
-   "bag": "",
-   "zone": "EBC night",
-   "detail": "All three make altitude worse. A bad night's sleep at 5,200 m is normal and not a reason to medicate."
-  },
-  {
-   "id": "pk118",
-   "item": "Get up for sunrise",
-   "group": "Base camp night",
-   "status": "pending",
-   "bag": "",
-   "zone": "EBC night",
-   "detail": "October gives the clearest skies of the year on the north face. It is why the tour runs now."
-  },
-  {
-   "id": "pk119",
-   "item": "Bottled water only — including for brushing your teeth",
-   "group": "Food & water",
-   "status": "action",
-   "bag": "Buy there",
-   "zone": "All legs",
-   "detail": "No exceptions, no coolers, no ice."
-  },
-  {
-   "id": "pk120",
-   "item": "Water purification tablets or a filter bottle",
-   "group": "Food & water",
-   "status": "pending",
-   "bag": "Talon 44",
-   "zone": "EBC night",
-   "detail": "A backup for the plateau, where buying bottled water gets harder and pricier."
-  },
-  {
-   "id": "pk121",
-   "item": "Snacks you actually like",
-   "group": "Food & water",
-   "status": "action",
-   "bag": "Talon 44",
-   "zone": "Tibet · EBC night",
-   "detail": "Appetite collapses at altitude. Bring things you'll eat when you don't want to eat — and pack them where you can reach them, not in the Away."
-  },
-  {
-   "id": "pk122",
-   "item": "Instant oatmeal and soup sachets",
-   "group": "Food & water",
-   "status": "pending",
-   "bag": "Talon 44",
-   "zone": "Z165 · EBC night",
-   "detail": "Hot water is available almost everywhere in China."
-  },
-  {
-   "id": "pk123",
-   "item": "Chopsticks or a spork of your own",
-   "group": "Food & water",
-   "status": "pending",
-   "bag": "Talon 44",
-   "zone": "Z165",
-   "detail": "Optional, but station chopsticks are sanitised and reused."
-  },
-  {
-   "id": "pk124",
-   "item": "Small gifts from home",
-   "group": "Small things",
-   "status": "pending",
-   "bag": "Away",
-   "zone": "All legs",
-   "detail": "Postcards of Atlanta, pins, small candy — a few in the Talon for the train, the rest in the Away. Sandra handed out NYC postcards and says it landed every single time."
-  },
-  {
-   "id": "pk125",
-   "item": "Umbrella — buy it there",
-   "group": "Small things",
-   "status": "pending",
-   "bag": "Buy there",
-   "zone": "Xi'an · Shanghai",
-   "detail": "For sun as much as rain; Sandra carried one daily. ¥20–40 at any convenience store, and it then lives in the daypack."
-  },
-  {
-   "id": "pk126",
-   "item": "Small notes for monastery offerings and photo fees",
-   "group": "Small things",
-   "status": "pending",
-   "bag": "Sling",
-   "zone": "Tibet",
-   "detail": "Many monasteries charge for photography and some ban it outright. Ask first, always."
-  },
-  {
-   "id": "pk127",
-   "item": "Modest clothes for the monasteries",
-   "group": "Small things",
-   "status": "pending",
-   "bag": "Away",
-   "zone": "Tibet",
-   "detail": "Long trousers, covered shoulders, hat off indoors. Potala, Jokhang, Sera and Tashilhunpo are all working religious sites."
-  },
-  {
-   "id": "pk128",
-   "item": "Notebook and pen",
-   "group": "Small things",
-   "status": "pending",
-   "bag": "Sling",
-   "zone": "All legs",
-   "detail": "Landing cards, hotel names, and the phone numbers you'll need when the phone is dead."
-  },
-  {
-   "id": "pk129",
-   "item": "Duct tape wrapped round a pen, and a few zip ties",
-   "group": "Small things",
-   "status": "pending",
-   "bag": "Talon 44",
-   "zone": "All legs",
-   "detail": "Repairs a bag strap, a boot, a tent zip."
-  },
-  {
-   "id": "pk130",
-   "item": "Printed copy of the itinerary",
-   "group": "Small things",
-   "status": "pending",
-   "bag": "Talon 44",
-   "zone": "All legs",
-   "detail": "Including James's number and the tour reference."
-  },
-  {
-   "id": "pk131",
-   "item": "Your physical passport, every park day",
-   "group": "Disneyland",
-   "status": "action",
-   "bag": "Sling",
-   "zone": "Disney",
-   "detail": "The ticket is linked to the passport it was booked under and the named holder has to be present at entry. A photo or screenshot will not get you through."
-  },
-  {
-   "id": "pk132",
-   "item": "A working data connection all day",
-   "group": "Disneyland",
-   "status": "action",
-   "bag": "Sling",
-   "zone": "Disney",
-   "detail": "Wait times, mobile ordering, show times and any Premier Access all live in the app, and QR codes must be live rather than screenshotted. This is the day your eSIM stops being a convenience."
-  },
-  {
-   "id": "pk133",
-   "item": "Power bank and cable in the day bag",
-   "group": "Disneyland",
-   "status": "action",
-   "bag": "Daypack",
-   "zone": "Disney",
-   "detail": "A full day of the app, the camera and the maps will flatten a phone by mid-afternoon, and a dead phone means no tickets and no way home."
-  },
-  {
-   "id": "pk134",
-   "item": "WeChat Pay or Alipay, funded",
-   "group": "Disneyland",
-   "status": "pending",
-   "bag": "Sling",
-   "zone": "Disney",
-   "detail": "The resort is effectively cashless. Keep a small amount of cash as a fallback anyway."
-  },
-  {
-   "id": "pk135",
-   "item": "Decide on Disney Premier Access before you go",
-   "group": "Disneyland",
-   "status": "pending",
-   "bag": "",
-   "zone": "Disney",
-   "detail": "Sold only through the official channels and locked to one named guest — you cannot buy it for someone else or hand it over."
-  },
-  {
-   "id": "pk136",
-   "item": "Rotate your shoes between park days",
-   "group": "Disneyland",
-   "status": "action",
-   "bag": "Away",
-   "zone": "Disney",
-   "detail": "Multiple days at 20,000-plus steps. City shoes one day, boots or trail shoes the next — you already have both with you."
-  },
-  {
-   "id": "pk137",
-   "item": "Blister plasters in your pocket, not the hotel",
-   "group": "Disneyland",
-   "status": "pending",
-   "bag": "Sling",
-   "zone": "Disney",
-   "detail": "Same kit as the Tibet section, but you want it on you."
-  },
-  {
-   "id": "pk138",
-   "item": "Spare socks in the day bag",
-   "group": "Disneyland",
-   "status": "pending",
-   "bag": "Daypack",
-   "zone": "Disney",
-   "detail": "Rain, water rides, and eight hours of walking."
-  },
-  {
-   "id": "pk139",
-   "item": "Packable rain poncho",
-   "group": "Disneyland",
-   "status": "pending",
-   "bag": "Daypack",
-   "zone": "Disney",
-   "detail": "Cheaper than buying one in the park, and Roaring Rapids will genuinely soak you."
-  },
-  {
-   "id": "pk140",
-   "item": "A layer you can take off and stuff in the bag",
-   "group": "Disneyland",
-   "status": "pending",
-   "bag": "Daypack",
-   "zone": "Disney",
-   "detail": "59 °F (15 °C) at rope drop, 72 °F (22 °C) by lunch, cool again for the fireworks."
-  },
-  {
-   "id": "pk141",
-   "item": "Refillable water bottle",
-   "group": "Disneyland",
-   "status": "pending",
-   "bag": "Daypack",
-   "zone": "Disney",
-   "detail": "There are refill points, and you will drink more than you expect on a warm day."
-  },
-  {
-   "id": "pk142",
-   "item": "Your own snacks",
-   "group": "Disneyland",
-   "status": "pending",
-   "bag": "Daypack",
-   "zone": "Disney",
-   "detail": "Outside food for personal consumption is allowed — no glass containers and nothing strong-smelling. It saves both queueing and money."
-  },
-  {
-   "id": "pk143",
-   "item": "Take the daypack, leave the Talon at the hotel",
-   "group": "Disneyland",
-   "status": "action",
-   "bag": "Daypack",
-   "zone": "Disney",
-   "detail": "This is exactly why the daypack stays under 26 L. Bulky bags, selfie sticks, large tripods and spray cans are turned away at screening."
-  },
-  {
-   "id": "pk144",
-   "item": "Sling for the coasters",
-   "group": "Disneyland",
-   "status": "pending",
-   "bag": "Sling",
-   "zone": "Disney",
-   "detail": "TRON Lightcycle Power Run is ridden motorbike-style, face down — everything loose has to be stowed before you board, so a zipped sling you can wear tight beats loose pockets."
-  },
-  {
-   "id": "pk145",
-   "item": "Phone strap or lanyard",
-   "group": "Disneyland",
-   "status": "pending",
-   "bag": "Sling",
-   "zone": "Disney",
-   "detail": "For the same reason."
-  },
-  {
-   "id": "pk146",
-   "item": "Sunscreen and a cap",
-   "group": "Disneyland",
-   "status": "pending",
-   "bag": "Daypack",
-   "zone": "Disney",
-   "detail": "The queues are long and a lot of them are unshaded, even in October."
-  },
-  {
-   "id": "pk147",
-   "item": "Arrive before opening, and leave before the fireworks end",
-   "group": "Disneyland",
-   "status": "pending",
-   "bag": "",
-   "zone": "Disney",
-   "detail": "The rope-drop hour is worth two afternoon hours, and the post-fireworks crush at the gates and on Line 11 is the worst twenty minutes of the day."
-  },
-  {
-   "id": "pk148",
-   "item": "Pin trading pins, if you fancy it",
-   "group": "Disneyland",
-   "status": "pending",
-   "bag": "Daypack",
-   "zone": "Disney",
-   "detail": "Entirely optional, but cast members trade readily and it is a good way into conversation."
-  },
-  {
-   "id": "pk149",
-   "item": "No drone",
-   "group": "Leave at home",
-   "status": "action",
-   "bag": "",
-   "zone": "Tibet",
-   "detail": "Confiscated in Tibet. Don't bring it as far as the airport."
-  },
-  {
-   "id": "pk150",
-   "item": "No Tibetan flag, Dalai Lama images, or political literature",
-   "group": "Leave at home",
-   "status": "action",
-   "bag": "",
-   "zone": "Tibet",
-   "detail": "Checked for, confiscated, and it can end your permit. This includes guidebooks with political chapters."
-  },
-  {
-   "id": "pk151",
-   "item": "No American power banks at all",
-   "group": "Leave at home",
-   "status": "action",
-   "bag": "",
-   "zone": "All legs",
-   "detail": "Not a weight call — a legal one. Without a 3C mark moulded into the case they are confiscated at Chinese domestic security with no appeal, and China bans lithium in the hold, so there is no way around it. Buy Chinese ones in Xi'an. The 100 Wh cap still applies on top of that."
-  },
-  {
-   "id": "pk152",
-   "item": "Don't use the Away's expansion zipper",
-   "group": "Leave at home",
-   "status": "action",
-   "bag": "",
-   "zone": "All legs",
-   "detail": "Closed it is 157.5 cm linear, half a centimetre inside Korean Air's 158 cm. Expanded it is oversize, and oversize on a Chinese domestic sector is an argument you will lose in Lhasa."
-  },
-  {
-   "id": "pk153",
-   "item": "No new, unworn boots",
-   "group": "Leave at home",
-   "status": "action",
-   "bag": "",
-   "zone": "Tibet",
-   "detail": "You've got a week of walking at altitude."
-  },
-  {
-   "id": "pk154",
-   "item": "No jewellery or valuables you'd mind losing",
-   "group": "Leave at home",
-   "status": "action",
-   "bag": "",
-   "zone": "All legs",
-   "detail": "Nineteen days, ten beds, one tent."
-  }
- ]
+  "items": [
+    {
+      "id": "pk001",
+      "item": "Away The Large — checked, packed to 20 kg",
+      "group": "Bags & packing",
+      "bag": "Away",
+      "zone": "All legs",
+      "detail": "Closed, not expanded. The TSA combination lock and the compression pads are built in, and it ships with a drawstring laundry bag — so that's one thing off the list.",
+      "own": "own",
+      "prio": "must"
+    },
+    {
+      "id": "pk002",
+      "item": "Osprey Talon 44 — carry-on, kept light",
+      "group": "Bags & packing",
+      "bag": "Talon 44",
+      "zone": "All legs",
+      "detail": "At 72 cm tall it is over Korean Air's 55 × 40 × 20 cm cabin size on paper, but it's soft and compresses; the binding limit is the 10 kg you're allowed across the carry-on and personal item together. Cinch the compression straps and don't let it look like a trekking pack at the gate.",
+      "own": "own",
+      "prio": "must"
+    },
+    {
+      "id": "pk003",
+      "item": "Pick which Osprey daypack comes",
+      "group": "Bags & packing",
+      "bag": "Daypack",
+      "zone": "All legs",
+      "detail": "20–26 litres is the sweet spot — big enough for a poncho, a layer, water and snacks at Disney, small enough to pass the park's bag screening and to fold into the Talon for base camp. Anything over 30 L duplicates the Talon and costs you cabin weight.",
+      "prio": "must"
+    },
+    {
+      "id": "pk004",
+      "item": "REI Ruckpack Waistpack, worn crossbody",
+      "group": "Bags & packing",
+      "bag": "Sling",
+      "zone": "Xi'an · Tibet · Shanghai · Disney",
+      "detail": "See the picks above. Worn on the front and zipped in every crowd. Shanghai is where Sandra got scammed.",
+      "prio": "must"
+    },
+    {
+      "id": "pk005",
+      "item": "Luggage scale",
+      "group": "Bags & packing",
+      "bag": "Talon 44",
+      "zone": "All legs",
+      "detail": "Under 50 g and it decides whether you pay excess in Lhasa. Weigh the Away before every flight, not just at home.",
+      "prio": "must"
+    },
+    {
+      "id": "pk006",
+      "item": "Packing cubes — one is the EBC cube",
+      "group": "Bags & packing",
+      "bag": "Away → Talon 44",
+      "zone": "All legs",
+      "detail": "Long johns, heavy socks, base layer, hat, gloves, warmers, wipes. At Shigatse you lift one cube out of the Away into the Talon and you're packed for base camp.",
+      "own": "own"
+    },
+    {
+      "id": "pk007",
+      "item": "Raincover for the Talon",
+      "group": "Bags & packing",
+      "bag": "Talon 44",
+      "zone": "Tibet · EBC night",
+      "detail": "Osprey doesn't include one with the Talon 44. It is less about rain than about plateau dust and the pack riding on a roof rack for 340 km."
+    },
+    {
+      "id": "pk008",
+      "item": "Compression sack for the puffy",
+      "group": "Bags & packing",
+      "bag": "Talon 44",
+      "zone": "EBC night",
+      "detail": "Reclaims a surprising amount of space in a 44 L pack that has to hold a night's kit."
+    },
+    {
+      "id": "pk009",
+      "item": "Dry bags and ziplocks",
+      "group": "Bags & packing",
+      "bag": "Away",
+      "zone": "Tibet",
+      "detail": "Plateau dust gets into everything. Also keeps electronics dry on the passes."
+    },
+    {
+      "id": "pk010",
+      "item": "Small padlock and a short cable",
+      "group": "Bags & packing",
+      "bag": "Talon 44",
+      "zone": "Z165",
+      "detail": "The Away has its own TSA lock; the Talon has nothing. The soft sleeper cabin locks, but the bags in it don't."
+    },
+    {
+      "id": "pk011",
+      "item": "Detergent sheets",
+      "group": "Bags & packing",
+      "bag": "Away",
+      "zone": "All legs",
+      "detail": "Nineteen days out of one bag means sink washing at least twice. The Away's own laundry bag holds the dirty half."
+    },
+    {
+      "id": "pk012",
+      "item": "Luggage tags with your phone number",
+      "group": "Bags & packing",
+      "bag": "Away",
+      "zone": "All legs",
+      "detail": "Domestic Chinese flights check bags against your ticket at the carousel."
+    },
+    {
+      "id": "pk013",
+      "item": "A 3C-certified power bank, 20,000 mAh",
+      "group": "Buy in China",
+      "bag": "Buy there",
+      "zone": "All legs",
+      "detail": "First-day errand in Xi'an. Check for the oval three-C logo printed on the case itself, not the box. Buy two while you're there — the big one for the train and base camp, a small one for the sling.",
+      "prio": "must"
+    },
+    {
+      "id": "pk014",
+      "item": "Shower shoes or slides",
+      "group": "Buy in China",
+      "bag": "Buy there",
+      "zone": "Z165 · EBC night",
+      "detail": "¥20–30 at any supermarket, Miniso or department store. Buy them on day one: you need them in the train corridor on 2 October and again for the base camp toilet at 3 a.m.",
+      "prio": "must"
+    },
+    {
+      "id": "pk015",
+      "item": "Insulated thermos",
+      "group": "Buy in China",
+      "bag": "Buy there",
+      "zone": "Z165 · Tibet",
+      "detail": "Boiling water is free in every train carriage, station and hotel corridor in China, and a thermos is what turns that into coffee, noodles and a hot bottle in your sleeping bag. Buy before boarding the Z165."
+    },
+    {
+      "id": "pk016",
+      "item": "Wet wipes, tissues and face masks in bulk",
+      "group": "Buy in China",
+      "bag": "Buy there",
+      "zone": "All legs",
+      "detail": "Pennies at any convenience store, and you will get through far more than you'd think. Carry one packet from Atlanta for the first day and restock properly in Xi'an.",
+      "prio": "must"
+    },
+    {
+      "id": "pk017",
+      "item": "Shampoo, body wash, toothpaste, laundry detergent",
+      "group": "Buy in China",
+      "bag": "Buy there",
+      "zone": "All legs",
+      "detail": "Buying these in a Xi'an supermarket sidesteps the 100 ml carry-on liquid rule entirely and saves a kilo of checked weight. Hotels supply the basics; this is for the top-ups and for base camp."
+    },
+    {
+      "id": "pk018",
+      "item": "Portable oxygen cans",
+      "group": "Buy in China",
+      "bag": "Buy there",
+      "zone": "Tibet · EBC night",
+      "detail": "Sold in every Lhasa pharmacy and tourist shop for ¥30–60. Buy-there by necessity — you cannot fly with a pressurised canister. The train has piped oxygen at the berths and your guide carries supplies, so treat these as reassurance rather than a plan."
+    },
+    {
+      "id": "pk019",
+      "item": "Heavy down parka — rent or buy around Barkhor",
+      "group": "Buy in China",
+      "bag": "Buy there",
+      "zone": "EBC night",
+      "detail": "Your packable puffy is not enough at 21 °F (−6 °C) with wind, and a real parka is 1.5–2 kg of a 14.5 kg budget. The rental shops around Barkhor exist for exactly this trade. The single easiest kilo to save.",
+      "prio": "must"
+    },
+    {
+      "id": "pk020",
+      "item": "Sleeping bag rated to 14 °F (−10 °C) — rent in Lhasa",
+      "group": "Buy in China",
+      "bag": "Buy there",
+      "zone": "EBC night",
+      "detail": "Optional; the camp quilts do work. But carrying your own from Atlanta costs another 1.5 kg, and Lhasa rents them by the day. James can arrange it with the tour."
+    },
+    {
+      "id": "pk021",
+      "item": "Trekking poles — rent in Lhasa",
+      "group": "Buy in China",
+      "bag": "Buy there",
+      "zone": "Tibet · EBC night",
+      "detail": "Not currently on your list, and worth a thought for the walk in at base camp. Rented alongside the sleeping bag rather than checked from Atlanta."
+    },
+    {
+      "id": "pk022",
+      "item": "Batteries for the headlamp",
+      "group": "Buy in China",
+      "bag": "Buy there",
+      "zone": "EBC night",
+      "detail": "AA and AAA are sold everywhere. Bring one set in the headlamp, buy the spares."
+    },
+    {
+      "id": "pk023",
+      "item": "Snacks and train food",
+      "group": "Buy in China",
+      "bag": "Buy there",
+      "zone": "Z165 · Tibet",
+      "detail": "A Xi'an supermarket the night before beats the station shops on both price and range, and beats anything you'd carry from home. Instant noodles, nuts, dried fruit, chocolate."
+    },
+    {
+      "id": "pk024",
+      "item": "A cheap holdall for the way home",
+      "group": "Buy in China",
+      "bag": "Buy there",
+      "zone": "Shanghai",
+      "detail": "¥50 in a Lhasa or Shanghai market, and it rides home as your free second checked bag on Korean Air."
+    },
+    {
+      "id": "pk025",
+      "item": "Passport with the Chinese visa",
+      "group": "Documents & money",
+      "bag": "Sling",
+      "zone": "All legs",
+      "detail": "Z165 has no paper ticket: you board on the passport. Also your Disney admission, every hotel check-in, and station security.",
+      "prio": "must"
+    },
+    {
+      "id": "pk026",
+      "item": "Tibet Travel Permit — the original",
+      "group": "Documents & money",
+      "bag": "Sling",
+      "zone": "Tibet",
+      "detail": "Checked to board the train and again at road checkpoints. Photograph it the moment James delivers it.",
+      "prio": "must"
+    },
+    {
+      "id": "pk027",
+      "item": "Printed flights, hotels and tour receipt",
+      "group": "Documents & money",
+      "bag": "Talon 44",
+      "zone": "All legs",
+      "detail": "FAFD77, GBDPCB, JP5E6A, AOT-BJ-James-50674. Paper survives a dead phone."
+    },
+    {
+      "id": "pk028",
+      "item": "Offline digital copies of every document",
+      "group": "Documents & money",
+      "bag": "Sling",
+      "zone": "All legs",
+      "detail": "On the phone in a folder that works with no signal, plus emailed to yourself."
+    },
+    {
+      "id": "pk029",
+      "item": "Two credit cards and one debit card",
+      "group": "Documents & money",
+      "bag": "Sling",
+      "zone": "All legs",
+      "detail": "One card lives in the Talon instead, so a lost sling isn't a lost trip. Foreign cards still fail at plenty of Chinese terminals."
+    },
+    {
+      "id": "pk030",
+      "item": "Chinese cash drawn before you leave Lhasa",
+      "group": "Documents & money",
+      "bag": "Sling",
+      "zone": "Tibet",
+      "detail": "ATMs thin out past Shigatse and there are none at base camp. Small notes.",
+      "prio": "must"
+    },
+    {
+      "id": "pk031",
+      "item": "Tips for the guide and driver",
+      "group": "Documents & money",
+      "bag": "Talon 44",
+      "zone": "Tibet",
+      "detail": "A few hundred RMB across the eight days, in cash, in an envelope, separate from your spending money."
+    },
+    {
+      "id": "pk032",
+      "item": "A USD emergency reserve",
+      "group": "Documents & money",
+      "bag": "Away",
+      "zone": "All legs",
+      "detail": "Two or three hundred, buried in the checked bag, kept separately from everything else."
+    },
+    {
+      "id": "pk033",
+      "item": "Four passport photos",
+      "group": "Documents & money",
+      "bag": "Talon 44",
+      "zone": "All legs",
+      "detail": "Permits, and whatever else asks."
+    },
+    {
+      "id": "pk034",
+      "item": "Insurance policy number and the assistance line",
+      "group": "Documents & money",
+      "bag": "Sling",
+      "zone": "All legs",
+      "detail": "On paper. The number you need is the one you can't look up."
+    },
+    {
+      "id": "pk035",
+      "item": "A written contacts card",
+      "group": "Documents & money",
+      "bag": "Sling",
+      "zone": "All legs",
+      "detail": "James +86 177 2640 4023; Chengdu consulate +86 28 8558 3992 (nearest post to Tibet); Shanghai +86 21 6433 6880; Overseas Citizens Services +1 202 501 4444."
+    },
+    {
+      "id": "pk036",
+      "item": "Hotel names and addresses written in Chinese",
+      "group": "Documents & money",
+      "bag": "Sling",
+      "zone": "Xi'an · Shanghai",
+      "detail": "Hand it to the taxi driver. Screenshot each one as well."
+    },
+    {
+      "id": "pk037",
+      "item": "Arc'teryx Mantis 1, worn under your jacket",
+      "group": "Documents & money",
+      "bag": "On you",
+      "zone": "All legs",
+      "detail": "At 1.5 L and 2.4 in deep it doubles as the flat pouch for the passport and permit on the two transit days where losing them ends the trip. The Waistpack does the job the rest of the time."
+    },
+    {
+      "id": "pk038",
+      "item": "Altitude medication, if your doctor prescribes it",
+      "group": "Altitude & medical",
+      "bag": "Sling",
+      "zone": "Tibet · EBC night",
+      "detail": "Start it on the schedule they give you, not when you feel bad — which means it has to be on you, not in the hold.",
+      "own": "own",
+      "prio": "must"
+    },
+    {
+      "id": "pk039",
+      "item": "Pulse oximeter",
+      "group": "Altitude & medical",
+      "bag": "Talon 44",
+      "zone": "EBC night",
+      "detail": "Tiny, cheap, and turns \"I feel off\" into a number you can act on."
+    },
+    {
+      "id": "pk040",
+      "item": "Ibuprofen and acetaminophen",
+      "group": "Altitude & medical",
+      "bag": "Talon 44",
+      "zone": "All legs",
+      "detail": "A working supply in the Talon, the rest of the box in the Away. Altitude headache is near-universal."
+    },
+    {
+      "id": "pk041",
+      "item": "Anti-nausea tablets",
+      "group": "Altitude & medical",
+      "bag": "Talon 44",
+      "zone": "EBC night",
+      "detail": "Nausea and appetite loss are the most common complaints at base camp."
+    },
+    {
+      "id": "pk042",
+      "item": "Motion sickness tablets",
+      "group": "Altitude & medical",
+      "bag": "Sling",
+      "zone": "Tibet",
+      "detail": "Seven hours to Shigatse and 340 km over three passes above 5,000 m. You need these in the van, not in the pack in the boot."
+    },
+    {
+      "id": "pk043",
+      "item": "Loperamide and oral rehydration salts",
+      "group": "Altitude & medical",
+      "bag": "Talon 44",
+      "zone": "All legs",
+      "detail": "Sandra lost four days in Xi'an to food poisoning. Assume it will happen once, and keep two sachets in the sling.",
+      "prio": "must"
+    },
+    {
+      "id": "pk044",
+      "item": "Electrolyte tablets or powder",
+      "group": "Altitude & medical",
+      "bag": "Talon 44",
+      "zone": "Tibet · EBC night",
+      "detail": "You need three to four litres a day up there and plain water won't keep up."
+    },
+    {
+      "id": "pk045",
+      "item": "Your prescriptions, in labelled bottles",
+      "group": "Altitude & medical",
+      "bag": "Talon 44",
+      "zone": "All legs",
+      "detail": "The full course in the Talon, a duplicate set in the Away, and a copy of the prescription in both.",
+      "own": "own",
+      "prio": "must"
+    },
+    {
+      "id": "pk046",
+      "item": "Throat lozenges and cough drops",
+      "group": "Altitude & medical",
+      "bag": "Sling",
+      "zone": "Tibet · EBC night",
+      "detail": "The dry plateau air shreds throats within a couple of days."
+    },
+    {
+      "id": "pk047",
+      "item": "Saline nasal spray and nasal gel",
+      "group": "Altitude & medical",
+      "bag": "Talon 44",
+      "zone": "Tibet · EBC night",
+      "detail": "Nosebleeds at altitude are routine and unpleasant in a shared room."
+    },
+    {
+      "id": "pk048",
+      "item": "Sunscreen SPF 50 — large tube checked, small tube on you",
+      "group": "Altitude & medical",
+      "bag": "Away",
+      "zone": "Tibet · EBC night",
+      "detail": "The big tube is over 100 ml so it has to go in the Away; carry a 50 ml one in the sling. UV at 5,200 m burns skin you didn't know was exposed — under the chin, inside the nose, ears.",
+      "prio": "must"
+    },
+    {
+      "id": "pk049",
+      "item": "Lip balm with SPF, two of them",
+      "group": "Altitude & medical",
+      "bag": "Sling",
+      "zone": "Tibet · EBC night",
+      "detail": "One in the sling, the spare in the Away. You will lose one, and cracked lips at altitude take the whole trip to heal."
+    },
+    {
+      "id": "pk050",
+      "item": "Eye drops",
+      "group": "Altitude & medical",
+      "bag": "Sling",
+      "zone": "Tibet · EBC night",
+      "detail": "Dust, wind and dry air, all at once."
+    },
+    {
+      "id": "pk051",
+      "item": "Blister kit — Compeed, moleskin, tape",
+      "group": "Altitude & medical",
+      "bag": "Daypack",
+      "zone": "Tibet · Disney",
+      "detail": "In the day bag, not the hotel. Before the hot spot becomes a blister."
+    },
+    {
+      "id": "pk052",
+      "item": "Small first aid: plasters, antiseptic wipes, tweezers",
+      "group": "Altitude & medical",
+      "bag": "Talon 44",
+      "zone": "All legs",
+      "detail": "Nothing elaborate. The guide carries a kit too."
+    },
+    {
+      "id": "pk053",
+      "item": "Hand sanitiser, several small bottles",
+      "group": "Altitude & medical",
+      "bag": "Sling",
+      "zone": "All legs",
+      "detail": "One in the sling, one in the daypack, one in the Talon, one in a coat pocket."
+    },
+    {
+      "id": "pk054",
+      "item": "Antibacterial wipes",
+      "group": "Altitude & medical",
+      "bag": "Daypack",
+      "zone": "All legs",
+      "detail": "Train tables, hotel remotes, your hands before every meal."
+    },
+    {
+      "id": "pk055",
+      "item": "Melatonin",
+      "group": "Altitude & medical",
+      "bag": "Talon 44",
+      "zone": "All legs",
+      "detail": "Twelve hours of time change on the way out. Do not take a sleeping pill at altitude, though."
+    },
+    {
+      "id": "pk056",
+      "item": "A multivitamin",
+      "group": "Altitude & medical",
+      "bag": "Away",
+      "zone": "All legs",
+      "detail": "Sandra's diet in China ran to noodles, rice and pork, and she felt the gap."
+    },
+    {
+      "id": "pk057",
+      "item": "Merino base layer tops ×2",
+      "group": "Clothing",
+      "bag": "Away → Talon 44",
+      "zone": "Tibet · EBC night",
+      "detail": "Keep one clean and unworn for the base camp night."
+    },
+    {
+      "id": "pk058",
+      "item": "Merino long johns ×2",
+      "group": "Clothing",
+      "bag": "Away → Talon 44",
+      "zone": "EBC night",
+      "detail": "You sleep in these at EBC. Wool, not cotton.",
+      "prio": "must"
+    },
+    {
+      "id": "pk059",
+      "item": "Grid fleece or midweight fleece",
+      "group": "Clothing",
+      "bag": "Away → Talon 44",
+      "zone": "Tibet · EBC night",
+      "detail": "The layer you'll live in for a week."
+    },
+    {
+      "id": "pk060",
+      "item": "Packable down or synthetic puffy",
+      "group": "Clothing",
+      "bag": "Talon 44",
+      "zone": "Tibet · EBC night",
+      "detail": "Lives in the carry-on so it's never lost and never counted: Lhasa evenings, every pass stop, and under the shell at base camp.",
+      "prio": "must"
+    },
+    {
+      "id": "pk061",
+      "item": "Hardshell jacket, waterproof and windproof, hooded",
+      "group": "Clothing",
+      "bag": "On you",
+      "zone": "All legs",
+      "detail": "Wear it on the plane. Wind at the passes is the real problem, not rain, and it covers Xi'an showers too.",
+      "prio": "must"
+    },
+    {
+      "id": "pk062",
+      "item": "Light waterproof overtrousers",
+      "group": "Clothing",
+      "bag": "Away → Talon 44",
+      "zone": "EBC night",
+      "detail": "Pack small, worth their weight standing around at 5,200 m."
+    },
+    {
+      "id": "pk063",
+      "item": "Trekking trousers ×2, one warmer",
+      "group": "Clothing",
+      "bag": "Away",
+      "zone": "Tibet · EBC night",
+      "detail": "Softshell for the plateau days, lighter for Lhasa."
+    },
+    {
+      "id": "pk064",
+      "item": "Jeans or casual trousers ×1",
+      "group": "Clothing",
+      "bag": "Away",
+      "zone": "Xi'an · Shanghai",
+      "detail": "For the cities, where technical clothing looks odd."
+    },
+    {
+      "id": "pk065",
+      "item": "T-shirts and casual shirts ×4",
+      "group": "Clothing",
+      "bag": "Away",
+      "zone": "Xi'an · Shanghai",
+      "detail": "Quick-dry ones earn their place — you'll do sink laundry."
+    },
+    {
+      "id": "pk066",
+      "item": "One collared shirt and a smarter layer",
+      "group": "Clothing",
+      "bag": "Away",
+      "zone": "Shanghai",
+      "detail": "Five nights in Shanghai with dinners you haven't planned yet."
+    },
+    {
+      "id": "pk067",
+      "item": "Underwear ×8–10, quick-dry",
+      "group": "Clothing",
+      "bag": "Away",
+      "zone": "All legs",
+      "detail": "Two pairs live in the Talon so a delayed bag isn't a crisis. Cotton stays wet; merino or synthetic."
+    },
+    {
+      "id": "pk068",
+      "item": "Hiking socks ×5",
+      "group": "Clothing",
+      "bag": "Away",
+      "zone": "Tibet",
+      "detail": "Wool or synthetic, no cotton."
+    },
+    {
+      "id": "pk069",
+      "item": "Heavy wool socks ×2",
+      "group": "Clothing",
+      "bag": "Away → Talon 44",
+      "zone": "EBC night",
+      "detail": "One dry pair reserved for sleeping. Cold feet keep you awake all night.",
+      "prio": "must"
+    },
+    {
+      "id": "pk070",
+      "item": "Warm hat covering the ears",
+      "group": "Clothing",
+      "bag": "Talon 44",
+      "zone": "Tibet · EBC night",
+      "detail": "You lose most of your heat here and you'll sleep in it at base camp.",
+      "prio": "must"
+    },
+    {
+      "id": "pk071",
+      "item": "Brimmed sun hat",
+      "group": "Clothing",
+      "bag": "Daypack",
+      "zone": "Tibet",
+      "detail": "Clipped to the outside of the daypack. The plateau sun is relentless at midday even when the air is cold."
+    },
+    {
+      "id": "pk072",
+      "item": "Buff or neck gaiter ×2",
+      "group": "Clothing",
+      "bag": "Sling",
+      "zone": "Tibet · EBC night",
+      "detail": "One in the sling, one in the Away. Sun on the neck, dust on the roads, wind on the face — the most useful small thing you'll carry."
+    },
+    {
+      "id": "pk073",
+      "item": "Liner gloves and insulated gloves",
+      "group": "Clothing",
+      "bag": "Talon 44",
+      "zone": "EBC night",
+      "detail": "Liners let you work a camera without bare hands at 21 °F (−6 °C).",
+      "prio": "must"
+    },
+    {
+      "id": "pk074",
+      "item": "Sunglasses, category 3 or 4, wraparound",
+      "group": "Clothing",
+      "bag": "Sling",
+      "zone": "Tibet · EBC night",
+      "detail": "On you, spare pair in the Away. Glare off snow at 5,200 m is genuinely damaging.",
+      "prio": "must"
+    },
+    {
+      "id": "pk075",
+      "item": "Sleepwear",
+      "group": "Clothing",
+      "bag": "Talon 44",
+      "zone": "Z165 · Tibet",
+      "detail": "In the carry-on, because the first night you need it is on the train, thirty hours before you next see the Away. Four-berth cabin with strangers, then a twin room with Jeff."
+    },
+    {
+      "id": "pk076",
+      "item": "Swimsuit",
+      "group": "Clothing",
+      "bag": "Away",
+      "zone": "Xi'an · Shanghai",
+      "detail": "City hotel pools. Weighs nothing."
+    },
+    {
+      "id": "pk077",
+      "item": "Light jacket for Shanghai",
+      "group": "Clothing",
+      "bag": "Away",
+      "zone": "Shanghai",
+      "detail": "72 °F (22 °C) days, 59 °F (15 °C) nights. The hardshell also does this job if you'd rather save the space."
+    },
+    {
+      "id": "pk078",
+      "item": "Waterproof hiking boots or sturdy trail shoes",
+      "group": "Footwear",
+      "bag": "On you",
+      "zone": "Tibet · EBC night",
+      "detail": "Wear them on the plane. Never check the shoes you can't replace, and they're the heaviest single thing you own.",
+      "prio": "must"
+    },
+    {
+      "id": "pk079",
+      "item": "City walking shoes",
+      "group": "Footwear",
+      "bag": "Away",
+      "zone": "Xi'an · Shanghai · Disney",
+      "detail": "The Xi'an wall and several 20,000-step days at Disney. Rotating between these and the boots is the best thing you can do for your feet."
+    },
+    {
+      "id": "pk080",
+      "item": "Slides for the train corridor and the tent",
+      "group": "Footwear",
+      "bag": "Talon 44",
+      "zone": "Z165 · EBC night",
+      "detail": "Don't fly a pair of rubber slides across the Pacific — buy them in Xi'an on day one; see \"Buy it in China\". Then they live in the Talon, because you need them in the train corridor before you ever open the Away.",
+      "prio": "must"
+    },
+    {
+      "id": "pk081",
+      "item": "Warm insoles or a spare pair",
+      "group": "Footwear",
+      "bag": "Away → Talon 44",
+      "zone": "EBC night",
+      "detail": "Cheap insurance against cold feet on the plateau."
+    },
+    {
+      "id": "pk082",
+      "item": "Phone, plus your old phone as a backup",
+      "group": "Electronics",
+      "bag": "Sling",
+      "zone": "All legs",
+      "detail": "A second handset covers theft, loss, and a Chinese SIM in one device. Keep them in different bags."
+    },
+    {
+      "id": "pk083",
+      "item": "20,000 mAh power bank",
+      "group": "Electronics",
+      "bag": "Talon 44",
+      "zone": "Z165 · EBC night",
+      "detail": "Bought in Xi'an, not brought — your American one is not legal on the Lhasa–Shanghai flight; see \"Buy it in China\". It then lives in the Talon: carry-on only, never checked, because lithium in the hold is banned outright in China.",
+      "prio": "must"
+    },
+    {
+      "id": "pk084",
+      "item": "A second, smaller power bank",
+      "group": "Electronics",
+      "bag": "Sling",
+      "zone": "EBC night · Disney",
+      "detail": "Also bought there. It lives in the sling deliberately: if the Talon gets gate-checked on a domestic sector you still have a battery, and it's the one you want in your pocket at Disney."
+    },
+    {
+      "id": "pk085",
+      "item": "Multi-port charger and three cables",
+      "group": "Electronics",
+      "bag": "Talon 44",
+      "zone": "All legs",
+      "detail": "Cables fail. Bring the spare."
+    },
+    {
+      "id": "pk086",
+      "item": "Plug adapters ×2 — types A, C and I",
+      "group": "Electronics",
+      "bag": "Talon 44",
+      "zone": "All legs",
+      "detail": "One in the Talon, one in the Away. Chinese sockets vary by building age."
+    },
+    {
+      "id": "pk087",
+      "item": "Headlamp and spare batteries",
+      "group": "Electronics",
+      "bag": "Talon 44",
+      "zone": "EBC night",
+      "detail": "There is no lighting at the base camp toilets. A phone torch works until the phone dies.",
+      "prio": "must"
+    },
+    {
+      "id": "pk088",
+      "item": "Camera, spare batteries, memory cards",
+      "group": "Electronics",
+      "bag": "Daypack",
+      "zone": "All legs",
+      "detail": "Cold flattens camera batteries — spares in an inside pocket, and in your sleeping bag overnight. If you'd rather have it to hand all day, that's the argument for the Peak Design sling."
+    },
+    {
+      "id": "pk089",
+      "item": "Earplugs and eye mask",
+      "group": "Electronics",
+      "bag": "Talon 44",
+      "zone": "Z165 · EBC night",
+      "detail": "Thirty hours in a four-berth cabin, then a thin-walled tent camp.",
+      "prio": "must"
+    },
+    {
+      "id": "pk090",
+      "item": "Headphones, including a wired pair",
+      "group": "Electronics",
+      "bag": "Sling",
+      "zone": "Z165",
+      "detail": "Wired ones don't need charging on a thirty-hour train."
+    },
+    {
+      "id": "pk091",
+      "item": "Kindle or a paperback",
+      "group": "Electronics",
+      "bag": "Talon 44",
+      "zone": "Z165",
+      "detail": "Avoid a printed guidebook to Tibet — political content gets confiscated at checkpoints. Download it instead."
+    },
+    {
+      "id": "pk092",
+      "item": "Watch or a small alarm clock",
+      "group": "Electronics",
+      "bag": "On you",
+      "zone": "EBC night",
+      "detail": "For the base camp sunrise, when your phone may be flat."
+    },
+    {
+      "id": "pk093",
+      "item": "Travel eSIM, installed before you fly",
+      "group": "Electronics",
+      "bag": "Sling",
+      "zone": "All legs",
+      "detail": "Sandra credits a Chinese SIM three separate times with saving her trip — but that advice has inverted since 2017. A local SIM now sits inside the firewall and would kill WhatsApp, which is how James reaches you. Install a travel eSIM at home instead: it routes through a foreign carrier, so WhatsApp, mail and maps just work. A local SIM is worth it only for rural Tibet coverage, and only if the guide arranges it.",
+      "prio": "must"
+    },
+    {
+      "id": "pk094",
+      "item": "Toothbrush, toothpaste, floss",
+      "group": "Toiletries",
+      "bag": "Talon 44",
+      "zone": "All legs",
+      "detail": "A travel set in the Talon for the train, the full one in the Away. Brush with bottled water. Every time."
+    },
+    {
+      "id": "pk095",
+      "item": "Heavy moisturiser and hand cream",
+      "group": "Toiletries",
+      "bag": "Away",
+      "zone": "Tibet · EBC night",
+      "detail": "Big tub checked, a small tube in the sling. The plateau is bone dry and your hands will crack."
+    },
+    {
+      "id": "pk096",
+      "item": "No-rinse body wipes",
+      "group": "Toiletries",
+      "bag": "Away → Talon 44",
+      "zone": "EBC night",
+      "detail": "This is your shower on 7 October.",
+      "prio": "must"
+    },
+    {
+      "id": "pk097",
+      "item": "Wet wipes and tissue packets",
+      "group": "Toiletries",
+      "bag": "Sling",
+      "zone": "All legs",
+      "detail": "Pocket-level, always. Squat toilets rarely supply paper, and base camp has pit toilets. Sandra repeats this more than any other tip.",
+      "prio": "must"
+    },
+    {
+      "id": "pk098",
+      "item": "Quick-dry travel towel",
+      "group": "Toiletries",
+      "bag": "Away → Talon 44",
+      "zone": "EBC night",
+      "detail": "The camp provides nothing."
+    },
+    {
+      "id": "pk099",
+      "item": "Deodorant, soap, shampoo",
+      "group": "Toiletries",
+      "bag": "Away",
+      "zone": "All legs",
+      "detail": "Hotels supply these; camps don't."
+    },
+    {
+      "id": "pk100",
+      "item": "Razor and nail clippers",
+      "group": "Toiletries",
+      "bag": "Away",
+      "zone": "All legs",
+      "detail": "Clippers in the checked bag — they will be taken off you at security otherwise."
+    },
+    {
+      "id": "pk101",
+      "item": "Glasses, plus contacts and solution",
+      "group": "Toiletries",
+      "bag": "Talon 44",
+      "zone": "Tibet · EBC night",
+      "detail": "Bring the glasses even if you never wear them — dust and dry air make lenses miserable above 4,000 m.",
+      "prio": "must"
+    },
+    {
+      "id": "pk102",
+      "item": "Face masks",
+      "group": "Toiletries",
+      "bag": "Sling",
+      "zone": "All legs",
+      "detail": "Road dust on the plateau, and still normal in Chinese cities."
+    },
+    {
+      "id": "pk103",
+      "item": "Passport in the sling, not the pack",
+      "group": "On the Z165",
+      "bag": "Sling",
+      "zone": "Z165",
+      "detail": "It is the ticket. There is no paper one, and it gets checked at the gate, on board and at the Lhasa exit.",
+      "prio": "must"
+    },
+    {
+      "id": "pk104",
+      "item": "Food for thirty hours",
+      "group": "On the Z165",
+      "bag": "Talon 44",
+      "zone": "Z165",
+      "detail": "The dining car is limited and shuts early. Instant noodles, bars, nuts, dried fruit, chocolate.",
+      "prio": "must"
+    },
+    {
+      "id": "pk105",
+      "item": "Thermos, for the carriage water dispenser",
+      "group": "On the Z165",
+      "bag": "Talon 44",
+      "zone": "Z165 · Tibet",
+      "detail": "Every carriage has a boiling-water dispenser and this is how everyone eats and drinks on Chinese trains. Buy it in Xi'an before you board rather than carrying one from home."
+    },
+    {
+      "id": "pk106",
+      "item": "Two litres of bottled water, bought before boarding",
+      "group": "On the Z165",
+      "bag": "Buy there",
+      "zone": "Z165",
+      "detail": "Station security scans liquids with a special reader — expect it and don't be surprised."
+    },
+    {
+      "id": "pk107",
+      "item": "Instant coffee or tea sachets",
+      "group": "On the Z165",
+      "bag": "Talon 44",
+      "zone": "Z165",
+      "detail": "Given the hot water, a real quality-of-life item."
+    },
+    {
+      "id": "pk108",
+      "item": "Neck pillow",
+      "group": "On the Z165",
+      "bag": "Talon 44",
+      "zone": "Z165",
+      "detail": "Clip it to the outside of the pack. The berths are flat but short."
+    },
+    {
+      "id": "pk109",
+      "item": "Board at least thirty minutes early",
+      "group": "On the Z165",
+      "bag": "",
+      "zone": "Z165",
+      "detail": "With a 29-inch case this matters more for you than for most: it won't fit under the berth or reliably above the door, so you are competing for cabin floor space, and that competition starts before the doors open.",
+      "prio": "must"
+    },
+    {
+      "id": "pk110",
+      "item": "Something to give your cabin-mates",
+      "group": "On the Z165",
+      "bag": "Talon 44",
+      "zone": "Z165",
+      "detail": "Snacks or a small gift. Thirty hours is a long time to be the silent foreigner."
+    },
+    {
+      "id": "pk111",
+      "item": "Sleeping bag liner, silk or fleece",
+      "group": "Base camp night",
+      "bag": "Talon 44",
+      "zone": "EBC night",
+      "detail": "The camp quilts are heavy and warm but not always clean. The liner adds a few degrees too, and weighs almost nothing.",
+      "prio": "must"
+    },
+    {
+      "id": "pk112",
+      "item": "Chemical hand and toe warmers, six pairs",
+      "group": "Base camp night",
+      "bag": "Talon 44",
+      "zone": "EBC night",
+      "detail": "Two in the boots, two in the gloves, two in the sleeping bag. Cheap, weightless, transformative.",
+      "prio": "must"
+    },
+    {
+      "id": "pk113",
+      "item": "A wide-mouth bottle you can fill with boiling water",
+      "group": "Base camp night",
+      "bag": "Talon 44",
+      "zone": "EBC night",
+      "detail": "Fill it at the stove and put it in the bottom of your sleeping bag. Best trick there is."
+    },
+    {
+      "id": "pk114",
+      "item": "Everything electronic, fully charged",
+      "group": "Base camp night",
+      "bag": "Talon 44",
+      "zone": "EBC night",
+      "detail": "No outlets. Sleep with the phone, camera batteries and power bank inside the bag — cold drains them overnight.",
+      "prio": "must"
+    },
+    {
+      "id": "pk115",
+      "item": "Your own snacks and water for the night",
+      "group": "Base camp night",
+      "bag": "Talon 44",
+      "zone": "EBC night",
+      "detail": "The camp sells very little and your appetite will be poor. Eat anyway; calories are what keep you warm."
+    },
+    {
+      "id": "pk116",
+      "item": "Toilet paper and hand sanitiser in a pocket",
+      "group": "Base camp night",
+      "bag": "Sling",
+      "zone": "EBC night",
+      "detail": "Pit toilets, no lighting, no supplies. In a pocket, not in a bag in the tent."
+    },
+    {
+      "id": "pk117",
+      "item": "Skip the shower, the alcohol and the sleeping pill",
+      "group": "Base camp night",
+      "bag": "",
+      "zone": "EBC night",
+      "detail": "All three make altitude worse. A bad night's sleep at 5,200 m is normal and not a reason to medicate.",
+      "prio": "must"
+    },
+    {
+      "id": "pk118",
+      "item": "Get up for sunrise",
+      "group": "Base camp night",
+      "bag": "",
+      "zone": "EBC night",
+      "detail": "October gives the clearest skies of the year on the north face. It is why the tour runs now."
+    },
+    {
+      "id": "pk119",
+      "item": "Bottled water only — including for brushing your teeth",
+      "group": "Food & water",
+      "bag": "Buy there",
+      "zone": "All legs",
+      "detail": "No exceptions, no coolers, no ice.",
+      "prio": "must"
+    },
+    {
+      "id": "pk120",
+      "item": "Water purification tablets or a filter bottle",
+      "group": "Food & water",
+      "bag": "Talon 44",
+      "zone": "EBC night",
+      "detail": "A backup for the plateau, where buying bottled water gets harder and pricier."
+    },
+    {
+      "id": "pk121",
+      "item": "Snacks you actually like",
+      "group": "Food & water",
+      "bag": "Talon 44",
+      "zone": "Tibet · EBC night",
+      "detail": "Appetite collapses at altitude. Bring things you'll eat when you don't want to eat — and pack them where you can reach them, not in the Away.",
+      "prio": "must"
+    },
+    {
+      "id": "pk122",
+      "item": "Instant oatmeal and soup sachets",
+      "group": "Food & water",
+      "bag": "Talon 44",
+      "zone": "Z165 · EBC night",
+      "detail": "Hot water is available almost everywhere in China."
+    },
+    {
+      "id": "pk123",
+      "item": "Chopsticks or a spork of your own",
+      "group": "Food & water",
+      "bag": "Talon 44",
+      "zone": "Z165",
+      "detail": "Optional, but station chopsticks are sanitised and reused."
+    },
+    {
+      "id": "pk124",
+      "item": "Small gifts from home",
+      "group": "Small things",
+      "bag": "Away",
+      "zone": "All legs",
+      "detail": "Postcards of Atlanta, pins, small candy — a few in the Talon for the train, the rest in the Away. Sandra handed out NYC postcards and says it landed every single time."
+    },
+    {
+      "id": "pk125",
+      "item": "Umbrella — buy it there",
+      "group": "Small things",
+      "bag": "Buy there",
+      "zone": "Xi'an · Shanghai",
+      "detail": "For sun as much as rain; Sandra carried one daily. ¥20–40 at any convenience store, and it then lives in the daypack."
+    },
+    {
+      "id": "pk126",
+      "item": "Small notes for monastery offerings and photo fees",
+      "group": "Small things",
+      "bag": "Sling",
+      "zone": "Tibet",
+      "detail": "Many monasteries charge for photography and some ban it outright. Ask first, always."
+    },
+    {
+      "id": "pk127",
+      "item": "Modest clothes for the monasteries",
+      "group": "Small things",
+      "bag": "Away",
+      "zone": "Tibet",
+      "detail": "Long trousers, covered shoulders, hat off indoors. Potala, Jokhang, Sera and Tashilhunpo are all working religious sites."
+    },
+    {
+      "id": "pk128",
+      "item": "Notebook and pen",
+      "group": "Small things",
+      "bag": "Sling",
+      "zone": "All legs",
+      "detail": "Landing cards, hotel names, and the phone numbers you'll need when the phone is dead."
+    },
+    {
+      "id": "pk129",
+      "item": "Duct tape wrapped round a pen, and a few zip ties",
+      "group": "Small things",
+      "bag": "Talon 44",
+      "zone": "All legs",
+      "detail": "Repairs a bag strap, a boot, a tent zip."
+    },
+    {
+      "id": "pk130",
+      "item": "Printed copy of the itinerary",
+      "group": "Small things",
+      "bag": "Talon 44",
+      "zone": "All legs",
+      "detail": "Including James's number and the tour reference."
+    },
+    {
+      "id": "pk131",
+      "item": "Your physical passport, every park day",
+      "group": "Disneyland",
+      "bag": "Sling",
+      "zone": "Disney",
+      "detail": "The ticket is linked to the passport it was booked under and the named holder has to be present at entry. A photo or screenshot will not get you through.",
+      "prio": "must"
+    },
+    {
+      "id": "pk132",
+      "item": "A working data connection all day",
+      "group": "Disneyland",
+      "bag": "Sling",
+      "zone": "Disney",
+      "detail": "Wait times, mobile ordering, show times and any Premier Access all live in the app, and QR codes must be live rather than screenshotted. This is the day your eSIM stops being a convenience.",
+      "prio": "must"
+    },
+    {
+      "id": "pk133",
+      "item": "Power bank and cable in the day bag",
+      "group": "Disneyland",
+      "bag": "Daypack",
+      "zone": "Disney",
+      "detail": "A full day of the app, the camera and the maps will flatten a phone by mid-afternoon, and a dead phone means no tickets and no way home.",
+      "prio": "must"
+    },
+    {
+      "id": "pk134",
+      "item": "WeChat Pay or Alipay, funded",
+      "group": "Disneyland",
+      "bag": "Sling",
+      "zone": "Disney",
+      "detail": "The resort is effectively cashless. Keep a small amount of cash as a fallback anyway."
+    },
+    {
+      "id": "pk135",
+      "item": "Decide on Disney Premier Access before you go",
+      "group": "Disneyland",
+      "bag": "",
+      "zone": "Disney",
+      "detail": "Sold only through the official channels and locked to one named guest — you cannot buy it for someone else or hand it over."
+    },
+    {
+      "id": "pk136",
+      "item": "Rotate your shoes between park days",
+      "group": "Disneyland",
+      "bag": "Away",
+      "zone": "Disney",
+      "detail": "Multiple days at 20,000-plus steps. City shoes one day, boots or trail shoes the next — you already have both with you.",
+      "prio": "must"
+    },
+    {
+      "id": "pk137",
+      "item": "Blister plasters in your pocket, not the hotel",
+      "group": "Disneyland",
+      "bag": "Sling",
+      "zone": "Disney",
+      "detail": "Same kit as the Tibet section, but you want it on you."
+    },
+    {
+      "id": "pk138",
+      "item": "Spare socks in the day bag",
+      "group": "Disneyland",
+      "bag": "Daypack",
+      "zone": "Disney",
+      "detail": "Rain, water rides, and eight hours of walking."
+    },
+    {
+      "id": "pk139",
+      "item": "Packable rain poncho",
+      "group": "Disneyland",
+      "bag": "Daypack",
+      "zone": "Disney",
+      "detail": "Cheaper than buying one in the park, and Roaring Rapids will genuinely soak you."
+    },
+    {
+      "id": "pk140",
+      "item": "A layer you can take off and stuff in the bag",
+      "group": "Disneyland",
+      "bag": "Daypack",
+      "zone": "Disney",
+      "detail": "59 °F (15 °C) at rope drop, 72 °F (22 °C) by lunch, cool again for the fireworks."
+    },
+    {
+      "id": "pk141",
+      "item": "Refillable water bottle",
+      "group": "Disneyland",
+      "bag": "Daypack",
+      "zone": "Disney",
+      "detail": "There are refill points, and you will drink more than you expect on a warm day."
+    },
+    {
+      "id": "pk142",
+      "item": "Your own snacks",
+      "group": "Disneyland",
+      "bag": "Daypack",
+      "zone": "Disney",
+      "detail": "Outside food for personal consumption is allowed — no glass containers and nothing strong-smelling. It saves both queueing and money."
+    },
+    {
+      "id": "pk143",
+      "item": "Take the daypack, leave the Talon at the hotel",
+      "group": "Disneyland",
+      "bag": "Daypack",
+      "zone": "Disney",
+      "detail": "This is exactly why the daypack stays under 26 L. Bulky bags, selfie sticks, large tripods and spray cans are turned away at screening.",
+      "prio": "must"
+    },
+    {
+      "id": "pk144",
+      "item": "Sling for the coasters",
+      "group": "Disneyland",
+      "bag": "Sling",
+      "zone": "Disney",
+      "detail": "TRON Lightcycle Power Run is ridden motorbike-style, face down — everything loose has to be stowed before you board, so a zipped sling you can wear tight beats loose pockets."
+    },
+    {
+      "id": "pk145",
+      "item": "Phone strap or lanyard",
+      "group": "Disneyland",
+      "bag": "Sling",
+      "zone": "Disney",
+      "detail": "For the same reason."
+    },
+    {
+      "id": "pk146",
+      "item": "Sunscreen and a cap",
+      "group": "Disneyland",
+      "bag": "Daypack",
+      "zone": "Disney",
+      "detail": "The queues are long and a lot of them are unshaded, even in October."
+    },
+    {
+      "id": "pk147",
+      "item": "Arrive before opening, and leave before the fireworks end",
+      "group": "Disneyland",
+      "bag": "",
+      "zone": "Disney",
+      "detail": "The rope-drop hour is worth two afternoon hours, and the post-fireworks crush at the gates and on Line 11 is the worst twenty minutes of the day."
+    },
+    {
+      "id": "pk148",
+      "item": "Pin trading pins, if you fancy it",
+      "group": "Disneyland",
+      "bag": "Daypack",
+      "zone": "Disney",
+      "detail": "Entirely optional, but cast members trade readily and it is a good way into conversation."
+    },
+    {
+      "id": "pk149",
+      "item": "No drone",
+      "group": "Leave at home",
+      "bag": "",
+      "zone": "Tibet",
+      "detail": "Confiscated in Tibet. Don't bring it as far as the airport.",
+      "prio": "must"
+    },
+    {
+      "id": "pk150",
+      "item": "No Tibetan flag, Dalai Lama images, or political literature",
+      "group": "Leave at home",
+      "bag": "",
+      "zone": "Tibet",
+      "detail": "Checked for, confiscated, and it can end your permit. This includes guidebooks with political chapters.",
+      "prio": "must"
+    },
+    {
+      "id": "pk151",
+      "item": "No American power banks at all",
+      "group": "Leave at home",
+      "bag": "",
+      "zone": "All legs",
+      "detail": "Not a weight call — a legal one. Without a 3C mark moulded into the case they are confiscated at Chinese domestic security with no appeal, and China bans lithium in the hold, so there is no way around it. Buy Chinese ones in Xi'an. The 100 Wh cap still applies on top of that.",
+      "prio": "must"
+    },
+    {
+      "id": "pk152",
+      "item": "Don't use the Away's expansion zipper",
+      "group": "Leave at home",
+      "bag": "",
+      "zone": "All legs",
+      "detail": "Closed it is 157.5 cm linear, half a centimetre inside Korean Air's 158 cm. Expanded it is oversize, and oversize on a Chinese domestic sector is an argument you will lose in Lhasa.",
+      "prio": "must"
+    },
+    {
+      "id": "pk153",
+      "item": "No new, unworn boots",
+      "group": "Leave at home",
+      "bag": "",
+      "zone": "Tibet",
+      "detail": "You've got a week of walking at altitude.",
+      "prio": "must"
+    },
+    {
+      "id": "pk154",
+      "item": "No jewellery or valuables you'd mind losing",
+      "group": "Leave at home",
+      "bag": "",
+      "zone": "All legs",
+      "detail": "Nineteen days, ten beds, one tent.",
+      "prio": "must"
+    }
+  ]
 }
