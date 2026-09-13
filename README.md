@@ -22,7 +22,7 @@ Two inline altitude profiles, because altitude is the real risk on this trip: th
 railway from Xi'an at 400 m to Lhasa at 3,650 m, and the tour's day-by-day high point through the
 5,200 m tent night at base camp and 5,248 m at Gyatso La.
 
-The 154 packing items are one record set behind **two tabs that read the same `trip/packing`
+The 109 packing items are one record set behind **two tabs that read the same `trip/packing`
 document**, because they answer different questions:
 
 - **Packing** is the reference — item, which bag it rides in, which legs it is for, and why it
@@ -30,6 +30,22 @@ document**, because they answer different questions:
 - **Own or buy** is the decision tool — every item on one line, grouped by its category, with the
   three-way **Own / Buy / Skip** control, a `!` for the can't-forget items, and a per-category
   count that leads with *N to buy*. No prose, no bag columns: it exists to be scanned.
+
+Three rules hold the list to that job, and `tools/rebuild_packing.py` is the one-off that
+enforced them against the 153 rows it inherited:
+
+1. **Every row is a thing.** Instructions ("board thirty minutes early", "get up for sunrise",
+   "rotate your shoes between park days") are not packable and came off.
+2. **A name is the item, not what it is for.** `Sunscreen SPF 50 — large tube checked, small tube
+   on you` became `Sunscreen SPF 50`; the reasoning was already in the Why column.
+3. **Nothing appears twice.** A passport was three rows, a power bank five, snacks five. 29 rows
+   were absorbed into the survivor, inheriting its mark where the survivor had none.
+
+The five *context* categories — On the Z165, Base camp night, Disneyland, Buy in China, Leave at
+home — are gone, because a category describing when you use a thing is the same mistake as a name
+describing what it is for. The Legs column already carries that. Ten categories of **thing**
+remain. Prohibitions with real consequences (no political material, no drone, no US power banks)
+moved to Reference, which is the page you would have open at a checkpoint.
 
 A tap on either tab updates the other in place (`syncRow`, keyed on the row id) rather than
 re-rendering 308 rows and throwing away the scroll position. Sections declare `view:"triage"` to

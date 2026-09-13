@@ -1154,8 +1154,11 @@ function mdBody(){
 }
 function shopList(){
   var buy=items("packing").filter(function(r){return r.own==="buy";});
-  var here=buy.filter(function(r){return r.group!=="Buy in China" && r.bag!=="Buy there";});
-  var there=buy.filter(function(r){return r.group==="Buy in China" || r.bag==="Buy there";});
+  // "obtain it over there" is a property of the bag now, not a category:
+  // matches "Buy there", "Rent in Lhasa", and the retired "Buy in China" group.
+  function there_(r){ return r.group==="Buy in China" || /there$|^Rent /.test(r.bag||""); }
+  var here=buy.filter(function(r){return !there_(r);});
+  var there=buy.filter(there_);
   return {buy:buy, here:here, there:there};
 }
 function shopCsv(){
