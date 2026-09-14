@@ -9,10 +9,17 @@
     },
     {
       "id": "y3",
-      "item": "What to buy, and roughly what it costs",
-      "price": "~¥1,200–1,300",
+      "item": "BOUGHT — 2-Day ticket, Mon 12 & Tue 13 Oct",
+      "price": "Klook",
+      "status": "confirmed",
+      "detail": "Two of the three park days are done. Klook is on Disney's own official travel-partner list, so this is the sanctioned route, not a grey one — and the 2-Day is the right product for consecutive days.\n\nTHREE THINGS THAT FOLLOW FROM BUYING THROUGH A RESELLER:\n\n1. PREMIER ACCESS IS NOT AVAILABLE ON KLOOK. DPA is sold through four channels only — the official website, the official app, the official WeChat account and the official Fliggy store. If you want it on the day you buy it in the Shanghai Disney Resort app, at ¥140–180 per attraction. On post-Golden-Week weekdays you probably won't need it; just know the Klook ticket cannot get it for you.\n\n2. CHECK THE PASSPORT NUMBER ON THE BOOKING matches the passport you will actually carry. Every ticket is real-name registered and you enter by scanning it against that passport. A typo is fixable now and not fixable from a hotel in Lhasa.\n\n3. FIND OUT NOW WHETHER THE KLOOK VOUCHER SCANS AT THE GATE or has to be exchanged first, and link it to the resort app before you fly. You are off-grid from 2 October, so anything that needs sorting has to be sorted in the next fortnight.\n\nFill in what you paid under Money when you have the figure."
+    },
+    {
+      "id": "y10",
+      "item": "STILL TO BUY — Wed 14 Oct, and Thu 15 if you want it",
+      "price": "~¥425–499",
       "status": "action",
-      "detail": "Cheapest legitimate route for Mon–Wed is a 2-Day ticket over two consecutive days plus a 1-Day Early Bird for the third: about ¥749 + ¥449 = ~¥1,200, against ¥1,449 buying three singles at the gate (¥499 Mon + ¥475 Tue + ¥475 Wed). Adding the Thursday morning costs one more day at ¥449–499 — it is a full 1-Day ticket either way, there is no half-day product. The ¥749 2-Day was a limited-time promo observed on 9 September; if it has lapsed, three Early Bird singles at ~¥449 each is ~¥1,347. Buy whichever is cheaper on the day."
+      "detail": "Wednesday 14 October is the third park day and it is NOT covered by the 2-Day ticket. It should be on sale about now — the rolling window reaches it around 14 September — and Thursday 15 October about a day later.\n\nTry the OFFICIAL channel first for these: 1-Day Early Bird is ~¥425–449 against ¥475 at the gate, and Early Bird exists only on Disney's own site, app, WeChat account and Fliggy store. Klook does not sell it. If the official checkout throws the Chinese-SMS wall at you again, Klook is the fallback and you already know it works.\n\nTHE THURSDAY IS NOW OR NEVER. It is a full 1-Day ticket (¥449–499, no half-day product) for a morning in the park before the 18:25 flight from Pudong. You do not have to use it — but you cannot add it once you board the Z165 on 2 October, and you can decide on the Wednesday night whether to bother.\n\nStill do NOT buy Sunday 11 October. That is the city day."
     },
     {
       "id": "y4",
@@ -62,13 +69,6 @@
       "price": "¥1,213",
       "status": "pending",
       "detail": "Reserved viewing for three new shows plus a ¥100 F&B coupon. Steep, but it's the anniversary year and the shows are the reason. The celebration runs all year as 'With You, It's Magic+': new castle show The Heart of Magic, an updated Mickey's Storybook Express parade, and an anniversary finale added to ILLUMINATE!"
-    },
-    {
-      "id": "y10",
-      "item": "Buying as a foreigner",
-      "price": "—",
-      "status": "pending",
-      "detail": "Every ticket is real-name registered: buy with your passport number and carry that passport. Official site, app, WeChat account or the official Fliggy store — foreign Visa and Mastercard work. Klook or Trip.com are the fallback for admission only if the official checkout throws the Chinese-SMS wall; check the partner is on Disney's own channels page. Premier Access is sold through the four official channels only, no reseller. Foreign passport holders must activate an annual pass in person at Main Entrance Guest Services — another reason not to buy one."
     },
     {
       "id": "y11",

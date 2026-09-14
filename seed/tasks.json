@@ -2,11 +2,11 @@
   "items": [
     {
       "id": "tk001",
-      "title": "Buy the three park dates: 12, 13, 14 Oct (+15 if you want the option)",
+      "title": "Buy Wed 14 Oct — and Thu 15 if you want the option",
       "owner": "Aaron",
       "status": "action",
-      "due": "This week",
-      "detail": "THE HARD DEADLINE, and the plan now tells you exactly which dates. The sales calendar is a rolling ~30 days that advances one day at a time, and you board the Z165 on 2 October, so every date has to be bought in the next few mornings.\n\nOn 9 September the furthest date on sale was 8 October, so Mon 12 Oct surfaces around the 13th and Thu 15 Oct around the 16th. DON'T TRUST THE ARITHMETIC — a 29- versus 30-day horizon shifts everything by a day, and an off-by-one is exactly how you lose a date. Open the calendar every morning from today and buy whatever new October date has appeared.\n\nDO NOT BUY SUNDAY 11 OCTOBER. That is the city day now.\n\nCheapest route: a 2-Day ticket over two consecutive days plus a 1-Day Early Bird for the third, ~¥1,200 against ¥1,449 at the gate. Early Bird needs 10+ days' notice and your window is 30, so booking the morning a date opens is free money. Buy the Thursday too if you want the option — you cannot add it later from Tibet, and you can decide on the Wednesday whether to use it.\n\nBUYING IT: tickets are real-name registered to the passport you carry to the gate. Buy from the official site, app, WeChat account or the official Fliggy store first — Early Bird and the bundles exist only there. If the checkout rejects your card or demands a Chinese SMS code, Klook and Trip.com are on Disney's own travel-partner list and are the fallback for admission."
+      "due": "Now",
+      "detail": "The 2-Day for Mon 12 and Tue 13 is bought on Klook. WEDNESDAY 14 OCTOBER IS STILL OPEN and it is the third park day.\n\nIt reaches the rolling sales window around 14 September and Thursday 15 October about a day after. Open the calendar each morning until both are done — a 29- versus 30-day horizon shifts everything by a day, and an off-by-one is how you lose a date.\n\nOfficial channel first: 1-Day Early Bird at ~¥425–449 against ¥475 at the gate, and it exists only on Disney's own site, app, WeChat or Fliggy. Klook does not sell Early Bird. If the official checkout demands a Chinese SMS code, fall back to Klook, which you know works.\n\nThe Thursday is a whole ticket for a morning, and it is now or never — you cannot add it after you board the Z165 on 2 October.\n\nDo NOT buy Sunday 11 October. That is the city day."
     },
     {
       "id": "tk002",
@@ -223,6 +223,14 @@
       "status": "pending",
       "due": "Before 27 Sep",
       "detail": "If you split the stay, the Saturday-night downtown room wants booking now along with everything else — you will be off-grid from 2 October and landing at 21:50 is the wrong moment to be shopping for a bed. Fairmont Peace Hotel if you want the Bund and the jazz bar in the building; Atour or Ji at People's Square for a fifth of the price and the same position for Sunday morning."
+    },
+    {
+      "id": "tk-klook",
+      "title": "Check the Klook ticket before you fly",
+      "owner": "Aaron",
+      "status": "action",
+      "due": "Before 27 Sep",
+      "detail": "Three things to settle while you still have a working connection and a fortnight in hand.\n\nPASSPORT NUMBER: confirm the one on the Klook booking matches the passport you will carry. Tickets are real-name registered and you enter by scanning against that passport. Fixable now, not fixable from Lhasa.\n\nREDEMPTION: find out whether the Klook voucher scans straight at the gate or has to be exchanged for a park ticket first. If it needs exchanging, that is a queue on your first morning and worth knowing in advance.\n\nLINK IT TO THE APP: get the ticket into the Shanghai Disney Resort app alongside whatever you buy for the Wednesday, so both days are in one place. Note that Premier Access is official-channel only — if you want it on the day it is bought in the app, not through Klook."
     }
   ]
 }

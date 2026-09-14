@@ -65,10 +65,17 @@
     },
     {
       "id": "m10",
-      "item": "Shanghai Disneyland — 3 dated tickets (+1 optional)",
-      "amount": "~¥1,200–1,700",
+      "item": "Shanghai Disneyland — 2-Day ticket, Mon 12 & Tue 13",
+      "amount": "paid — fill in",
+      "status": "confirmed",
+      "detail": "Bought on Klook, an official Disney travel partner. Covers two of the three park days. Put the figure in when you have it — a 2-Day was running about ¥749 on the official store, and Klook prices differ."
+    },
+    {
+      "id": "m10b",
+      "item": "Shanghai Disneyland — Wed 14 (+ optional Thu 15)",
+      "amount": "~¥425–950",
       "status": "action",
-      "detail": "Mon 12, Tue 13, Wed 14 Oct. Cheapest route is a 2-Day ticket plus a 1-Day Early Bird, ~¥1,200 (~$170) against ¥1,449 buying singles at the gate. The optional Thursday morning adds a full 1-Day at ¥449–499, taking it to ~¥1,650–1,700. Dated tickets, not an annual pass — decided. No Premier Access budgeted: on three post-Golden-Week weekdays you shouldn't need it."
+      "detail": "Wednesday is still to buy: ~¥425–449 as a 1-Day Early Bird on the official channel, ¥475 at the gate. Adding the optional Thursday morning is another full 1-Day at ¥449–499, since there is no half-day product. No Premier Access budgeted — three post-Golden-Week weekdays shouldn't need it, and it isn't sold through Klook anyway."
     },
     {
       "id": "m11",
