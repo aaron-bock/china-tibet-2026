@@ -13,14 +13,27 @@ Published as a Claude Artifact, and **the single source of truth for this trip**
 `index.html` is the whole application — a single page, no build step. Every field is editable in
 place and saves server-side, so the page can be worked on right up to departure.
 
-Fourteen sections: Itinerary, Flights & rail, Tibet tour, Stays, Disneyland, Open items, Money,
-Apps & wallet, Kit, Packing, People, Reference, Point at this (Chinese names to show a driver),
-and Notes. Each row carries a status — `confirmed` / `pending` / `action` / `done` — which drives the
+Sixteen sections: Itinerary, Flights & rail, Jet lag, Tibet tour, Stays, Disneyland, Open items,
+Money, Apps & wallet, Bags & weather, Packing, Own or buy, People, Reference, Point at this
+(Chinese names to show a driver), and Notes. Most rows carry a status — `confirmed` / `pending` / `action` / `done` — which drives the
 colour stripe, the summary tiles and the "Needs you" banner.
 
-Two inline altitude profiles, because altitude is the real risk on this trip: the Qinghai–Tibet
-railway from Xi'an at 400 m to Lhasa at 3,650 m, and the tour's day-by-day high point through the
-5,200 m tent night at base camp and 5,248 m at Gyatso La.
+Three inline SVG figures, each drawn because the thing it shows is hard to hold in your head.
+Two altitude profiles — the Qinghai–Tibet railway from Xi'an at 400 m to Lhasa at 3,650 m, and the
+tour's day-by-day high point through the 5,200 m tent night and 5,248 m at Gyatso La. And a sleep
+chart on the Jet lag tab: six bars showing where sleep falls **on the Xi'an clock** as it migrates
+from a Los Angeles night into a Chinese one.
+
+That chart runs **noon to noon**, not midnight to midnight. On a midnight-anchored axis every
+night splits into two stumps at opposite edges, which destroys the one thing the figure exists to
+show — that the block only ever moves right, and has about nine hours to travel.
+
+The Jet lag plan is built on the fact that Los Angeles to Xi'an is **not** a 15-hour advance in
+practice: the short way round is a 9-hour *delay*, so the whole plan is "go to bed later", which
+is the easy direction and the one a westbound Pacific flight already pushes you in. It has a hard
+deadline the rest of the trip doesn't — sleep can't be fixed at altitude, and there are no
+sleeping pills or alcohol above 3,650 m, so anything unresolved by the Z165 on 2 October stays
+unresolved for a week.
 
 The 109 packing items are one record set behind **two tabs that read the same `trip/packing`
 document**, because they answer different questions:

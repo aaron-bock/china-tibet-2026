@@ -261,6 +261,13 @@ figure.elev figcaption b{color:var(--ink); font-weight:600}
 .elev .sname{font-family:var(--f-body); font-size:10.5px; fill:var(--soft); stroke:none}
 .elev .salt{font-family:var(--f-mono); font-size:9px; fill:var(--faint); stroke:none}
 .elev .peaklab{font-family:var(--f-mono); font-size:10px; font-weight:600; fill:var(--cinnabar); stroke:none}
+.elev .slp-band{fill:var(--lapis-wash); stroke:none}
+.elev .slp-rule{stroke:var(--hair); stroke-width:1}
+.elev .slp-bar{fill:var(--lapis); stroke:none}
+.elev .slp-bar.air{fill:var(--saffron)}
+.elev .slp-day{font-family:var(--f-body); font-size:10.5px; fill:var(--ink); stroke:none}
+.elev .slp-sub{font-family:var(--f-mono); font-size:8.5px; fill:var(--faint); stroke:none}
+.elev .slp-key{font-family:var(--f-mono); font-size:9px; fill:var(--faint); stroke:none; letter-spacing:.08em}
 
 /* ---------- export sheet ---------- */
 .sheet{position:fixed; inset:0; z-index:60; display:flex; align-items:center; justify-content:center; padding:20px; background:rgba(15,19,27,.5)}
@@ -307,6 +314,7 @@ footer.foot{border-top:1px solid var(--line); padding-block:20px 40px; color:var
 .g-reference{grid-template-columns:minmax(0,1fr) minmax(0,188px) 120px}
 .g-phrases{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
 .g-notes{grid-template-columns:minmax(0,1fr) 148px}
+.g-sleep{grid-template-columns:154px minmax(0,1fr) 116px 150px}
 .row-body .w-all{grid-column:1/-1}
 
 @media (max-width:720px){
@@ -408,6 +416,15 @@ var SCHEMA=[
       {k:"conf",  l:"Ref",     cls:"mono",        ph:"Locator"},
       {k:"status",l:"State",   type:"status"},
       {k:"detail",l:"Detail",  type:"area",       ph:"Fare, seat, ticket number"}
+    ]},
+  { id:"sleep", doc:"sleep", label:"Jet lag",
+    note:"Los Angeles to Xi'an reads as +15 hours, but the short way round is NINE HOURS BACKWARD \u2014 later, not earlier, which is the easy direction and the one a westbound flight already pushes you in. Everything below is one instruction repeated: move later, then hold. It has a real deadline: you cannot fix sleep at altitude, so it has to be done before the Z165 on 2 October.",
+    fields:[
+      {k:"when",  l:"When",        cls:"mono strong", ph:"When"},
+      {k:"title", l:"What to do",  cls:"big",         ph:"What to do"},
+      {k:"target",l:"Target clock",cls:"mono",        ph:"Xi'an time"},
+      {k:"light", l:"Light",       cls:"mono",        ph:"Light"},
+      {k:"detail",l:"Why",         type:"area",       ph:"Why"}
     ]},
   { id:"tibet", doc:"tour", label:"Tibet tour",
     note:"Asia Odyssey's eight-day Everest Base Camp tour, party of five, booked with the receipt issued 13 August. Day numbers are matched to dates by inference — James has not written the schedule down.",
@@ -722,6 +739,44 @@ function tourProfile(){
     '</figure>';
 }
 
+/* ---------- the sleep block, migrating across the Xi'an clock ----------
+   The axis runs NOON to NOON, not midnight to midnight, so a night is one
+   contiguous block instead of two stumps at either edge. Windows below are
+   stored as hours since 12:00 Xi'an. */
+var SLEEP=[
+  {d:"Mon 22 Sep", sub:"bed 23:00 LA",  win:[2,10],      air:0},
+  {d:"Wed 24 Sep", sub:"bed 01:00 LA",  win:[4,12],      air:0},
+  {d:"Fri 26 Sep", sub:"bed 02:00 LA",  win:[5,13],      air:0},
+  {d:"Mon 28 Sep", sub:"in the air",    win:[10,15.67],  air:1},
+  {d:"Tue 29 Sep", sub:"Xi\u2019an, day 1",  win:[10.5,18.5], air:0},
+  {d:"Wed 30 Sep", sub:"on local time", win:[11,19],     air:0}
+];
+function sleepChart(){
+  var X0=112, X1=684, TOP=46, STEP=27, H=14, N=SLEEP.length;
+  function x(h){ return X0 + (X1-X0)*h/24; }
+  var bottom=TOP+STEP*N-6, g="";
+  /* 23:00 to 07:00 Xi'an -- the night you are trying to land in */
+  g+='<rect class="slp-band" x="'+x(11)+'" y="'+(TOP-14)+'" width="'+(x(19)-x(11))+'" height="'+(bottom-TOP+16)+'" rx="3"/>';
+  [[0,"12:00"],[6,"18:00"],[12,"00:00"],[18,"06:00"],[24,"12:00"]].forEach(function(t){
+    g+='<line class="slp-rule" x1="'+x(t[0])+'" y1="'+(TOP-14)+'" x2="'+x(t[0])+'" y2="'+bottom+'"/>'+
+       '<text class="axis" x="'+x(t[0])+'" y="'+(TOP-20)+'" text-anchor="middle">'+t[1]+'</text>';
+  });
+  SLEEP.forEach(function(r,i){
+    var y=TOP+STEP*i;
+    g+='<text class="slp-day" x="104" y="'+(y+6)+'" text-anchor="end">'+esc(r.d)+'</text>'+
+       '<text class="slp-sub" x="104" y="'+(y+16)+'" text-anchor="end">'+esc(r.sub)+'</text>'+
+       '<rect class="slp-bar'+(r.air?" air":"")+'" x="'+x(r.win[0])+'" y="'+(y-2)+'" width="'+(x(r.win[1])-x(r.win[0]))+'" height="'+H+'" rx="2"/>';
+  });
+  g+='<text class="slp-key" x="'+((x(11)+x(19))/2)+'" y="'+(bottom+15)+'" text-anchor="middle">A NORMAL XI\u2019AN NIGHT</text>';
+  g+='<text class="slp-key" x="104" y="'+(bottom+15)+'" text-anchor="end">ASLEEP</text>';
+  return '<figure class="elev">'+
+    '<div class="elev-hd">Where you are asleep, on the Xi\u2019an clock</div>'+
+    '<svg viewBox="0 0 700 '+(bottom+26)+'" role="img" aria-label="Six bars showing when Aaron is asleep, plotted on the Xi\u2019an clock from noon to noon. On 22 September a normal Los Angeles night falls in the Xi\u2019an afternoon, 14:00 to 22:00. Through the week in California the bar slides later: 16:00 to midnight by the 24th, 17:00 to 01:00 by the 26th. The flight on the 28th puts sleep at 22:00 to 03:40, and by 30 September the bar sits at 23:00 to 07:00, squarely inside the shaded band marking a normal Xi\u2019an night.">'+
+    g+'</svg>'+
+    '<figcaption>The bar only ever moves <b>right</b>, and it has about <b>nine hours</b> to travel. California does two or three of them, the flight does most of the rest, and the first afternoon in Xi\u2019an closes the gap \u2014 which is why not napping on the 29th matters more than anything else on this page.</figcaption>'+
+    '</figure>';
+}
+
 function tiles(){
   var segs=items("segments"), stays=items("stays"), tk=items("tasks"), mny=items("money");
   var openTasks=tk.filter(function(t){return t.status==="action";}).length;
@@ -959,6 +1014,9 @@ function render(force){
     }
     if(sec.id==="tibet"){
       var th=el("div"); th.innerHTML=tourProfile(); p.appendChild(th.firstChild);
+    }
+    if(sec.id==="sleep"){
+      var sh=el("div"); sh.innerHTML=sleepChart(); p.appendChild(sh.firstChild);
     }
     if(sec.view==="triage"){
       p.appendChild(prepTally());
