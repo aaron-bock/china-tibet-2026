@@ -22,12 +22,13 @@
     },
     {
       "id": "pk003",
-      "item": "Osprey daypack",
-      "bag": "Daypack",
+      "item": "Osprey Talon 22",
+      "bag": "Talon 22",
+      "own": "own",
       "prio": "must",
       "group": "Bags & packing",
       "zone": "Tibet · Disney",
-      "detail": "20–26 litres is the sweet spot — big enough for a poncho, a layer, water and snacks at Disney, small enough to pass the park's bag screening and to fold into the Talon for base camp. Anything over 30 L duplicates the Talon and costs you cabin weight. Still to pick which one comes. It is the bag for park days and for the EBC eco-bus — the Talon stays at the hotel on Disney days."
+      "detail": "22 L, about 1.08 kg empty, same Talon harness as the 44 so it carries like a small version of it. Big enough for a poncho, a layer and snacks at Disney, and well inside the park's bag screening.\n\nONE THING TO PLAN AROUND: the Talon 22 has a semi-rigid framesheet, so unlike a packable daypack it will not fold flat and stuff into the Talon 44. On the legs where both travel it rides strapped to the outside or in the Away. It also means the two Osprey packs are ~2.65 kg empty before anything goes in them, against Korean Air's 10 kg combined carry-on and personal item — so about 7.3 kg of actual stuff.\n\nIt is the bag for park days and the EBC eco-bus; the Talon 44 stays at the hotel on Disney days."
     },
     {
       "id": "pk004",
@@ -43,7 +44,7 @@
       "id": "pk005",
       "item": "Luggage scale",
       "bag": "Talon 44",
-      "own": "buy",
+      "own": "skip",
       "prio": "must",
       "group": "Bags & packing",
       "zone": "All legs",
@@ -56,13 +57,13 @@
       "own": "own",
       "group": "Bags & packing",
       "zone": "All legs",
-      "detail": "Long johns, heavy socks, base layer, hat, gloves, warmers, wipes. At Shigatse you lift one cube out of the Away into the Talon and you're packed for base camp."
+      "detail": "Long johns, heavy socks, base layer, hat, gloves, warmers, wipes. At Shigatse you lift one cube out of the Away into the Talon 44 and you're packed for base camp."
     },
     {
       "id": "pk007",
-      "item": "Raincover for the Talon",
+      "item": "Raincover for the Talon 44",
       "bag": "Talon 44",
-      "own": "buy",
+      "own": "own",
       "group": "Bags & packing",
       "zone": "Tibet · EBC night",
       "detail": "Osprey doesn't include one with the Talon 44. It is less about rain than about plateau dust and the pack riding on a roof rack for 340 km."
@@ -92,13 +93,13 @@
       "own": "buy",
       "group": "Bags & packing",
       "zone": "Z165",
-      "detail": "The Away has its own TSA lock; the Talon has nothing. The soft sleeper cabin locks, but the bags in it don't."
+      "detail": "The Away has its own TSA lock; the Talon 44 has nothing. The soft sleeper cabin locks, but the bags in it don't."
     },
     {
       "id": "pk011",
       "item": "Detergent sheets",
       "bag": "Away",
-      "own": "buy",
+      "own": "own",
       "group": "Bags & packing",
       "zone": "All legs",
       "detail": "Nineteen days out of one bag means sink washing at least twice. The Away's own laundry bag holds the dirty half."
@@ -107,7 +108,7 @@
       "id": "pk012",
       "item": "Luggage tags",
       "bag": "Away",
-      "own": "buy",
+      "own": "own",
       "group": "Bags & packing",
       "zone": "All legs",
       "detail": "Domestic Chinese flights check bags against your ticket at the carousel."
@@ -157,12 +158,13 @@
       "own": "own",
       "group": "Documents & money",
       "zone": "All legs",
-      "detail": "One card lives in the Talon instead, so a lost sling isn't a lost trip. Foreign cards still fail at plenty of Chinese terminals."
+      "detail": "One card lives in the Talon 44 instead, so a lost sling isn't a lost trip. Foreign cards still fail at plenty of Chinese terminals."
     },
     {
       "id": "pk030",
       "item": "Chinese cash",
       "bag": "Sling",
+      "own": "buy",
       "prio": "must",
       "group": "Documents & money",
       "zone": "Tibet",
@@ -172,6 +174,7 @@
       "id": "pk031",
       "item": "Tip envelopes",
       "bag": "Talon 44",
+      "own": "own",
       "group": "Documents & money",
       "zone": "Tibet",
       "detail": "A few hundred RMB across the eight days, in cash, in an envelope, separate from your spending money."
@@ -180,6 +183,7 @@
       "id": "pk032",
       "item": "USD emergency reserve",
       "bag": "Away",
+      "own": "buy",
       "group": "Documents & money",
       "zone": "All legs",
       "detail": "Two or three hundred, buried in the checked bag, kept separately from everything else."
@@ -188,6 +192,7 @@
       "id": "pk033",
       "item": "Passport photos ×4",
       "bag": "Talon 44",
+      "own": "buy",
       "group": "Documents & money",
       "zone": "All legs",
       "detail": "Permits, and whatever else asks."
@@ -196,6 +201,7 @@
       "id": "pk034",
       "item": "Insurance details",
       "bag": "Sling",
+      "own": "buy",
       "group": "Documents & money",
       "zone": "All legs",
       "detail": "On paper. The number you need is the one you can't look up."
@@ -204,6 +210,7 @@
       "id": "pk035",
       "item": "Contacts card",
       "bag": "Sling",
+      "own": "own",
       "group": "Documents & money",
       "zone": "All legs",
       "detail": "James +86 177 2640 4023; Chengdu consulate +86 28 8558 3992 (nearest post to Tibet); Shanghai +86 21 6433 6880; Overseas Citizens Services +1 202 501 4444."
@@ -212,6 +219,7 @@
       "id": "pk036",
       "item": "Hotel addresses in Chinese",
       "bag": "Sling",
+      "own": "own",
       "group": "Documents & money",
       "zone": "Xi'an · Shanghai",
       "detail": "Hand it to the taxi driver. Screenshot each one as well."
@@ -321,7 +329,7 @@
       "own": "own",
       "group": "Clothing",
       "zone": "All legs",
-      "detail": "Two pairs live in the Talon so a delayed bag isn't a crisis. Cotton stays wet; merino or synthetic."
+      "detail": "Two pairs live in the Talon 44 so a delayed bag isn't a crisis. Cotton stays wet; merino or synthetic."
     },
     {
       "id": "pk068",
@@ -353,10 +361,10 @@
     {
       "id": "pk071",
       "item": "Brimmed sun hat",
-      "bag": "Daypack",
+      "bag": "Talon 22",
       "group": "Clothing",
       "zone": "Tibet · Disney",
-      "detail": "Clipped to the outside of the daypack. The plateau sun is relentless at midday even when the air is cold. Plateau sun at 5,000 m and a full day queueing in Shanghai are the same problem."
+      "detail": "Clipped to the outside of the Talon 22. The plateau sun is relentless at midday even when the air is cold. Plateau sun at 5,000 m and a full day queueing in Shanghai are the same problem."
     },
     {
       "id": "pk072",
@@ -423,8 +431,8 @@
     {
       "id": "pk139",
       "item": "Packable rain poncho",
-      "bag": "Daypack",
-      "own": "buy",
+      "bag": "Talon 22",
+      "own": "own",
       "group": "Clothing",
       "zone": "Disney",
       "detail": "Cheaper than buying one in the park, and Roaring Rapids will genuinely soak you."
@@ -457,7 +465,7 @@
       "prio": "must",
       "group": "Footwear",
       "zone": "Z165 · EBC night",
-      "detail": "Don't fly a pair of rubber slides across the Pacific — buy them in Xi'an on day one; see \"Buy it in China\". Then they live in the Talon, because you need them in the train corridor before you ever open the Away. Train corridor, the tent camp and any shared shower. Cheap to pick up in Xi'an if you would rather not pack them."
+      "detail": "Don't fly a pair of rubber slides across the Pacific — buy them in Xi'an on day one; see \"Buy it in China\". Then they live in the Talon 44, because you need them in the train corridor before you ever open the Away. Train corridor, the tent camp and any shared shower. Cheap to pick up in Xi'an if you would rather not pack them."
     },
     {
       "id": "pk081",
@@ -481,7 +489,7 @@
       "id": "pk039",
       "item": "Pulse oximeter",
       "bag": "Talon 44",
-      "own": "buy",
+      "own": "own",
       "group": "Medical & altitude",
       "zone": "EBC night",
       "detail": "Tiny, cheap, and turns \"I feel off\" into a number you can act on."
@@ -493,7 +501,7 @@
       "own": "own",
       "group": "Medical & altitude",
       "zone": "All legs",
-      "detail": "A working supply in the Talon, the rest of the box in the Away. Altitude headache is near-universal."
+      "detail": "A working supply in the Talon 44, the rest of the box in the Away. Altitude headache is near-universal."
     },
     {
       "id": "pk041",
@@ -540,7 +548,7 @@
       "prio": "must",
       "group": "Medical & altitude",
       "zone": "All legs",
-      "detail": "The full course in the Talon, a duplicate set in the Away, and a copy of the prescription in both."
+      "detail": "The full course in the Talon 44, a duplicate set in the Away, and a copy of the prescription in both."
     },
     {
       "id": "pk046",
@@ -591,7 +599,7 @@
     {
       "id": "pk051",
       "item": "Blister kit",
-      "bag": "Daypack",
+      "bag": "Talon 22",
       "own": "own",
       "group": "Medical & altitude",
       "zone": "Tibet · Disney",
@@ -613,7 +621,7 @@
       "own": "own",
       "group": "Medical & altitude",
       "zone": "All legs",
-      "detail": "One in the sling, one in the daypack, one in the Talon, one in a coat pocket."
+      "detail": "One in the sling, one in the Talon 22, one in the Talon 44, one in a coat pocket."
     },
     {
       "id": "pk055",
@@ -640,7 +648,7 @@
       "own": "buy",
       "group": "Toiletries",
       "zone": "All legs",
-      "detail": "A travel set in the Talon for the train, the full one in the Away. Brush with bottled water. Every time."
+      "detail": "A travel set in the Talon 44 for the train, the full one in the Away. Brush with bottled water. Every time."
     },
     {
       "id": "pk095",
@@ -655,7 +663,7 @@
       "id": "pk096",
       "item": "No-rinse body wipes",
       "bag": "Away → Talon 44",
-      "own": "buy",
+      "own": "own",
       "prio": "must",
       "group": "Toiletries",
       "zone": "EBC night",
@@ -684,7 +692,7 @@
       "id": "pk099",
       "item": "Deodorant, soap, shampoo",
       "bag": "Away",
-      "own": "buy",
+      "own": "own",
       "group": "Toiletries",
       "zone": "All legs",
       "detail": "Hotels supply these; camps don't. Travel sizes only — full-size bottles are cheap and everywhere once you land."
@@ -721,7 +729,7 @@
       "id": "pk116",
       "item": "Toilet paper",
       "bag": "Sling",
-      "own": "buy",
+      "own": "own",
       "group": "Toiletries",
       "zone": "Tibet · EBC night",
       "detail": "Pit toilets, no lighting, no supplies. In a pocket, not in a bag in the tent. A part-roll in a pocket. There is no paper at the base camp toilets and none on most of the drive."
@@ -730,6 +738,7 @@
       "id": "pk082",
       "item": "Phone",
       "bag": "Sling",
+      "own": "own",
       "group": "Electronics",
       "zone": "All legs",
       "detail": "A second handset covers theft, loss, and a Chinese SIM in one device. Keep them in different bags. Worth bringing your old handset as a backup too — it is your ticket, your wallet and your only map."
@@ -742,7 +751,7 @@
       "prio": "must",
       "group": "Electronics",
       "zone": "Z165 · EBC night · Disney",
-      "detail": "Bought in Xi'an, not brought — your American one is not legal on the Lhasa–Shanghai flight; see \"Buy it in China\". It then lives in the Talon: carry-on only, never checked, because lithium in the hold is banned outright in China. BUY THIS IN XI'AN, do not fly one in. China requires a moulded 3C mark that no US-market battery carries, lithium cannot go in the hold, and an uncertified pack is confiscated at Lhasa on the way to Shanghai. Assume no reliable power on the Z165, none at the tent camp, and a full day off-charger at the park."
+      "detail": "Bought in Xi'an, not brought — your American one is not legal on the Lhasa–Shanghai flight; see \"Buy it in China\". It then lives in the Talon 44: carry-on only, never checked, because lithium in the hold is banned outright in China. BUY THIS IN XI'AN, do not fly one in. China requires a moulded 3C mark that no US-market battery carries, lithium cannot go in the hold, and an uncertified pack is confiscated at Lhasa on the way to Shanghai. Assume no reliable power on the Z165, none at the tent camp, and a full day off-charger at the park."
     },
     {
       "id": "pk085",
@@ -759,7 +768,7 @@
       "bag": "Talon 44",
       "group": "Electronics",
       "zone": "All legs",
-      "detail": "One in the Talon, one in the Away. Chinese sockets vary by building age."
+      "detail": "One in the Talon 44, one in the Away. Chinese sockets vary by building age."
     },
     {
       "id": "pk087",
@@ -774,16 +783,17 @@
     {
       "id": "pk088",
       "item": "Camera",
-      "bag": "Daypack",
+      "bag": "Talon 22",
       "own": "skip",
       "group": "Electronics",
       "zone": "All legs",
-      "detail": "Cold flattens camera batteries — spares in an inside pocket, and in your sleeping bag overnight. If you'd rather have it to hand all day, that's the argument for the Peak Design sling."
+      "detail": "Not taking one — the phone does the job and it is one less thing to keep charged at °C temperatures that flatten batteries. If that changes, the spares go in an inside pocket and into the sleeping bag overnight."
     },
     {
       "id": "pk089",
       "item": "Earplugs and eye mask",
       "bag": "Talon 44",
+      "own": "own",
       "prio": "must",
       "group": "Electronics",
       "zone": "Z165 · EBC night",
@@ -793,7 +803,7 @@
       "id": "pk090",
       "item": "Headphones",
       "bag": "Sling",
-      "own": "buy",
+      "own": "own",
       "group": "Electronics",
       "zone": "Z165",
       "detail": "Wired ones don't need charging on a thirty-hour train."
@@ -849,6 +859,7 @@
       "id": "pk020",
       "item": "Sleeping bag",
       "bag": "Rent in Lhasa",
+      "own": "buy",
       "group": "Trek & camp gear",
       "zone": "EBC night",
       "detail": "Optional; the camp quilts do work. But carrying your own from Atlanta costs another 1.5 kg, and Lhasa rents them by the day. James can arrange it with the tour. Rated to about −10 °C. Rent it in Lhasa rather than carrying one across three cities — but it is a real decision, so it stays on the list."
@@ -857,6 +868,7 @@
       "id": "pk021",
       "item": "Trekking poles",
       "bag": "Rent in Lhasa",
+      "own": "buy",
       "group": "Trek & camp gear",
       "zone": "Tibet · EBC night",
       "detail": "Not currently on your list, and worth a thought for the walk in at base camp. Rented alongside the sleeping bag rather than checked from Atlanta. Rent in Lhasa. Only worth it if you intend to walk beyond the base camp marker."
@@ -930,11 +942,11 @@
     {
       "id": "pk141",
       "item": "Refillable water bottle",
-      "bag": "Daypack",
+      "bag": "Talon 22",
       "own": "skip",
       "group": "Food & water",
       "zone": "EBC night · Disney",
-      "detail": "There are refill points, and you will drink more than you expect on a warm day. A wide-mouth one doubles as a hot-water bottle in the tent, filled from the camp thermos."
+      "detail": "Not taking one, and the reason is the point: carrying a bottle creates the chance to fill it from a tap, a hostel cooler or a carriage dispenser without thinking about it. Sealed bottled water removes that failure mode entirely, and it is cheap and everywhere.\n\nThis is the exact way Sandra lost the better part of five days in Xi'an in 2017, the Terracotta Warriors among them — she was rigorous about bottled water right up until she trusted a hostel water cooler. In 2026 the same five days would cost you the permit handoff, the Z165 and the tour.\n\nBuy bottled, including for brushing your teeth, and take no ice."
     },
     {
       "id": "pk105",
@@ -952,7 +964,7 @@
       "own": "buy",
       "group": "Small things",
       "zone": "All legs",
-      "detail": "Postcards of Atlanta, pins, small candy — a few in the Talon for the train, the rest in the Away. Sandra handed out NYC postcards and says it landed every single time. Also the answer to the soft-sleeper cabin: something small to hand over goes a long way across thirty hours and no shared language."
+      "detail": "Postcards of Atlanta, pins, small candy — a few in the Talon 44 for the train, the rest in the Away. Sandra handed out NYC postcards and says it landed every single time. Also the answer to the soft-sleeper cabin: something small to hand over goes a long way across thirty hours and no shared language."
     },
     {
       "id": "pk126",
