@@ -1,0 +1,57 @@
+name: reddit-mirror
+
+# Refreshes reddit/data/ once a day. Reddit is unreachable from the sandbox the
+# repo is usually edited in, so this is where the fetch actually happens.
+on:
+  schedule:
+    - cron: "20 9 * * *"   # 09:20 UTC daily
+  workflow_dispatch:
+    inputs:
+      posts:
+        description: "Top posts per subreddit"
+        default: "100"
+      comments:
+        description: "Max comments kept per post"
+        default: "40"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: reddit-mirror
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch top posts and comments
+        env:
+          # Optional. Without them the fetch is anonymous, which reddit often
+          # refuses from CI address space — add a "script" app's credentials at
+          # Settings → Secrets → Actions to make the daily run reliable.
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+        run: |
+          python3 tools/fetch_reddit.py \
+            --posts "${{ inputs.posts || '100' }}" \
+            --comments "${{ inputs.comments || '40' }}"
+
+      - name: Commit whatever changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- reddit/data; then
+            echo "No change in the mirror today."
+            exit 0
+          fi
+          git add reddit/data
+          git commit -m "Refresh the reddit mirror ($(date -u +%Y-%m-%d))"
+          git push origin HEAD:${{ github.ref_name }}
