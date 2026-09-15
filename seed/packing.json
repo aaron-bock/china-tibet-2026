@@ -124,7 +124,7 @@
       "zone": "Xi'an · Shanghai"
     },
     {
-      "bag": "Sling",
+      "bag": "Talon 44",
       "detail": "Starts on a schedule before you feel bad, so it cannot be in the hold.",
       "group": "Medical & altitude",
       "id": "pk038",
@@ -143,7 +143,7 @@
       "zone": "Tibet"
     },
     {
-      "bag": "Buy in Xi'an",
+      "bag": "Away",
       "detail": "Dry plateau air shreds throats within a couple of days.",
       "group": "Medical & altitude",
       "id": "pk046",
@@ -152,7 +152,7 @@
       "zone": "Tibet · EBC night"
     },
     {
-      "bag": "Buy in Xi'an",
+      "bag": "Talon 22",
       "detail": "Cracked lips at altitude take the whole trip to heal.",
       "group": "Medical & altitude",
       "id": "pk049",
@@ -161,7 +161,7 @@
       "zone": "Tibet · EBC night"
     },
     {
-      "bag": "Buy in Xi'an",
+      "bag": "Talon 44",
       "detail": "Dust, wind and dry air, all at once.",
       "group": "Medical & altitude",
       "id": "pk050",
@@ -179,11 +179,12 @@
       "zone": "All legs"
     },
     {
-      "bag": "Sling",
+      "bag": "Talon 44",
       "detail": "",
       "group": "Clothing",
       "id": "pk072",
       "item": "Buff or neck gaiter ×2",
+      "own": "own",
       "zone": "Tibet · EBC night"
     },
     {
@@ -192,11 +193,12 @@
       "group": "Clothing",
       "id": "pk074",
       "item": "Sunglasses",
+      "own": "own",
       "prio": "must",
       "zone": "Tibet · EBC night"
     },
     {
-      "bag": "Sling",
+      "bag": "Worn",
       "detail": "Bring the old handset too — the phone is your ticket, wallet and map. Keep them in different bags.",
       "group": "Electronics",
       "id": "pk082",
@@ -224,7 +226,7 @@
       "zone": "All legs"
     },
     {
-      "bag": "Buy in Xi'an",
+      "bag": "Away",
       "detail": "Squat toilets rarely supply paper, and base camp has pit toilets.",
       "group": "Toiletries",
       "id": "pk097",
@@ -243,7 +245,7 @@
       "zone": "All legs"
     },
     {
-      "bag": "Sling",
+      "bag": "Talon 22",
       "detail": "No paper at the base camp toilets, and none on most of the drive.",
       "group": "Toiletries",
       "id": "pk116",
@@ -318,14 +320,6 @@
     },
     {
       "bag": "Talon 22",
-      "detail": "Cold air at altitude does not mean weak sun.",
-      "group": "Clothing",
-      "id": "pk071",
-      "item": "Brimmed sun hat",
-      "zone": "Tibet · Disney"
-    },
-    {
-      "bag": "Talon 22",
       "detail": "The phone does the job, and it is one less thing to keep charged below freezing.",
       "group": "Electronics",
       "id": "pk088",
@@ -344,6 +338,15 @@
       "zone": "Z165 · EBC night"
     },
     {
+      "id": "pk147",
+      "item": "Cotton gloves",
+      "bag": "Talon 22",
+      "group": "Clothing",
+      "zone": "All legs",
+      "own": "",
+      "detail": ""
+    },
+    {
       "bag": "Talon 22",
       "detail": "No printed Tibet guidebook — political content gets confiscated at checkpoints. Download it.",
       "group": "Electronics",
@@ -353,7 +356,7 @@
       "zone": "Z165"
     },
     {
-      "bag": "Buy in Xi'an",
+      "bag": "Talon 44",
       "detail": "Brush with bottled water. Every time.",
       "group": "Toiletries",
       "id": "pk094",
@@ -372,7 +375,7 @@
       "zone": "Tibet · EBC night"
     },
     {
-      "bag": "Buy in Xi'an",
+      "bag": "Away",
       "detail": "Appetite collapses at altitude; you want things you will eat when you do not want to eat.",
       "group": "Food & water",
       "id": "pk121",
@@ -382,7 +385,7 @@
       "zone": "Z165 · Tibet · EBC night · Disney"
     },
     {
-      "bag": "Talon 22",
+      "bag": "Talon 44",
       "detail": "Roaring Rapids will genuinely soak you, and the park sells these at a markup.",
       "group": "Clothing",
       "id": "pk139",
@@ -529,7 +532,7 @@
       "zone": "All legs"
     },
     {
-      "bag": "Talon 44",
+      "bag": "Talon 22",
       "detail": "",
       "group": "Clothing",
       "id": "pk059",
@@ -658,7 +661,7 @@
       "zone": "EBC night"
     },
     {
-      "bag": "Talon 44",
+      "bag": "Buy in Xi'an",
       "detail": "Two in the boots, two in the gloves, two in the sleeping bag.",
       "group": "Trek & camp gear",
       "id": "pk112",
@@ -741,7 +744,7 @@
       "zone": "All legs"
     },
     {
-      "bag": "Away",
+      "bag": "Worn",
       "detail": "Chinese domestic flights check bags against your ticket at the carousel.",
       "group": "Bags & packing",
       "id": "pk012",
@@ -750,7 +753,7 @@
       "zone": "All legs"
     },
     {
-      "bag": "Away",
+      "bag": "Talon 44",
       "detail": "Two or three hundred, buried separately from everything else.",
       "group": "Documents & money",
       "id": "pk032",
@@ -948,6 +951,15 @@
       "zone": "All legs"
     },
     {
+      "id": "pk146",
+      "item": "Latex gloves",
+      "bag": "Away",
+      "group": "Toiletries",
+      "zone": "All legs",
+      "own": "",
+      "detail": ""
+    },
+    {
       "bag": "Away",
       "detail": "Something small to hand over goes a long way across thirty hours in a four-berth cabin.",
       "group": "Small things",
@@ -955,15 +967,6 @@
       "item": "Small gifts from home",
       "own": "buy",
       "zone": "All legs"
-    },
-    {
-      "bag": "Away",
-      "detail": "Potala, Jokhang, Sera and Tashilhunpo are working religious sites: shoulders covered, hat off.",
-      "group": "Clothing",
-      "id": "pk127",
-      "item": "Modest clothes",
-      "own": "own",
-      "zone": "Tibet"
     },
     {
       "bag": "Rent in Lhasa",
