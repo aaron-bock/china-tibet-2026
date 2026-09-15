@@ -145,10 +145,11 @@ so raising the caps raises what each daily commit costs the repository.
 `.github/workflows/reddit-mirror.yml` runs it **daily at 09:20 UTC** and commits whatever
 changed. Two things about that schedule are worth knowing:
 
-- GitHub only fires `schedule:` from the repository's **default branch**, so the daily
-  refresh starts once this branch is merged there. Until then, and any time you want a fetch
-  now, run the workflow by hand from the Actions tab — it takes `posts` and `comments` as
-  inputs.
+- GitHub runs `schedule:` **and** `workflow_dispatch` only from the repository's **default
+  branch** — here, `claude/china-trip-planner-3dq17s`. So neither the daily refresh nor the
+  Actions "Run workflow" button exists until this branch is merged there; before that, the
+  way to fill `reddit/data/` is to run the fetcher locally and commit what it writes. Once
+  merged, the manual run takes `posts` and `comments` as inputs.
 - Anonymous reddit requests are frequently refused from CI address space. Setting
   `REDDIT_CLIENT_ID` and `REDDIT_CLIENT_SECRET` (a *script* app from
   reddit.com/prefs/apps) as Actions secrets switches the fetcher to the OAuth API and makes
