@@ -90,8 +90,19 @@ button{font-family:inherit; font-size:13px; cursor:pointer}
 .alert .bd b{color:var(--ink); font-weight:600}
 
 /* ---------- nav ---------- */
-nav.tabs{position:sticky; top:0; z-index:20; background:var(--ground); border-bottom:1px solid var(--line); margin-top:22px}
-.tabs-in{display:flex; gap:2px; overflow-x:auto; scrollbar-width:none}
+nav.tabs{position:sticky; top:env(safe-area-inset-top,0px); z-index:20; background:var(--ground); border-bottom:1px solid var(--line); margin-top:22px}
+.grp-in{display:flex; gap:4px; overflow-x:auto; scrollbar-width:none; padding-top:4px}
+.grp-in::-webkit-scrollbar{display:none}
+.grp{
+  border:0; background:none; color:var(--faint); padding:8px 12px 7px; white-space:nowrap;
+  font-family:var(--f-mono); font-size:11px; font-weight:600; letter-spacing:.13em; text-transform:uppercase;
+  border-radius:5px 5px 0 0
+}
+.grp:hover{color:var(--ink)}
+.grp[aria-selected="true"]{color:var(--ink); background:var(--surface)}
+.grp .c{font-family:var(--f-mono); font-size:10px; letter-spacing:0; margin-left:6px; color:var(--cinnabar); font-variant-numeric:tabular-nums}
+.tabs-in{display:flex; gap:2px; overflow-x:auto; scrollbar-width:none; background:var(--surface); border-radius:0 5px 0 0}
+.tabs-in[hidden]{display:none!important}
 .tabs-in::-webkit-scrollbar{display:none}
 .tab{
   border:0; background:none; color:var(--soft); padding:11px 13px 10px; white-space:nowrap;
@@ -133,12 +144,17 @@ h2.p-title{font-family:var(--f-disp); font-size:25px; font-weight:600; letter-sp
 .cell{min-width:0; display:flex; flex-direction:column; gap:1px}
 .cell > label{font-family:var(--f-mono); font-size:8.5px; line-height:1.3; letter-spacing:.11em; text-transform:uppercase; color:var(--faint)}
 .cell.empty{color:var(--faint); font-style:italic; font-size:13.5px}
-.row-kill{
-  flex:0 0 auto; align-self:flex-start; border:0; background:none; color:var(--faint);
-  font-family:var(--f-mono); font-size:15px; line-height:1; padding:8px 10px 6px; opacity:0; transition:opacity .12s
+.row-rail{flex:0 0 auto; align-self:flex-start; display:flex; flex-direction:column; gap:1px; padding:6px 7px 0}
+.row-why, .row-kill{
+  border:0; background:none; color:var(--faint);
+  font-family:var(--f-mono); font-size:15px; line-height:1; padding:3px 4px; opacity:0; transition:opacity .12s
 }
-.row:hover .row-kill, .row-kill:focus-visible{opacity:1}
+.row:hover .row-why, .row:hover .row-kill,
+.row-why:focus-visible, .row-kill:focus-visible{opacity:1}
+.row-why:hover{color:var(--lapis)}
 .row-kill:hover{color:var(--cinnabar)}
+/* On touch there is no hover, so these were unreachable. */
+@media (hover:none){ .row-why, .row-kill{opacity:.45} }
 
 /* inputs that read as text until touched */
 .f{
@@ -153,7 +169,7 @@ h2.p-title{font-family:var(--f-disp); font-size:25px; font-weight:600; letter-sp
 .f.strong{font-weight:600}
 .f.big{font-family:var(--f-disp); font-size:15.5px; font-weight:600; letter-spacing:-.005em}
 .f.cn{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",sans-serif; font-size:19px; font-weight:500; letter-spacing:.02em}
-textarea.f{resize:vertical; min-height:1.4em; line-height:1.45; font-size:12.75px; color:var(--soft); overflow:hidden; white-space:pre-wrap}
+textarea.f{resize:none; min-height:1.4em; line-height:1.45; font-size:12.75px; color:var(--soft); overflow:hidden; white-space:pre-wrap}
 select.f{
   cursor:pointer; -webkit-appearance:none; appearance:none;
   font-family:var(--f-mono); font-size:10px; letter-spacing:.11em; text-transform:uppercase;
@@ -329,6 +345,7 @@ footer.foot{border-top:1px solid var(--line); padding-block:20px 40px; color:var
 .g-apps{grid-template-columns:minmax(0,1fr) 168px}
 .g-packing{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) 116px 92px}
 .g-kit{grid-template-columns:minmax(0,1fr) 118px minmax(0,1.4fr)}
+.g-weather{grid-template-columns:minmax(0,1fr) 128px 172px 122px}
 .g-people{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr)}
 .g-reference{grid-template-columns:minmax(0,1fr) minmax(0,188px) minmax(0,148px)}
 .g-phrases{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
@@ -390,7 +407,10 @@ footer.foot{border-top:1px solid var(--line); padding-block:20px 40px; color:var
   </div>
 </div>
 
-<nav class="tabs"><div class="wrap tabs-in" id="tabs" role="tablist"></div></nav>
+<nav class="tabs">
+  <div class="wrap grp-in" id="groups" role="tablist" aria-label="Sections"></div>
+  <div class="wrap tabs-in" id="tabs" role="tablist" aria-label="Pages"></div>
+</nav>
 
 <main class="wrap" id="main">
   <div class="boot"><b>Opening your trip&hellip;</b>Loading itinerary, bookings and open items.</div>
@@ -509,8 +529,17 @@ var SCHEMA=[
       {k:"group", l:"Kind",   cls:"mono",   ph:"Category"},
       {k:"detail",l:"What it's for", type:"area", ph:"What it's for"}
     ]},
-  { id:"kit", doc:"kit", label:"Bags & weather",
-    note:"Four bags, the six times they get repacked, and the five climates the trip crosses. Everything in Packing is organised around this split.",
+  { id:"weather", doc:"weather", label:"Weather",
+    note:"Five climates in nineteen days, from a humid sea-level park day to a night below freezing at 5,200 m. The number that catches people out is not the cold but the swing: on the plateau the same day runs 20 \u00b0C at noon and below zero by dawn, which is a layering problem, not a warmth problem.",
+    fields:[
+      {k:"place", l:"Where",     cls:"big",  ph:"Place"},
+      {k:"when",  l:"When",      cls:"mono", ph:"Dates"},
+      {k:"temp",  l:"High / low",cls:"mono", ph:"Temperature"},
+      {k:"alt",   l:"Altitude",  cls:"mono", ph:"Altitude"},
+      {k:"detail",l:"What it is actually like", type:"area", ph:"Detail"}
+    ]},
+  { id:"kit", doc:"kit", label:"Bags",
+    note:"The four bags, their real dimensions and the limits that bind. What goes in each is on Packing; what moves between them is on Repacks.",
     fields:[
       {k:"name",  l:"What",   cls:"big",   ph:"Name"},
       {k:"kind",  l:"Kind",   cls:"mono",  ph:"Kind"},
@@ -525,7 +554,7 @@ var SCHEMA=[
       {k:"zone",  l:"Legs",   cls:"mono",   ph:"Which legs"},
       {k:"bag",   l:"Bag",    type:"bag"},
       {k:"packed",l:"Packed", type:"flag", on:"yes", onLabel:"Packed"},
-      {k:"detail",l:"Why",    type:"area",  ph:"Why"}
+      {k:"detail",l:"Why",    type:"area",  ph:"Why", hideEmpty:true}
     ]},
   { id:"repack", doc:"repack", label:"Repacks",
     note:"Six times the bags get turned out between Atlanta and Shanghai. Each one says what physically moves from which bag to which \u2014 the two that matter are the Z165, where the Away shuts for thirty hours, and base camp, where only one bag gets on the eco-bus.",
@@ -572,7 +601,40 @@ var SCHEMA=[
     ]}
 ];
 
+/* Seventeen top-level tabs was too many to scan. The sections are unchanged;
+   they are now reached through a group first. A group holding one section
+   hides the second row rather than showing a row of one. */
+var GROUPS=[
+  {id:"trip", label:"Itinerary", secs:["itinerary","travel","sleep","tibet","stays","disney","weather"]},
+  {id:"pack", label:"Packing",   secs:["packing","triage","repack","kit"]},
+  {id:"todo", label:"Open items",secs:["open"]},
+  {id:"info", label:"Reference", secs:["money","apps","people","reference","phrases","notes"]}
+];
+function groupOf(secId){
+  for(var i=0;i<GROUPS.length;i++) if(GROUPS[i].secs.indexOf(secId)>=0) return GROUPS[i];
+  return GROUPS[0];
+}
+function secsOf(g){
+  return g.secs.map(function(id){ return secById(id); }).filter(Boolean);
+}
+/* Panels, printing and exports all read in the order the tabs are grouped,
+   not the order the sections happen to be declared in. */
+function orderedSections(){
+  var seen={}, out=[];
+  GROUPS.forEach(function(g){
+    secsOf(g).forEach(function(sec){ seen[sec.id]=1; out.push(sec); });
+  });
+  SCHEMA.forEach(function(sec){ if(!seen[sec.id]) out.push(sec); });
+  return out;
+}
+function secById(id){
+  for(var i=0;i<SCHEMA.length;i++) if(SCHEMA[i].id===id) return SCHEMA[i];
+  return null;
+}
+
 var store={}, db=null, dl=null, active=SCHEMA[0].id, booted=false, packFilter="all";
+/* Coming back to a group should land where you left it, not at its first tab. */
+var lastSec={}, openWhy={};
 var pending={}, flushTimer=null;
 
 function $(s){return document.querySelector(s);}
@@ -619,6 +681,9 @@ function flush(){
 
 /* ---------- row building ---------- */
 function field(sec,row,f){
+  /* An empty Why is noise repeated a hundred times, so it is not rendered at
+     all; the + on the row brings one back when there is something to say. */
+  if(f.hideEmpty && !row[f.k] && !openWhy[row.id]) return null;
   var wide = f.wide || f.type==="area";
   var cell=el("div","cell"+(wide?" w-all":""));
   var id=sec.id+"-"+row.id+"-"+f.k;
@@ -681,7 +746,7 @@ function field(sec,row,f){
     node.value = opts.indexOf(row[f.k])>=0 ? row[f.k] : opts[f.type==="status"?1:0];
     node.className = "f " + (f.type==="status"?"st-":"m-") + node.value;
   } else if(f.type==="area"){
-    node=el("textarea","f"); node.rows=2; node.value=row[f.k]||"";
+    node=el("textarea","f"); node.rows=1; node.value=row[f.k]||"";
   } else {
     node=el("input","f"+(f.cls?" "+f.cls:"")); node.type="text"; node.value=row[f.k]||"";
     if(row[f.k]) node.title=row[f.k];
@@ -704,13 +769,24 @@ function rowNode(sec,row){
   if(prep) st.dataset.packed=row.packed||"";
   else st.dataset.status=row.status||"pending";
   r.appendChild(st);
-  var body=el("div","row-body g-"+sec.doc);
-  sec.fields.forEach(function(f){ body.appendChild(field(sec,row,f)); });
+  var body=el("div","row-body g-"+sec.doc), hidden=false;
+  sec.fields.forEach(function(f){
+    var c=field(sec,row,f);
+    if(c) body.appendChild(c); else hidden=true;
+  });
   r.appendChild(body);
+  var rail=el("div","row-rail");
+  if(hidden){
+    var w=el("button","row-why","+");
+    w.type="button"; w.title="Add a why"; w.setAttribute("aria-label","Add a note to this item");
+    w.dataset.why=row.id;
+    rail.appendChild(w);
+  }
   var k=el("button","row-kill","×");
   k.type="button"; k.title="Remove"; k.setAttribute("aria-label","Remove this entry");
   k.dataset.kill=row.id; k.dataset.doc=sec.doc;
-  r.appendChild(k);
+  rail.appendChild(k);
+  r.appendChild(rail);
   return r;
 }
 
@@ -856,6 +932,9 @@ function tiles(){
 /* ---------- keep notes fields at their content height ---------- */
 function grow(t){
   if(!t) return;
+  /* height:auto on a textarea floors at its rows attribute, so scrollHeight
+     never reports less than that: drop to one row before measuring. */
+  t.rows=1;
   t.style.height="auto";
   var h=t.scrollHeight;
   if(h>0) t.style.height=(h+2)+"px";
@@ -918,6 +997,7 @@ var BAGS=[
   {n:"Talon 22",     note:"UNDER THE SEAT for the thirteen hours to Incheon: everything you will actually reach for. Afterwards it is the day bag for monasteries and park days."},
   {n:"Talon 44",     note:"Overhead, and shut for most of the flight. Cabin-only things you don't need mid-air \u2014 and the bag that becomes the thirty-hour kit on the train and the only bag at base camp."},
   {n:"Away",         note:"Checked through to Xi'an, opened in the hotel, and shut again under the bunk from 2 October until Lhasa. Nothing lithium, nothing you need within a day."},
+  {n:"Buy in Xi'an", note:"Not packed at all \u2014 picked up on 29\u201330 September, the two days in Xi'an before the Z165. Most of it is within a block of the hotel, and all of it is cheaper and easier there than flying it in."},
   {n:"Rent in Lhasa",note:"Not packed at all. Sorted around Barkhor before the tour leaves for Shigatse, and handed back on the 10th."}
 ];
 function bagNames(){ return BAGS.map(function(b){ return b.n; }); }
@@ -1180,33 +1260,79 @@ function refreshTriage(){
 }
 
 /* ---------- render ---------- */
+function secCount(sec){ return sec.countFn ? sec.countFn() : items(sec.doc).length; }
+/* Only the group with nothing to click into carries a number of its own, and
+   only when that number is a demand on you rather than a row count. */
+function groupCount(g){
+  if(g.id!=="todo") return 0;
+  return items("tasks").filter(function(t){return t.status==="action";}).length;
+}
 function tabCounts(){
   SCHEMA.forEach(function(sec){
     var b=document.querySelector('.tab[data-go="'+sec.id+'"]');
     if(!b) return;
-    var n = sec.countFn ? sec.countFn() : items(sec.doc).length;
-    var c=b.querySelector(".c");
+    var n=secCount(sec), c=b.querySelector(".c");
+    if(n){ if(c) c.textContent=String(n); else b.appendChild(el("span","c",String(n))); }
+    else if(c) c.remove();
+  });
+  GROUPS.forEach(function(g){
+    var b=document.querySelector('.grp[data-grp="'+g.id+'"]');
+    if(!b) return;
+    var n=groupCount(g), c=b.querySelector(".c");
     if(n){ if(c) c.textContent=String(n); else b.appendChild(el("span","c",String(n))); }
     else if(c) c.remove();
   });
 }
 function tabsRender(){
+  var g=groupOf(active);
+  var gb=$("#groups"); gb.textContent="";
+  GROUPS.forEach(function(x){
+    var b=el("button","grp"); b.type="button"; b.dataset.grp=x.id;
+    b.setAttribute("role","tab"); b.setAttribute("aria-selected",String(x.id===g.id));
+    b.appendChild(document.createTextNode(x.label));
+    var n=groupCount(x);
+    if(n) b.appendChild(el("span","c",String(n)));
+    gb.appendChild(b);
+  });
   var box=$("#tabs"); box.textContent="";
-  SCHEMA.forEach(function(s){
+  var mine=secsOf(g);
+  box.hidden = mine.length<2;
+  mine.forEach(function(s){
     var b=el("button","tab"); b.type="button"; b.dataset.go=s.id;
     b.setAttribute("role","tab"); b.setAttribute("aria-selected",String(s.id===active));
     b.setAttribute("aria-controls","panel-"+s.id);
     b.appendChild(document.createTextNode(s.label));
-    var n = s.countFn ? s.countFn() : items(s.doc).length;
+    var n=secCount(s);
     if(n) b.appendChild(el("span","c",String(n)));
     box.appendChild(b);
   });
+}
+function show(id){
+  if(!secById(id)) return;
+  var was=groupOf(active);
+  active=id; lastSec[groupOf(id).id]=id;
+  document.querySelectorAll(".panel").forEach(function(p){ p.hidden=p.dataset.sec!==active; });
+  if(groupOf(id)!==was) tabsRender();
+  else document.querySelectorAll(".tab").forEach(function(b){ b.setAttribute("aria-selected",String(b.dataset.go===active)); });
+  document.querySelectorAll(".grp").forEach(function(b){ b.setAttribute("aria-selected",String(b.dataset.grp===groupOf(active).id)); });
+  growAll(document.getElementById("panel-"+active));
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+/* Rebuild one row in place — used when a hidden Why is asked for. */
+function replaceRow(sec,rid){
+  var old=document.querySelector("#panel-"+sec.id+' .row[data-rid="'+rid+'"]');
+  if(!old) return null;
+  var row=items(sec.doc).filter(function(r){return r.id===rid;})[0];
+  if(!row) return null;
+  var fresh=rowNode(sec,row);
+  old.replaceWith(fresh);
+  return fresh;
 }
 function render(force){
   var main=$("#main");
   if(!force && booted && document.activeElement && main.contains(document.activeElement)) return;
   main.textContent="";
-  SCHEMA.forEach(function(sec){
+  orderedSections().forEach(function(sec){
     var p=el("section","panel"); p.id="panel-"+sec.id; p.dataset.sec=sec.id;
     p.setAttribute("role","tabpanel"); p.hidden = sec.id!==active;
     var h=el("div","p-head"); h.appendChild(el("h2","p-title",sec.label)); p.appendChild(h);
@@ -1268,7 +1394,7 @@ function refreshTiles(){
 
 /* ---------- events ---------- */
 document.addEventListener("click",function(e){
-  var t=e.target.closest("[data-prep],[data-flag],[data-filter],[data-go],[data-add],[data-kill],[data-fmt],#openExport,#closeExport,#theme");
+  var t=e.target.closest("[data-prep],[data-flag],[data-filter],[data-go],[data-grp],[data-why],[data-add],[data-kill],[data-fmt],#openExport,#closeExport,#theme");
   if(!t) return;
   if(t.dataset.flag){
     var fdoc=t.dataset.doc, frid=t.dataset.rid, fkey=t.dataset.flag, fon=t.dataset.on;
@@ -1304,12 +1430,21 @@ document.addEventListener("click",function(e){
     if(tp) tp.scrollIntoView({block:"start",behavior:"smooth"});
     return;
   }
-  if(t.dataset.go){
-    active=t.dataset.go;
-    document.querySelectorAll(".panel").forEach(function(p){ p.hidden=p.dataset.sec!==active; });
-    document.querySelectorAll(".tab").forEach(function(b){ b.setAttribute("aria-selected",String(b.dataset.go===active)); });
-    growAll(document.getElementById("panel-"+active));
-    window.scrollTo({top:0,behavior:"smooth"});
+  if(t.dataset.grp){
+    var g=null;
+    GROUPS.forEach(function(x){ if(x.id===t.dataset.grp) g=x; });
+    if(!g) return;
+    show(lastSec[g.id] && g.secs.indexOf(lastSec[g.id])>=0 ? lastSec[g.id] : g.secs[0]);
+    return;
+  }
+  if(t.dataset.go){ show(t.dataset.go); return; }
+  if(t.dataset.why){
+    openWhy[t.dataset.why]=1;
+    var wsec=secById(active), wrow=replaceRow(wsec,t.dataset.why);
+    if(wrow){
+      var ta=wrow.querySelector("textarea.f");
+      if(ta){ grow(ta); ta.focus(); }
+    }
     return;
   }
   if(t.dataset.add){
@@ -1383,10 +1518,10 @@ function plain(){
   return out;
 }
 /* Two tabs can share one document (Packing and Own or buy both read trip/packing).
-   Exports walk SCHEMA, so they have to emit each DOC once, not each section. */
+   Exports walk the sections, so they have to emit each DOC once, not each section. */
 function exportSections(){
   var seen={}, out=[];
-  SCHEMA.forEach(function(sec){
+  orderedSections().forEach(function(sec){
     if(seen[sec.doc]) return;
     seen[sec.doc]=1; out.push(sec);
   });

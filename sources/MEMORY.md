@@ -14,9 +14,22 @@ That page is the single source of truth for this trip. Aaron's instruction, verb
 saves as you type, and it exports itself (HTML, Markdown, costs CSV, shopping CSV,
 JSON) for taking offline before departure.
 
-Fourteen sections: Itinerary, Travel, Tibet tour, Stays, Disney, Open items, Money,
-Apps, Kit, Packing, People, Reference, Phrases, Notes. Packing carries the
-Own / Buy / Skip triage per item, with a Buying filter that becomes the shopping list.
+Eighteen sections, reached through four groups rather than one long row of tabs:
+
+- **Itinerary** — Itinerary, Flights & rail, Jet lag, Tibet tour, Stays, Disneyland, Weather
+- **Packing** — Packing, Own or buy, Repacks, Bags
+- **Open items** — on its own, because it is the list of things still owed
+- **Reference** — Money, Apps & wallet, People, Reference, Point at this, Notes
+
+Packing is grouped by the bag each item rides in, with a picker on every row that
+moves it between bags. Its bags are Worn, Sling, Talon 22, Talon 44, Away,
+Buy in Xi'an and Rent in Lhasa; the last two are acquired there, not packed.
+Own / Buy / Skip triage lives on the same records, under Own or buy, and the Buy
+marks become the shopping-list export.
+
+The Why column on Packing is deliberately one line, and absent on rows where it
+would only restate the item — that is a standing editorial rule, not an oversight.
+Don't reintroduce paragraphs there.
 
 The source lives in the GitHub repo **aaron-bock/china-tibet-2026** on branch
 `claude/china-trip-planner-3dq17s`: `index.html` is the page, `seed/*.json` is the

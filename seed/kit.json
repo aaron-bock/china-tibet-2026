@@ -1,67 +1,32 @@
 {
   "items": [
     {
+      "detail": "Everything you don't need until a hotel room. It goes into the hold, onto the cabin floor of the Z165, and into the tour van — and it stays behind in Shigatse on base camp night.",
       "id": "kt001",
+      "kind": "Bag",
       "name": "Away The Large",
-      "kind": "Bag",
-      "spec": "Checked · 104 L · 29 × 20.5 × 12.5 in · 12.1 lb empty",
-      "detail": "Everything you don't need until a hotel room. It goes into the hold, onto the cabin floor of the Z165, and into the tour van — and it stays behind in Shigatse on base camp night."
+      "spec": "Checked · 104 L · 29 × 20.5 × 12.5 in · 12.1 lb empty"
     },
     {
+      "detail": "Your cabin bag on every flight, your bunk bag for thirty hours on the train, and — the reason it earns its place — your overnight bag at 5,200 m.",
       "id": "kt002",
+      "kind": "Bag",
       "name": "Osprey Talon 44 (S/M)",
-      "kind": "Bag",
-      "spec": "Carry-on · 44 L · 72 × 31 × 34 cm · 1.57 kg",
-      "detail": "Your cabin bag on every flight, your bunk bag for thirty hours on the train, and — the reason it earns its place — your overnight bag at 5,200 m."
+      "spec": "Carry-on · 44 L · 72 × 31 × 34 cm · 1.57 kg"
     },
     {
+      "detail": "The city bag: the Xi'an wall, Lhasa monasteries, and full days at Shanghai Disneyland. NOTE it does not fold flat — the framesheet that makes it carry well is the same thing that stops it compressing, so on the base camp leg it goes on the outside of the Talon 44 rather than inside it.",
       "id": "kt003",
+      "kind": "Bag",
       "name": "Osprey Talon 22",
-      "kind": "Bag",
-      "spec": "Personal item · 22 L · ~1.08 kg",
-      "detail": "The city bag: the Xi'an wall, Lhasa monasteries, and full days at Shanghai Disneyland. NOTE it does not fold flat — the framesheet that makes it carry well is the same thing that stops it compressing, so on the base camp leg it goes on the outside of the Talon 44 rather than inside it."
+      "spec": "Personal item · 22 L · ~1.08 kg"
     },
     {
+      "detail": "Passport, permit, phone, cash, meds, a small power bank. Worn on the front, never checked, never handed over. If everything else went missing you would still be fine.",
       "id": "kt004",
-      "name": "REI Ruckpack Waistpack",
       "kind": "Bag",
-      "spec": "On you · 3 L · 6.6 oz · worn crossbody",
-      "detail": "Passport, permit, phone, cash, meds, a small power bank. Worn on the front, never checked, never handed over. If everything else went missing you would still be fine."
-    },
-    {
-      "id": "kt011",
-      "name": "Xi'an",
-      "kind": "Weather",
-      "spec": "29 Sep – 2 Oct · 400 m · 50–68 °F · 10–20 °C",
-      "detail": "Mild autumn, a fair chance of rain. Golden Week starts 1 Oct — expect crowds everywhere."
-    },
-    {
-      "id": "kt012",
-      "name": "Z165 soft sleeper",
-      "kind": "Weather",
-      "spec": "2 – 3 Oct · to 5,072 m · heated cabin",
-      "detail": "Thirty hours. Dry air, piped oxygen at the berths, boiling water in every carriage."
-    },
-    {
-      "id": "kt013",
-      "name": "Lhasa & Shigatse",
-      "kind": "Weather",
-      "spec": "3 – 10 Oct · 3,650–3,850 m · 68/41 °F · 20/5 °C",
-      "detail": "Dry and bright by day, near freezing after dark. UV is the real hazard, not the cold."
-    },
-    {
-      "id": "kt014",
-      "name": "Everest Base Camp",
-      "kind": "Weather",
-      "spec": "7 Oct · 5,200 m · 50/21 °F · 10/−6 °C",
-      "detail": "One tent night. Wind, no shower, no power, pit toilets, yak-dung stove."
-    },
-    {
-      "id": "kt015",
-      "name": "Shanghai & Disney",
-      "kind": "Weather",
-      "spec": "10 – 15 Oct · sea level · 72/59 °F · 22/15 °C",
-      "detail": "Mild and drying out, and after Golden Week. City clothes plus several long days on your feet at the park."
+      "name": "REI Ruckpack Waistpack",
+      "spec": "On you · 3 L · 6.6 oz · worn crossbody"
     }
   ]
 }
