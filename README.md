@@ -13,9 +13,9 @@ Published as a Claude Artifact, and **the single source of truth for this trip**
 `index.html` is the whole application — a single page, no build step. Every field is editable in
 place and saves server-side, so the page can be worked on right up to departure.
 
-Sixteen sections: Itinerary, Flights & rail, Jet lag, Tibet tour, Stays, Disneyland, Open items,
-Money, Apps & wallet, Bags & weather, Packing, Own or buy, People, Reference, Point at this
-(Chinese names to show a driver), and Notes. Most rows carry a status — `confirmed` / `pending` / `action` / `done` — which drives the
+Seventeen sections: Itinerary, Flights & rail, Jet lag, Tibet tour, Stays, Disneyland, Open items,
+Money, Apps & wallet, Bags & weather, Packing, Repacks, Own or buy, People, Reference, Point at
+this (Chinese names to show a driver), and Notes. Most rows carry a status — `confirmed` / `pending` / `action` / `done` — which drives the
 colour stripe, the summary tiles and the "Needs you" banner.
 
 Three inline SVG figures, each drawn because the thing it shows is hard to hold in your head.
@@ -38,8 +38,11 @@ unresolved for a week.
 The 109 packing items are one record set behind **two tabs that read the same `trip/packing`
 document**, because they answer different questions:
 
-- **Packing** is the reference — item, which bag it rides in, which legs it is for, and why it
-  earns the space. The triage state shows here as a read-only chip; the taps live next door.
+- **Packing** is the packing-day list, **grouped by the bag each thing rides in** when you leave
+  the house, with a **Packed** toggle per item. Strike-through means *in the bag* — not owned,
+  which is a different question answered next door. Items skipped on Own or buy are lifted out of
+  their bag and collected in a muted "Not taking" group at the end, so a decision already made
+  doesn't sit in the way of one that isn't.
 - **Own or buy** is the decision tool — every item on one line, grouped by its category, with the
   three-way **Own / Buy / Skip** control, a `!` for the can't-forget items, and a per-category
   count that leads with *N to buy*. No prose, no bag columns: it exists to be scanned.
@@ -60,11 +63,23 @@ describing what it is for. The Legs column already carries that. Ten categories 
 remain. Prohibitions with real consequences (no political material, no drone, no US power banks)
 moved to Reference, which is the page you would have open at a checkpoint.
 
-A tap on either tab updates the other in place (`syncRow`, keyed on the row id) rather than
-re-rendering 308 rows and throwing away the scroll position. Sections declare `view:"triage"` to
-get the grouped renderer instead of the generic row grid, and `state:"prep"` when their state
-axis is Own/Buy/Skip rather than `status`; exports skip any section with a `view` so the shared
-document is emitted once.
+The bag split is built around the first twenty hours. **Talon 22 goes under the seat** for the
+thirteen hours to Incheon and holds everything you actually reach for — eye mask and earplugs,
+Kindle, toothbrush, glasses, prescriptions, snacks. **Talon 44 goes overhead and stays shut.** If
+you find yourself standing up to open the bin, something is in the wrong bag. The pseudo-bag
+`Away → Talon 44` is gone: `bag` now means *where it lives when you leave home*, and everything
+that moves later is described on **Repacks**, one row per repack, naming what goes from which bag
+to which.
+
+A tap on either packing tab updates the other in place (`syncRow`, keyed on the row id) rather
+than re-rendering 218 rows and throwing away the scroll position. Sections declare
+`view:"triage"` or `view:"bags"` to get a grouped renderer instead of the generic row grid, and
+`state:"prep"` when their state axis isn't `status`.
+
+**Exports key on the document, not the view.** Both packing tabs read `trip/packing`, so the
+export walk (`exportSections()`) emits each *doc* once. The earlier rule — skip any section with
+a `view` — worked only while exactly one of the two had one, and silently dropped the entire
+packing list from the Markdown, HTML and JSON exports the moment both did.
 
 Priority is deliberately a second, independent axis. It started out fused to the state: packing
 reused the shared `status` select, whose only two values here were `action` and `pending`, so a

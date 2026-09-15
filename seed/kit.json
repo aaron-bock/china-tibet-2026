@@ -29,48 +29,6 @@
       "detail": "Passport, permit, phone, cash, meds, a small power bank. Worn on the front, never checked, never handed over. If everything else went missing you would still be fine."
     },
     {
-      "id": "kt005",
-      "name": "ATL → LAX → ICN → Xi'an",
-      "kind": "Repack 1",
-      "spec": "",
-      "detail": "Away checked through. Talon 44 in the cabin, under 7 kg. Talon 22 as the personal item — the two together must come in under 10 kg, and they are ~2.65 kg before you put anything in them. Sling worn on your body, which nobody counts. Boots, hardshell and watch on you."
-    },
-    {
-      "id": "kt006",
-      "name": "Xi'an, three nights",
-      "kind": "Repack 2",
-      "spec": "",
-      "detail": "Away opens once in the hotel room and stays there. Talon 22 and sling do the wall, the Terracotta Army and the Muslim Quarter."
-    },
-    {
-      "id": "kt007",
-      "name": "Z165, thirty hours",
-      "kind": "Repack 3",
-      "spec": "",
-      "detail": "This is the repack that matters. Everything for thirty hours goes into the Talon 44, which comes up onto the bunk: sleepwear, sandals, toothbrush, wipes, food, mug, power bank, earplugs. The Away goes on the cabin floor and you do not open it again until Lhasa."
-    },
-    {
-      "id": "kt008",
-      "name": "Lhasa, three nights",
-      "kind": "Repack 4",
-      "spec": "",
-      "detail": "Away in the hotel. Talon 22 for the monasteries. Rent or buy the parka and, if you want it, the sleeping bag here — around Barkhor, before the tour leaves for Shigatse."
-    },
-    {
-      "id": "kt009",
-      "name": "Shigatse → base camp",
-      "kind": "Repack 5",
-      "spec": "",
-      "detail": "The Away stays behind. The Talon 44 becomes the overnight bag: the EBC cube, the parka, the sleeping kit, everything electronic fully charged. The Talon 22 will not fold flat inside it, so strap it to the outside or leave it in Lhasa with the Away — you only need one bag on the eco-bus. Sling stays on you."
-    },
-    {
-      "id": "kt010",
-      "name": "Lhasa → Shanghai, then Disney",
-      "kind": "Repack 6",
-      "spec": "",
-      "detail": "The 20 kg domestic limit bites here — weigh the Away before you leave the hotel. If the Talon 44 has to be checked on that sector, move the power banks and the medication into the sling first; lithium cannot go in the hold. In Shanghai the Talon 22 is the park bag and the sling is what you keep on for TRON."
-    },
-    {
       "id": "kt011",
       "name": "Xi'an",
       "kind": "Weather",

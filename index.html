@@ -124,6 +124,10 @@ h2.p-title{font-family:var(--f-disp); font-size:25px; font-weight:600; letter-sp
 .stripe[data-triage="own"]{background:var(--jade)}
 .stripe[data-triage="buy"]{background:var(--saffron)}
 .stripe[data-triage="skip"]{background:var(--line)}
+/* Packing's state is PACKED, not owned: the stripe and the strike-through
+   both mean "it is in the bag", which is the only thing that matters on the day. */
+.stripe[data-packed]{background:var(--faint)}
+.stripe[data-packed="yes"]{background:var(--jade)}
 .row-body{flex:1 1 auto; min-width:0; padding:13px 14px 14px; display:grid; gap:8px 14px}
 .row.done .row-body{opacity:.52}
 .cell{min-width:0; display:flex; flex-direction:column; gap:2px}
@@ -183,18 +187,19 @@ select.f.m-ground{color:var(--jade); background:var(--jade-wash)}
 .flag button[aria-pressed="true"]{background:var(--cinnabar-wash); border-color:var(--cinnabar); color:var(--cinnabar)}
 .row.must .f.strong{font-weight:700}
 
-.row.owned .f.strong, .row.owned .f.big{text-decoration:line-through; text-decoration-color:var(--jade); color:var(--soft)}
-.row.skipped{opacity:.5}
+.row.packed .f.strong, .row.packed .f.big{text-decoration:line-through; text-decoration-color:var(--jade); color:var(--soft)}
+.row.skipped{opacity:.55}
 .row.skipped .f.strong, .row.skipped .f.big{text-decoration:line-through; text-decoration-color:var(--faint)}
 
-/* read-only state chip on the packing reference; the taps live on Own or buy */
-.mark{display:inline-flex; gap:6px; align-items:center; align-self:flex-start;
-  font-family:var(--f-mono); font-size:9.5px; letter-spacing:.09em; text-transform:uppercase; font-weight:600}
-.mark .m{padding:4px 7px; border-radius:3px; border:1px solid var(--line); color:var(--faint); background:var(--surface)}
-.mark .m[data-v="own"]{color:var(--jade); border-color:var(--jade); background:var(--jade-wash)}
-.mark .m[data-v="buy"]{color:var(--saffron); border-color:var(--saffron); background:var(--saffron-wash)}
-.mark .m[data-v="skip"]{color:var(--soft); border-color:var(--soft); background:var(--raise)}
-.mark .b{color:var(--cinnabar); font-size:12px}
+/* ---------- packing, grouped by the bag it rides in ---------- */
+.bag-group{margin-bottom:26px}
+.bag-head{display:flex; gap:12px; align-items:baseline; justify-content:space-between;
+  flex-wrap:wrap; padding:0 2px 7px; margin-bottom:1px; border-bottom:2px solid var(--line)}
+.bag-name{font-family:var(--f-mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; font-weight:600}
+.bag-sum{font-family:var(--f-mono); font-size:10.5px; color:var(--faint); font-variant-numeric:tabular-nums}
+.bag-sum b{color:var(--jade); font-weight:600}
+.bag-note{font-size:12.5px; color:var(--soft); margin:0 2px 10px; max-width:70ch}
+.bag-group.gone .bag-name, .bag-group.gone .bag-note{color:var(--faint)}
 
 /* ---------- Own or buy: one line per item, grouped by category ---------- */
 .tri-group{margin-bottom:24px}
@@ -307,13 +312,14 @@ footer.foot{border-top:1px solid var(--line); padding-block:20px 40px; color:var
 .g-disney{grid-template-columns:minmax(0,1fr) 182px 96px}
 .g-tasks{grid-template-columns:minmax(0,1fr) 150px 96px 184px}
 .g-money{grid-template-columns:minmax(0,1fr) 192px 96px}
-.g-apps{grid-template-columns:minmax(0,1fr) 150px 96px}
-.g-packing{grid-template-columns:minmax(0,1fr) 150px 104px}
+.g-apps{grid-template-columns:minmax(0,1fr) 168px}
+.g-packing{grid-template-columns:minmax(0,1fr) 112px}
 .g-kit{grid-template-columns:minmax(0,1fr) 140px}
 .g-people{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr)}
 .g-reference{grid-template-columns:minmax(0,1fr) minmax(0,188px) 120px}
 .g-phrases{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
 .g-notes{grid-template-columns:minmax(0,1fr) 148px}
+.g-repack{grid-template-columns:96px minmax(0,1fr) 150px}
 .g-sleep{grid-template-columns:154px minmax(0,1fr) 116px 150px}
 .row-body .w-all{grid-column:1/-1}
 
@@ -472,12 +478,11 @@ var SCHEMA=[
       {k:"detail",l:"Detail", type:"area",  ph:"Detail"}
     ]},
   { id:"apps", doc:"apps", label:"Apps & wallet",
-    note:"Everything turns on one fact: whether your data enters China from outside the firewall or inside it. An eSIM installed at home routes offshore and simply works; a local SIM would kill WhatsApp, which is James's only real channel.",
+    note:"Everything turns on one fact: whether your data enters China from outside the firewall or inside it. An eSIM installed at home routes offshore and simply works; a local SIM would kill WhatsApp, which is James's only real channel. The deadlines live under Open items \u2014 this is just the list.",
     fields:[
       {k:"item",  l:"What",   cls:"strong", ph:"App or service"},
       {k:"group", l:"Kind",   cls:"mono",   ph:"Category"},
-      {k:"status",l:"State",  type:"status"},
-      {k:"detail",l:"Detail", type:"area",  ph:"Detail"}
+      {k:"detail",l:"What it's for", type:"area", ph:"What it's for"}
     ]},
   { id:"kit", doc:"kit", label:"Bags & weather",
     note:"Four bags, the six times they get repacked, and the five climates the trip crosses. Everything in Packing is organised around this split.",
@@ -487,14 +492,23 @@ var SCHEMA=[
       {k:"spec",  l:"Spec",   cls:"mono",  wide:true, ph:"Spec"},
       {k:"detail",l:"Detail", type:"area", ph:"Detail"}
     ]},
-  { id:"packing", doc:"packing", label:"Packing", state:"prep",
-    note:"The reference: which bag each thing rides in, which legs it is for, and why it earns the space. Deciding what you own and what you still have to buy happens on \u201cOwn or buy\u201d \u2014 the state shown here is that same state, read-only.",
+  { id:"packing", doc:"packing", label:"Packing", state:"prep", view:"bags",
+    countFn:function(){ return packCounts().todo; },
+    note:"Grouped by the bag each thing rides in when you leave the house, and built around the first twenty hours \u2014 the Talon 22 goes under the seat and holds everything you will reach for on a thirteen-hour flight; the Talon 44 goes overhead and stays shut. Tap PACKED as each thing goes in. What moves between bags later is on Repacks; what you still have to buy is on Own or buy.",
     fields:[
       {k:"item",  l:"Item",   cls:"strong", ph:"Item"},
-      {k:"bag",   l:"Bag",    cls:"mono",   ph:"Which bag"},
-      {k:"own",   l:"State",  type:"mark"},
+      {k:"packed",l:"Packed", type:"flag", on:"yes", onLabel:"Packed"},
       {k:"zone",  l:"Legs",   cls:"mono",   wide:true, ph:"Which legs"},
       {k:"detail",l:"Why",    type:"area",  ph:"Why"}
+    ]},
+  { id:"repack", doc:"repack", label:"Repacks",
+    note:"Six times the bags get turned out between Atlanta and Shanghai. Each one says what physically moves from which bag to which \u2014 the two that matter are the Z165, where the Away shuts for thirty hours, and base camp, where only one bag gets on the eco-bus.",
+    fields:[
+      {k:"leg",   l:"",      cls:"mono strong", ph:"Repack"},
+      {k:"title", l:"What",  cls:"big",         ph:"What happens"},
+      {k:"when",  l:"When",  cls:"mono",        ph:"When"},
+      {k:"moves", l:"Moves",  type:"area",       ph:"What moves"},
+      {k:"detail",l:"Watch out for", type:"area", ph:"Watch out for"}
     ]},
   { id:"triage", doc:"packing", label:"Own or buy", state:"prep", view:"triage",
     countFn:function(){ return prepCounts().todo; },
@@ -582,7 +596,7 @@ function field(sec,row,f){
   var cell=el("div","cell"+(wide?" w-all":""));
   var id=sec.id+"-"+row.id+"-"+f.k;
   var lab=el("label",null,f.l);
-  if(f.type!=="prep" && f.type!=="flag" && f.type!=="mark") lab.htmlFor=id;
+  if(f.type!=="prep" && f.type!=="flag") lab.htmlFor=id;
   cell.appendChild(lab);
   var node;
   if(f.type==="prep"){
@@ -596,14 +610,6 @@ function field(sec,row,f){
       b.setAttribute("aria-label", o[1]+": "+(row[sec.fields[0].k]||""));
       node.appendChild(b);
     });
-    node.id=id;
-    cell.appendChild(node);
-    return cell;
-  }
-  if(f.type==="mark"){
-    node=el("div","mark");
-    node.appendChild(markChip(row[f.k]));
-    if(row.prio==="must") node.appendChild(el("span","b","!"));
     node.id=id;
     cell.appendChild(node);
     return cell;
@@ -640,15 +646,15 @@ function field(sec,row,f){
   return cell;
 }
 function rowNode(sec,row){
-  var triage = sec.state==="prep";
+  var prep = sec.state==="prep";
   var cls="row";
-  if(!triage && row.status==="done") cls+=" done";
-  if(row.own==="own") cls+=" owned";
+  if(!prep && row.status==="done") cls+=" done";
+  if(prep && row.packed==="yes") cls+=" packed";
   if(row.own==="skip") cls+=" skipped";
   if(row.prio==="must") cls+=" must";
   var r=el("div",cls); r.dataset.rid=row.id;
   var st=el("span","stripe");
-  if(triage) st.dataset.triage=row.own||"";
+  if(prep) st.dataset.packed=row.packed||"";
   else st.dataset.status=row.status||"pending";
   r.appendChild(st);
   var body=el("div","row-body g-"+sec.doc);
@@ -823,12 +829,6 @@ function prepCounts(){
   });
   return c;
 }
-function markChip(v){
-  v=v||"";
-  var c=el("span","m", v==="own"?"Own":v==="buy"?"Buy":v==="skip"?"Skip":"\u2014");
-  c.dataset.v=v;
-  return c;
-}
 function packMatch(r){
   if(packFilter==="all") return true;
   if(packFilter==="todo") return !r.own;
@@ -862,6 +862,91 @@ function prepFilter(){
     box.appendChild(b);
   });
   return box;
+}
+
+/* ---------- packing: grouped by bag, skipped rows lifted out ---------- */
+var BAGS=[
+  {n:"Worn",         note:"On your body through security and onto the plane. None of it counts as a bag."},
+  {n:"Sling",        note:"Never leaves you \u2014 not for the toilet on the Z165, not on a coaster at Disney. Documents, money, phone."},
+  {n:"Talon 22",     note:"UNDER THE SEAT for the thirteen hours to Incheon: everything you will actually reach for. Afterwards it is the day bag for monasteries and park days."},
+  {n:"Talon 44",     note:"Overhead, and shut for most of the flight. Cabin-only things you don't need mid-air \u2014 and the bag that becomes the thirty-hour kit on the train and the only bag at base camp."},
+  {n:"Away",         note:"Checked through to Xi'an, opened in the hotel, and shut again under the bunk from 2 October until Lhasa. Nothing lithium, nothing you need within a day."},
+  {n:"Rent in Lhasa",note:"Not packed at all. Sorted around Barkhor before the tour leaves for Shigatse, and handed back on the 10th."}
+];
+function packCounts(){
+  var c={packed:0,todo:0,live:0,skip:0};
+  items("packing").forEach(function(r){
+    if(r.own==="skip"){ c.skip++; return; }
+    c.live++;
+    if(r.packed==="yes") c.packed++; else c.todo++;
+  });
+  return c;
+}
+function packTally(){
+  var c=packCounts(), w=el("div","tiles");
+  [{k:"Packed",v:c.packed,s:c.packed?"in the bag":"nothing yet"},
+   {k:"To pack",v:c.todo,s:c.todo?"still out":"all in"},
+   {k:"Carrying",v:c.live,s:"items across five bags"},
+   {k:"Not taking",v:c.skip,s:"skipped, listed last"}].forEach(function(x){
+    var t=el("div","tile");
+    t.appendChild(el("div","k",x.k));
+    t.appendChild(el("div","v",String(x.v)));
+    t.appendChild(el("div","s",x.s));
+    w.appendChild(t);
+  });
+  return w;
+}
+function bagHead(name,note,rows,gone){
+  var hd=el("div","bag-head");
+  hd.appendChild(el("div","bag-name",name));
+  var packed=rows.filter(function(r){return r.packed==="yes";}).length;
+  var sum=el("div","bag-sum");
+  if(gone){ sum.appendChild(document.createTextNode(rows.length+" items")); }
+  else {
+    if(packed) sum.appendChild(el("b",null,packed+" packed"));
+    sum.appendChild(document.createTextNode((packed?" \u00b7 ":"")+(rows.length-packed)+" to pack \u00b7 "+rows.length+" items"));
+  }
+  hd.appendChild(sum);
+  return hd;
+}
+function bagsView(sec){
+  var box=el("div"), all=items("packing");
+  BAGS.forEach(function(b){
+    var rows=all.filter(function(r){ return r.bag===b.n && r.own!=="skip"; });
+    if(!rows.length) return;
+    var blk=el("div","bag-group"); blk.dataset.bag=b.n;
+    blk.appendChild(bagHead(b.n,b.note,rows,false));
+    blk.appendChild(el("p","bag-note",b.note));
+    var rr=el("div","rows");
+    rows.forEach(function(r){ rr.appendChild(rowNode(sec,r)); });
+    blk.appendChild(rr);
+    box.appendChild(blk);
+  });
+  /* decided against: lifted out of the bag they used to sit in, kept at the end */
+  var gone=all.filter(function(r){ return r.own==="skip"; });
+  if(gone.length){
+    var g=el("div","bag-group gone"); g.dataset.bag="Not taking";
+    g.appendChild(bagHead("Not taking",null,gone,true));
+    g.appendChild(el("p","bag-note","Skipped on Own or buy, so they are off the bags above. Kept here so a decision you already made doesn't get made again."));
+    var gr=el("div","rows");
+    gone.forEach(function(r){ gr.appendChild(rowNode(sec,r)); });
+    g.appendChild(gr);
+    box.appendChild(g);
+  }
+  return box;
+}
+function refreshBags(){
+  var tl=document.querySelector("#panel-packing .tiles");
+  if(tl) tl.replaceWith(packTally());
+  var all=items("packing");
+  tabCounts();
+  document.querySelectorAll("#panel-packing .bag-group").forEach(function(blk){
+    var b=blk.dataset.bag, gone=b==="Not taking";
+    var rows=gone ? all.filter(function(r){return r.own==="skip";})
+                  : all.filter(function(r){return r.bag===b && r.own!=="skip";});
+    var old=blk.querySelector(".bag-head");
+    if(old) old.replaceWith(bagHead(b,null,rows,gone));
+  });
 }
 
 /* ---------- Own or buy: the quick reference ---------- */
@@ -958,22 +1043,19 @@ function syncRow(rid){
     if(bg) bg.setAttribute("aria-pressed", String(must));
   });
   document.querySelectorAll('#panel-packing .row[data-rid="'+rid+'"]').forEach(function(row){
-    var m=row.querySelector(".mark");
-    if(m){
-      var chip=m.querySelector(".m");
-      if(chip) chip.replaceWith(markChip(own));
-      var b=m.querySelector(".b");
-      if(must && !b) m.appendChild(el("span","b","!"));
-      if(!must && b) b.remove();
-    }
+    var packed = r.packed==="yes";
     var stp=row.querySelector(".stripe");
-    if(stp && stp.hasAttribute("data-triage")) stp.dataset.triage=own;
-    row.classList.toggle("owned", own==="own");
+    if(stp && stp.hasAttribute("data-packed")) stp.dataset.packed = packed?"yes":"";
+    row.querySelectorAll('[data-flag="packed"]').forEach(function(b){
+      b.setAttribute("aria-pressed", String(packed));
+    });
+    row.classList.toggle("packed", packed);
     row.classList.toggle("skipped", own==="skip");
     row.classList.toggle("must", must);
   });
 }
 function refreshTriage(){
+  tabCounts();
   var tl=document.querySelector("#panel-triage .tiles");
   if(tl) tl.replaceWith(prepTally());
   var fl=document.querySelector("#panel-triage .filters");
@@ -987,6 +1069,16 @@ function refreshTriage(){
 }
 
 /* ---------- render ---------- */
+function tabCounts(){
+  SCHEMA.forEach(function(sec){
+    var b=document.querySelector('.tab[data-go="'+sec.id+'"]');
+    if(!b) return;
+    var n = sec.countFn ? sec.countFn() : items(sec.doc).length;
+    var c=b.querySelector(".c");
+    if(n){ if(c) c.textContent=String(n); else b.appendChild(el("span","c",String(n))); }
+    else if(c) c.remove();
+  });
+}
 function tabsRender(){
   var box=$("#tabs"); box.textContent="";
   SCHEMA.forEach(function(s){
@@ -1022,6 +1114,12 @@ function render(force){
       p.appendChild(prepTally());
       p.appendChild(prepFilter());
       p.appendChild(triageView());
+      main.appendChild(p);
+      return;
+    }
+    if(sec.view==="bags"){
+      p.appendChild(packTally());
+      p.appendChild(bagsView(sec));
       main.appendChild(p);
       return;
     }
@@ -1070,8 +1168,8 @@ document.addEventListener("click",function(e){
       var c=Object.assign({},r); c[fkey]=fnext; return c;
     })};
     syncRow(frid);
-    refreshTriage();
-    if(packFilter==="key") render(true);
+    refreshTriage(); refreshBags();
+    if(fkey!=="packed" && packFilter==="key") render(true);
     queue(fdoc);
     return;
   }
@@ -1083,7 +1181,7 @@ document.addEventListener("click",function(e){
       return r.id===prid ? Object.assign({},r,{own:next}) : r;
     })};
     syncRow(prid);
-    refreshTriage();
+    refreshTriage(); refreshBags();
     if(packFilter!=="all") render(true);
     queue(pdoc);
     return;
@@ -1162,7 +1260,17 @@ document.addEventListener("input",function(e){
 /* ---------- exports ---------- */
 function plain(){
   var out={meta:store.meta||{}};
-  SCHEMA.forEach(function(s){ if(!s.view) out[s.doc]=items(s.doc); });
+  SCHEMA.forEach(function(s){ out[s.doc]=items(s.doc); });
+  return out;
+}
+/* Two tabs can share one document (Packing and Own or buy both read trip/packing).
+   Exports walk SCHEMA, so they have to emit each DOC once, not each section. */
+function exportSections(){
+  var seen={}, out=[];
+  SCHEMA.forEach(function(sec){
+    if(seen[sec.doc]) return;
+    seen[sec.doc]=1; out.push(sec);
+  });
   return out;
 }
 function mdBody(){
@@ -1185,21 +1293,21 @@ function mdBody(){
       sl.there.forEach(function(r){ L.push("- [ ] "+r.item+(r.detail?" \u2014 "+r.detail:"")); });
     }
   }
-  SCHEMA.forEach(function(sec){
-    if(sec.view) return;
+  exportSections().forEach(function(sec){
     var list=items(sec.doc); if(!list.length) return;
     L.push(""); L.push("## "+sec.label); L.push("");
     list.forEach(function(r){
       var head=[], body=[];
       if(sec.state==="prep"){
+        head.push(r.packed==="yes" ? "[PACKED]" : "[ ]");
         head.push("["+(r.own?String(r.own).toUpperCase():"UNDECIDED")+"]");
         if(r.prio==="must") head.push("[CAN\u2019T FORGET]");
+        if(r.bag) head.push(r.bag);
       }
       sec.fields.forEach(function(f){
         var v=r[f.k]; if(!v) return;
         if(f.type==="area"){ body.push(v); return; }
-        if(f.type==="mark") return;
-        if(f.type==="flag"){ if(v===f.on) head.push("["+f.onLabel.toUpperCase()+"]"); return; }
+        if(f.type==="flag"){ if(sec.state!=="prep" && v===f.on) head.push("["+f.onLabel.toUpperCase()+"]"); return; }
         if(f.type==="status"||f.type==="mode"||f.type==="prep"){ head.push("["+String(v).toUpperCase()+"]"); return; }
         head.push(v);
       });
@@ -1280,8 +1388,7 @@ function htmlBody(){
       p.push('</div>');
     });
   }
-  SCHEMA.forEach(function(sec){
-    if(sec.view) return;
+  exportSections().forEach(function(sec){
     var list=items(sec.doc); if(!list.length) return;
     p.push('<h2>'+esc(sec.label)+'</h2>');
     p.push('<p class="note">'+esc(sec.note)+'</p>');
@@ -1289,18 +1396,18 @@ function htmlBody(){
       var triage = sec.state==="prep";
       var tv = r.own||"";
       var st = triage
-        ? (tv==="own"?"confirmed":tv==="buy"?"pending":tv==="skip"?"done":"")
+        ? (r.packed==="yes"?"confirmed":tv==="skip"?"done":"pending")
         : (r.status||"");
       var stLabel = triage
-        ? (tv==="own"?"own it":tv==="buy"?"buy":tv==="skip"?"skipped":"undecided")
+        ? (r.packed==="yes"?"packed":tv==="skip"?"not taking":(r.bag||"to pack"))
         : (r.status||"");
       var meta=[], areas=[], title="";
       sec.fields.forEach(function(f){
         var v=r[f.k]; if(!v) return;
         if(f.type==="area"){ areas.push(v); return; }
         if(f.type==="status") return;
-        if(f.type==="prep" || f.type==="mark") return;
-        if(f.type==="flag"){ if(v===f.on) meta.push(f.onLabel.toUpperCase()); return; }
+        if(f.type==="prep") return;
+        if(f.type==="flag"){ if(!triage && v===f.on) meta.push(f.onLabel.toUpperCase()); return; }
         if(!title){ title=v; return; }
         meta.push(v);
       });

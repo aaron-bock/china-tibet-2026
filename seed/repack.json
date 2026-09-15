@@ -1,0 +1,52 @@
+{
+  "items": [
+    {
+      "id": "rp1",
+      "leg": "Repack 1",
+      "title": "Leaving for LAX",
+      "when": "Sun 27 Sep",
+      "moves": "Nothing moves yet — this is how the bags leave the house.\n\nWORN: boots, hardshell, watch, Arc'teryx Mantis 1.\nSLING: passport, Tibet permit, cards, cash, phone, headphones, eSIM, sunglasses, sanitiser, wipes.\nTALON 22, under the seat: earplugs and eye mask, Kindle, toothbrush, glasses and contacts, prescriptions, ibuprofen, snacks, sun hat, poncho, blister kit.\nTALON 44, overhead: fleece, puffy, warm hat, gloves, sleepwear, slides, first aid, charger and adapters, headlamp, the rest of the medical kit.\nAWAY, checked through to Xi'an: all clothing, bulk toiletries, packing cubes, city shoes.",
+      "detail": "THE WEIGHT IS THE CONSTRAINT. Korean Air gives you 10 kg for carry-on and personal item COMBINED, and the two Ospreys are ~2.65 kg empty — so about 7.3 kg of actual contents across both. Weigh them at home, not at the gate.\n\nNOTHING LITHIUM IN THE CHECKED BAG. Power banks and spare batteries travel in the cabin, every sector, no exceptions.\n\nThe split above is built around the thirteen hours to Incheon: the Talon 22 goes under the seat in front of you and holds everything you will actually reach for, and the Talon 44 goes overhead and stays shut. If you find yourself standing up to open the overhead bin, something is in the wrong bag."
+    },
+    {
+      "id": "rp2",
+      "leg": "Repack 2",
+      "title": "Xi'an, three nights",
+      "when": "Tue 29 Sep",
+      "moves": "AWAY → the hotel room. It opens once and stays open; you are here three nights.\nTALON 22 → becomes the city day bag. Take OUT the flight kit (earplugs, eye mask, Kindle, toothbrush) and leave it in the room; put IN water, sunscreen, a layer.\nTALON 44 → the wardrobe, empty, until the 1st.\n\nBUY HERE, INTO THE TALON 44: the 3C-certified power bank, bulk wet wipes and tissues, snacks and food for the train, shower slides if you didn't pack them.",
+      "detail": "This is the only shopping window that matters. From 2 October you are on a train and then above 3,650 m, and the 3C power bank in particular cannot be bought anywhere else — no US-market battery carries the mark, and an uncertified one is confiscated at Lhasa.\n\nRepack for the train on the evening of the 1st, not the morning of the 2nd. You leave the hotel at 08:00."
+    },
+    {
+      "id": "rp3",
+      "leg": "Repack 3",
+      "title": "Z165 — the one that matters",
+      "when": "Fri 2 Oct, 09:27",
+      "moves": "Thirty hours in a four-berth soft sleeper. The Away goes under the bunk and DOES NOT OPEN until Lhasa, so everything for thirty hours has to be in the Talon 44 before you board.\n\nAWAY → TALON 44: sleepwear, quick-dry towel, no-rinse body wipes, one change of underwear, one merino base layer.\nBOUGHT IN XI'AN → TALON 44: power bank, snacks and train food, bulk wipes.\nTALON 22 stays packed and comes up onto the bunk as the grab bag: toothbrush, earplugs, eye mask, Kindle, toilet paper, slides.\nSLING stays on you the whole way — you board on the passport, and it is also the only bag you take to the toilet.",
+      "detail": "Assume no reliable power on a Z-service, which is what the power bank is for.\n\nSlides matter more than they sound: the corridor and the washroom are not places for bare feet or boots.\n\nYour lower berth is the cabin's sofa during the day — other passengers will sit on it. Anything you want to keep to yourself goes in a bag, not on the bed."
+    },
+    {
+      "id": "rp4",
+      "leg": "Repack 4",
+      "title": "Lhasa, three nights",
+      "when": "Sat 3 Oct",
+      "moves": "AWAY → the hotel, and it opens properly for the first time since Xi'an.\nTALON 44 → empties back into the Away, except what is going to base camp.\nTALON 22 → the monastery day bag: water, sun hat, sunscreen, small notes for offerings and photo fees, modest layer.\n\nRENT HERE, AROUND BARKHOR, BEFORE THE TOUR LEAVES FOR SHIGATSE: the heavy down parka, and the sleeping bag and trekking poles if you want them. Cheaper and warmer than anything you would have carried, and you hand it all back on the 10th.",
+      "detail": "Three days at 3,650 m doing the acclimatising, so keep the day bag light — this is not the week to be carrying a full pack around the Potala.\n\nSort the rentals on day one or two, not the morning of the 6th. The tour leaves for Shigatse early and the shops around Barkhor are not open at dawn."
+    },
+    {
+      "id": "rp5",
+      "leg": "Repack 5",
+      "title": "Shigatse → base camp — one bag only",
+      "when": "Wed 7 Oct",
+      "moves": "ONE BAG ON THE ECO-BUS. Everything below goes into the Talon 44 and nothing else comes.\n\nAWAY → stays in Lhasa. You will not see it again until the 9th.\nAWAY → TALON 44: merino base layer tops, merino long johns, heavy wool socks, warm insoles, waterproof overtrousers.\nALREADY IN THE TALON 44: fleece, puffy, warm hat, liner and insulated gloves, sleeping bag liner, hand and toe warmers, headlamp, no-rinse body wipes, quick-dry towel.\nRENTED IN LHASA → TALON 44: the down parka, and the sleeping bag if you took one.\nTALON 22 → strap it to the outside of the Talon 44, or leave it in Lhasa with the Away.\nSLING stays on you, with the toilet paper and the sanitiser in a pocket.",
+      "detail": "THE TALON 22 WILL NOT FOLD FLAT. Its framesheet is what makes it carry well and also what stops it compressing — so it is strapped on or left behind, not stuffed inside. On the eco-bus you want one bag.\n\nCHARGE EVERYTHING BEFORE YOU LEAVE SHIGATSE. There is no power at the tent camp and the cold flattens batteries overnight — sleep with the power bank and the phone inside the sleeping bag.\n\nYou are sleeping at 5,200 m with a °C night. The parka, the liner and the hand warmers are the three things that make that night survivable, and none of them can be bought at base camp."
+    },
+    {
+      "id": "rp6",
+      "leg": "Repack 6",
+      "title": "Lhasa → Shanghai, then Disney",
+      "when": "Sat 10 Oct",
+      "moves": "RENTED GEAR → back to the shop in Lhasa, before the airport transfer. Do not let this be the thing you forget on the last morning.\n\nTALON 44 → AWAY: everything Tibet. The Away carries the weight from here and the Talon 44 goes back to being a light carry-on.\nOUT OF ANYTHING CHECKED → SLING OR TALON 44: the power bank, and your medication. Lithium cannot go in the hold, and you do not want prescriptions in a bag you cannot reach.\nTALON 22 → the Disney park bag from the 11th: poncho, sun hat, snacks, spare socks, blister kit, power bank.\nSLING → what stays on your body for TRON, and the only bag you take on a coaster.",
+      "detail": "MU2336 is a DOMESTIC sector with a 20 kg checked limit — tighter than the international allowance you flew in on, and you are carrying more than you arrived with. Weigh the Away in the hotel, before the transfer, while you can still move things into the cabin bags.\n\nFrom here the trip is a city trip. The Talon 44 barely gets used again until you fly home."
+    }
+  ]
+}
