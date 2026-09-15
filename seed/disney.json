@@ -1,81 +1,88 @@
 {
   "items": [
     {
+      "detail": "Sun 11 Oct is the city day. Park Mon 12, Tue 13, Wed 14 — all weekday pricing on the emptiest days of the autumn, immediately after Golden Week. All three are now ticketed: FUW045023 covers Monday and Tuesday, UAY706135 the Wednesday. Thu 15 is an optional morning: gates 08:30, out by 15:00, taxi to Pudong for DL38 at 18:25. You do NOT need a ticket for Sunday 11 October, which is the one day the park is fullest and the one day the museums are open — that is the whole point of the shape.",
       "id": "y2",
       "item": "The plan: city Sunday, park Mon–Wed, optional Thursday morning",
       "price": "3 days + option",
-      "status": "confirmed",
-      "detail": "Sun 11 Oct is the city day. Park Mon 12, Tue 13, Wed 14 — all weekday pricing on the emptiest days of the autumn, immediately after Golden Week. Thu 15 is an optional morning: gates 08:30, out by 15:00, taxi to Pudong for DL38 at 18:25. You do NOT need a ticket for Sunday 11 October, which is the one day the park is fullest and the one day the museums are open — that is the whole point of the shape."
+      "status": "confirmed"
     },
     {
+      "detail": "Confirmed 14 September. Booking reference FUW045023, name AARON ROSS BOCK, product \"[Early bird] 2-day ticket\", Adult × 1, $100.21 — about ¥711, or ¥356 a day against ¥475 at the gate, and under the ¥798 the official store wanted for the same product.\n\nVALID MONDAY 12 AND TUESDAY 13 OCTOBER, confirmed with Klook. Two of the three park days are done.\n\nPARK HOURS, from the booking: 08:30 to 21:30 daily, last entry 20:00 — better than the 08:30–20:00 the public calendar implied, which had not published October when it was checked on 10 September.\n\nNON-REFUNDABLE AND NON-CHANGEABLE: no cancellations, no refunds, no transfers in whole or in part without merchant approval. The dates are locked.\n\nPREMIER ACCESS IS NOT AVAILABLE THROUGH KLOOK — official website, app, WeChat account and Fliggy store only. Buy it in the Shanghai Disney Resort app on the day if a standby line crosses an hour.\n\nStill to do: check the name and passport number on the voucher match the passport you will carry, and get the PDF onto the phone rather than leaving it in Gmail behind the firewall.",
       "id": "y3",
       "item": "BOOKED — Klook FUW045023 · Mon 12 & Tue 13",
       "price": "$100.21",
-      "status": "confirmed",
-      "detail": "Confirmed 14 September. Booking reference FUW045023, name AARON ROSS BOCK, product \"[Early bird] 2-day ticket\", Adult × 1, $100.21 — about ¥711, or ¥356 a day against ¥475 at the gate, and under the ¥798 the official store wanted for the same product.\n\nVALID MONDAY 12 AND TUESDAY 13 OCTOBER, confirmed with Klook. Two of the three park days are done.\n\nPARK HOURS, from the booking: 08:30 to 21:30 daily, last entry 20:00 — better than the 08:30–20:00 the public calendar implied, which had not published October when it was checked on 10 September.\n\nNON-REFUNDABLE AND NON-CHANGEABLE: no cancellations, no refunds, no transfers in whole or in part without merchant approval. The dates are locked.\n\nPREMIER ACCESS IS NOT AVAILABLE THROUGH KLOOK — official website, app, WeChat account and Fliggy store only. Buy it in the Shanghai Disney Resort app on the day if a standby line crosses an hour.\n\nStill to do: check the name and passport number on the voucher match the passport you will carry, and get the PDF onto the phone rather than leaving it in Gmail behind the firewall."
+      "status": "confirmed"
     },
     {
+      "detail": "Confirmed 15 September. Booking reference UAY706135, name AARON ROSS BOCK, product “1-day ticket (free cancellation)”, Adult × 1, participation date 14 October. That completes the three park days.\n\nNO PRICE ON THE CONFIRMATION. Klook's email carries the booking and the voucher but not the amount — take it off the Klook app or the card statement and put it in the Money row.\n\nNOTE THIS IS NOT THE EARLY BIRD. You bought the free-cancellation variant, which is a different product from the ¥425–449 Early Bird I quoted, and normally dearer. You are paying for the right to change your mind.\n\nWHAT THAT RIGHT IS WORTH, AND WHEN IT EXPIRES: full refund if you cancel at least 7 days out, so by 6 October; a ¥80 fee inside 6 days; nothing back on the day itself or once you have rescheduled. You can reschedule twice, up to 48 hours before 00:00 on the visit date — so by 00:00 on 12 October. The catch is that 6 October falls while you are between Shigatse and Lhasa: if you are going to drop the Wednesday, do it before you board the Z165 on 2 October.",
       "id": "y10",
-      "item": "STILL TO BUY — Wed 14 Oct, and Thu 15 if you want it",
-      "price": "~¥425–499",
-      "status": "action",
-      "detail": "Wednesday 14 October is the third park day and the 2-Day does not cover it. It should be on sale about now — the rolling window reaches it around 14 September — and Thursday 15 October a day later.\n\nCORRECTION TO EARLIER ADVICE: Klook DOES sell Early Bird. The booking you just made is literally the \"[Early bird] 2-day ticket\", so the reason I gave for going official-first was wrong. Buy the Wednesday wherever is cheaper on the day — Klook already works for your card, and the official site and app are worth a price check rather than a detour.\n\nExpect ~¥425–449 as a 1-Day Early Bird against ¥475 at the gate.\n\nTHE THURSDAY IS NOW OR NEVER. It is a full 1-Day ticket (¥449–499, no half-day product) for a morning before the 18:25 flight from Pudong. You do not have to use it, but you cannot add it once you board the Z165 on 2 October.\n\nStill do NOT buy Sunday 11 October. That is the city day."
+      "item": "BOOKED — Klook UAY706135 · Wed 14",
+      "price": "—",
+      "status": "confirmed"
     },
     {
+      "id": "y12",
+      "item": "STILL TO BUY — Thu 15 Oct, if you want it",
+      "price": "¥449–499",
+      "status": "action",
+      "detail": "The optional fourth morning: gates 08:30, out by 15:00, taxi to Pudong for DL 38 at 18:25. It costs a whole 1-Day ticket because there is no half-day product.\n\nNOW OR NEVER. You cannot add it once you board the Z165 on 2 October — from there you are off-grid until Lhasa, and by the time you land in Shanghai on the 10th the date is a day out from the 48-hour horizon. Buy it before 1 October or let it go.\n\nStill do NOT buy Sunday 11 October. That is the city day."
+    },
+    {
+      "detail": "Observed October ladder: ¥475 base for ordinary Tue/Wed, ¥499 Sun/Mon/Thu, ¥539 Fridays, ¥599 Saturdays, ¥629–659 pre-holiday 26–30 Sep, ¥719–799 during Golden Week 1–5 Oct, then straight back to ¥475 on 8 Oct. For your dates that means ¥499 Mon 12, ¥475 Tue 13, ¥475 Wed 14, ¥499 Thu 15. Saturday 10 October is a national make-up workday, so the country is at work the day you land.",
       "id": "y4",
       "item": "Expected prices for your dates",
       "price": "¥475–499",
-      "status": "pending",
-      "detail": "Observed October ladder: ¥475 base for ordinary Tue/Wed, ¥499 Sun/Mon/Thu, ¥539 Fridays, ¥599 Saturdays, ¥629–659 pre-holiday 26–30 Sep, ¥719–799 during Golden Week 1–5 Oct, then straight back to ¥475 on 8 Oct. For your dates that means ¥499 Mon 12, ¥475 Tue 13, ¥475 Wed 14, ¥499 Thu 15. Saturday 10 October is a national make-up workday, so the country is at work the day you land."
+      "status": "pending"
     },
     {
+      "detail": "Your call, and the arithmetic backs it. Pearl breaks even at about 3.6 visits and is weekdays-only; at three park days tickets win by roughly ¥299, and the only shape where Pearl wins is four all-weekday days by about ¥125 — which the ticket-only add-on pricing takes straight back, since Early Bird, the 2-Day and every bundle are dated-ticket products a pass holder cannot buy. Nothing left to decide here.",
       "id": "y1",
       "item": "Decided: dated tickets, not an annual pass",
       "price": "settled",
-      "status": "done",
-      "detail": "Your call, and the arithmetic backs it. Pearl breaks even at about 3.6 visits and is weekdays-only; at three park days tickets win by roughly ¥299, and the only shape where Pearl wins is four all-weekday days by about ¥125 — which the ticket-only add-on pricing takes straight back, since Early Bird, the 2-Day and every bundle are dated-ticket products a pass holder cannot buy. Nothing left to decide here."
+      "status": "done"
     },
     {
+      "detail": "Book 10+ days ahead and it saves ¥50; the ¥445 variant at 30 days adds a ¥30 dining coupon. Your buy window IS 30 days, so this is free money if you book the day a date opens.",
       "id": "y5",
       "item": "1-Day Early Bird",
       "price": "¥425–449",
-      "status": "pending",
-      "detail": "Book 10+ days ahead and it saves ¥50; the ¥445 variant at 30 days adds a ¥30 dining coupon. Your buy window IS 30 days, so this is free money if you book the day a date opens."
+      "status": "pending"
     },
     {
+      "detail": "About 10% off two separate 1-days, currently ¥749 on a limited-time promo, ¥798 as an Early Bird 2-Day. The best way to buy consecutive days.",
       "id": "y6",
       "item": "2-Day Ticket",
       "price": "¥749–855",
-      "status": "pending",
-      "detail": "About 10% off two separate 1-days, currently ¥749 on a limited-time promo, ¥798 as an Early Bird 2-Day. The best way to buy consecutive days."
+      "status": "pending"
     },
     {
+      "detail": "Buy one get one free. One pairing is TRON + Peter Pan, the other Zootopia + Winnie the Pooh — about ¥180 for two skips against ¥140–180 each à la carte. The interesting bundle, largely because of Peter Pan.",
       "id": "y7",
       "item": "1-Day + two Premier Access",
       "price": "from ¥655",
-      "status": "pending",
-      "detail": "Buy one get one free. One pairing is TRON + Peter Pan, the other Zootopia + Winnie the Pooh — about ¥180 for two skips against ¥140–180 each à la carte. The interesting bundle, largely because of Peter Pan."
+      "status": "pending"
     },
     {
+      "detail": "Up to an hour before public opening, ~¥179 on top of a base ticket, and it is the perk Disney's two own hotels give their guests. Worth it on a weekend or a holiday; not on three post-Golden-Week weekdays, which are the quietest days of the season. If you find yourself wanting it, buy the ¥654 ticket-plus-early-entry bundle for one day rather than paying a resort-hotel rate for five nights to get it once.",
       "id": "y8",
       "item": "Early Park Entry — skip it",
       "price": "from ¥654",
-      "status": "done",
-      "detail": "Up to an hour before public opening, ~¥179 on top of a base ticket, and it is the perk Disney's two own hotels give their guests. Worth it on a weekend or a holiday; not on three post-Golden-Week weekdays, which are the quietest days of the season. If you find yourself wanting it, buy the ¥654 ticket-plus-early-entry bundle for one day rather than paying a resort-hotel rate for five nights to get it once."
+      "status": "done"
     },
     {
+      "detail": "Reserved viewing for three new shows plus a ¥100 F&B coupon. Steep, but it's the anniversary year and the shows are the reason. The celebration runs all year as 'With You, It's Magic+': new castle show The Heart of Magic, an updated Mickey's Storybook Express parade, and an anniversary finale added to ILLUMINATE!",
       "id": "y9",
       "item": "10th Anniversary Package",
       "price": "¥1,213",
-      "status": "pending",
-      "detail": "Reserved viewing for three new shows plus a ¥100 F&B coupon. Steep, but it's the anniversary year and the shows are the reason. The celebration runs all year as 'With You, It's Magic+': new castle show The Heart of Magic, an updated Mickey's Storybook Express parade, and an anniversary finale added to ILLUMINATE!"
+      "status": "pending"
     },
     {
+      "detail": "First hour: Zootopia: Hot Pursuit, then TRON Lightcycle Power Run — the two that build 60–90 minute lines by mid-morning and stay there. Second: Pirates of the Caribbean – Battle for the Sunken Treasure, the single best thing in the park and not close, then Soaring Over the Horizon. Plan around Peter Pan's Flight rather than dropping into it. On post-Golden-Week weekdays you shouldn't need Premier Access at all — walk in, read the standby boards, buy a single pass only if a wait crosses an hour. ILLUMINATE closes the park and the metro floods immediately; from the Courtyard you can just walk.\n\nPARK HOURS are 08:30 to 21:30 with last entry at 20:00, per the Klook booking — a longer day than the 08:30–20:00 the public calendar implied.",
       "id": "y11",
       "item": "In the park: rope drop is the whole game",
       "price": "—",
-      "status": "pending",
-      "detail": "First hour: Zootopia: Hot Pursuit, then TRON Lightcycle Power Run — the two that build 60–90 minute lines by mid-morning and stay there. Second: Pirates of the Caribbean – Battle for the Sunken Treasure, the single best thing in the park and not close, then Soaring Over the Horizon. Plan around Peter Pan's Flight rather than dropping into it. On post-Golden-Week weekdays you shouldn't need Premier Access at all — walk in, read the standby boards, buy a single pass only if a wait crosses an hour. ILLUMINATE closes the park and the metro floods immediately; from the Courtyard you can just walk.\n\nPARK HOURS are 08:30 to 21:30 with last entry at 20:00, per the Klook booking — a longer day than the 08:30–20:00 the public calendar implied."
+      "status": "pending"
     }
   ]
 }

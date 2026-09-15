@@ -1,123 +1,130 @@
 {
   "items": [
     {
+      "amount": "receipt issued 13 Aug",
+      "detail": "Booked, party of five, customer ID AOT-BJ-James-50674. Sharing a twin with Jeff avoids the RMB 2,100 single supplement, which falls to Kamana or Alka instead.",
       "id": "m1",
       "item": "Tibet tour · Asia Odyssey 8-day EBC",
-      "amount": "receipt issued 13 Aug",
-      "status": "confirmed",
-      "detail": "Booked, party of five, customer ID AOT-BJ-James-50674. Sharing a twin with Jeff avoids the RMB 2,100 single supplement, which falls to Kamana or Alka instead."
+      "status": "confirmed"
     },
     {
+      "amount": "ticketed",
+      "detail": "Korean Air booking FAFD77, economy, one checked bag.",
       "id": "m2",
       "item": "KE 012 / KE 141 · LAX–ICN–XIY",
-      "amount": "ticketed",
-      "status": "confirmed",
-      "detail": "Korean Air booking FAFD77, economy, one checked bag."
+      "status": "confirmed"
     },
     {
+      "amount": "via Asia Odyssey",
+      "detail": "Confirmed with James on 16 August. Billed through the tour rather than separately.",
       "id": "m3",
       "item": "Z165 · Xi'an–Lhasa soft sleeper",
-      "amount": "via Asia Odyssey",
-      "status": "confirmed",
-      "detail": "Confirmed with James on 16 August. Billed through the tour rather than separately."
+      "status": "confirmed"
     },
     {
+      "amount": "30,000 miles + ¥170",
+      "detail": "China Eastern on Delta miles. Confirmation GBDPCB.",
       "id": "m4",
       "item": "MU 2336 · Lhasa–Shanghai",
-      "amount": "30,000 miles + ¥170",
-      "status": "confirmed",
-      "detail": "China Eastern on Delta miles. Confirmation GBDPCB."
+      "status": "confirmed"
     },
     {
+      "amount": "¥4,653",
+      "detail": "Delta Main, confirmation JP5E6A, ticket 0062450696002.",
       "id": "m5",
       "item": "DL 38 · Pudong–LAX",
-      "amount": "¥4,653",
-      "status": "confirmed",
-      "detail": "Delta Main, confirmation JP5E6A, ticket 0062450696002."
+      "status": "confirmed"
     },
     {
+      "amount": "separate SoCal ticket",
+      "detail": "Seat 28A, confirmation G3LX5Q — the return half of the Trybal SoCal round trip, not a China purchase.",
       "id": "m6",
       "item": "DL 899 · LAX–Atlanta",
-      "amount": "separate SoCal ticket",
-      "status": "confirmed",
-      "detail": "Seat 28A, confirmation G3LX5Q — the return half of the Trybal SoCal round trip, not a China purchase."
+      "status": "confirmed"
     },
     {
+      "amount": "¥1,707.02",
+      "detail": "~$240 all in. ¥732 prepayment charged 27 Sep, balance at checkout.",
       "id": "m7",
       "item": "The Westin Xi'an · 2 nights",
-      "amount": "¥1,707.02",
-      "status": "confirmed",
-      "detail": "~$240 all in. ¥732 prepayment charged 27 Sep, balance at checkout."
+      "status": "confirmed"
     },
     {
+      "amount": "0 — 85k award",
+      "detail": "Amex Brilliant free-night award, taxes included, nothing to pay.",
       "id": "m8",
       "item": "The Westin Xi'an · award night",
-      "amount": "0 — 85k award",
-      "status": "confirmed",
-      "detail": "Amex Brilliant free-night award, taxes included, nothing to pay."
+      "status": "confirmed"
     },
     {
+      "amount": "~¥2,000–3,500",
+      "detail": "Not booked — the last open bed. All five Disney-side at the Courtyard ITRZ is ~¥2,495 at ~¥499/night, plus a ¥180–250 Didi on arrival night because the last Line 11 train has gone by the time you clear Hongqiao. Split stay is one downtown night (¥300–500 at an Atour or Ji, or ¥1,500–2,500 at the Fairmont Peace) plus four at the Courtyard (~¥2,000), which cancels most of that taxi and puts you at the museum door on the Sunday. Going Ji or Atour on the park side instead would bring the whole five nights to ~¥1,300, at the cost of Platinum breakfast and an English-speaking front desk. Only the Courtyard figure is a verified live rate (Marriott, 10 Sep, your dates).",
       "id": "m9",
       "item": "Shanghai · 5 nights, 10–15 Oct",
-      "amount": "~¥2,000–3,500",
-      "status": "action",
-      "detail": "Not booked — the last open bed. All five Disney-side at the Courtyard ITRZ is ~¥2,495 at ~¥499/night, plus a ¥180–250 Didi on arrival night because the last Line 11 train has gone by the time you clear Hongqiao. Split stay is one downtown night (¥300–500 at an Atour or Ji, or ¥1,500–2,500 at the Fairmont Peace) plus four at the Courtyard (~¥2,000), which cancels most of that taxi and puts you at the museum door on the Sunday. Going Ji or Atour on the park side instead would bring the whole five nights to ~¥1,300, at the cost of Platinum breakfast and an English-speaking front desk. Only the Courtyard figure is a verified live rate (Marriott, 10 Sep, your dates)."
+      "status": "action"
     },
     {
+      "amount": "$100.21",
+      "detail": "Klook booking FUW045023, confirmed 14 September, Adult × 1, valid Mon 12 and Tue 13 October. About ¥711 at 7.1 to the dollar, so roughly ¥356 a day against ¥475 at the gate — and under the ¥798 the official store wanted for the same Early Bird 2-Day. A good buy.\n\nNon-refundable and non-changeable.",
       "id": "m10",
       "item": "Shanghai Disneyland — Early Bird 2-Day, 12–13 Oct",
-      "amount": "$100.21",
-      "status": "confirmed",
-      "detail": "Klook booking FUW045023, confirmed 14 September, Adult × 1, valid Mon 12 and Tue 13 October. About ¥711 at 7.1 to the dollar, so roughly ¥356 a day against ¥475 at the gate — and under the ¥798 the official store wanted for the same Early Bird 2-Day. A good buy.\n\nNon-refundable and non-changeable."
+      "status": "confirmed"
     },
     {
+      "amount": "",
+      "detail": "Bought 15 September on Klook, booking UAY706135, 1-Day with free cancellation, Adult × 1.\n\nTHE FIGURE IS MISSING because Klook's confirmation email does not carry one. Take it from the Klook app or your card statement and drop it in here — it is the only unpriced thing you have actually paid for. For scale: the free-cancellation variant sits above the ¥425–449 Early Bird and above the ¥475 gate price.\n\nPark running total: $100.21 for the 2-Day, plus this, plus ¥449–499 if you take the Thursday. No Premier Access budgeted — three post-Golden-Week weekdays should not need it.",
       "id": "m10b",
-      "item": "Shanghai Disneyland — Wed 14 (+ optional Thu 15)",
-      "amount": "~¥425–950",
-      "status": "action",
-      "detail": "Wednesday is still to buy: ~¥425–449 as a 1-Day Early Bird (~$60–63), ¥475 at the gate. Adding the optional Thursday morning is another full 1-Day at ¥449–499, since there is no half-day product.\n\nRunning total for the park: $100.21 paid, ~$160 for three days, ~$223 if you take the Thursday. No Premier Access budgeted — three post-Golden-Week weekdays shouldn't need it, and it isn't sold through Klook anyway."
+      "item": "Shanghai Disneyland — Wed 14 Oct, 1-Day",
+      "status": "action"
     },
     {
+      "id": "m10c",
+      "item": "Shanghai Disneyland — optional Thu 15 Oct",
+      "amount": "¥449–499",
+      "status": "pending",
+      "detail": "Only if you want the fourth morning, and only if you buy it before 1 October. A whole 1-Day ticket for half a day, because there is no half-day product."
+    },
+    {
+      "amount": "¥120",
+      "detail": "Reserve 24 Sep at bmy.com.cn.",
       "id": "m11",
       "item": "Terracotta Warriors",
-      "amount": "¥120",
-      "status": "pending",
-      "detail": "Reserve 24 Sep at bmy.com.cn."
+      "status": "pending"
     },
     {
+      "amount": "free, ticketed",
+      "detail": "The separate Tang murals hall is a paid ¥270 ticket and a different booking — skip unless you especially want it.",
       "id": "m12",
       "item": "Shaanxi History Museum",
-      "amount": "free, ticketed",
-      "status": "pending",
-      "detail": "The separate Tang murals hall is a paid ¥270 ticket and a different booking — skip unless you especially want it."
+      "status": "pending"
     },
     {
+      "amount": "¥45 + ¥200 deposit",
+      "detail": "¥45 for three hours, then ¥5 per extra ten minutes. Deposit is ¥100 in older sources and ¥200 in newer ones, so have ¥200 free.",
       "id": "m13",
       "item": "Xi'an city wall bike",
-      "amount": "¥45 + ¥200 deposit",
-      "status": "pending",
-      "detail": "¥45 for three hours, then ¥5 per extra ten minutes. Deposit is ¥100 in older sources and ¥200 in newer ones, so have ¥200 free."
+      "status": "pending"
     },
     {
+      "amount": "¥100–200",
+      "detail": "Must carry a moulded 3C mark or it's confiscated at Lhasa. Xiaomi, Baseus or UGREEN.",
       "id": "m14",
       "item": "Power bank, bought in Xi'an",
-      "amount": "¥100–200",
-      "status": "action",
-      "detail": "Must carry a moulded 3C mark or it's confiscated at Lhasa. Xiaomi, Baseus or UGREEN."
+      "status": "action"
     },
     {
+      "amount": "¥180–250",
+      "detail": "Unavoidable: you land 21:50, bags clear ~22:20, and the last Line 11 with a change at Jiangsu Road goes ~22:30–23:00. ~50 km, 60–70 min. One-off, first night only.",
       "id": "m15",
       "item": "Hongqiao → Disney taxi, 10 Oct",
-      "amount": "¥180–250",
-      "status": "pending",
-      "detail": "Unavoidable: you land 21:50, bags clear ~22:20, and the last Line 11 with a change at Jiangsu Road goes ~22:30–23:00. ~50 km, 60–70 min. One-off, first night only."
+      "status": "pending"
     },
     {
+      "amount": "~¥25",
+      "detail": "Airport to hotel ~¥7–8 on Lines 14 and 4; Terracotta round trip ~¥9. Fares come off the ride code inside Alipay.",
       "id": "m16",
       "item": "Xi'an metro and incidentals",
-      "amount": "~¥25",
-      "status": "pending",
-      "detail": "Airport to hotel ~¥7–8 on Lines 14 and 4; Terracotta round trip ~¥9. Fares come off the ride code inside Alipay."
+      "status": "pending"
     }
   ]
 }

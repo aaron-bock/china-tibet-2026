@@ -1,151 +1,158 @@
 {
   "items": [
     {
+      "detail": "Nearest post to Tibet — this is the one that matters on the plateau. No. 4 Lingshiguan Road, Chengdu 610041. 08:00–17:00. consularchengdu@state.gov",
+      "group": "Consular",
       "id": "r1",
       "name": "US Consulate, Chengdu",
-      "value": "+86 28 8558 3992",
-      "group": "Consular",
-      "detail": "Nearest post to Tibet — this is the one that matters on the plateau. No. 4 Lingshiguan Road, Chengdu 610041. 08:00–17:00. consularchengdu@state.gov"
+      "value": "+86 28 8558 3992"
     },
     {
+      "detail": "1469 Huai Hai Zhong Road, near Wulumuqi Nan Lu, Shanghai 200031.",
+      "group": "Consular",
       "id": "r2",
       "name": "US Consulate, Shanghai",
-      "value": "+86 21 6433 6880",
-      "group": "Consular",
-      "detail": "1469 Huai Hai Zhong Road, near Wulumuqi Nan Lu, Shanghai 200031."
+      "value": "+86 21 6433 6880"
     },
     {
+      "detail": "55 Anjialou Road, Sanyuanqiao, Chaoyang District, Beijing 100016.",
+      "group": "Consular",
       "id": "r3",
       "name": "US Embassy, Beijing",
-      "value": "+86 10 8531 3000",
-      "group": "Consular",
-      "detail": "55 Anjialou Road, Sanyuanqiao, Chaoyang District, Beijing 100016."
+      "value": "+86 10 8531 3000"
     },
     {
+      "detail": "24-hour State Department line from abroad: lost passports, arrests, medical emergencies.",
+      "group": "Consular",
       "id": "r4",
       "name": "Overseas Citizens Services",
-      "value": "+1 202 501 4444",
-      "group": "Consular",
-      "detail": "24-hour State Department line from abroad: lost passports, arrests, medical emergencies."
+      "value": "+1 202 501 4444"
     },
     {
+      "detail": "Register under your own account before departure so the Chengdu and Shanghai posts can reach you. The shared Drive sheet carries someone else's login — don't use it.",
+      "group": "Consular",
       "id": "r5",
       "name": "Enrol in STEP",
-      "value": "step.state.gov",
-      "group": "Consular",
-      "detail": "Register under your own account before departure so the Chengdu and Shanghai posts can reach you. The shared Drive sheet carries someone else's login — don't use it."
+      "value": "step.state.gov"
     },
     {
+      "detail": "The card ending 3009 carries most of the trip. Tell them to expect international purchases and to allow 3D Secure.",
+      "group": "Cards",
       "id": "r6",
       "name": "American Express",
-      "value": "+1 336 393 1111",
-      "group": "Cards",
-      "detail": "The card ending 3009 carries most of the trip. Tell them to expect international purchases and to allow 3D Secure."
+      "value": "+1 336 393 1111"
     },
     {
+      "detail": "Worth checking its trip-interruption and medical-evacuation coverage — evacuation is the one that matters at 5,200 m.",
+      "group": "Cards",
       "id": "r7",
       "name": "Chase Sapphire Reserve",
-      "value": "+1 614 776 7050",
-      "group": "Cards",
-      "detail": "Worth checking its trip-interruption and medical-evacuation coverage — evacuation is the one that matters at 5,200 m."
+      "value": "+1 614 776 7050"
     },
     {
+      "detail": "",
+      "group": "Cards",
       "id": "r8",
       "name": "Wells Fargo",
-      "value": "+1 925 825 7600",
-      "group": "Cards",
-      "detail": ""
+      "value": "+1 925 825 7600"
     },
     {
+      "detail": "Call collect from abroad. ATM withdrawals capped at $500 a day and six ATM visits a month before the account reclassifies.",
+      "group": "Cards",
       "id": "r9",
       "name": "HSBC",
-      "value": "+1 716 841 7212",
-      "group": "Cards",
-      "detail": "Call collect from abroad. ATM withdrawals capped at $500 a day and six ATM visits a month before the account reclassifies."
+      "value": "+1 716 841 7212"
     },
     {
+      "detail": "Silver Medallion.",
+      "group": "Loyalty",
       "id": "r10",
       "name": "Delta SkyMiles",
-      "value": "2147550335",
-      "group": "Loyalty",
-      "detail": "Silver Medallion."
+      "value": "2147550335"
     },
     {
+      "detail": "Lounge access, 1,000-point welcome gift and a room upgrade at the Westin; turns the Courtyard's paid breakfast into a free one.",
+      "group": "Loyalty",
       "id": "r11",
       "name": "Marriott Bonvoy",
-      "value": "Platinum Elite",
-      "group": "Loyalty",
-      "detail": "Lounge access, 1,000-point welcome gift and a room upgrade at the Westin; turns the Courtyard's paid breakfast into a free one."
+      "value": "Platinum Elite"
     },
     {
+      "detail": "In the subject line of every email to James.",
+      "group": "Booking refs",
       "id": "r12",
       "name": "Asia Odyssey customer ID",
-      "value": "AOT-BJ-James-50674",
-      "group": "Booking refs",
-      "detail": "In the subject line of every email to James."
+      "value": "AOT-BJ-James-50674"
     },
     {
+      "detail": "KE 012 and KE 141, both legs.",
+      "group": "Booking refs",
       "id": "r13",
       "name": "Korean Air",
-      "value": "FAFD77",
-      "group": "Booking refs",
-      "detail": "KE 012 and KE 141, both legs."
+      "value": "FAFD77"
     },
     {
+      "detail": "MU 2336, Lhasa–Shanghai, 10 Oct.",
+      "group": "Booking refs",
       "id": "r14",
       "name": "China Eastern award",
-      "value": "GBDPCB",
-      "group": "Booking refs",
-      "detail": "MU 2336, Lhasa–Shanghai, 10 Oct."
+      "value": "GBDPCB"
     },
     {
+      "detail": "DL 38, Pudong–LAX, 15 Oct.",
+      "group": "Booking refs",
       "id": "r15",
       "name": "Delta transpacific",
-      "value": "JP5E6A",
-      "group": "Booking refs",
-      "detail": "DL 38, Pudong–LAX, 15 Oct."
+      "value": "JP5E6A"
     },
     {
+      "detail": "DL 899, LAX–Atlanta, seat 28A. Separate ticket from the China itinerary.",
+      "group": "Booking refs",
       "id": "r16",
       "name": "Delta SoCal return",
-      "value": "G3LX5Q",
-      "group": "Booking refs",
-      "detail": "DL 899, LAX–Atlanta, seat 28A. Separate ticket from the China itinerary."
+      "value": "G3LX5Q"
     },
     {
+      "detail": "+86-29-65686568. Ask them to link the two.",
+      "group": "Booking refs",
       "id": "r17",
       "name": "The Westin Xi'an",
-      "value": "84579041 · 84582237",
-      "group": "Booking refs",
-      "detail": "+86-29-65686568. Ask them to link the two."
+      "value": "84579041 · 84582237"
     },
     {
+      "id": "r-klook2",
+      "name": "Klook · Disneyland Wed 14 Oct",
+      "value": "UAY706135",
+      "group": "Booking refs",
+      "detail": "1-Day, free cancellation, Adult × 1, 14 October. Bought 15 September. Real-name: AARON ROSS BOCK."
+    },
+    {
+      "detail": "Or the museum's own WeChat account. Never an OTA — the museum has never authorised one, and the on-site ticket windows are gone.",
+      "group": "Booking channels",
       "id": "r18",
       "name": "Terracotta Warriors booking",
-      "value": "bmy.com.cn",
-      "group": "Booking channels",
-      "detail": "Or the museum's own WeChat account. Never an OTA — the museum has never authorised one, and the on-site ticket windows are gone."
+      "value": "bmy.com.cn"
     },
     {
+      "detail": "Or the WeChat mini-programme / account. Releases 17:00 China time, five days ahead.",
+      "group": "Booking channels",
       "id": "r19",
       "name": "Shaanxi History Museum booking",
-      "value": "sxhm.com",
-      "group": "Booking channels",
-      "detail": "Or the WeChat mini-programme / account. Releases 17:00 China time, five days ahead."
+      "value": "sxhm.com"
     },
     {
+      "detail": "Seven consecutive rest days and the single worst week of the Chinese year to be at a famous monument. Make-up workdays 20 Sep and 10 Oct — so your Shanghai arrival lands on a working Saturday, which is quiet.",
+      "group": "Dates that bind",
       "id": "r20",
       "name": "Golden Week 2026",
-      "value": "1–7 Oct",
-      "group": "Dates that bind",
-      "detail": "Seven consecutive rest days and the single worst week of the Chinese year to be at a famous monument. Make-up workdays 20 Sep and 10 Oct — so your Shanghai arrival lands on a working Saturday, which is quiet."
+      "value": "1–7 Oct"
     },
     {
+      "detail": "Three things that are a problem at a checkpoint rather than an inconvenience, moved here off the packing list so they are on the page you would actually have open.\n\nNO POLITICAL MATERIAL. A Tibetan flag, images of the Dalai Lama, or literature on Tibetan independence. Permits get pulled over this and it is the one item on the trip with no fallback — your phone's photo roll counts.\n\nNO DRONE. Banned across Tibetan autonomous areas and confiscated at the permit check.\n\nNO US POWER BANKS. China requires a moulded 3C mark that no US-market battery carries, and lithium cannot travel in the hold — an uncertified pack is taken off you at Lhasa on the way to Shanghai. Buy one in Xi'an instead; it is on the packing list.\n\nAlso worth leaving at home: jewellery or anything you would mind losing.",
+      "group": "Rules",
       "id": "rf-nogo",
       "name": "Do not carry into Tibet",
-      "value": "—",
-      "group": "Rules",
-      "detail": "Three things that are a problem at a checkpoint rather than an inconvenience, moved here off the packing list so they are on the page you would actually have open.\n\nNO POLITICAL MATERIAL. A Tibetan flag, images of the Dalai Lama, or literature on Tibetan independence. Permits get pulled over this and it is the one item on the trip with no fallback — your phone's photo roll counts.\n\nNO DRONE. Banned across Tibetan autonomous areas and confiscated at the permit check.\n\nNO US POWER BANKS. China requires a moulded 3C mark that no US-market battery carries, and lithium cannot travel in the hold — an uncertified pack is taken off you at Lhasa on the way to Shanghai. Buy one in Xi'an instead; it is on the packing list.\n\nAlso worth leaving at home: jewellery or anything you would mind losing."
+      "value": "—"
     }
   ]
 }
