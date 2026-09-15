@@ -11,7 +11,8 @@ Published as a Claude Artifact, and **the single source of truth for this trip**
 ## What this is
 
 `index.html` is the whole application — a single page, no build step. Every field is editable in
-place and saves server-side, so the page can be worked on right up to departure.
+place and saves server-side, so the page can be worked on right up to departure. (`reddit/` is a
+second, self-contained page that shares nothing with it — see **Reddit mirror** below.)
 
 Sixteen sections: Itinerary, Flights & rail, Jet lag, Tibet tour, Stays, Disneyland, Open items,
 Money, Apps & wallet, Bags & weather, Packing, Own or buy, People, Reference, Point at this
@@ -107,6 +108,57 @@ Artifact(action="read_db", url=<artifact url>, db_op="get",
 # re-seed (destructive — pin if_version from a read first)
 Artifact(action="write_db", url=<artifact url>, db_op="batch", writes=[...])
 ```
+
+## Reddit mirror
+
+`reddit/index.html` is a second, separate page: a small offline reddit for the three
+subreddits this trip actually runs on — **r/chinatravel**, **r/tibettravel** and
+**r/shanghaidisneyland**. The top 100 posts of the last year from each, with their comment
+threads, on disk.
+
+It exists because of where it will be read. Reddit is blocked in China, and the answer to
+"is the Potala ticket queue really like that" is worth having on a phone at 3,650 m with no
+VPN. So the page takes no dependency on the network at all: no webfonts, no CDN, no
+`fetch()`. Opening `reddit/index.html` from the filesystem works, which is why the data is
+written as `.js` files that load through a `<script>` tag rather than `.json` — see
+`reddit/data/README.md`.
+
+What the page does: the three subreddits plus a combined view; Top / New / Most-commented
+sorts; a search that reaches into comment bodies, not just titles, and says which of the
+three it matched in; collapsible comment trees with OP and moderator marked; and a link
+back to the live thread for when there is a connection. It follows the dossier's palette
+and answers the system theme.
+
+### Refreshing
+
+`tools/fetch_reddit.py` does the fetching — standard library only, no packages:
+
+```
+python3 tools/fetch_reddit.py                        # all three, 100 posts each
+python3 tools/fetch_reddit.py --subs tibettravel --posts 25 --comments 10
+```
+
+`--comments` (default 40) and `--depth` (default 6) cap what is kept per post. They are the
+size dial: the three files run to a few MB at the defaults, and every refresh rewrites them,
+so raising the caps raises what each daily commit costs the repository.
+
+`.github/workflows/reddit-mirror.yml` runs it **daily at 09:20 UTC** and commits whatever
+changed. Two things about that schedule are worth knowing:
+
+- GitHub only fires `schedule:` from the repository's **default branch**, so the daily
+  refresh starts once this branch is merged there. Until then, and any time you want a fetch
+  now, run the workflow by hand from the Actions tab — it takes `posts` and `comments` as
+  inputs.
+- Anonymous reddit requests are frequently refused from CI address space. Setting
+  `REDDIT_CLIENT_ID` and `REDDIT_CLIENT_SECRET` (a *script* app from
+  reddit.com/prefs/apps) as Actions secrets switches the fetcher to the OAuth API and makes
+  the daily run reliable. Without them it still tries anonymously, and a run that gets
+  nothing fails loudly rather than committing an empty mirror.
+
+The data directory starts empty: reddit is unreachable from the sandbox this was built in
+(the egress proxy refuses `www.reddit.com`), so the first mirror is written by the first
+workflow run, or by running the fetcher on your own machine. Until then the page says so
+and tells you which command to run.
 
 ## Sources
 

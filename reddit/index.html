@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Reddit mirror — China &amp; Tibet 2026</title>
+<style>
+:root{
+  --ground:#E7EAF0; --surface:#FBFCFD; --raise:#F2F4F8;
+  --ink:#171D29; --soft:#5C677D; --faint:#8B95A8;
+  --line:#CDD4E0; --hair:#DDE2EB;
+  --lapis:#24499A; --lapis-wash:#DFE5F5;
+  --cinnabar:#B03A29; --cinnabar-wash:#F6E1DC;
+  --saffron:#A8700A; --saffron-wash:#F7EBD3;
+  --jade:#1F7561; --jade-wash:#DCEBE6;
+  --shadow:0 1px 2px rgba(23,29,41,.06), 0 6px 20px -12px rgba(23,29,41,.22);
+  --f-body:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
+  --f-mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#0F131B; --surface:#181D28; --raise:#1F2532;
+    --ink:#E4E8F1; --soft:#929DB4; --faint:#6F7A90;
+    --line:#2A313F; --hair:#232A37;
+    --lapis:#86A5EE; --lapis-wash:#1B2540;
+    --cinnabar:#EC7E6B; --cinnabar-wash:#361F1C;
+    --saffron:#DCA53C; --saffron-wash:#332714;
+    --jade:#4CB79C; --jade-wash:#142E2A;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 6px 20px -12px rgba(0,0,0,.6);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0F131B; --surface:#181D28; --raise:#1F2532;
+  --ink:#E4E8F1; --soft:#929DB4; --faint:#6F7A90;
+  --line:#2A313F; --hair:#232A37;
+  --lapis:#86A5EE; --lapis-wash:#1B2540;
+  --cinnabar:#EC7E6B; --cinnabar-wash:#361F1C;
+  --saffron:#DCA53C; --saffron-wash:#332714;
+  --jade:#4CB79C; --jade-wash:#142E2A;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 6px 20px -12px rgba(0,0,0,.6);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:var(--f-body); font-size:15px; line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--lapis)}
+.wrap{max-width:1080px; margin:0 auto; padding-inline:16px}
+.mono{font-family:var(--f-mono)}
+
+/* ---------- masthead ---------- */
+header.mast{border-bottom:1px solid var(--line); background:var(--surface)}
+.mast-in{
+  display:flex; flex-wrap:wrap; gap:14px 24px; align-items:flex-end;
+  justify-content:space-between; padding-block:20px 16px;
+}
+.eyebrow{
+  font-family:var(--f-mono); font-size:10.5px; font-weight:500; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--faint); margin:0 0 5px;
+}
+h1{margin:0; font-size:23px; font-weight:600; letter-spacing:-.01em}
+.lede{margin:6px 0 0; color:var(--soft); font-size:13.5px; max-width:62ch}
+.mast-side{display:flex; align-items:center; gap:10px; flex-wrap:wrap}
+.stamp{
+  font-family:var(--f-mono); font-size:11px; color:var(--soft);
+  border:1px solid var(--hair); border-radius:999px; padding:5px 10px; background:var(--raise);
+}
+button.ghost{
+  font:inherit; font-size:12.5px; color:var(--soft); cursor:pointer;
+  background:var(--raise); border:1px solid var(--line); border-radius:8px; padding:6px 11px;
+}
+button.ghost:hover{color:var(--ink); border-color:var(--soft)}
+
+/* ---------- layout ---------- */
+.cols{display:grid; grid-template-columns:200px minmax(0,1fr); gap:26px; padding-block:22px 56px}
+@media (max-width:760px){ .cols{grid-template-columns:minmax(0,1fr); gap:16px} }
+
+nav.rail{position:sticky; top:14px; align-self:start}
+@media (max-width:760px){ nav.rail{position:static} }
+.rail-h{
+  font-family:var(--f-mono); font-size:10px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--faint); margin:0 0 8px 2px;
+}
+.rail-list{display:flex; flex-direction:column; gap:4px; list-style:none; margin:0; padding:0}
+@media (max-width:760px){ .rail-list{flex-direction:row; overflow-x:auto; padding-bottom:4px} }
+.rail-btn{
+  display:flex; flex-direction:column; gap:1px; width:100%; text-align:left; cursor:pointer;
+  background:transparent; border:1px solid transparent; border-radius:9px; padding:7px 10px;
+  color:var(--soft); font:inherit; font-size:13.5px; white-space:nowrap;
+}
+.rail-btn:hover{background:var(--raise); color:var(--ink)}
+.rail-btn[aria-current="true"]{background:var(--lapis-wash); border-color:var(--lapis); color:var(--ink); font-weight:600}
+.rail-btn small{font-family:var(--f-mono); font-size:10.5px; color:var(--faint); font-weight:400}
+
+/* ---------- toolbar ---------- */
+.toolbar{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-bottom:14px}
+.search{flex:1 1 240px; position:relative; min-width:0}
+.search input{
+  width:100%; font:inherit; font-size:14px; color:var(--ink); background:var(--surface);
+  border:1px solid var(--line); border-radius:9px; padding:9px 32px 9px 12px;
+}
+.search input:focus{outline:2px solid var(--lapis); outline-offset:-1px}
+.search kbd{
+  position:absolute; right:9px; top:50%; transform:translateY(-50%); pointer-events:none;
+  font-family:var(--f-mono); font-size:10.5px; color:var(--faint);
+}
+.sorts{display:flex; gap:2px; background:var(--raise); border:1px solid var(--line); border-radius:9px; padding:3px}
+.sorts button{
+  font:inherit; font-size:12.5px; cursor:pointer; color:var(--soft);
+  background:transparent; border:0; border-radius:6px; padding:5px 11px;
+}
+.sorts button[aria-pressed="true"]{background:var(--surface); color:var(--ink); font-weight:600; box-shadow:var(--shadow)}
+
+/* ---------- post list ---------- */
+.count{font-family:var(--f-mono); font-size:11px; color:var(--faint); margin:0 0 10px 2px}
+ol.posts{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px}
+.post{
+  display:grid; grid-template-columns:52px minmax(0,1fr); gap:12px;
+  background:var(--surface); border:1px solid var(--hair); border-radius:11px;
+  padding:12px 14px; box-shadow:var(--shadow);
+}
+.post:hover{border-color:var(--line)}
+.score{display:flex; flex-direction:column; align-items:center; gap:1px; padding-top:2px}
+.score b{font-family:var(--f-mono); font-size:15px; font-weight:600; color:var(--cinnabar)}
+.score span{font-family:var(--f-mono); font-size:9px; letter-spacing:.08em; text-transform:uppercase; color:var(--faint)}
+.p-title{
+  font-size:15.5px; font-weight:600; line-height:1.35; margin:0 0 5px;
+  background:none; border:0; padding:0; text-align:left; cursor:pointer; color:var(--ink);
+  font-family:inherit; display:block; width:100%;
+}
+.p-title:hover{color:var(--lapis)}
+.meta{
+  display:flex; flex-wrap:wrap; gap:4px 10px; align-items:center;
+  font-family:var(--f-mono); font-size:11px; color:var(--faint);
+}
+.meta .sub{color:var(--lapis); font-weight:500}
+.flair{
+  font-family:var(--f-mono); font-size:10px; padding:1px 7px; border-radius:999px;
+  background:var(--saffron-wash); color:var(--saffron);
+}
+.flair.hit{background:var(--jade-wash); color:var(--jade)}
+.excerpt{
+  margin:6px 0 0; font-size:13.5px; color:var(--soft);
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+}
+
+/* ---------- post detail ---------- */
+.back{
+  font:inherit; font-size:12.5px; color:var(--soft); background:none; border:0;
+  cursor:pointer; padding:0; margin-bottom:12px;
+}
+.back:hover{color:var(--ink)}
+article.full{background:var(--surface); border:1px solid var(--hair); border-radius:12px; padding:18px 20px; box-shadow:var(--shadow)}
+article.full h2{margin:0 0 8px; font-size:21px; font-weight:600; line-height:1.28; letter-spacing:-.01em}
+.linkout{
+  display:inline-block; margin-top:10px; font-family:var(--f-mono); font-size:11.5px;
+  background:var(--raise); border:1px solid var(--hair); border-radius:8px; padding:6px 10px;
+  text-decoration:none; word-break:break-all;
+}
+.body{margin-top:12px; font-size:14.5px}
+.body p{margin:0 0 10px}
+.body ul,.body ol{margin:0 0 10px; padding-left:22px}
+.body li{margin-bottom:3px}
+.body h3{font-size:15px; margin:14px 0 6px}
+.body blockquote{margin:0 0 10px; padding:2px 0 2px 12px; border-left:3px solid var(--line); color:var(--soft)}
+.body pre{
+  background:var(--raise); border:1px solid var(--hair); border-radius:8px;
+  padding:10px 12px; overflow-x:auto; font-family:var(--f-mono); font-size:12.5px;
+}
+.body code{font-family:var(--f-mono); font-size:12.5px; background:var(--raise); padding:1px 4px; border-radius:4px}
+.body pre code{background:none; padding:0}
+.body a{word-break:break-word}
+.spoiler{background:var(--ink); color:transparent; border-radius:3px; cursor:pointer}
+.spoiler.open{background:var(--raise); color:inherit}
+
+.c-head{
+  display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap;
+  margin:26px 0 10px;
+}
+.c-head h3{margin:0; font-size:14px; font-weight:600}
+.c-head .note{font-family:var(--f-mono); font-size:11px; color:var(--faint)}
+.thread{list-style:none; margin:0; padding:0}
+.thread .thread{margin-left:13px; padding-left:11px; border-left:1px solid var(--hair)}
+.comment{padding:8px 0; border-top:1px solid var(--hair)}
+.thread > li:first-child > .comment{border-top:0}
+.c-meta{display:flex; flex-wrap:wrap; gap:4px 9px; align-items:center; font-family:var(--f-mono); font-size:10.5px; color:var(--faint)}
+.c-toggle{
+  font:inherit; font-family:var(--f-mono); font-size:10.5px; color:var(--faint);
+  background:none; border:0; cursor:pointer; padding:0 2px 0 0;
+}
+.c-toggle:hover{color:var(--ink)}
+.op{color:var(--lapis); font-weight:600}
+.mod{color:var(--jade); font-weight:600}
+.c-body{margin-top:3px; font-size:14px}
+.c-body p{margin:0 0 7px}
+.c-body p:last-child{margin-bottom:0}
+li.collapsed > .comment > .c-body, li.collapsed > .thread{display:none}
+
+/* ---------- states ---------- */
+.empty{
+  background:var(--surface); border:1px solid var(--hair); border-radius:12px;
+  padding:24px; box-shadow:var(--shadow);
+}
+.empty h2{margin:0 0 8px; font-size:17px; font-weight:600}
+.empty p{margin:0 0 10px; color:var(--soft); font-size:14px; max-width:68ch}
+.empty pre{
+  background:var(--raise); border:1px solid var(--hair); border-radius:8px; padding:11px 13px;
+  overflow-x:auto; font-family:var(--f-mono); font-size:12.5px; margin:0 0 10px;
+}
+footer{border-top:1px solid var(--hair); padding-block:18px 34px; color:var(--faint); font-size:12px}
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="wrap mast-in">
+    <div>
+      <p class="eyebrow">China &amp; Tibet 2026 · offline mirror</p>
+      <h1>What the subreddits said</h1>
+      <p class="lede">The top 100 posts of the last year from the three subreddits this trip runs
+        on, with their comment threads, saved to disk. No network needed.</p>
+    </div>
+    <div class="mast-side">
+      <span class="stamp" id="stamp">—</span>
+      <button class="ghost" id="theme" type="button">Theme</button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap cols">
+  <nav class="rail">
+    <p class="rail-h">Subreddits</p>
+    <ul class="rail-list" id="rail"></ul>
+  </nav>
+  <main id="main"></main>
+</div>
+
+<footer class="wrap">
+  Mirrored from public reddit by <span class="mono">tools/fetch_reddit.py</span>.
+  Scores and comment counts are frozen at the last refresh.
+  <span id="runline"></span>
+</footer>
+
+<script src="data/manifest.js"></script>
+<script src="data/chinatravel.js"></script>
+<script src="data/tibettravel.js"></script>
+<script src="data/shanghaidisneyland.js"></script>
+<script>
+(function(){
+"use strict";
+
+var SUBS = ["chinatravel", "tibettravel", "shanghaidisneyland"];
+var DATA = window.REDDIT_MIRROR || {};
+var RUN = (window.REDDIT_MIRROR_META || {}).manifest || null;
+
+var state = {
+  sub: "all",
+  sort: "top",
+  query: "",
+  post: null,
+  collapsed: {}
+};
+
+/* ---------- helpers ---------- */
+
+function esc(s){
+  return String(s == null ? "" : s)
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+}
+
+function safeHref(url){
+  var u = String(url || "").trim();
+  return /^https?:\/\//i.test(u) ? esc(u) : "";
+}
+
+function fmtScore(n){
+  if (n == null) return "—";
+  var abs = Math.abs(n);
+  if (abs >= 10000) return Math.round(n / 1000) + "k";
+  if (abs >= 1000) return (n / 1000).toFixed(1).replace(/\.0$/, "") + "k";
+  return String(n);
+}
+
+function ago(seconds){
+  if (!seconds) return "";
+  var days = Math.floor((Date.now() / 1000 - seconds) / 86400);
+  if (days < 1) return "today";
+  if (days === 1) return "1 day ago";
+  if (days < 30) return days + " days ago";
+  var months = Math.round(days / 30.4);
+  if (months < 12) return months + " mo ago";
+  return (days / 365).toFixed(1) + " yr ago";
+}
+
+function absDate(seconds){
+  return seconds ? new Date(seconds * 1000).toISOString().slice(0, 10) : "";
+}
+
+// Markdown marks read as noise in a two-line excerpt, so strip them there.
+function plain(src){
+  return String(src || "")
+    .replace(/```[\s\S]*?```/g, " ")
+    .replace(/\[([^\]\n]+)\]\((https?:\/\/[^\s)]+)\)/g, "$1")
+    .replace(/[*_~`#>]+/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function countComments(nodes){
+  var n = 0;
+  for (var i = 0; i < (nodes || []).length; i++) n += 1 + countComments(nodes[i].replies);
+  return n;
+}
+
+/* ---------- a deliberately small markdown ---------- */
+
+var SENTINEL = String.fromCharCode(1);
+
+function markdown(src){
+  var text = esc(src || "").replace(/\r/g, "").split(SENTINEL).join("");
+  var blocks = [];
+
+  // Code comes out first, so nothing below rewrites its insides.
+  text = text.replace(/```([\s\S]*?)```/g, function(_, code){
+    return SENTINEL + (blocks.push("<pre><code>" + code.replace(/^\n/, "") + "</code></pre>") - 1) + SENTINEL;
+  });
+  text = text.replace(/`([^`\n]+)`/g, function(_, code){
+    return SENTINEL + (blocks.push("<code>" + code + "</code>") - 1) + SENTINEL;
+  });
+
+  text = text.replace(/\[([^\]\n]+)\]\((https?:\/\/[^\s)]+)\)/g, function(_, label, url){
+    return '<a href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' + label + "</a>";
+  });
+  text = text.replace(/(^|[\s(])(https?:\/\/[^\s<)\]]+)/g, function(_, pre, url){
+    return pre + '<a href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' + url + "</a>";
+  });
+  text = text.replace(/&gt;!([\s\S]+?)!&lt;/g, '<span class="spoiler">$1</span>');
+  text = text.replace(/\*\*([^*\n]+)\*\*/g, "<strong>$1</strong>");
+  text = text.replace(/(^|[^*\w])\*([^*\n]+)\*/g, "$1<em>$2</em>");
+  text = text.replace(/~~([^~\n]+)~~/g, "<del>$1</del>");
+
+  var lines = text.split("\n");
+  var out = [], list = null, para = [], quote = [];
+
+  function flushPara(){ if (para.length) { out.push("<p>" + para.join("<br>") + "</p>"); para = []; } }
+  function flushList(){ if (list) { out.push("<" + list.tag + ">" + list.items.join("") + "</" + list.tag + ">"); list = null; } }
+  function flushQuote(){ if (quote.length) { out.push("<blockquote>" + quote.join("<br>") + "</blockquote>"); quote = []; } }
+  function flushAll(){ flushPara(); flushList(); flushQuote(); }
+
+  for (var i = 0; i < lines.length; i++) {
+    var trimmed = lines[i].trim();
+    if (!trimmed) { flushAll(); continue; }
+
+    var heading = /^(#{1,6})\s+(.*)$/.exec(trimmed);
+    if (heading) { flushAll(); out.push("<h3>" + heading[2] + "</h3>"); continue; }
+
+    var quoted = /^&gt;\s?(.*)$/.exec(trimmed);
+    if (quoted) { flushPara(); flushList(); quote.push(quoted[1]); continue; }
+    flushQuote();
+
+    var bullet = /^[-*+]\s+(.*)$/.exec(trimmed);
+    var numbered = /^\d+[.)]\s+(.*)$/.exec(trimmed);
+    if (bullet || numbered) {
+      flushPara();
+      var tag = bullet ? "ul" : "ol";
+      if (!list || list.tag !== tag) { flushList(); list = { tag: tag, items: [] }; }
+      list.items.push("<li>" + (bullet ? bullet[1] : numbered[1]) + "</li>");
+      continue;
+    }
+    flushList();
+    para.push(trimmed);
+  }
+  flushAll();
+
+  var html = out.join("");
+  for (var b = blocks.length - 1; b >= 0; b--) {
+    html = html.split(SENTINEL + b + SENTINEL).join(blocks[b]);
+  }
+  return html;
+}
+
+/* ---------- selection ---------- */
+
+function allPosts(){
+  var rows = [];
+  for (var i = 0; i < SUBS.length; i++) {
+    var payload = DATA[SUBS[i]];
+    if (!payload || !payload.posts) continue;
+    for (var j = 0; j < payload.posts.length; j++) {
+      payload.posts[j]._sub = SUBS[i];
+      rows.push(payload.posts[j]);
+    }
+  }
+  return rows;
+}
+
+function searchComments(nodes, needle){
+  for (var i = 0; i < (nodes || []).length; i++) {
+    if ((nodes[i].body || "").toLowerCase().indexOf(needle) > -1) return true;
+    if (searchComments(nodes[i].replies, needle)) return true;
+  }
+  return false;
+}
+
+function matches(post, needle){
+  if (post.title.toLowerCase().indexOf(needle) > -1) return "title";
+  if ((post.selftext || "").toLowerCase().indexOf(needle) > -1) return "the post";
+  return searchComments(post.comments, needle) ? "comments" : null;
+}
+
+function visiblePosts(){
+  var rows = state.sub === "all" ? allPosts() : allPosts().filter(function(post){
+    return post._sub === state.sub;
+  });
+
+  var needle = state.query.trim().toLowerCase();
+  if (needle) {
+    rows = rows.filter(function(post){
+      post._hit = matches(post, needle);
+      return !!post._hit;
+    });
+  }
+
+  var key = state.sort === "new" ? "created_utc" : state.sort === "comments" ? "num_comments" : "score";
+  return rows.slice().sort(function(a, b){ return (b[key] || 0) - (a[key] || 0); });
+}
+
+function findPost(id){
+  var rows = allPosts();
+  for (var i = 0; i < rows.length; i++) if (rows[i].id === id) return rows[i];
+  return null;
+}
+
+/* ---------- render ---------- */
+
+function renderStamp(){
+  var stamp = document.getElementById("stamp");
+  var times = SUBS.map(function(s){ return DATA[s] && DATA[s].fetched_at; }).filter(Boolean).sort();
+  if (!times.length) { stamp.textContent = "no data yet"; return; }
+  var latest = times[times.length - 1];
+  var hours = Math.floor((Date.now() - new Date(latest).getTime()) / 3600000);
+  stamp.textContent = "refreshed " +
+    (hours < 1 ? "just now" : hours < 48 ? hours + "h ago" : Math.floor(hours / 24) + "d ago");
+  stamp.title = "Last fetch: " + latest;
+}
+
+function renderRun(){
+  if (!RUN || !RUN.subs || !RUN.subs.length) return;
+  var posts = 0, comments = 0;
+  for (var i = 0; i < RUN.subs.length; i++) {
+    posts += RUN.subs[i].posts || 0;
+    comments += RUN.subs[i].comments || 0;
+  }
+  document.getElementById("runline").innerHTML = "<br>Last run " +
+    esc(String(RUN.generated_at).replace("T", " ").replace("+00:00", " UTC")) +
+    " — " + posts + " posts, " + comments + " comments across " + RUN.subs.length + " subreddits.";
+}
+
+function renderRail(){
+  var items = [{ key: "all", label: "All three", count: allPosts().length }];
+  for (var i = 0; i < SUBS.length; i++) {
+    items.push({
+      key: SUBS[i],
+      label: "r/" + SUBS[i],
+      count: DATA[SUBS[i]] && DATA[SUBS[i]].posts ? DATA[SUBS[i]].posts.length : 0
+    });
+  }
+  document.getElementById("rail").innerHTML = items.map(function(item){
+    return '<li><button class="rail-btn" type="button" data-sub="' + item.key + '" aria-current="' +
+      (state.sub === item.key) + '">' + esc(item.label) +
+      "<small>" + item.count + " post" + (item.count === 1 ? "" : "s") + "</small></button></li>";
+  }).join("");
+}
+
+function postRow(post){
+  var hit = post._hit && post._hit !== "title"
+    ? '<span class="flair hit">match in ' + post._hit + "</span>" : "";
+  var flair = post.flair ? '<span class="flair">' + esc(post.flair) + "</span>" : "";
+  var domain = !post.is_self && post.domain ? "<span>" + esc(post.domain) + "</span>" : "";
+  var excerpt = post.selftext
+    ? '<p class="excerpt">' + esc(plain(post.selftext).slice(0, 260)) + "</p>" : "";
+
+  return '<li class="post">' +
+      '<div class="score"><b>' + fmtScore(post.score) + "</b><span>pts</span></div>" +
+      "<div>" +
+        '<button class="p-title" type="button" data-post="' + esc(post.id) + '">' + esc(post.title) + "</button>" +
+        '<div class="meta">' +
+          '<span class="sub">r/' + esc(post._sub) + "</span>" +
+          "<span>u/" + esc(post.author) + "</span>" +
+          '<span title="' + absDate(post.created_utc) + '">' + ago(post.created_utc) + "</span>" +
+          "<span>" + post.num_comments + " comments</span>" +
+          domain + flair + hit +
+        "</div>" + excerpt +
+      "</div>" +
+    "</li>";
+}
+
+function renderList(){
+  var rows = visiblePosts();
+  var toolbar =
+    '<div class="toolbar">' +
+      '<div class="search"><input id="q" type="search" placeholder="Search titles, posts and comments" value="' +
+        esc(state.query) + '"><kbd>/</kbd></div>' +
+      '<div class="sorts">' +
+        ["top:Top", "new:New", "comments:Comments"].map(function(entry){
+          var parts = entry.split(":");
+          return '<button type="button" data-sort="' + parts[0] + '" aria-pressed="' +
+            (state.sort === parts[0]) + '">' + parts[1] + "</button>";
+        }).join("") +
+      "</div>" +
+    "</div>";
+
+  var mirrored = rows.reduce(function(sum, post){ return sum + countComments(post.comments); }, 0);
+  var label = rows.length + " post" + (rows.length === 1 ? "" : "s") +
+    (state.query ? " matching " + esc(JSON.stringify(state.query)) : "") +
+    (rows.length ? " · " + mirrored + " comments mirrored" : "");
+
+  document.getElementById("main").innerHTML = toolbar + '<p class="count">' + label + "</p>" +
+    (rows.length
+      ? '<ol class="posts">' + rows.map(postRow).join("") + "</ol>"
+      : '<div class="empty"><h2>Nothing here</h2><p>No mirrored post matches that search.</p></div>');
+}
+
+function commentNode(node, key){
+  var collapsed = !!state.collapsed[key];
+  var hidden = countComments(node.replies);
+  var author = node.is_op
+    ? '<span class="op">u/' + esc(node.author) + " · OP</span>"
+    : node.distinguished === "moderator"
+      ? '<span class="mod">u/' + esc(node.author) + " · MOD</span>"
+      : "<span>u/" + esc(node.author) + "</span>";
+
+  return '<li class="' + (collapsed ? "collapsed" : "") + '">' +
+      '<div class="comment">' +
+        '<div class="c-meta">' +
+          '<button class="c-toggle" type="button" data-toggle="' + esc(key) + '">[' +
+            (collapsed ? "+" : "–") + "]</button>" +
+          author +
+          "<span>" + (node.score == null ? "score hidden" : fmtScore(node.score) + " pts") + "</span>" +
+          '<span title="' + absDate(node.created_utc) + '">' + ago(node.created_utc) + "</span>" +
+          (collapsed && hidden ? "<span>" + hidden + " hidden</span>" : "") +
+        "</div>" +
+        '<div class="c-body body">' + markdown(node.body) + "</div>" +
+      "</div>" +
+      (node.replies && node.replies.length
+        ? '<ul class="thread">' + node.replies.map(function(child, index){
+            return commentNode(child, key + "." + index);
+          }).join("") + "</ul>"
+        : "") +
+    "</li>";
+}
+
+function renderPost(post){
+  var permalink = safeHref("https://www.reddit.com" + post.permalink);
+  var outbound = !post.is_self && safeHref(post.url);
+  var mirrored = countComments(post.comments);
+
+  document.getElementById("main").innerHTML =
+    '<button class="back" type="button" id="back">← back to ' +
+      (state.sub === "all" ? "all three" : "r/" + esc(state.sub)) + "</button>" +
+    '<article class="full">' +
+      "<h2>" + esc(post.title) + "</h2>" +
+      '<div class="meta">' +
+        '<span class="sub">r/' + esc(post._sub) + "</span>" +
+        "<span>u/" + esc(post.author) + "</span>" +
+        "<span>" + absDate(post.created_utc) + "</span>" +
+        "<span>" + fmtScore(post.score) + " pts" +
+          (post.upvote_ratio ? " · " + Math.round(post.upvote_ratio * 100) + "% upvoted" : "") + "</span>" +
+        "<span>" + post.num_comments + " comments</span>" +
+        (post.flair ? '<span class="flair">' + esc(post.flair) + "</span>" : "") +
+      "</div>" +
+      (outbound ? '<a class="linkout" href="' + outbound + '" target="_blank" rel="noopener noreferrer">' + esc(post.url) + "</a>" : "") +
+      (post.selftext ? '<div class="body">' + markdown(post.selftext) + "</div>" : "") +
+      '<div class="c-head"><h3>' + mirrored + " comment" + (mirrored === 1 ? "" : "s") + " mirrored</h3>" +
+        '<span class="note">' +
+          (post.comments_omitted ? post.comments_omitted + " more not mirrored · " : "") +
+          (permalink ? '<a href="' + permalink + '" target="_blank" rel="noopener noreferrer">open on reddit</a>' : "") +
+        "</span></div>" +
+      (post.comments && post.comments.length
+        ? '<ul class="thread">' + post.comments.map(function(node, index){
+            return commentNode(node, String(index));
+          }).join("") + "</ul>"
+        : '<p class="count">No comments were mirrored for this post.</p>') +
+    "</article>";
+}
+
+function renderEmpty(){
+  document.getElementById("main").innerHTML =
+    '<div class="empty">' +
+      "<h2>No mirror on disk yet</h2>" +
+      '<p>The page is here, the data is not. Run the fetcher once and reload — it writes one ' +
+      'file per subreddit into <span class="mono">reddit/data/</span>:</p>' +
+      "<pre>python3 tools/fetch_reddit.py</pre>" +
+      '<p>After that it keeps itself current: the <span class="mono">reddit-mirror</span> workflow ' +
+      "runs every day at 09:20 UTC and commits whatever changed.</p>" +
+    "</div>";
+}
+
+function render(){
+  renderRail();
+  if (!allPosts().length) { renderEmpty(); return; }
+  if (state.post) {
+    var post = findPost(state.post);
+    if (post) { renderPost(post); return; }
+    state.post = null;
+  }
+  renderList();
+}
+
+/* ---------- routing ---------- */
+
+function readHash(){
+  var parts = location.hash.replace(/^#\/?/, "").split("/");
+  if (parts[0] === "post" && parts[1]) { state.post = parts[1]; return; }
+  state.post = null;
+  state.sub = parts[0] === "r" && SUBS.indexOf(parts[1]) > -1 ? parts[1] : "all";
+}
+
+function writeHash(){
+  var next = state.post ? "#/post/" + state.post
+    : state.sub === "all" ? "#/" : "#/r/" + state.sub;
+  if (location.hash === next) return false;
+  location.hash = next;
+  return true;
+}
+
+/* ---------- events ---------- */
+
+document.addEventListener("click", function(event){
+  var spoiler = event.target.closest(".spoiler");
+  if (spoiler) { spoiler.classList.toggle("open"); return; }
+
+  var el = event.target.closest("[data-sub], [data-post], [data-sort], [data-toggle], #back, #theme");
+  if (!el) return;
+
+  if (el.id === "theme") {
+    var root = document.documentElement;
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    root.setAttribute("data-theme", dark ? "light" : "dark");
+    return;
+  }
+  if (el.id === "back") { state.post = null; if (!writeHash()) render(); return; }
+  if (el.dataset.sub) { state.sub = el.dataset.sub; state.post = null; if (!writeHash()) render(); return; }
+  if (el.dataset.post) {
+    var post = findPost(el.dataset.post);
+    if (!post) return;
+    state.post = post.id;
+    state.collapsed = {};
+    if (!writeHash()) render();
+    window.scrollTo(0, 0);
+    return;
+  }
+  if (el.dataset.sort) { state.sort = el.dataset.sort; renderList(); return; }
+  if (el.dataset.toggle) {
+    var key = el.dataset.toggle;
+    state.collapsed[key] = !state.collapsed[key];
+    el.closest("li").classList.toggle("collapsed", state.collapsed[key]);
+    el.textContent = state.collapsed[key] ? "[+]" : "[–]";
+  }
+});
+
+document.addEventListener("input", function(event){
+  if (event.target.id !== "q") return;
+  state.query = event.target.value;
+  renderList();
+  var input = document.getElementById("q");
+  input.focus();
+  input.setSelectionRange(input.value.length, input.value.length);
+});
+
+document.addEventListener("keydown", function(event){
+  if (event.key === "/" && event.target.tagName !== "INPUT") {
+    var input = document.getElementById("q");
+    if (input) { event.preventDefault(); input.focus(); }
+    return;
+  }
+  if (event.key === "Escape") {
+    if (state.post) { state.post = null; if (!writeHash()) render(); }
+    else if (state.query) { state.query = ""; renderList(); }
+  }
+});
+
+window.addEventListener("hashchange", function(){ readHash(); render(); window.scrollTo(0, 0); });
+
+readHash();
+renderStamp();
+renderRun();
+render();
+})();
+</script>
+</body>
+</html>
