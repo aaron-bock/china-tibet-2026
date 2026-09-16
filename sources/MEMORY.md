@@ -16,10 +16,25 @@ JSON) for taking offline before departure.
 
 Eighteen sections, reached through four groups rather than one long row of tabs:
 
-- **Itinerary** — Itinerary, Flights & rail, Jet lag, Tibet tour, Stays, Disneyland, Weather
+- **Itinerary** — Overview, then one tab per leg: Outbound, Xi'an, Z165, Tibet,
+  Shanghai, Disney, Home
 - **Packing** — Packing, Own or buy, Repacks, Bags
 - **Open items** — on its own, because it is the list of things still owed
-- **Reference** — Money, Apps & wallet, People, Reference, Point at this, Notes
+- **Reference** — Jet lag, Money, Apps & wallet, People, Reference, Point at this, Notes
+
+### The legs are a view, not a new shape for the data
+
+Flights, beds, day-by-day, tour days, tickets and weather are still six separate
+documents with six different field layouts. Each row carries a `leg` field, and a
+leg tab gathers whichever rows are tagged for it, rendering each source in that
+source's own layout under its own sub-heading. Nothing was flattened to fit, and
+`trip/days`, `trip/segments`, `trip/tour`, `trip/stays`, `trip/disney` and
+`trip/weather` still exist exactly as before.
+
+A `leg` may hold more than one token, space-separated — the Shanghai weather row
+is tagged `shanghai disney` because those days share a forecast. The sections
+that own those layouts are still in SCHEMA but are in no group, so they have no
+tab and no panel; they are there for their fields and their labels.
 
 Packing is grouped by the bag each item rides in, with a picker on every row that
 moves it between bags. Its bags are Worn, Sling, Talon 22, Talon 44, Away,

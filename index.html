@@ -231,6 +231,36 @@ select.f.bagpick:focus{color:var(--ink); border-color:var(--lapis)}
 @keyframes bagmove{from{background:var(--lapis-wash)} to{background:var(--surface)}}
 .row.just-moved{animation:bagmove 1.6s ease-out}
 
+/* ---------- a leg, and the sources that feed it ---------- */
+.leg-block{margin-bottom:20px}
+.leg-head{display:flex; gap:12px; align-items:baseline; justify-content:space-between;
+  flex-wrap:wrap; padding:0 2px 7px; margin-bottom:1px; border-bottom:2px solid var(--line)}
+.leg-name{font-family:var(--f-mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; font-weight:600}
+.leg-count{font-family:var(--f-mono); font-size:10.5px; color:var(--faint); font-variant-numeric:tabular-nums}
+
+/* ---------- the trip on one screen ---------- */
+.tl{list-style:none; margin:0 0 8px; padding:0}
+.tl li{display:grid; grid-template-columns:104px minmax(0,1fr); gap:0 18px; position:relative}
+.tl li::before{content:""; position:absolute; left:112px; top:8px; bottom:0; width:1px; background:var(--line)}
+.tl li:last-child::before{display:none}
+.tl li::after{content:""; position:absolute; left:109px; top:6px; width:7px; height:7px;
+  border-radius:50%; background:var(--surface); border:1.5px solid var(--lapis)}
+.tl-date{font-family:var(--f-mono); font-size:11px; color:var(--soft); text-align:right;
+  padding-top:1px; font-variant-numeric:tabular-nums}
+.tl-body{padding:0 0 20px 16px; min-width:0}
+.tl-name{display:flex; gap:10px; align-items:baseline; flex-wrap:wrap}
+.tl-name b{font-family:var(--f-disp); font-size:17px; font-weight:600; letter-spacing:-.005em}
+.tl-via{font-family:var(--f-mono); font-size:10px; letter-spacing:.11em; text-transform:uppercase; color:var(--faint)}
+.tl-sum{margin:2px 0 6px; font-size:13px; color:var(--soft); max-width:60ch}
+.tl-go{border:0; background:none; padding:0; color:var(--lapis); font-size:12.5px; font-weight:500}
+.tl-go:hover{text-decoration:underline}
+@media (max-width:520px){
+  .tl li{grid-template-columns:minmax(0,1fr); gap:0}
+  .tl li::before, .tl li::after{display:none}
+  .tl-date{text-align:left; padding-bottom:2px}
+  .tl-body{padding:0 0 18px}
+}
+
 /* ---------- Own or buy: one line per item, grouped by category ---------- */
 .tri-group{margin-bottom:18px}
 .tri-head{display:flex; gap:12px; align-items:baseline; justify-content:space-between;
@@ -447,7 +477,7 @@ var LEAVE="2026-09-22", DEPART="2026-09-27", RETURN="2026-10-16";
 var STATUS=["confirmed","pending","action","done"], MODES=["air","rail","ground"];
 
 var SCHEMA=[
-  { id:"itinerary", doc:"days", label:"Itinerary",
+  { id:"itinerary", doc:"days", label:"Day by day",
     note:"Everything from the LAX gate on the 27th to wheels down in Atlanta on the 16th — what's booked, what isn't, and the dates that can't slip.",
     fields:[
       {k:"date",  l:"Date",  cls:"mono strong", ph:"Day"},
@@ -601,14 +631,51 @@ var SCHEMA=[
     ]}
 ];
 
-/* Seventeen top-level tabs was too many to scan. The sections are unchanged;
-   they are now reached through a group first. A group holding one section
-   hides the second row rather than showing a row of one. */
+/* The trip reads as legs, not as categories. Flights, beds, day-by-day,
+   tour days, tickets and weather are all still their own documents with their
+   own shapes — a leg tab gathers whichever rows are tagged for it and renders
+   each source in that source's own layout. Nothing was flattened to fit. */
+SCHEMA.push({ id:"overview", label:"Overview",
+  note:"Seven legs in twenty days, and what is still owed on each. Every booking, bed, tour day, ticket and forecast lives on the leg it belongs to \u2014 this is the shape of the whole thing in one screen." });
+var LEGS=[
+  {id:"out", label:"Outbound", dates:"27 \u2013 29 Sep", via:"KE 012 \u00b7 KE 141",
+   sum:"Los Angeles to Seoul to Xi\u2019an, and a date line that eats the 28th.",
+   note:"Two Korean Air legs and four and a half hours on the ground at Incheon. Thirteen hours to Seoul is the flight the Talon 22 was packed around; the 28th of September does not happen."},
+  {id:"xian", label:"Xi\u2019an", dates:"29 Sep \u2013 2 Oct", via:"3 nights",
+   sum:"Three nights at 400 m: the wall, the warriors, and the shopping run.",
+   note:"The acclimatising days nobody thinks of as acclimatising. Two fixed bookings with hard release dates, one shopping afternoon that has to happen before Golden Week starts on 1 October, and the permit landing at the hotel."},
+  {id:"z165", label:"Z165", dates:"2 \u2013 3 Oct", via:"30 hours",
+   sum:"Thirty hours and 2,781 km, Xi\u2019an to Lhasa over Tanggula.",
+   note:"One train, one night, and the only leg where you gain 3,250 m without getting off anything. The Away shuts under the bunk at Xi\u2019an and does not open again until Lhasa."},
+  {id:"tibet", label:"Tibet", dates:"3 \u2013 10 Oct", via:"tour days 1\u20138",
+   sum:"Eight days, party of five, with a tent night at 5,200 m.",
+   note:"Asia Odyssey\u2019s eight-day Everest Base Camp tour. Day one is deliberately empty because Lhasa is already 3,650 m, and everything after it climbs."},
+  {id:"shanghai", label:"Shanghai", dates:"10 \u2013 12 Oct", via:"MU 2336",
+   sum:"Land at 21:50, then the one unbooked block on the trip.",
+   note:"Arrival, five nights still to book, and the Sunday city day. You land at Hongqiao too late for the last Line 11, which is the detail that decides the first night."},
+  {id:"disney", label:"Disney", dates:"12 \u2013 15 Oct", via:"3 park days",
+   sum:"Three weekdays in the emptiest fortnight of the autumn.",
+   note:"Monday to Wednesday, all ticketed, on the quietest days of the season. The optional Thursday morning is here as a decision; the morning itself sits on Home with the flight."},
+  {id:"home", label:"Home", dates:"15 \u2013 16 Oct", via:"DL 38 \u00b7 DL 899",
+   sum:"Pudong, not Hongqiao \u2014 and two separate tickets at LAX.",
+   note:"Leave by 15:00 for the right airport. The LAX connection is seven and a half hours but the two flights are separate tickets, so it is a full re-entry: bag, immigration, re-check, possibly a terminal change."}
+];
+/* The order a leg renders its sources in: how you got there, what the days
+   hold, then where you sleep and what it will be like outside. */
+var LEG_SRC=["segments","days","tour","disney","stays","weather"];
+function inLeg(r,leg){ return (" "+(r.leg||"")+" ").indexOf(" "+leg+" ")>=0; }
+function legRows(leg,doc){ return items(doc).filter(function(r){ return inLeg(r,leg); }); }
+
+LEGS.forEach(function(l){
+  SCHEMA.push({ id:"leg-"+l.id, label:l.label, leg:l.id, view:"leg", note:l.note,
+                countFn:function(){ var n=0; LEG_SRC.forEach(function(d){ n+=legRows(l.id,d).length; }); return n; } });
+});
+
 var GROUPS=[
-  {id:"trip", label:"Itinerary", secs:["itinerary","travel","sleep","tibet","stays","disney","weather"]},
+  {id:"trip", label:"Itinerary", secs:["overview"].concat(LEGS.map(function(l){return "leg-"+l.id;}))},
   {id:"pack", label:"Packing",   secs:["packing","triage","repack","kit"]},
   {id:"todo", label:"Open items",secs:["open"]},
-  {id:"info", label:"Reference", secs:["money","apps","people","reference","phrases","notes"]}
+  {id:"info", label:"Reference", secs:["sleep","money","apps","people","reference","phrases","notes"]}
 ];
 function groupOf(secId){
   for(var i=0;i<GROUPS.length;i++) if(GROUPS[i].secs.indexOf(secId)>=0) return GROUPS[i];
@@ -617,14 +684,13 @@ function groupOf(secId){
 function secsOf(g){
   return g.secs.map(function(id){ return secById(id); }).filter(Boolean);
 }
-/* Panels, printing and exports all read in the order the tabs are grouped,
-   not the order the sections happen to be declared in. */
+/* Panels, printing and exports all read in the order the tabs are grouped.
+   A section in no group has no tab and no panel: days, segments, tour, stays,
+   disney and weather are now reached only through the leg that gathers them,
+   and they are here for their field layouts and their labels. */
 function orderedSections(){
-  var seen={}, out=[];
-  GROUPS.forEach(function(g){
-    secsOf(g).forEach(function(sec){ seen[sec.id]=1; out.push(sec); });
-  });
-  SCHEMA.forEach(function(sec){ if(!seen[sec.id]) out.push(sec); });
+  var out=[];
+  GROUPS.forEach(function(g){ out=out.concat(secsOf(g)); });
   return out;
 }
 function secById(id){
@@ -632,7 +698,9 @@ function secById(id){
   return null;
 }
 
-var store={}, db=null, dl=null, active=SCHEMA[0].id, booted=false, packFilter="all";
+/* SCHEMA[0] is a source section now rather than a tab, so the panel that
+   opens first has to be named by the groups. */
+var store={}, db=null, dl=null, active=GROUPS[0].secs[0], booted=false, packFilter="all";
 /* Coming back to a group should land where you left it, not at its first tab. */
 var lastSec={}, openWhy={};
 var pending={}, flushTimer=null;
@@ -914,7 +982,8 @@ function tiles(){
   var openMoney=mny.filter(function(m){return m.status==="action";}).length;
   var data=[
     {k:"Open items",  v:openTasks, s:openTasks?"need a decision":"all clear"},
-    {k:"Legs",        v:segs.length, s:unconf?unconf+" not confirmed":"all confirmed"},
+    /* "Legs" now means legs of the trip, so this tile has to say what it counts. */
+    {k:"Flights & rail", v:segs.length, s:unconf?unconf+" not confirmed":"all confirmed"},
     {k:"Stays to book",v:openStays, s:openStays?"Shanghai, 5 nights":"all covered"},
     {k:"Costs unset", v:openMoney, s:openMoney?"no figure on file":"all priced"}
   ];
@@ -1089,6 +1158,48 @@ function refreshBags(){
   });
 }
 
+/* ---------- a leg: every source that has rows tagged for it ---------- */
+function legView(sec){
+  var box=el("div","legs");
+  LEG_SRC.forEach(function(doc){
+    var src=secFor(doc); if(!src) return;
+    var rows=legRows(sec.leg,doc);
+    if(!rows.length) return;
+    var blk=el("div","leg-block");
+    var hd=el("div","leg-head");
+    hd.appendChild(el("div","leg-name",src.label));
+    hd.appendChild(el("div","leg-count",rows.length+(rows.length===1?" entry":" entries")));
+    blk.appendChild(hd);
+    var rr=el("div","rows");
+    rows.forEach(function(r){ rr.appendChild(rowNode(src,r)); });
+    blk.appendChild(rr);
+    box.appendChild(blk);
+  });
+  if(!box.firstChild) box.appendChild(el("p","p-note","Nothing filed against this leg yet."));
+  return box;
+}
+
+/* ---------- the whole trip on one screen ---------- */
+function timeline(){
+  var ol=el("ol","tl");
+  LEGS.forEach(function(l){
+    var li=el("li");
+    li.appendChild(el("div","tl-date",l.dates));
+    var b=el("div","tl-body");
+    var h=el("div","tl-name");
+    h.appendChild(el("b",null,l.label));
+    h.appendChild(el("span","tl-via",l.via));
+    b.appendChild(h);
+    b.appendChild(el("p","tl-sum",l.sum));
+    var go=el("button","tl-go","Open "+l.label+" \u2192");
+    go.type="button"; go.dataset.go="leg-"+l.id;
+    b.appendChild(go);
+    li.appendChild(b);
+    ol.appendChild(li);
+  });
+  return ol;
+}
+
 /* ---------- moving a row between bags ----------
    A bag change is a physical move, so the node itself is relocated rather
    than the whole 100-plus-row panel being rebuilt: a rebuild loses the scroll
@@ -1260,7 +1371,7 @@ function refreshTriage(){
 }
 
 /* ---------- render ---------- */
-function secCount(sec){ return sec.countFn ? sec.countFn() : items(sec.doc).length; }
+function secCount(sec){ return sec.countFn ? sec.countFn() : (sec.doc ? items(sec.doc).length : 0); }
 /* Only the group with nothing to click into carries a number of its own, and
    only when that number is a demand on you rather than a row count. */
 function groupCount(g){
@@ -1331,19 +1442,13 @@ function replaceRow(sec,rid){
 function render(force){
   var main=$("#main");
   if(!force && booted && document.activeElement && main.contains(document.activeElement)) return;
+  if(!secById(active) || orderedSections().indexOf(secById(active))<0) active=GROUPS[0].secs[0];
   main.textContent="";
   orderedSections().forEach(function(sec){
     var p=el("section","panel"); p.id="panel-"+sec.id; p.dataset.sec=sec.id;
     p.setAttribute("role","tabpanel"); p.hidden = sec.id!==active;
     var h=el("div","p-head"); h.appendChild(el("h2","p-title",sec.label)); p.appendChild(h);
     p.appendChild(el("p","p-note",sec.note));
-    if(sec.id==="itinerary") p.appendChild(tiles());
-    if(sec.id==="travel"){
-      var holder=el("div"); holder.innerHTML=elevation(); p.appendChild(holder.firstChild);
-    }
-    if(sec.id==="tibet"){
-      var th=el("div"); th.innerHTML=tourProfile(); p.appendChild(th.firstChild);
-    }
     if(sec.id==="sleep"){
       var sh=el("div"); sh.innerHTML=sleepChart(); p.appendChild(sh.firstChild);
     }
@@ -1351,6 +1456,19 @@ function render(force){
       p.appendChild(prepTally());
       p.appendChild(prepFilter());
       p.appendChild(triageView());
+      main.appendChild(p);
+      return;
+    }
+    if(sec.id==="overview"){
+      p.appendChild(tiles());
+      p.appendChild(timeline());
+      main.appendChild(p);
+      return;
+    }
+    if(sec.view==="leg"){
+      if(sec.leg==="z165"){ var zh=el("div"); zh.innerHTML=elevation(); p.appendChild(zh.firstChild); }
+      if(sec.leg==="tibet"){ var bh=el("div"); bh.innerHTML=tourProfile(); p.appendChild(bh.firstChild); }
+      p.appendChild(legView(sec));
       main.appendChild(p);
       return;
     }
@@ -1499,6 +1617,11 @@ document.addEventListener("input",function(e){
     head(); refreshTiles();
   }
   if(key==="mode"){ n.className="f m-"+val; }
+  /* A row can be filed under two legs (the Shanghai weather covers the park
+     days too), so the other copy on screen has to follow the one being typed in. */
+  document.querySelectorAll('.row[data-rid="'+rid+'"] [data-key="'+key+'"]').forEach(function(o){
+    if(o!==n && o.value!==val){ o.value=val; if(o.tagName==="TEXTAREA") grow(o); }
+  });
   if(key==="bag"){
     reseat(rid,true);
     /* relocating the row can drop focus, and the picker is where the eye is */
@@ -1519,11 +1642,25 @@ function plain(){
 }
 /* Two tabs can share one document (Packing and Own or buy both read trip/packing).
    Exports walk the sections, so they have to emit each DOC once, not each section. */
-function exportSections(){
+/* A leg heading with one sub-block per source that feeds it; every other tab
+   is a heading with a single block. Two tabs can share one document (Packing
+   and Own or buy both read trip/packing), so each DOC is emitted once. */
+function reportBlocks(){
   var seen={}, out=[];
   orderedSections().forEach(function(sec){
-    if(seen[sec.doc]) return;
-    seen[sec.doc]=1; out.push(sec);
+    if(sec.view==="leg"){
+      var kids=[];
+      LEG_SRC.forEach(function(doc){
+        var src=secFor(doc), rows=legRows(sec.leg,doc);
+        if(src && rows.length) kids.push({sec:src, rows:rows});
+      });
+      if(kids.length) out.push({label:sec.label, note:sec.note, kids:kids});
+      return;
+    }
+    if(!sec.doc || seen[sec.doc]) return;
+    seen[sec.doc]=1;
+    var list=items(sec.doc);
+    if(list.length) out.push({label:sec.label, note:sec.note, kids:[{sec:sec, rows:list}]});
   });
   return out;
 }
@@ -1547,10 +1684,12 @@ function mdBody(){
       sl.there.forEach(function(r){ L.push("- [ ] "+r.item+(r.detail?" \u2014 "+r.detail:"")); });
     }
   }
-  exportSections().forEach(function(sec){
-    var list=items(sec.doc); if(!list.length) return;
-    L.push(""); L.push("## "+sec.label); L.push("");
-    list.forEach(function(r){
+  reportBlocks().forEach(function(blk){
+   L.push(""); L.push("## "+blk.label); L.push("");
+   blk.kids.forEach(function(kid){
+    var sec=kid.sec;
+    if(blk.kids.length>1){ L.push("### "+sec.label); L.push(""); }
+    kid.rows.forEach(function(r){
       var head=[], body=[];
       if(sec.state==="prep"){
         head.push(r.packed==="yes" ? "[PACKED]" : "[ ]");
@@ -1569,6 +1708,8 @@ function mdBody(){
       L.push("- "+head.join(" · "));
       body.forEach(function(b){ L.push("  "+b); });
     });
+    if(blk.kids.length>1) L.push("");
+   });
   });
   L.push(""); L.push("_Exported "+new Date().toLocaleString()+"._");
   return L.join("\n");
@@ -1607,6 +1748,7 @@ function htmlBody(){
   'font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}'+
   'h1{font:600 34px/1.05 Georgia,"Times New Roman",serif;margin:0 0 8px;letter-spacing:-.01em}'+
   'h2{font:600 21px/1.2 Georgia,"Times New Roman",serif;margin:38px 0 4px;padding-bottom:7px;border-bottom:1px solid #CDD4E0}'+
+  'h3.sub{font:600 9.5px/1 ui-monospace,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;color:#5C677D;margin:22px 0 2px}'+
   '.sub{color:#5C677D;font-size:13.5px;margin:0 0 3px}'+
   '.summ{color:#3C465A;font-size:13.5px;margin:14px 0 0;max-width:66ch}'+
   '.note{color:#8B95A8;font-size:12.5px;margin:7px 0 16px;max-width:66ch}'+
@@ -1643,11 +1785,13 @@ function htmlBody(){
       p.push('</div>');
     });
   }
-  exportSections().forEach(function(sec){
-    var list=items(sec.doc); if(!list.length) return;
-    p.push('<h2>'+esc(sec.label)+'</h2>');
-    p.push('<p class="note">'+esc(sec.note)+'</p>');
-    list.forEach(function(r){
+  reportBlocks().forEach(function(blk){
+   p.push('<h2>'+esc(blk.label)+'</h2>');
+   if(blk.note) p.push('<p class="note">'+esc(blk.note)+'</p>');
+   blk.kids.forEach(function(kid){
+    var sec=kid.sec;
+    if(blk.kids.length>1) p.push('<h3 class="sub">'+esc(sec.label)+'</h3>');
+    kid.rows.forEach(function(r){
       var triage = sec.state==="prep";
       var tv = r.own||"";
       var st = triage
@@ -1675,6 +1819,7 @@ function htmlBody(){
       areas.forEach(function(a){ p.push('<p>'+esc(a)+'</p>'); });
       p.push('</div>');
     });
+   });
   });
   p.push('<footer>Exported '+esc(new Date().toLocaleString())+' from the China &amp; Tibet 2026 trip dossier.</footer>');
   p.push('</body></html>');

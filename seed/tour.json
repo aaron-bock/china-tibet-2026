@@ -1,12 +1,84 @@
 {
   "items": [
-    { "id": "v1", "day": "Day 1", "date": "Sat 3 Oct", "title": "Arrive Lhasa · acclimatise", "alt": "Lhasa 3,650 m", "status": "confirmed", "detail": "Train gets in 15:36. Station pickup, hotel check-in, and a deliberately empty afternoon. The others arrived on the 2nd at 07:24 on the Z322 from Chengdu and took an extra pre-tour night, so you join as the tour proper begins." },
-    { "id": "v2", "day": "Day 2", "date": "Sun 4 Oct", "title": "Handicrafts and Sera Monastery", "alt": "Lhasa 3,650 m", "status": "confirmed", "detail": "Traditional Handicraft Art Center — incense and calligraphy — then Sera Monastery for the afternoon monk debates." },
-    { "id": "v3", "day": "Day 3", "date": "Mon 5 Oct", "title": "Potala Palace and Jokhang Temple", "alt": "Lhasa 3,650 m", "status": "confirmed", "detail": "Plus Barkhor Street. Tibetan-Nepalese dinner included this evening." },
-    { "id": "v4", "day": "Day 4", "date": "Tue 6 Oct", "title": "Lhasa → Shigatse via Yamdrok Lake", "alt": "Karola 5,012 m · Shigatse 3,850 m", "status": "confirmed", "detail": "370 km, about seven hours. Hot pot lunch at the lake, then the Karola Glacier. First time above 5,000 m." },
-    { "id": "v5", "day": "Day 5", "date": "Wed 7 Oct", "title": "Shigatse → Everest Base Camp", "alt": "Gyawu La 5,210 m · Rongbuk 5,154 m · EBC 5,200 m", "status": "confirmed", "detail": "340 km over Gyawu La Pass, past Rongbuk Monastery, then the eco-bus up to base camp. Sleeping in the tent camp at 5,200 m — the hardest night of the trip." },
-    { "id": "v6", "day": "Day 6", "date": "Thu 8 Oct", "title": "Everest morning, back to Shigatse", "alt": "Gyatso La 5,248 m", "status": "confirmed", "detail": "Time at base camp first thing, then the drive back over Gyatso La — the highest point of the whole tour." },
-    { "id": "v7", "day": "Day 7", "date": "Fri 9 Oct", "title": "Tashilhunpo Monastery, then Lhasa", "alt": "Shigatse 3,850 m → Lhasa 3,650 m", "status": "confirmed", "detail": "270 km back, roughly five hours. Last night in Lhasa." },
-    { "id": "v8", "day": "Day 8", "date": "Sat 10 Oct", "title": "Checkout and transfer out", "alt": "Lhasa 3,650 m", "status": "confirmed", "detail": "Tour ends with the shared transfer to Lhasa Gonggar airport. Kamana flies to Seoul at 13:20 on Air China (PZC6M0), Jeff possibly alongside her; you are on MU 2336 at 15:30." }
+    {
+      "alt": "Lhasa 3,650 m",
+      "date": "Sat 3 Oct",
+      "day": "Day 1",
+      "detail": "Train gets in 15:36. Station pickup, hotel check-in, and a deliberately empty afternoon. The others arrived on the 2nd at 07:24 on the Z322 from Chengdu and took an extra pre-tour night, so you join as the tour proper begins.",
+      "id": "v1",
+      "status": "confirmed",
+      "title": "Arrive Lhasa · acclimatise",
+      "leg": "tibet"
+    },
+    {
+      "alt": "Lhasa 3,650 m",
+      "date": "Sun 4 Oct",
+      "day": "Day 2",
+      "detail": "Traditional Handicraft Art Center — incense and calligraphy — then Sera Monastery for the afternoon monk debates.",
+      "id": "v2",
+      "status": "confirmed",
+      "title": "Handicrafts and Sera Monastery",
+      "leg": "tibet"
+    },
+    {
+      "alt": "Lhasa 3,650 m",
+      "date": "Mon 5 Oct",
+      "day": "Day 3",
+      "detail": "Plus Barkhor Street. Tibetan-Nepalese dinner included this evening.",
+      "id": "v3",
+      "status": "confirmed",
+      "title": "Potala Palace and Jokhang Temple",
+      "leg": "tibet"
+    },
+    {
+      "alt": "Karola 5,012 m · Shigatse 3,850 m",
+      "date": "Tue 6 Oct",
+      "day": "Day 4",
+      "detail": "370 km, about seven hours. Hot pot lunch at the lake, then the Karola Glacier. First time above 5,000 m.",
+      "id": "v4",
+      "status": "confirmed",
+      "title": "Lhasa → Shigatse via Yamdrok Lake",
+      "leg": "tibet"
+    },
+    {
+      "alt": "Gyawu La 5,210 m · Rongbuk 5,154 m · EBC 5,200 m",
+      "date": "Wed 7 Oct",
+      "day": "Day 5",
+      "detail": "340 km over Gyawu La Pass, past Rongbuk Monastery, then the eco-bus up to base camp. Sleeping in the tent camp at 5,200 m — the hardest night of the trip.",
+      "id": "v5",
+      "status": "confirmed",
+      "title": "Shigatse → Everest Base Camp",
+      "leg": "tibet"
+    },
+    {
+      "alt": "Gyatso La 5,248 m",
+      "date": "Thu 8 Oct",
+      "day": "Day 6",
+      "detail": "Time at base camp first thing, then the drive back over Gyatso La — the highest point of the whole tour.",
+      "id": "v6",
+      "status": "confirmed",
+      "title": "Everest morning, back to Shigatse",
+      "leg": "tibet"
+    },
+    {
+      "alt": "Shigatse 3,850 m → Lhasa 3,650 m",
+      "date": "Fri 9 Oct",
+      "day": "Day 7",
+      "detail": "270 km back, roughly five hours. Last night in Lhasa.",
+      "id": "v7",
+      "status": "confirmed",
+      "title": "Tashilhunpo Monastery, then Lhasa",
+      "leg": "tibet"
+    },
+    {
+      "alt": "Lhasa 3,650 m",
+      "date": "Sat 10 Oct",
+      "day": "Day 8",
+      "detail": "Tour ends with the shared transfer to Lhasa Gonggar airport. Kamana flies to Seoul at 13:20 on Air China (PZC6M0), Jeff possibly alongside her; you are on MU 2336 at 15:30.",
+      "id": "v8",
+      "status": "confirmed",
+      "title": "Checkout and transfer out",
+      "leg": "tibet"
+    }
   ]
 }

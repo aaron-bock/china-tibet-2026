@@ -1,44 +1,49 @@
 {
   "items": [
     {
+      "alt": "400 m",
+      "detail": "The tail of the wet season, so expect a grey day or two and keep the hardshell reachable. Mornings near 10 °C, afternoons near 20 °C — one layer over a shirt covers the whole day. The 400 m does nothing to you: this is the only leg where the weather is unremarkable, which makes it the right place to buy what you did not fly in.",
       "id": "w1",
       "place": "Xi'an",
-      "when": "29 Sep – 2 Oct",
       "temp": "68 / 50 °F · 20 / 10 °C",
-      "alt": "400 m",
-      "detail": "The tail of the wet season, so expect a grey day or two and keep the hardshell reachable. Mornings near 10 °C, afternoons near 20 °C — one layer over a shirt covers the whole day. The 400 m does nothing to you: this is the only leg where the weather is unremarkable, which makes it the right place to buy what you did not fly in."
+      "when": "29 Sep – 2 Oct",
+      "leg": "xian"
     },
     {
+      "alt": "to 5,072 m",
+      "detail": "Heated and sealed, and oxygen-enriched above Golmud, so the cabin holds around 20 °C the whole way even as the line crosses Tanggula at 5,072 m. What bites is the dryness and the glass: hours of full high-altitude sun through a window. The platform stops at Xining and Golmud are genuinely cold — keep a fleece by the berth, not in the bag overhead.",
       "id": "w2",
       "place": "Z165 soft sleeper",
-      "when": "2 – 3 Oct",
       "temp": "~20 °C in cabin",
-      "alt": "to 5,072 m",
-      "detail": "Heated and sealed, and oxygen-enriched above Golmud, so the cabin holds around 20 °C the whole way even as the line crosses Tanggula at 5,072 m. What bites is the dryness and the glass: hours of full high-altitude sun through a window. The platform stops at Xining and Golmud are genuinely cold — keep a fleece by the berth, not in the bag overhead."
+      "when": "2 – 3 Oct",
+      "leg": "z165"
     },
     {
+      "alt": "3,650 – 3,850 m",
+      "detail": "October is the dry season and the clearest month of the year, which is why the tour runs now. The swing is the story, not the cold: 20 °C in direct sun at midday, 5 °C or below within an hour of it setting. Almost no rain, very low humidity, and UV strong enough to burn in an hour. Layers you shed at 11:00 and put back on at 17:00.",
       "id": "w3",
       "place": "Lhasa & Shigatse",
-      "when": "3 – 10 Oct",
       "temp": "68 / 41 °F · 20 / 5 °C",
-      "alt": "3,650 – 3,850 m",
-      "detail": "October is the dry season and the clearest month of the year, which is why the tour runs now. The swing is the story, not the cold: 20 °C in direct sun at midday, 5 °C or below within an hour of it setting. Almost no rain, very low humidity, and UV strong enough to burn in an hour. Layers you shed at 11:00 and put back on at 17:00."
+      "when": "3 – 10 Oct",
+      "leg": "tibet"
     },
     {
+      "alt": "5,200 m",
+      "detail": "The one night that needs real kit. Around 10 °C in sun, about −6 °C overnight, and wind off the glacier makes it feel far colder than that. Clear skies are likely — that is the point of October — and clear skies are exactly why it drops so hard after dark. You sleep in base layers, hat and heavy socks, inside a rented bag under the camp quilts.",
       "id": "w4",
       "place": "Everest Base Camp",
-      "when": "7 Oct",
       "temp": "50 / 21 °F · 10 / −6 °C",
-      "alt": "5,200 m",
-      "detail": "The one night that needs real kit. Around 10 °C in sun, about −6 °C overnight, and wind off the glacier makes it feel far colder than that. Clear skies are likely — that is the point of October — and clear skies are exactly why it drops so hard after dark. You sleep in base layers, hat and heavy socks, inside a rented bag under the camp quilts."
+      "when": "7 Oct",
+      "leg": "tibet"
     },
     {
+      "alt": "sea level",
+      "detail": "Back to sea level and back to humidity: 22 °C days, 15 °C nights, and the tail of typhoon season, so a wet afternoon is plausible. After a week on the plateau it will feel warm and heavy rather than mild. The park days share exactly one problem with Tibet — twelve hours of unbroken sun — so the hat and the sunscreen keep earning their place.",
       "id": "w5",
       "place": "Shanghai & Disney",
-      "when": "10 – 15 Oct",
       "temp": "72 / 59 °F · 22 / 15 °C",
-      "alt": "sea level",
-      "detail": "Back to sea level and back to humidity: 22 °C days, 15 °C nights, and the tail of typhoon season, so a wet afternoon is plausible. After a week on the plateau it will feel warm and heavy rather than mild. The park days share exactly one problem with Tibet — twelve hours of unbroken sun — so the hat and the sunscreen keep earning their place."
+      "when": "10 – 15 Oct",
+      "leg": "shanghai disney"
     }
   ]
 }
