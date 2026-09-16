@@ -57,11 +57,25 @@
       "status": "confirmed"
     },
     {
-      "amount": "~¥2,000–3,500",
-      "detail": "Not booked — the last open bed. All five Disney-side at the Courtyard ITRZ is ~¥2,495 at ~¥499/night, plus a ¥180–250 Didi on arrival night because the last Line 11 train has gone by the time you clear Hongqiao. Split stay is one downtown night (¥300–500 at an Atour or Ji, or ¥1,500–2,500 at the Fairmont Peace) plus four at the Courtyard (~¥2,000), which cancels most of that taxi and puts you at the museum door on the Sunday. Going Ji or Atour on the park side instead would bring the whole five nights to ~¥1,300, at the cost of Platinum breakfast and an English-speaking front desk. Only the Courtyard figure is a verified live rate (Marriott, 10 Sep, your dates).",
+      "amount": "$102.14",
+      "detail": "Trip.com 1658114869461628, prepaid by Apple Pay 16 September. Twin room, breakfast not included. A deposit is taken at check-in and refunded after.",
       "id": "m9",
-      "item": "Shanghai · 5 nights, 10–15 Oct",
-      "status": "action"
+      "item": "Metropolo Nanjing Road · 1 night, 10 Oct",
+      "status": "confirmed"
+    },
+    {
+      "id": "m9b",
+      "item": "Toy Story Hotel · 4 nights, 11–15 Oct",
+      "amount": "$659.80",
+      "status": "confirmed",
+      "detail": "Trip.com 1658114869392408, prepaid by Apple Pay 16 September. Includes early park entry once per room and a Disneytown shuttle, so ¥179 of the Disney budget goes away."
+    },
+    {
+      "id": "m9c",
+      "item": "Metro Museum · Sun 11 Oct",
+      "amount": "¥30",
+      "status": "pending",
+      "detail": "On the door, or through the Metro 大都会 app. No reservation."
     },
     {
       "amount": "$100.21",
@@ -78,11 +92,11 @@
       "status": "action"
     },
     {
+      "amount": "¥449–499",
+      "detail": "Only if you want the fourth morning, and only if you buy it before 1 October. A whole 1-Day ticket for half a day, because there is no half-day product.",
       "id": "m10c",
       "item": "Shanghai Disneyland — optional Thu 15 Oct",
-      "amount": "¥449–499",
-      "status": "pending",
-      "detail": "Only if you want the fourth morning, and only if you buy it before 1 October. A whole 1-Day ticket for half a day, because there is no half-day product."
+      "status": "pending"
     },
     {
       "amount": "¥120",

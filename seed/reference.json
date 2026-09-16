@@ -120,11 +120,25 @@
       "value": "84579041 · 84582237"
     },
     {
+      "detail": "1-Day, free cancellation, Adult × 1, 14 October. Bought 15 September. Real-name: AARON ROSS BOCK.",
+      "group": "Booking refs",
       "id": "r-klook2",
       "name": "Klook · Disneyland Wed 14 Oct",
-      "value": "UAY706135",
+      "value": "UAY706135"
+    },
+    {
+      "id": "r-metropolo",
+      "name": "Trip.com · Metropolo Nanjing Road",
+      "value": "1658114869461628",
       "group": "Booking refs",
-      "detail": "1-Day, free cancellation, Adult × 1, 14 October. Bought 15 September. Real-name: AARON ROSS BOCK."
+      "detail": "10–11 Oct, 1 night. Hotel conf 109750832349. +86 21 6322 2888. The PIN is in the Trip.com email, deliberately not written down here."
+    },
+    {
+      "id": "r-toy",
+      "name": "Trip.com · Toy Story Hotel",
+      "value": "1658114869392408",
+      "group": "Booking refs",
+      "detail": "11–15 Oct, 4 nights. Hotel conf W107837385-1HMC. +86 21 2099 8003. The PIN is in the Trip.com email, deliberately not written down here."
     },
     {
       "detail": "Or the museum's own WeChat account. Never an OTA — the museum has never authorised one, and the on-site ticket windows are gone.",
