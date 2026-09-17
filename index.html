@@ -366,11 +366,11 @@ figure.elev figcaption b{color:var(--ink); font-weight:600}
 footer.foot{border-top:1px solid var(--line); padding-block:20px 40px; color:var(--faint); font-size:12px}
 
 /* ---------- column templates ---------- */
-.g-days{grid-template-columns:182px minmax(0,1fr) 96px}
-.g-segments{grid-template-columns:166px minmax(0,1.3fr) minmax(0,1.3fr) 96px}
+.g-days{grid-template-columns:182px minmax(0,1fr)}
+.g-segments{grid-template-columns:166px minmax(0,1.3fr) minmax(0,1.3fr)}
 .g-tour{grid-template-columns:70px 104px minmax(0,1fr)}
-.g-stays{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) 132px}
-.g-disney{grid-template-columns:minmax(0,1fr) 182px 96px}
+.g-stays{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}
+.g-disney{grid-template-columns:minmax(0,1fr) 182px}
 .g-tasks{grid-template-columns:minmax(0,1fr) 128px 176px}
 .g-money{grid-template-columns:minmax(0,1fr) 192px 96px}
 .g-apps{grid-template-columns:minmax(0,1fr) 168px}
@@ -380,7 +380,6 @@ footer.foot{border-top:1px solid var(--line); padding-block:20px 40px; color:var
 .g-people{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr)}
 .g-reference{grid-template-columns:minmax(0,1fr) minmax(0,188px) minmax(0,148px)}
 .g-phrases{grid-template-columns:170px minmax(0,1fr)}
-.g-notes{grid-template-columns:minmax(0,1fr) minmax(0,248px)}
 .g-repack{grid-template-columns:96px minmax(0,1fr) 150px}
 .g-sleep{grid-template-columns:minmax(0,202px) minmax(0,1fr) minmax(0,158px)}
 .row-body .w-all{grid-column:1/-1}
@@ -483,7 +482,6 @@ var SCHEMA=[
     fields:[
       {k:"date",  l:"Date",  cls:"mono strong", ph:"Day"},
       {k:"title", l:"Where", cls:"big",         ph:"What happens"},
-      {k:"status",l:"State", type:"status"},
       {k:"detail",l:"Notes", type:"area",       ph:"Notes"}
     ]},
   { id:"travel", doc:"segments", label:"Flights & rail",
@@ -496,7 +494,6 @@ var SCHEMA=[
       {k:"depart",l:"Departs", cls:"mono",        ph:"Departure"},
       {k:"arrive",l:"Arrives", cls:"mono",        ph:"Arrival"},
       {k:"conf",  l:"Ref",     cls:"mono",        ph:"Locator"},
-      {k:"status",l:"State",   type:"status"},
       {k:"detail",l:"Detail",  type:"area",       ph:"Fare, seat, ticket number"}
     ]},
   { id:"sleep", doc:"sleep", label:"Jet lag",
@@ -522,7 +519,6 @@ var SCHEMA=[
     fields:[
       {k:"name",    l:"Hotel",     cls:"big",   ph:"Property"},
       {k:"place",   l:"Where",     cls:"",      ph:"City and nights"},
-      {k:"status",  l:"State",     type:"status"},
       {k:"checkin", l:"Check in",  cls:"mono",  ph:"Arrive"},
       {k:"checkout",l:"Check out", cls:"mono",  ph:"Depart"},
       {k:"conf",    l:"Ref",       cls:"mono",  ph:"Confirmation"},
@@ -533,7 +529,6 @@ var SCHEMA=[
     fields:[
       {k:"item",  l:"Line",   cls:"strong", ph:"What"},
       {k:"price", l:"Price",  cls:"mono",   ph:"Price"},
-      {k:"status",l:"State",  type:"status"},
       {k:"detail",l:"Detail", type:"area",  ph:"Detail"}
     ]},
   /* Everything on this tab is open by definition \u2014 finishing something means
@@ -593,7 +588,9 @@ var SCHEMA=[
   { id:"repack", doc:"repack", label:"Repacks",
     note:"Six times the bags get turned out between Atlanta and Shanghai. Each one says what physically moves from which bag to which \u2014 the two that matter are the Z165, where the Away shuts for thirty hours, and base camp, where only one bag gets on the eco-bus.",
     fields:[
-      {k:"leg",   l:"",      cls:"mono strong", ph:"Repack"},
+      /* named "step", not "leg": every other document uses `leg` to tag which
+         leg of the trip a row belongs to, and this one holds "Repack 1". */
+      {k:"step",  l:"",      cls:"mono strong", ph:"Repack"},
       {k:"title", l:"What",  cls:"big",         ph:"What happens"},
       {k:"when",  l:"When",  cls:"mono",        ph:"When"},
       {k:"moves", l:"Moves",  type:"area",       ph:"What moves"},
@@ -604,7 +601,7 @@ var SCHEMA=[
     note:"Every item on one line, grouped by category, so the shopping list is a glance rather than a read. Tap OWN, BUY or SKIP; \u201c!\u201d marks the ones you cannot forget. Same records as Packing \u2014 a tap here shows up there, and the buys land in the shopping-list export.",
     fields:[]},
   { id:"people", doc:"people", label:"People",
-    note:"Four travelling companions, one consultant in Beijing who works on WhatsApp, and two people worth calling.",
+    note:"Jeff and Kamana, who are with you on the plateau and nowhere else; James in Beijing, who works on WhatsApp and nothing else; and Sandra, whose 2017 trip is behind half the recommendations here.",
     fields:[
       {k:"name",   l:"Name",  cls:"big",   ph:"Name"},
       {k:"role",   l:"Role",  cls:"",      ph:"Role"},
@@ -626,13 +623,6 @@ var SCHEMA=[
       {k:"en",    l:"English", cls:"strong", ph:"What it is"},
       {k:"cn",    l:"Chinese", cls:"cn", type:"area", ph:"中文"},
       {k:"detail",l:"Notes",   type:"area",  ph:"Notes"}
-    ]},
-  { id:"notes", doc:"notes", label:"Notes",
-    note:"Sandra Rothbard's 2017 recommendations, re-checked against current sources on 10 September. Her warnings held; her logistics largely didn't.",
-    fields:[
-      {k:"name",  l:"Thing", cls:"big",   ph:"What"},
-      {k:"place", l:"Where", cls:"mono",  ph:"Where"},
-      {k:"detail",l:"Notes", type:"area", ph:"Notes"}
     ]}
 ];
 
@@ -656,7 +646,7 @@ var LEGS=[
    sum:"Eight days with Jeff and Kamana, and a tent night at 5,200 m.",
    note:"Asia Odyssey\u2019s eight-day Everest Base Camp tour, and the only leg you are not doing alone — Jeff and Kamana are with you from Lhasa to the airport on the 10th. Day one is deliberately empty because Lhasa is already 3,650 m, and everything after it climbs."},
   {id:"shanghai", label:"Shanghai", dates:"10 \u2013 12 Oct", via:"MU 2336",
-   sum:"Land at 21:50, then the one unbooked block on the trip.",
+   sum:"Land at 21:50, a night downtown, then Sunday on foot.",
    note:"Arrival, one night downtown, and the Sunday city day on foot. You land at Hongqiao too late for the last Line 11 — which is exactly why the first night is downtown and the move to Disney happens on Sunday in daylight."},
   {id:"disney", label:"Disney", dates:"12 \u2013 15 Oct", via:"3 park days",
    sum:"Three weekdays in the emptiest fortnight of the autumn.",
@@ -680,7 +670,7 @@ var GROUPS=[
   {id:"trip", label:"Itinerary", secs:["overview"].concat(LEGS.map(function(l){return "leg-"+l.id;}))},
   {id:"pack", label:"Packing",   secs:["packing","triage","repack","kit"]},
   {id:"todo", label:"Open items",secs:["open"]},
-  {id:"info", label:"Reference", secs:["sleep","money","apps","people","reference","phrases","notes"]}
+  {id:"info", label:"Reference", secs:["sleep","money","apps","people","reference","phrases"]}
 ];
 function groupOf(secId){
   for(var i=0;i<GROUPS.length;i++) if(GROUPS[i].secs.indexOf(secId)>=0) return GROUPS[i];
@@ -854,14 +844,16 @@ function field(sec,row,f){
 }
 function rowNode(sec,row){
   var prep = sec.state==="prep";
+  var hasStatus=sec.fields.some(function(f){ return f.type==="status"; });
   var cls="row";
-  if(!prep && row.status==="done") cls+=" done";
+  /* gated: without this a stale status on a section that no longer shows the
+     column dims the row to 52% with nothing on screen to clear it */
+  if(!prep && hasStatus && row.status==="done") cls+=" done";
   if(prep && row.packed==="yes") cls+=" packed";
   if(row.own==="skip") cls+=" skipped";
   if(row.prio==="must") cls+=" must";
   var r=el("div",cls); r.dataset.rid=row.id;
   var st=el("span","stripe");
-  var hasStatus=sec.fields.some(function(f){ return f.type==="status"; });
   if(prep) st.dataset.packed=row.packed||"";
   else if(hasStatus) st.dataset.status=row.status||"pending";
   r.appendChild(st);
@@ -1002,17 +994,18 @@ function sleepChart(){
     '</figure>';
 }
 
+/* Every bed and ticket is booked, so tiles counting bookings read zero or a
+   constant. These four are the numbers that still move while he works. Money
+   is the only document left with a status, so it is the only one counted. */
 function tiles(){
-  var segs=items("segments"), stays=items("stays"), tk=items("tasks"), mny=items("money");
-  var openTasks=tk.length;
-  var unconf=segs.filter(function(s){return s.status!=="confirmed";}).length;
-  var openStays=stays.filter(function(s){return s.status==="action";}).length;
-  var openMoney=mny.filter(function(m){return m.status==="action";}).length;
+  var openTasks=items("tasks").length;
+  var toPack=packCounts().todo;
+  var toBuy=prepCounts().buy;
+  var openMoney=items("money").filter(function(m){return m.status==="action";}).length;
   var data=[
-    {k:"Open items",  v:openTasks, s:openTasks?"need a decision":"all clear"},
-    /* "Legs" now means legs of the trip, so this tile has to say what it counts. */
-    {k:"Flights & rail", v:segs.length, s:unconf?unconf+" not confirmed":"all confirmed"},
-    {k:"Stays to book",v:openStays, s:openStays?"Shanghai, 5 nights":"all covered"},
+    {k:"Open items",  v:openTasks, s:openTasks?"before you fly":"all clear"},
+    {k:"To pack",     v:toPack,    s:toPack?"still out of a bag":"all in"},
+    {k:"Still to buy",v:toBuy,     s:toBuy?"at home and in Xi'an":"nothing outstanding"},
     {k:"Costs unset", v:openMoney, s:openMoney?"no figure on file":"all priced"}
   ];
   var w=el("div","tiles");
@@ -1534,8 +1527,11 @@ function head(){
     $("#alertBody").innerHTML=top+(tk.length>2?" &nbsp;·&nbsp; and "+(tk.length-2)+" more under Open items.":"");
   } else { a.hidden=true; }
 }
+/* The tiles render into the OVERVIEW panel. This pointed at #panel-itinerary,
+   which is in no group and therefore never built, so it never matched and the
+   tiles never refreshed live. */
 function refreshTiles(){
-  var t=document.querySelector("#panel-itinerary .tiles");
+  var t=document.querySelector("#panel-overview .tiles");
   if(t) t.replaceWith(tiles());
 }
 

@@ -10,7 +10,6 @@
       "id": "s1",
       "leg": "out",
       "mode": "air",
-      "status": "confirmed",
       "to": "ICN Seoul Incheon"
     },
     {
@@ -23,7 +22,6 @@
       "id": "s2",
       "leg": "out",
       "mode": "air",
-      "status": "confirmed",
       "to": "XIY Xi'an Xianyang T5"
     },
     {
@@ -36,7 +34,6 @@
       "id": "s3",
       "leg": "z165",
       "mode": "rail",
-      "status": "confirmed",
       "to": "LXA Lhasa"
     },
     {
@@ -49,7 +46,6 @@
       "id": "s4",
       "leg": "shanghai",
       "mode": "air",
-      "status": "confirmed",
       "to": "SHA Shanghai Hongqiao"
     },
     {
@@ -62,7 +58,6 @@
       "id": "s5",
       "leg": "home",
       "mode": "air",
-      "status": "confirmed",
       "to": "LAX Los Angeles"
     },
     {
@@ -75,7 +70,6 @@
       "id": "s6",
       "leg": "home",
       "mode": "air",
-      "status": "confirmed",
       "to": "ATL Atlanta"
     }
   ]

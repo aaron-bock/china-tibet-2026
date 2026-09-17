@@ -8,8 +8,7 @@
       "id": "h1",
       "leg": "xian",
       "name": "The Westin Xi'an",
-      "place": "Xi'an · 2 nights",
-      "status": "confirmed"
+      "place": "Xi'an · 2 nights"
     },
     {
       "checkin": "Thu 1 Oct · 15:00",
@@ -19,8 +18,7 @@
       "id": "h2",
       "leg": "xian",
       "name": "The Westin Xi'an · award night",
-      "place": "Xi'an · 1 night",
-      "status": "confirmed"
+      "place": "Xi'an · 1 night"
     },
     {
       "checkin": "Sat 3 Oct",
@@ -30,8 +28,7 @@
       "id": "h3",
       "leg": "tibet",
       "name": "Tibet tour hotels",
-      "place": "Lhasa, Shigatse, EBC · 7 nights",
-      "status": "confirmed"
+      "place": "Lhasa, Shigatse, EBC · 7 nights"
     },
     {
       "checkin": "Sat 10 Oct · after 14:00",
@@ -41,8 +38,7 @@
       "id": "s11",
       "leg": "shanghai",
       "name": "Metropolo Nanjing Road Nanjing Hotel",
-      "place": "Downtown · Huangpu · 1 night",
-      "status": "confirmed"
+      "place": "Downtown · Huangpu · 1 night"
     },
     {
       "checkin": "Sun 11 Oct · after 15:00",
@@ -52,8 +48,7 @@
       "id": "s2",
       "leg": "shanghai disney",
       "name": "Toy Story Hotel",
-      "place": "Disney-side · 4 nights",
-      "status": "confirmed"
+      "place": "Disney-side · 4 nights"
     }
   ]
 }

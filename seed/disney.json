@@ -5,32 +5,56 @@
       "id": "y3",
       "item": "BOOKED — Klook FUW045023 · Mon 12 & Tue 13",
       "leg": "disney",
-      "price": "$100.21",
-      "status": "confirmed"
+      "price": "$100.21"
     },
     {
       "detail": "Confirmed 15 September. Booking reference UAY706135, name AARON ROSS BOCK, product “1-day ticket (free cancellation)”, Adult × 1, participation date 14 October. That completes the three park days.\n\nNO PRICE ON THE CONFIRMATION. Klook's email carries the booking and the voucher but not the amount — take it off the Klook app or the card statement and put it in the Money row.\n\nNOTE THIS IS NOT THE EARLY BIRD. You bought the free-cancellation variant, which is a different product from the ¥425–449 Early Bird I quoted, and normally dearer. You are paying for the right to change your mind.\n\nWHAT THAT RIGHT IS WORTH, AND WHEN IT EXPIRES: full refund if you cancel at least 7 days out, so by 6 October; a ¥80 fee inside 6 days; nothing back on the day itself or once you have rescheduled. You can reschedule twice, up to 48 hours before 00:00 on the visit date — so by 00:00 on 12 October. The catch is that 6 October falls while you are between Shigatse and Lhasa: if you are going to drop the Wednesday, do it before you board the Z165 on 2 October.",
       "id": "y10",
       "item": "BOOKED — Klook UAY706135 · Wed 14",
       "leg": "disney",
-      "price": "—",
-      "status": "confirmed"
+      "price": "—"
     },
     {
       "detail": "The optional fourth morning: gates 08:30, out by 15:00, taxi to Pudong for DL 38 at 18:25. It costs a whole 1-Day ticket because there is no half-day product.\n\nNOW OR NEVER. You cannot add it once you board the Z165 on 2 October — from there you are off-grid until Lhasa, and by the time you land in Shanghai on the 10th the date is a day out from the 48-hour horizon. Buy it before 1 October or let it go.\n\nStill do NOT buy Sunday 11 October. That is the city day.",
       "id": "y12",
       "item": "STILL TO BUY — Thu 15 Oct, if you want it",
       "leg": "disney",
-      "price": "¥449–499",
-      "status": "action"
+      "price": "¥449–499"
     },
     {
-      "detail": "SUPERSEDES THE ADVICE THAT WAS HERE. This used to say skip it at ~¥179. The Toy Story booking includes early park entry, up to an hour before public opening, once per room across the four nights — the perk Disney's own hotels give their guests, and you are now one of those guests.\n\nThe hotel issues the voucher; no advance booking. Use it at the Disneytown entrance or the early-entry gate between 07:30 and 08:30, with your park ticket and the passport you booked with.\n\nSPEND IT ON MONDAY, the first park day, on Zootopia and TRON before the public gates open. It is worth the most on the day you know the park least.",
+      "detail": "Up to an hour before the announced public opening, through the DISNEYTOWN TURNSTILES rather than the main gate, shown with your room key. Resort policy for bookings made after 17 June 2025 is one early entry per registered guest FOR EACH NIGHT of the stay, starting the morning after check-in. You check in on Sunday, so that is Monday, Tuesday, Wednesday — and Thursday if you buy it.\n\nTHE BOOKING SAYS OTHERWISE. Trip.com's confirmation reads “once per room during your stay”, which contradicts the resort's own published policy. Three independent sources agree on per-night; the official page could not be opened to check directly. Ask at the desk on Sunday when you collect the voucher. Worst case is one morning, expected case is all of them — plan for one and be pleased.",
       "id": "y8",
-      "item": "Early Park Entry — you now have it, free",
+      "item": "Early entry — every morning, not just one",
       "leg": "disney",
-      "price": "included",
-      "status": "confirmed"
+      "price": "included"
+    },
+    {
+      "id": "y13",
+      "item": "Leaving the hotel on an early morning",
+      "price": "20 min on foot",
+      "leg": "disney",
+      "detail": "Toy Story is about 1.5 km from the park — roughly twenty minutes at a walk. For a 07:30 turnstile that means out of the door by 07:00, and the first one is Monday, the morning after a day that ends on the Bund. Free resort shuttles run every 10–15 minutes if it is raining or you have misjudged it."
+    },
+    {
+      "id": "y14",
+      "item": "First thing, once you are in",
+      "price": "the whole advantage",
+      "leg": "disney",
+      "detail": "Zootopia: Hot Pursuit, then TRON Lightcycle Power Run. Those two build 60–90 minute lines by mid-morning and hold them all day, and an early hour is worth more spent on them than on anything else. Then Pirates of the Caribbean: Battle for the Sunken Treasure, which is the best thing in the park and not close, and Soaring Over the Horizon. Plan around Peter Pan's Flight rather than dropping into it."
+    },
+    {
+      "id": "y15",
+      "item": "Premier Access — do not pre-buy",
+      "price": "¥140–180 each",
+      "leg": "disney",
+      "detail": "Three post-Golden-Week weekdays with an early hour every morning should not need it. Walk in, read the standby boards, and buy a single pass only if a wait crosses an hour. It is not sold through Klook, so buying in advance means committing before you know what the queues are doing."
+    },
+    {
+      "id": "y16",
+      "item": "Tenth anniversary, Halloween, and the walk home",
+      "price": "—",
+      "leg": "disney",
+      "detail": "The anniversary runs all year as ‘With You, It’s Magic+’: The Heart of Magic on the castle stage, an updated Mickey’s Storybook Express, and an anniversary finale on ILLUMINATE!, which closes the park. October also carries the Halloween season. When it finishes it is the same 1.5 km back, in the dark, which is the argument for the walking shoes rather than the boots."
     }
   ]
 }
