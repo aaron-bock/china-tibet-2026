@@ -169,6 +169,7 @@ h2.p-title{font-family:var(--f-disp); font-size:25px; font-weight:600; letter-sp
 .f.strong{font-weight:600}
 .f.big{font-family:var(--f-disp); font-size:15.5px; font-weight:600; letter-spacing:-.005em}
 .f.cn{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",sans-serif; font-size:19px; font-weight:500; letter-spacing:.02em}
+textarea.f.cn{font-size:19px; line-height:1.5; color:var(--ink)}
 textarea.f{resize:none; min-height:1.4em; line-height:1.45; font-size:12.75px; color:var(--soft); overflow:hidden; white-space:pre-wrap}
 select.f{
   cursor:pointer; -webkit-appearance:none; appearance:none;
@@ -378,7 +379,7 @@ footer.foot{border-top:1px solid var(--line); padding-block:20px 40px; color:var
 .g-weather{grid-template-columns:minmax(0,1fr) 128px 172px 122px}
 .g-people{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr)}
 .g-reference{grid-template-columns:minmax(0,1fr) minmax(0,188px) minmax(0,148px)}
-.g-phrases{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
+.g-phrases{grid-template-columns:170px minmax(0,1fr)}
 .g-notes{grid-template-columns:minmax(0,1fr) minmax(0,248px)}
 .g-repack{grid-template-columns:96px minmax(0,1fr) 150px}
 .g-sleep{grid-template-columns:minmax(0,202px) minmax(0,1fr) minmax(0,158px)}
@@ -616,10 +617,11 @@ var SCHEMA=[
       {k:"detail",l:"Notes",  type:"area",  ph:"Notes"}
     ]},
   { id:"phrases", doc:"phrases", label:"Point at this",
-    note:"Taxi drivers and ticket windows will not read pinyin. Two of these matter more than the rest: the right Xi'an station and the wrong one.",
+    note:"Taxi drivers and ticket windows will not read pinyin. In the order you will need them, starting with the handful that apply from the first taxi. Three matter more than the rest: the right Xi'an station against the wrong one, and Pudong against the Hongqiao you arrived into.",
     fields:[
+      {k:"when",  l:"When",    cls:"mono",   ph:"When"},
       {k:"en",    l:"English", cls:"strong", ph:"What it is"},
-      {k:"cn",    l:"Chinese", cls:"cn",     ph:"中文"},
+      {k:"cn",    l:"Chinese", cls:"cn", type:"area", ph:"中文"},
       {k:"detail",l:"Notes",   type:"area",  ph:"Notes"}
     ]},
   { id:"notes", doc:"notes", label:"Notes",
@@ -814,7 +816,7 @@ function field(sec,row,f){
     node.value = opts.indexOf(row[f.k])>=0 ? row[f.k] : opts[f.type==="status"?1:0];
     node.className = "f " + (f.type==="status"?"st-":"m-") + node.value;
   } else if(f.type==="area"){
-    node=el("textarea","f"); node.rows=1; node.value=row[f.k]||"";
+    node=el("textarea","f"+(f.cls?" "+f.cls:"")); node.rows=1; node.value=row[f.k]||"";
   } else {
     node=el("input","f"+(f.cls?" "+f.cls:"")); node.type="text"; node.value=row[f.k]||"";
     if(row[f.k]) node.title=row[f.k];
