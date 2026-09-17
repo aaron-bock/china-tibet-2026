@@ -540,7 +540,8 @@ var SCHEMA=[
      deleting the row. Action and Pending split the list in half and only Action
      reached the banner, so half the work was invisible. One state, no column. */
   { id:"open", doc:"tasks", label:"Open items",
-    note:"Beds and park tickets are done. What is left is admin that has to happen before you lose easy connectivity, two museum slots that open on fixed dates, and one ticket decision that dies when you board the Z165. Everything here is outstanding \u2014 tick something off by removing it.",
+    sortBy:function(r){ return dueRank(r.due); },
+    note:"In the order they fall due. Beds and park tickets are done; what is left is admin that has to happen before you lose easy connectivity, two museum slots that open on fixed dates, and one ticket decision that dies when you board the Z165. Everything here is outstanding \u2014 tick something off by removing it.",
     fields:[
       {k:"title", l:"Item",  cls:"big",   ph:"What needs doing"},
       {k:"owner", l:"Who",   cls:"mono",  ph:"Owner"},
@@ -696,6 +697,28 @@ function orderedSections(){
   var out=[];
   GROUPS.forEach(function(g){ out=out.concat(secsOf(g)); });
   return out;
+}
+/* Open items reads as a countdown, so it orders by the date in its own due
+   text rather than by the order rows happened to be added. Anything undated
+   sinks to the bottom rather than pretending to be urgent. */
+var MON={jan:0,feb:1,mar:2,apr:3,may:4,jun:5,jul:6,aug:7,sep:8,oct:9,nov:10,dec:11};
+function dueRank(s){
+  s=String(s||"").toLowerCase();
+  if(!s) return 1e13;
+  if(/\bnow\b|asap|immediately|today/.test(s)) return 0;
+  var m=s.match(/(\d{1,2})\s*(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)/);
+  if(m) return Date.UTC(2026, MON[m[2]], +m[1]);
+  return 1e13;
+}
+/* Rows in section order, sorted if the section asks for it. Ties keep the
+   order they are stored in, so a sort never shuffles equal rows about. */
+function secRows(sec){
+  var list=items(sec.doc);
+  if(!sec.sortBy) return list;
+  var pos={}; list.forEach(function(r,i){ pos[r.id]=i; });
+  return list.slice().sort(function(a,b){
+    return (sec.sortBy(a)-sec.sortBy(b)) || (pos[a.id]-pos[b.id]);
+  });
 }
 function secById(id){
   for(var i=0;i<SCHEMA.length;i++) if(SCHEMA[i].id===id) return SCHEMA[i];
@@ -1483,7 +1506,7 @@ function render(force){
       main.appendChild(p);
       return;
     }
-    var rows=el("div","rows"), list=items(sec.doc);
+    var rows=el("div","rows"), list=secRows(sec);
     if(!list.length){
       var e=el("div","row"); e.appendChild(el("span","stripe"));
       var b=el("div","row-body"); b.appendChild(el("div","cell empty","Nothing here yet."));
@@ -1502,7 +1525,8 @@ function head(){
   var m=store.meta||{};
   $("#mTraveler").textContent=m.traveler||"";
   $("#mDates").textContent="· "+(m.dateRange||"")+(m.length?" · "+m.length:"")+(m.groupSize?" · "+m.groupSize:"");
-  var tk=items("tasks");
+  /* the banner shows the top of the list, so it has to read the same order */
+  var tk=secRows(secById("open"));
   var a=$("#alert");
   if(tk.length){
     a.hidden=false;
@@ -1664,7 +1688,7 @@ function reportBlocks(){
     }
     if(!sec.doc || seen[sec.doc]) return;
     seen[sec.doc]=1;
-    var list=items(sec.doc);
+    var list=secRows(sec);
     if(list.length) out.push({label:sec.label, note:sec.note, kids:[{sec:sec, rows:list}]});
   });
   return out;

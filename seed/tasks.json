@@ -1,11 +1,11 @@
 {
   "items": [
     {
-      "id": "tk-thu",
-      "title": "Decide on Thursday 15 Oct — the last park date open",
-      "owner": "Aaron",
+      "detail": "The only park date still unbought, and it dies when you board the Z165 on 2 October — you cannot add it from Tibet. A whole 1-Day ticket (¥449–499) for a morning before the 18:25 out of Pudong.\n\nSame deadline covers the other Disney decision: the Wednesday ticket is the free-cancellation variant, refundable in full until 6 October, but the 6th falls while you are on the plateau. If you are dropping either, do it before 1 October.",
       "due": "by 1 Oct",
-      "detail": "The only park date still unbought, and it dies when you board the Z165 on 2 October — you cannot add it from Tibet. A whole 1-Day ticket (¥449–499) for a morning before the 18:25 out of Pudong.\n\nSame deadline covers the other Disney decision: the Wednesday ticket is the free-cancellation variant, refundable in full until 6 October, but the 6th falls while you are on the plateau. If you are dropping either, do it before 1 October."
+      "id": "tk-thu",
+      "owner": "Aaron",
+      "title": "Decide on Thursday 15 Oct — the last park date open"
     },
     {
       "detail": "Neither can be obtained inside China. The eSIM is the one that matters: it routes through a foreign carrier, which is what keeps WhatsApp working, and WhatsApp is the only channel James uses.",
@@ -22,57 +22,57 @@
       "title": "Get Alipay verified against your passport"
     },
     {
-      "detail": "Twice: once at 23 kg for Korean Air, once at 20 kg for the train and the domestic flight. The second number is the one that counts.",
-      "due": "before packing",
+      "detail": "BY THE 21st, NOT LATER. You fly to LA on the 22nd and the China bags go with you — there is no second chance to repack at home. This is the earliest hard deadline on the list.\n\nWeigh the Away twice: once at 23 kg for Korean Air, once at 20 kg for the train and the domestic flight. The second number is the one that counts.",
+      "due": "by 21 Sep",
       "id": "tk007",
       "owner": "Aaron",
       "title": "Do a full pack and weigh the Away at home"
     },
     {
       "detail": "Cash is a backup in China now, not the default. Do this at home. Tell the card issuer to expect international purchases and to allow 3D Secure — that refusal is the commonest reason a wallet won't bind.",
-      "due": "before 27 Sep",
+      "due": "by 27 Sep",
       "id": "tk009",
       "owner": "Aaron",
       "title": "Set up WeChat and fund the wallets"
     },
     {
       "detail": "Organic Maps — the maintained successor to the maps.me Sandra used. Add Amap in English for live transit. She credits offline GPS with rescuing her repeatedly.",
-      "due": "before 27 Sep",
+      "due": "by 27 Sep",
       "id": "tk010",
       "owner": "Aaron",
       "title": "Download offline maps, Pleco, and the Google Translate Chinese pack"
     },
     {
       "detail": "Include China and Korea. A frozen card in Shigatse is a bad afternoon.",
-      "due": "before 27 Sep",
+      "due": "by 27 Sep",
       "id": "tk012",
       "owner": "Aaron",
       "title": "Tell your banks and card issuers the dates"
     },
     {
       "detail": "Many policies cap altitude or exclude evacuation. Confirm both in writing.",
-      "due": "before 27 Sep",
+      "due": "by 27 Sep",
       "id": "tk014",
       "owner": "Aaron",
       "title": "Check that your travel insurance covers 5,200 m"
     },
     {
       "detail": "Passport, visa, itinerary, insurance, card numbers.",
-      "due": "before 27 Sep",
+      "due": "by 27 Sep",
       "id": "tk015",
       "owner": "Aaron",
       "title": "Leave copies of everything with someone at home"
     },
     {
       "detail": "Seven days out including the booking day, so 30 September opens on the 24th. bmy.com.cn or the museum's own WeChat account — both take a passport directly and the gate scanners read it. Not through an OTA: the museum stated in June it has never authorised a third-party platform, and the on-site ticket windows are gone entirely. For holidays it has lately released the whole block at once about a week out, so watch for a National Day notice from around the 20th.",
-      "due": "24 Sep",
+      "due": "on 24 Sep",
       "id": "tk021",
       "owner": "Aaron",
       "title": "Reserve the Terracotta Warriors for 30 Sep"
     },
     {
       "detail": "Free but ticketed, released five days ahead at 17:00 China time sharp against a daily quota — 05:00 in Atlanta. Book at sxhm.com, the WeChat mini-programme, or the WeChat account (陕西历史博物馆); the website route is newer and easiest with a passport. Prefilling your details is not the same as submitting. Extended hours through 14 Nov, 08:30–19:00, no weekly closure, so a failed morning slot can be retried for an evening one.",
-      "due": "26 Sep, 05:00 Atlanta",
+      "due": "on 26 Sep, 05:00",
       "id": "tk022",
       "owner": "Aaron",
       "title": "Reserve the Shaanxi History Museum for 1 Oct"
@@ -86,7 +86,7 @@
     },
     {
       "detail": "84579041 and 84582237 are back-to-back. Unlinked, you risk being moved rooms on the morning of the 1st.",
-      "due": "before 29 Sep",
+      "due": "by 29 Sep",
       "id": "tk025",
       "owner": "Aaron",
       "title": "Ask the Westin to link the two reservations"
