@@ -371,7 +371,7 @@ footer.foot{border-top:1px solid var(--line); padding-block:20px 40px; color:var
 .g-tour{grid-template-columns:70px 104px minmax(0,1fr)}
 .g-stays{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) 132px}
 .g-disney{grid-template-columns:minmax(0,1fr) 182px 96px}
-.g-tasks{grid-template-columns:minmax(0,1fr) 118px 92px 158px}
+.g-tasks{grid-template-columns:minmax(0,1fr) 128px 176px}
 .g-money{grid-template-columns:minmax(0,1fr) 192px 96px}
 .g-apps{grid-template-columns:minmax(0,1fr) 168px}
 .g-packing{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) 116px 92px}
@@ -509,7 +509,7 @@ var SCHEMA=[
       {k:"detail",l:"Why",         type:"area",       ph:"Why"}
     ]},
   { id:"tibet", doc:"tour", label:"Tibet tour",
-    note:"Asia Odyssey's eight-day Everest Base Camp tour, party of five, booked with the receipt issued 13 August. Day numbers are matched to dates by inference — James has not written the schedule down.",
+    note:"Asia Odyssey's eight-day Everest Base Camp tour — you, Jeff and Kamana — booked with the receipt issued 13 August. Day numbers are matched to dates by inference — James has not written the schedule down.",
     fields:[
       {k:"day",   l:"Day",      cls:"mono strong", ph:"Day"},
       {k:"date",  l:"Date",     cls:"mono",        ph:"Date"},
@@ -536,12 +536,14 @@ var SCHEMA=[
       {k:"status",l:"State",  type:"status"},
       {k:"detail",l:"Detail", type:"area",  ph:"Detail"}
     ]},
+  /* Everything on this tab is open by definition \u2014 finishing something means
+     deleting the row. Action and Pending split the list in half and only Action
+     reached the banner, so half the work was invisible. One state, no column. */
   { id:"open", doc:"tasks", label:"Open items",
-    note:"Beds and park tickets are done. What is left is admin that has to happen before you lose easy connectivity, two museum slots that open on fixed dates, and one ticket decision that dies when you board the Z165.",
+    note:"Beds and park tickets are done. What is left is admin that has to happen before you lose easy connectivity, two museum slots that open on fixed dates, and one ticket decision that dies when you board the Z165. Everything here is outstanding \u2014 tick something off by removing it.",
     fields:[
       {k:"title", l:"Item",  cls:"big",   ph:"What needs doing"},
       {k:"owner", l:"Who",   cls:"mono",  ph:"Owner"},
-      {k:"status",l:"State", type:"status"},
       {k:"due",   l:"When",  cls:"mono",  ph:"Deadline"},
       {k:"detail",l:"Why",   type:"area", ph:"Context"}
     ]},
@@ -650,8 +652,8 @@ var LEGS=[
    sum:"Thirty hours and 2,781 km, Xi\u2019an to Lhasa over Tanggula.",
    note:"One train, one night, and the only leg where you gain 3,250 m without getting off anything. The Away shuts under the bunk at Xi\u2019an and does not open again until Lhasa."},
   {id:"tibet", label:"Tibet", dates:"3 \u2013 10 Oct", via:"tour days 1\u20138",
-   sum:"Eight days, party of five, with a tent night at 5,200 m.",
-   note:"Asia Odyssey\u2019s eight-day Everest Base Camp tour. Day one is deliberately empty because Lhasa is already 3,650 m, and everything after it climbs."},
+   sum:"Eight days with Jeff and Kamana, and a tent night at 5,200 m.",
+   note:"Asia Odyssey\u2019s eight-day Everest Base Camp tour, and the only leg you are not doing alone — Jeff and Kamana are with you from Lhasa to the airport on the 10th. Day one is deliberately empty because Lhasa is already 3,650 m, and everything after it climbs."},
   {id:"shanghai", label:"Shanghai", dates:"10 \u2013 12 Oct", via:"MU 2336",
    sum:"Land at 21:50, then the one unbooked block on the trip.",
    note:"Arrival, one night downtown, and the Sunday city day on foot. You land at Hongqiao too late for the last Line 11 — which is exactly why the first night is downtown and the move to Disney happens on Sunday in daylight."},
@@ -836,8 +838,9 @@ function rowNode(sec,row){
   if(row.prio==="must") cls+=" must";
   var r=el("div",cls); r.dataset.rid=row.id;
   var st=el("span","stripe");
+  var hasStatus=sec.fields.some(function(f){ return f.type==="status"; });
   if(prep) st.dataset.packed=row.packed||"";
-  else st.dataset.status=row.status||"pending";
+  else if(hasStatus) st.dataset.status=row.status||"pending";
   r.appendChild(st);
   var body=el("div","row-body g-"+sec.doc), hidden=false;
   sec.fields.forEach(function(f){
@@ -978,7 +981,7 @@ function sleepChart(){
 
 function tiles(){
   var segs=items("segments"), stays=items("stays"), tk=items("tasks"), mny=items("money");
-  var openTasks=tk.filter(function(t){return t.status==="action";}).length;
+  var openTasks=tk.length;
   var unconf=segs.filter(function(s){return s.status!=="confirmed";}).length;
   var openStays=stays.filter(function(s){return s.status==="action";}).length;
   var openMoney=mny.filter(function(m){return m.status==="action";}).length;
@@ -1378,7 +1381,7 @@ function secCount(sec){ return sec.countFn ? sec.countFn() : (sec.doc ? items(se
    only when that number is a demand on you rather than a row count. */
 function groupCount(g){
   if(g.id!=="todo") return 0;
-  return items("tasks").filter(function(t){return t.status==="action";}).length;
+  return items("tasks").length;
 }
 function tabCounts(){
   SCHEMA.forEach(function(sec){
@@ -1499,7 +1502,7 @@ function head(){
   var m=store.meta||{};
   $("#mTraveler").textContent=m.traveler||"";
   $("#mDates").textContent="· "+(m.dateRange||"")+(m.length?" · "+m.length:"")+(m.groupSize?" · "+m.groupSize:"");
-  var tk=items("tasks").filter(function(t){return t.status==="action";});
+  var tk=items("tasks");
   var a=$("#alert");
   if(tk.length){
     a.hidden=false;

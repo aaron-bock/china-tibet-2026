@@ -161,8 +161,8 @@
       "zone": "Tibet · EBC night"
     },
     {
-      "bag": "Talon 44",
-      "detail": "Dust, wind and dry air, all at once.",
+      "bag": "Talon 22",
+      "detail": "Under the seat, not overhead — thirteen hours of dry cabin air is the first thing your lenses meet.",
       "group": "Medical & altitude",
       "id": "pk050",
       "item": "Eye drops",
@@ -366,13 +366,23 @@
     },
     {
       "bag": "Talon 22",
-      "detail": "Dust and dry air above 4,000 m make lenses miserable — bring the glasses.",
+      "detail": "Dailies, so no solution and no case. Bring the glasses — dust and dry air above 4,000 m make lenses miserable.",
       "group": "Toiletries",
       "id": "pk101",
-      "item": "Glasses and contacts",
+      "item": "Glasses and daily contacts",
       "own": "own",
       "prio": "must",
       "zone": "Tibet · EBC night"
+    },
+    {
+      "id": "pk148",
+      "item": "Daily lenses × 25",
+      "bag": "Away",
+      "group": "Toiletries",
+      "own": "own",
+      "prio": "must",
+      "zone": "All legs",
+      "detail": "Twenty days plus spares. Not replaceable on the plateau, and a fresh lens daily beats cleaning one in a tent."
     },
     {
       "bag": "Away",

@@ -4,7 +4,6 @@
       "id": "tk-thu",
       "title": "Decide on Thursday 15 Oct — the last park date open",
       "owner": "Aaron",
-      "status": "action",
       "due": "by 1 Oct",
       "detail": "The only park date still unbought, and it dies when you board the Z165 on 2 October — you cannot add it from Tibet. A whole 1-Day ticket (¥449–499) for a morning before the 18:25 out of Pudong.\n\nSame deadline covers the other Disney decision: the Wednesday ticket is the free-cancellation variant, refundable in full until 6 October, but the 6th falls while you are on the plateau. If you are dropping either, do it before 1 October."
     },
@@ -13,7 +12,6 @@
       "due": "by 27 Sep",
       "id": "tk002",
       "owner": "Aaron",
-      "status": "action",
       "title": "Install the travel eSIM and the VPN"
     },
     {
@@ -21,7 +19,6 @@
       "due": "by 24 Sep",
       "id": "tk003",
       "owner": "Aaron",
-      "status": "action",
       "title": "Get Alipay verified against your passport"
     },
     {
@@ -29,7 +26,6 @@
       "due": "before packing",
       "id": "tk007",
       "owner": "Aaron",
-      "status": "action",
       "title": "Do a full pack and weigh the Away at home"
     },
     {
@@ -37,7 +33,6 @@
       "due": "before 27 Sep",
       "id": "tk009",
       "owner": "Aaron",
-      "status": "pending",
       "title": "Set up WeChat and fund the wallets"
     },
     {
@@ -45,23 +40,13 @@
       "due": "before 27 Sep",
       "id": "tk010",
       "owner": "Aaron",
-      "status": "pending",
       "title": "Download offline maps, Pleco, and the Google Translate Chinese pack"
-    },
-    {
-      "detail": "Podcasts, films, books. Assume no usable data from Xi'an to Lhasa.",
-      "due": "by 1 Oct",
-      "id": "tk011",
-      "owner": "Aaron",
-      "status": "confirmed",
-      "title": "Download 30 hours of entertainment"
     },
     {
       "detail": "Include China and Korea. A frozen card in Shigatse is a bad afternoon.",
       "due": "before 27 Sep",
       "id": "tk012",
       "owner": "Aaron",
-      "status": "pending",
       "title": "Tell your banks and card issuers the dates"
     },
     {
@@ -69,7 +54,6 @@
       "due": "before 27 Sep",
       "id": "tk014",
       "owner": "Aaron",
-      "status": "pending",
       "title": "Check that your travel insurance covers 5,200 m"
     },
     {
@@ -77,7 +61,6 @@
       "due": "before 27 Sep",
       "id": "tk015",
       "owner": "Aaron",
-      "status": "pending",
       "title": "Leave copies of everything with someone at home"
     },
     {
@@ -85,7 +68,6 @@
       "due": "24 Sep",
       "id": "tk021",
       "owner": "Aaron",
-      "status": "action",
       "title": "Reserve the Terracotta Warriors for 30 Sep"
     },
     {
@@ -93,7 +75,6 @@
       "due": "26 Sep, 05:00 Atlanta",
       "id": "tk022",
       "owner": "Aaron",
-      "status": "action",
       "title": "Reserve the Shaanxi History Museum for 1 Oct"
     },
     {
@@ -101,7 +82,6 @@
       "due": "by 30 Sep",
       "id": "tk024",
       "owner": "Aaron / James",
-      "status": "action",
       "title": "Pin the Tibet permit delivery to 30 Sep or earlier"
     },
     {
@@ -109,16 +89,7 @@
       "due": "before 29 Sep",
       "id": "tk025",
       "owner": "Aaron",
-      "status": "action",
       "title": "Ask the Westin to link the two reservations"
-    },
-    {
-      "detail": "Two bookings now, both confirmed: FUW045023 for Monday 12 and Tuesday 13, UAY706135 for Wednesday 14. Two things left, both small, both only doable before you lose easy connectivity.\n\nNAME AND PASSPORT: both are in the name Aaron Ross Bock. Confirm the name and passport number on each voucher match the passport you will actually carry. Tickets are real-name registered and scanned against that passport at the gate, and this is fixable now and not fixable from Lhasa.\n\nSAVE THEM OFFLINE: the voucher PDFs are attached to the Klook emails of 14 and 15 September. Get both onto the phone and into the Shanghai Disney Resort app — Gmail is behind the firewall from the moment you land, and a screenshot of a QR code is not accepted at the gate.\n\nWorth knowing while you are in the app: whether the vouchers scan straight at the gate or have to be exchanged first. If they need exchanging that is a queue on your first morning.",
-      "due": "Before 27 Sep",
-      "id": "tk-klook",
-      "owner": "Aaron",
-      "status": "confirmed",
-      "title": "Get both Klook vouchers onto your phone, and check the name on them"
     }
   ]
 }
