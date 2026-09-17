@@ -50,20 +50,6 @@
       "value": "+1 614 776 7050"
     },
     {
-      "detail": "",
-      "group": "Cards",
-      "id": "r8",
-      "name": "Wells Fargo",
-      "value": "+1 925 825 7600"
-    },
-    {
-      "detail": "Call collect from abroad. ATM withdrawals capped at $500 a day and six ATM visits a month before the account reclassifies.",
-      "group": "Cards",
-      "id": "r9",
-      "name": "HSBC",
-      "value": "+1 716 841 7212"
-    },
-    {
       "detail": "Silver Medallion.",
       "group": "Loyalty",
       "id": "r10",
@@ -71,7 +57,7 @@
       "value": "2147550335"
     },
     {
-      "detail": "Lounge access, 1,000-point welcome gift and a room upgrade at the Westin; turns the Courtyard's paid breakfast into a free one.",
+      "detail": "Lounge access, a 1,000-point welcome gift and a room upgrade at the Westin. The Shanghai hotels are Trip.com bookings, so Bonvoy does nothing there.",
       "group": "Loyalty",
       "id": "r11",
       "name": "Marriott Bonvoy",
@@ -127,18 +113,18 @@
       "value": "UAY706135"
     },
     {
+      "detail": "10–11 Oct, 1 night. Hotel conf 109750832349. +86 21 6322 2888. The PIN is in the Trip.com email, deliberately not written down here.",
+      "group": "Booking refs",
       "id": "r-metropolo",
       "name": "Trip.com · Metropolo Nanjing Road",
-      "value": "1658114869461628",
-      "group": "Booking refs",
-      "detail": "10–11 Oct, 1 night. Hotel conf 109750832349. +86 21 6322 2888. The PIN is in the Trip.com email, deliberately not written down here."
+      "value": "1658114869461628"
     },
     {
+      "detail": "11–15 Oct, 4 nights. Hotel conf W107837385-1HMC. +86 21 2099 8003. The PIN is in the Trip.com email, deliberately not written down here.",
+      "group": "Booking refs",
       "id": "r-toy",
       "name": "Trip.com · Toy Story Hotel",
-      "value": "1658114869392408",
-      "group": "Booking refs",
-      "detail": "11–15 Oct, 4 nights. Hotel conf W107837385-1HMC. +86 21 2099 8003. The PIN is in the Trip.com email, deliberately not written down here."
+      "value": "1658114869392408"
     },
     {
       "detail": "Or the museum's own WeChat account. Never an OTA — the museum has never authorised one, and the on-site ticket windows are gone.",

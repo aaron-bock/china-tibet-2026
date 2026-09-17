@@ -518,7 +518,7 @@ var SCHEMA=[
       {k:"detail",l:"Detail",   type:"area",       ph:"Detail"}
     ]},
   { id:"stays", doc:"stays", label:"Stays",
-    note:"Xi'an is booked and the Tibet nights sit inside the tour. Shanghai is the largest open block on the trip — the comparison and the arithmetic are in each row.",
+    note:"Every bed on the trip is booked. Xi'an at the Westin, the Tibet nights inside the tour, and Shanghai split — one night downtown on the Saturday, four at Toy Story from the Sunday.",
     fields:[
       {k:"name",    l:"Hotel",     cls:"big",   ph:"Property"},
       {k:"place",   l:"Where",     cls:"",      ph:"City and nights"},
@@ -529,7 +529,7 @@ var SCHEMA=[
       {k:"detail",  l:"Detail",    type:"area", ph:"Rate, cancellation, address"}
     ]},
   { id:"disney", doc:"disney", label:"Disneyland",
-    note:"Three mechanisms interact and only one is obvious: a rolling 30-day sales window, real-name ticketing, and a price ladder that collapses the moment Golden Week ends. The window is open now.",
+    note:"Three park days bought and one decision left. Tickets are real-name registered and scanned against the passport you booked with, and early park entry now comes free with the Toy Story room.",
     fields:[
       {k:"item",  l:"Line",   cls:"strong", ph:"What"},
       {k:"price", l:"Price",  cls:"mono",   ph:"Price"},
@@ -537,7 +537,7 @@ var SCHEMA=[
       {k:"detail",l:"Detail", type:"area",  ph:"Detail"}
     ]},
   { id:"open", doc:"tasks", label:"Open items",
-    note:"One hard deadline that is open right now, one unbooked block, and a fortnight of admin — none of which can be fixed from behind the firewall.",
+    note:"Beds and park tickets are done. What is left is admin that has to happen before you lose easy connectivity, two museum slots that open on fixed dates, and one ticket decision that dies when you board the Z165.",
     fields:[
       {k:"title", l:"Item",  cls:"big",   ph:"What needs doing"},
       {k:"owner", l:"Who",   cls:"mono",  ph:"Owner"},
@@ -546,7 +546,7 @@ var SCHEMA=[
       {k:"detail",l:"Why",   type:"area", ph:"Context"}
     ]},
   { id:"money", doc:"money", label:"Money",
-    note:"What is paid, what is owed, and the handful of figures that only exist once the Disneyland calendar opens.",
+    note:"What is paid, what is owed, and the one figure still missing — Klook never put a price on the Wednesday ticket.",
     fields:[
       {k:"item",  l:"Line",   cls:"strong", ph:"What"},
       {k:"amount",l:"Amount", cls:"mono",   ph:"Amount"},
@@ -638,7 +638,7 @@ var SCHEMA=[
    own shapes — a leg tab gathers whichever rows are tagged for it and renders
    each source in that source's own layout. Nothing was flattened to fit. */
 SCHEMA.push({ id:"overview", label:"Overview",
-  note:"Seven legs in twenty days, and what is still owed on each. Every booking, bed, tour day, ticket and forecast lives on the leg it belongs to \u2014 this is the shape of the whole thing in one screen." });
+  note:"Seven legs in twenty days. Every flight, bed, tour day, ticket and forecast lives on the leg it belongs to \u2014 this is the shape of the whole thing in one screen." });
 var LEGS=[
   {id:"out", label:"Outbound", dates:"27 \u2013 29 Sep", via:"KE 012 \u00b7 KE 141",
    sum:"Los Angeles to Seoul to Xi\u2019an, and a date line that eats the 28th.",
@@ -654,7 +654,7 @@ var LEGS=[
    note:"Asia Odyssey\u2019s eight-day Everest Base Camp tour. Day one is deliberately empty because Lhasa is already 3,650 m, and everything after it climbs."},
   {id:"shanghai", label:"Shanghai", dates:"10 \u2013 12 Oct", via:"MU 2336",
    sum:"Land at 21:50, then the one unbooked block on the trip.",
-   note:"Arrival, five nights still to book, and the Sunday city day. You land at Hongqiao too late for the last Line 11, which is the detail that decides the first night."},
+   note:"Arrival, one night downtown, and the Sunday city day on foot. You land at Hongqiao too late for the last Line 11 — which is exactly why the first night is downtown and the move to Disney happens on Sunday in daylight."},
   {id:"disney", label:"Disney", dates:"12 \u2013 15 Oct", via:"3 park days",
    sum:"Three weekdays in the emptiest fortnight of the autumn.",
    note:"Monday to Wednesday, all ticketed, on the quietest days of the season. The optional Thursday morning is here as a decision; the morning itself sits on Home with the flight."},

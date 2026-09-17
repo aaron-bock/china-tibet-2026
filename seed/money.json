@@ -64,18 +64,18 @@
       "status": "confirmed"
     },
     {
+      "amount": "$659.80",
+      "detail": "Trip.com 1658114869392408, prepaid by Apple Pay 16 September. Includes early park entry once per room and a Disneytown shuttle, so ¥179 of the Disney budget goes away.",
       "id": "m9b",
       "item": "Toy Story Hotel · 4 nights, 11–15 Oct",
-      "amount": "$659.80",
-      "status": "confirmed",
-      "detail": "Trip.com 1658114869392408, prepaid by Apple Pay 16 September. Includes early park entry once per room and a Disneytown shuttle, so ¥179 of the Disney budget goes away."
+      "status": "confirmed"
     },
     {
+      "amount": "¥30",
+      "detail": "On the door, or through the Metro 大都会 app. No reservation.",
       "id": "m9c",
       "item": "Metro Museum · Sun 11 Oct",
-      "amount": "¥30",
-      "status": "pending",
-      "detail": "On the door, or through the Metro 大都会 app. No reservation."
+      "status": "pending"
     },
     {
       "amount": "$100.21",
@@ -85,11 +85,11 @@
       "status": "confirmed"
     },
     {
-      "amount": "",
-      "detail": "Bought 15 September on Klook, booking UAY706135, 1-Day with free cancellation, Adult × 1.\n\nTHE FIGURE IS MISSING because Klook's confirmation email does not carry one. Take it from the Klook app or your card statement and drop it in here — it is the only unpriced thing you have actually paid for. For scale: the free-cancellation variant sits above the ¥425–449 Early Bird and above the ¥475 gate price.\n\nPark running total: $100.21 for the 2-Day, plus this, plus ¥449–499 if you take the Thursday. No Premier Access budgeted — three post-Golden-Week weekdays should not need it.",
       "id": "m10b",
       "item": "Shanghai Disneyland — Wed 14 Oct, 1-Day",
-      "status": "action"
+      "amount": "",
+      "status": "action",
+      "detail": "Bought 15 September, Klook UAY706135, the free-cancellation 1-Day. THE ONLY THING YOU HAVE PAID FOR WITH NO FIGURE ON FILE — Klook's confirmation email carries the booking and the voucher but not the price. Take it from the Klook app or the card statement. It sits above the ¥425–449 Early Bird and above the ¥475 gate price."
     },
     {
       "amount": "¥449–499",
@@ -127,11 +127,18 @@
       "status": "action"
     },
     {
-      "amount": "¥180–250",
-      "detail": "Unavoidable: you land 21:50, bags clear ~22:20, and the last Line 11 with a change at Jiangsu Road goes ~22:30–23:00. ~50 km, 60–70 min. One-off, first night only.",
+      "amount": "¥70–100",
+      "detail": "You land 21:50 and bags clear about 22:20. Metropolo is 20 km from Hongqiao, roughly 30 minutes. The metro runs there but you would be chasing the last trains with luggage. Half what the Disney side would have cost at that hour, which is part of why the first night is downtown.",
       "id": "m15",
-      "item": "Hongqiao → Disney taxi, 10 Oct",
+      "item": "Hongqiao → downtown taxi, 10 Oct",
       "status": "pending"
+    },
+    {
+      "id": "m15b",
+      "item": "Downtown → Toy Story, 11 Oct",
+      "amount": "¥150–200",
+      "status": "pending",
+      "detail": "Sunday evening, after the Bund. About 45 minutes by Didi. The metro alternative is Line 10 to Jiaotong University then Line 11 to Disney Resort — 70 minutes and ¥7, but with bags after 8 km on foot."
     },
     {
       "amount": "~¥25",

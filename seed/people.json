@@ -1,53 +1,32 @@
 {
   "items": [
     {
+      "contact": "+86 177 2640 4023 (WhatsApp) · WeChat Asiaodyssey06 · james@asiaodysseytravel.com",
+      "detail": "Works 09:30–18:30 China time. Customer ID AOT-BJ-James-50674 in every subject line. Has the visa scans and the hotel, confirmed the Tibet permit for delivery, and confirmed the Z165 soft sleeper on 16 August. WhatsApp is the channel he actually uses — the real plan lives there, not in email. One message from him dated 17 August could not be decrypted in the browser.",
       "id": "p1",
       "name": "James Guo",
-      "role": "Senior Travel Consultant, Asia Odyssey Travel",
-      "contact": "+86 177 2640 4023 (WhatsApp) · WeChat Asiaodyssey06 · james@asiaodysseytravel.com",
-      "detail": "Works 09:30–18:30 China time. Customer ID AOT-BJ-James-50674 in every subject line. Has the visa scans and the hotel, confirmed the Tibet permit for delivery, and confirmed the Z165 soft sleeper on 16 August. WhatsApp is the channel he actually uses — the real plan lives there, not in email. One message from him dated 17 August could not be decrypted in the browser."
+      "role": "Senior Travel Consultant, Asia Odyssey Travel"
     },
     {
+      "contact": "jamenv3d@gmail.com",
+      "detail": "Sharing a twin room with you — two separate beds, confirmed with James. Likely on Kamana's Lhasa–Seoul flight out on the 10th.",
       "id": "p2",
       "name": "Jeff Margolin",
-      "role": "Travelling companion",
-      "contact": "jamenv3d@gmail.com",
-      "detail": "Sharing a twin room with you — two separate beds, confirmed with James. Likely on Kamana's Lhasa–Seoul flight out on the 10th."
+      "role": "Travelling companion"
     },
     {
+      "contact": "kamana2016@icloud.com",
+      "detail": "Lands Chengdu 24 Sep, takes the Chengdu–Lhasa train on the 30th (Z322, into Lhasa 07:24 on 2 Oct), flies Lhasa 13:20 → Seoul on Air China 10 Oct, booking PZC6M0. She or Alka takes the single room and the RMB 2,100 supplement.",
       "id": "p3",
       "name": "Kamana Mathur",
-      "role": "Organiser and main line to James",
-      "contact": "kamana2016@icloud.com",
-      "detail": "Lands Chengdu 24 Sep, takes the Chengdu–Lhasa train on the 30th (Z322, into Lhasa 07:24 on 2 Oct), flies Lhasa 13:20 → Seoul on Air China 10 Oct, booking PZC6M0. She or Alka takes the single room and the RMB 2,100 supplement."
+      "role": "Organiser and main line to James"
     },
     {
-      "id": "p4",
-      "name": "Alka Garg",
-      "role": "Travelling companion",
-      "contact": "ahgarg@gmail.com · alka.garg@ineos.com",
-      "detail": "Set up the group planning calls. Had visa trouble in July; James sent an invitation letter on the 30th."
-    },
-    {
-      "id": "p5",
-      "name": "Anissa McFarland",
-      "role": "Travelling companion",
-      "contact": "annbobmcf@gmail.com",
-      "detail": "Also hit repeated visa rejections in July and got an invitation letter. Her friend Amor dropped out, leaving five."
-    },
-    {
+      "contact": "sandra.rothbard@gmail.com",
+      "detail": "Urban planner; blogged the 2017 Israel–Hong Kong–China–Cambodia trip at walltowall2017.wordpress.com. The blog is PRIVATE — approved followers only, readable only from a browser already logged into an approved WordPress.com account. All 70 entries were read on 9 September and the relevant material is distilled in the Notes tab and the Sandra-2017 page.",
       "id": "p6",
       "name": "Sandra Rothbard",
-      "role": "China recommendations · 2017",
-      "contact": "sandra.rothbard@gmail.com",
-      "detail": "Urban planner; blogged the 2017 Israel–Hong Kong–China–Cambodia trip at walltowall2017.wordpress.com. The blog is PRIVATE — approved followers only, readable only from a browser already logged into an approved WordPress.com account. All 70 entries were read on 9 September and the relevant material is distilled in the Notes tab and the Sandra-2017 page."
-    },
-    {
-      "id": "p7",
-      "name": "Todd Wong",
-      "role": "Quanjude roast duck contact",
-      "contact": "+86 135 2433 8834",
-      "detail": "Introduced through Sandra's old boss Bob Isaacson. Roast duck is much better with a group, so this is more use in Shanghai than solo in Xi'an."
+      "role": "China recommendations · 2017"
     }
   ]
 }

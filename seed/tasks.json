@@ -1,12 +1,12 @@
 {
   "items": [
     {
-      "detail": "Wednesday is done: UAY706135, bought 15 September, so Monday, Tuesday and Wednesday are all ticketed.\n\nTHURSDAY 15 OCTOBER IS THE ONLY DATE STILL OPEN, and it is now or never. It is a full 1-Day ticket (¥449–499) for a morning before the 18:25 from Pudong, and you cannot add it once you board the Z165 on 2 October. Buy it before 1 October or decide you are not taking it.\n\nOne thing to do either way, and it is quick: the Wednesday ticket you bought is the free-cancellation variant, refundable in full until 6 October. That date falls while you are in Tibet with no reliable signal, so the real deadline for changing your mind is 1 October as well.\n\nDo NOT buy Sunday 11 October. That is the city day.",
-      "due": "by 1 Oct",
-      "id": "tk001",
+      "id": "tk-thu",
+      "title": "Decide on Thursday 15 Oct — the last park date open",
       "owner": "Aaron",
       "status": "action",
-      "title": "Decide on Thursday 15 Oct — the last park date open"
+      "due": "by 1 Oct",
+      "detail": "The only park date still unbought, and it dies when you board the Z165 on 2 October — you cannot add it from Tibet. A whole 1-Day ticket (¥449–499) for a morning before the 18:25 out of Pudong.\n\nSame deadline covers the other Disney decision: the Wednesday ticket is the free-cancellation variant, refundable in full until 6 October, but the 6th falls while you are on the plateau. If you are dropping either, do it before 1 October."
     },
     {
       "detail": "Neither can be obtained inside China. The eSIM is the one that matters: it routes through a foreign carrier, which is what keeps WhatsApp working, and WhatsApp is the only channel James uses.",
@@ -25,44 +25,12 @@
       "title": "Get Alipay verified against your passport"
     },
     {
-      "detail": "Booked 16 September: Metropolo downtown for the Saturday night, Toy Story for the four nights after. The split, as the 21:50 landing required.",
-      "due": "This week",
-      "id": "tk004",
-      "owner": "Aaron",
-      "status": "done",
-      "title": "Book Shanghai beds — and decide whether to split the stay"
-    },
-    {
-      "detail": "Put the real sling contents in it — passport, permit, phone, meds, wipes, power bank, sunglasses — and wear it out for a day. The open question is the sunglasses: 2 in of depth means a hard case won't go, so decide now whether they ride bare, in a soft pouch, or on your face. Return the 7 L Sling inside REI's window.",
-      "due": "before packing",
-      "id": "tk005",
-      "owner": "Aaron",
-      "status": "action",
-      "title": "Wear-test the Waistpack for a full day, loaded"
-    },
-    {
-      "detail": "Domestic Chinese economy is normally 20 kg, not the 23 kg Korean Air gives you. If GBDPCB is ticketed as part of the international journey it may inherit the higher allowance — ask James, because 3 kg decides what comes.",
-      "due": "before packing",
-      "id": "tk006",
-      "owner": "Aaron",
-      "status": "action",
-      "title": "Confirm the checked allowance on the China Eastern sector"
-    },
-    {
       "detail": "Twice: once at 23 kg for Korean Air, once at 20 kg for the train and the domestic flight. The second number is the one that counts.",
       "due": "before packing",
       "id": "tk007",
       "owner": "Aaron",
       "status": "action",
       "title": "Do a full pack and weigh the Away at home"
-    },
-    {
-      "detail": "It must work before you land. Installing one from inside China is much harder.",
-      "due": "by 27 Sep",
-      "id": "tk008",
-      "owner": "Aaron",
-      "status": "pending",
-      "title": "Install and test a VPN — two of them"
     },
     {
       "detail": "Cash is a backup in China now, not the default. Do this at home. Tell the card issuer to expect international purchases and to allow 3D Secure — that refusal is the commonest reason a wallet won't bind.",
@@ -85,7 +53,7 @@
       "due": "by 1 Oct",
       "id": "tk011",
       "owner": "Aaron",
-      "status": "pending",
+      "status": "confirmed",
       "title": "Download 30 hours of entertainment"
     },
     {
@@ -95,14 +63,6 @@
       "owner": "Aaron",
       "status": "pending",
       "title": "Tell your banks and card issuers the dates"
-    },
-    {
-      "detail": "You go from 400 m to 5,200 m in nine days with almost no acclimatisation buffer. Worth a conversation about acetazolamide, an anti-nausea option, and an antibiotic for traveller's diarrhoea.",
-      "due": "now",
-      "id": "tk013",
-      "owner": "Aaron",
-      "status": "action",
-      "title": "Ask your doctor about altitude medication"
     },
     {
       "detail": "Many policies cap altitude or exclude evacuation. Confirm both in writing.",
@@ -121,30 +81,6 @@
       "title": "Leave copies of everything with someone at home"
     },
     {
-      "detail": "Logging in at the gate is how people lose their first hour. Expect to finish registration in Shanghai rather than Atlanta — it leans on SMS verification that foreign numbers handle unevenly, and it goes better on a local network. It needs live data all day; screenshots of QR codes are not accepted.",
-      "due": "before 27 Sep",
-      "id": "tk017",
-      "owner": "Aaron",
-      "status": "pending",
-      "title": "Install the Shanghai Disney Resort app and log in at home"
-    },
-    {
-      "detail": "Now, not on the Gyawu La.",
-      "due": "now",
-      "id": "tk019",
-      "owner": "Aaron",
-      "status": "pending",
-      "title": "Break in the boots"
-    },
-    {
-      "detail": "Power banks, slides, thermos, wipes and train food — one afternoon at a supermarket and an electronics shop covers the whole \"Buy it in China\" list before the Z165 leaves on the 2nd. Golden Week starts 1 October, so do it on the 29th or 30th.",
-      "due": "29-30 Sep",
-      "id": "tk020",
-      "owner": "Aaron",
-      "status": "action",
-      "title": "Plan a day-one shopping run in Xi'an"
-    },
-    {
       "detail": "Seven days out including the booking day, so 30 September opens on the 24th. bmy.com.cn or the museum's own WeChat account — both take a passport directly and the gate scanners read it. Not through an OTA: the museum stated in June it has never authorised a third-party platform, and the on-site ticket windows are gone entirely. For holidays it has lately released the whole block at once about a week out, so watch for a National Day notice from around the 20th.",
       "due": "24 Sep",
       "id": "tk021",
@@ -159,14 +95,6 @@
       "owner": "Aaron",
       "status": "action",
       "title": "Reserve the Shaanxi History Museum for 1 Oct"
-    },
-    {
-      "detail": "The last loose thread. Day 1 through Day 8 is inferred, not stated: your train gets in the afternoon of the 3rd, everyone flies out on the 10th, and the others arrive on the 2nd with the extra pre-tour night he offered. It fits, but nobody has written the dates down — worth one line while you have his attention. One message from him dated 17 August could not be decrypted in the browser.",
-      "due": "before departure",
-      "id": "tk023",
-      "owner": "Aaron",
-      "status": "action",
-      "title": "Get the tour dates in writing from James"
     },
     {
       "detail": "James has confirmed delivery to the Westin. Courier networks slow to a crawl over Golden Week (1–7 Oct), and the permit is the one item on this trip with no fallback. Delivery address: 西安威斯汀大酒店，西安市曲江新区慈恩路66号. Confirm on 1 Oct that it has physically arrived.",
@@ -185,51 +113,11 @@
       "title": "Ask the Westin to link the two reservations"
     },
     {
-      "detail": "Free but timed, and the booking window opens SEVEN DAYS OUT — for Sunday the 11th that is 4 October, when you are somewhere between Shigatse and Lhasa. Book from Lhasa if you have signal.\n\nIT IS NOT FATAL IF YOU MISS IT. There are reservation machines in the lobby, and off-peak the hall generally takes walk-ins. A Sunday in the middle of October, straight after Golden Week, is about as off-peak as it gets. Try for the slot, but do not let it wreck a day in Tibet.\n\nOpen 09:00–17:00, last entry 16:00, shut Wednesdays. 100 People's Avenue, east side of People's Square.",
-      "due": "4 Oct",
-      "id": "tk026",
-      "owner": "Aaron",
-      "status": "pending",
-      "title": "Grab the Urban Planning Exhibition Center slot from Lhasa"
-    },
-    {
-      "detail": "A works notice dated 4 September runs about a month from the 5th, which lands right on your visit to the Terracotta Warriors.",
-      "due": "before 30 Sep",
-      "id": "tk027",
-      "owner": "Aaron",
-      "status": "pending",
-      "title": "Check whether Pit 2's south side has reopened"
-    },
-    {
-      "detail": "October park hours still aren't published — the official calendar returns 'unable to provide time' for those dates. Plan against 08:30–20:00, which is what the site shows for the current window. Exact prices for 11–14 October don't exist yet either; expect ¥499 Sun/Mon and ¥475 Tue/Wed, the shape the same weekdays carry a month earlier.",
-      "due": "when the window opens",
-      "id": "tk028",
-      "owner": "Aaron",
-      "status": "pending",
-      "title": "Confirm October park hours and the 11–14 Oct prices"
-    },
-    {
-      "detail": "Free but timed, and the booking window opens SEVEN DAYS OUT — for Sunday the 11th that is 4 October, when you are somewhere between Shigatse and Lhasa. Book from Lhasa if you have signal.\n\nIT IS NOT FATAL IF YOU MISS IT. There are reservation machines in the lobby, and off-peak the hall generally takes walk-ins. A Sunday in the middle of October, straight after Golden Week, is about as off-peak as it gets. Try for the slot, but do not let it wreck a day in Tibet.\n\nOpen 09:00–17:00, last entry 16:00, shut Wednesdays. 100 People's Avenue, east side of People's Square.",
-      "due": "4 Oct — from Tibet",
-      "id": "t-upec",
-      "owner": "You",
-      "status": "action",
-      "title": "Book the Urban Planning Exhibition Center for Sun 11 Oct"
-    },
-    {
-      "detail": "Booked — Metropolo Nanjing Road, $102.14, eleven minutes' walk from the Bund.",
-      "due": "Before 27 Sep",
-      "id": "t-jazz",
-      "owner": "You",
-      "status": "done",
-      "title": "Decide on the Saturday-night hotel before you leave"
-    },
-    {
       "detail": "Two bookings now, both confirmed: FUW045023 for Monday 12 and Tuesday 13, UAY706135 for Wednesday 14. Two things left, both small, both only doable before you lose easy connectivity.\n\nNAME AND PASSPORT: both are in the name Aaron Ross Bock. Confirm the name and passport number on each voucher match the passport you will actually carry. Tickets are real-name registered and scanned against that passport at the gate, and this is fixable now and not fixable from Lhasa.\n\nSAVE THEM OFFLINE: the voucher PDFs are attached to the Klook emails of 14 and 15 September. Get both onto the phone and into the Shanghai Disney Resort app — Gmail is behind the firewall from the moment you land, and a screenshot of a QR code is not accepted at the gate.\n\nWorth knowing while you are in the app: whether the vouchers scan straight at the gate or have to be exchanged first. If they need exchanging that is a queue on your first morning.",
       "due": "Before 27 Sep",
       "id": "tk-klook",
       "owner": "Aaron",
-      "status": "action",
+      "status": "confirmed",
       "title": "Get both Klook vouchers onto your phone, and check the name on them"
     }
   ]

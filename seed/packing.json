@@ -231,7 +231,7 @@
       "group": "Toiletries",
       "id": "pk097",
       "item": "Wet wipes and tissues",
-      "own": "buy",
+      "own": "own",
       "prio": "must",
       "zone": "All legs"
     },
@@ -338,13 +338,13 @@
       "zone": "Z165 · EBC night"
     },
     {
+      "bag": "Talon 22",
+      "detail": "",
+      "group": "Clothing",
       "id": "pk147",
       "item": "Cotton gloves",
-      "bag": "Talon 22",
-      "group": "Clothing",
-      "zone": "All legs",
-      "own": "",
-      "detail": ""
+      "own": "own",
+      "zone": "All legs"
     },
     {
       "bag": "Talon 22",
@@ -451,7 +451,7 @@
     },
     {
       "bag": "Talon 44",
-      "detail": "Paper survives a dead phone behind the firewall.",
+      "detail": "",
       "group": "Documents & money",
       "id": "pk027",
       "item": "Printed bookings",
@@ -496,7 +496,7 @@
     },
     {
       "bag": "Talon 44",
-      "detail": "Assume food poisoning once — keep two sachets in the sling.",
+      "detail": "",
       "group": "Medical & altitude",
       "id": "pk043",
       "item": "Loperamide and rehydration salts",
@@ -506,7 +506,7 @@
     },
     {
       "bag": "Talon 44",
-      "detail": "Three to four litres a day up there, and plain water will not keep up.",
+      "detail": "",
       "group": "Medical & altitude",
       "id": "pk044",
       "item": "Electrolyte tablets",
@@ -515,7 +515,7 @@
     },
     {
       "bag": "Talon 44",
-      "detail": "The guide carries one too, so nothing elaborate.",
+      "detail": "",
       "group": "Medical & altitude",
       "id": "pk052",
       "item": "First aid kit",
@@ -537,6 +537,7 @@
       "group": "Clothing",
       "id": "pk059",
       "item": "Midweight fleece",
+      "own": "own",
       "zone": "Tibet · EBC night"
     },
     {
@@ -555,6 +556,7 @@
       "group": "Clothing",
       "id": "pk070",
       "item": "Warm hat",
+      "own": "own",
       "prio": "must",
       "zone": "Tibet · EBC night"
     },
@@ -564,6 +566,7 @@
       "group": "Clothing",
       "id": "pk073",
       "item": "Liner and insulated gloves",
+      "own": "own",
       "prio": "must",
       "zone": "EBC night"
     },
@@ -611,6 +614,7 @@
       "group": "Electronics",
       "id": "pk086",
       "item": "Plug adapters ×2",
+      "own": "own",
       "zone": "All legs"
     },
     {
@@ -786,6 +790,7 @@
       "group": "Clothing",
       "id": "pk057",
       "item": "Merino base layer tops ×2",
+      "own": "own",
       "zone": "Tibet · EBC night"
     },
     {
@@ -794,6 +799,7 @@
       "group": "Clothing",
       "id": "pk058",
       "item": "Merino long johns ×2",
+      "own": "buy",
       "prio": "must",
       "zone": "EBC night"
     },
@@ -803,6 +809,7 @@
       "group": "Clothing",
       "id": "pk062",
       "item": "Waterproof overtrousers",
+      "own": "skip",
       "zone": "EBC night"
     },
     {
@@ -865,6 +872,7 @@
       "group": "Clothing",
       "id": "pk069",
       "item": "Heavy wool socks ×2",
+      "own": "own",
       "prio": "must",
       "zone": "EBC night"
     },
@@ -902,6 +910,7 @@
       "group": "Footwear",
       "id": "pk081",
       "item": "Warm insoles",
+      "own": "skip",
       "zone": "EBC night"
     },
     {
@@ -951,13 +960,13 @@
       "zone": "All legs"
     },
     {
+      "bag": "Away",
+      "detail": "",
+      "group": "Toiletries",
       "id": "pk146",
       "item": "Latex gloves",
-      "bag": "Away",
-      "group": "Toiletries",
-      "zone": "All legs",
-      "own": "",
-      "detail": ""
+      "own": "own",
+      "zone": "All legs"
     },
     {
       "bag": "Away",

@@ -26,7 +26,7 @@
       "checkin": "Sat 3 Oct",
       "checkout": "Sat 10 Oct",
       "conf": "AOT-BJ-James-50674",
-      "detail": "Included in the Asia Odyssey tour. Sharing a twin with Jeff — two separate beds, confirmed with James — so the RMB 2,100 single supplement falls to Kamana or Alka. Night of the 7th is the tent camp at base camp, 5,200 m.",
+      "detail": "",
       "id": "h3",
       "leg": "tibet",
       "name": "Tibet tour hotels",
@@ -34,37 +34,15 @@
       "status": "confirmed"
     },
     {
-      "checkin": "",
-      "checkout": "",
-      "conf": "",
-      "detail": "Booked as the split, which was the call the arrival time forced: you land at Hongqiao at 21:50 on the Saturday and the last Line 11 has gone, so night one is downtown and the move to Disney happens on Sunday in daylight.\n\n$761.94 all in — $102.14 for the Metropolo, $659.80 for four nights at Toy Story. That is above the ¥2,000–3,500 band estimated here before, because Toy Story is a Disney-owned hotel; what the extra buys is early park entry and the shuttle, both free with the room.\n\nThe rows below are the comparison that led here. Kept as the record, not as live options.",
-      "id": "s0",
-      "leg": "shanghai",
-      "name": "Decided: one night downtown, four at Toy Story",
-      "place": "10 – 15 Oct · booked 16 Sep",
-      "status": "confirmed"
-    },
-    {
-      "id": "s11",
-      "name": "Metropolo Nanjing Road Nanjing Hotel",
-      "place": "Downtown · Huangpu · 1 night",
-      "status": "confirmed",
       "checkin": "Sat 10 Oct · after 14:00",
       "checkout": "Sun 11 Oct · before 12:00",
       "conf": "1658114869461628",
+      "detail": "锦江都城南京饭店 · No. 200 Shanxi South Road, Huangpu · 上海黄浦区山西南路200号 · +86 21 6322 2888.\n\nBooked on Trip.com 16 September, $102.14 prepaid by Apple Pay, Fashionable Twin Room, two twin beds, one night. Hotel confirmation 109750832349. Free cancellation until 18:00 on 9 October, nothing back after that. A deposit is taken at check-in and refunds on a card take two to four weeks.\n\nTHE LOCATION IS THE WHOLE POINT: five minutes from Nanjing East Road station, eleven minutes' walk to the Bund, fifteen to People's Square. Sunday is a walking day because of where this hotel is.\n\nBreakfast is NOT included — ¥98 at the door, 06:30–10:00. Eat on Nanjing Road instead.\n\nLeave the bags at the desk when you check out on Sunday morning; you come back past the door at the end of the day.",
+      "id": "s11",
       "leg": "shanghai",
-      "detail": "锦江都城南京饭店 · No. 200 Shanxi South Road, Huangpu · 上海黄浦区山西南路200号 · +86 21 6322 2888.\n\nBooked on Trip.com 16 September, $102.14 prepaid by Apple Pay, Fashionable Twin Room, two twin beds, one night. Hotel confirmation 109750832349. Free cancellation until 18:00 on 9 October, nothing back after that. A deposit is taken at check-in and refunds on a card take two to four weeks.\n\nTHE LOCATION IS THE WHOLE POINT: five minutes from Nanjing East Road station, eleven minutes' walk to the Bund, fifteen to People's Square. Sunday is a walking day because of where this hotel is.\n\nBreakfast is NOT included — ¥98 at the door, 06:30–10:00. Eat on Nanjing Road instead.\n\nLeave the bags at the desk when you check out on Sunday morning; you come back past the door at the end of the day."
-    },
-    {
-      "checkin": "Sat 10 Oct",
-      "checkout": "Thu 15 Oct",
-      "conf": "",
-      "detail": "~¥499/night (~$70), and the only rate here confirmed live (Marriott's engine, 10 Sep, for your actual dates). On Disney Avenue, about 900 m — a ten-minute walk to the gate — and Disney Resort is the Line 11 TERMINUS, so downtown stays a one-seat ride. Platinum turns its paid breakfast free and you keep lounge, upgrade and points. Walking home after ILLUMINATE instead of fighting the metro is worth more than it sounds on the third night. Still the one to beat, and nothing below beats it on value — they beat it on other things.",
-      "id": "s1",
-      "leg": "shanghai",
-      "name": "Courtyard by Marriott Shanghai ITRZ",
-      "place": "Disney-side · the value pick",
-      "status": "done"
+      "name": "Metropolo Nanjing Road Nanjing Hotel",
+      "place": "Downtown · Huangpu · 1 night",
+      "status": "confirmed"
     },
     {
       "checkin": "Sun 11 Oct · after 15:00",
@@ -76,94 +54,6 @@
       "name": "Toy Story Hotel",
       "place": "Disney-side · 4 nights",
       "status": "confirmed"
-    },
-    {
-      "checkin": "",
-      "checkout": "",
-      "conf": "",
-      "detail": "Indicative ¥2,000–3,500. The art-nouveau flagship: character breakfast, a ferry across the lake to the park, the full treatment. Same early-entry perk as Toy Story. A lovely hotel and an indefensible one for one person who isn't here for the food — it is four to seven times the Courtyard. Listed because you asked for the range, not because I'd book it.",
-      "id": "s3",
-      "leg": "shanghai",
-      "name": "Shanghai Disneyland Hotel",
-      "place": "Disney-side · Disney-owned",
-      "status": "done"
-    },
-    {
-      "checkin": "",
-      "checkout": "",
-      "conf": "",
-      "detail": "Indicative ¥400–600. The strongest non-Marriott mid-range near the park: free Disney shuttle, and Chuansha is THREE STOPS out on Line 11, so you keep the one-seat ride to town as well. Accor ALL points instead of Bonvoy, and no status, so budget for breakfast. Worth a price check — if it lands materially under the Courtyard it's a real alternative; if it's level, the Courtyard's walk and your Platinum win.",
-      "id": "s4",
-      "leg": "shanghai",
-      "name": "Novotel Shanghai Pudong Chuansha",
-      "place": "Disney-side · Accor",
-      "status": "done"
-    },
-    {
-      "checkin": "",
-      "checkout": "",
-      "conf": "",
-      "detail": "Indicative ¥450–700. Opened in the first half of 2026 in Chuansha New Town, 209 rooms, about a 15-minute drive from the park — so a shuttle-or-metro property, NOT a walk-up, whatever the aggregators imply. Brand-new stock is the appeal, plus IHG One points if that's a programme you use. I could not verify a Disney early-entry partnership for it — one aggregator claimed an 8-minute walk and early entry and both look wrong against IHG's own listing, so treat those claims as unconfirmed. IHG also has Holiday Inn Express Chuansha and Holiday Inn Pudong Kangqiao (free Disney shuttle) in the same band.",
-      "id": "s5",
-      "leg": "shanghai",
-      "name": "Holiday Inn Shanghai Tourism Zone",
-      "place": "Disney-side · IHG, new in 2026",
-      "status": "done"
-    },
-    {
-      "checkin": "",
-      "checkout": "",
-      "conf": "",
-      "detail": "Indicative ¥250–400, and this is where the actual savings are. Ji (H World) and Atour are the two good Chinese mid-range chains — clean, new, well run, and routinely better than Western mid-scale at the price in China. The Ji at Chuansha runs a free Disney shuttle and is ~11 minutes from Chuansha station. The catch is a Chinese-first booking flow and front desks with limited English, which is a different proposition at 22:30 on arrival night than it is on a Tuesday. If you want to cut the Shanghai bed cost roughly in half and you're comfortable with Alipay and translation, this is the option — and it is the clearest case for booking through Trip.com rather than direct.",
-      "id": "s6",
-      "leg": "shanghai",
-      "name": "Ji Hotel or Atour, Chuansha",
-      "place": "Disney-side · Chinese chains",
-      "status": "done"
-    },
-    {
-      "checkin": "",
-      "checkout": "",
-      "conf": "",
-      "detail": "Indicative ¥1,500–2,500. The Art Deco landmark on the Bund, and the jazz bar with the old-timers' band is in the building — which is literally the last item on your Sunday plan. If you split the stay, this is the one night where a splurge earns its keep: you arrive late, you're on the Bund, and the city day starts outside your door. One night here plus four at the Courtyard still comes in well under five nights at Toy Story.",
-      "id": "s7",
-      "leg": "shanghai",
-      "name": "Fairmont Peace Hotel",
-      "place": "Downtown · the Bund · Accor",
-      "status": "done"
-    },
-    {
-      "checkin": "",
-      "checkout": "",
-      "conf": "",
-      "detail": "Indicative ¥1,400–2,600. The Waldorf occupies the old Shanghai Club on the south Bund; Hyatt on the Bund sits north with the best skyline views across to Pudong, and is the better points redemption if you hold World of Hyatt. Andaz Xintiandi is the same group in a livelier neighbourhood, 15 minutes from the Bund by metro. Any of the three does the same job as the Fairmont for the Saturday night.",
-      "id": "s8",
-      "leg": "shanghai",
-      "name": "Waldorf Astoria or Hyatt on the Bund",
-      "place": "Downtown · the Bund",
-      "status": "done"
-    },
-    {
-      "checkin": "",
-      "checkout": "",
-      "conf": "",
-      "detail": "Indicative ¥300–500. Unglamorous and extremely well placed: People's Square is where the Urban Planning Exhibition Center is, and East Nanjing Road walks to the Bund. On Line 2, which is your direct run in from Hongqiao on arrival night. If the Saturday-night splurge doesn't appeal, this is the same split-stay logic for a fifth of the money.",
-      "id": "s9",
-      "leg": "shanghai",
-      "name": "Atour or Ji Hotel, People’s Square / East Nanjing Road",
-      "place": "Downtown · the cheap smart pick",
-      "status": "done"
-    },
-    {
-      "checkin": "",
-      "checkout": "",
-      "conf": "",
-      "detail": "FOUR POINTS ITRZ (¥485): marginally cheaper than the Courtyard and four miles further from the gate. No.\nMARRIOTT KANGQIAO (¥1,012): double, for a Platinum lounge and a shuttle you'd be dependent on.\nRENAISSANCE YU GARDEN (¥895) and COURTYARD SHANGHAI CENTRAL (¥754): good downtown hotels, wrong plan now that three park days are fixed. The Renaissance is the best-placed of them if you decide to do all five downtown anyway.\nFAIRFIELD JINGAN (¥424): cheapest real Western brand downtown, but a 65-minute run to the park.\nGREENTREE ALLIANCE DISNEYLAND NORTH GATE: the budget option people find first. A 25-minute walk, and the Ji or Atour is better for similar money.",
-      "id": "s10",
-      "leg": "shanghai",
-      "name": "Ruled out, and why",
-      "place": "Shanghai · the also-rans",
-      "status": "done"
     }
   ]
 }

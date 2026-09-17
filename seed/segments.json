@@ -8,10 +8,10 @@
       "detail": "Korean Air, economy, one checked bag. Already in California since the 22nd on the Trybal SoCal trip (tracked separately) - no positioning flight to buy, just get to the international terminal.",
       "from": "LAX Los Angeles",
       "id": "s1",
+      "leg": "out",
       "mode": "air",
       "status": "confirmed",
-      "to": "ICN Seoul Incheon",
-      "leg": "out"
+      "to": "ICN Seoul Incheon"
     },
     {
       "arrive": "Tue 29 Sep · 11:30",
@@ -21,10 +21,10 @@
       "detail": "Same booking. Four and a half hours on the ground at Incheon. All international flights use T5, which has its own Line 14 metro station: Line 14 to Xi'an North, then Line 4 to Dayanta and the hotel door. One change, ~30 min, ¥7-8. Budget an hour for immigration - China takes fingerprints on arrival.",
       "from": "ICN Seoul Incheon",
       "id": "s2",
+      "leg": "out",
       "mode": "air",
       "status": "confirmed",
-      "to": "XIY Xi'an Xianyang T5",
-      "leg": "out"
+      "to": "XIY Xi'an Xianyang T5"
     },
     {
       "arrive": "Sat 3 Oct · 15:36",
@@ -34,10 +34,10 @@
       "detail": "Soft sleeper, confirmed with James on 16 August. No physical ticket - board by laying the passport on the gate scanner; a photo or the number alone will not do. Thirty hours up the Qinghai-Tibet railway. Sharing a twin with Jeff, so the RMB 2,100 single supplement goes to Kamana or Alka. Depart from Xi'an Railway Station (西安站, No. 44 Huancheng North Road) - NOT Xi'an North, which is the high-speed station. Single Line 4 ride from Dayanta. Leave the hotel by 08:00: airport-style security, sometimes twice, water scanned with a special reader, and the scrum at the doors is for luggage space.",
       "from": "Xi'an Railway Station",
       "id": "s3",
+      "leg": "z165",
       "mode": "rail",
       "status": "confirmed",
-      "to": "LXA Lhasa",
-      "leg": "z165"
+      "to": "LXA Lhasa"
     },
     {
       "arrive": "Sat 10 Oct · 21:50",
@@ -47,10 +47,10 @@
       "detail": "China Eastern on Delta miles: 30,000 miles + ¥170. Changes planes at Xi'an. Lands at Hongqiao, not Pudong. Tour ends with the shared transfer to Gonggar. Bags clear around 22:20 and the last Line 11 is ~22:30-23:00 with a change at Jiangsu Road - you will not make it, so budget a Didi: ~50 km, 60-70 min, ¥180-250.",
       "from": "LXA Lhasa Gonggar",
       "id": "s4",
+      "leg": "shanghai",
       "mode": "air",
       "status": "confirmed",
-      "to": "SHA Shanghai Hongqiao",
-      "leg": "shanghai"
+      "to": "SHA Shanghai Hongqiao"
     },
     {
       "arrive": "Thu 15 Oct · 15:24",
@@ -60,10 +60,10 @@
       "detail": "Delta Main. Ticket 0062450696002. ¥4,653. Departs Pudong, not the Hongqiao you arrive into - Pudong is a 25-minute taxi from the Disney area against an hour from People's Square. Taxi around 15:00.",
       "from": "PVG Shanghai Pudong",
       "id": "s5",
+      "leg": "home",
       "mode": "air",
       "status": "confirmed",
-      "to": "LAX Los Angeles",
-      "leg": "home"
+      "to": "LAX Los Angeles"
     },
     {
       "arrive": "Fri 16 Oct · 06:07",
@@ -73,10 +73,10 @@
       "detail": "Seat 28A. The return half of the separate SoCal round trip, not the China ticket. Seven and a half hours at LAX between the two, which sounds generous but they are separate tickets: collect the bag, clear customs and immigration, re-check it and possibly change terminals. Comfortable, not automatic.",
       "from": "LAX Los Angeles",
       "id": "s6",
+      "leg": "home",
       "mode": "air",
       "status": "confirmed",
-      "to": "ATL Atlanta",
-      "leg": "home"
+      "to": "ATL Atlanta"
     }
   ]
 }

@@ -1,340 +1,340 @@
 {
   "items": [
     {
-      "id": "p01",
-      "when": "All legs",
-      "en": "Please take me to this address",
       "cn": "请带我去这个地址",
-      "detail": "Then show the hotel line below. The single most useful card here."
+      "detail": "Then show the hotel line below. The single most useful card here.",
+      "en": "Please take me to this address",
+      "id": "p01",
+      "when": "All legs"
     },
     {
-      "id": "p02",
-      "when": "All legs",
-      "en": "Where is the toilet?",
       "cn": "洗手间在哪里？",
-      "detail": "Squat unless marked 坐便. 有纸吗？ is “is there paper?” and the answer is usually no."
+      "detail": "Squat unless marked 坐便. 有纸吗？ is “is there paper?” and the answer is usually no.",
+      "en": "Where is the toilet?",
+      "id": "p02",
+      "when": "All legs"
     },
     {
-      "id": "p03",
-      "when": "All legs",
-      "en": "Bottled water, no ice",
       "cn": "瓶装水，不要冰",
-      "detail": "Sealed bottle only, and it is what you brush your teeth with too."
+      "detail": "Sealed bottle only, and it is what you brush your teeth with too.",
+      "en": "Bottled water, no ice",
+      "id": "p03",
+      "when": "All legs"
     },
     {
-      "id": "p04",
-      "when": "All legs",
-      "en": "I don't need it, thank you",
       "cn": "我不需要，谢谢",
-      "detail": "For touts. Say it once and keep walking; engaging is what they are fishing for."
+      "detail": "For touts. Say it once and keep walking; engaging is what they are fishing for.",
+      "en": "I don't need it, thank you",
+      "id": "p04",
+      "when": "All legs"
     },
     {
-      "id": "p05",
-      "when": "All legs",
-      "en": "Card, not cash",
       "cn": "刷卡 / 扫码",
-      "detail": "扫码 is scan-the-QR, which is what Alipay actually does. Foreign cards still fail at plenty of terminals."
+      "detail": "扫码 is scan-the-QR, which is what Alipay actually does. Foreign cards still fail at plenty of terminals.",
+      "en": "Card, not cash",
+      "id": "p05",
+      "when": "All legs"
     },
     {
-      "id": "p06",
-      "when": "29 Sep · Outbound",
-      "en": "Xianyang Airport Terminal 5",
       "cn": "咸阳机场 T5航站楼",
-      "detail": "Where KE 141 lands. All international flights use T5 and it has its own Line 14 station."
+      "detail": "Where KE 141 lands. All international flights use T5 and it has its own Line 14 station.",
+      "en": "Xianyang Airport Terminal 5",
+      "id": "p06",
+      "when": "29 Sep · Outbound"
     },
     {
-      "id": "p07",
-      "when": "29 Sep – 2 Oct · Xi'an",
-      "en": "The Westin Xi'an, 66 Ci'en Road",
       "cn": "西安威斯汀大酒店，西安市曲江新区慈恩路66号",
-      "detail": "Also the permit delivery address. Show this to the courier and to every taxi."
+      "detail": "Also the permit delivery address. Show this to the courier and to every taxi.",
+      "en": "The Westin Xi'an, 66 Ci'en Road",
+      "id": "p07",
+      "when": "29 Sep – 2 Oct · Xi'an"
     },
     {
-      "id": "p08",
-      "when": "29 Sep – 2 Oct · Xi'an",
-      "en": "Big Wild Goose Pagoda",
       "cn": "大雁塔",
-      "detail": "Opposite the hotel. Fountain show in the north square."
+      "detail": "Opposite the hotel. Fountain show in the north square.",
+      "en": "Big Wild Goose Pagoda",
+      "id": "p08",
+      "when": "29 Sep – 2 Oct · Xi'an"
     },
     {
-      "id": "p09",
-      "when": "29 Sep – 2 Oct · Xi'an",
-      "en": "Xi'an City Wall",
       "cn": "西安城墙",
-      "detail": "The bike ride. 13.7 km around."
+      "detail": "The bike ride. 13.7 km around.",
+      "en": "Xi'an City Wall",
+      "id": "p09",
+      "when": "29 Sep – 2 Oct · Xi'an"
     },
     {
-      "id": "p10",
-      "when": "29 Sep – 2 Oct · Xi'an",
-      "en": "South Gate — city wall bike rental",
       "cn": "永宁门",
-      "detail": "Open to 22:00. After 20:00 every bike comes back here, evening returns by 21:30."
+      "detail": "Open to 22:00. After 20:00 every bike comes back here, evening returns by 21:30.",
+      "en": "South Gate — city wall bike rental",
+      "id": "p10",
+      "when": "29 Sep – 2 Oct · Xi'an"
     },
     {
-      "id": "p11",
-      "when": "29 Sep – 2 Oct · Xi'an",
-      "en": "Bell Tower",
       "cn": "钟楼",
-      "detail": "Line 2. The airport coach terminates near here."
+      "detail": "Line 2. The airport coach terminates near here.",
+      "en": "Bell Tower",
+      "id": "p11",
+      "when": "29 Sep – 2 Oct · Xi'an"
     },
     {
-      "id": "p12",
-      "when": "29 Sep – 2 Oct · Xi'an",
-      "en": "Muslim Quarter",
       "cn": "回民街",
-      "detail": "Short walk from the wall's north side. Go after dark."
+      "detail": "Short walk from the wall's north side. Go after dark.",
+      "en": "Muslim Quarter",
+      "id": "p12",
+      "when": "29 Sep – 2 Oct · Xi'an"
     },
     {
-      "id": "p13",
-      "when": "29–30 Sep · Xi'an",
-      "en": "Power bank, with the 3C mark",
       "cn": "充电宝，要有3C认证",
-      "detail": "THE SHOPPING RUN. Without the moulded 3C mark it is confiscated at Lhasa. Point at the mark, not the box."
+      "detail": "THE SHOPPING RUN. Without the moulded 3C mark it is confiscated at Lhasa. Point at the mark, not the box.",
+      "en": "Power bank, with the 3C mark",
+      "id": "p13",
+      "when": "29–30 Sep · Xi'an"
     },
     {
-      "id": "p14",
-      "when": "29–30 Sep · Xi'an",
-      "en": "Slides / sandals",
       "cn": "拖鞋",
-      "detail": "For the train corridor and the shared showers at base camp."
+      "detail": "For the train corridor and the shared showers at base camp.",
+      "en": "Slides / sandals",
+      "id": "p14",
+      "when": "29–30 Sep · Xi'an"
     },
     {
-      "id": "p15",
-      "when": "29–30 Sep · Xi'an",
-      "en": "Wet wipes and tissues",
       "cn": "湿巾 / 纸巾",
-      "detail": "Buy more than you think. There is no paper at base camp."
+      "detail": "Buy more than you think. There is no paper at base camp.",
+      "en": "Wet wipes and tissues",
+      "id": "p15",
+      "when": "29–30 Sep · Xi'an"
     },
     {
-      "id": "p16",
-      "when": "29–30 Sep · Xi'an",
-      "en": "Where is a pharmacy?",
       "cn": "请问药店在哪里？",
-      "detail": "药店. For anything you forgot — but bring your own eye drops and prescriptions from home."
+      "detail": "药店. For anything you forgot — but bring your own eye drops and prescriptions from home.",
+      "en": "Where is a pharmacy?",
+      "id": "p16",
+      "when": "29–30 Sep · Xi'an"
     },
     {
-      "id": "p17",
-      "when": "30 Sep · Xi'an",
-      "en": "Terracotta Warriors museum",
       "cn": "秦始皇帝陵博物院",
-      "detail": "33 km east. Passport is the ticket — the gate scanners read it directly."
+      "detail": "33 km east. Passport is the ticket — the gate scanners read it directly.",
+      "en": "Terracotta Warriors museum",
+      "id": "p17",
+      "when": "30 Sep · Xi'an"
     },
     {
-      "id": "p18",
-      "when": "1 Oct · Xi'an",
-      "en": "Shaanxi History Museum",
       "cn": "陕西历史博物馆",
-      "detail": "15 minutes' walk from the Westin. Also the WeChat account name to search."
+      "detail": "15 minutes' walk from the Westin. Also the WeChat account name to search.",
+      "en": "Shaanxi History Museum",
+      "id": "p18",
+      "when": "1 Oct · Xi'an"
     },
     {
-      "id": "p19",
-      "when": "2 Oct · Z165",
-      "en": "Xi'an Railway Station — the one you want",
       "cn": "西安站",
-      "detail": "No. 44 Huancheng North Road, outside the northeast corner of the wall. Line 4 from Dayanta, no change."
+      "detail": "No. 44 Huancheng North Road, outside the northeast corner of the wall. Line 4 from Dayanta, no change.",
+      "en": "Xi'an Railway Station — the one you want",
+      "id": "p19",
+      "when": "2 Oct · Z165"
     },
     {
-      "id": "p20",
-      "when": "2 Oct · Z165",
-      "en": "Xi'an NORTH Station — the WRONG one",
       "cn": "西安北站",
-      "detail": "The high-speed station, and a different part of the city. Showing a driver this instead of 西安站 loses you the Z165."
+      "detail": "The high-speed station, and a different part of the city. Showing a driver this instead of 西安站 loses you the Z165.",
+      "en": "Xi'an NORTH Station — the WRONG one",
+      "id": "p20",
+      "when": "2 Oct · Z165"
     },
     {
-      "id": "p21",
-      "when": "2 Oct · Z165",
-      "en": "Train Z165 to Lhasa, soft sleeper",
       "cn": "Z165次 拉萨 软卧",
-      "detail": "软卧 is the four-berth cabin. No paper ticket — you board by laying the passport on the gate scanner."
+      "detail": "软卧 is the four-berth cabin. No paper ticket — you board by laying the passport on the gate scanner.",
+      "en": "Train Z165 to Lhasa, soft sleeper",
+      "id": "p21",
+      "when": "2 Oct · Z165"
     },
     {
-      "id": "p22",
-      "when": "2–3 Oct · Z165",
-      "en": "Boiling water",
       "cn": "开水",
-      "detail": "Every carriage has a dispenser. It is how the whole train eats."
+      "detail": "Every carriage has a dispenser. It is how the whole train eats.",
+      "en": "Boiling water",
+      "id": "p22",
+      "when": "2–3 Oct · Z165"
     },
     {
-      "id": "p23",
-      "when": "2–3 Oct · Z165",
-      "en": "This is my berth",
       "cn": "这是我的铺位",
-      "detail": "Berth numbers are on the ticket record in the app, not on a card."
+      "detail": "Berth numbers are on the ticket record in the app, not on a card.",
+      "en": "This is my berth",
+      "id": "p23",
+      "when": "2–3 Oct · Z165"
     },
     {
-      "id": "p24",
-      "when": "3 Oct · Tibet",
-      "en": "Lhasa",
       "cn": "拉萨",
-      "detail": "Arriving on the Z165 in the afternoon of the 3rd."
+      "detail": "Arriving on the Z165 in the afternoon of the 3rd.",
+      "en": "Lhasa",
+      "id": "p24",
+      "when": "3 Oct · Tibet"
     },
     {
-      "id": "p25",
-      "when": "3–10 Oct · Tibet",
-      "en": "My Tibet Travel Permit",
       "cn": "西藏旅行证",
-      "detail": "Checked to board the train and again at road checkpoints. James delivers it to the Westin."
+      "detail": "Checked to board the train and again at road checkpoints. James delivers it to the Westin.",
+      "en": "My Tibet Travel Permit",
+      "id": "p25",
+      "when": "3–10 Oct · Tibet"
     },
     {
-      "id": "p26",
-      "when": "3–10 Oct · Tibet",
-      "en": "I have altitude sickness",
       "cn": "我有高原反应",
-      "detail": "高原反应 is the everyday term and every Tibetan hotel desk knows it."
+      "detail": "高原反应 is the everyday term and every Tibetan hotel desk knows it.",
+      "en": "I have altitude sickness",
+      "id": "p26",
+      "when": "3–10 Oct · Tibet"
     },
     {
-      "id": "p27",
-      "when": "3–10 Oct · Tibet",
-      "en": "I need oxygen",
       "cn": "我需要氧气",
-      "detail": "Hotels and the tour van carry it. Ask early rather than late."
+      "detail": "Hotels and the tour van carry it. Ask early rather than late.",
+      "en": "I need oxygen",
+      "id": "p27",
+      "when": "3–10 Oct · Tibet"
     },
     {
-      "id": "p28",
-      "when": "3–10 Oct · Tibet",
-      "en": "Barkhor Street",
       "cn": "八廓街",
-      "detail": "The rentals for the parka and the sleeping bag are around here."
+      "detail": "The rentals for the parka and the sleeping bag are around here.",
+      "en": "Barkhor Street",
+      "id": "p28",
+      "when": "3–10 Oct · Tibet"
     },
     {
-      "id": "p29",
-      "when": "4 Oct · Tibet",
-      "en": "Sera Monastery",
       "cn": "色拉寺",
-      "detail": "Debating courtyard in the afternoon."
+      "detail": "Debating courtyard in the afternoon.",
+      "en": "Sera Monastery",
+      "id": "p29",
+      "when": "4 Oct · Tibet"
     },
     {
-      "id": "p30",
-      "when": "5 Oct · Tibet",
-      "en": "Potala Palace",
       "cn": "布达拉宫",
-      "detail": "Timed entry and passport-checked. Shoulders covered, hat off."
+      "detail": "Timed entry and passport-checked. Shoulders covered, hat off.",
+      "en": "Potala Palace",
+      "id": "p30",
+      "when": "5 Oct · Tibet"
     },
     {
-      "id": "p31",
-      "when": "5 Oct · Tibet",
-      "en": "Jokhang Temple",
       "cn": "大昭寺",
-      "detail": "The holiest site in Tibet. Walk the Barkhor circuit clockwise."
+      "detail": "The holiest site in Tibet. Walk the Barkhor circuit clockwise.",
+      "en": "Jokhang Temple",
+      "id": "p31",
+      "when": "5 Oct · Tibet"
     },
     {
-      "id": "p32",
-      "when": "6 Oct · Tibet",
-      "en": "Yamdrok Lake",
       "cn": "羊卓雍措",
-      "detail": "On the road to Shigatse, over the first 5,000 m pass."
+      "detail": "On the road to Shigatse, over the first 5,000 m pass.",
+      "en": "Yamdrok Lake",
+      "id": "p32",
+      "when": "6 Oct · Tibet"
     },
     {
-      "id": "p33",
-      "when": "6–9 Oct · Tibet",
-      "en": "Shigatse",
       "cn": "日喀则",
-      "detail": "Two nights here bracket the base camp run."
+      "detail": "Two nights here bracket the base camp run.",
+      "en": "Shigatse",
+      "id": "p33",
+      "when": "6–9 Oct · Tibet"
     },
     {
-      "id": "p34",
-      "when": "7 Oct · Tibet",
-      "en": "Everest Base Camp",
       "cn": "珠峰大本营",
-      "detail": "珠穆朗玛峰 is the full name. The tent night at 5,200 m."
+      "detail": "珠穆朗玛峰 is the full name. The tent night at 5,200 m.",
+      "en": "Everest Base Camp",
+      "id": "p34",
+      "when": "7 Oct · Tibet"
     },
     {
-      "id": "p35",
-      "when": "9 Oct · Tibet",
-      "en": "Tashilhunpo Monastery",
       "cn": "扎什伦布寺",
-      "detail": "Shigatse, then back to Lhasa."
+      "detail": "Shigatse, then back to Lhasa.",
+      "en": "Tashilhunpo Monastery",
+      "id": "p35",
+      "when": "9 Oct · Tibet"
     },
     {
-      "id": "p36",
-      "when": "10 Oct · Tibet",
-      "en": "Lhasa Gonggar Airport",
       "cn": "拉萨贡嘎机场",
-      "detail": "MU 2336 out, 15:30. About an hour from the city."
+      "detail": "MU 2336 out, 15:30. About an hour from the city.",
+      "en": "Lhasa Gonggar Airport",
+      "id": "p36",
+      "when": "10 Oct · Tibet"
     },
     {
-      "id": "p37",
-      "when": "10 Oct · Shanghai",
-      "en": "Shanghai Hongqiao Airport",
       "cn": "上海虹桥机场",
-      "detail": "Where you LAND, 21:50. Not where you leave from."
+      "detail": "Where you LAND, 21:50. Not where you leave from.",
+      "en": "Shanghai Hongqiao Airport",
+      "id": "p37",
+      "when": "10 Oct · Shanghai"
     },
     {
-      "id": "p38",
-      "when": "10 Oct · Shanghai",
-      "en": "Metropolo Nanjing Road — Sat night",
       "cn": "上海南京路步行街锦江都城南京饭店，上海黄浦区山西南路200号",
-      "detail": "Saturday night. Show this to the Didi driver at Hongqiao — the last Line 11 has gone by the time you clear the airport."
+      "detail": "Saturday night. Show this to the Didi driver at Hongqiao — the last Line 11 has gone by the time you clear the airport.",
+      "en": "Metropolo Nanjing Road — Sat night",
+      "id": "p38",
+      "when": "10 Oct · Shanghai"
     },
     {
-      "id": "p39",
-      "when": "11 Oct · Shanghai",
-      "en": "Urban Planning Exhibition Centre",
       "cn": "上海城市规划展示馆",
-      "detail": "100 People's Avenue, east side of People's Square. 09:00 opening is the quiet slot."
+      "detail": "100 People's Avenue, east side of People's Square. 09:00 opening is the quiet slot.",
+      "en": "Urban Planning Exhibition Centre",
+      "id": "p39",
+      "when": "11 Oct · Shanghai"
     },
     {
-      "id": "p40",
-      "when": "11 Oct · Shanghai",
-      "en": "Ziteng Road station",
       "cn": "紫藤路站",
-      "detail": "Line 10 for the Metro Museum. ONLY 杭中路 trains stop here — a 虹桥机场 train is the wrong branch."
+      "detail": "Line 10 for the Metro Museum. ONLY 杭中路 trains stop here — a 虹桥机场 train is the wrong branch.",
+      "en": "Ziteng Road station",
+      "id": "p40",
+      "when": "11 Oct · Shanghai"
     },
     {
-      "id": "p41",
-      "when": "11 Oct · Shanghai",
-      "en": "Shanghai Metro Museum",
       "cn": "上海地铁博物馆",
-      "detail": "1799-7 Wuzhong Road, Ziteng Road Exit 1. 10:00–16:00, ¥30 on the door."
+      "detail": "1799-7 Wuzhong Road, Ziteng Road Exit 1. 10:00–16:00, ¥30 on the door.",
+      "en": "Shanghai Metro Museum",
+      "id": "p41",
+      "when": "11 Oct · Shanghai"
     },
     {
-      "id": "p42",
-      "when": "11 Oct · Shanghai",
-      "en": "Yu Garden",
       "cn": "豫园",
-      "detail": "Lunch and the classical garden. The tea-ceremony approach here is a scam — see 我不需要，谢谢 above."
+      "detail": "Lunch and the classical garden. The tea-ceremony approach here is a scam — see 我不需要，谢谢 above.",
+      "en": "Yu Garden",
+      "id": "p42",
+      "when": "11 Oct · Shanghai"
     },
     {
-      "id": "p43",
-      "when": "11 Oct · Shanghai",
-      "en": "The Bund",
       "cn": "外滩",
-      "detail": "Walk it north at dusk. Lights come up around 18:00."
+      "detail": "Walk it north at dusk. Lights come up around 18:00.",
+      "en": "The Bund",
+      "id": "p43",
+      "when": "11 Oct · Shanghai"
     },
     {
-      "id": "p44",
-      "when": "11 Oct · Shanghai",
-      "en": "Nanjing Road Pedestrian Street",
       "cn": "南京路步行街",
-      "detail": "Runs from the hotel door to People's Square."
+      "detail": "Runs from the hotel door to People's Square.",
+      "en": "Nanjing Road Pedestrian Street",
+      "id": "p44",
+      "when": "11 Oct · Shanghai"
     },
     {
-      "id": "p45",
-      "when": "11–15 Oct · Disney",
-      "en": "Toy Story Hotel — Sun to Thu",
       "cn": "玩具总动员酒店，上海浦东新区申迪西路360号",
-      "detail": "Four nights from Sunday. The station shuttle runs 06:45–23:00."
+      "detail": "Four nights from Sunday. The station shuttle runs 06:45–23:00.",
+      "en": "Toy Story Hotel — Sun to Thu",
+      "id": "p45",
+      "when": "11–15 Oct · Disney"
     },
     {
-      "id": "p46",
-      "when": "12–15 Oct · Disney",
-      "en": "Shanghai Disneyland",
       "cn": "上海迪士尼乐园",
-      "detail": "Line 11 terminus, Disney Resort station."
+      "detail": "Line 11 terminus, Disney Resort station.",
+      "en": "Shanghai Disneyland",
+      "id": "p46",
+      "when": "12–15 Oct · Disney"
     },
     {
-      "id": "p47",
-      "when": "12–15 Oct · Disney",
-      "en": "Disneytown",
       "cn": "迪士尼小镇",
-      "detail": "Where the early-entry voucher is checked, 07:30–08:30."
+      "detail": "Where the early-entry voucher is checked, 07:30–08:30.",
+      "en": "Disneytown",
+      "id": "p47",
+      "when": "12–15 Oct · Disney"
     },
     {
-      "id": "p48",
-      "when": "15 Oct · Home",
-      "en": "Shanghai PUDONG Airport — not Hongqiao",
       "cn": "上海浦东国际机场",
-      "detail": "DL 38 at 18:25. You arrived at Hongqiao and you leave from Pudong; they are 50 km apart. Leave the hotel by 15:00."
+      "detail": "DL 38 at 18:25. You arrived at Hongqiao and you leave from Pudong; they are 50 km apart. Leave the hotel by 15:00.",
+      "en": "Shanghai PUDONG Airport — not Hongqiao",
+      "id": "p48",
+      "when": "15 Oct · Home"
     }
   ]
 }

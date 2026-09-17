@@ -1,106 +1,100 @@
 {
   "items": [
     {
+      "detail": "Install BEFORE you fly — it cannot be downloaded inside the firewall. Routes offshore, so WhatsApp, Gmail, Maps and Instagram just work without a VPN.",
+      "group": "Connectivity",
       "id": "a1",
-      "item": "Travel eSIM",
-      "group": "Connectivity",
-      "detail": "Install BEFORE you fly — it cannot be downloaded inside the firewall. Routes offshore, so WhatsApp, Gmail, Maps and Instagram just work without a VPN."
+      "item": "Travel eSIM"
     },
     {
+      "detail": "Install and test at home. The backup if the eSIM fails; provider sites are blocked from inside China.",
+      "group": "Connectivity",
       "id": "a2",
-      "item": "VPN",
-      "group": "Connectivity",
-      "detail": "Install and test at home. The backup if the eSIM fails; provider sites are blocked from inside China."
+      "item": "VPN"
     },
     {
+      "detail": "Whatever SIM you use. Connecting kills WhatsApp until you switch back to cellular.",
+      "group": "Connectivity",
       "id": "a3",
-      "item": "Hotel Wi-Fi is inside the firewall",
-      "group": "Connectivity",
-      "detail": "Whatever SIM you use. Connecting kills WhatsApp until you switch back to cellular."
+      "item": "Hotel Wi-Fi is inside the firewall"
     },
     {
+      "detail": "It sits inside the firewall, which kills WhatsApp — James's only real channel. The 2017 advice is now the wrong advice.",
+      "group": "Connectivity",
       "id": "a4",
-      "item": "No local Chinese SIM",
-      "group": "Connectivity",
-      "detail": "It sits inside the firewall, which kills WhatsApp — James's only real channel. The 2017 advice is now the wrong advice."
+      "item": "No local Chinese SIM"
     },
     {
+      "detail": "The main wallet. Verify against your passport by ~24 Sep; review takes one to three business days. Also runs metro fares and the airport ride code.",
+      "group": "Payments",
       "id": "a5",
-      "item": "Alipay",
-      "group": "Payments",
-      "detail": "The main wallet. Verify against your passport by ~24 Sep; review takes one to three business days. Also runs metro fares and the airport ride code."
+      "item": "Alipay"
     },
     {
+      "detail": "Second wallet, and how James's colleagues will reach you. Bind a card before you go.",
+      "group": "Payments",
       "id": "a6",
-      "item": "WeChat",
-      "group": "Payments",
-      "detail": "Second wallet, and how James's colleagues will reach you. Bind a card before you go."
+      "item": "WeChat"
     },
     {
+      "detail": "Still needed in Tibet: monastery offerings, photo fees, tips. Draw it before you leave Lhasa.",
+      "group": "Payments",
       "id": "a7",
-      "item": "Cash",
-      "group": "Payments",
-      "detail": "Still needed in Tibet: monastery offerings, photo fees, tips. Draw it before you leave Lhasa."
+      "item": "Cash"
     },
     {
+      "detail": "The map that actually works in China. Chinese-first interface but the routing is correct where Google's is not.",
+      "group": "Maps",
       "id": "a8",
-      "item": "Amap · 高德地图",
-      "group": "Maps",
-      "detail": "The map that actually works in China. Chinese-first interface but the routing is correct where Google's is not."
+      "item": "Amap · 高德地图"
     },
     {
+      "detail": "Offline vector maps, no account, no connection. Download Shaanxi, Tibet and Shanghai at home.",
+      "group": "Maps",
       "id": "a9",
-      "item": "Organic Maps",
-      "group": "Maps",
-      "detail": "Offline vector maps, no account, no connection. Download Shaanxi, Tibet and Shanghai at home."
+      "item": "Organic Maps"
     },
     {
+      "detail": "Taxis. Has an English mode. This is how you get from Hongqiao to the hotel at 22:30 on the 10th.",
+      "group": "Transport",
       "id": "a10",
-      "item": "DiDi",
-      "group": "Transport",
-      "detail": "Taxis. Has an English mode. This is how you get from Hongqiao to the hotel at 22:30 on the 10th."
+      "item": "DiDi"
     },
     {
+      "detail": "Trains and domestic flights with a foreign passport and card. 12306 is the official source but fights foreigners.",
+      "group": "Transport",
       "id": "a11",
-      "item": "Trip.com",
-      "group": "Transport",
-      "detail": "Trains and domestic flights with a foreign passport and card. 12306 is the official source but fights foreigners."
+      "item": "Trip.com"
     },
     {
+      "detail": "Offline Chinese dictionary with a camera OCR mode — point it at a menu or a sign.",
+      "group": "Language",
       "id": "a12",
-      "item": "Pleco",
-      "group": "Language",
-      "detail": "Offline Chinese dictionary with a camera OCR mode — point it at a menu or a sign."
+      "item": "Pleco"
     },
     {
+      "detail": "Download Chinese for offline use BEFORE you fly. Camera mode handles signs; conversation mode handles taxi drivers.",
+      "group": "Language",
       "id": "a13",
-      "item": "Google Translate",
-      "group": "Language",
-      "detail": "Download Chinese for offline use BEFORE you fly. Camera mode handles signs; conversation mode handles taxi drivers."
+      "item": "Google Translate"
     },
     {
+      "detail": "Reviews and queue numbers for restaurants. Chinese only, but the star ratings translate.",
+      "group": "Everything else",
       "id": "a14",
-      "item": "Dianping",
-      "group": "Everything else",
-      "detail": "Reviews and queue numbers for restaurants. Chinese only, but the star ratings translate."
+      "item": "Dianping"
     },
     {
+      "detail": "Fill it in within 24 hours of landing rather than on paper in the queue at Xi'an.",
+      "group": "Everything else",
       "id": "a15",
-      "item": "Online arrival card",
-      "group": "Everything else",
-      "detail": "Fill it in within 24 hours of landing rather than on paper in the queue at Xi'an."
+      "item": "Online arrival card"
     },
     {
+      "detail": "Your park ticket, wait times and Premier Access. Register at home, expect to finish verification on a Chinese network.",
+      "group": "Everything else",
       "id": "a16",
-      "item": "Shanghai Disney Resort",
-      "group": "Everything else",
-      "detail": "Your park ticket, wait times and Premier Access. Register at home, expect to finish verification on a Chinese network."
-    },
-    {
-      "id": "a17",
-      "item": "Airline and hotel apps",
-      "group": "Everything else",
-      "detail": "Korean Air, Delta, China Eastern, Marriott Bonvoy. Boarding passes and confirmations offline."
+      "item": "Shanghai Disney Resort"
     }
   ]
 }
