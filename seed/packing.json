@@ -10,7 +10,7 @@
       "zone": "All legs"
     },
     {
-      "bag": "Worn",
+      "bag": "Talon 44",
       "detail": "Wind at the passes is the reason, not rain.",
       "group": "Clothing",
       "id": "pk061",
@@ -34,7 +34,7 @@
       "detail": "For the base camp sunrise, when your phone may be flat.",
       "group": "Electronics",
       "id": "pk092",
-      "item": "Watch",
+      "item": "Watch, Apple",
       "own": "own",
       "zone": "EBC night"
     },
@@ -102,7 +102,7 @@
       "group": "Documents & money",
       "id": "pk034",
       "item": "Insurance details",
-      "own": "buy",
+      "own": "own",
       "zone": "All legs"
     },
     {
@@ -152,12 +152,12 @@
       "zone": "Tibet · EBC night"
     },
     {
-      "bag": "Talon 22",
+      "bag": "Talon 44",
       "detail": "Cracked lips at altitude take the whole trip to heal.",
       "group": "Medical & altitude",
       "id": "pk049",
       "item": "Lip balm with SPF",
-      "own": "buy",
+      "own": "own",
       "zone": "Tibet · EBC night"
     },
     {
@@ -166,7 +166,7 @@
       "group": "Medical & altitude",
       "id": "pk050",
       "item": "Eye drops",
-      "own": "buy",
+      "own": "own",
       "zone": "Tibet · EBC night"
     },
     {
@@ -192,7 +192,7 @@
       "detail": "Glare off snow at 5,200 m is genuinely damaging; spare pair in the Away.",
       "group": "Clothing",
       "id": "pk074",
-      "item": "Sunglasses",
+      "item": "Sunglasses, Goodr",
       "own": "own",
       "prio": "must",
       "zone": "Tibet · EBC night"
@@ -207,11 +207,11 @@
       "zone": "All legs"
     },
     {
-      "bag": "Sling",
-      "detail": "Wired: nothing to charge on a thirty-hour train.",
+      "bag": "Talon 22",
+      "detail": "",
       "group": "Electronics",
       "id": "pk090",
-      "item": "Headphones",
+      "item": "Headphones, wired",
       "own": "own",
       "zone": "Z165"
     },
@@ -269,6 +269,7 @@
       "id": "pk128",
       "item": "Notebook and pen",
       "own": "own",
+      "packed": "",
       "zone": "All legs"
     },
     {
@@ -291,7 +292,7 @@
       "zone": "Tibet · Disney"
     },
     {
-      "bag": "Talon 22",
+      "bag": "Talon 44",
       "detail": "Altitude headache is near-universal.",
       "group": "Medical & altitude",
       "id": "pk040",
@@ -300,7 +301,7 @@
       "zone": "All legs"
     },
     {
-      "bag": "Talon 22",
+      "bag": "Talon 44",
       "detail": "Never checked. Labelled bottles, with a copy of the prescription in both bags.",
       "group": "Medical & altitude",
       "id": "pk045",
@@ -310,7 +311,7 @@
       "zone": "All legs"
     },
     {
-      "bag": "Talon 22",
+      "bag": "Talon 44",
       "detail": "A hotspot at 11:00 is a blister by 14:00.",
       "group": "Medical & altitude",
       "id": "pk051",
@@ -328,7 +329,7 @@
       "zone": "All legs"
     },
     {
-      "bag": "Talon 22",
+      "bag": "Sling",
       "detail": "",
       "group": "Electronics",
       "id": "pk089",
@@ -365,24 +366,24 @@
       "zone": "All legs"
     },
     {
-      "bag": "Talon 22",
-      "detail": "Dailies, so no solution and no case. Bring the glasses — dust and dry air above 4,000 m make lenses miserable.",
+      "bag": "Talon 44",
+      "detail": "",
       "group": "Toiletries",
       "id": "pk101",
-      "item": "Glasses and daily contacts",
+      "item": "Spare Glasses and daily contacts",
       "own": "own",
       "prio": "must",
       "zone": "Tibet · EBC night"
     },
     {
+      "bag": "Talon 44",
+      "detail": "Twenty days plus spares. Not replaceable on the plateau, and a fresh lens daily beats cleaning one in a tent.",
+      "group": "Toiletries",
       "id": "pk148",
       "item": "Daily lenses × 25",
-      "bag": "Away",
-      "group": "Toiletries",
       "own": "own",
       "prio": "must",
-      "zone": "All legs",
-      "detail": "Twenty days plus spares. Not replaceable on the plateau, and a fresh lens daily beats cleaning one in a tent."
+      "zone": "All legs"
     },
     {
       "bag": "Away",
@@ -390,7 +391,7 @@
       "group": "Food & water",
       "id": "pk121",
       "item": "Snacks",
-      "own": "buy",
+      "own": "own",
       "prio": "must",
       "zone": "Z165 · Tibet · EBC night · Disney"
     },
@@ -542,7 +543,7 @@
       "zone": "All legs"
     },
     {
-      "bag": "Talon 22",
+      "bag": "Talon 44",
       "detail": "",
       "group": "Clothing",
       "id": "pk059",
@@ -571,11 +572,11 @@
       "zone": "Tibet · EBC night"
     },
     {
-      "bag": "Talon 44",
-      "detail": "Liners let you work the phone at −6 °C without bare hands.",
+      "bag": "Away",
+      "detail": "",
       "group": "Clothing",
       "id": "pk073",
-      "item": "Liner and insulated gloves",
+      "item": "Liner and insulated mittens",
       "own": "own",
       "prio": "must",
       "zone": "EBC night"
@@ -781,7 +782,7 @@
       "group": "Medical & altitude",
       "id": "pk048",
       "item": "Sunscreen SPF 50",
-      "own": "buy",
+      "own": "own",
       "prio": "must",
       "zone": "Tibet · EBC night · Disney"
     },
@@ -827,7 +828,7 @@
       "detail": "",
       "group": "Clothing",
       "id": "pk063",
-      "item": "Trekking trousers ×2",
+      "item": "Trekking trousers",
       "own": "own",
       "zone": "Tibet · EBC night"
     },
@@ -836,7 +837,7 @@
       "detail": "Technical clothing looks odd in the cities.",
       "group": "Clothing",
       "id": "pk064",
-      "item": "Jeans ×1",
+      "item": "Jeans",
       "own": "own",
       "zone": "Xi'an · Shanghai"
     },
@@ -845,7 +846,7 @@
       "detail": "Quick-dry ones earn their place — you will do sink laundry.",
       "group": "Clothing",
       "id": "pk065",
-      "item": "T-shirts and casual shirts ×4",
+      "item": "T-shirts and casual shirts",
       "own": "own",
       "zone": "Xi'an · Shanghai"
     },
@@ -896,7 +897,7 @@
       "zone": "Xi'an · Shanghai"
     },
     {
-      "bag": "Away",
+      "bag": "Talon 44",
       "detail": "The hardshell does this job too if you would rather save the space.",
       "group": "Clothing",
       "id": "pk077",
@@ -1014,6 +1015,51 @@
       "item": "Trekking poles",
       "own": "buy",
       "zone": "Tibet · EBC night"
+    },
+    {
+      "bag": "Sling",
+      "detail": "",
+      "group": "Electronics",
+      "id": "xmu7jcn30i8ii",
+      "item": "Airpods",
+      "own": "",
+      "zone": ""
+    },
+    {
+      "bag": "Worn",
+      "detail": "",
+      "group": "Clothing",
+      "id": "xmu7jduhunks9",
+      "item": "Pendleton jacket",
+      "own": "",
+      "zone": ""
+    },
+    {
+      "bag": "Talon 22",
+      "detail": "",
+      "group": "Clothing",
+      "id": "xmu7jemb96sig",
+      "item": "New Yorkers",
+      "own": "",
+      "zone": ""
+    },
+    {
+      "bag": "Talon 44",
+      "detail": "",
+      "group": "Electronics",
+      "id": "xmu7jhfvdh7z7",
+      "item": "Timex watch",
+      "own": "",
+      "zone": ""
+    },
+    {
+      "bag": "Talon 44",
+      "detail": "",
+      "group": "Trek & camp gear",
+      "id": "xmu7jhv50n67z",
+      "item": "Rope",
+      "own": "",
+      "zone": ""
     }
   ]
 }
