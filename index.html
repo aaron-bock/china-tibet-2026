@@ -227,6 +227,22 @@ select.f.bagpick:focus{color:var(--ink); border-color:var(--lapis)}
 .bag-sum b{color:var(--jade); font-weight:600}
 .bag-note{font-size:12px; color:var(--soft); margin:0 2px 7px; max-width:72ch}
 .bag-group.gone .bag-name, .bag-group.gone .bag-note{color:var(--faint)}
+/* Adding from inside the bag block, so the bag itself never has to be asked
+   for. Its own borders, unlike the borderless .f fields inside a row: this is
+   a place you type into on purpose, not a value you might edit in passing. */
+.bag-add{display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-top:14px;
+  border:1px solid var(--line); border-radius:7px; background:var(--surface); padding:10px}
+.bag-add .nm{flex:1 1 210px}
+.bag-add .gp{flex:0 1 190px}
+.bag-add input, .bag-add select{
+  font-family:inherit; font-size:13px; color:var(--ink); background:var(--raise);
+  border:1px solid var(--line); border-radius:6px; padding:8px 10px; width:100%; min-width:0
+}
+.bag-add input::placeholder{color:var(--faint); font-style:italic}
+.bag-add input:focus, .bag-add select:focus{outline:none; border-color:var(--lapis)}
+.bag-add .btn{flex:0 0 auto}
+.bag-add .btn[disabled]{opacity:.45; cursor:not-allowed}
+.bag-add .btn.primary[disabled]:hover{filter:none}
 /* A moved row lands somewhere else on the page; the flash is the only thing
    that answers "where did it go". */
 @keyframes bagmove{from{background:var(--lapis-wash)} to{background:var(--surface)}}
@@ -402,7 +418,7 @@ footer.foot{border-top:1px solid var(--line); padding-block:20px 40px; color:var
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important; animation:none!important}}
 @media print{
-  nav.tabs,.tools,.add,.row-kill,footer.foot,.alert{display:none!important}
+  nav.tabs,.tools,.add,.bag-add,.row-kill,footer.foot,.alert{display:none!important}
   .panel[hidden]{display:block!important}
   .row{break-inside:avoid}
   textarea.f{height:auto!important; overflow:visible}
@@ -1156,7 +1172,81 @@ function bagBlock(sp,rows,sec){
   var rr=el("div","rows");
   rows.forEach(function(r){ rr.appendChild(rowNode(sec,r)); });
   blk.appendChild(rr);
+  /* No add button on Unfiled or Not taking: neither is a place you file
+     something on purpose, and a row created there would arrive already wrong. */
+  if(!sp.gone) blk.appendChild(addButton(sp.key));
   return blk;
+}
+function addButton(bag){
+  var b=el("button","add","+ Add to "+bag);
+  b.type="button"; b.dataset.addbag=bag;
+  return b;
+}
+/* The categories that already exist, in the order Own or buy bands them.
+   A free-text box here would let two spellings of "Toiletries" split one band
+   in two, and a blank would open a junk-drawer "Other". */
+function packGroups(){
+  var order=[], seen={};
+  items("packing").forEach(function(r){
+    if(!r.group || seen[r.group]) return;
+    seen[r.group]=1; order.push(r.group);
+  });
+  return order;
+}
+/* Created from inside a bag block, so the bag is known. Only the two things
+   the bag view cannot infer are asked for — what it is, and which band it files
+   under — and Add stays dead until both are answered, so an incomplete row is
+   unreachable rather than merely discouraged. */
+function addForm(bag){
+  var f=el("form","bag-add"); f.dataset.addform=bag;
+  var nw=el("div","nm"), name=el("input");
+  name.type="text"; name.placeholder="Item"; name.autocomplete="off";
+  name.setAttribute("aria-label","New item for "+bag);
+  nw.appendChild(name); f.appendChild(nw);
+  var gw=el("div","gp"), sel=el("select");
+  sel.setAttribute("aria-label","Category for the new item");
+  var o0=el("option",null,"Category…"); o0.value=""; sel.appendChild(o0);
+  packGroups().forEach(function(g){ var o=el("option",null,g); o.value=g; sel.appendChild(o); });
+  gw.appendChild(sel); f.appendChild(gw);
+  var go=el("button","btn primary","Add"); go.type="submit"; go.disabled=true;
+  var no=el("button","btn","Cancel"); no.type="button"; no.dataset.addcancel=bag;
+  f.appendChild(go); f.appendChild(no);
+  function gate(){ go.disabled = !(name.value.trim() && sel.value); }
+  name.addEventListener("input",gate);
+  sel.addEventListener("change",gate);
+  f.addEventListener("keydown",function(e){
+    if(e.key==="Escape"){ e.stopPropagation(); closeAddForm(f); }
+  });
+  f.addEventListener("submit",function(e){
+    e.preventDefault();
+    if(go.disabled) return;
+    addPackItem(name.value.trim(), sel.value, bag);
+    /* stays open and resets: a packing session adds several things at once */
+    name.value=""; sel.value=""; go.disabled=true; name.focus();
+  });
+  return f;
+}
+function closeAddForm(f){
+  var bag=f.dataset.addform;
+  f.replaceWith(addButton(bag));
+}
+/* Seven keys, exactly the shape every existing row is stored in: `prio` and
+   `packed` stay absent until they are set. `own` is deliberately blank — a new
+   item is undecided, and both tab badges say so until it is ruled on. */
+function addPackItem(item,group,bag){
+  var sec=null;
+  SCHEMA.forEach(function(x){ if(x.view==="bags") sec=x; });
+  if(!sec) return;
+  var row={id:nid(), item:item, zone:"", bag:bag, group:group, own:"", detail:""};
+  store.packing={items:items("packing").concat([row])};
+  queue("packing");
+  var dest=bagGroupFor(bagOf(row),sec);
+  if(!dest){ render(true); return; }
+  dest.querySelector(".rows").appendChild(rowNode(sec,row));
+  rebuildTriageRows();
+  /* after the insert, so reseat finds the node: it slots the row into record
+     order and flashes it where it landed */
+  reseat(row.id,true);
 }
 function bagsView(sec){
   var box=el("div","bags"), all=items("packing");
@@ -1330,7 +1420,7 @@ function triageRow(r){
   return row;
 }
 function triageView(){
-  var box=el("div"), any=false, sums=triageSums();
+  var box=el("div","tris"), any=false, sums=triageSums();
   triageGroups().forEach(function(gr){
     var shown=gr.rows.filter(packMatch);
     if(!shown.length) return;
@@ -1389,6 +1479,14 @@ function refreshTriage(){
     var old=blk.querySelector(".tri-sum");
     if(old) old.replaceWith(sumNode(c));
   });
+}
+/* refreshTriage patches sums on blocks that already exist and never inserts a
+   row — on purpose, because it runs on every own/buy/skip tap. A created row is
+   the one case where the hidden list itself has to be rebuilt. */
+function rebuildTriageRows(){
+  var box=document.querySelector("#panel-triage .tris");
+  if(box) box.replaceWith(triageView());
+  refreshTriage();
 }
 
 /* ---------- render ---------- */
@@ -1537,7 +1635,7 @@ function refreshTiles(){
 
 /* ---------- events ---------- */
 document.addEventListener("click",function(e){
-  var t=e.target.closest("[data-prep],[data-flag],[data-filter],[data-go],[data-grp],[data-why],[data-add],[data-kill],[data-fmt],#openExport,#closeExport,#theme");
+  var t=e.target.closest("[data-prep],[data-flag],[data-filter],[data-go],[data-grp],[data-why],[data-add],[data-addbag],[data-addcancel],[data-kill],[data-fmt],#openExport,#closeExport,#theme");
   if(!t) return;
   if(t.dataset.flag){
     var fdoc=t.dataset.doc, frid=t.dataset.rid, fkey=t.dataset.flag, fon=t.dataset.on;
@@ -1588,6 +1686,20 @@ document.addEventListener("click",function(e){
       var ta=wrow.querySelector("textarea.f");
       if(ta){ grow(ta); ta.focus(); }
     }
+    return;
+  }
+  if(t.dataset.addbag){
+    /* one open form at a time: two of them a screen apart makes it a guess
+       which bag the thing you are typing is going into */
+    document.querySelectorAll("form.bag-add").forEach(closeAddForm);
+    var form=addForm(t.dataset.addbag);
+    t.replaceWith(form);
+    form.querySelector("input").focus();
+    return;
+  }
+  if(t.dataset.addcancel){
+    var af=t.closest("form.bag-add");
+    if(af) closeAddForm(af);
     return;
   }
   if(t.dataset.add){
