@@ -230,10 +230,26 @@ select.f.bagpick:focus{color:var(--ink); border-color:var(--lapis)}
 /* Adding from inside the bag block, so the bag itself never has to be asked
    for. Its own borders, unlike the borderless .f fields inside a row: this is
    a place you type into on purpose, not a value you might edit in passing. */
-.bag-add{display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-top:14px;
+.bag-add{display:flex; flex-direction:column; gap:9px; margin-top:14px;
   border:1px solid var(--line); border-radius:7px; background:var(--surface); padding:10px}
+.bag-add .top{display:flex; gap:8px; flex-wrap:wrap; align-items:center}
 .bag-add .nm{flex:1 1 210px}
 .bag-add .gp{flex:0 1 190px}
+/* Which legs it rides on: real checkboxes, because more than one is the normal
+   case — half the rows carry two or more. */
+.bag-add .legs{display:flex; gap:5px; flex-wrap:wrap; align-items:center}
+.bag-add .legs .lg{font-family:var(--f-mono); font-size:8.5px; letter-spacing:.11em;
+  text-transform:uppercase; color:var(--faint); margin-right:2px}
+.bag-add .chip{display:inline-flex; gap:5px; align-items:center; cursor:pointer;
+  border:1px solid var(--line); border-radius:999px; padding:4px 10px 4px 8px;
+  background:var(--raise); color:var(--soft); font-size:12px; white-space:nowrap;
+  transition:border-color .12s, background .12s, color .12s}
+.bag-add .chip input{width:12px; height:12px; margin:0; accent-color:var(--lapis); cursor:pointer}
+.bag-add .chip:hover{border-color:var(--soft); color:var(--ink)}
+.bag-add .chip:has(input:checked){border-color:var(--lapis); background:var(--lapis-wash); color:var(--ink); font-weight:500}
+.bag-add .chip:focus-within{outline:2px solid var(--lapis); outline-offset:2px}
+/* All legs is the shorthand for the six, not a seventh leg, so it sits apart. */
+.bag-add .chip.all{margin-right:5px}
 .bag-add input, .bag-add select{
   font-family:inherit; font-size:13px; color:var(--ink); background:var(--raise);
   border:1px solid var(--line); border-radius:6px; padding:8px 10px; width:100%; min-width:0
@@ -1107,6 +1123,14 @@ var BAGS=[
   {n:"Rent in Lhasa",note:"Not packed at all. Sorted around Barkhor before the tour leaves for Shigatse, and handed back on the 10th."}
 ];
 function bagNames(){ return BAGS.map(function(b){ return b.n; }); }
+/* The Legs column's vocabulary, in trip order — these seven are exactly the
+   tokens the 114 rows already use, nothing more. "EBC night" is its own token
+   although it sits inside Tibet, because that one night drives half the gear.
+   "All legs" is the shorthand for every one of them and is exclusive: 41 rows
+   carry it alone and not one row combines it with anything else. */
+var ZONES=["Xi'an","Z165","Tibet","EBC night","Shanghai","Disney"];
+var ZONE_ALL="All legs";
+var ZONE_SEP=" · ";
 /* Where a row is shown, which is not the same as what its bag field says:
    a skipped row is lifted out of its bag, and a row whose bag is blank or
    no longer a real bag has to land somewhere rather than vanish. */
@@ -1193,35 +1217,76 @@ function packGroups(){
   });
   return order;
 }
-/* Created from inside a bag block, so the bag is known. Only the two things
-   the bag view cannot infer are asked for — what it is, and which band it files
-   under — and Add stays dead until both are answered, so an incomplete row is
-   unreachable rather than merely discouraged. */
+/* One checkbox per leg, in trip order, plus the All legs shorthand. Ticking
+   All legs clears the six and ticking any of the six clears All legs, because
+   the two together would store a contradiction the column has no way to show. */
+function zonePicker(){
+  var box=el("div","legs");
+  box.setAttribute("role","group");
+  box.setAttribute("aria-label","Which legs this rides on");
+  box.appendChild(el("span","lg",  "Legs"));
+  [ZONE_ALL].concat(ZONES).forEach(function(z){
+    var lab=el("label","chip"+(z===ZONE_ALL?" all":""));
+    var cb=el("input"); cb.type="checkbox"; cb.value=z;
+    cb.addEventListener("change",function(){
+      if(!cb.checked) return;
+      box.querySelectorAll("input").forEach(function(o){
+        if(o===cb) return;
+        if(z===ZONE_ALL || o.value===ZONE_ALL) o.checked=false;
+      });
+    });
+    lab.appendChild(cb);
+    lab.appendChild(document.createTextNode(z));
+    box.appendChild(lab);
+  });
+  return box;
+}
+/* Always in trip order, however they were clicked, so the stored string reads
+   the same as every row written by hand. */
+function zoneValue(box){
+  var on={};
+  box.querySelectorAll("input").forEach(function(c){ if(c.checked) on[c.value]=1; });
+  if(on[ZONE_ALL]) return ZONE_ALL;
+  return ZONES.filter(function(z){ return on[z]; }).join(ZONE_SEP);
+}
+/* Created from inside a bag block, so the bag is known. The three things the
+   bag view cannot infer are asked for — what it is, which band it files under
+   on Own or buy, and which legs it rides on — and Add stays dead until all
+   three are answered, so an incomplete row is unreachable rather than merely
+   discouraged. Legs joined late: the five rows added before this form had one
+   printed a blank column on the packing sheet. */
 function addForm(bag){
   var f=el("form","bag-add"); f.dataset.addform=bag;
+  var top=el("div","top");
   var nw=el("div","nm"), name=el("input");
   name.type="text"; name.placeholder="Item"; name.autocomplete="off";
   name.setAttribute("aria-label","New item for "+bag);
-  nw.appendChild(name); f.appendChild(nw);
+  nw.appendChild(name); top.appendChild(nw);
   var gw=el("div","gp"), sel=el("select");
   sel.setAttribute("aria-label","Category for the new item");
   var o0=el("option",null,"Category…"); o0.value=""; sel.appendChild(o0);
   packGroups().forEach(function(g){ var o=el("option",null,g); o.value=g; sel.appendChild(o); });
-  gw.appendChild(sel); f.appendChild(gw);
+  gw.appendChild(sel); top.appendChild(gw);
   var go=el("button","btn primary","Add"); go.type="submit"; go.disabled=true;
   var no=el("button","btn","Cancel"); no.type="button"; no.dataset.addcancel=bag;
-  f.appendChild(go); f.appendChild(no);
-  function gate(){ go.disabled = !(name.value.trim() && sel.value); }
+  top.appendChild(go); top.appendChild(no);
+  f.appendChild(top);
+  var legs=zonePicker(); f.appendChild(legs);
+  function gate(){ go.disabled = !(name.value.trim() && sel.value && zoneValue(legs)); }
   name.addEventListener("input",gate);
   sel.addEventListener("change",gate);
+  legs.addEventListener("change",gate);
   f.addEventListener("keydown",function(e){
     if(e.key==="Escape"){ e.stopPropagation(); closeAddForm(f); }
   });
   f.addEventListener("submit",function(e){
     e.preventDefault();
     if(go.disabled) return;
-    addPackItem(name.value.trim(), sel.value, bag);
-    /* stays open and resets: a packing session adds several things at once */
+    addPackItem(name.value.trim(), sel.value, bag, zoneValue(legs));
+    /* Stays open and resets: a packing session adds several things at once.
+       The legs stay ticked — consecutive adds to one bag are usually for the
+       same stretch of the trip, and re-ticking them each time is the kind of
+       friction that ends with the column left blank again. */
     name.value=""; sel.value=""; go.disabled=true; name.focus();
   });
   return f;
@@ -1233,11 +1298,11 @@ function closeAddForm(f){
 /* Seven keys, exactly the shape every existing row is stored in: `prio` and
    `packed` stay absent until they are set. `own` is deliberately blank — a new
    item is undecided, and both tab badges say so until it is ruled on. */
-function addPackItem(item,group,bag){
+function addPackItem(item,group,bag,zone){
   var sec=null;
   SCHEMA.forEach(function(x){ if(x.view==="bags") sec=x; });
   if(!sec) return;
-  var row={id:nid(), item:item, zone:"", bag:bag, group:group, own:"", detail:""};
+  var row={id:nid(), item:item, zone:zone||"", bag:bag, group:group, own:"", detail:""};
   store.packing={items:items("packing").concat([row])};
   queue("packing");
   var dest=bagGroupFor(bagOf(row),sec);
