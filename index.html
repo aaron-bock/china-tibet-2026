@@ -1138,6 +1138,14 @@ function bagOf(r){
   if(r.own==="skip") return "Not taking";
   return bagNames().indexOf(r.bag)>=0 ? r.bag : "Unfiled";
 }
+/* Packed things sink. A stable partition, not a sort: the unpacked keep record
+   order at the top and the packed keep record order at the bottom, so the head
+   of every block is what is still out and nothing else shuffles about. Both the
+   render and the live move go through this, or a reload would undo the sink. */
+function bagOrder(rows){
+  return rows.filter(function(r){ return r.packed!=="yes"; })
+    .concat(rows.filter(function(r){ return r.packed==="yes"; }));
+}
 function bagSpecs(){
   var s=BAGS.map(function(b){ return {key:b.n, note:b.note, gone:false}; });
   s.push({key:"Unfiled", gone:true,
@@ -1194,7 +1202,7 @@ function bagBlock(sp,rows,sec){
   blk.appendChild(bagHead(sp.key,rows,sp.gone));
   blk.appendChild(el("p","bag-note",sp.note));
   var rr=el("div","rows");
-  rows.forEach(function(r){ rr.appendChild(rowNode(sec,r)); });
+  bagOrder(rows).forEach(function(r){ rr.appendChild(rowNode(sec,r)); });
   blk.appendChild(rr);
   /* No add button on Unfiled or Not taking: neither is a place you file
      something on purpose, and a row created there would arrive already wrong. */
@@ -1309,9 +1317,9 @@ function addPackItem(item,group,bag,zone){
   if(!dest){ render(true); return; }
   dest.querySelector(".rows").appendChild(rowNode(sec,row));
   rebuildTriageRows();
-  /* after the insert, so reseat finds the node: it slots the row into record
-     order and flashes it where it landed */
-  reseat(row.id,true);
+  /* after the insert, so reseat finds the node: it slots the row into order
+     and flashes it where it landed */
+  reseat(row.id,"follow");
 }
 function bagsView(sec){
   var box=el("div","bags"), all=items("packing");
@@ -1397,7 +1405,11 @@ function bagGroupFor(key,sec){
   box.insertBefore(blk,before);
   return blk;
 }
-function reseat(rid,flash){
+/* mode: "follow" flashes and scrolls to the row, "flash" only flashes, anything
+   else does neither. They came apart when packing started moving rows: a row you
+   sent to another bag is one you want to see land, but a row you just ticked off
+   is one that should get out of the way and leave the eye where the work is. */
+function reseat(rid,mode){
   var sec=null;
   SCHEMA.forEach(function(x){ if(x.view==="bags") sec=x; });
   var node=document.querySelector('#panel-packing .bag-group .row[data-rid="'+rid+'"]');
@@ -1405,24 +1417,28 @@ function reseat(rid,flash){
   if(!node || !r || !sec){ refreshBags(); return; }
   var from=node.closest(".bag-group"), dest=bagGroupFor(bagOf(r),sec);
   if(!dest){ refreshBags(); return; }
-  if(dest!==from){
-    var box=dest.querySelector(".rows"), order=items("packing").map(function(x){return x.id;});
-    var me=order.indexOf(rid), before=null;
-    /* Slot it back into record order so the list reads the same after a
-       move as it does after a reload. */
-    Array.prototype.slice.call(box.children).forEach(function(c){
-      if(before || c===node) return;
-      if(order.indexOf(c.dataset.rid)>me) before=c;
-    });
-    box.insertBefore(node,before);
-    if(from && !from.querySelector(".row")) from.remove();
-  }
-  if(flash){
+  /* Placed on every call, not only on a bag change: packing a thing moves it
+     within its own block, and the target order is the one bagBlock renders. */
+  var box=dest.querySelector(".rows");
+  var order=bagOrder(items("packing").filter(function(x){ return bagOf(x)===bagOf(r); }))
+              .map(function(x){ return x.id; });
+  var me=order.indexOf(rid), before=null;
+  Array.prototype.slice.call(box.children).forEach(function(c){
+    if(before || c===node) return;
+    if(order.indexOf(c.dataset.rid)>me) before=c;
+  });
+  box.insertBefore(node,before);
+  /* Only when it actually left: an emptied block should not vanish because a
+     row shuffled about inside it. */
+  if(dest!==from && from && !from.querySelector(".row")) from.remove();
+  if(mode){
     node.classList.remove("just-moved");
     void node.offsetWidth;
     node.classList.add("just-moved");
-    var box2=node.getBoundingClientRect();
-    if(box2.top<60 || box2.bottom>window.innerHeight) node.scrollIntoView({block:"center",behavior:"smooth"});
+    if(mode==="follow"){
+      var box2=node.getBoundingClientRect();
+      if(box2.top<60 || box2.bottom>window.innerHeight) node.scrollIntoView({block:"center",behavior:"smooth"});
+    }
   }
   refreshBags();
 }
@@ -1711,6 +1727,10 @@ document.addEventListener("click",function(e){
       var c=Object.assign({},r); c[fkey]=fnext; return c;
     })};
     syncRow(frid);
+    /* Packed things sink, so the top of each block is always what is still out.
+       reseat ends with its own refreshBags; the one below is still wanted for
+       the prio flag, which moves nothing. */
+    if(fkey==="packed") reseat(frid,"flash");
     refreshTriage(); refreshBags();
     if(fkey!=="packed" && packFilter==="key") render(true);
     queue(fdoc);
@@ -1723,7 +1743,7 @@ document.addEventListener("click",function(e){
     store[pdoc]={items:items(pdoc).map(function(r){
       return r.id===prid ? Object.assign({},r,{own:next}) : r;
     })};
-    syncRow(prid); reseat(prid,false);
+    syncRow(prid); reseat(prid,"");
     refreshTriage();
     if(packFilter!=="all") render(true);
     queue(pdoc);
@@ -1825,7 +1845,7 @@ document.addEventListener("input",function(e){
     if(o!==n && o.value!==val){ o.value=val; if(o.tagName==="TEXTAREA") grow(o); }
   });
   if(key==="bag"){
-    reseat(rid,true);
+    reseat(rid,"follow");
     /* relocating the row can drop focus, and the picker is where the eye is */
     var back=document.querySelector('#panel-packing .row[data-rid="'+rid+'"] select[data-key="bag"]');
     if(back && back!==document.activeElement) back.focus();
