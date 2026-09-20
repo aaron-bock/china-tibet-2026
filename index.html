@@ -409,6 +409,7 @@ footer.foot{border-top:1px solid var(--line); padding-block:20px 40px; color:var
 .g-packing{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) 116px 92px}
 .g-kit{grid-template-columns:minmax(0,1fr) 118px minmax(0,1.4fr)}
 .g-weather{grid-template-columns:minmax(0,1fr) 128px 172px 122px}
+.g-food{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) 178px}
 .g-people{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr)}
 .g-reference{grid-template-columns:minmax(0,1fr) minmax(0,188px) minmax(0,148px)}
 .g-phrases{grid-template-columns:170px minmax(0,1fr)}
@@ -599,6 +600,15 @@ var SCHEMA=[
       {k:"alt",   l:"Altitude",  cls:"mono", ph:"Altitude"},
       {k:"detail",l:"What it is actually like", type:"area", ph:"Detail"}
     ]},
+  { id:"food", doc:"food", label:"Food",
+    note:"What to eat on the two legs where the eating is the point, and when to do it. Xi'an is a street-food city with one famous quarter that is two different places at its two ends; Shanghai lands you on the opening day of hairy crab season. The Chinese is there to be held up at a stall or a driver \u2014 nobody will read pinyin. Researched from China Highlights, TravelChinaGuide, ChinaXianTour and The Food Ranger for Xi'an, and Time Out Shanghai, the SCMP, the Michelin guide, NOMFLUENCE and Shanghai Tourism for Shanghai, plus a lunar-calendar check for the crab dates. NOT from Reddit, which this build could not reach.",
+    fields:[
+      {k:"dish",  l:"What",    cls:"big",  ph:"Dish or place"},
+      {k:"where", l:"Where",   cls:"",     ph:"Area or address"},
+      {k:"when",  l:"When",    cls:"mono", ph:"Which day, which meal"},
+      {k:"cn",    l:"Chinese", cls:"cn", type:"area", ph:"\u4e2d\u6587"},
+      {k:"detail",l:"Notes",   type:"area", ph:"Notes"}
+    ]},
   { id:"kit", doc:"kit", label:"Bags",
     note:"The four bags, their real dimensions and the limits that bind. What goes in each is on Packing; what moves between them is on Repacks.",
     fields:[
@@ -688,8 +698,8 @@ var LEGS=[
    note:"Leave by 15:00 for the right airport. The LAX connection is seven and a half hours but the two flights are separate tickets, so it is a full re-entry: bag, immigration, re-check, possibly a terminal change."}
 ];
 /* The order a leg renders its sources in: how you got there, what the days
-   hold, then where you sleep and what it will be like outside. */
-var LEG_SRC=["segments","days","tour","disney","stays","weather"];
+   hold, where you sleep, what you eat, and what it will be like outside. */
+var LEG_SRC=["segments","days","tour","disney","stays","food","weather"];
 function inLeg(r,leg){ return (" "+(r.leg||"")+" ").indexOf(" "+leg+" ")>=0; }
 function legRows(leg,doc){ return items(doc).filter(function(r){ return inLeg(r,leg); }); }
 
