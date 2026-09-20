@@ -69,6 +69,35 @@ little tighter than a viewport measurement suggests, so the boundary is easy to 
 editing copy — this catches it. `--margins` must match the `@page` rule in the generating script,
 or Chromium's own margins silently win.
 
+## The pocket reference card
+
+`reference_pdf.py` makes the one-page card from `trip/reference` — consulates, card lines,
+booking locators, the channels that actually sell tickets, and the three things that are a problem
+at a Tibetan checkpoint. The app's own note for that document calls it "the page to print and fold
+into a passport", which is exactly what this is.
+
+```
+ArtifactData action=get url=<artifact url> collection=trip doc_id=reference out_dir=/tmp/ref
+python3 tools/reference_pdf.py --data /tmp/ref/trip/reference.json --out /tmp/ref
+node tools/render_packing_pdf.mjs /tmp/ref/print-reference.html /tmp/ref/card.pdf \
+     --max-pages 1 --margins 12mm,12mm,10mm,12mm --footer ""
+```
+
+### It is the opposite of the leave-behind sheet
+
+The two scripts sit next to each other and are easy to confuse. **The leave-behind sheet goes to
+other people and is redacted; this card goes in the traveller's own pocket and exists to carry the
+locators.** Do not copy `REDACT` into this one, and do not drop the locators from it — they are
+the reason it exists.
+
+Still absent here, because they are not in the data: the Trip.com booking PINs (the rows say where
+they live instead) and the STEP login on the shared Drive sheet, which belongs to someone else.
+
+Two columns, split by how you reach for it: people and places you contact on the left, strings you
+read out on the right. Add a new `group` to the data and the build stops until you place it in
+`LEFT`, `RIGHT` or `FULL` — silently dropping a group off a card you are carrying instead of your
+phone would be the worst kind of failure here.
+
 ## Everything else
 
 `render_packing_pdf.mjs` renders both sheets; its name predates the second one.
