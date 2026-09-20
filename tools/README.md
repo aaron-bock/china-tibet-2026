@@ -101,9 +101,8 @@ phone would be the worst kind of failure here.
 ## Point-at-this cards
 
 `phrase_cards_pdf.py` turns `trip/phrases` into bilingual cards to print and cut out, six to a
-Letter sheet — 48 cards on 8 sheets. **Design not signed off yet**: the mock went out on
-20 September and the open questions are the card size in the hand, whether the Chinese is big
-enough across a taxi seat, and whether the wrong-station card should be merged into the right one.
+Letter sheet — 48 cards on 8 sheets, 3.75in × 3.33in each. Signed off 20 September after a mock;
+**black and white throughout**, for a mono laser.
 
 ```
 ArtifactData action=get url=<artifact url> collection=trip doc_id=phrases out_dir=/tmp/cards
@@ -122,12 +121,18 @@ longest, a slash, a long note.
   find the right card in a stack. Size flexes with length — 54px for two characters, 20px for the
   thirty-character Metropolo address — because one fixed size suits neither end.
 - **Cards butt together and the hairline border is the cut line.** Two cuts across, one down.
-- **The leg name is printed in the colour band**, not just implied by the colour, which is no use
-  photocopied or to a colour-blind reader.
+- **Nothing depends on colour.** The sheet is black, white and two greys, and a check over the
+  rendered page asserts no non-grey value is painted anywhere. Legs are told apart by RULE STYLE
+  AND WEIGHT — solid, dashed, dotted, double, thin, thick — because eight greys would band and
+  drift on a laser and two adjacent ones would be indistinguishable. The leg NAME is printed in the
+  band regardless: the rule is what you see fanning the deck, the name is what you read holding the
+  card.
 - **`DANGER` marks cards that must never be held up.** Right now that is `p20`, the wrong Xi'an
-  station, carried only so the name can be recognised when a driver proposes it. It prints struck
-  through on a pink field. A destination card that loses you the Z165 if shown by mistake is the
-  one thing on this sheet that must not look like every other card.
+  station, carried only so the name can be recognised when a driver proposes it. In mono the
+  loudest thing available is inversion, so it gets a 2px border, a solid band, the Chinese struck
+  through, and the warning white out of solid black. A destination card that loses you the Z165 if
+  shown by mistake is the one thing on this sheet that must not look like every other card — and it
+  prints next to the correct station, so the pair reads together.
 
 ## Everything else
 

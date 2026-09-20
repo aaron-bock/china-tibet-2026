@@ -27,12 +27,20 @@ import argparse, datetime, html, io, json, os, re, sys
 
 e = lambda s: html.escape(str(s or ""))
 
-# Legs in trip order, with a band colour each. Names come out of the `when`
-# field, which reads "29-30 Sep · Xi'an" or plain "All legs".
+# Legs in trip order. BLACK AND WHITE ONLY -- these print on a mono laser, so
+# the band is distinguished by RULE STYLE AND WEIGHT, never by colour. Eight
+# combinations of solid/dashed/dotted/double and thin/thick survive a laser and
+# a photocopier, where eight greys would not: mid greys band and drift, and two
+# of them next to each other are indistinguishable.
+#
+# The leg NAME is printed in the band regardless, and that is the real index --
+# the rule is what you see when the deck is fanned, the name is what you read
+# when you have the card.
 LEGS = [
-    ("All legs", "#3E4756"), ("Outbound", "#24499A"), ("Xi'an",  "#A8700A"),
-    ("Z165",     "#8A5A2B"), ("Tibet",    "#1F7561"), ("Shanghai", "#7A3E8F"),
-    ("Disney",   "#B03A29"), ("Home",     "#4A5468"),
+    ("All legs", "4px solid"),  ("Outbound", "2px dotted"),
+    ("Xi'an",    "1.5px solid"), ("Z165",     "3px dashed"),
+    ("Tibet",    "4px double"),  ("Shanghai", "3px dotted"),
+    ("Disney",   "2px dashed"),  ("Home",     "3px solid"),
 ]
 LEGC = dict(LEGS)
 ORDER = [n for n, _ in LEGS]
@@ -61,13 +69,11 @@ def cn_size(cn):
 
 def card(r, i):
     leg = leg_of(r.get("when"))
-    colour = LEGC.get(leg, "#3E4756")
+    rule = LEGC.get(leg, "3px solid")
     bad = r.get("id") in DANGER
-    if bad:
-        colour = "#A33526"
     return """<div class="c%s">
-  <div class="band" style="border-top-color:%s">
-    <span class="lg" style="color:%s">%s</span><span class="dt">%s</span>
+  <div class="band" style="border-top:%s #000">
+    <span class="lg">%s</span><span class="dt">%s</span>
   </div>
   <div class="en">%s</div>
   <div class="cn" style="font-size:%dpx">%s</div>
@@ -75,7 +81,8 @@ def card(r, i):
   <div class="ft">%s<span class="no">%d</span></div>
 </div>""" % (
         " danger" if bad else "",
-        colour, colour, e(leg.upper()), e(date_of(r.get("when"))),
+        "6px solid" if bad else rule,
+        e(leg.upper()), e(date_of(r.get("when"))),
         e(r.get("en")),
         cn_size(r.get("cn")), e(r.get("cn")),
         '<div class="x">DO NOT SHOW THIS &mdash; it is the wrong station</div>' if bad else "",
@@ -99,31 +106,33 @@ def build(rows):
 TPL = """<!doctype html><html><head><meta charset="utf-8"><title>Point at this — cards</title><style>
 @page { size: Letter; margin: 12.7mm; }
 *{box-sizing:border-box}
-body{margin:0;font:10pt/1.35 "Liberation Sans",Helvetica,Arial,sans-serif;color:#15191f;
+/* Black, white and two greys. Nothing on this sheet depends on colour. */
+body{margin:0;font:10pt/1.35 "Liberation Sans",Helvetica,Arial,sans-serif;color:#000;
      -webkit-print-color-adjust:exact;print-color-adjust:exact}
 .sheet{display:grid;grid-template-columns:repeat(2,360px);grid-auto-rows:320px;
        width:720px;break-after:page}
 .sheet:last-child{break-after:auto}
-.c{border:.5px solid #9aa4b0;padding:14px 16px 11px;display:flex;flex-direction:column;
+.c{border:.5px solid #888;padding:14px 16px 11px;display:flex;flex-direction:column;
    overflow:hidden;background:#fff}
-.c.blank{border-color:#dfe4ea}
-.band{border-top:3px solid #3E4756;padding-top:5px;margin-bottom:9px;display:flex;
+.c.blank{border-color:#ccc}
+.band{padding-top:5px;margin-bottom:9px;display:flex;
       align-items:baseline;justify-content:space-between;gap:8px}
-.lg{font:700 8pt "Liberation Mono",monospace;letter-spacing:.14em}
-.dt{font:8pt "Liberation Mono",monospace;color:#5d6773;letter-spacing:.04em;white-space:nowrap}
+.lg{font:700 8pt "Liberation Mono",monospace;letter-spacing:.14em;color:#000}
+.dt{font:8pt "Liberation Mono",monospace;color:#444;letter-spacing:.04em;white-space:nowrap}
 .en{font-size:11.5pt;font-weight:700;line-height:1.2;margin-bottom:6px}
 .cn{flex-grow:1;display:flex;align-items:center;justify-content:center;text-align:center;
     font-family:"Noto Sans CJK SC","Source Han Sans SC","WenQuanYi Zen Hei","Liberation Sans",sans-serif;
-    font-weight:700;line-height:1.28;letter-spacing:.01em;word-break:break-word;padding:2px 0}
-.ft{border-top:.5px solid #d6dbe3;padding-top:5px;margin-top:6px;display:flex;
+    font-weight:700;line-height:1.28;letter-spacing:.01em;word-break:break-word;padding:2px 0;color:#000}
+.ft{border-top:.5px solid #bbb;padding-top:5px;margin-top:6px;display:flex;
     align-items:flex-end;justify-content:space-between;gap:8px}
-.nt{font-size:7.6pt;line-height:1.3;color:#5d6773;flex:1}
-.no{font:600 7.5pt "Liberation Mono",monospace;color:#8b95a2;flex-shrink:0}
-.c.danger{background:#fdf5f4}
-.c.danger .en{color:#8d2d20}
-.c.danger .cn{color:#A33526;text-decoration:line-through;text-decoration-thickness:2px}
-.x{font:700 8pt "Liberation Sans",Helvetica,sans-serif;color:#A33526;text-align:center;
-   letter-spacing:.02em;margin-top:2px}
+.nt{font-size:7.6pt;line-height:1.3;color:#444;flex:1}
+.no{font:600 7.5pt "Liberation Mono",monospace;color:#666;flex-shrink:0}
+/* The one card that must never be held up. In mono the loudest thing available
+   is inversion, so the warning is white out of solid black. */
+.c.danger{border:2px solid #000}
+.c.danger .cn{text-decoration:line-through;text-decoration-thickness:3px}
+.x{font:700 8.5pt "Liberation Sans",Helvetica,sans-serif;background:#000;color:#fff;
+   text-align:center;letter-spacing:.03em;padding:3px 4px;margin-top:4px}
 </style></head><body>
 {{PAGES}}
 </body></html>"""
