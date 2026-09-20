@@ -134,6 +134,78 @@
       "leg": "shanghai",
       "when": "Sun 11 · about 18:15",
       "where": "Huangpu, or Disneytown"
+    },
+    {
+      "cn": "김밥",
+      "detail": "Gimbap, a rice triangle, banana milk, and back to your seat. The stores run around the clock and take a card.\n\nTHE ROOM MATTERS MORE THAN THE FOOD. The same breakfast eaten in the bright 24-hour food court is an hour under fluorescent light at exactly the point Jet lag wants you dim — your target clock says 03:40, the middle of the night. Buy, and go somewhere dark.",
+      "dish": "Convenience store, not the food court",
+      "id": "fd16",
+      "leg": "out",
+      "when": "Tue 29 · 05:00",
+      "where": "GS25 and CU, airside T2"
+    },
+    {
+      "cn": "",
+      "detail": "Hot Korean breakfast, low light, a seat that reclines, and already paid for through Priority Pass. It is the best room in the terminal for what the jet-lag plan is asking of you, and it solves breakfast and the quiet corner in one move. Tips has the door.",
+      "dish": "Better: eat in the lounge",
+      "id": "fd17",
+      "leg": "out",
+      "when": "Tue 29 · 05:00",
+      "where": "Sky Hub, T2 fourth floor"
+    },
+    {
+      "cn": "",
+      "detail": "It is the easiest instruction on the page to break while holding a tray at five in the morning, and it is the one that costs the most. Caffeine here buys a comfortable layover and spends your first evening in Xi'an. Jet lag has the reasoning; this is the reminder at the point of temptation.",
+      "dish": "Whatever else you do, no coffee",
+      "id": "fd18",
+      "leg": "out",
+      "when": "Tue 29 · all of it",
+      "where": "Anywhere in T2"
+    },
+    {
+      "cn": "外带食品",
+      "detail": "IT IS ALLOWED, and it is not a loophole. Shanghai Disneyland changed this in 2019 after losing a lawsuit over it, and the rule is now genuinely permissive: outside food and drink are fine as long as nothing needs reheating or refrigerating and nothing smells. No durian, no stinky tofu, no whole watermelons, no instant noodles.\n\nThis is the biggest saving available on the leg, and your Snacks row is already tagged Disney. NOT cans or glass, though — see Tips.",
+      "dish": "Bring your own food in",
+      "id": "fd19",
+      "leg": "disney",
+      "when": "All three days",
+      "where": "Through the main gate"
+    },
+    {
+      "cn": "漫月轩",
+      "detail": "The park's flagship and the one that earns 'authentically Disney, distinctly Chinese'. Counter service, not table: wagyu beef noodle soup, Shanghai pork belly rice, proper hot food rather than theme-park food. Several dining rooms, each on its own theme, each hiding a different character — Mushu, Simba, Abu, Chip and Dale, Nemo.\n\nIf you eat one sit-down meal inside the park, this is the one.",
+      "dish": "Wandering Moon Teahouse",
+      "id": "fd20",
+      "leg": "disney",
+      "when": "Lunch · ¥60–90",
+      "where": "Gardens of Imagination"
+    },
+    {
+      "cn": "",
+      "detail": "Quick service ¥40–120. A burger and chips or a rice plate at somewhere like Barbossa's Bounty or Stargazer Grill, drink included, ¥85–115. Table service ¥150–300.\n\nThree days of eating entirely inside the park is roughly ¥600–900. Bringing breakfast and snacks in halves it.",
+      "dish": "What park food costs",
+      "id": "fd21",
+      "leg": "disney",
+      "when": "Budgeting",
+      "where": "Everywhere inside"
+    },
+    {
+      "cn": "",
+      "detail": "Sunnyside Café does a buffet at ¥178 and it is NOT included in the room. It is also the wrong shape for these mornings: with early entry you are out of the door at 07:00 to walk the 1.5 km, and a buffet is not a thing you do in fifteen minutes.\n\nBuy breakfast the night before in Disneytown or at a convenience store and eat it walking. Save the buffet for a morning you are not queueing for Zootopia.",
+      "dish": "Breakfast is the awkward meal",
+      "id": "fd22",
+      "leg": "disney",
+      "when": "Mon–Wed · 07:00",
+      "where": "Toy Story Hotel"
+    },
+    {
+      "cn": "迪士尼小镇",
+      "detail": "You walk through it every night anyway, and it stays open past the park. The Cheesecake Factory here is the chain's first Asian flagship; Blue Frog is the reliable ¥101–300 middle. No ticket needed, so it is also where Sunday dinner can land on the way in from the Bund.\n\nAnd it is where you buy tomorrow's breakfast.",
+      "dish": "Disneytown on the way out",
+      "id": "fd23",
+      "leg": "disney",
+      "when": "After park close",
+      "where": "Between the park and the hotel"
     }
   ]
 }

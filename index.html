@@ -410,6 +410,7 @@ footer.foot{border-top:1px solid var(--line); padding-block:20px 40px; color:var
 .g-kit{grid-template-columns:minmax(0,1fr) 118px minmax(0,1.4fr)}
 .g-weather{grid-template-columns:minmax(0,1fr) 128px 172px 122px}
 .g-food{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) 178px}
+.g-tips{grid-template-columns:minmax(0,1fr) 150px}
 .g-people{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr)}
 .g-reference{grid-template-columns:minmax(0,1fr) minmax(0,188px) minmax(0,148px)}
 .g-phrases{grid-template-columns:170px minmax(0,1fr)}
@@ -606,8 +607,15 @@ var SCHEMA=[
       {k:"dish",  l:"What",    cls:"big",  ph:"Dish or place"},
       {k:"where", l:"Where",   cls:"",     ph:"Area or address"},
       {k:"when",  l:"When",    cls:"mono", ph:"Which day, which meal"},
-      {k:"cn",    l:"Chinese", cls:"cn", type:"area", ph:"\u4e2d\u6587"},
+      {k:"cn",    l:"Chinese", cls:"cn", type:"area", ph:"\u4e2d\u6587", hideEmpty:true},
       {k:"detail",l:"Notes",   type:"area", ph:"Notes"}
+    ]},
+  { id:"tips", doc:"tips", label:"Tips",
+    note:"The ground rules for a leg \u2014 what you may bring, what is free, what is open, and what will catch you out. Not bookings, not beds, not meals: those have their own blocks. Two legs carry these so far, the Incheon layover and the Disney days, because those are the two where the rules are not obvious.",
+    fields:[
+      {k:"tip",   l:"What to know", cls:"big",  ph:"The thing"},
+      {k:"kind",  l:"Kind",         cls:"mono", ph:"Category"},
+      {k:"detail",l:"Notes",  type:"area", ph:"Notes"}
     ]},
   { id:"kit", doc:"kit", label:"Bags",
     note:"The four bags, their real dimensions and the limits that bind. What goes in each is on Packing; what moves between them is on Repacks.",
@@ -698,8 +706,9 @@ var LEGS=[
    note:"Leave by 15:00 for the right airport. The LAX connection is seven and a half hours but the two flights are separate tickets, so it is a full re-entry: bag, immigration, re-check, possibly a terminal change."}
 ];
 /* The order a leg renders its sources in: how you got there, what the days
-   hold, where you sleep, what you eat, and what it will be like outside. */
-var LEG_SRC=["segments","days","tour","disney","stays","food","weather"];
+   hold, where you sleep, what you eat, what to know on the ground, and what it
+   will be like outside. */
+var LEG_SRC=["segments","days","tour","disney","stays","food","tips","weather"];
 function inLeg(r,leg){ return (" "+(r.leg||"")+" ").indexOf(" "+leg+" ")>=0; }
 function legRows(leg,doc){ return items(doc).filter(function(r){ return inLeg(r,leg); }); }
 
@@ -899,16 +908,20 @@ function rowNode(sec,row){
   if(prep) st.dataset.packed=row.packed||"";
   else if(hasStatus) st.dataset.status=row.status||"pending";
   r.appendChild(st);
-  var body=el("div","row-body g-"+sec.doc), hidden=false;
+  var body=el("div","row-body g-"+sec.doc), hidden="";
   sec.fields.forEach(function(f){
     var c=field(sec,row,f);
-    if(c) body.appendChild(c); else hidden=true;
+    /* remember WHICH field was withheld: the + used to be hard-wired to say
+       "why", which was right while packing was the only tab with a hideEmpty
+       field and wrong the moment Food hid its Chinese instead. */
+    if(c) body.appendChild(c); else hidden=hidden||f.l;
   });
   r.appendChild(body);
   var rail=el("div","row-rail");
   if(hidden){
     var w=el("button","row-why","+");
-    w.type="button"; w.title="Add a why"; w.setAttribute("aria-label","Add a note to this item");
+    w.type="button"; w.title="Add "+hidden.toLowerCase();
+    w.setAttribute("aria-label","Add "+hidden.toLowerCase()+" to this item");
     w.dataset.why=row.id;
     rail.appendChild(w);
   }

@@ -1,0 +1,74 @@
+{
+  "items": [
+    {
+      "detail": "Both flights are Korean Air on one booking (FAFD77) and both use Terminal 2, so this is an airside transfer: no Korean immigration, no baggage reclaim, no K-ETA, no arrival card. Passport and your onward boarding pass, nothing else.\n\nWorth knowing because Incheon is strict about the other case — on SEPARATE tickets it forces you landside through full immigration, bag collection and re-check. Four and a half hours would be uncomfortable. On one ticket it is generous.",
+      "id": "tp01",
+      "kind": "Transit",
+      "leg": "out",
+      "tip": "You never enter Korea"
+    },
+    {
+      "detail": "T2, airside, fourth floor near Gate 268. Open around the clock, so it is open when you land at 04:40 — which is the whole point, because the first ninety minutes are the ones you need a seat for.\n\nMatina is the other one, up the escalator by Gate 252, but it opens at 06:00. Your Priority Pass covers both. Go to Sky Hub first and move if you feel like it.",
+      "id": "tp02",
+      "kind": "Lounge",
+      "leg": "out",
+      "tip": "Sky Hub lounge, fourth floor"
+    },
+    {
+      "detail": "SPA at Home in T2 runs 24 hours if you want a proper shower after thirteen hours in economy. The airport's own relax zones have recliners and cost nothing.\n\nA shower is a real decision here rather than a treat: hot water is alerting, which is useful at 08:00 before boarding and unhelpful at 05:00 when the plan wants you dozing.",
+      "id": "tp03",
+      "kind": "Kit",
+      "leg": "out",
+      "tip": "Showers and nap zones are free"
+    },
+    {
+      "detail": "Free fast Wi-Fi, outside the Great Firewall, for four and a half hours. This is the last easy connection before China and the best place on the trip to find out something is wrong while you can still fix it.\n\nCheck: the eSIM activates and carries data, the VPN connects, the offline maps for Shaanxi, Tibet and Shanghai are actually on the phone, and James has your arrival time on WhatsApp.",
+      "id": "tp04",
+      "kind": "Connectivity",
+      "leg": "out",
+      "tip": "Your last unfiltered internet"
+    },
+    {
+      "detail": "Incheon runs free guided tours into the city for layovers of four hours or more, which technically includes yours. In practice no: the courses start at 09:00 and KE 141 boards around then.\n\nMentioned so you can stop wondering about it. The layover is an airport layover.",
+      "id": "tp05",
+      "kind": "Timing",
+      "leg": "out",
+      "tip": "The transit tour will not fit"
+    },
+    {
+      "detail": "Every bag opened by hand, metal detectors, everyone. On a normal morning the advice is to be there 30–45 minutes before the gates, which is most of the advantage an early ticket buys you.\n\nThis is the underrated half of early entry: the Disneytown turnstiles are a different and much shorter line than the main gate.",
+      "id": "tp06",
+      "kind": "Timing",
+      "leg": "disney",
+      "tip": "Security is a real queue"
+    },
+    {
+      "detail": "SELFIE STICKS AND TRIPODS, always, no exceptions and no storage — they are confiscated at the check. Also cans and glass containers of any kind, alcohol, folding stools and chairs, large tripods, and anything flammable.\n\nThe food rules are separate and much looser; Food has them.",
+      "id": "tp07",
+      "kind": "Kit",
+      "leg": "disney",
+      "tip": "What gets taken off you at the door"
+    },
+    {
+      "detail": "FOR THESE THREE DAYS ONLY. It is marked SKIP on your packing list, tagged 'EBC night · Disney', and the reasoning is sound: carrying one creates the chance to fill it from a tap without thinking. That is a Tibet argument.\n\nDisney is the other case. There are free water coolers through the park, the water in them is fine, and CANS AND GLASS ARE BANNED AT THE GATE — so a plastic bottle is the only way to carry a drink in at all. Buy a cheap one in Shanghai on the 10th and leave it behind on the 15th.",
+      "id": "tp08",
+      "kind": "Kit",
+      "leg": "disney",
+      "tip": "Reconsider the water bottle"
+    },
+    {
+      "detail": "¥2 an hour for a small locker, capped at ¥12 for the day; ¥4 and ¥24 for a medium; ¥5 and ¥30 for a large. Alipay or WeChat only — no cash, no foreign card.\n\nWorth knowing on a day that starts cool and ends at 22:00, or if the tail of typhoon season delivers the wet afternoon the weather row warns about.",
+      "id": "tp09",
+      "kind": "Money",
+      "leg": "disney",
+      "tip": "Lockers, if the day turns"
+    },
+    {
+      "detail": "International cards are taken in some places inside the resort and not others, with no way to tell which from the outside. The wallet works everywhere — counters, carts, lockers, Premier Access in the app.\n\nSame ¥200 free-then-3% structure as everywhere else in China, and most things here are over ¥200, so expect the fee.",
+      "id": "tp10",
+      "kind": "Money",
+      "leg": "disney",
+      "tip": "Pay with Alipay, not the card"
+    }
+  ]
+}
