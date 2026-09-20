@@ -98,6 +98,37 @@ read out on the right. Add a new `group` to the data and the build stops until y
 `LEFT`, `RIGHT` or `FULL` — silently dropping a group off a card you are carrying instead of your
 phone would be the worst kind of failure here.
 
+## Point-at-this cards
+
+`phrase_cards_pdf.py` turns `trip/phrases` into bilingual cards to print and cut out, six to a
+Letter sheet — 48 cards on 8 sheets. **Design not signed off yet**: the mock went out on
+20 September and the open questions are the card size in the hand, whether the Chinese is big
+enough across a taxi seat, and whether the wrong-station card should be merged into the right one.
+
+```
+ArtifactData action=get url=<artifact url> collection=trip doc_id=phrases out_dir=/tmp/cards
+python3 tools/phrase_cards_pdf.py --data /tmp/cards/trip/phrases.json --out /tmp/cards
+node tools/render_packing_pdf.mjs /tmp/cards/print-cards.html /tmp/cards/cards.pdf \
+     --margins 12.7mm,12.7mm,12.7mm,12.7mm --footer ""
+```
+
+`--ids p11,p38,p02` builds a mock sheet **through the same code as the full deck**, so what gets
+approved is what gets printed. Pick the awkward rows, not the first few: the shortest Chinese, the
+longest, a slash, a long note.
+
+### The design decisions worth not undoing
+
+- **The Chinese is the card.** A stranger reads it at arm's length; the English exists so you can
+  find the right card in a stack. Size flexes with length — 54px for two characters, 20px for the
+  thirty-character Metropolo address — because one fixed size suits neither end.
+- **Cards butt together and the hairline border is the cut line.** Two cuts across, one down.
+- **The leg name is printed in the colour band**, not just implied by the colour, which is no use
+  photocopied or to a colour-blind reader.
+- **`DANGER` marks cards that must never be held up.** Right now that is `p20`, the wrong Xi'an
+  station, carried only so the name can be recognised when a driver proposes it. It prints struck
+  through on a pink field. A destination card that loses you the Z165 if shown by mistake is the
+  one thing on this sheet that must not look like every other card.
+
 ## Everything else
 
 `render_packing_pdf.mjs` renders both sheets; its name predates the second one.
