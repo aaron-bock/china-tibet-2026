@@ -4,6 +4,7 @@
  *     --max-pages N          fail, and write nothing, if the result exceeds N pages
  *     --margins T,R,B,L      default 14mm,13mm,16mm,13mm (the packing list's)
  *     --footer "Text"        running footer; "" for none. Default "Packing list".
+ *     --landscape            Letter on its side, for sheets imposed two-up.
  *
  * MARGINS MUST MATCH the @page margins in the generating script. Chromium takes
  * its own, and where they disagree the smaller wins silently and the footer
@@ -15,7 +16,7 @@ import { pathToFileURL } from 'node:url';
 
 const [src, out, ...rest] = process.argv.slice(2);
 if (!src || !out) {
-  console.error('usage: node tools/render_packing_pdf.mjs <in.html> <out.pdf> [--max-pages N]');
+  console.error('usage: node tools/render_packing_pdf.mjs <in.html> <out.pdf> [--max-pages N] [--landscape]');
   process.exit(1);
 }
 /* The leave-behind sheet has to be ONE page, and "it was one page last time I
@@ -29,6 +30,11 @@ const opt = (name, dflt) => {
 const maxPages = Number(opt('max-pages', 0));
 const [mt, mr, mb, ml] = opt('margins', '14mm,13mm,16mm,13mm').split(',').map(x => x.trim());
 const footer = opt('footer', 'Packing list');
+/* The field guide is half-letter pages printed two to a landscape Letter sheet
+ * and cut down the middle, so the SHEET is landscape even though every page on
+ * it is portrait. Chromium needs telling; the generating script's @page size
+ * has to say the same thing. */
+const landscape = rest.includes('--landscape');
 
 /* The repo has no node_modules and should not grow one for a script that runs
  * twice a year. Node resolves a bare import against THIS file's directory, so
@@ -57,6 +63,7 @@ await p.emulateMedia({ media: 'print' });
 await p.pdf({
   path: out,
   format: 'Letter',
+  landscape,
   printBackground: true,
   displayHeaderFooter: !!footer,
   headerTemplate: '<div></div>',

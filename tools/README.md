@@ -164,9 +164,120 @@ rectangles. Six of them, on yellow and pink.
   shown by mistake is the one thing on this sheet that must not look like every other card — and it
   prints next to the correct station, so the pair reads together.
 
+## The field guide
+
+`fieldguide_pdf.py` makes the thing you actually carry: everything in the app that no
+other printed piece covers, on half-letter pages, two to a sheet, cut and clipped.
+Eighteen Letter sheets, thirty-six pages.
+
+```
+ArtifactData action=list url=<artifact url> collection=trip out_dir=/tmp/fg
+python3 tools/fieldguide_pdf.py --data /tmp/fg/trip --out /tmp/fg
+node tools/render_packing_pdf.mjs /tmp/fg/print-fieldguide.html /tmp/fg/guide.pdf \
+     --landscape --margins 0,0,0,0 --footer ""
+```
+
+Print single-sided, cut each sheet once down the middle, clip. **The backs stay blank on
+purpose** — that is the notepaper, and page one says so.
+
+### It carries the locators
+
+Like the pocket reference card and unlike the leave-behind sheet: this goes in the
+traveller's own bag, so flight refs and hotel confirmations are printed. Do not copy
+`REDACT` into it.
+
+### Loose leaves decide the design
+
+There is no fold and no facing spread, so every page has to survive being dropped on its
+own. Each carries **`n / N`**, the section it belongs to, and that leg's dates; a **thumb
+tab** steps down the outer edge, one position per section, so a fanned stack lands on the
+right leg before you read anything. The tab is inset 0.05in from the page edge — a cut
+that wanders should not shave it.
+
+### Pagination is done in the browser, not by CSS
+
+Two pages share a sheet and CSS page breaks can only break *sheets*, so a script fills each
+page to its measured height and starts the next. Three things that were learned the hard
+way and should not be undone:
+
+- **Height is measured on `.inner`, never on `.flow`.** `scrollHeight` on a box that clips
+  never reports less than the box itself, so a half-empty page measures as exactly full.
+  The first build of this made 203 pages instead of 36.
+- **Prose is the only thing allowed to straddle a break**, sentence by sentence, and the
+  carry-over is marked with a leading `…`. The splitter is a scanner with a join check
+  rather than a regex: a regex skips what it does not match, and the first one silently
+  dropped sixteen characters out of a day row. Day rows print **whole** — the longest is
+  4,629 characters and stays that way.
+- **A heading never ends a page.** When anything breaks, the headings immediately above it
+  are carried along.
+
+### The coverage guard
+
+Every document in `trip/*` must be placed: on a leg (`LEG_SRC`), in `TAIL`, in
+`ALREADY_PRINTED`, or in `NOT_ROWS`. **A stray one stops the build**, and so does a leg
+source with a row that carries no `leg` tag — which would otherwise print nowhere at all.
+Dropping a section off a guide you are carrying *instead of* your phone is the failure
+nobody would notice until it mattered.
+
+`ALREADY_PRINTED` is the list of what the other scripts here cover — packing, reference,
+phrases — and the check asserts none of it leaks back in.
+
+### Mono, and neutral
+
+Every value in the stylesheet is a true grey. Nothing here is told apart by hue, and a
+tinted grey only bands on a laser; the check asserts no channel spread anywhere on the
+rendered page.
+
+## The offline copy of the app
+
+`offline_app.py` turns `index.html` plus a live dump into one file that works on a phone
+with the radio off. **`index.html` is not modified** — the artifact stays the source of
+truth and this is regenerated from it, so there is no second copy of the app to keep in
+step by hand.
+
+```
+ArtifactData action=list url=<artifact url> collection=trip out_dir=/tmp/off
+python3 tools/offline_app.py --data /tmp/off/trip --out /tmp/off
+```
+
+Two things tie the app to the network and both are replaced:
+
+- **The Google Fonts `<link>`.** The faces are fetched and written back as base64 woff2,
+  latin and latin-ext only. Bodoni Moda and Public Sans are variable — Google serves one
+  file for every weight asked for — so faces sharing a URL are merged into a single rule
+  with a weight *range* rather than embedding the same 46 KB three times. 448 KB all in.
+- **The boot block.** `db` is replaced with an object of the same `.doc(path).set(body)`
+  shape, writing `localStorage["ct26-offline"]`, so `queue()`, `flush()` and every edit
+  above them are exactly what they are online. `dl` becomes a Blob and a synthetic click,
+  which keeps the whole Download sheet working — and the JSON export is how edits made on
+  the road come home.
+
+### A failed font fetch fails the build
+
+`--no-fonts` is the explicit way to take the system stack. What must never happen is a
+half-embedded file: it looks right on the machine that built it and falls back to Times on
+the phone, which is exactly the kind of thing nobody notices until they are somewhere
+without a network.
+
+### The anchor guard
+
+Six regions are found by exact text and rewritten. **Every anchor is checked before a
+single font is downloaded**, and a miss stops the build naming the region. An
+unpatched output would be an offline copy that is not offline.
+
+### It says what it is, three times
+
+The banner, the saver chip ("Saved on this device", never "Saved") and the page footer all
+say the same thing: edits live on this phone and never reach the shared page. The two will
+drift, and the file should not pretend otherwise. **"Forget my offline edits"** in the
+Download sheet is the only way back to the baked-in copy, so it has to be discoverable.
+
 ## Everything else
 
-`render_packing_pdf.mjs` renders both sheets; its name predates the second one.
+`render_packing_pdf.mjs` renders every sheet here; its name predates all but the first.
+`--margins` must match the generating script's `@page` rule, or Chromium's own win
+silently; `--landscape` is for the field guide's two-up sheets; `--max-pages` turns a
+one-page promise into a build constraint.
 
 `rebuild_packing.py`, `extract.mjs` and `build_seeds.mjs` are one-shot migrations, kept for the
 record of how the data got its current shape. They are not part of any current pipeline.
