@@ -74,6 +74,18 @@ ALREADY_PRINTED = {
 # Not rows at all -- the title block on page one is built out of this one.
 NOT_ROWS = {"meta"}
 
+# Deliberately not printed, keyed (document, row id, field). A string strips just
+# that text out of the field; None drops the field whole. THE APP KEEPS ALL OF IT
+# -- this is a print decision, and nothing here is written back to trip/*.
+#
+# Both of these were pages of their own: a scrap that would not fit on the page
+# before it, opening a 3%-full page to hold one sentence. Cut on 21 September.
+SKIP = {
+    ("tips",   "tp05", "detail"): "The layover is an airport layover.",
+    ("repack", "rp8",  "detail"): None,
+}
+_skipped = set()
+
 BLOCK_LABEL = {
     "segments": "Getting there", "days": "Day by day", "tour": "Tour days",
     "disney": "Tickets and park", "stays": "Where you sleep", "food": "What to eat",
@@ -160,6 +172,19 @@ def row_html(doc, r):
     prose = []
     for k, label in s["prose"]:
         v = str(r.get(k) or "").strip()
+        key = (doc, str(r.get("id") or ""), k)
+        if key in SKIP:
+            cut_text = SKIP[key]
+            if cut_text is None:
+                _skipped.add(key)
+                continue
+            if cut_text not in v:
+                sys.exit("fieldguide: SKIP wants %s/%s/%s to lose %r, and that text is\n"
+                         "not in the data any more. The rule is stale -- drop it or fix it,\n"
+                         "rather than leaving one in the file that does nothing."
+                         % (key[0], key[1], key[2], cut_text))
+            v = v.replace(cut_text, "").strip()
+            _skipped.add(key)
         if not v:
             continue
         prose.append(('<p class="pr" data-doc="%s" data-id="%s" data-f="%s">%s%s</p>'
@@ -231,10 +256,10 @@ html,body{margin:0;padding:0;background:#fff;color:#111111;
 .sheet{width:11in;height:8.5in;display:flex;position:relative;
   page-break-after:always;break-after:page;overflow:hidden}
 .sheet:last-child{page-break-after:auto;break-after:auto}
-/* Two ticks on the centre line, top and bottom. One cut per sheet, and no rule
-   printed down the finished page edge. */
-.tick{position:absolute;left:5.5in;width:0;border-left:.4px solid #777777}
-.tick.t{top:0;height:.14in} .tick.b{bottom:0;height:.14in}
+/* One cut per sheet, down the middle. The line runs the full height so there is
+   something to follow rather than two ticks to line up by eye; under half a point
+   it leaves nothing visible on either finished edge. */
+.cut{position:absolute;left:5.5in;top:0;bottom:0;width:0;border-left:.4px solid #999999}
 
 .page{width:5.5in;height:8.5in;position:relative;overflow:hidden;
   padding:.36in .52in .34in .40in}
@@ -467,7 +492,7 @@ var all = Array.prototype.slice.call(host.children);
 host.innerHTML = "";
 for (var i = 0; i < all.length; i += 2) {
   var sh = document.createElement("div"); sh.className = "sheet";
-  sh.innerHTML = '<div class="tick t"></div><div class="tick b"></div>';
+  sh.innerHTML = '<div class="cut"></div>';
   sh.appendChild(all[i]);
   if (all[i + 1]) sh.appendChild(all[i + 1]);
   else { var bl = document.createElement("div"); bl.className = "page blank"; sh.appendChild(bl); }
@@ -541,6 +566,12 @@ def build(data):
             rows = docs[doc]["items"]
             if rows:
                 flow += flow_for(doc, rows)
+
+    unused = sorted(set(SKIP) - _skipped)
+    if unused:
+        sys.exit("fieldguide: SKIP names %s, which never came past this build.\n"
+                 "The row is gone or renamed -- a rule that silently does nothing is\n"
+                 "worse than no rule." % ", ".join("/".join(u) for u in unused))
 
     tabs = [s[0] for s in sections]
     page = ("<!doctype html>\n<html><head><meta charset=\"utf-8\">"

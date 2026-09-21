@@ -168,7 +168,7 @@ rectangles. Six of them, on yellow and pink.
 
 `fieldguide_pdf.py` makes the thing you actually carry: everything in the app that no
 other printed piece covers, on half-letter pages, two to a sheet, cut and clipped.
-Eighteen Letter sheets, thirty-six pages.
+Seventeen Letter sheets, thirty-four pages.
 
 ```
 ArtifactData action=list url=<artifact url> collection=trip out_dir=/tmp/fg
@@ -177,7 +177,7 @@ node tools/render_packing_pdf.mjs /tmp/fg/print-fieldguide.html /tmp/fg/guide.pd
      --landscape --margins 0,0,0,0 --footer ""
 ```
 
-Print single-sided, cut each sheet once down the middle, clip. **The backs stay blank on
+Print single-sided, cut each sheet once down the hairline at the middle, clip. **The backs stay blank on
 purpose** — that is the notepaper, and page one says so.
 
 ### It carries the locators
@@ -210,6 +210,19 @@ way and should not be undone:
   4,629 characters and stays that way.
 - **A heading never ends a page.** When anything breaks, the headings immediately above it
   are carried along.
+
+### `SKIP`, and why it is enforced
+
+Two paragraphs are deliberately not printed: the last sentence of `tips/tp05` and the whole
+"Watch out for" on `repack/rp8`. Each was a **page of its own** — a scrap that would not fit
+on the page before it, so the paginator opened a 3%-full page to hold one sentence. Cut on
+21 September, on the traveller's call. **The app keeps both**; this is a print decision and
+nothing here writes to `trip/*`.
+
+`SKIP` is keyed `(document, row id, field)`: a string strips just that text, `None` drops the
+field. The build fails if a skip's text is no longer in the data, and fails if a skip never
+fires at all — a rule sitting in the file doing nothing is worse than no rule, because it
+reads as though the text is still being removed.
 
 ### The coverage guard
 
