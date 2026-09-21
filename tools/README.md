@@ -115,6 +115,36 @@ node tools/render_packing_pdf.mjs /tmp/cards/print-cards.html /tmp/cards/cards.p
 approved is what gets printed. Pick the awkward rows, not the first few: the shortest Chinese, the
 longest, a slash, a long note.
 
+### Printing on coloured card stock
+
+`--all-stocks` writes **one file per colour**, because "print pages 2–3 on blue" is the instruction
+that goes wrong at a printer. Load a stock, print its file, done — no sheet can mix colours because
+no file contains two.
+
+| Stock | What's on it | Legs | Cards | Sheets |
+|---|---|---|---|---|
+| White | Everyday | All legs + Outbound | 6 | 1 |
+| Blue | Xi'an | Xi'an | 12 | 2 |
+| Green | Train & Tibet | Z165 + Tibet | 18 | 3 |
+| Yellow | Shanghai | Shanghai | 8 | 2 |
+| Pink | Disney & home | Disney + Home | 4 | 1 |
+
+Eight legs merged to five so that three groups land exactly on a six-card sheet boundary; splitting
+Tibet off the train or Disney off the flight home costs two extra sheets for nothing. **White takes
+the everyday cards** — highest-contrast stock to the most-handled cards, not the most important
+ones. Legs stay distinguishable inside a colour by their band rule, so green tells Z165 from Tibet.
+
+Two invariants the build enforces rather than trusts:
+
+- **Card numbers are assigned once, globally, before the split** — 1–48 in trip order. They are how
+  a shuffled deck is sorted again, so they must mean the same thing on every colour. Restarting at
+  1 per stock would quietly destroy that.
+- **`--all-stocks` fails if `STOCK` does not cover every card.** A leg renamed in the data would
+  otherwise drop part of the deck on the floor silently.
+
+Spare slots print as **write-your-own cards** — band, cut border, ruled lines — rather than empty
+rectangles. Six of them, on yellow and pink.
+
 ### The design decisions worth not undoing
 
 - **The Chinese is the card.** A stranger reads it at arm's length; the English exists so you can
